@@ -1,0 +1,117 @@
+name: ORVYQ Narration Validation
+
+# Manual, project-scoped narration verification. It never renders video and
+# never writes alignment data back unless the caller explicitly requests it.
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Project directory id under projects/"
+        type: string
+        required: true
+      commit_alignment:
+        description: "Commit the generated narration_alignment.json to the selected branch"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: orvyq-narration-${{ inputs.project_id }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PROJECT_ID: ${{ inputs.project_id }}
+
+jobs:
+  validate-narration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install root dependencies and validate project profile
+        run: |
+          set -euo pipefail
+          npm ci
+          node --input-type=module -e "
+            import { loadProductionPolicy } from './scripts/lib/orvyq-project-profile.mjs';
+            await loadProductionPolicy(process.env.PROJECT_ID, { requireReady: false });
+          "
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg and speech tooling
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          python -m pip install --disable-pip-version-check faster-whisper==1.2.0 requests==2.32.5
+
+      - name: Confirm narration is real audio
+        run: |
+          set -euo pipefail
+          FILE="projects/$PROJECT_ID/assets/audio/final_voice.mp3"
+          test -s "$FILE"
+          if head -c 20 "$FILE" | grep -q "version https://git-lfs"; then
+            echo "::error::$FILE is an unresolved LFS pointer"
+            exit 1
+          fi
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,sample_rate,channels -of default=noprint_wrappers=1 "$FILE"
+
+      - name: Run full-duration speech QA
+        run: |
+          set +e
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" \
+            --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" \
+            --output-name full_narration_speech_qa.json \
+            --model tiny.en > speech-qa.log 2>&1
+          echo $? > speech-qa.status
+          cat speech-qa.log
+
+      - name: Build canonical narration alignment
+        run: node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
+
+      - name: Commit narration alignment when explicitly requested
+        if: ${{ inputs.commit_alignment == true }}
+        run: |
+          set -euo pipefail
+          FILE="projects/$PROJECT_ID/voice/narration_alignment.json"
+          git config user.name "orvyq-narration-bot"
+          git config user.email "orvyq-narration-bot@users.noreply.github.com"
+          git add "$FILE"
+          if git diff --cached --quiet; then
+            echo "narration_alignment.json unchanged"
+            exit 0
+          fi
+          git commit -m "Record narration alignment for $PROJECT_ID"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
+
+      - name: Upload narration validation artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-narration-${{ inputs.project_id }}-${{ github.run_id }}
+          retention-days: 14
+          path: |
+            speech-qa.log
+            speech-qa.status
+            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
+            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
+          if-no-files-found: warn
+
+      - name: Fail when speech QA failed
+        run: test "$(cat speech-qa.status)" = "0"
