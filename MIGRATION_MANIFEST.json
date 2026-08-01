@@ -1,5 +1,6 @@
 {
-  "migration_schema": 1,
+  "migration_schema": 2,
+  "migration_complete": true,
   "source_repository": "ORVYQ/ORVYQ-YEN-",
   "source_branch": "agent/systemic-visual-evidence-balance",
   "source_sha": "262d784b6e9d74d7a333bace51ebf1a3c4a99590",
@@ -7,6 +8,27 @@
   "source_ci_conclusion": "success",
   "migration_method": "exact working-tree snapshot with hydrated Git LFS assets; workflows installed separately through the GitHub connector",
   "target_repository": "brsctncnbrk3-hub/ORVYQ-1",
+  "snapshot_commit": "a9e90254b1b61c2ee0bd15b2ec068bcaa80f512c",
+  "workflow_installation_commit": "6c6f46ea085b985dce2842225ebb7ae76fe7d769",
+  "workflow_source_sha": "262d784b6e9d74d7a333bace51ebf1a3c4a99590",
+  "workflow_hash_verification": "all installed workflow blob hashes match the source commit",
+  "installed_workflows": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/orvyq-candidate-validation.yml",
+    ".github/workflows/orvyq-final-encode.yml",
+    ".github/workflows/orvyq-footage-acquisition.yml",
+    ".github/workflows/orvyq-full-plan-validate.yml",
+    ".github/workflows/orvyq-music-acquisition.yml",
+    ".github/workflows/orvyq-music-intake.yml",
+    ".github/workflows/orvyq-narration-validation.yml",
+    ".github/workflows/orvyq-review.yml"
+  ],
+  "removed_bootstrap_workflows": [
+    ".github/workflows/migrate-orvyq.yml",
+    ".github/workflows/run-verified-migration.yml",
+    ".github/workflows/manual-verified-migration.yml"
+  ],
   "render_started": false,
-  "created_at_utc": "2026-08-01T19:53:44Z"
+  "snapshot_created_at_utc": "2026-08-01T19:53:44Z",
+  "workflow_restoration_completed_at_utc": "2026-08-01T20:12:00Z"
 }
