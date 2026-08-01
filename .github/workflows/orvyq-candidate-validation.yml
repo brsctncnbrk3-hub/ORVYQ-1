@@ -1,0 +1,316 @@
+name: ORVYQ Candidate Validation
+
+# Builds and validates one explicitly selected project without rendering video.
+# A project may be selected manually, by a reusable workflow caller, or by a
+# committed candidate_validation_request.json. The exact source SHA is always
+# locked before any candidate inputs are generated.
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Project directory id under projects/ (for example 002-my-film)"
+        type: string
+        required: true
+  workflow_call:
+    inputs:
+      project_id:
+        description: "Project directory id under projects/"
+        type: string
+        required: true
+  push:
+    branches:
+      - "agent/**"
+      - "claude/**"
+    paths:
+      - "projects/*/config/candidate_validation_request.json"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-candidate-validation-${{ inputs.project_id || github.ref_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          lfs: true
+          fetch-depth: 2
+
+      - name: Lock exact source commit
+        run: |
+          set -euo pipefail
+          ACTUAL_SHA="$(git rev-parse HEAD)"
+          test "$ACTUAL_SHA" = "$SOURCE_SHA"
+          printf '%s\n' "$ACTUAL_SHA" | tee validation-source-sha.txt
+
+      - name: Resolve explicitly selected project
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "push" ]; then
+            mapfile -t REQUESTS < <(
+              git diff --name-only "$SOURCE_SHA^" "$SOURCE_SHA" |
+                grep -E '^projects/[^/]+/config/candidate_validation_request\.json$' || true
+            )
+            test "${#REQUESTS[@]}" -eq 1 || {
+              echo "::error::Candidate Validation requires exactly one changed request file; found ${#REQUESTS[@]}."
+              exit 1
+            }
+            REQUEST_FILE="${REQUESTS[0]}"
+            test "$(jq -r '.status' "$REQUEST_FILE")" = "requested"
+            PROJECT_ID="$(jq -r '.project_id' "$REQUEST_FILE")"
+          else
+            PROJECT_ID="${{ inputs.project_id }}"
+          fi
+          [[ "$PROJECT_ID" =~ ^[0-9]{3}-[a-z0-9]+(-[a-z0-9]+)*$ ]]
+          test -f "projects/$PROJECT_ID/config/production_profile.json"
+          echo "PROJECT_ID=$PROJECT_ID" >> "$GITHUB_ENV"
+          echo "Selected project: $PROJECT_ID"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Validate selected project and production profile
+        run: |
+          set -euo pipefail
+          node --input-type=module -e "
+            import { loadProductionPolicy } from './scripts/lib/orvyq-project-profile.mjs';
+            const policy = await loadProductionPolicy(process.env.PROJECT_ID);
+            console.log(JSON.stringify({ project_id: policy.project.project_id, profile: policy.project.creative_profile, status: policy.project.status }, null, 2));
+          "
+
+      - name: Validate repository-local footage and provenance
+        run: node scripts/orvyq_materialize_footage.mjs --project-id="$PROJECT_ID"
+
+      - name: Verify narration was not overwritten by footage materialization
+        run: test -s "projects/$PROJECT_ID/assets/audio/final_voice.mp3"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install media, PDF and speech tooling
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg poppler-utils
+          python -m pip install --disable-pip-version-check faster-whisper==1.2.0 requests==2.32.5
+
+      - name: Run full-duration narration QA for canonical alignment
+        run: |
+          set +e
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" \
+            --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" \
+            --output-name full_narration_speech_qa.json \
+            --model tiny.en > alignment-speech-qa.log 2>&1
+          echo $? > alignment-speech-qa.status
+          cat alignment-speech-qa.log
+          exit 0
+
+      - name: Stop when canonical narration QA failed
+        run: test "$(cat alignment-speech-qa.status)" = "0"
+
+      - name: Build canonical narration alignment
+        run: node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
+
+      - name: Run the unit test suite
+        run: npm test
+
+      - name: Resolve the canonical editorial pause plan
+        run: node scripts/orvyq_resolve_pauses.mjs --project-id="$PROJECT_ID"
+
+      - name: Build the canonical full production shot list from real data
+        run: |
+          set +e
+          node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID" > full-production-plan.log 2>&1
+          echo $? > full-production-plan.status
+          cat full-production-plan.log
+          exit 0
+
+      - name: Stop when canonical full production plan failed
+        run: test "$(cat full-production-plan.status)" = "0"
+
+      - name: Reconcile claim-bound footage contracts after shot generation
+        run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
+
+      - name: Validate canonical schemas and recovered project data
+        run: npm run validate:canonical
+
+      - name: Fetch and verify official primary evidence
+        run: |
+          set +e
+          node scripts/orvyq_fetch_primary_evidence.mjs --project-id="$PROJECT_ID" > primary-evidence-fetch.log 2>&1
+          echo $? > primary-evidence-fetch.status
+          cat primary-evidence-fetch.log
+          exit 0
+
+      - name: Stop when primary evidence fetch failed
+        run: test "$(cat primary-evidence-fetch.status)" = "0"
+
+      - name: Promote verified evidence assets to ready
+        run: node scripts/orvyq_promote_evidence_assets.mjs --project-id="$PROJECT_ID"
+
+      - name: Report real footage clip durations
+        if: always()
+        run: node scripts/orvyq_footage_duration_report.mjs --project-id="$PROJECT_ID" | tee "projects/$PROJECT_ID/qa/footage_duration_report.json"
+
+      - name: Build the canonical candidate edit plan
+        run: |
+          set +e
+          node scripts/orvyq_edit_plan.mjs --project-id="$PROJECT_ID" --mode=full > edit-plan.log 2>&1
+          echo $? > edit-plan.status
+          cat edit-plan.log
+          exit 0
+
+      - name: Stop when canonical edit plan failed
+        run: test "$(cat edit-plan.status)" = "0"
+
+      - name: Apply project-authored creative polish
+        run: node scripts/orvyq_creative_polish.mjs --project-id="$PROJECT_ID"
+
+      - name: Resolve the canonical candidate duration
+        run: |
+          set -euo pipefail
+          node -e "
+            const p = require('./projects/$PROJECT_ID/direction/edit_plan.json');
+            const motionHook = require('./projects/$PROJECT_ID/direction/motion_hook.json');
+            const hookDuration = motionHook.shots.reduce((s, x) => s + x.duration, 0);
+            console.log('CANDIDATE_DURATION_SECONDS=' + (p.duration_frames / p.fps));
+            console.log('HOOK_DURATION_SECONDS=' + hookDuration);
+          " | tee -a "$GITHUB_ENV"
+
+      - name: Resolve canonical music
+        run: node scripts/orvyq_music_resolve.mjs --project-id="$PROJECT_ID" --mode=full --target-duration-seconds="$CANDIDATE_DURATION_SECONDS"
+
+      - name: Build the full candidate narration and music mix
+        run: node scripts/orvyq_audio_mix.mjs --project-id="$PROJECT_ID" --mode=candidate --duration-seconds="$CANDIDATE_DURATION_SECONDS" --head-silence-seconds="$HOOK_DURATION_SECONDS"
+
+      - name: Verify mixed narration and capture diagnostics
+        run: |
+          set +e
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" > narration-qa.log 2>&1
+          echo $? > narration-qa.status
+          cat narration-qa.log
+          exit 0
+
+      - name: Stop when mixed narration verification failed
+        run: test "$(cat narration-qa.status)" = "0"
+
+      - name: Build canonical captions
+        run: node scripts/orvyq_caption_build.mjs --project-id="$PROJECT_ID"
+
+      - name: Build canonical asset registry
+        run: node scripts/orvyq_asset_registry.mjs --project-id="$PROJECT_ID"
+
+      - name: Build render-ready project
+        run: node scripts/orvyq_pipeline_cli.mjs build-render-project --project-id="$PROJECT_ID"
+
+      - name: Install Remotion dependencies and type-check
+        working-directory: projects/${{ env.PROJECT_ID }}/remotion/render_ready_project
+        run: |
+          npm ci --no-audit --no-fund
+          npx tsc --noEmit
+
+      - name: Compute frozen candidate manifest
+        run: |
+          node scripts/orvyq_frozen_candidate.mjs --project-id="$PROJECT_ID"
+          cat "projects/$PROJECT_ID/qa/frozen_candidate.json"
+
+      - name: Upload immutable validated candidate bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-validated-candidate-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 90
+          include-hidden-files: true
+          path: |
+            validation-source-sha.txt
+            projects/${{ env.PROJECT_ID }}/qa/frozen_candidate.json
+            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
+            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
+            projects/${{ env.PROJECT_ID }}/config/production_profile.json
+            projects/${{ env.PROJECT_ID }}/direction/edit_plan.json
+            projects/${{ env.PROJECT_ID }}/remotion/captions.json
+            projects/${{ env.PROJECT_ID }}/assets/**
+            projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/**
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/node_modules
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/out
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/.remotion
+
+      - name: Run full pre-render QA chain
+        run: |
+          set +e
+          npm run orvyq:qa -- --project-id="$PROJECT_ID" > qa-chain.log 2>&1
+          echo $? > qa-chain.status
+          cat qa-chain.log
+          exit 0
+
+      - name: Upload validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-candidate-validation-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            validation-source-sha.txt
+            alignment-speech-qa.log
+            alignment-speech-qa.status
+            full-production-plan.log
+            full-production-plan.status
+            primary-evidence-fetch.log
+            primary-evidence-fetch.status
+            edit-plan.log
+            edit-plan.status
+            narration-qa.log
+            narration-qa.status
+            qa-chain.log
+            qa-chain.status
+            projects/${{ env.PROJECT_ID }}/qa/*.json
+            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
+            projects/${{ env.PROJECT_ID }}/config/production_profile.json
+            projects/${{ env.PROJECT_ID }}/direction/edit_plan.json
+            projects/${{ env.PROJECT_ID }}/remotion/captions.json
+            projects/${{ env.PROJECT_ID }}/assets/asset_registry.json
+            projects/${{ env.PROJECT_ID }}/assets/audio/final_mix.metadata.json
+            projects/${{ env.PROJECT_ID }}/assets/music/approved_bed.provenance.json
+          if-no-files-found: warn
+
+      - name: Stop when the pre-render QA chain failed
+        run: test "$(cat qa-chain.status)" = "0"
+
+      - name: Report Candidate Validation on the active pull request
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          set -euo pipefail
+          PROJECT_LABEL="${PROJECT_ID:-unresolved}"
+          FULL_PLAN_STATUS="$(cat full-production-plan.status 2>/dev/null || echo unavailable)"
+          EVIDENCE_STATUS="$(cat primary-evidence-fetch.status 2>/dev/null || echo unavailable)"
+          EDIT_STATUS="$(cat edit-plan.status 2>/dev/null || echo unavailable)"
+          QA_STATUS="$(cat qa-chain.status 2>/dev/null || echo unavailable)"
+          BODY="Candidate Validation finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. Project: \`${PROJECT_LABEL}\`. Exact source: \`${SOURCE_SHA}\`. Full-production-plan status: \`${FULL_PLAN_STATUS}\`. Primary-evidence status: \`${EVIDENCE_STATUS}\`. Edit-plan status: \`${EDIT_STATUS}\`. Pre-render QA status: \`${QA_STATUS}\`. No video render was started."
+          PR_NUMBER="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$GITHUB_REF_NAME" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$PR_NUMBER" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -f body="$BODY" ||
+              echo "::warning::Could not post Candidate Validation result to PR #$PR_NUMBER."
+          fi
