@@ -1,0 +1,167 @@
+name: ORVYQ Selected Pexels Acquisition
+
+on:
+  push:
+    branches:
+      - "agent/**"
+      - "claude/**"
+    paths:
+      - "projects/*/research/selected_pexels_manifest.json"
+      - "scripts/orvyq_acquire_selected_pexels.mjs"
+      - ".github/workflows/orvyq-selected-pexels-acquisition.yml"
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-selected-pexels-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  acquire:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout exact branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          lfs: false
+          fetch-depth: 2
+
+      - name: Resolve selected project
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t MANIFESTS < <(
+            git diff --name-only "$GITHUB_SHA^" "$GITHUB_SHA" |
+              grep -E '^projects/[^/]+/research/selected_pexels_manifest\.json$' || true
+          )
+          if [ "${#MANIFESTS[@]}" -eq 1 ]; then
+            MANIFEST="${MANIFESTS[0]}"
+          else
+            mapfile -t MANIFESTS < <(find projects -path '*/research/selected_pexels_manifest.json' -type f | sort)
+            test "${#MANIFESTS[@]}" -eq 1
+            MANIFEST="${MANIFESTS[0]}"
+          fi
+          PROJECT_ID="$(jq -r '.project_id' "$MANIFEST")"
+          test -f "projects/$PROJECT_ID/research/footage_acquisition_plan.json"
+          echo "PROJECT_ID=$PROJECT_ID" >> "$GITHUB_ENV"
+          echo "TARGET_BRANCH=${{ github.ref_name }}" >> "$GITHUB_ENV"
+          echo "Selected project: $PROJECT_ID"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies and media tooling
+        run: |
+          set -euo pipefail
+          npm ci
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Acquire selected licensed Pexels footage
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/orvyq_acquire_selected_pexels.mjs --project-id="$PROJECT_ID" | tee selected-pexels-acquisition.log
+
+      - name: Generate contact sheets for acquired footage
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="projects/$PROJECT_ID"
+          OUT="$ROOT/qa/footage-contact-sheets"
+          mkdir -p "$OUT"
+          find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0 | while IFS= read -r -d '' clip; do
+            base="$(basename "$clip" .mp4)"
+            ffmpeg -y -ss 1 -i "$clip" -frames:v 1 -vf "scale=640:-2" "$OUT/${base}.jpg" >/dev/null 2>&1
+          done
+          node --input-type=module - <<'NODE'
+          import path from 'node:path';
+          import { promises as fs } from 'node:fs';
+          const projectId = process.env.PROJECT_ID;
+          const root = path.join('projects', projectId);
+          const runtime = JSON.parse(await fs.readFile(path.join(root, 'assets', 'footage_acquisition.runtime.json'), 'utf8'));
+          const records = runtime.records.map((record) => ({
+            scene_id: record.scene_id,
+            claim_id: record.claim_id,
+            footage: record.path,
+            contact_sheet: `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`,
+            review_status: 'pending_claim_specific_frame_review',
+          }));
+          await fs.writeFile(path.join(root, 'qa', 'footage_contact_sheets.json'), JSON.stringify({
+            schema_version: '1.0',
+            project_id: projectId,
+            generated_at: new Date().toISOString(),
+            records,
+          }, null, 2) + '\n');
+          NODE
+
+      - name: Verify compact normal-Git media
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' media; do
+            bytes="$(stat -c '%s' "$media")"
+            test "$bytes" -lt 95000000 || {
+              echo "::error::$media exceeds 95 MB"
+              exit 1
+            }
+            attr="$(git check-attr filter -- "$media")"
+            ! grep -q 'filter: lfs$' <<<"$attr" || {
+              echo "::error::$media is routed through Git LFS"
+              exit 1
+            }
+          done < <(find "projects/$PROJECT_ID/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0)
+
+      - name: Commit acquired footage and provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -f \
+            "projects/$PROJECT_ID/assets/footage" \
+            "projects/$PROJECT_ID/assets/local_assets.json" \
+            "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" \
+            "projects/$PROJECT_ID/qa/footage-contact-sheets" \
+            "projects/$PROJECT_ID/qa/footage_contact_sheets.json"
+          git config user.name "orvyq-footage-bot"
+          git config user.email "orvyq-footage-bot@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "No footage changes to commit."
+            exit 0
+          fi
+          git commit -m "Acquire selected licensed footage for $PROJECT_ID"
+          git pull --rebase origin "$TARGET_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
+
+      - name: Upload acquisition diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-selected-pexels-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            selected-pexels-acquisition.log
+            projects/${{ env.PROJECT_ID }}/assets/footage_acquisition.runtime.json
+            projects/${{ env.PROJECT_ID }}/qa/footage_contact_sheets.json
+            projects/${{ env.PROJECT_ID }}/qa/footage-contact-sheets/*.jpg
+          if-no-files-found: warn
+
+      - name: Report acquisition result on active PR
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          SUMMARY="$(cat "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" 2>/dev/null | jq -c '{planned_asset_count,acquired_this_run,unresolved_scene_ids,pass}' || true)"
+          BODY="Selected Pexels acquisition finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. Project: \`${PROJECT_ID}\`. No video render was started."
+          test -z "$SUMMARY" || BODY="${BODY}"$'\n\n```json\n'"${SUMMARY}"$'\n```'
+          PR_NUMBER="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$TARGET_BRANCH" --state open --json number --jq '.[0].number // empty')"
+          test -z "$PR_NUMBER" || gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -f body="$BODY"
