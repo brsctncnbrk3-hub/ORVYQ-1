@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 1,
+  "request_revision": 2,
   "reason": "Generate and commit the canonical alignment for the preserved final narration before any footage, evidence, music or edit-plan materialisation. No video render is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-08-01T22:10:00Z"
+  "requested_at": "2026-08-01T23:23:00Z"
 }
