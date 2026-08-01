@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "mode": "clean_isolated_rebuild",
+  "source_project_id": "001-the-ai-race-no-one-can-afford-to-win",
+  "preserve_only": [
+    {
+      "role": "narration_script",
+      "source_path": "projects/001-the-ai-race-no-one-can-afford-to-win/voice/voice_script.txt",
+      "source_blob_sha": "e532ce367ca4908d7ec3e64254176f8fb6355146",
+      "target_path": "projects/004-the-ai-race-clean-rebuild/voice/voice_script.txt"
+    },
+    {
+      "role": "final_narration_audio",
+      "source_path": "projects/001-the-ai-race-no-one-can-afford-to-win/assets/audio/final_voice.mp3",
+      "source_blob_sha": "66254ac9b7c1a8d2cc748b971e2058173f3a4be2",
+      "target_path": "projects/004-the-ai-race-clean-rebuild/assets/audio/final_voice.mp3"
+    }
+  ],
+  "forbid_reuse": [
+    "research",
+    "claims",
+    "sources",
+    "footage",
+    "images",
+    "documents",
+    "evidence captures",
+    "graphics",
+    "cards",
+    "music",
+    "sound effects",
+    "scene assignments",
+    "edit plans",
+    "runtime manifests",
+    "captions",
+    "qa reports",
+    "candidate bundles",
+    "review renders",
+    "final renders"
+  ],
+  "requirements": {
+    "fresh_research_and_source_verification": true,
+    "fresh_claim_to_source_mapping": true,
+    "fresh_visual_acquisition": true,
+    "fresh_music_acquisition": true,
+    "fresh_scene_architecture": true,
+    "semantic_visual_review_required": true,
+    "old_project_asset_paths_globally_barred": true,
+    "render_requires_successful_candidate_validation": true,
+    "full_length_review_requires_explicit_user_authorization": true
+  },
+  "render_started": false
+}
