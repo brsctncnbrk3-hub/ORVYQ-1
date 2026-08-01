@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "research_question": "What current primary evidence supports, qualifies, or challenges the narration's claims about frontier-model behaviour, competitive acceleration, cyber and biological misuse, synthetic persuasion, labour exposure, market concentration, regulation, and open-versus-closed models?",
+  "required_primary_sources": [
+    "frontier-lab system cards and safety reports referenced by the narration",
+    "original cyber-misuse and espionage disclosures",
+    "official biological-risk safeguard documentation",
+    "Stanford AI Index data used in the narration",
+    "International AI Safety Report evidence",
+    "International Labour Organization exposure analysis",
+    "UK Competition and Markets Authority foundation-model work",
+    "official EU AI Act text and authoritative implementation guidance"
+  ],
+  "claims": [],
+  "status": "needs_fresh_research",
+  "source_project_research_reuse_forbidden": true,
+  "narration_text_is_fixed_but_claims_must_be_reverified": true
+}
