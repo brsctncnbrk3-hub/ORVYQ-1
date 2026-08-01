@@ -80,3 +80,5 @@ jobs:
           git config user.email "orvyq-system-bot@users.noreply.github.com"
           git commit -m "Fix selected footage normalization and retry unresolved scenes"
           git push origin HEAD:agent/project-001-clean-rebuild
+
+# retrigger 2026-08-02T02:19:37+03:00
