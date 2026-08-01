@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "title": "The AI Race No One Can Afford to Win",
+  "central_question": "What happens when competition pushes frontier AI forward faster than institutions can understand, govern, or safely distribute its power?",
+  "audience_promise": "A restrained, evidence-led cinematic investigation of why AI labs keep accelerating despite acknowledging serious risks, and why regulation can reduce danger while also concentrating control.",
+  "emotional_arc": [
+    "unease",
+    "competitive pressure",
+    "documented real-world misuse",
+    "governance paradox",
+    "open-versus-closed tension",
+    "measured unresolved conclusion"
+  ],
+  "status": "needs_fresh_research_and_scene_architecture",
+  "narration_locked": true,
+  "visual_language": "premium cinematic video essay with real-world footage and primary evidence leading; restrained editorial graphics only when factually necessary"
+}
