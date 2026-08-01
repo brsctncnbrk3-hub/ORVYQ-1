@@ -2,9 +2,12 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "title": "The AI Race No One Can Afford to Win",
-  "status": "rebuild_intake",
+  "status": "fresh_research_complete_asset_acquisition_starting",
   "created_at": "2026-08-01T21:15:00Z",
+  "production_started_at": "2026-08-01T21:33:00Z",
   "target_duration_minutes": 15,
   "source_project_id": "001-the-ai-race-no-one-can-afford-to-win",
-  "rebuild_mode": "preserve_narration_only"
+  "rebuild_mode": "preserve_narration_only",
+  "current_stage": "automatic_visual_evidence_and_music_acquisition",
+  "render_authorized": false
 }
