@@ -1,11 +1,32 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "needs_music_selection",
-  "artist": null,
-  "license_name": null,
-  "license_url": null,
-  "attribution_template": null,
-  "tracks": [],
-  "source_project_music_reuse_forbidden": true
+  "status": "ready_for_acquisition",
+  "artist": "Scott Buckley",
+  "license_name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_template": "Music by Scott Buckley — released under CC BY 4.0. www.scottbuckley.com.au",
+  "tracks": [
+    {
+      "track_id": "SB_THE_LONG_DARK",
+      "title": "The Long Dark",
+      "source_page_url": "https://www.scottbuckley.com.au/library/the-long-dark/",
+      "editorial_role": "opening tension and controlled-risk evidence",
+      "reuse_from_project001_forbidden": true
+    },
+    {
+      "track_id": "SB_TITAN",
+      "title": "Titan",
+      "source_page_url": "https://www.scottbuckley.com.au/library/titan/",
+      "editorial_role": "competitive acceleration and infrastructure scale",
+      "reuse_from_project001_forbidden": true
+    },
+    {
+      "track_id": "SB_REAWAKENING",
+      "title": "Reawakening",
+      "source_page_url": "https://www.scottbuckley.com.au/library/reawakening/",
+      "editorial_role": "final human-agency synthesis",
+      "reuse_from_project001_forbidden": true
+    }
+  ]
 }
