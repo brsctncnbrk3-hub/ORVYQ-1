@@ -1,0 +1,254 @@
+name: ORVYQ Final Encode
+
+# Manual, approval-gated, encode-only workflow. It consumes the exact immutable
+# render bundle produced for one explicitly selected project and never rebuilds
+# creative data.
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Project directory id under projects/"
+        type: string
+        required: true
+      quality_control_approved:
+        description: "Human approved the full-length review referenced by the project's approval record"
+        type: boolean
+        default: false
+      approved_review_run_id:
+        description: "Review workflow run ID that produced the approved render bundle"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: orvyq-final-encode-${{ inputs.project_id }}
+  cancel-in-progress: false
+
+env:
+  PROJECT_ID: ${{ inputs.project_id }}
+  FINAL_WIDTH: "1920"
+  FINAL_HEIGHT: "1080"
+  FINAL_CRF: "16"
+
+jobs:
+  final-encode:
+    if: ${{ inputs.quality_control_approved == true && inputs.approved_review_run_id != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate selected project production profile
+        run: |
+          set -euo pipefail
+          node --input-type=module -e "
+            import { loadProductionPolicy } from './scripts/lib/orvyq-project-profile.mjs';
+            await loadProductionPolicy(process.env.PROJECT_ID);
+          "
+
+      - name: Verify approval record exists and names this review run
+        run: |
+          set -euo pipefail
+          test -s "projects/$PROJECT_ID/qa/proof_approval.json"
+          node -e "
+            const approval = require('./projects/$PROJECT_ID/qa/proof_approval.json');
+            if (approval.approved !== true) throw new Error('approval.approved is not true');
+            if (String(approval.review_run_id) !== String('${{ inputs.approved_review_run_id }}')) throw new Error('approval review_run_id does not match workflow input');
+          "
+
+      - name: Download approved project render bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: orvyq-render-bundle-${{ inputs.project_id }}-${{ inputs.approved_review_run_id }}
+          path: render-bundle
+          run-id: ${{ inputs.approved_review_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify bundle project identity
+        run: |
+          set -euo pipefail
+          node -e "
+            const profile = require('./render-bundle/projects/$PROJECT_ID/config/production_profile.json');
+            const manifest = require('./render-bundle/projects/$PROJECT_ID/qa/review_render_manifest.json');
+            if (profile.project_id !== process.env.PROJECT_ID) throw new Error('bundle production profile project mismatch');
+            if (manifest.project_id && manifest.project_id !== process.env.PROJECT_ID) throw new Error('review manifest project mismatch');
+          "
+
+      - name: Place downloaded immutable bundle into selected project tree
+        run: |
+          set -euo pipefail
+          SRC="render-bundle/projects/$PROJECT_ID"
+          DEST="projects/$PROJECT_ID"
+          mkdir -p "$DEST/config" "$DEST/direction" "$DEST/remotion" "$DEST/assets/audio" "$DEST/assets/music" "$DEST/assets/sfx" "$DEST/qa"
+          cp "$SRC/config/production_profile.json" "$DEST/config/production_profile.json"
+          cp "$SRC/direction/edit_plan.json" "$DEST/direction/edit_plan.json"
+          cp "$SRC/remotion/captions.json" "$DEST/remotion/captions.json"
+          cp "$SRC/assets/asset_registry.json" "$DEST/assets/asset_registry.json"
+          cp "$SRC/assets/audio/final_mix.mp3" "$DEST/assets/audio/final_mix.mp3"
+          cp "$SRC/assets/audio/final_mix.metadata.json" "$DEST/assets/audio/final_mix.metadata.json"
+          cp "$SRC/assets/music/approved_bed.mp3" "$DEST/assets/music/approved_bed.mp3"
+          cp "$SRC/assets/music/approved_bed.provenance.json" "$DEST/assets/music/approved_bed.provenance.json"
+          cp "$SRC"/assets/sfx/*.wav "$DEST/assets/sfx/" 2>/dev/null || true
+          cp "$SRC/qa/frozen_candidate.json" "$DEST/qa/frozen_candidate.json"
+          cp "$SRC/qa/review_render_manifest.json" review_render_manifest.json
+          rm -rf "$DEST/remotion/render_ready_project"
+          cp -r "$SRC/remotion/render_ready_project" "$DEST/remotion/render_ready_project"
+
+      - name: Verify approval matches downloaded candidate
+        run: node scripts/orvyq_verify_approval.mjs --project-id="$PROJECT_ID" --mode=full --stage=early --approved-review-run-id="${{ inputs.approved_review_run_id }}"
+
+      - name: Verify downloaded creative hashes
+        run: |
+          set -euo pipefail
+          node -e "
+            const fs = require('fs');
+            const crypto = require('crypto');
+            const dir = 'projects/$PROJECT_ID';
+            const candidate = JSON.parse(fs.readFileSync(dir + '/qa/frozen_candidate.json', 'utf8'));
+            const identity = candidate.canonical_candidate_identity;
+            const sha256 = (p) => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+            const checks = [
+              ['edit_plan_hash', dir + '/direction/edit_plan.json'],
+              ['caption_hash', dir + '/remotion/captions.json'],
+              ['audio_mix_metadata_hash', dir + '/assets/audio/final_mix.metadata.json'],
+              ['asset_registry_hash', dir + '/assets/asset_registry.json'],
+              ['final_mix_audio_hash', dir + '/assets/audio/final_mix.mp3'],
+              ['music_bed_hash', dir + '/assets/music/approved_bed.mp3']
+            ];
+            for (const [field, file] of checks) {
+              const expected = identity[field];
+              if (expected && sha256(file) !== expected) throw new Error('hash mismatch for ' + field);
+            }
+          "
+
+      - name: Validate repository-local footage and provenance
+        run: node scripts/orvyq_materialize_footage.mjs --project-id="$PROJECT_ID"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install media tooling
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Verify placed candidate still matches approval
+        run: node scripts/orvyq_verify_approval.mjs --project-id="$PROJECT_ID" --stage=late
+
+      - name: Install Remotion dependencies and type-check
+        working-directory: projects/${{ env.PROJECT_ID }}/remotion/render_ready_project
+        run: |
+          npm ci --no-audit --no-fund
+          npx tsc --noEmit
+
+      - name: Resolve browser executable
+        run: |
+          set -euo pipefail
+          BROWSER="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          test -n "$BROWSER"
+          echo "FACTFORGE_REMOTION_BROWSER_EXECUTABLE=$BROWSER" >> "$GITHUB_ENV"
+
+      - name: Render full candidate at final quality
+        working-directory: projects/${{ env.PROJECT_ID }}/remotion/render_ready_project
+        run: npx remotion render src/index.ts FactForgeVideo out/final_video.mp4 --codec=h264 --crf="$FINAL_CRF"
+
+      - name: Compute final video sha256
+        run: |
+          set -euo pipefail
+          echo "FINAL_VIDEO_SHA256=$(sha256sum "projects/$PROJECT_ID/remotion/render_ready_project/out/final_video.mp4" | cut -d' ' -f1)" >> "$GITHUB_ENV"
+
+      - name: Write final render manifest
+        run: |
+          set -euo pipefail
+          node -e "
+            const fs = require('fs');
+            const candidate = JSON.parse(fs.readFileSync('projects/$PROJECT_ID/qa/frozen_candidate.json', 'utf8'));
+            const identity = candidate.canonical_candidate_identity;
+            const manifest = {
+              schema_version: '3.0',
+              project_id: process.env.PROJECT_ID,
+              identity: {
+                candidate_hash: candidate.candidate_hash,
+                render_bundle_hash: candidate.render_bundle_hash,
+                edit_plan_hash: identity.edit_plan_hash,
+                caption_hash: identity.caption_hash,
+                final_mix_audio_hash: identity.final_mix_audio_hash || null,
+                audio_mix_metadata_hash: identity.audio_mix_metadata_hash,
+                asset_manifest_hash: identity.asset_manifest_hash || null,
+                render_ready_source_hash: identity.render_ready_source_hash || null,
+                renderer_source_hash: identity.renderer_source_tree_hash || null,
+                total_frames: identity.total_frames,
+                fps: identity.fps,
+                frame_range: identity.selected_render_range
+              },
+              encode: { profile: 'final', width: Number(process.env.FINAL_WIDTH), height: Number(process.env.FINAL_HEIGHT), codec: 'h264', bitrate: null, crf: Number(process.env.FINAL_CRF), encoder_preset: null },
+              artifact: { run_id: '${{ github.run_id }}', video_path: 'out/final_video.mp4', video_sha256: process.env.FINAL_VIDEO_SHA256 }
+            };
+            fs.writeFileSync('projects/$PROJECT_ID/qa/final_render_manifest.json', JSON.stringify(manifest, null, 2));
+          "
+
+      - name: Verify review and final parity
+        run: node scripts/orvyq_review_final_parity.mjs --review-manifest review_render_manifest.json --final-manifest "projects/$PROJECT_ID/qa/final_render_manifest.json" --report "projects/$PROJECT_ID/qa/review_final_parity.json"
+
+      - name: Run post-render media QA
+        run: |
+          set +e
+          node scripts/orvyq_media_qa.mjs --project-id "$PROJECT_ID" --video "projects/$PROJECT_ID/remotion/render_ready_project/out/final_video.mp4" --report "projects/$PROJECT_ID/qa/orvyq_full_media_qa.json" > media-qa.log 2>&1
+          echo $? > media-qa.status
+          cat media-qa.log
+          exit 0
+
+      - name: Copy final output
+        run: |
+          set -euo pipefail
+          mkdir -p "projects/$PROJECT_ID/output"
+          cp "projects/$PROJECT_ID/remotion/render_ready_project/out/final_video.mp4" "projects/$PROJECT_ID/output/final_video.mp4"
+          {
+            echo "Project: $PROJECT_ID"
+            echo "Rendered at: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "Workflow run: ${{ github.run_id }}"
+            echo "Approved review run: ${{ inputs.approved_review_run_id }}"
+            echo "Source commit: ${{ github.sha }}"
+          } > "projects/$PROJECT_ID/output/render_log.txt"
+
+      - name: Upload final render
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-final-${{ inputs.project_id }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            projects/${{ env.PROJECT_ID }}/output/final_video.mp4
+            projects/${{ env.PROJECT_ID }}/output/render_log.txt
+          if-no-files-found: error
+
+      - name: Upload final QA reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-final-qa-${{ inputs.project_id }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            projects/${{ env.PROJECT_ID }}/qa/*.json
+            media-qa.log
+            media-qa.status
+
+      - name: Stop when post-render media QA failed
+        run: test "$(cat media-qa.status)" = "0"
