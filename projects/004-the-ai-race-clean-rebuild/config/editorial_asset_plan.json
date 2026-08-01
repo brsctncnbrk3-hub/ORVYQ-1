@@ -1,14 +1,12 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "needs_editorial_input",
+  "status": "blocked_pending_new_assets",
   "footage_assignments": {},
   "graphic_break_assignments": {},
   "full_footage_pool": [],
   "hook_preloaded_usage": {},
   "slice_count_overrides": {},
-  "excluded_source_projects": [
-    "001-the-ai-race-no-one-can-afford-to-win"
-  ],
-  "asset_reuse_policy": "no_old_project_visual_or_audio_bed_reuse"
+  "source_plan": "research/footage_use_contracts.json",
+  "old_project_asset_reuse_forbidden": true
 }
