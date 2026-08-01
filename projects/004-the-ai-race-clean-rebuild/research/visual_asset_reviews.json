@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "review_basis": "Fail-closed claim-specific footage review registry for the clean rebuild.",
+  "policy": {
+    "default_status_for_unlisted_assets": "pending_frame_review",
+    "rejected_asset_global_reentry_forbidden": true,
+    "automatic_backfill_forbidden": true,
+    "approval_requires_contact_sheet_sha256": true,
+    "approval_requires_claim_id_narration_anchor_and_semantic_rationale": true,
+    "source_project_assets_forbidden": [
+      "001-the-ai-race-no-one-can-afford-to-win"
+    ]
+  },
+  "summary": {
+    "pool_assets": 0,
+    "rejected_from_metadata": 0,
+    "pending_frame_review": 0,
+    "approved": 0
+  },
+  "pending_frame_review_scene_ids": [],
+  "rejected_assets": [],
+  "approved_assets": []
+}
