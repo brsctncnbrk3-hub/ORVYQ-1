@@ -1,0 +1,86 @@
+name: ORVYQ Edit Plan Validation
+
+# Manual, project-scoped, pre-render validation. No video frame is produced.
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Project directory id under projects/"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: orvyq-edit-plan-${{ inputs.project_id }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PROJECT_ID: ${{ inputs.project_id }}
+
+jobs:
+  validate-full-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate selected project profile
+        run: |
+          node --input-type=module -e "
+            import { loadProductionPolicy } from './scripts/lib/orvyq-project-profile.mjs';
+            await loadProductionPolicy(process.env.PROJECT_ID);
+          "
+
+      - name: Validate repository-local footage and provenance
+        run: node scripts/orvyq_materialize_footage.mjs --project-id="$PROJECT_ID"
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Run unit tests
+        run: npm test
+
+      - name: Validate canonical schemas and project data
+        run: npm run validate:canonical
+
+      - name: Resolve project editorial pauses
+        run: node scripts/orvyq_resolve_pauses.mjs --project-id="$PROJECT_ID"
+
+      - name: Regenerate project production shot list
+        run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID"
+
+      - name: Build canonical edit plan without rendering
+        run: node scripts/orvyq_edit_plan.mjs --project-id="$PROJECT_ID" --mode=full
+
+      - name: Apply project-authored creative polish
+        run: node scripts/orvyq_creative_polish.mjs --project-id="$PROJECT_ID"
+
+      - name: Run project-scoped creative and technical audits
+        run: npm run orvyq:audits -- --project-id="$PROJECT_ID"
+
+      - name: Upload edit-plan validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-edit-plan-${{ inputs.project_id }}-${{ github.run_id }}
+          retention-days: 14
+          path: |
+            projects/${{ env.PROJECT_ID }}/config/production_profile.json
+            projects/${{ env.PROJECT_ID }}/direction/edit_plan.json
+            projects/${{ env.PROJECT_ID }}/qa/*.json
+          if-no-files-found: warn
