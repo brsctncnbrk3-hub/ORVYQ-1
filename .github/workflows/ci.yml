@@ -1,0 +1,144 @@
+name: ORVYQ CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan for project-specific data in system runtime
+        run: |
+          set -euo pipefail
+          PROJECT_TOKEN="001-"
+          PROJECT_TOKEN="${PROJECT_TOKEN}the-ai-race-no-one-can-afford-to-win"
+          ASSET_TOKEN="scene_024_"
+          ASSET_TOKEN="${ASSET_TOKEN}6e6f4af26cad60cc78930d6d.mp4"
+          RUN_TOKEN="3020"
+          RUN_TOKEN="${RUN_TOKEN}0283806"
+          : > system-independence-violations.txt
+          for TOKEN in "$PROJECT_TOKEN" "$ASSET_TOKEN" "$RUN_TOKEN"; do
+            MATCHES="$(grep -RIlF "$TOKEN" .github scripts templates config package.json \
+              --exclude=orvyq_repository_independence.test.mjs || true)"
+            if [ -n "$MATCHES" ]; then
+              {
+                echo "TOKEN: $TOKEN"
+                echo "$MATCHES"
+                echo
+              } >> system-independence-violations.txt
+            fi
+          done
+          if [ -s system-independence-violations.txt ]; then
+            echo "SYSTEM_INDEPENDENCE_STATUS=1" >> "$GITHUB_ENV"
+            cat system-independence-violations.txt
+          else
+            echo "SYSTEM_INDEPENDENCE_STATUS=0" >> "$GITHUB_ENV"
+            echo "No project-specific runtime leakage found."
+          fi
+
+      - name: Upload system-independence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-system-independence-${{ github.run_id }}
+          retention-days: 7
+          path: system-independence-violations.txt
+          if-no-files-found: error
+
+      - name: Stop when project data leaked into system runtime
+        run: test "$SYSTEM_INDEPENDENCE_STATUS" = "0"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Syntax-check every pipeline script
+        run: |
+          set -euo pipefail
+          find scripts -type f -name '*.mjs' -print0 | xargs -0 -n1 node --check
+          python3 -m py_compile scripts/orvyq_speech_qa.py
+
+      - name: Validate canonical schemas and data contracts
+        run: |
+          set +e
+          npm run validate:canonical 2>&1 | tee schema-validation.log
+          echo ${PIPESTATUS[0]} > schema-validation.status
+          exit 0
+
+      - name: Upload schema validation diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-schema-validation-${{ github.run_id }}
+          retention-days: 7
+          path: |
+            schema-validation.log
+            schema-validation.status
+          if-no-files-found: error
+
+      - name: Stop when schema validation failed
+        run: test "$(cat schema-validation.status)" = "0"
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Run unit tests
+        run: |
+          set +e
+          npm test 2>&1 | tee unit-tests.log
+          echo ${PIPESTATUS[0]} > unit-tests.status
+          exit 0
+
+      - name: Upload unit test diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-unit-tests-${{ github.run_id }}
+          retention-days: 7
+          path: |
+            unit-tests.log
+            unit-tests.status
+          if-no-files-found: error
+
+      - name: Stop when unit tests failed
+        run: test "$(cat unit-tests.status)" = "0"
+
+      - name: Check proof/full renderer parity and isolation
+        run: npm run orvyq:parity-check
+
+      - name: Install renderer dependencies
+        working-directory: templates/remotion
+        run: npm ci
+
+      - name: Type-check renderer
+        working-directory: templates/remotion
+        run: npx tsc --noEmit
+
+      - name: Resolve composition against placeholder data (bundle validation, no render)
+        working-directory: templates/remotion
+        env:
+          FACTFORGE_REMOTION_BROWSER_EXECUTABLE: /opt/hostedtoolcache/chromium/stable/x64/chrome
+        run: |
+          set -euo pipefail
+          BROWSER="$(command -v google-chrome-stable || command -v google-chrome || command -v chromium-browser || command -v chromium || true)"
+          if [ -z "$BROWSER" ]; then
+            echo "No system Chrome/Chromium found; skipping composition resolution (type-check above already passed)."
+            exit 0
+          fi
+          export FACTFORGE_REMOTION_BROWSER_EXECUTABLE="$BROWSER"
+          npx remotion compositions src/index.ts
