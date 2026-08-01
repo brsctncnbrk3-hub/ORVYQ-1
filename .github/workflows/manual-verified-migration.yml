@@ -1,0 +1,124 @@
+name: Manual ORVYQ Verified Migration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: orvyq-one-time-migration
+  cancel-in-progress: false
+
+env:
+  SOURCE_REPOSITORY: ORVYQ/ORVYQ-YEN-
+  SOURCE_BRANCH: agent/systemic-visual-evidence-balance
+  SOURCE_SHA: 262d784b6e9d74d7a333bace51ebf1a3c4a99590
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          path: target
+          fetch-depth: 0
+          lfs: true
+          persist-credentials: true
+
+      - name: Checkout exact verified source snapshot
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SOURCE_REPOSITORY }}
+          ref: ${{ env.SOURCE_SHA }}
+          path: source
+          fetch-depth: 1
+          lfs: true
+
+      - name: Verify source SHA and hydrate LFS
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
+          git -C source lfs install --local
+          git -C source lfs pull
+          git -C source lfs fsck
+          while IFS= read -r -d '' path; do
+            if head -c 200 "source/$path" 2>/dev/null | grep -q 'version https://git-lfs.github.com/spec/v1'; then
+              echo "::error file=$path::Unhydrated Git LFS pointer detected."
+              exit 1
+            fi
+          done < <(git -C source lfs ls-files -n -z)
+
+      - name: Replace target with exact source working tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          find target -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          rsync -a --delete --exclude='.git/' source/ target/
+          cat > target/MIGRATION_MANIFEST.json <<JSON
+          {
+            "migration_schema": 1,
+            "source_repository": "${SOURCE_REPOSITORY}",
+            "source_branch": "${SOURCE_BRANCH}",
+            "source_sha": "${SOURCE_SHA}",
+            "source_ci_run_id": 30667521521,
+            "source_ci_conclusion": "success",
+            "migration_method": "exact working-tree snapshot with hydrated Git LFS assets",
+            "target_repository": "${GITHUB_REPOSITORY}",
+            "render_started": false,
+            "created_at_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          JSON
+
+      - name: Verify all tracked paths byte-for-byte
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, os, subprocess
+          from pathlib import Path
+          source, target = Path('source'), Path('target')
+          tracked = [p.decode() for p in subprocess.check_output(['git','-C',str(source),'ls-files','-z']).split(b'\0') if p]
+          def digest(path):
+              if path.is_symlink(): return ('symlink', os.readlink(path))
+              h = hashlib.sha256()
+              with path.open('rb') as f:
+                  for chunk in iter(lambda: f.read(1024 * 1024), b''): h.update(chunk)
+              return ('file', h.hexdigest())
+          failures = []
+          for rel in tracked:
+              src, dst = source / rel, target / rel
+              if not dst.exists() and not dst.is_symlink(): failures.append(f'missing: {rel}')
+              elif digest(src) != digest(dst): failures.append(f'mismatch: {rel}')
+          target_files = {str(p.relative_to(target)) for p in target.rglob('*') if (p.is_file() or p.is_symlink()) and '.git' not in p.parts}
+          failures += [f'extra: {p}' for p in sorted(target_files - (set(tracked) | {'MIGRATION_MANIFEST.json'}))]
+          if failures:
+              print('\n'.join(failures[:200])); raise SystemExit(f'{len(failures)} verification finding(s)')
+          print(f'Verified {len(tracked)} paths byte-for-byte.')
+          PY
+
+      - name: Enforce GitHub large-file safety
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            rel="${file#target/}"
+            filter="$(git -C target check-attr filter -- "$rel" | awk '{print $3}')"
+            test "$filter" = "lfs" || { echo "::error file=$rel::File exceeds 99 MB and is not tracked by Git LFS."; exit 1; }
+          done < <(find target -path 'target/.git' -prune -o -type f -size +99M -print0)
+
+      - name: Commit and push verified snapshot
+        working-directory: target
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ORVYQ Migration Bot"
+          git config user.email "orvyq-migration@users.noreply.github.com"
+          git lfs install --local
+          git add -A
+          git commit -m "Migrate ORVYQ from verified source snapshot"
+          git lfs push --all origin main
+          git push origin HEAD:main
