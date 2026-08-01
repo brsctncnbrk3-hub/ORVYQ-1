@@ -1,0 +1,118 @@
+name: ORVYQ Repository Discipline
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, reopened, synchronize, ready_for_review]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: orvyq-repository-discipline
+  cancel-in-progress: false
+
+jobs:
+  single-active-pr:
+    name: Enforce one active PR
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reject concurrent PRs targeting main
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner,
+              repo,
+              state: 'open',
+              base: 'main',
+              per_page: 100,
+            });
+            if (pulls.length > 1) {
+              const summary = pulls
+                .map((pr) => `#${pr.number} ${pr.head.ref}`)
+                .join(', ');
+              core.setFailed(`ORVYQ allows only one active PR targeting main. Open PRs: ${summary}`);
+              return;
+            }
+            core.info(`Single active PR confirmed: #${pulls[0]?.number ?? context.issue.number}`);
+
+  main-history-audit:
+    name: Require PR-backed main changes
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify the new main commit is associated with a merged PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const pulls = await github.paginate(
+              github.rest.repos.listPullRequestsAssociatedWithCommit,
+              {owner, repo, commit_sha: context.sha, per_page: 100},
+            );
+            const merged = pulls.filter((pr) => pr.merged_at && pr.base.ref === 'main');
+            if (merged.length === 0) {
+              core.setFailed(
+                `Commit ${context.sha} reached main without an associated merged PR. ` +
+                'All ORVYQ changes must use the single active PR workflow.',
+              );
+              return;
+            }
+            core.info(`Main update is backed by merged PR #${merged[0].number}.`);
+
+  cleanup-merged-branches:
+    name: Delete merged working branches
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove same-repository branches whose PRs are merged
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const repository = await github.rest.repos.get({owner, repo});
+            const defaultBranch = repository.data.default_branch;
+            const branches = await github.paginate(github.rest.repos.listBranches, {
+              owner,
+              repo,
+              per_page: 100,
+            });
+
+            for (const branch of branches) {
+              if (branch.name === defaultBranch || branch.protected) continue;
+
+              const pulls = await github.paginate(github.rest.pulls.list, {
+                owner,
+                repo,
+                state: 'closed',
+                head: `${owner}:${branch.name}`,
+                per_page: 100,
+              });
+              const mergedPr = pulls.find((pr) => Boolean(pr.merged_at));
+              if (!mergedPr) {
+                core.info(`Keeping unmerged branch ${branch.name}.`);
+                continue;
+              }
+
+              try {
+                await github.rest.git.deleteRef({
+                  owner,
+                  repo,
+                  ref: `heads/${branch.name}`,
+                });
+                core.info(`Deleted merged branch ${branch.name} from PR #${mergedPr.number}.`);
+              } catch (error) {
+                if (error.status === 422 || error.status === 404) {
+                  core.info(`Branch ${branch.name} was already removed or cannot be removed.`);
+                  continue;
+                }
+                throw error;
+              }
+            }
