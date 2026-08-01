@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "role": "final_narration_audio",
+  "target_path": "projects/004-the-ai-race-clean-rebuild/assets/audio/final_voice.mp3",
+  "source_project_id": "001-the-ai-race-no-one-can-afford-to-win",
+  "source_path": "projects/001-the-ai-race-no-one-can-afford-to-win/assets/audio/final_voice.mp3",
+  "source_blob_sha": "66254ac9b7c1a8d2cc748b971e2058173f3a4be2",
+  "reuse_authorized_by_user": true,
+  "all_non_narration_assets_must_be_new": true
+}
