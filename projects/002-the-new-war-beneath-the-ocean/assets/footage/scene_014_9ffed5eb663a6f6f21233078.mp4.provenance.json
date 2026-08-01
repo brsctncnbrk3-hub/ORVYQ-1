@@ -1,0 +1,60 @@
+{
+  "stable_asset_id": "74e461fe1878c67b0014377f",
+  "scene_id": "scene_014",
+  "provider": "pexels",
+  "provider_asset_id": "8135853",
+  "source_page_url": "https://www.pexels.com/video/a-woman-giving-documents-to-lawyers-8135853/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "https://kaboompics.com/",
+  "attribution_required": false,
+  "search_query": "official law document government archive",
+  "editorial_role": "context",
+  "editorial_note": "Law and competing rulebooks.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "law",
+        "legal",
+        "treaty",
+        "government"
+      ],
+      [
+        "document",
+        "archive",
+        "record"
+      ]
+    ],
+    "forbidden_terms": [
+      "generic signing",
+      "contract signing",
+      "notebook",
+      "blank paper"
+    ]
+  },
+  "duration": 12,
+  "actual_duration_seconds": 12,
+  "width": 1920,
+  "height": 1012,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1012,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 2758405,
+  "sha256": "7b4a291790e6ea72984374bd6c4dcac78d231a452b23c3da077918fc466270a1",
+  "actual_sha256": "7b4a291790e6ea72984374bd6c4dcac78d231a452b23c3da077918fc466270a1",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "10714185",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:52:45.078Z",
+  "reviewed_asset_sha256": "7b4a291790e6ea72984374bd6c4dcac78d231a452b23c3da077918fc466270a1",
+  "reviewed_contact_sheet_sha256": "c63ddd6fe65d5441db000d01a0faa4ece91c775f06244f032c2be21265fd98d6",
+  "human_review_reason": "The document exchange with lawyers is suitable restrained governance context at the two contracted legal targets; treaty and permit documents retain factual authority."
+}

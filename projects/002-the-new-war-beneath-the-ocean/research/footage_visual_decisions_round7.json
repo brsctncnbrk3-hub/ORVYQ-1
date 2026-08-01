@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Seventh ORVYQ system-owned claim-specific visual-QA round. Each target asset is a repository-owned derivative whose video SHA-256 is identical to an already byte-bound and provenance-approved NOAA source clip. The target contact-sheet identity is bound to the exact current queue entry. Approval is limited to the stated contextual use; maps, source documents and primary evidence retain all location, quantitative, institutional and legal factual burdens.",
+  "decisions": [
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023_scene_003",
+      "asset_sha256": "8b64b1ca31c4eac4528af74798279fef4b09ee3614d3e64c856f794b0aca17cf",
+      "contact_sheet_sha256": "994e8501222d714d0fc258746b477ba590404e3944144404fd754465b2c1ac8e",
+      "decision": "approve",
+      "reason": "The identical approved NOAA deep-sea footage provides genuine dark-ocean physical scale for the abyssal narration. It is used only as contextual deep-water imagery and is never presented as the Clarion-Clipperton Zone, polymetallic nodules, or evidence of a measured condition."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024_scene_004",
+      "asset_sha256": "42e20b2d517bafd26316bb036873f2a6b062cd1776f4d74583304e8a8ca07d51",
+      "contact_sheet_sha256": "90b78ee13e01f01523ade4ca184dd331562caa85214041c51f5973e9c322a4c5",
+      "decision": "approve",
+      "reason": "The identical approved NOAA clip visibly shows scientists deploying an ROV from a research vessel and therefore supports real marine field-operation scale. It must not identify the vessel as Chikyu or depict the exact Japanese pumping system; official evidence carries those claims."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_D2_2018_TECHNOLOGY_scene_012",
+      "asset_sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
+      "contact_sheet_sha256": "d0f2e79a6649af8aa6c54d632119dbbc6383ca7212f9020e5066ec547e6728fd",
+      "decision": "approve",
+      "reason": "The identical approved NOAA ROV-operations footage supplies authentic deep-seabed observation context and avoids tropical or decorative imagery. It does not itself prove track persistence; the cited scientific evidence retains the measured historical claim."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019_scene_024",
+      "asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
+      "contact_sheet_sha256": "72f442f25c7187e528285982cf7b27fa791ac3342640cc77e29b6ac157302e57",
+      "decision": "approve",
+      "reason": "The identical approved NOAA expedition footage provides a real survey and field-assessment setting that clearly differs from a commercial mine. It is not identified as Chikyu, a Japanese trial vessel, or proof of commercial feasibility."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WATER_COLUMN_2012_scene_032",
+      "asset_sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
+      "contact_sheet_sha256": "23854c6d83853ab09ecf057b79bc2eb95bb1f4d947faef8fd8a287d3a66c2113",
+      "decision": "approve",
+      "reason": "The identical approved NOAA water-column footage supplies real ocean depth and darkness for the closing physical metaphor. It introduces no new location, species, legal, or quantitative claim and avoids artificial science-fiction imagery."
+    }
+  ]
+}

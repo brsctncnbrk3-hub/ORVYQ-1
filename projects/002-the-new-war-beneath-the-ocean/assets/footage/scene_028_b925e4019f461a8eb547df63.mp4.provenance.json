@@ -1,0 +1,62 @@
+{
+  "stable_asset_id": "8beade222c6f8f9d45367909",
+  "scene_id": "scene_028",
+  "provider": "pexels",
+  "provider_asset_id": "31795058",
+  "source_page_url": "https://www.pexels.com/video/underwater-marine-life-on-sandy-ocean-floor-31795058/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Thomas Judge",
+  "attribution_required": false,
+  "search_query": "underwater sediment seabed",
+  "editorial_role": "context",
+  "editorial_note": "Dark seabed and suspended sediment provide restrained physical context for distant, hard-to-observe impacts; measured plume claims remain source-backed graphics and documents.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "sediment",
+        "seabed",
+        "ocean-floor",
+        "ocean floor",
+        "sea-floor",
+        "sea floor",
+        "sand",
+        "particles"
+      ]
+    ],
+    "forbidden_terms": [
+      "sunlight",
+      "coral",
+      "reef",
+      "tropical",
+      "diver",
+      "divers",
+      "snorkel"
+    ]
+  },
+  "duration": 16.016,
+  "actual_duration_seconds": 16.016,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 11380293,
+  "sha256": "e93480573e0c2088b9281bae7ccb362ecd4541af1105eb0ab900f89e3ba6f150",
+  "actual_sha256": "e93480573e0c2088b9281bae7ccb362ecd4541af1105eb0ab900f89e3ba6f150",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "13545046",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:44:44.981Z",
+  "reviewed_asset_sha256": "e93480573e0c2088b9281bae7ccb362ecd4541af1105eb0ab900f89e3ba6f150",
+  "reviewed_contact_sheet_sha256": "d1b7355b5b91c03596f54b15d902bc8b0266ef2c02b8299eb32023b37d33ec13",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

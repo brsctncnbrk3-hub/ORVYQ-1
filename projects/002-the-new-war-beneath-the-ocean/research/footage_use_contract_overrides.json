@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "managed_scene_ids": [
+    "scene_015",
+    "scene_016",
+    "scene_019",
+    "scene_029",
+    "scene_032",
+    "scene_033",
+    "scene_034",
+    "scene_050",
+    "scene_051",
+    "scene_053",
+    "scene_054"
+  ],
+  "retired_targets": [
+    {
+      "scene_id": "scene_015",
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "slice_index": 0,
+      "reason": "Retire the third use of the generic seafloor-sediment clip and replace this beat with a distinct approved trim of official NOAA ROV research footage. The cited paper retains the midwater food-web claim; the footage supplies only real scientific-observation context."
+    },
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 2,
+      "reason": "The asset is verified NOAA deep-ocean wall footage, not a marine-science laboratory; retire the semantically incorrect third use while retaining its two physically direct depth-context uses."
+    },
+    {
+      "scene_id": "scene_019",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 3,
+      "reason": "Retire the third use of the night-ocean metaphor and replace the two-rulebook sentence with a real human governance setting that carries the institutional meaning more directly."
+    },
+    {
+      "scene_id": "scene_032",
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "slice_index": 8,
+      "reason": "Retire the third non-contiguous use of the same NOAA water-column source identity. Keep that official clip at its direct persistence and midwater-mechanism beats, and move the closing metaphor to a distinct approved night-ocean asset with its own safe trim window."
+    },
+    {
+      "scene_id": "scene_033",
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "slice_index": 7,
+      "reason": "Retire the third jellyfish use from the closing precedent sentence. The same organism footage remains at its two direct midwater-science beats; the final legal-and-environmental inheritance beat moves to a second distinct trim of the already approved scientific-review scene."
+    },
+    {
+      "scene_id": "scene_050",
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "slice_index": 4,
+      "reason": "Move the regulatory-hearing context earlier inside the same claim to interrupt the 15.1-second evidence run, preserve the two-use ceiling and reconcile the project through the reusable override-aware canonical-role workflow."
+    }
+  ],
+  "assignments": [
+    {
+      "scene_id": "scene_015",
+      "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+      "slice_index": 6,
+      "trim_in_ratio": 0.12,
+      "motion": "drift_right",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A verified dark seabed-sediment view carries the physical location and fine material form named in the sentence while primary evidence establishes the specific Japanese deposit."
+    },
+    {
+      "scene_id": "scene_015",
+      "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "slice_index": 2,
+      "trim_in_ratio": 0,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A verified underwater seafloor-sediment view grounds the physical disturbance context while the cited Nature evidence carries the measured biodiversity result."
+    },
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "slice_index": 2,
+      "trim_in_ratio": 0.02,
+      "motion": "drift_right",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official NOAA deep-ocean wall footage directly establishes darkness, cold and crushing-pressure conditions while JAMSTEC primary evidence retains the named Japanese operation."
+    },
+    {
+      "scene_id": "scene_019",
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "slice_index": 4,
+      "trim_in_ratio": 0.02,
+      "motion": "hold",
+      "role": "metaphor",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A restrained night-ocean view carries the scale and remoteness of the shared frontier without replacing treaty text or asserting a named location."
+    },
+    {
+      "scene_id": "scene_019",
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "slice_index": 8,
+      "trim_in_ratio": 0.5,
+      "motion": "hold",
+      "role": "metaphor",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A distinct night-ocean trim closes on the distance between technical capability and agreed limits without impersonating a named site or adding a factual claim.",
+      "reuse_reason": "A deliberate second use at a separate late-film target and distinct trim window returns to the shared-frontier motif for the closing synthesis while keeping the asset below the two-use ceiling."
+    },
+    {
+      "scene_id": "scene_029",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 3,
+      "trim_in_ratio": 0.5,
+      "motion": "pull",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A populated formal assembly gives human form to the sentence about one ocean, two rulebooks and no commercial precedent; primary legal documents retain every factual proposition."
+    },
+    {
+      "scene_id": "scene_029",
+      "claim_id": "CLM_017_UNUSED_OPTION_SYNTHESIS",
+      "slice_index": 6,
+      "trim_in_ratio": 0.08,
+      "motion": "hold",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A real international assembly gives practical meaning to common heritage while treaty and ISA sources retain the legal claim."
+    },
+    {
+      "scene_id": "scene_032",
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "slice_index": 5,
+      "trim_in_ratio": 0,
+      "motion": "push",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official NOAA water-column footage supplies real depth and darkness for the persistence beat while the cited long-term track evidence carries every measured conclusion."
+    },
+    {
+      "scene_id": "scene_033",
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "slice_index": 2,
+      "trim_in_ratio": 0,
+      "motion": "push",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Real midwater life grounds the food-web mechanism without claiming that the jellyfish came from a cited trial."
+    },
+    {
+      "scene_id": "scene_033",
+      "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
+      "slice_index": 0,
+      "trim_in_ratio": 0.5,
+      "motion": "pull",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Verified midwater organisms keep the qualified ecological mechanism visible while the cited study figures carry the measured scientific claim.",
+      "reuse_reason": "A second, deliberately separated use at a distinct trim window connects the demonstrated midwater mechanism to the following scientific-uncertainty qualification; the clip remains contextual and never substitutes for evidence."
+    },
+    {
+      "scene_id": "scene_034",
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "slice_index": 3,
+      "trim_in_ratio": 0.12,
+      "motion": "hold",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Scientists discussing evidence embody unresolved knowledge before a commercial decision without implying that they advise a named government."
+    },
+    {
+      "scene_id": "scene_034",
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "slice_index": 7,
+      "trim_in_ratio": 0.4,
+      "motion": "pull",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A distinct scientific-review trim gives the closing sentence a human decision context: future generations inherit both the precedent and the consequences, while the narration and cited sources retain every legal and environmental claim.",
+      "reuse_reason": "A deliberate second use inside the closing synthesis, at a distinct trim window and narration target, connects unresolved evidence before the decision to the consequences passed forward after it."
+    },
+    {
+      "scene_id": "scene_050",
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "slice_index": 2,
+      "trim_in_ratio": 0,
+      "motion": "hold",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A real regulatory hearing interrupts the dense legal-evidence sequence while the narration explains why unresolved rules matter at industrial scale; official documents retain every legal and factual claim."
+    },
+    {
+      "scene_id": "scene_050",
+      "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+      "slice_index": 2,
+      "trim_in_ratio": 0.34,
+      "motion": "drift_right",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A distinct formal-hearing trim represents regulatory delay while source documents retain the factual burden."
+    },
+    {
+      "scene_id": "scene_051",
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "slice_index": 0,
+      "trim_in_ratio": 0.5,
+      "motion": "pull",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official NOAA ROV research footage supplies real deep-ocean scientific-observation context while the cited experiment and primary evidence retain the specific midwater food-web mechanism and its limitations."
+    },
+    {
+      "scene_id": "scene_053",
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "slice_index": 8,
+      "trim_in_ratio": 0.05,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official water-column footage directly grounds the midwater food-web mechanism while the cited paper carries the experiment and effect."
+    },
+    {
+      "scene_id": "scene_054",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 2,
+      "trim_in_ratio": 0.08,
+      "motion": "drift_left",
+      "role": "human_context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official expedition field-operations footage physically expresses the gap between a plan and an operating system without presenting the generic mission as a commercial mining project."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_origin": "system_visual_qa",
+  "review_basis": "ORVYQ system-owned semantic visual QA inspected each twelve-frame contact sheet against the exact claim, narration anchor, use contract, prohibited lookalike substitutions and factual-burden boundary. The user is not an asset reviewer; only the complete Full-Length Review requires user approval.",
+  "decisions": [
+    {
+      "scene_id": "scene_002",
+      "provider_asset_id": "35861099",
+      "asset_sha256": "7aa8dde012f52e93654cc7e72ea2882ff5ec83ee7e28d093ee3162332e3252d8",
+      "contact_sheet_sha256": "0732cd3ccdba583f501abbff688a698386599b7a5fa8a7dee80f32a8e9528b57",
+      "decision": "approve",
+      "reason": "The reviewed frames show a real working dredging barge operating offshore. It may carry only generic surface-logistics scale and isolation; it must not be identified as Chikyu, Minamitorishima, or the Japanese rare-earth lifting system."
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "34448740",
+      "asset_sha256": "7fd4744e580d6a64c1b3b218f66f9d216143170481be51a494f2ea2f67f768ef",
+      "contact_sheet_sha256": "2c4849ce73327738b930e62fbeaa6198b5e71b83da80bfffc9d34b06b8175bbc",
+      "decision": "reject",
+      "reason": "The contact sheet shows a rocky underwater cave with bright blue openings, not an abyssal plain, nodule field, or restrained deep-seabed survey context."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "30900251",
+      "asset_sha256": "73e8058cb9c63e4de7ac35abbf4f0ff87421cef912a59326dd642bdad5ded8db",
+      "contact_sheet_sha256": "71f5e36e95cd27940438fd466b5da17bd7dd2ed6bff4642b9d6ad28de1d204fb",
+      "decision": "reject",
+      "reason": "The contact sheet shows a commercial port storing wind-turbine components and cargo ships, not offshore pipe handling or the physical rare-earth-mud lifting operation required by the contracted uses."
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "31751351",
+      "asset_sha256": "60df68dbb8ea3c33b6010f3f37f60826518636a26330befe763e3d554e59a058",
+      "contact_sheet_sha256": "e1bf88f0a8993d65a6b97715adc5c65022150f87c0df406d9378ecad2c23974e",
+      "decision": "approve",
+      "reason": "The reviewed frames show a real operator using an industrial machine console. This is valid human technical-decision context and carries no marine, legal, or quantitative factual claim."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "37417450",
+      "asset_sha256": "00b270e71d42d9c857aa2c43fcd61704b00cdf6bce50b2fbb24d535606f8ddab",
+      "contact_sheet_sha256": "9e931781725b67dfa5e75d1979c36f4ddbf131205ca3aaf0ac6a91852b9e3b3a",
+      "decision": "reject",
+      "reason": "The contact sheet shows a close recreational view of a rocky cave wall, not a dark abyssal seabed, benthic survey, persistent mining track, or visible long-term disturbance."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "34294261",
+      "asset_sha256": "2ccebb9cd5ae7d896f2000cf7d94ecbc11cdc4bcfa823f1a57a873abacda4f91",
+      "contact_sheet_sha256": "3894c62624207192371d8808385b501dc2722dd85d29cb091c67ef7eaef85662",
+      "decision": "reject",
+      "reason": "The contact sheet clearly shows an offshore oil rig. Petroleum infrastructure would falsely substitute for a scientific survey vessel or Japan’s rare-earth-mud technical test."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "31629386",
+      "asset_sha256": "33c1f65dd1699eecee30ec7ad552c2b91a56f7faf26d74d5c7f26abf9d324171",
+      "contact_sheet_sha256": "fd21bdd652a00bcdd3562bad75a3ff83099794e2ee8bd6a9fa16690404376a3e",
+      "decision": "reject",
+      "reason": "The contact sheet shows a bright shallow coral reef and tropical marine life, not a dark deep-ocean descent, abyssal seabed, or poorly understood slow deep-sea ecosystem."
+    }
+  ]
+}

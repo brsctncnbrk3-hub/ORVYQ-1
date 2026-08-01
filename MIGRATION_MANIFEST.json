@@ -1,0 +1,12 @@
+{
+  "migration_schema": 1,
+  "source_repository": "ORVYQ/ORVYQ-YEN-",
+  "source_branch": "agent/systemic-visual-evidence-balance",
+  "source_sha": "262d784b6e9d74d7a333bace51ebf1a3c4a99590",
+  "source_ci_run_id": 30667521521,
+  "source_ci_conclusion": "success",
+  "migration_method": "exact working-tree snapshot with hydrated Git LFS assets; workflows installed separately through the GitHub connector",
+  "target_repository": "brsctncnbrk3-hub/ORVYQ-1",
+  "render_started": false,
+  "created_at_utc": "2026-08-01T19:53:44Z"
+}

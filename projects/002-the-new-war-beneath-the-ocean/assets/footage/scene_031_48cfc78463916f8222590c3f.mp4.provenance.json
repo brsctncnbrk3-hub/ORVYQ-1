@@ -1,0 +1,56 @@
+{
+  "stable_asset_id": "b66aa8810584267198b7116c",
+  "scene_id": "scene_031",
+  "provider": "pexels",
+  "provider_asset_id": "8716589",
+  "source_page_url": "https://www.pexels.com/video/a-woman-sitting-while-talking-inside-the-conference-room-8716589/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Pavel Danilyuk",
+  "attribution_required": false,
+  "search_query": "international conference delegates meeting",
+  "editorial_role": "human_context",
+  "editorial_note": "An international rulemaking setting directly supports the contest over governance; ISA and UNCLOS documents remain the factual legal evidence.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "meeting",
+        "conference",
+        "delegate",
+        "official",
+        "negotiation"
+      ]
+    ],
+    "forbidden_terms": [
+      "walking",
+      "after",
+      "leaving",
+      "party"
+    ]
+  },
+  "duration": 16,
+  "actual_duration_seconds": 16,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 3795986,
+  "sha256": "30064be56e69d769cc14a74807bdcaeca86399d696ed287d80a054b7a5e3bd67",
+  "actual_sha256": "30064be56e69d769cc14a74807bdcaeca86399d696ed287d80a054b7a5e3bd67",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "10927276",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:45:46.779Z",
+  "reviewed_asset_sha256": "30064be56e69d769cc14a74807bdcaeca86399d696ed287d80a054b7a5e3bd67",
+  "reviewed_contact_sheet_sha256": "8ad8f6864c301585587e44f098ccdc549acbf46972eec718e933f6b8d04aef32",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

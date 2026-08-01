@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "reason": "Apply project-authored editorial corrections without weakening shared gates: keep verified source assets at the global two-use limit, match physical narration with approved footage, bind replacements to canonical manifest paths, and replace the redundant CLM_018 JAMSTEC diagrams with an unused official test-result capture.",
+  "action_overrides": [
+    {
+      "baseline_shot_index": 39,
+      "expected_decision": "replace_primary_evidence",
+      "action": {
+        "decision": "remove",
+        "projected_medium": "contextual_footage",
+        "replacement_strategy": "extend_adjacent_footage",
+        "rationale": "Continue the approved abyssal-seabed footage through the nodule-formation sentence; retain the UNCLOS page only for the two legal propositions it directly proves."
+      }
+    },
+    {
+      "baseline_shot_index": 58,
+      "expected_decision": "replace_primary_evidence",
+      "action": {
+        "decision": "replace_primary_evidence",
+        "projected_medium": "primary_evidence",
+        "asset_request_id": "REQ_EVD_US_EO_NOAA",
+        "replacement_assets": [
+          {
+            "asset_path": "assets/evidence/noaa_dshmra_final_rule_page1.png",
+            "evidence_asset_id": "EVID_NOAA_2026_FINAL_RULE_OFFICIAL_PAGE",
+            "source_region": "Federal Register page 2642 title — exploration-license and commercial-recovery-permit applications"
+          }
+        ],
+        "rationale": "Use the canonical NOAA/Federal Register page path recorded in the primary-evidence manifest; the rule title distinguishes applications from issued commercial recovery permits without asserting a permit count."
+      }
+    },
+    {
+      "baseline_shot_index": 123,
+      "expected_decision": "replace_primary_evidence",
+      "action": {
+        "decision": "replace_primary_evidence",
+        "projected_medium": "primary_evidence",
+        "asset_request_id": "REQ_EVD_JAMSTEC_OPTIONALITY",
+        "replacement_assets": [
+          {
+            "asset_path": "assets/evidence/jamstec_seafloor_hole.jpg",
+            "evidence_asset_id": "EVID_JAMSTEC_SEAFLOOR_HOLE",
+            "source_region": "Official JAMSTEC image 08 — borehole remaining after removal of the mining machine"
+          }
+        ],
+        "rationale": "Show a directly observed physical result of the 2026 test as evidence of demonstrated technical capability. The narration and source framing preserve the key boundary: a completed engineering milestone does not create a 2027 or commercial obligation."
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orvyq.dev/schemas/footage_visual_decisions.schema.json",
+  "title": "ORVYQ byte-bound footage visual decisions",
+  "type": "object",
+  "required": ["schema_version", "project_id", "review_basis", "decisions"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project_id": { "type": "string", "pattern": "^[0-9]{3}-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "review_origin": {
+      "enum": ["system_visual_qa", "legacy_system_visual_qa", "human_exception_review"],
+      "description": "The ORVYQ system owns normal asset-level semantic review. Human review is reserved for explicit exception handling, not routine footage approval."
+    },
+    "review_basis": { "type": "string", "minLength": 24 },
+    "decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "scene_id",
+          "provider_asset_id",
+          "asset_sha256",
+          "contact_sheet_sha256",
+          "decision",
+          "reason"
+        ],
+        "properties": {
+          "scene_id": { "type": "string", "pattern": "^scene_[0-9]{3}$" },
+          "provider_asset_id": { "type": "string", "minLength": 1 },
+          "asset_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "contact_sheet_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "decision": { "enum": ["approve", "reject"] },
+          "reason": { "type": "string", "minLength": 24 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

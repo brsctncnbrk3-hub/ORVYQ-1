@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "research_question": "How is the effort to escape critical-mineral supply chokepoints turning the deep ocean into a geopolitical and legal frontier before ecological risk and commercial viability are settled?",
+  "working_thesis": "Deep-sea mining is accelerating because governments and companies want strategic control over mineral supply chains. Japan's rare-earth-mud programme, the United States' national permitting route and the unresolved ISA mining code show technology and security policy moving faster than shared governance and ecological certainty.",
+  "required_primary_sources": [
+    "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026",
+    "SRC_IEA_CRITICAL_MINERALS_2026",
+    "SRC_IEA_RARE_EARTHS_2026",
+    "SRC_ISA_COUNCIL_JULY_2026",
+    "SRC_UNCLOS_ARTICLES_136_137",
+    "SRC_WHITEHOUSE_EO14285",
+    "SRC_NOAA_DSHMRA_2026",
+    "SRC_SEC_TMC_Q1_2026",
+    "SRC_NATURE_RECOVERY_2025",
+    "SRC_NATURE_PLUME_2025",
+    "SRC_NEE_MACROFAUNA_2026",
+    "SRC_NCOMMS_MIDWATER_2025"
+  ],
+  "claims": [
+    {
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "importance": 5,
+      "claim": "Japan continuously lifted rare-earth mud from three layers at a pipe depth of 5,569 metres during its 2026 Minamitorishima test.",
+      "status": "verified",
+      "source_ids": ["SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"],
+      "limitations": ["Technical success is not proof of commercial viability or reserve scale."]
+    },
+    {
+      "claim_id": "CLM_002_JAPAN_INDUSTRIAL_TIMELINE",
+      "importance": 5,
+      "claim": "Japan plans a roughly one-month integrated mining-to-processing trial beginning in February 2027 and an industrial/economic assessment by March 2028.",
+      "status": "verified",
+      "source_ids": ["SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026", "SRC_METI_MINAMITORISHIMA_2026"],
+      "limitations": ["Future schedule; may change."]
+    },
+    {
+      "claim_id": "CLM_003_HEAVY_RARE_EARTH_VALUE",
+      "importance": 4,
+      "claim": "Limited test samples were reported to contain a high share of medium and heavy rare earths, strengthening the project's strategic relevance.",
+      "status": "attributed_commentary",
+      "source_ids": ["SRC_REUTERS_JAPAN_COMPOSITION_2026"],
+      "limitations": ["Keep the 54% figure attributed to Reuters and state that deposit amount and extent were not disclosed."]
+    },
+    {
+      "claim_id": "CLM_004_CHINA_RARE_EARTH_CHOKEPOINT",
+      "importance": 5,
+      "claim": "China's dominance is greatest not only in mining but in rare-earth refining and magnet manufacturing.",
+      "status": "verified",
+      "source_ids": ["SRC_IEA_RARE_EARTHS_2026"],
+      "limitations": ["Use magnet-rare-earth scope and 2024 dates explicitly."]
+    },
+    {
+      "claim_id": "CLM_005_EXPORT_CONTROLS_MATERIALIZED_RISK",
+      "importance": 5,
+      "claim": "Chinese export controls in 2025 turned supply concentration into factory-level disruption outside China.",
+      "status": "verified",
+      "source_ids": ["SRC_IEA_RARE_EARTHS_2026", "SRC_IEA_CRITICAL_MINERALS_2026"],
+      "limitations": ["Do not imply permanent total cutoff."]
+    },
+    {
+      "claim_id": "CLM_006_SCARCITY_IS_MINERAL_SPECIFIC",
+      "importance": 5,
+      "claim": "The case for seabed minerals cannot be reduced to 'the green transition needs them': cobalt demand growth has moderated with LFP batteries, while rare-earth and processing chokepoints remain strategically acute.",
+      "status": "verified",
+      "source_ids": ["SRC_IEA_CRITICAL_MINERALS_2026", "SRC_IEA_RARE_EARTHS_2026"],
+      "limitations": ["Scenario-based; avoid claiming any mineral is unnecessary."]
+    },
+    {
+      "claim_id": "CLM_007_MINING_CODE_UNFINISHED",
+      "importance": 5,
+      "claim": "As of the end of the ISA Council's July 2026 meetings, commercial exploitation rules remained unfinished and moved into a roadmap and further intersessional work.",
+      "status": "verified_current",
+      "source_ids": ["SRC_ISA_COUNCIL_JULY_2026"],
+      "limitations": ["Recheck immediately before script lock because negotiations continue."]
+    },
+    {
+      "claim_id": "CLM_008_COMMON_HERITAGE_PRINCIPLE",
+      "importance": 5,
+      "claim": "UNCLOS defines the seabed beyond national jurisdiction and its resources as the common heritage of mankind.",
+      "status": "verified",
+      "source_ids": ["SRC_UNCLOS_ARTICLES_136_137"],
+      "limitations": ["Legal implications of U.S. action are disputed and must be attributed."]
+    },
+    {
+      "claim_id": "CLM_009_US_PARALLEL_ROUTE",
+      "importance": 5,
+      "claim": "The United States is pursuing a national DSHMRA permitting route for parts of the international seabed while not being a party to UNCLOS.",
+      "status": "verified",
+      "source_ids": ["SRC_WHITEHOUSE_EO14285", "SRC_NOAA_DSHMRA_2026"],
+      "limitations": ["Do not state that a commercial permit has already been issued."]
+    },
+    {
+      "claim_id": "CLM_010_TMC_NOT_APPROVED",
+      "importance": 5,
+      "claim": "NOAA's compliance determination for TMC's application was a procedural milestone, not approval of a licence or commercial recovery permit.",
+      "status": "verified",
+      "source_ids": ["SRC_SEC_TMC_Q1_2026", "SRC_NOAA_DSHMRA_2026"],
+      "limitations": ["Status may change; recheck before narration lock."]
+    },
+    {
+      "claim_id": "CLM_011_LONG_TERM_TRACK_PERSISTENCE",
+      "importance": 5,
+      "claim": "Physical disturbance and altered communities remained visible 44 years after a small 1979 collector test, although some organisms recolonized.",
+      "status": "verified",
+      "source_ids": ["SRC_NATURE_RECOVERY_2025"],
+      "limitations": ["Historical small test and older machinery; not a direct commercial-scale forecast."]
+    },
+    {
+      "claim_id": "CLM_012_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "importance": 5,
+      "claim": "Two months after a 2022 industrial-scale trial, density and species richness were lower inside mining tracks and plume-affected communities showed altered dominance relationships.",
+      "status": "verified",
+      "source_ids": ["SRC_NEE_MACROFAUNA_2026"],
+      "limitations": ["Short follow-up; distinguish track effects from plume-area findings."]
+    },
+    {
+      "claim_id": "CLM_013_PLUME_SCALE_IS_COMPLEX",
+      "importance": 4,
+      "claim": "A monitored collector plume travelled kilometres but was strongest close to the seabed and declined sharply with distance, height and time.",
+      "status": "verified",
+      "source_ids": ["SRC_NATURE_PLUME_2025"],
+      "limitations": ["Do not simplify this into either 'plumes stay local' or 'plumes poison the whole ocean.'"]
+    },
+    {
+      "claim_id": "CLM_014_MIDWATER_DISCHARGE_RISK",
+      "importance": 4,
+      "claim": "Proposed discharge particles could disrupt midwater food webs by diluting nutritious natural particles.",
+      "status": "verified_with_modelled_inference",
+      "source_ids": ["SRC_NCOMMS_MIDWATER_2025"],
+      "limitations": ["Potential mechanism, not observed commercial-scale collapse."]
+    },
+    {
+      "claim_id": "CLM_015_INDUSTRY_COUNTERARGUMENT",
+      "importance": 4,
+      "claim": "Proponents argue nodules can avoid some land disturbance, tailings and selected lifecycle impacts associated with terrestrial ores.",
+      "status": "attributed_commentary",
+      "source_ids": ["SRC_TMC_LIFECYCLE_POSITION"],
+      "limitations": ["Corporate/commissioned evidence; lifecycle categories do not settle deep-sea biodiversity loss."]
+    }
+  ],
+  "research_gaps": [
+    "Final outcome of the ISA Assembly and any post-July 2026 Council decisions",
+    "Full publicly releasable TMC USA A application and EIS schedule",
+    "Independent economic model for Minamitorishima rare-earth mud",
+    "Processing location, waste stream and energy intensity for Japan's 2027 trial",
+    "Commercial-scale cumulative plume and noise impacts across multiple collector vehicles",
+    "How benefit-sharing would work for developing states under a future ISA code",
+    "Whether changing battery chemistry materially weakens the business case for CCZ nodules by the planned production date"
+  ],
+  "status": "research_complete"
+}

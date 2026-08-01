@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "project_id": "001-the-ai-race-no-one-can-afford-to-win",
+  "status": "ready",
+  "artist": "Scott Buckley",
+  "license_name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_template": "'{title}' by Scott Buckley — released under CC-BY 4.0. www.scottbuckley.com.au",
+  "tracks": [
+    {
+      "cue_id": "CUE_01_RACE_PARADOX",
+      "track_id": "sb_intervention_nomelody",
+      "title": "Intervention (No Piano Melody)",
+      "source_page_url": "https://www.scottbuckley.com.au/library/intervention/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/01/sb_intervention_nomelody.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_02_CONTROLLED_EVIDENCE",
+      "track_id": "sb_signal_to_noise_nomelody",
+      "title": "Signal to Noise (No Piano Melody)",
+      "source_page_url": "https://www.scottbuckley.com.au/library/signal-to-noise/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/04/sb_signaltonoise_nomelody.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_03_INCENTIVE_RACE",
+      "track_id": "sb_catalyst",
+      "title": "Catalyst",
+      "source_page_url": "https://www.scottbuckley.com.au/library/catalyst/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/06/sb_catalyst.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_04_REAL_WORLD_MISUSE",
+      "track_id": "sb_emergent",
+      "title": "Emergent",
+      "source_page_url": "https://www.scottbuckley.com.au/library/emergent/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/11/sb_emergent.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_05_WORK_CONCENTRATION",
+      "track_id": "sb_undertow",
+      "title": "Undertow",
+      "source_page_url": "https://www.scottbuckley.com.au/library/undertow/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/12/sb_undertow.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_06_REGULATION_PARADOX",
+      "track_id": "sb_signal_to_noise",
+      "title": "Signal to Noise",
+      "source_page_url": "https://www.scottbuckley.com.au/library/signal-to-noise/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/04/sb_signaltonoise.mp3",
+      "approved_for_proof": true,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_07_OPEN_CLOSED",
+      "track_id": "sb_ephemera",
+      "title": "Ephemera",
+      "source_page_url": "https://www.scottbuckley.com.au/library/ephemera/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/03/sb_ephemera.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_08_SAFETY_ARCHITECTURE",
+      "track_id": "sb_horizons",
+      "title": "Horizons",
+      "source_page_url": "https://www.scottbuckley.com.au/library/horizons/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/02/sb_horizons.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    },
+    {
+      "cue_id": "CUE_09_FINAL_PARADOX",
+      "track_id": "sb_solace",
+      "title": "Solace",
+      "source_page_url": "https://www.scottbuckley.com.au/library/solace/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2020/05/sb_solace.mp3",
+      "approved_for_proof": false,
+      "approved_for_full": true
+    }
+  ]
+}

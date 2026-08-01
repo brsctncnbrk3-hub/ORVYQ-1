@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "evidence_kind_overrides": {
+    "CLM_001_JAPAN_TECHNICAL_MILESTONE": {
+      "kind": "official_figure",
+      "evidence_asset_ids": [
+        "EVID_JAMSTEC_FIRST_MUD_SAMPLE",
+        "EVID_JAMSTEC_MINING_SYSTEM_DIAGRAM",
+        "EVID_JAMSTEC_MINING_MACHINE",
+        "EVID_JAMSTEC_MACHINE_ON_SEAFLOOR"
+      ],
+      "image_assets": [
+        "assets/evidence/jamstec_first_mud_sample.jpg",
+        "assets/evidence/jamstec_mining_system_diagram.png",
+        "assets/evidence/jamstec_mining_machine.jpg",
+        "assets/evidence/jamstec_machine_on_seafloor.jpg"
+      ],
+      "distinct_image_per_occurrence": true,
+      "editorial_rationale": "Open the post-hook evidence body with two official JAMSTEC captures together, satisfying the project profile's explicit two-asset official-figure requirement. Later native evidence slices rotate one real image at a time, starting after the opening pair and wrapping only when needed, so each source remains within the two-use cap while the film still moves from recovered material to system architecture and seabed hardware.",
+      "first_occurrence_asset_count": 2
+    },
+    "CLM_004_JAPAN_INDUSTRIAL_TIMELINE": {
+      "kind": "official_figure",
+      "evidence_asset_ids": [
+        "EVID_JAMSTEC_2027_TRIAL_DIAGRAM",
+        "EVID_JAMSTEC_CHIKYU_DEPARTURE",
+        "EVID_JAMSTEC_SEAFLOOR_HOLE"
+      ],
+      "image_assets": [
+        "assets/evidence/jamstec_2027_trial_diagram.png",
+        "assets/evidence/jamstec_chikyu_departure.jpg",
+        "assets/evidence/jamstec_seafloor_hole.jpg"
+      ],
+      "distinct_image_per_occurrence": true,
+      "editorial_rationale": "Use three distinct official JAMSTEC captures across this claim's three native evidence slices: the planned 2027 integrated-trial diagram for the forward schedule, Chikyu departing for the 2026 operation for expedition context, and the borehole remaining after machine removal for the completed physical milestone. Each occurrence now has a different reader-facing fact and each source remains within the global two-use ceiling; no duplicate crop or decorative reconstruction is introduced."
+    },
+    "CLM_006_MINING_CODE_UNFINISHED": {
+      "kind": "split_documents",
+      "evidence_asset_ids": [
+        "EVID_ISA_REV3_COVER",
+        "EVID_ISA_OUTSTANDING_ISSUES_COVER"
+      ],
+      "image_assets": [
+        "assets/evidence/isa_exploitation_regulations_rev3_cover.png",
+        "assets/evidence/isa_outstanding_issues_cover.png"
+      ],
+      "distinct_image_per_occurrence": true,
+      "editorial_rationale": "This claim's real narration needs 2 native evidence slices, each showing a different one of the 2 declared documents in sequence -- the revised regulations text first, then the dated outstanding-issues document -- rather than both slices duplicating the same pair, which scripts/orvyq_semantic_visual_audit.mjs correctly rejects as an identical-evidence repeat."
+    }
+  }
+}

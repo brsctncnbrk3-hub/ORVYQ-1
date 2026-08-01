@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orvyq.dev/schemas/frozen_candidate.schema.json",
+  "title": "Frozen Candidate",
+  "description": "Per the task's canonical freeze model (section 10, hardened per the follow-up task's section 10): a snapshot of exactly what would render. `canonical_candidate_identity` contains only deterministic fields -- rebuilding a candidate from the same inputs must reproduce the exact same candidate_hash/render_bundle_hash. Volatile fields (created_at, the approval_version label) live in `operational_metadata`, outside the hash. Approval references a frozen_candidate by candidate_hash + render_bundle_hash (schemas/proof_approval.schema.json); any changed hash invalidates the approval.",
+  "type": "object",
+  "required": ["project_id", "canonical_candidate_identity", "candidate_hash", "render_bundle_hash", "operational_metadata"],
+  "properties": {
+    "project_id": { "type": "string" },
+    "candidate_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "render_bundle_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "asset_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "bytes", "role"],
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "role": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "canonical_candidate_identity": {
+      "type": "object",
+      "description": "Deterministic identity fields only. No timestamps, run IDs, artifact URLs, log paths, or runner-specific paths belong here.",
+      "required": [
+        "project_id", "source_commit_sha", "renderer_version", "timeline_hash", "edit_plan_hash",
+        "caption_hash", "audio_mix_metadata_hash", "asset_registry_hash", "render_bundle_hash",
+        "fps", "total_frames", "selected_render_range", "mode"
+      ],
+      "properties": {
+        "project_id": { "type": "string" },
+        "source_commit_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "renderer_version": { "type": "string" },
+        "timeline_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "edit_plan_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "caption_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "audio_mix_metadata_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "asset_registry_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "render_bundle_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "approval_version": { "type": "string", "description": "Deprecated location -- moved to operational_metadata.approval_version. Accepted here only on historical candidates." },
+        "renderer_commit_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "narration_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "pause_map_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "script_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "final_mix_audio_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "music_bed_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "remotion_scene_config_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "remotion_asset_map_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "renderer_package_lock_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "renderer_source_tree_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "asset_manifest_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "render_ready_source_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "selected_render_range": {
+          "type": "object",
+          "required": ["start_frame", "end_frame"],
+          "properties": {
+            "start_frame": { "type": "integer", "minimum": 0 },
+            "end_frame": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": false
+        },
+        "fps": { "type": "integer", "minimum": 1 },
+        "total_frames": { "type": "integer", "minimum": 1 },
+        "mode": { "enum": ["candidate", "proof", "full"], "description": "\"candidate\" is the live value going forward. \"proof\"/\"full\" are accepted only for historical/regression frozen candidates produced before this hardening." }
+      },
+      "additionalProperties": false
+    },
+    "operational_metadata": {
+      "type": "object",
+      "description": "Volatile, non-identity fields. Never part of candidate_hash/render_bundle_hash.",
+      "required": ["created_at"],
+      "properties": {
+        "created_at": { "type": "string", "format": "date-time" },
+        "approval_version": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

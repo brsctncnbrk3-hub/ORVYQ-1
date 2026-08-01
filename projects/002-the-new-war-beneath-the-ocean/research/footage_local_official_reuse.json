@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "policy": "Reuse only repository-owned, provenance-verified official footage. Preserve source identity, create a target-scene derivative identity, require fresh byte-bound system visual QA, and keep each visual content identity at no more than two non-contiguous uses.",
+  "reuses": [
+    {
+      "target_scene_id": "scene_003",
+      "source_scene_id": "scene_013",
+      "source_asset_path": "assets/footage/scene_013_direct.mp4",
+      "source_contact_sheet_path": "qa/footage-contact-sheets/scene_013.jpg",
+      "editorial_note": "Verified deep-sea biodiversity footage supplies dark deep-ocean physical context only; maps and evidence retain all location and nodule claims."
+    },
+    {
+      "target_scene_id": "scene_004",
+      "source_scene_id": "scene_001",
+      "source_asset_path": "assets/footage/scene_001_direct.mp4",
+      "source_contact_sheet_path": "qa/footage-contact-sheets/scene_001.jpg",
+      "editorial_note": "Verified scientists deploying an ROV from a research vessel provide real marine field-operation scale without claiming the depicted vessel is Chikyu."
+    },
+    {
+      "target_scene_id": "scene_012",
+      "source_scene_id": "scene_051",
+      "source_asset_path": "assets/footage/scene_051_direct.mp4",
+      "source_contact_sheet_path": "qa/footage-contact-sheets/scene_051.jpg",
+      "editorial_note": "Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim."
+    },
+    {
+      "target_scene_id": "scene_024",
+      "source_scene_id": "scene_054",
+      "source_asset_path": "assets/footage/scene_054_direct.mp4",
+      "source_contact_sheet_path": "qa/footage-contact-sheets/scene_054.jpg",
+      "editorial_note": "Official expedition field-assessment operations provide real survey and decision context without identifying the vessel as Chikyu or a commercial mining ship."
+    },
+    {
+      "target_scene_id": "scene_032",
+      "source_scene_id": "scene_053",
+      "source_asset_path": "assets/footage/scene_053_direct.mp4",
+      "source_contact_sheet_path": "qa/footage-contact-sheets/scene_053.jpg",
+      "editorial_note": "Official NOAA water-column footage supplies real ocean depth and darkness for the closing physical metaphor; it introduces no new location or quantitative claim."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "received_at": "2026-07-27T00:52:00+03:00",
+  "source_filename": "final_voice.mp3",
+  "target_path": "projects/002-the-new-war-beneath-the-ocean/assets/audio/final_voice.mp3",
+  "sha256": "b36a918a7b3275407d51363b31c5de4375052b916a62932f6006848d5a9ee659",
+  "size_bytes": 23882852,
+  "duration_seconds": 995.082449,
+  "duration_hms": "00:16:35.082",
+  "format": "mp3",
+  "codec": "mp3",
+  "sample_rate_hz": 44100,
+  "channels": 1,
+  "channel_layout": "mono",
+  "bit_rate_bps": 192000,
+  "integrated_loudness_lufs": -22.9,
+  "loudness_range_lu": 4.3,
+  "true_peak_dbfs": -2.9,
+  "script_word_count": 2216,
+  "estimated_speaking_rate_wpm": 133.62,
+  "technical_qa": {
+    "decodable": true,
+    "clipping_detected": false,
+    "format_matches_handoff": true,
+    "pass": true
+  },
+  "repository_materialisation": {
+    "status": "pending_binary_transfer",
+    "reason": "The connected GitHub contents interface can write UTF-8 repository files but cannot transfer the uploaded 23.9 MB binary directly. The original-quality audio must not be re-encoded or replaced.",
+    "required_sha256": "b36a918a7b3275407d51363b31c5de4375052b916a62932f6006848d5a9ee659"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "stable_asset_id": "2a0ac9ebcd7643a0e5f76a32",
+  "scene_id": "scene_006",
+  "provider": "pexels",
+  "provider_asset_id": "32386518",
+  "source_page_url": "https://www.pexels.com/video/industrial-robotics-in-action-in-modern-facility-32386518/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Usman AbdulrasheedGambo",
+  "attribution_required": false,
+  "search_query": "industrial robotics factory assembly",
+  "editorial_role": "context",
+  "editorial_note": "Connect rare-earth magnets to physical technology.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "motor",
+        "robot",
+        "robotic",
+        "automation",
+        "automated",
+        "precision",
+        "machinery",
+        "engine",
+        "electric"
+      ],
+      [
+        "factory",
+        "manufacturing",
+        "assembly",
+        "production",
+        "industrial",
+        "line"
+      ]
+    ],
+    "forbidden_terms": [
+      "motorcycle",
+      "bicycle",
+      "repair",
+      "toy",
+      "grinding",
+      "welding-only"
+    ]
+  },
+  "duration": 12,
+  "actual_duration_seconds": 12,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 7018878,
+  "sha256": "1a1de746e2a767b2d589ea268312ccfa1f6133f9af4b6ab4232a5a6b47e0cd93",
+  "actual_sha256": "1a1de746e2a767b2d589ea268312ccfa1f6133f9af4b6ab4232a5a6b47e0cd93",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "13814735",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:52:00.562Z",
+  "reviewed_asset_sha256": "1a1de746e2a767b2d589ea268312ccfa1f6133f9af4b6ab4232a5a6b47e0cd93",
+  "reviewed_contact_sheet_sha256": "55cee1e1561718a7d70735ea554b0b4d6785dfca65ce7cb84ca61486bb068ba7",
+  "human_review_reason": "The reviewed frames clearly show industrial robotics, directly supporting the narration's physical end-use example without carrying any quantitative claim."
+}

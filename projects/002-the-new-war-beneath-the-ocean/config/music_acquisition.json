@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "status": "needs_music_selection",
+  "artist": null,
+  "license_name": null,
+  "license_url": null,
+  "attribution_template": null,
+  "tracks": [],
+  "creative_direction": {
+    "opening": "sub-bass pressure, distant mechanical pulse, sparse sonar-like texture",
+    "middle": "restrained geopolitical tension with slow percussive escalation",
+    "ending": "wide unresolved ambience; no triumphant resolution",
+    "rule": "Music must remain audible under narration and carry editorial pauses without becoming trailer-like."
+  }
+}

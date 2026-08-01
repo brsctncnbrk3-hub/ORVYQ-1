@@ -1,0 +1,847 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "status": "materialized",
+  "purpose": "Exclusive-medium rebalance of every baseline graphic/card moment. No replacement may be materialized until its request passes provenance and semantic review.",
+  "baseline": {
+    "shot_count": 150,
+    "duration_frames": 31128,
+    "duration_seconds": 1037.6,
+    "contextual_footage_seconds": 592.2666666666667,
+    "contextual_footage_fraction": 0.5708044204574659,
+    "primary_evidence_seconds": 59.36666666666667,
+    "primary_evidence_fraction": 0.0572153687997944,
+    "graphic_card_seconds": 385.96666666666664,
+    "graphic_card_fraction": 0.3719802107427397,
+    "full_screen_text_card_seconds": 59.5,
+    "full_screen_text_card_fraction": 0.05734387047031612
+  },
+  "projected": {
+    "duration_frames": 31128,
+    "duration_seconds": 1037.6,
+    "contextual_footage_seconds": 633.5333333333333,
+    "contextual_footage_fraction": 0.6105756874839373,
+    "primary_evidence_seconds": 271.76666666666665,
+    "primary_evidence_fraction": 0.2619185299408892,
+    "graphic_card_seconds": 132.3,
+    "graphic_card_fraction": 0.12750578257517348,
+    "full_screen_text_card_seconds": 25,
+    "full_screen_text_card_fraction": 0.024094063222821895,
+    "maximum_consecutive_graphic_card_shots": 1
+  },
+  "actions": [
+    {
+      "baseline_shot_index": 6,
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "duration_seconds": 2,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": true,
+      "template_id": "orvyq_section_sting",
+      "rationale": "Keep one compact opening section sting; remove the presentation-style box treatment."
+    },
+    {
+      "baseline_shot_index": 11,
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "duration_seconds": 4,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_emphasis_lower",
+      "rationale": "Retain the authored pause as a restrained overlay on the underlying research context."
+    },
+    {
+      "baseline_shot_index": 15,
+      "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+      "duration_seconds": 2.5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_source_bridge",
+      "rationale": "Use a brief source bridge before the verified IEA capture; no document-lookalike card."
+    },
+    {
+      "baseline_shot_index": 17,
+      "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+      "duration_seconds": 6.266666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IEA_MAGNET_SHARE",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iea_magnet_share_page31.png",
+          "evidence_asset_id": "EVID_IEA_MAGNET_SHARE_OFFICIAL_PAGE",
+          "source_region": "Page 31 — mining and refining shares"
+        }
+      ],
+      "rationale": "The concentration claim needs the official IEA chart and highlighted data, not a recreated concept map."
+    },
+    {
+      "baseline_shot_index": 19,
+      "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+      "duration_seconds": 7.966666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IEA_MAGNET_SHARE",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iea_magnet_share_page31.png",
+          "evidence_asset_id": "EVID_IEA_MAGNET_SHARE_OFFICIAL_PAGE",
+          "source_region": "Page 31 — magnet-manufacturing share"
+        }
+      ],
+      "rationale": "Continue through a different, substantively distinct region of the official chart; crop reuse does not count as new evidence."
+    },
+    {
+      "baseline_shot_index": 21,
+      "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+      "duration_seconds": 7.966666666666667,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_single_comparison",
+      "rationale": "Retain one concise comparison only because the multi-stage chokepoint is faster to understand as a direct comparison."
+    },
+    {
+      "baseline_shot_index": 23,
+      "claim_id": "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK",
+      "duration_seconds": 7.966666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IEA_EXPORT_TIMELINE",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iea_export_timeline_page35.png",
+          "evidence_asset_id": "EVID_IEA_EXPORT_TIMELINE_OFFICIAL_PAGE",
+          "source_region": "Page 35 — export volumes and restriction dates"
+        }
+      ],
+      "rationale": "Show the official chronology and highlighted policy dates instead of a generic source card."
+    },
+    {
+      "baseline_shot_index": 28,
+      "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+      "duration_seconds": 2,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_emphasis_center",
+      "rationale": "Keep the pause line as a minimal overlay on industrial footage."
+    },
+    {
+      "baseline_shot_index": 29,
+      "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+      "duration_seconds": 7.7,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_JAMSTEC_SCHEDULE",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/jamstec_2027_trial_diagram.png",
+          "evidence_asset_id": "EVID_JAMSTEC_2027_TRIAL_DIAGRAM",
+          "source_region": "Official 2027 integrated-trial diagram"
+        }
+      ],
+      "rationale": "Replace the recap card with the dated JAMSTEC schedule/milestone material and highlight planned versus completed stages."
+    },
+    {
+      "baseline_shot_index": 35,
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "duration_seconds": 2.5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_source_bridge_alt",
+      "rationale": "Use a short bridge into the treaty text, avoiding a static section-card run."
+    },
+    {
+      "baseline_shot_index": 37,
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "duration_seconds": 6.933333333333334,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_UNCLOS_ARTICLES",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/unclos_articles_136_137_page51.png",
+          "evidence_asset_id": "EVID_UNCLOS_ARTICLES_136_137_OFFICIAL_PAGE",
+          "source_region": "UNTS PDF page 51 — Article 136"
+        }
+      ],
+      "rationale": "Show the official treaty page with Article 136 highlighted."
+    },
+    {
+      "baseline_shot_index": 39,
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "duration_seconds": 7.366666666666666,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_UNCLOS_ARTICLES",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/unclos_articles_136_137_page51.png",
+          "evidence_asset_id": "EVID_UNCLOS_ARTICLES_136_137_OFFICIAL_PAGE",
+          "source_region": "UNTS PDF page 51 — Article 137"
+        }
+      ],
+      "rationale": "Move to the exact Article 137 ownership language; this is a distinct cited region, not cosmetic recropping."
+    },
+    {
+      "baseline_shot_index": 41,
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "duration_seconds": 7.833333333333333,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_UNCLOS_ARTICLES",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/unclos_articles_136_137_page51.png",
+          "evidence_asset_id": "EVID_UNCLOS_ARTICLES_136_137_OFFICIAL_PAGE",
+          "source_region": "UNTS PDF page 51 — Authority acts on behalf of mankind"
+        }
+      ],
+      "rationale": "Use the official Area map/treaty context with institution, date, and provenance visible."
+    },
+    {
+      "baseline_shot_index": 43,
+      "claim_id": "CLM_006_MINING_CODE_UNFINISHED",
+      "duration_seconds": 2.5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_source_bridge",
+      "rationale": "A compact source bridge prevents the legal evidence sequence from becoming a document slideshow."
+    },
+    {
+      "baseline_shot_index": 48,
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "duration_seconds": 7.433333333333334,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_US_EO_NOAA",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/us_eo_14285_page1.png",
+          "evidence_asset_id": "EVID_US_EO14285_OFFICIAL_PAGE",
+          "source_region": "Federal Register page 17735 — policy and date"
+        }
+      ],
+      "rationale": "Use the signed Executive Order page and date as direct evidence."
+    },
+    {
+      "baseline_shot_index": 50,
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "duration_seconds": 6,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_US_EO_NOAA",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/noaa_dshmra_final_rule_page1.png",
+          "evidence_asset_id": "EVID_NOAA_2026_FINAL_RULE_OFFICIAL_PAGE",
+          "source_region": "Federal Register page 2642 — consolidated application process"
+        }
+      ],
+      "rationale": "Show the official NOAA regulatory route/status page rather than a comparison template."
+    },
+    {
+      "baseline_shot_index": 53,
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "duration_seconds": 7.8,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_two_rule_comparison",
+      "rationale": "Keep one direct two-route comparison because the legal relationship is otherwise hard to hold in working memory."
+    },
+    {
+      "baseline_shot_index": 55,
+      "claim_id": "CLM_008_NO_US_COMMERCIAL_PERMIT",
+      "duration_seconds": 7.333333333333333,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_source_status",
+      "rationale": "Present NOAA's current N/A commercial-permit status as a clearly sourced status graphic; do not misclassify an HTML-derived summary as a captured primary document."
+    },
+    {
+      "baseline_shot_index": 57,
+      "claim_id": "CLM_008_NO_US_COMMERCIAL_PERMIT",
+      "duration_seconds": 7.266666666666667,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_source_status_alt",
+      "rationale": "Distinguish listed exploration applications from issued commercial recovery permits in a second restrained sourced status view."
+    },
+    {
+      "baseline_shot_index": 58,
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "duration_seconds": 2.5,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_US_EO_NOAA",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/noaa_final_rule_page1.png",
+          "evidence_asset_id": "EVID_NOAA_2026_FINAL_RULE_OFFICIAL_PAGE",
+          "source_region": "Page 1 title — applications for exploration licences and commercial recovery permits"
+        }
+      ],
+      "rationale": "Use the official rule title to make the application-versus-permit distinction visible; do not imply that the rule itself proves the current count of issued permits."
+    },
+    {
+      "baseline_shot_index": 60,
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "duration_seconds": 7.433333333333334,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_TMC_LIFECYCLE",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/tmc_lca_limitations_page3.png",
+          "evidence_asset_id": "EVID_TMC_LCA_LIMITATION_OFFICIAL_PAGE",
+          "source_region": "Page 3 — commissioned scope and ecosystem limitation"
+        }
+      ],
+      "rationale": "Use the attributed lifecycle page as an industry claim, visibly labeled as such."
+    },
+    {
+      "baseline_shot_index": 63,
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "duration_seconds": 5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_emphasis_lower",
+      "rationale": "Retain the authored pause as an overlay, not a new full-screen card."
+    },
+    {
+      "baseline_shot_index": 64,
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "duration_seconds": 7.466666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_TMC_LIFECYCLE",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/tmc_lca_system_boundary_page5.png",
+          "evidence_asset_id": "EVID_TMC_LCA_SYSTEM_BOUNDARY_OFFICIAL_PAGE",
+          "source_region": "Page 5 — offshore and onshore system boundary"
+        }
+      ],
+      "rationale": "Highlight the exact seafloor-versus-land comparison within the source, preserving its interested-party attribution."
+    },
+    {
+      "baseline_shot_index": 66,
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "duration_seconds": 7.4,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_LAND_MINING_TRADEOFF",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_017_3be5f14070d93db018c32640.mp4",
+          "trim_in_sec": 0.5,
+          "trim_out_sec": 7.9
+        }
+      ],
+      "rationale": "Use the reviewed terrestrial quarry exactly as narration pivots from mineral demand to the physical costs of land-based extraction."
+    },
+    {
+      "baseline_shot_index": 68,
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "duration_seconds": 7.666666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_DEEPSEA_MACHINE",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/jamstec_mining_machine.jpg",
+          "evidence_asset_id": "EVID_JAMSTEC_MINING_MACHINE",
+          "source_region": "Official JAMSTEC mining-machine photograph — real engineering context, not TMC attribution"
+        }
+      ],
+      "rationale": "Replace the redundant company lifecycle card with a clearly labelled official photograph of real deep-sea mining equipment; do not imply that the JAMSTEC machine is TMC hardware."
+    },
+    {
+      "baseline_shot_index": 70,
+      "claim_id": "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
+      "duration_seconds": 7.9,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IEA_MINERAL_CHEMISTRY",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iea_battery_chemistry_page5.png",
+          "evidence_asset_id": "EVID_IEA_BATTERY_CHEMISTRY_OFFICIAL_PAGE",
+          "source_region": "Page 5 — LFP omits nickel and cobalt"
+        }
+      ],
+      "rationale": "Use the official chemistry/mineral-demand table for the mineral-specific claim."
+    },
+    {
+      "baseline_shot_index": 71,
+      "claim_id": "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
+      "duration_seconds": 7.9,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": true,
+      "template_id": "orvyq_single_comparison",
+      "rationale": "Keep one critical memory card: a short, legible mineral-chemistry contrast."
+    },
+    {
+      "baseline_shot_index": 72,
+      "claim_id": "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
+      "duration_seconds": 7.9,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IEA_MINERAL_CHEMISTRY",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iea_battery_chemistry_page5.png",
+          "evidence_asset_id": "EVID_IEA_BATTERY_CHEMISTRY_OFFICIAL_PAGE",
+          "source_region": "Page 5 — chemistry trade-off and recycling context"
+        }
+      ],
+      "rationale": "Return to the official table and a different substantive row for verification."
+    },
+    {
+      "baseline_shot_index": 74,
+      "claim_id": "CLM_011_REFINING_BOTTLENECK",
+      "duration_seconds": 7.833333333333333,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_process_chain",
+      "rationale": "Retain one technical mechanism graphic for extraction-to-refining dependencies that footage cannot display precisely."
+    },
+    {
+      "baseline_shot_index": 76,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 2.5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_source_bridge_alt",
+      "rationale": "Use a minimal bridge into the scientific evidence sequence."
+    },
+    {
+      "baseline_shot_index": 78,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 7.966666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_44_year_track_figure1.png",
+          "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_MAP_FIGURE",
+          "source_region": "Figure 1 — 1979 OMCO track and 2023 study area"
+        }
+      ],
+      "rationale": "Use the paper's real track image/figure with study identity and year."
+    },
+    {
+      "baseline_shot_index": 79,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 7.966666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_44_year_track_figure2.png",
+          "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_PHOTOS_FIGURE",
+          "source_region": "Figure 2 — track photographs observed in 2023"
+        }
+      ],
+      "rationale": "The '44 years' claim belongs on the real figure annotation, not a text recap card."
+    },
+    {
+      "baseline_shot_index": 81,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 2,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_emphasis_center",
+      "rationale": "Keep the short pause line over evidence-related footage."
+    },
+    {
+      "baseline_shot_index": 82,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 7.933333333333334,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_44_year_track_figure3.png",
+          "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_RESPONSE_FIGURE",
+          "source_region": "Figure 3 — track, plume and control responses"
+        }
+      ],
+      "rationale": "Highlight the exact persistent-disturbance region."
+    },
+    {
+      "baseline_shot_index": 84,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 8,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_DEEPSEA_TRACK_ROV",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_051_direct.mp4",
+          "trim_in_sec": 0,
+          "trim_out_sec": 8
+        }
+      ],
+      "rationale": "Break the document sequence with scientifically relevant ROV/track observation footage, never a recreational dive."
+    },
+    {
+      "baseline_shot_index": 85,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 8,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": true,
+      "template_id": "orvyq_single_comparison",
+      "rationale": "Keep the necessary historical-versus-modern equipment caveat as a single premium comparison."
+    },
+    {
+      "baseline_shot_index": 86,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "duration_seconds": 8,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_44_year_track_figure1.png",
+          "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_MAP_FIGURE",
+          "source_region": "Figure 1 — historical vehicle and test-scale context"
+        }
+      ],
+      "rationale": "Return to a distinct methods/limitation region in the paper, not a recrop of the same image."
+    },
+    {
+      "baseline_shot_index": 88,
+      "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "duration_seconds": 7.2,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NATURE_BIODIVERSITY",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_2022_trial_figure1.png",
+          "evidence_asset_id": "EVID_NATURE_2022_TRIAL_MAP_FIGURE",
+          "source_region": "Figure 1 — trial map, sample design and impact photographs"
+        }
+      ],
+      "rationale": "Use the real industrial-trial figure and highlighted sample region."
+    },
+    {
+      "baseline_shot_index": 90,
+      "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "duration_seconds": 4,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_emphasis_lower",
+      "rationale": "Retain the pause conclusion over related research footage."
+    },
+    {
+      "baseline_shot_index": 91,
+      "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "duration_seconds": 6.033333333333333,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NATURE_BIODIVERSITY",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_2022_trial_figure2.png",
+          "evidence_asset_id": "EVID_NATURE_2022_TRIAL_DENSITY_FIGURE",
+          "source_region": "Figure 2 — macrofaunal density"
+        },
+        {
+          "asset_path": "assets/evidence/nature_2022_trial_figure3.png",
+          "evidence_asset_id": "EVID_NATURE_2022_TRIAL_RICHNESS_FIGURE",
+          "source_region": "Figure 3 — species richness"
+        }
+      ],
+      "rationale": "Highlight density and richness values on the actual figure."
+    },
+    {
+      "baseline_shot_index": 92,
+      "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "duration_seconds": 7.8,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_scientific_caveat",
+      "rationale": "Keep one concise recovery caveat that distinguishes measurement from verdict."
+    },
+    {
+      "baseline_shot_index": 95,
+      "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+      "duration_seconds": 7.466666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_PLUME_MEASUREMENTS",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_plume_figure3.png",
+          "evidence_asset_id": "EVID_NATURE_PLUME_SPATIAL_FIGURE",
+          "source_region": "Figure 3 — measured plume distribution"
+        }
+      ],
+      "rationale": "Use the paper's real plume map/measurement plot."
+    },
+    {
+      "baseline_shot_index": 96,
+      "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+      "duration_seconds": 7,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_PLUME_SAMPLING",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_052_direct.mp4",
+          "trim_in_sec": 0,
+          "trim_out_sec": 7
+        }
+      ],
+      "rationale": "Remove the redundant slogan card and show actual sampling/monitoring context tied to plume measurement."
+    },
+    {
+      "baseline_shot_index": 97,
+      "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+      "duration_seconds": 7.366666666666666,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_PLUME_MEASUREMENTS",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_plume_figure6.png",
+          "evidence_asset_id": "EVID_NATURE_PLUME_DECAY_FIGURE",
+          "source_region": "Figure 6 — concentration by distance"
+        }
+      ],
+      "rationale": "Highlight the transport-distance data point described by narration."
+    },
+    {
+      "baseline_shot_index": 98,
+      "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+      "duration_seconds": 7.1,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": true,
+      "template_id": "orvyq_single_curve",
+      "rationale": "Keep one decline-curve explainer because the shape, uncertainty, and non-verdict caveat must be understood together."
+    },
+    {
+      "baseline_shot_index": 99,
+      "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+      "duration_seconds": 7.4,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_PLUME_MEASUREMENTS",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_plume_figure6.png",
+          "evidence_asset_id": "EVID_NATURE_PLUME_DECAY_FIGURE",
+          "source_region": "Figure 6 — concentration by altitude and measured limits"
+        }
+      ],
+      "rationale": "Return to the paper's confidence/limitation region as a separate content identity."
+    },
+    {
+      "baseline_shot_index": 101,
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "duration_seconds": 7.9,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_MIDWATER_FOODWEB",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_midwater_figure4.png",
+          "evidence_asset_id": "EVID_NATURE_MIDWATER_FOODWEB_FIGURE",
+          "source_region": "Figure 4 — midwater food-web impact mechanism"
+        }
+      ],
+      "rationale": "Use the real experimental/food-web figure for discharge-particle effects."
+    },
+    {
+      "baseline_shot_index": 103,
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "duration_seconds": 2,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_emphasis_whisper",
+      "rationale": "Keep the accumulation pause over scientifically related footage."
+    },
+    {
+      "baseline_shot_index": 104,
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "duration_seconds": 7.566666666666666,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_MIDWATER_FOODWEB",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/nature_midwater_figure1.png",
+          "evidence_asset_id": "EVID_NATURE_MIDWATER_PARTICLES_FIGURE",
+          "source_region": "Figure 1 — amino-acid content of background and discharge particles"
+        }
+      ],
+      "rationale": "Highlight the nutritionally poor particle result in the actual source figure."
+    },
+    {
+      "baseline_shot_index": 107,
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "duration_seconds": 7.833333333333333,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_MIDWATER_RESEARCH",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_053_direct.mp4",
+          "trim_in_sec": 0,
+          "trim_out_sec": 7.833333333333333
+        }
+      ],
+      "rationale": "Remove the biodiversity-number card because those values belong to CLM_013, not this midwater claim."
+    },
+    {
+      "baseline_shot_index": 108,
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "duration_seconds": 7.866666666666666,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_scientific_caveat",
+      "rationale": "Keep one measured caveat separating plausible risk from demonstrated field-scale outcome."
+    },
+    {
+      "baseline_shot_index": 113,
+      "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
+      "duration_seconds": 7.033333333333333,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_UNCERTAINTY_DECISION",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_054_direct.mp4",
+          "trim_in_sec": 0,
+          "trim_out_sec": 8
+        }
+      ],
+      "rationale": "Replace the generic JAMSTEC comparison with a directly related scientific decision/field-assessment moment."
+    },
+    {
+      "baseline_shot_index": 121,
+      "claim_id": "CLM_017_UNUSED_OPTION_SYNTHESIS",
+      "duration_seconds": 8,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_option_timeline",
+      "rationale": "Retain one concise optionality timeline because the temporal logic cannot be shown literally in one clip."
+    },
+    {
+      "baseline_shot_index": 123,
+      "claim_id": "CLM_018_CAPABILITY_IS_NOT_OBLIGATION",
+      "duration_seconds": 7.533333333333333,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_JAMSTEC_OPTIONALITY",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/jamstec_mining_system_diagram.png",
+          "evidence_asset_id": "EVID_JAMSTEC_MINING_SYSTEM_DIAGRAM",
+          "source_region": "Official demonstrated mining-system configuration"
+        },
+        {
+          "asset_path": "assets/evidence/jamstec_2027_trial_diagram.png",
+          "evidence_asset_id": "EVID_JAMSTEC_2027_TRIAL_DIAGRAM",
+          "source_region": "Official planned 2027 integrated trial"
+        }
+      ],
+      "rationale": "Use the official milestone material to distinguish demonstrated capability from obligation."
+    },
+    {
+      "baseline_shot_index": 129,
+      "claim_id": "CLM_018_CAPABILITY_IS_NOT_OBLIGATION",
+      "duration_seconds": 7.9,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IEA_DISTRIBUTED_CHAIN",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iea_distributed_chain_page8.png",
+          "evidence_asset_id": "EVID_IEA_DISTRIBUTED_CHAIN_OFFICIAL_PAGE",
+          "source_region": "Page 8 — rare-earth supply-chain stages"
+        }
+      ],
+      "rationale": "Use the official supply-chain evidence for the distributed-risk conclusion."
+    },
+    {
+      "baseline_shot_index": 136,
+      "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+      "duration_seconds": 7.933333333333334,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_risk_system",
+      "rationale": "Keep one systemic relationship graphic; limit it to the three essential dependencies."
+    },
+    {
+      "baseline_shot_index": 138,
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "duration_seconds": 2.5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_source_bridge_alt",
+      "rationale": "Use a brief final-section bridge, then return to real expedition context."
+    },
+    {
+      "baseline_shot_index": 140,
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "duration_seconds": 7.833333333333333,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_CHIKYU_EXPEDITION",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/jamstec_chikyu_departure.jpg",
+          "evidence_asset_id": "EVID_JAMSTEC_CHIKYU_DEPARTURE",
+          "source_region": "Official JAMSTEC photograph — Chikyu departure"
+        }
+      ],
+      "rationale": "Use the verified JAMSTEC photograph of Chikyu rather than an unidentified ship; the adjacent official 2027 diagram carries the future-trial claim."
+    },
+    {
+      "baseline_shot_index": 148,
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "duration_seconds": 6,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_emphasis_whisper",
+      "rationale": "Keep the final narrated phrase as a restrained overlay on the closing footage."
+    },
+    {
+      "baseline_shot_index": 149,
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "duration_seconds": 4,
+      "decision": "remove",
+      "projected_medium": "contextual_footage",
+      "replacement_strategy": "extend_adjacent_footage",
+      "rationale": "Remove the separate end card to avoid consecutive cards; let the final image and overlay breathe through the existing four seconds."
+    }
+  ]
+}

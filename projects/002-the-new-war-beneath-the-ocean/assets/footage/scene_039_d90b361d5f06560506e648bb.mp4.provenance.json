@@ -1,0 +1,57 @@
+{
+  "stable_asset_id": "78769c61892e24628ffb08e2",
+  "scene_id": "scene_039",
+  "provider": "pexels",
+  "provider_asset_id": "4121351",
+  "source_page_url": "https://www.pexels.com/video/scientists-talking-and-looking-at-laptop-screen-4121351/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Edward Jenner",
+  "attribution_required": false,
+  "search_query": "materials science laboratory researchers",
+  "editorial_role": "context",
+  "editorial_note": "Materials research gives physical context to technology-driven demand uncertainty without asserting a particular breakthrough.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "laboratory",
+        "lab",
+        "scientist",
+        "research",
+        "engineer",
+        "technology"
+      ]
+    ],
+    "forbidden_terms": [
+      "car-battery-repair",
+      "phone-repair",
+      "toy",
+      "kitchen"
+    ]
+  },
+  "duration": 16,
+  "actual_duration_seconds": 16,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 3782816,
+  "sha256": "9089e6766777c90aaf3ee90a3f55d393d442ca9685e0dd40ed1ce3b83b43c918",
+  "actual_sha256": "9089e6766777c90aaf3ee90a3f55d393d442ca9685e0dd40ed1ce3b83b43c918",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "9486807",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:47:39.230Z",
+  "reviewed_asset_sha256": "9089e6766777c90aaf3ee90a3f55d393d442ca9685e0dd40ed1ce3b83b43c918",
+  "reviewed_contact_sheet_sha256": "3009044af6a65c07daf52d03f16ea370047e5f13adf949bd69a063f1e573a29f",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

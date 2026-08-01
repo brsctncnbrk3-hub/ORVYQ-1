@@ -1,0 +1,64 @@
+{
+  "stable_asset_id": "74fc04c9e554a2399d902324",
+  "scene_id": "scene_020",
+  "provider": "pexels",
+  "provider_asset_id": "12903927",
+  "source_page_url": "https://www.pexels.com/video/workers-and-ship-in-harbor-12903927/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "K",
+  "attribution_required": false,
+  "search_query": "harbor workers shipping",
+  "editorial_role": "human_context",
+  "editorial_note": "Real workers in a visible port or cargo setting ground the distributed strategic benefits in people; do not use a generic contemplative horizon shot.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "port",
+        "harbor",
+        "dock",
+        "cargo",
+        "shipping"
+      ],
+      [
+        "worker",
+        "crew",
+        "people",
+        "person"
+      ]
+    ],
+    "forbidden_terms": [
+      "tourist",
+      "vacation",
+      "yacht",
+      "cruise",
+      "beach",
+      "marina"
+    ]
+  },
+  "duration": 12.012,
+  "actual_duration_seconds": 12.012,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 7898740,
+  "sha256": "b2f4bab9d165f03defca34924f77a2c22f122cf61f19727aacd47ea2766f916a",
+  "actual_sha256": "b2f4bab9d165f03defca34924f77a2c22f122cf61f19727aacd47ea2766f916a",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "5665703",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:53:17.903Z",
+  "reviewed_asset_sha256": "b2f4bab9d165f03defca34924f77a2c22f122cf61f19727aacd47ea2766f916a",
+  "reviewed_contact_sheet_sha256": "7accd388eb9558fd80841fa09b6f2a035752b76bb57b0a9714d9605cc58ea3a2",
+  "human_review_reason": "The reviewed harbor workers and ship provide real human and logistics context for the two contracted strategic-risk targets without identifying a named project."
+}

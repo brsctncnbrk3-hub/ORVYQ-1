@@ -1,0 +1,63 @@
+{
+  "stable_asset_id": "409fa1bba420e3436c153397",
+  "scene_id": "scene_021",
+  "provider": "pexels",
+  "provider_asset_id": "11585106",
+  "source_page_url": "https://www.pexels.com/video/close-up-of-a-metal-sheet-in-an-industrial-machine-11585106/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "tejinder ladi photography",
+  "attribution_required": false,
+  "search_query": "industrial metal refinery processing",
+  "editorial_role": "context",
+  "editorial_note": "A visible refinery or mineral-processing environment supports the narrated bottleneck between extraction and usable material; source evidence carries all quantitative claims.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "metal",
+        "mineral",
+        "smelter",
+        "refinery",
+        "processing"
+      ],
+      [
+        "industrial",
+        "factory",
+        "plant",
+        "machinery"
+      ]
+    ],
+    "forbidden_terms": [
+      "jewelry",
+      "blacksmith",
+      "craft",
+      "repair",
+      "office"
+    ]
+  },
+  "duration": 16,
+  "actual_duration_seconds": 16,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 6296695,
+  "sha256": "13d13929bd8cc0c97fa39b067ea19858f9ea3d40cbbc08cd22ae13007f8817ee",
+  "actual_sha256": "13d13929bd8cc0c97fa39b067ea19858f9ea3d40cbbc08cd22ae13007f8817ee",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "5040056",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:53:34.774Z",
+  "reviewed_asset_sha256": "13d13929bd8cc0c97fa39b067ea19858f9ea3d40cbbc08cd22ae13007f8817ee",
+  "reviewed_contact_sheet_sha256": "d8e0b46dfbf7f4cffcdf5198cac2fa4ca25c130e39afb5f8ada33f67a98fffbe",
+  "human_review_reason": "The industrial metal-processing frames directly support the single contracted refining-bottleneck context while evidence sources carry mineral-specific facts."
+}

@@ -1,0 +1,64 @@
+{
+  "stable_asset_id": "6592b99a7d0d50fb48d917b7",
+  "scene_id": "scene_015",
+  "provider": "pexels",
+  "provider_asset_id": "33082707",
+  "source_page_url": "https://www.pexels.com/video/breathtaking-underwater-ocean-floor-exploration-33082707/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "JUN HO LEE",
+  "attribution_required": false,
+  "search_query": "underwater seafloor sediment disturbance",
+  "editorial_role": "context",
+  "editorial_note": "Sediment and plume atmosphere; charts carry measured plume claims.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "sediment",
+        "seabed",
+        "seafloor",
+        "ocean-floor",
+        "ocean floor"
+      ],
+      [
+        "underwater",
+        "deep",
+        "dark",
+        "particles"
+      ]
+    ],
+    "forbidden_terms": [
+      "turtle",
+      "coral reef",
+      "tropical",
+      "diver",
+      "scuba",
+      "snorkel"
+    ]
+  },
+  "duration": 12,
+  "actual_duration_seconds": 12,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 12783793,
+  "sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
+  "actual_sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "14101236",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:42:05.854Z",
+  "reviewed_asset_sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
+  "reviewed_contact_sheet_sha256": "13aac3475cd9338de5e877b4b9b54b3bb7531965a659474aeab00f5f9083200c",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

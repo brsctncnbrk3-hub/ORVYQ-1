@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "22299b9c5c4a1ae7",
+  "scene_id": "scene_012",
+  "candidate_id": "d356fd9efe14c61c8594ff1f",
+  "provider": "pixabay",
+  "provider_asset_id": "3735",
+  "source_page_url": "https://pixabay.com/videos/id-3735/",
+  "final_media_hostname": "cdn.pixabay.com",
+  "final_media_path": "/video/2016/07/07/3735-173719892_large.mp4",
+  "license_url": "https://pixabay.com/service/license-summary/",
+  "attribution_required": false,
+  "creator": "Skylent",
+  "retrieval_timestamp": "2026-07-12T01:58:05.072Z",
+  "content_type": "video/mp4",
+  "byte_size": 25647417,
+  "duration": 45.64,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "6623d25b666454c67770239d30da7478d7138193a736f4c1813c1bc779ce4d2e",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

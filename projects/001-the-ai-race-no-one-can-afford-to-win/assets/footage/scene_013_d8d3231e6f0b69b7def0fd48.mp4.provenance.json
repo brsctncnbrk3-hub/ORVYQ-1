@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "7ae95d3a4f893c68",
+  "scene_id": "scene_013",
+  "candidate_id": "d8d3231e6f0b69b7def0fd48",
+  "provider": "pixabay",
+  "provider_asset_id": "2176",
+  "source_page_url": "https://pixabay.com/videos/id-2176/",
+  "final_media_hostname": "cdn.pixabay.com",
+  "final_media_path": "/video/2016/02/15/2176-155747466_large.mp4",
+  "license_url": "https://pixabay.com/service/license-summary/",
+  "attribution_required": false,
+  "creator": "TBIT",
+  "retrieval_timestamp": "2026-07-12T01:58:06.231Z",
+  "content_type": "video/mp4",
+  "byte_size": 16881751,
+  "duration": 30.03,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "dc7b024655a412d155acee3a70047008d48a073fec8af408df970d2b2bf7792c",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

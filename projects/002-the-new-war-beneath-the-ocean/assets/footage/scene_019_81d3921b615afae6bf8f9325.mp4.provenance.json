@@ -1,0 +1,60 @@
+{
+  "stable_asset_id": "2aea2917267ef86c40e9f4a8",
+  "scene_id": "scene_019",
+  "provider": "pexels",
+  "provider_asset_id": "36123915",
+  "source_page_url": "https://www.pexels.com/video/majestic-ocean-waves-at-sunset-36123915/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Salim Da",
+  "attribution_required": false,
+  "search_query": "dark open ocean waves night",
+  "editorial_role": "metaphor",
+  "editorial_note": "Restrained frontier metaphor and transition bed.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "ocean",
+        "sea"
+      ],
+      [
+        "night",
+        "dark",
+        "storm",
+        "wave"
+      ]
+    ],
+    "forbidden_terms": [
+      "city",
+      "skyline",
+      "beach",
+      "coast",
+      "harbor"
+    ]
+  },
+  "duration": 14,
+  "actual_duration_seconds": 14,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 34106926,
+  "sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
+  "actual_sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "15319815",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:42:48.878Z",
+  "reviewed_asset_sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
+  "reviewed_contact_sheet_sha256": "ac3f26b07e5696922d2b0a186fd25f15c01b937bfec911b01f66571a03f49e3b",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

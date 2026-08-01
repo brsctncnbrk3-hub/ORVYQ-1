@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "c233601294d49d93",
+  "scene_id": "scene_011",
+  "candidate_id": "bff417a92fed9423fe0dd580",
+  "provider": "pixabay",
+  "provider_asset_id": "21985",
+  "source_page_url": "https://pixabay.com/videos/id-21985/",
+  "final_media_hostname": "cdn.pixabay.com",
+  "final_media_path": "/video/2019/03/13/21985-323496013_large.mp4",
+  "license_url": "https://pixabay.com/service/license-summary/",
+  "attribution_required": false,
+  "creator": "SAHN_VIT",
+  "retrieval_timestamp": "2026-07-12T01:58:03.735Z",
+  "content_type": "video/mp4",
+  "byte_size": 9084073,
+  "duration": 14.228333,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "395a05c40cd0065b8b66b26c40664f65a445ff5e5a19efe2b250cd318f348b34",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

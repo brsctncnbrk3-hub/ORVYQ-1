@@ -1,0 +1,62 @@
+{
+  "stable_asset_id": "f6339e6bb6f69dd489bb3c20",
+  "scene_id": "scene_050",
+  "provider": "pexels",
+  "provider_asset_id": "6951601",
+  "source_page_url": "https://www.pexels.com/video/man-speaking-in-conference-room-6951601/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Werner Pfennig",
+  "attribution_required": false,
+  "search_query": "government officials committee hearing",
+  "editorial_role": "human_context",
+  "editorial_note": "A regulatory hearing breaks up the dense document sequence in the United States route while NOAA and executive-order captures retain the factual burden.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "official",
+        "government",
+        "regulatory",
+        "committee",
+        "policy",
+        "meeting",
+        "conference",
+        "discussion",
+        "people"
+      ]
+    ],
+    "forbidden_terms": [
+      "party",
+      "wedding",
+      "restaurant",
+      "walking",
+      "leaving"
+    ]
+  },
+  "duration": 13.52,
+  "actual_duration_seconds": 13.52,
+  "width": 1280,
+  "height": 720,
+  "codec": "h264",
+  "actual_width": 1280,
+  "actual_height": 720,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 757633,
+  "sha256": "3f75e1c6e9e2cce6aa69bb1003268f2dc1a491698898f5e551a5f385f5e545a9",
+  "actual_sha256": "3f75e1c6e9e2cce6aa69bb1003268f2dc1a491698898f5e551a5f385f5e545a9",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "10244652",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-07-30T20:50:02.671Z",
+  "reviewed_asset_sha256": "3f75e1c6e9e2cce6aa69bb1003268f2dc1a491698898f5e551a5f385f5e545a9",
+  "reviewed_contact_sheet_sha256": "c2b37844943989267124367c70e0c81f2b7130bce9880aa863a254326d1d953a",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "The reviewed frames show a real formal regulatory hearing and therefore carry the narration's institutional decision context without impersonating NOAA, the International Seabed Authority or a named proceeding. Moving the clip from the later question about liability to the earlier sentence about unresolved industrial-scale rules preserves the same claim, semantic role and factual-burden boundary while keeping the asset at two total uses."
+}

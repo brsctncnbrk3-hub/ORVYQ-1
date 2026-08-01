@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_basis": "Third byte-bound review of the eight replacement clips generated after the second review. Every decision is tied to the replacement media SHA-256, its twelve-frame contact-sheet SHA-256 and the narrowed claim/slice role in footage_use_contracts.json.",
+  "decisions": [
+    {
+      "scene_id": "scene_002",
+      "provider_asset_id": "38415766",
+      "asset_sha256": "bc5851e15f1acb7dadc08c0b45b6b8490ec4d7dca486e4fdae212454e8607697",
+      "contact_sheet_sha256": "75305016965db8979e99a1610714fb41e3240d07e736dea1f4f72b8f2df5759a",
+      "decision": "reject",
+      "reason": "The contact sheet shows shipyard welding beside a large hull, not a scientific or offshore working vessel carrying the narrated expedition and surface-logistics context."
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "5853030",
+      "asset_sha256": "9348c03f31e83b3e6312e51a94cf9fe23468b2fed5c456e666d990d41469d5f4",
+      "contact_sheet_sha256": "0f5a428eff50fb1e0de4e1d0ed00e3f2e3b105c1ec683a3e3118c284ebe218ce",
+      "decision": "reject",
+      "reason": "The frames show only the dark ocean surface and never reveal a seabed, abyssal plane, benthic survey, submersible or underwater exploration context."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "37931415",
+      "asset_sha256": "a32a5a330a04407c27d9d00fe0ffa840538a744c3054d10a3d707008a52c5573",
+      "contact_sheet_sha256": "bfbc7ebae6b05303c2362b74c61c48ff3f5bec2d285a1eea0951202895f019c6",
+      "decision": "reject",
+      "reason": "Container cranes at a commercial dock do not show marine pipe handling, offshore machinery or the physical operation required by the technical-test assignments."
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "31371175",
+      "asset_sha256": "26b043a5f497304b99665cc90b9963bd67ef2ea92bedad5be04b4e34dd0d458b",
+      "contact_sheet_sha256": "6373351448506a8f414b82a2244afc1e200e85bde0b9ac822dfe649c3f7a0501",
+      "decision": "reject",
+      "reason": "A textile-factory worker operating machinery is not a control-room operator monitoring a marine or industrial technical system and cannot carry the shared-ocean decision premise."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "31824746",
+      "asset_sha256": "d4b143d02ef75b0bf06dcd8ba4c3ffc25dcc5d6f7c2d890ac21c54b27ea87e64",
+      "contact_sheet_sha256": "5feaa443e5a8f7a44e6a5431ff1302c7d2be96bece7fbd1761f3b28541ddc21f",
+      "decision": "reject",
+      "reason": "A brightly lit recreational shipwreck cannot represent measured long-term disturbance, persistent mining tracks or a restrained scientific benthic-survey context."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "10972175",
+      "asset_sha256": "fd515a7046aae66dd12945f23faceaadbc508a6bbe6ee50627dfa3042f5de0e4",
+      "contact_sheet_sha256": "6cf54566bd633ec492929048928b0a8fc5d8e3889c632b5b57814228d0a5df64",
+      "decision": "reject",
+      "reason": "The fishing boat lacks scientific personnel, survey instruments or visible offshore technical equipment and would falsely imply that ordinary fishing activity represents the expedition."
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "34495148",
+      "asset_sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
+      "contact_sheet_sha256": "63b37877b71b966180493c12c6bd6cc4831362aa494a4934f308bec07ac7ddd1",
+      "decision": "approve",
+      "reason": "The reviewed frames clearly show a populated formal assembly with presenters and an engaged audience, providing valid generic human governance context without identifying a named institution."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "38704048",
+      "asset_sha256": "4a453774ae6e6594e528e8ed55d53fe751d104ab299241ba1c6a1dc4fa79b93c",
+      "contact_sheet_sha256": "6a3412c413f259bb367a5f40fb8d7a94dcd537aa5dc6b8045f824a7d06e9ea1e",
+      "decision": "reject",
+      "reason": "The clear-water shipwreck, reef and fish imagery is recreational underwater beauty footage, not a dark abyssal descent or persistent deep-seabed context."
+    }
+  ]
+}

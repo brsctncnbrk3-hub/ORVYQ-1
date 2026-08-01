@@ -1,0 +1,15 @@
+{
+  "frozen_candidate_hash": "cb5346cb60401d26838b96bf942a3841547deea5a882d397be508004e6f4e9ae",
+  "approved": true,
+  "approved_by": "brsctncnbrk@gmail.com",
+  "approved_at": "2026-07-22T13:36:41Z",
+  "notes": "Approves the historical 150s cinematic proof only. It does not approve or unblock any current canonical candidate, review render, or final encode.",
+  "proof_artifact": {
+    "workflow_run_id": "29921936297",
+    "artifact_name": "orvyq-cinematic-proof-150s-29921936297",
+    "duration_seconds": 150,
+    "resolution": "1920x1080",
+    "fps": 30
+  },
+  "archive_note": "Historical approval record retained for audit history. Not valid input for the current approval schema or final-encode gate."
+}

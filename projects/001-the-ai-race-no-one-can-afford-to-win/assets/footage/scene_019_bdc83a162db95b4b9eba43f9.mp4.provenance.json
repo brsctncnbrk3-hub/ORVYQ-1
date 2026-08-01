@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "734347445e54219f",
+  "scene_id": "scene_019",
+  "candidate_id": "bdc83a162db95b4b9eba43f9",
+  "provider": "pexels",
+  "provider_asset_id": "18872181",
+  "source_page_url": "https://www.pexels.com/video/the-building-is-made-of-glass-and-metal-18872181/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/18872181/18872181-hd_1920_1080_30fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Marc K",
+  "retrieval_timestamp": "2026-07-12T02:23:55.267Z",
+  "content_type": "video/mp4",
+  "byte_size": 12291331,
+  "duration": 32.533333,
+  "width": 1280,
+  "height": 720,
+  "codec": "h264",
+  "sha256": "a4fb8c75ec6f1871a94971800ec01abe3c759e9d3caa9e77818c53e467d4b05a",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

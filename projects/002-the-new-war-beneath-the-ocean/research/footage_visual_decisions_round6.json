@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Seventh system-owned byte-bound semantic QA pass. The exact five current assets remain unsuitable for their claim-bound uses and are rejected so the verified official direct sources can replace them. The prior sixth-pass record remains preserved in Git history.",
+  "decisions": [
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "5668613",
+      "asset_sha256": "a906b7b46969a6f77e2a4fd24036d3628e04c8e263f5a777851df18b9b1b2c0f",
+      "contact_sheet_sha256": "509c60445742218f333758672561add01660f256ae6adc2f22ea9bb259e00633",
+      "decision": "reject",
+      "reason": "Shows open-water surface, not an abyssal seabed or deep-ocean survey required by the assigned narration."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "4336054",
+      "asset_sha256": "25e87892bd1bb822fbe91296b2fbf10f4351e62fbc04d289bafa9d4f3cff3f44",
+      "contact_sheet_sha256": "bdd81a573c2327d993d012fbc0509b5ece4e1283fc6436e284c976ee525a1196",
+      "decision": "reject",
+      "reason": "Shows routine sand unloading, not offshore scientific operations or relevant subsea lifting hardware."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "34311344",
+      "asset_sha256": "c861aafcf7e699dc0cbec7cc5f06f36a44434f5a55bd6d0f22c6f115022e1485",
+      "contact_sheet_sha256": "31fa39b1be0f801d811cb793a66364d6944f677d9d0e5a9eb5a40a2a7068831b",
+      "decision": "reject",
+      "reason": "Shows a bright sandy wildlife scene, not benthic survey work or persistent industrial seabed disturbance."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "36212341",
+      "asset_sha256": "b0c368da9bfa20da7da226f732de45e86044d9533b3b753cea6ee2a39ae92781",
+      "contact_sheet_sha256": "0f44c8410f1f2998cea902fd8a5b383532a24e9580e5b240c5ba98c0643ed37d",
+      "decision": "reject",
+      "reason": "Shows an unidentified vessel without visible oceanographic survey, mapping, or scientific-operation context."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "7846334",
+      "asset_sha256": "8d0edf8563337dbcf521c69cb3a7ef00b1c5da9c01a72c9eb5d5d664e9cf2f3e",
+      "contact_sheet_sha256": "e5dc8d9754a0296739501fa9073cc3f470e23e55888d87ccbecd9dfb74a40ab9",
+      "decision": "reject",
+      "reason": "Shows an indoor artificial-light scene unrelated to deep water, seabed ecosystems, or ocean descent."
+    }
+  ]
+}

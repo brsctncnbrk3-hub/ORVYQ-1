@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "c70c90d527c95355",
+  "scene_id": "scene_008",
+  "candidate_id": "42946788405d61ee3a28fa31",
+  "provider": "pexels",
+  "provider_asset_id": "7578632",
+  "source_page_url": "https://www.pexels.com/video/close-up-of-numbers-on-display-monitor-7578632/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/7578632/7578632-uhd_4096_2160_25fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Tima Miroshnichenko",
+  "retrieval_timestamp": "2026-07-12T01:41:00.539Z",
+  "content_type": "video/mp4",
+  "byte_size": 15158406,
+  "duration": 10.04,
+  "width": 4096,
+  "height": 2160,
+  "codec": "h264",
+  "sha256": "dd9a4acac42276a3f99d79d3cd4da6380aa447612db1b22a81f49308539e3898",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

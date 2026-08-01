@@ -1,0 +1,55 @@
+{
+  "stable_asset_id": "9b309e6e78019170cbda254c",
+  "scene_id": "scene_037",
+  "provider": "pexels",
+  "provider_asset_id": "30295544",
+  "source_page_url": "https://www.pexels.com/video/worker-operating-industrial-control-panel-efficiently-30295544/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "aksinfo7 universe",
+  "attribution_required": false,
+  "search_query": "engineers testing industrial machinery",
+  "editorial_role": "context",
+  "editorial_note": "Engineers evaluating a prototype distinguish technical capability from the threshold for an industrial decision.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "engineer",
+        "technician",
+        "worker"
+      ]
+    ],
+    "forbidden_terms": [
+      "food",
+      "kitchen",
+      "cooking",
+      "agriculture",
+      "toy"
+    ]
+  },
+  "duration": 16,
+  "actual_duration_seconds": 16,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 10608206,
+  "sha256": "0ca016562a304da49f888669de1ac3313d16de5e6f5a436f36a95683d6ecefd8",
+  "actual_sha256": "0ca016562a304da49f888669de1ac3313d16de5e6f5a436f36a95683d6ecefd8",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "12987963",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:47:12.515Z",
+  "reviewed_asset_sha256": "0ca016562a304da49f888669de1ac3313d16de5e6f5a436f36a95683d6ecefd8",
+  "reviewed_contact_sheet_sha256": "a9729a62b1449e7f7cbe6b62cf299003368dc4a873c9e0a2d57af2a77d67ef43",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

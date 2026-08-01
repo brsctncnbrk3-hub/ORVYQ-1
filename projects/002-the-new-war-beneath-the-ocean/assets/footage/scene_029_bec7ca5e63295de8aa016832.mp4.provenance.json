@@ -1,0 +1,70 @@
+{
+  "stable_asset_id": "b46bd078551eb3a209a7034e",
+  "scene_id": "scene_029",
+  "provider": "pexels",
+  "provider_asset_id": "34495148",
+  "source_page_url": "https://www.pexels.com/video/school-assembly-with-engaged-audience-and-presenters-34495148/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "JMT 35",
+  "attribution_required": false,
+  "search_query": "public policy assembly",
+  "editorial_role": "human_context",
+  "editorial_note": "A working research-vessel deck supports the announced return to field operations while avoiding any claim that generic footage depicts Chikyu or the 2027 trial itself.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "international",
+        "government",
+        "official",
+        "policy",
+        "delegate",
+        "assembly"
+      ],
+      [
+        "conference",
+        "meeting",
+        "podium",
+        "audience",
+        "participants",
+        "delegates"
+      ]
+    ],
+    "forbidden_terms": [
+      "ship",
+      "boat",
+      "ocean",
+      "sea",
+      "empty",
+      "wedding",
+      "party",
+      "sales"
+    ]
+  },
+  "duration": 16,
+  "actual_duration_seconds": 16,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 12036391,
+  "sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
+  "actual_sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "14616453",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-07-30T22:54:56.225Z",
+  "reviewed_asset_sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
+  "reviewed_contact_sheet_sha256": "63b37877b71b966180493c12c6bd6cc4831362aa494a4934f308bec07ac7ddd1",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "The reviewed frames show a populated formal assembly with presenters and an engaged audience. The footage therefore supports the institutional and precedent-setting meaning of the CLM_009 one-ocean/two-rulebooks narration without identifying a named regulator, conference or permit process; source documents retain all legal claims."
+}

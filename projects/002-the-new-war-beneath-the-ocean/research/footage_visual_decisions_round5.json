@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Fifth ORVYQ system-owned byte-bound semantic visual-QA round. Each replacement contact sheet was inspected against all current claim-bound uses; any clip valid only as a loose metaphor but misleading for another assigned use was rejected rather than partially approved.",
+  "decisions": [
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "33132093",
+      "asset_sha256": "4769df4f8ddfa8de5ce22ecebb8cbde3b6687fe19697173609112309602e18f5",
+      "contact_sheet_sha256": "7cfa4bceba28f1e0b4254aad3ab7febe7d93d482a5d5c21774d63d8292605de9",
+      "decision": "reject",
+      "reason": "The contact sheet shows recreational scuba divers inside a rocky cave. It is not an abyssal plain, nodule field, ROV survey, or unoccupied deep-seabed context."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "29928556",
+      "asset_sha256": "1091657d9171415cd9857bb7a65287ab4b97324fb3a0662bd929157ca19fe7fb",
+      "contact_sheet_sha256": "0a9dd0a56064d0010322bfd71d6d3a0532d6c84d7a8e48727c2d687924b37bff",
+      "decision": "reject",
+      "reason": "The contact sheet shows a bulk cargo ship loading at a commercial port. It does not show offshore pipe handling, a working marine deck operation, or the rare-earth-mud lifting context required by the contracted uses."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "34310800",
+      "asset_sha256": "49c211040e1786dcce9ecb632b2576817469b598f318bc11caeebf51c494224c",
+      "contact_sheet_sha256": "dbaecf3e561be52204cd150a506320cda65c8c8e46c1c18793808b9253069820",
+      "decision": "reject",
+      "reason": "The contact sheet shows a scuba diver over a bright shallow rocky seabed with fish. It does not show a dark benthic survey, persistent extraction tracks, or visible long-term disturbance."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "32834333",
+      "asset_sha256": "153d6608696bf9e39572ff957e41d9e66bb22e6e99dfcf2d7987c8d108fdfbb8",
+      "contact_sheet_sha256": "453f0eac609da4daa8f041a74e5c197a181079fb26a9db88bf33c3af7ea5b652",
+      "decision": "reject",
+      "reason": "The contact sheet shows barges and dredging or construction activity in a sheltered canal or port. It is not a scientific survey vessel, offshore research crew, or oceanographic equipment operation."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "31774645",
+      "asset_sha256": "621abd9efd5f3272b7b56eae6153a752349321b4d3d4fbbb2e030423105bf2c5",
+      "contact_sheet_sha256": "eccff701e040ade431e31f39d3567c456ed7e5fe68713a8723f9e14a8d837d3f",
+      "decision": "reject",
+      "reason": "The contact sheet shows a recreational scuba diver in a cave. Because the current uses include factual deep-ocean ecology as well as a closing descent metaphor, it would falsely substitute cave diving for abyssal conditions."
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "policy": "Each managed scene may appear only at the listed claim and source-slice targets. Reassignment preserves the existing narration timeline while preventing one generic clip from inheriting unrelated uses through its scene id.",
+  "managed_scene_ids": [
+    "scene_002",
+    "scene_003",
+    "scene_004",
+    "scene_005",
+    "scene_006",
+    "scene_008",
+    "scene_012",
+    "scene_014",
+    "scene_016",
+    "scene_018",
+    "scene_019",
+    "scene_020",
+    "scene_021",
+    "scene_023",
+    "scene_024",
+    "scene_025",
+    "scene_026",
+    "scene_029",
+    "scene_030",
+    "scene_032",
+    "scene_034",
+    "scene_038",
+    "scene_042",
+    "scene_046",
+    "scene_047",
+    "scene_048",
+    "scene_049",
+    "scene_050",
+    "scene_052",
+    "scene_053",
+    "scene_054"
+  ],
+  "pruned_scene_ids": [
+    "scene_018",
+    "scene_025",
+    "scene_042",
+    "scene_046",
+    "scene_049"
+  ],
+  "assignments": [
+    {
+      "scene_id": "scene_002",
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "slice_index": 5,
+      "trim_in_ratio": 0.08,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A verified working research or offshore vessel may carry the exposed surface-logistics context, but it must never be identified as Chikyu or as the mining system itself."
+    },
+    {
+      "scene_id": "scene_003",
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "slice_index": 2,
+      "trim_in_ratio": 0.08,
+      "motion": "push",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A dark, sparsely populated deep-seabed view gives the international Area a physical scale while official maps and treaty text retain the factual burden."
+    },
+    {
+      "scene_id": "scene_004",
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "slice_index": 4,
+      "trim_in_ratio": 0,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Real offshore industrial equipment connects the technical test to a physical operation without substituting petroleum infrastructure or claiming a named vessel."
+    },
+    {
+      "scene_id": "scene_004",
+      "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+      "slice_index": 0,
+      "trim_in_ratio": 0.45,
+      "motion": "pull",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A distinct trim of real offshore equipment bridges demonstrated lifting capability to the larger production chain that remains unfinished."
+    },
+    {
+      "scene_id": "scene_005",
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "slice_index": 0,
+      "trim_in_ratio": 0.12,
+      "motion": "hold",
+      "role": "human_context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Visible operators making technical decisions keep the shared-ocean question human, provided the footage is a real operational control setting rather than an interview or studio."
+    },
+    {
+      "scene_id": "scene_006",
+      "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+      "slice_index": 2,
+      "trim_in_ratio": 0.1,
+      "motion": "push",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Industrial robotics directly embodies one end use named by the narration; the IEA evidence retains the quantitative concentration claim."
+    },
+    {
+      "scene_id": "scene_008",
+      "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+      "slice_index": 5,
+      "trim_in_ratio": 0.15,
+      "motion": "drift_left",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Operating wind turbines make downstream rare-earth demand and the unfinished industrial chain visible without implying that the site belongs to Japan."
+    },
+    {
+      "scene_id": "scene_012",
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "slice_index": 0,
+      "trim_in_ratio": 0,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A real dark seabed or benthic survey view introduces persistent physical disturbance; tropical island imagery is forbidden for this claim."
+    },
+    {
+      "scene_id": "scene_014",
+      "claim_id": "CLM_006_MINING_CODE_UNFINISHED",
+      "slice_index": 0,
+      "trim_in_ratio": 0.05,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A restrained legal-review setting provides human rulemaking context while UNCLOS and ISA documents remain the actual legal evidence."
+    },
+    {
+      "scene_id": "scene_014",
+      "claim_id": "CLM_008_NO_US_COMMERCIAL_PERMIT",
+      "slice_index": 0,
+      "trim_in_ratio": 0.48,
+      "motion": "pull",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A separate legal-document trim supports the distinction between an application process and a commercial permit without depicting a named proceeding."
+    },
+    {
+      "scene_id": "scene_020",
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "slice_index": 3,
+      "trim_in_ratio": 0,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A working harbor vessel gives the strategic-insurance argument a physical logistics context without presenting the ship as a mining project."
+    },
+    {
+      "scene_id": "scene_020",
+      "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+      "slice_index": 6,
+      "trim_in_ratio": 0.48,
+      "motion": "drift_right",
+      "role": "human_context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A distinct harbor-work trim grounds distributed industrial benefit and exposure in real people and infrastructure rather than an abstract system."
+    },
+    {
+      "scene_id": "scene_021",
+      "claim_id": "CLM_011_REFINING_BOTTLENECK",
+      "slice_index": 2,
+      "trim_in_ratio": 0.12,
+      "motion": "push",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Visible metal processing directly carries the downstream refining bottleneck; source-backed evidence retains all mineral-specific claims."
+    },
+    {
+      "scene_id": "scene_023",
+      "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+      "slice_index": 0,
+      "trim_in_ratio": 0.02,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A busy industrial port makes concentrated trade and material movement physical while the IEA source carries the stated market shares."
+    },
+    {
+      "scene_id": "scene_023",
+      "claim_id": "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK",
+      "slice_index": 2,
+      "trim_in_ratio": 0.48,
+      "motion": "pull",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A second dock-operation trim shows how export controls become a physical supply problem without claiming a named port or shipment."
+    },
+    {
+      "scene_id": "scene_024",
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "slice_index": 6,
+      "trim_in_ratio": 0.08,
+      "motion": "drift_left",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A verified survey or working vessel keeps the boundary between a technical test and a commercial mine visible; leisure craft are forbidden."
+    },
+    {
+      "scene_id": "scene_026",
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "slice_index": 5,
+      "trim_in_ratio": 0.05,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A scientist handling samples represents measurement of particle effects without claiming that the generic laboratory depicts the cited experiment."
+    },
+    {
+      "scene_id": "scene_026",
+      "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+      "slice_index": 4,
+      "trim_in_ratio": 0.5,
+      "motion": "pull",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A separate sample-analysis trim directly represents the baseline research needed before industrial disturbance begins."
+    },
+    {
+      "scene_id": "scene_030",
+      "claim_id": "CLM_017_UNUSED_OPTION_SYNTHESIS",
+      "slice_index": 1,
+      "trim_in_ratio": 0,
+      "motion": "drift_left",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Multiple working vessels at sea make the strategic race tangible without inventing confrontation or identifying a national programme."
+    },
+    {
+      "scene_id": "scene_030",
+      "claim_id": "CLM_018_CAPABILITY_IS_NOT_OBLIGATION",
+      "slice_index": 3,
+      "trim_in_ratio": 0.5,
+      "motion": "drift_right",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A distinct fleet-scale trim represents strategic options that alter bargaining power even when a capability is not fully used."
+    },
+    {
+      "scene_id": "scene_032",
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "slice_index": 5,
+      "trim_in_ratio": 0,
+      "motion": "push",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A restrained descent through real dark water or over the deep seabed carries physical depth and persistence; science-fiction city imagery is forbidden."
+    },
+    {
+      "scene_id": "scene_032",
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "slice_index": 8,
+      "trim_in_ratio": 0.42,
+      "motion": "hold",
+      "role": "metaphor",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A long dark-ocean descent closes on the distance between technical capability and agreed limits without introducing a new factual claim."
+    },
+    {
+      "scene_id": "scene_034",
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "slice_index": 3,
+      "trim_in_ratio": 0.12,
+      "motion": "hold",
+      "role": "human_context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Scientists discussing evidence embody unresolved knowledge before a commercial decision without implying that they advise a named government."
+    },
+    {
+      "scene_id": "scene_038",
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "slice_index": 5,
+      "trim_in_ratio": 0,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A real formal meeting provides human governance context for competing legal routes while primary documents retain the factual burden."
+    },
+    {
+      "scene_id": "scene_038",
+      "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+      "slice_index": 3,
+      "trim_in_ratio": 0.5,
+      "motion": "pull",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A distinct meeting trim represents unfinished international rules and institutional choice without naming the generic participants."
+    },
+    {
+      "scene_id": "scene_047",
+      "claim_id": "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK",
+      "slice_index": 0,
+      "trim_in_ratio": 0.1,
+      "motion": "drift_left",
+      "role": "human_context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Workers maintaining transport infrastructure make material supply disruption visible while official evidence carries the export-control figures."
+    },
+    {
+      "scene_id": "scene_048",
+      "claim_id": "CLM_011_REFINING_BOTTLENECK",
+      "slice_index": 0,
+      "trim_in_ratio": 0.08,
+      "motion": "push",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Laboratory materials research supports changing battery chemistry while the source figure carries the specific LFP composition statement."
+    },
+    {
+      "scene_id": "scene_052",
+      "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+      "slice_index": 0,
+      "trim_in_ratio": 0.05,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official sediment-coring footage shows the physical act of measurement while the cited plume figures retain the numerical result."
+    },
+    {
+      "scene_id": "scene_053",
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "slice_index": 8,
+      "trim_in_ratio": 0.05,
+      "motion": "hold",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official water-column footage directly grounds the midwater food-web mechanism while the cited paper carries the experiment and effect."
+    },
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "slice_index": 2,
+      "trim_in_ratio": 0.02,
+      "motion": "drift_right",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official NOAA deep-ocean wall footage directly establishes darkness, cold and crushing-pressure conditions while JAMSTEC primary evidence retains the named Japanese operation."
+    },
+    {
+      "scene_id": "scene_019",
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "slice_index": 4,
+      "trim_in_ratio": 0.02,
+      "motion": "hold",
+      "role": "metaphor",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A restrained night-ocean view carries the scale and remoteness of the shared frontier without replacing treaty text or asserting a named location."
+    },
+    {
+      "scene_id": "scene_029",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 3,
+      "trim_in_ratio": 0.5,
+      "motion": "pull",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A populated formal assembly gives human form to the sentence about one ocean, two rulebooks and no commercial precedent; primary legal documents retain every factual proposition."
+    },
+    {
+      "scene_id": "scene_029",
+      "claim_id": "CLM_017_UNUSED_OPTION_SYNTHESIS",
+      "slice_index": 6,
+      "trim_in_ratio": 0.08,
+      "motion": "hold",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A real international assembly gives practical meaning to common heritage while treaty and ISA sources retain the legal claim."
+    },
+    {
+      "scene_id": "scene_050",
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "slice_index": 2,
+      "trim_in_ratio": 0,
+      "motion": "hold",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A real regulatory hearing interrupts the dense legal-evidence sequence while the narration explains why unresolved rules matter at industrial scale; official documents retain every legal and factual claim."
+    },
+    {
+      "scene_id": "scene_050",
+      "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+      "slice_index": 2,
+      "trim_in_ratio": 0.34,
+      "motion": "drift_right",
+      "role": "human_context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A distinct formal-hearing trim represents regulatory delay while source documents retain the factual burden."
+    },
+    {
+      "scene_id": "scene_054",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 2,
+      "trim_in_ratio": 0.08,
+      "motion": "drift_left",
+      "role": "human_context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Official expedition field-operations footage physically expresses the gap between a plan and an operating system without presenting the generic mission as a commercial mining project."
+    }
+  ],
+  "retired_targets": [
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 2,
+      "reason": "The asset is verified NOAA deep-ocean wall footage, not a marine-science laboratory; retire the semantically incorrect third use while retaining its two physically direct depth-context uses."
+    },
+    {
+      "scene_id": "scene_019",
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "slice_index": 3,
+      "reason": "Retire the third use of the night-ocean metaphor and replace the two-rulebook sentence with a real human governance setting that carries the institutional meaning more directly."
+    },
+    {
+      "scene_id": "scene_050",
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "slice_index": 4,
+      "reason": "Move the regulatory-hearing context earlier inside the same claim to interrupt the 15.1-second evidence run, preserve the two-use ceiling and reconcile the project through the reusable override-aware canonical-role workflow."
+    }
+  ]
+}

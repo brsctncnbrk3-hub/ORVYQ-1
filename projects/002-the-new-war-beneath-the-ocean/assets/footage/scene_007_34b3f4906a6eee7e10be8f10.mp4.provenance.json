@@ -1,0 +1,66 @@
+{
+  "stable_asset_id": "1a503595fa239ba38793a62a",
+  "scene_id": "scene_007",
+  "provider": "pexels",
+  "provider_asset_id": "6952047",
+  "source_page_url": "https://www.pexels.com/video/people-talking-in-the-conference-room-6952047/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Werner Pfennig",
+  "attribution_required": false,
+  "search_query": "government conference delegates",
+  "editorial_role": "governance_context",
+  "editorial_note": "Use only if the source metadata and frame review verify a real international assembly; official legal documents retain the factual burden.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "conference",
+        "meeting",
+        "assembly",
+        "summit",
+        "parliament",
+        "government"
+      ],
+      [
+        "delegate",
+        "official",
+        "speaker",
+        "audience",
+        "people",
+        "participants"
+      ]
+    ],
+    "forbidden_terms": [
+      "wedding",
+      "classroom",
+      "party",
+      "sales",
+      "product launch"
+    ]
+  },
+  "duration": 12,
+  "actual_duration_seconds": 12,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 1778477,
+  "sha256": "d9d845194d60b2819c5c5055ec578dc121e0e034e555f9942ae03f79da404169",
+  "actual_sha256": "d9d845194d60b2819c5c5055ec578dc121e0e034e555f9942ae03f79da404169",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "10245515",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:40:39.170Z",
+  "reviewed_asset_sha256": "d9d845194d60b2819c5c5055ec578dc121e0e034e555f9942ae03f79da404169",
+  "reviewed_contact_sheet_sha256": "fa6c0804cabbf8c49ccd698323a0d74962f9a43cd7db492fa97e50b07aa46ba9",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

@@ -1,0 +1,56 @@
+{
+  "stable_asset_id": "972f3245c491efcd53dd3729",
+  "scene_id": "scene_035",
+  "provider": "pexels",
+  "provider_asset_id": "31100083",
+  "source_page_url": "https://www.pexels.com/video/aerial-view-of-expansive-rock-quarry-site-31100083/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Toàn BDS",
+  "attribution_required": false,
+  "search_query": "workers open pit mine",
+  "editorial_role": "human_context",
+  "editorial_note": "Terrestrial mining and nearby people give the alternative forms of damage a human scale; the scene is not evidence for a named mine or quantified impact.",
+  "narration_anchor": "It is that the alternatives also carry damage, and that mineral dependence can become a national-security risk.",
+  "target_claim_id": "CLM_017_UNUSED_OPTION_SYNTHESIS",
+  "target_slice_index": 0,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "mine",
+        "mining",
+        "quarry"
+      ]
+    ],
+    "forbidden_terms": [
+      "crypto",
+      "bitcoin",
+      "data-mining",
+      "minecraft",
+      "toy"
+    ]
+  },
+  "duration": 16.016,
+  "actual_duration_seconds": 16.016,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 19732957,
+  "sha256": "b60a7190258952ef9ca39029abcf2fb29a440e680c0a783e69464ea895d86cb1",
+  "actual_sha256": "b60a7190258952ef9ca39029abcf2fb29a440e680c0a783e69464ea895d86cb1",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "13288396",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-07-30T07:52:41.276Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "canonical_visual_review_registry",
+  "reviewed_asset_sha256": "b60a7190258952ef9ca39029abcf2fb29a440e680c0a783e69464ea895d86cb1",
+  "reviewed_contact_sheet_sha256": "699116562a9b9f9fce85a777366717276993b17c7c874ad9e1ff625197bae11e",
+  "visual_qa_reason": "Approval restored from the canonical byte-bound visual review registry for the active runtime asset."
+}

@@ -1,0 +1,56 @@
+{
+  "stable_asset_id": "b2d95ed73f5e62ac16228cbe",
+  "scene_id": "scene_030",
+  "provider": "pexels",
+  "provider_asset_id": "34657205",
+  "source_page_url": "https://www.pexels.com/video/serene-aerial-view-of-ships-on-calm-sea-34657205/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Vizual Production",
+  "attribution_required": false,
+  "search_query": "research ships at sea aerial",
+  "editorial_role": "context",
+  "editorial_note": "Multiple working vessels at sea give the strategic race a physical, non-sensational scale without inventing a confrontation or identifying the ships as specific national programmes.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "ship",
+        "vessel",
+        "boat"
+      ]
+    ],
+    "forbidden_terms": [
+      "ferry",
+      "cargo",
+      "freight",
+      "cruise",
+      "icebreaker",
+      "frozen"
+    ]
+  },
+  "duration": 16,
+  "actual_duration_seconds": 16,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 10787665,
+  "sha256": "734b5051e3fb807a9735274664b5ceca5dfe73f80a8c268157b0d5eb19d12c0a",
+  "actual_sha256": "734b5051e3fb807a9735274664b5ceca5dfe73f80a8c268157b0d5eb19d12c0a",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "14689922",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:55:10.824Z",
+  "reviewed_asset_sha256": "734b5051e3fb807a9735274664b5ceca5dfe73f80a8c268157b0d5eb19d12c0a",
+  "reviewed_contact_sheet_sha256": "6c625e5d73e890c62b0cedb3b4b968df6bf363f39d8034679332bb1dcdd2c1d9",
+  "human_review_reason": "The multiple vessels provide a restrained physical metaphor for strategic competition at the two contracted synthesis targets without implying confrontation."
+}

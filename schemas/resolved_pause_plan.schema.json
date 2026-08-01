@@ -1,0 +1,33 @@
+{
+  "$id": "resolved_pause_plan.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "direction/resolved_pause_plan.json -- scripts/orvyq_resolve_pauses.mjs's single, canonical resolution of direction/editorial_pause_map.json's full_film_pause_anchors against voice/narration_alignment.json's real per-word ASR timestamps. Generated build output (not hand-authored, not committed -- see .gitignore); both scripts/orvyq_audio_mix.mjs and scripts/orvyq_full_production_plan.mjs read this file instead of each independently calling scripts/lib/orvyq-pause-resolver.mjs's resolveFullFilmPauses().",
+  "type": "object",
+  "required": ["schema_version", "project_id", "narration_end_seconds", "pauses"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "project_id": { "type": "string" },
+    "source_pause_map": { "type": "string" },
+    "source_alignment": { "type": "string" },
+    "narration_end_seconds": { "type": "number", "exclusiveMinimum": 0 },
+    "pauses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["pause_id", "anchor_text", "sound_cue", "source_time_seconds", "duration_seconds"],
+        "properties": {
+          "pause_id": { "type": "string" },
+          "anchor_text": { "type": "string" },
+          "question": { "type": ["string", "null"] },
+          "purpose": { "type": ["string", "null"] },
+          "sound_cue": { "type": "string" },
+          "source_time_seconds": { "type": "number", "minimum": 0 },
+          "duration_seconds": { "type": "number", "exclusiveMinimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

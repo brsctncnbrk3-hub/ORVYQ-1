@@ -1,0 +1,59 @@
+{
+  "stable_asset_id": "089b4ac88b261c1f5483ade4",
+  "scene_id": "scene_033",
+  "provider": "pexels",
+  "provider_asset_id": "34748647",
+  "source_page_url": "https://www.pexels.com/video/serene-jellyfish-gliding-in-tranquil-waters-34748647/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Townsend Walton",
+  "attribution_required": false,
+  "search_query": "deep sea plankton organisms",
+  "editorial_role": "context",
+  "editorial_note": "Real midwater life restores physical ecological context after the discharge evidence; it does not claim to depict organisms from a specific trial.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "plankton",
+        "organism",
+        "jellyfish",
+        "marine-life",
+        "marine life",
+        "creature"
+      ]
+    ],
+    "forbidden_terms": [
+      "aquarium",
+      "pool",
+      "diver",
+      "scuba",
+      "snorkel",
+      "coral-reef"
+    ]
+  },
+  "duration": 13.013,
+  "actual_duration_seconds": 13.013,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 2483315,
+  "sha256": "44bc6d8ef52d1502a9cb0289b263146684c6446a63b26edfce805c1e861508ba",
+  "actual_sha256": "44bc6d8ef52d1502a9cb0289b263146684c6446a63b26edfce805c1e861508ba",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "14731067",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:46:31.010Z",
+  "reviewed_asset_sha256": "44bc6d8ef52d1502a9cb0289b263146684c6446a63b26edfce805c1e861508ba",
+  "reviewed_contact_sheet_sha256": "92329be8df434217ae07518258365875f52117bf115a5795bdb2e7550264f359",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

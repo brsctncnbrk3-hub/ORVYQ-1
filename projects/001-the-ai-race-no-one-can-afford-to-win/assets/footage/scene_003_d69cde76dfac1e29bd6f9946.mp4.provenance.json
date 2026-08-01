@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "142a2609ea97136f",
+  "scene_id": "scene_003",
+  "candidate_id": "d69cde76dfac1e29bd6f9946",
+  "provider": "pexels",
+  "provider_asset_id": "6224298",
+  "source_page_url": "https://www.pexels.com/video/a-man-looking-at-a-blueprint-on-his-laptop-6224298/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/6224298/6224298-hd_1920_1080_25fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Omar Zahid",
+  "retrieval_timestamp": "2026-07-11T23:14:04.720Z",
+  "content_type": "video/mp4",
+  "byte_size": 11205215,
+  "duration": 17.84,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "681c6852775372f279ec0ce4c822f3bf0c2716d4c97bca897de0a17bc01cab10",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

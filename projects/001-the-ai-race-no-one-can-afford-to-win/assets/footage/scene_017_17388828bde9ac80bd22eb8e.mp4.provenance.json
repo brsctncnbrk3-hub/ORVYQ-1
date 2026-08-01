@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "150adf592b93f201",
+  "scene_id": "scene_017",
+  "candidate_id": "17388828bde9ac80bd22eb8e",
+  "provider": "pexels",
+  "provider_asset_id": "30607101",
+  "source_page_url": "https://www.pexels.com/video/digital-node-network-animation-in-motion-30607101/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/30607101/13104809_1920_1080_25fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Jakub Zerdzicki",
+  "retrieval_timestamp": "2026-07-12T02:17:42.600Z",
+  "content_type": "video/mp4",
+  "byte_size": 13208492,
+  "duration": 19.8,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "97711222d42b4f95522f1fcbf8469077e29319e6470e9a3e1cd92c3de65074d0",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

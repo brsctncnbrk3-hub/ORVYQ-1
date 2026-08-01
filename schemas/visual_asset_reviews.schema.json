@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orvyq.dev/schemas/visual_asset_reviews.schema.json",
+  "title": "ORVYQ visual asset reviews",
+  "type": "object",
+  "required": ["schema_version", "project_id", "review_basis", "policy", "summary", "pending_frame_review_scene_ids", "rejected_assets", "approved_assets"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project_id": { "type": "string", "pattern": "^[0-9]{3}-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "review_basis": { "type": "string", "minLength": 24 },
+    "policy": {
+      "type": "object",
+      "required": ["default_status_for_unlisted_assets", "rejected_asset_global_reentry_forbidden", "automatic_backfill_forbidden", "approval_requires_contact_sheet_sha256", "approval_requires_claim_id_narration_anchor_and_semantic_rationale", "approval_is_limited_to_exact_reviewed_uses"],
+      "properties": {
+        "default_status_for_unlisted_assets": { "const": "pending_frame_review" },
+        "rejected_asset_global_reentry_forbidden": { "const": true },
+        "automatic_backfill_forbidden": { "const": true },
+        "approval_requires_contact_sheet_sha256": { "const": true },
+        "approval_requires_claim_id_narration_anchor_and_semantic_rationale": { "const": true },
+        "approval_is_limited_to_exact_reviewed_uses": { "const": true }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["pool_assets", "rejected_from_metadata", "pending_frame_review", "approved"],
+      "properties": {
+        "pool_assets": { "type": "integer", "minimum": 0 },
+        "rejected_from_metadata": { "type": "integer", "minimum": 0 },
+        "pending_frame_review": { "type": "integer", "minimum": 0 },
+        "approved": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "pending_frame_review_scene_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^scene_[0-9]{3}$" } },
+    "rejected_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "provider_asset_id", "source_page_url", "reason"],
+        "properties": {
+          "scene_id": { "type": "string", "pattern": "^scene_[0-9]{3}$" },
+          "provider_asset_id": { "type": "string", "minLength": 1 },
+          "source_page_url": { "type": "string", "format": "uri" },
+          "reason": { "type": "string", "minLength": 24 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "approved_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "provider_asset_id", "asset_sha256", "contact_sheet_sha256", "reviewed_frame_count", "approved_uses"],
+        "properties": {
+          "scene_id": { "type": "string", "pattern": "^scene_[0-9]{3}$" },
+          "provider_asset_id": { "type": "string" },
+          "asset_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "contact_sheet_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "reviewed_frame_count": { "type": "integer", "minimum": 6 },
+          "approved_uses": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["claim_id", "narration_anchor", "semantic_rationale"],
+              "properties": {
+                "claim_id": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" },
+                "narration_anchor": { "type": "string", "minLength": 8 },
+                "semantic_rationale": { "type": "string", "minLength": 24 },
+                "trim_in_sec": { "type": "number", "minimum": 0 },
+                "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

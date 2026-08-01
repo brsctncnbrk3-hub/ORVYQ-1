@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "403440e42d3454f4",
+  "scene_id": "scene_009",
+  "candidate_id": "8366baffbbfa53ec1a18715e",
+  "provider": "pexels",
+  "provider_asset_id": "38412247",
+  "source_page_url": "https://www.pexels.com/video/stock-market-data-analysis-with-multiple-monitors-38412247/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/38412247/16310927_3840_2160_25fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Rafael Minguet Delgado",
+  "retrieval_timestamp": "2026-07-12T01:41:02.715Z",
+  "content_type": "video/mp4",
+  "byte_size": 42431058,
+  "duration": 37.96,
+  "width": 3840,
+  "height": 2160,
+  "codec": "h264",
+  "sha256": "f4d8ab5a8b4acb2f7ecfed268d1481495de8c377db8f0f3493d8f1364f78c164",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

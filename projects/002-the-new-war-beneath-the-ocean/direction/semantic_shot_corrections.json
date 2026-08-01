@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "corrections": [
+    {
+      "shot_index": 32,
+      "expected_claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+      "expected_asset_scene_id": "scene_017",
+      "replacement_type": "primary_evidence",
+      "editorial_purpose": "Use direct JAMSTEC primary evidence for the rare-earth mud and lifting-system sentence instead of an unrelated terrestrial quarry.",
+      "semantic_rationale": "The official JAMSTEC machine-on-seafloor image directly supports the named Japanese seabed operation while avoiding a misleading land-mine analogy.",
+      "evidence": {
+        "kind": "official_figure",
+        "source_ids": ["SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"],
+        "source_label": "JAMSTEC",
+        "font_px": 32,
+        "eyebrow": "JAMSTEC — PRIMARY EVIDENCE",
+        "title": "Rare-earth mud and the closed-loop lifting system",
+        "limitation": "The technical system does not establish commercial viability, reserve scale or acceptable environmental impact.",
+        "template_id": "orvyq_official_figure",
+        "necessity": "mechanism",
+        "evidence_asset_ids": ["EVID_JAMSTEC_MACHINE_ON_SEAFLOOR"],
+        "image_assets": ["assets/evidence/jamstec_machine_on_seafloor.jpg"]
+      }
+    },
+    {
+      "shot_index": 110,
+      "expected_claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
+      "expected_asset_scene_id": "scene_035",
+      "replacement_type": "contextual_footage",
+      "source_scene_id": "scene_054",
+      "trim_in_sec": 8,
+      "trim_out_sec": 15.8,
+      "editorial_purpose": "Keep the qualification about plausible harm and uncertainty in a real scientific field-assessment setting rather than an unrelated quarry.",
+      "semantic_rationale": "Verified NOAA expedition assessment footage supports scientific judgment under uncertainty; the cited study remains responsible for the mechanism and limitation claim.",
+      "semantic_link": "physical"
+    }
+  ]
+}

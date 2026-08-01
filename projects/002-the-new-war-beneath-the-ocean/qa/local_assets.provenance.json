@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "generated_at": "2026-07-31T14:58:19.807Z",
+  "records": [
+    {
+      "path": "assets/footage/scene_001_direct.mp4",
+      "provenance_path": "assets/footage/scene_001_direct.mp4.provenance.json",
+      "sha256": "42e20b2d517bafd26316bb036873f2a6b062cd1776f4d74583304e8a8ca07d51",
+      "size_bytes": 12659268,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_002_b78da07e94823deaae5ca74e.mp4",
+      "provenance_path": "assets/footage/scene_002_b78da07e94823deaae5ca74e.mp4.provenance.json",
+      "sha256": "7aa8dde012f52e93654cc7e72ea2882ff5ec83ee7e28d093ee3162332e3252d8",
+      "size_bytes": 14800385,
+      "provider": "pexels",
+      "provider_asset_id": "35861099",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_003_official_reuse.mp4",
+      "provenance_path": "assets/footage/scene_003_official_reuse.mp4.provenance.json",
+      "sha256": "8b64b1ca31c4eac4528af74798279fef4b09ee3614d3e64c856f794b0aca17cf",
+      "size_bytes": 20355239,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023_scene_003",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_004_official_reuse.mp4",
+      "provenance_path": "assets/footage/scene_004_official_reuse.mp4.provenance.json",
+      "sha256": "42e20b2d517bafd26316bb036873f2a6b062cd1776f4d74583304e8a8ca07d51",
+      "size_bytes": 12659268,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024_scene_004",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_005_06daaaabbe0826dbedfa2207.mp4",
+      "provenance_path": "assets/footage/scene_005_06daaaabbe0826dbedfa2207.mp4.provenance.json",
+      "sha256": "60df68dbb8ea3c33b6010f3f37f60826518636a26330befe763e3d554e59a058",
+      "size_bytes": 3284882,
+      "provider": "pexels",
+      "provider_asset_id": "31751351",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_006_cd809aab47833abf6ee1de6b.mp4",
+      "provenance_path": "assets/footage/scene_006_cd809aab47833abf6ee1de6b.mp4.provenance.json",
+      "sha256": "1a1de746e2a767b2d589ea268312ccfa1f6133f9af4b6ab4232a5a6b47e0cd93",
+      "size_bytes": 7018878,
+      "provider": "pexels",
+      "provider_asset_id": "32386518",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_007_34b3f4906a6eee7e10be8f10.mp4",
+      "provenance_path": "assets/footage/scene_007_34b3f4906a6eee7e10be8f10.mp4.provenance.json",
+      "sha256": "d9d845194d60b2819c5c5055ec578dc121e0e034e555f9942ae03f79da404169",
+      "size_bytes": 1778477,
+      "provider": "pexels",
+      "provider_asset_id": "6952047",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_008_8abb9c1116db94da4566f357.mp4",
+      "provenance_path": "assets/footage/scene_008_8abb9c1116db94da4566f357.mp4.provenance.json",
+      "sha256": "7027d5adda09ec70d48440b88f9c46744f0f2fa0d402264596654f8aad4d8e72",
+      "size_bytes": 2137939,
+      "provider": "pexels",
+      "provider_asset_id": "31079999",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_009_8846f61745140cdcd70c4150.mp4",
+      "provenance_path": "assets/footage/scene_009_8846f61745140cdcd70c4150.mp4.provenance.json",
+      "sha256": "105e28383db6835b61361ace2ae4c3b9d4583f30b5c7eee760c5ce255d31208f",
+      "size_bytes": 6161758,
+      "provider": "pexels",
+      "provider_asset_id": "4468754",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_010_9f0c1cd965d27101f9e31b3d.mp4",
+      "provenance_path": "assets/footage/scene_010_9f0c1cd965d27101f9e31b3d.mp4.provenance.json",
+      "sha256": "345b462d2f6f0704b384ccbe4bd0f075e2d0186e82d2919f1e59283bd43c768e",
+      "size_bytes": 11498474,
+      "provider": "pexels",
+      "provider_asset_id": "33938964",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_011_9ee53a113509a6f291ad3414.mp4",
+      "provenance_path": "assets/footage/scene_011_9ee53a113509a6f291ad3414.mp4.provenance.json",
+      "sha256": "5b98d6633c0b5c9429b9193bc9b2a136c053aa21655a19079a72b1d278aa8781",
+      "size_bytes": 18706424,
+      "provider": "pexels",
+      "provider_asset_id": "37420128",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_012_official_reuse.mp4",
+      "provenance_path": "assets/footage/scene_012_official_reuse.mp4.provenance.json",
+      "sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
+      "size_bytes": 7139160,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_D2_2018_TECHNOLOGY_scene_012",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_013_direct.mp4",
+      "provenance_path": "assets/footage/scene_013_direct.mp4.provenance.json",
+      "sha256": "8b64b1ca31c4eac4528af74798279fef4b09ee3614d3e64c856f794b0aca17cf",
+      "size_bytes": 20355239,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_014_9ffed5eb663a6f6f21233078.mp4",
+      "provenance_path": "assets/footage/scene_014_9ffed5eb663a6f6f21233078.mp4.provenance.json",
+      "sha256": "7b4a291790e6ea72984374bd6c4dcac78d231a452b23c3da077918fc466270a1",
+      "size_bytes": 2758405,
+      "provider": "pexels",
+      "provider_asset_id": "8135853",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4",
+      "provenance_path": "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4.provenance.json",
+      "sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
+      "size_bytes": 12783793,
+      "provider": "pexels",
+      "provider_asset_id": "33082707",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_016_direct.mp4",
+      "provenance_path": "assets/footage/scene_016_direct.mp4.provenance.json",
+      "sha256": "97c905c19aa7fc1889ac67dd7602af90ef467d228abc5a75b00cfa000d37c255",
+      "size_bytes": 18893873,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "NOAA_NORTH_ATLANTIC_DIVE08_WALL_2021",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_017_3be5f14070d93db018c32640.mp4",
+      "provenance_path": "assets/footage/scene_017_3be5f14070d93db018c32640.mp4.provenance.json",
+      "sha256": "813a92dc887ad117fff4cb76ba36b2bced31fc6904f1997ee4c486357b59b97b",
+      "size_bytes": 14107428,
+      "provider": "pexels",
+      "provider_asset_id": "28668454",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_019_81d3921b615afae6bf8f9325.mp4",
+      "provenance_path": "assets/footage/scene_019_81d3921b615afae6bf8f9325.mp4.provenance.json",
+      "sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
+      "size_bytes": 34106926,
+      "provider": "pexels",
+      "provider_asset_id": "36123915",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_020_94b6798729e2e19741f260c1.mp4",
+      "provenance_path": "assets/footage/scene_020_94b6798729e2e19741f260c1.mp4.provenance.json",
+      "sha256": "b2f4bab9d165f03defca34924f77a2c22f122cf61f19727aacd47ea2766f916a",
+      "size_bytes": 7898740,
+      "provider": "pexels",
+      "provider_asset_id": "12903927",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_021_146b6b5935f192be27d07afd.mp4",
+      "provenance_path": "assets/footage/scene_021_146b6b5935f192be27d07afd.mp4.provenance.json",
+      "sha256": "13d13929bd8cc0c97fa39b067ea19858f9ea3d40cbbc08cd22ae13007f8817ee",
+      "size_bytes": 6296695,
+      "provider": "pexels",
+      "provider_asset_id": "11585106",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_022_9366a132ae3b293a02df46b7.mp4",
+      "provenance_path": "assets/footage/scene_022_9366a132ae3b293a02df46b7.mp4.provenance.json",
+      "sha256": "a44357a5e4b2552322f51c3ecf4d90ea468556984168e653e9f3fbac4f56ed06",
+      "size_bytes": 6304979,
+      "provider": "pexels",
+      "provider_asset_id": "32243444",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_023_a96b0c345a995af5baf0923a.mp4",
+      "provenance_path": "assets/footage/scene_023_a96b0c345a995af5baf0923a.mp4.provenance.json",
+      "sha256": "c4c23c24d9acef9081a2f5c84918555ac2d1d0192775f9ba0f4bda85cbbbbc8b",
+      "size_bytes": 7341053,
+      "provider": "pexels",
+      "provider_asset_id": "33637403",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_024_official_reuse.mp4",
+      "provenance_path": "assets/footage/scene_024_official_reuse.mp4.provenance.json",
+      "sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
+      "size_bytes": 22929057,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019_scene_024",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_026_a8425569c1d990a57f193a1d.mp4",
+      "provenance_path": "assets/footage/scene_026_a8425569c1d990a57f193a1d.mp4.provenance.json",
+      "sha256": "d8705f0eea04c2bcc2800dddf7d168b0b900650dfb52e736045333b9aa7abd1b",
+      "size_bytes": 3944360,
+      "provider": "pexels",
+      "provider_asset_id": "5752550",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_027_cee752d61ab26eeb024d411f.mp4",
+      "provenance_path": "assets/footage/scene_027_cee752d61ab26eeb024d411f.mp4.provenance.json",
+      "sha256": "c8c3fb30e95ee3d14025b7fcea84a087e8b94826e6dac8bd483355f3430dc360",
+      "size_bytes": 2070653,
+      "provider": "pexels",
+      "provider_asset_id": "8829012",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_028_b925e4019f461a8eb547df63.mp4",
+      "provenance_path": "assets/footage/scene_028_b925e4019f461a8eb547df63.mp4.provenance.json",
+      "sha256": "e93480573e0c2088b9281bae7ccb362ecd4541af1105eb0ab900f89e3ba6f150",
+      "size_bytes": 11380293,
+      "provider": "pexels",
+      "provider_asset_id": "31795058",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_029_bec7ca5e63295de8aa016832.mp4",
+      "provenance_path": "assets/footage/scene_029_bec7ca5e63295de8aa016832.mp4.provenance.json",
+      "sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
+      "size_bytes": 12036391,
+      "provider": "pexels",
+      "provider_asset_id": "34495148",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_030_b39f52916266bceb2590b3fc.mp4",
+      "provenance_path": "assets/footage/scene_030_b39f52916266bceb2590b3fc.mp4.provenance.json",
+      "sha256": "734b5051e3fb807a9735274664b5ceca5dfe73f80a8c268157b0d5eb19d12c0a",
+      "size_bytes": 10787665,
+      "provider": "pexels",
+      "provider_asset_id": "34657205",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_031_48cfc78463916f8222590c3f.mp4",
+      "provenance_path": "assets/footage/scene_031_48cfc78463916f8222590c3f.mp4.provenance.json",
+      "sha256": "30064be56e69d769cc14a74807bdcaeca86399d696ed287d80a054b7a5e3bd67",
+      "size_bytes": 3795986,
+      "provider": "pexels",
+      "provider_asset_id": "8716589",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_032_official_reuse.mp4",
+      "provenance_path": "assets/footage/scene_032_official_reuse.mp4.provenance.json",
+      "sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
+      "size_bytes": 6631902,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WATER_COLUMN_2012_scene_032",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4",
+      "provenance_path": "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4.provenance.json",
+      "sha256": "44bc6d8ef52d1502a9cb0289b263146684c6446a63b26edfce805c1e861508ba",
+      "size_bytes": 2483315,
+      "provider": "pexels",
+      "provider_asset_id": "34748647",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_034_dbd1819c871818356753f93e.mp4",
+      "provenance_path": "assets/footage/scene_034_dbd1819c871818356753f93e.mp4.provenance.json",
+      "sha256": "ef0dcf0c89d76d63b84285c9dec76947e3c7183a01f46aa7d70410236b7f5e10",
+      "size_bytes": 3501429,
+      "provider": "pexels",
+      "provider_asset_id": "3196600",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_035_ef447180da828809758f0d18.mp4",
+      "provenance_path": "assets/footage/scene_035_ef447180da828809758f0d18.mp4.provenance.json",
+      "sha256": "b60a7190258952ef9ca39029abcf2fb29a440e680c0a783e69464ea895d86cb1",
+      "size_bytes": 19732957,
+      "provider": "pexels",
+      "provider_asset_id": "31100083",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_036_44ae569942147848854a5fc6.mp4",
+      "provenance_path": "assets/footage/scene_036_44ae569942147848854a5fc6.mp4.provenance.json",
+      "sha256": "9e2d7ec31ec67c8142992b18cc9f3dab001e30b8adfda11508d1b97363d08dd1",
+      "size_bytes": 1493863,
+      "provider": "pexels",
+      "provider_asset_id": "6951506",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_037_77974e64872de8e33bf15db5.mp4",
+      "provenance_path": "assets/footage/scene_037_77974e64872de8e33bf15db5.mp4.provenance.json",
+      "sha256": "0ca016562a304da49f888669de1ac3313d16de5e6f5a436f36a95683d6ecefd8",
+      "size_bytes": 10608206,
+      "provider": "pexels",
+      "provider_asset_id": "30295544",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_038_9d962f32cfd2deda34a8ddf6.mp4",
+      "provenance_path": "assets/footage/scene_038_9d962f32cfd2deda34a8ddf6.mp4.provenance.json",
+      "sha256": "cea376d9871be50504e491c4a96a3c6707c1fc082d122b22c862356708a2be38",
+      "size_bytes": 2215353,
+      "provider": "pexels",
+      "provider_asset_id": "6951598",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_039_d90b361d5f06560506e648bb.mp4",
+      "provenance_path": "assets/footage/scene_039_d90b361d5f06560506e648bb.mp4.provenance.json",
+      "sha256": "9089e6766777c90aaf3ee90a3f55d393d442ca9685e0dd40ed1ce3b83b43c918",
+      "size_bytes": 3782816,
+      "provider": "pexels",
+      "provider_asset_id": "4121351",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_040_247e04dcc7e0eb00bd1cfd2b.mp4",
+      "provenance_path": "assets/footage/scene_040_247e04dcc7e0eb00bd1cfd2b.mp4.provenance.json",
+      "sha256": "f7a4d3d0168e142b140cd10bb8200ade91517728450fcc5292ed44a31f8b6cd8",
+      "size_bytes": 7968620,
+      "provider": "pexels",
+      "provider_asset_id": "29702517",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_041_fb568a7886ffc7b5209cc5de.mp4",
+      "provenance_path": "assets/footage/scene_041_fb568a7886ffc7b5209cc5de.mp4.provenance.json",
+      "sha256": "5fd48f9540b06f2ec2342543f4a00fd6a2d69f1398ea3c140d36da9c78c8abaf",
+      "size_bytes": 3808378,
+      "provider": "pexels",
+      "provider_asset_id": "8426043",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_043_3274a7b8bb8853043b341006.mp4",
+      "provenance_path": "assets/footage/scene_043_3274a7b8bb8853043b341006.mp4.provenance.json",
+      "sha256": "64a2d56a3b4349156bc18adbbfa1e372e7453f8bb64984b63ad74df3996a18d1",
+      "size_bytes": 7278141,
+      "provider": "pexels",
+      "provider_asset_id": "37914269",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_044_60259233df0534e7673a42ef.mp4",
+      "provenance_path": "assets/footage/scene_044_60259233df0534e7673a42ef.mp4.provenance.json",
+      "sha256": "39d30fcf358faf880885fd153d3b0e6a61ab02b4bca43c8374a51df83585c22f",
+      "size_bytes": 2910064,
+      "provider": "pexels",
+      "provider_asset_id": "32243765",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_045_3cfaea76e4faea730fa72c95.mp4",
+      "provenance_path": "assets/footage/scene_045_3cfaea76e4faea730fa72c95.mp4.provenance.json",
+      "sha256": "7dc649fdf42aff33fd2486762b2aa747b0f1529cfb0e5e2be80c6c4599cb3a2d",
+      "size_bytes": 3674327,
+      "provider": "pexels",
+      "provider_asset_id": "8426045",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_047_c2ec99d4d13fb4912836b8e0.mp4",
+      "provenance_path": "assets/footage/scene_047_c2ec99d4d13fb4912836b8e0.mp4.provenance.json",
+      "sha256": "ed9aca959aedae279c7dda87e14b368aaa1eb213c4d23e8afab724292a9efb25",
+      "size_bytes": 4023851,
+      "provider": "pexels",
+      "provider_asset_id": "16222742",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_048_b73c8e4d41145089ab22de6e.mp4",
+      "provenance_path": "assets/footage/scene_048_b73c8e4d41145089ab22de6e.mp4.provenance.json",
+      "sha256": "42f91f1e5b112028a424a40dd4368bd7347485d99205b2b548c565c3b12fb36c",
+      "size_bytes": 2738221,
+      "provider": "pexels",
+      "provider_asset_id": "8540148",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_050_863b8a7dd26b4dd288235b75.mp4",
+      "provenance_path": "assets/footage/scene_050_863b8a7dd26b4dd288235b75.mp4.provenance.json",
+      "sha256": "3f75e1c6e9e2cce6aa69bb1003268f2dc1a491698898f5e551a5f385f5e545a9",
+      "size_bytes": 757633,
+      "provider": "pexels",
+      "provider_asset_id": "6951601",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_051_direct.mp4",
+      "provenance_path": "assets/footage/scene_051_direct.mp4.provenance.json",
+      "sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
+      "size_bytes": 7139160,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "NOAA_D2_2018_TECHNOLOGY",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_052_direct.mp4",
+      "provenance_path": "assets/footage/scene_052_direct.mp4.provenance.json",
+      "sha256": "ec47cb4db426066cc46db457bcae6242e1b59252dc24962de047cc456afad28d",
+      "size_bytes": 23452518,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "NOAA_CASCADIA_SEDIMENT_CORING_2020",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_053_direct.mp4",
+      "provenance_path": "assets/footage/scene_053_direct.mp4.provenance.json",
+      "sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
+      "size_bytes": 6631902,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "NOAA_WATER_COLUMN_2012",
+      "approved_for_final_edit": true
+    },
+    {
+      "path": "assets/footage/scene_054_direct.mp4",
+      "provenance_path": "assets/footage/scene_054_direct.mp4.provenance.json",
+      "sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
+      "size_bytes": 22929057,
+      "provider": "noaa_ocean_exploration",
+      "provider_asset_id": "NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019",
+      "approved_for_final_edit": true
+    }
+  ]
+}

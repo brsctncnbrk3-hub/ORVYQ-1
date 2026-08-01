@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "orvyq-aperture-cinematic",
+  "description": "Project-independent creative and QA boundaries for ORVYQ cinematic documentary production.",
+  "creative_limits": {
+    "minimum_mobile_font_px": 36,
+    "maximum_uses_per_source": 2,
+    "visual_medium_balance": {
+      "contextual_footage_fraction_min": 0.6,
+      "contextual_footage_fraction_max": 0.7,
+      "primary_evidence_fraction_min": 0.2,
+      "graphic_card_fraction_max": 0.15,
+      "full_screen_text_card_fraction_max": 0.03,
+      "section_graphic_card_fraction_max": 0.25,
+      "maximum_consecutive_graphic_card_shots": 1,
+      "maximum_graphic_template_uses": 3,
+      "maximum_full_screen_template_uses": 2,
+      "project_overrides_may_only_tighten": true
+    },
+    "hook": {
+      "minimum_cuts": 3,
+      "maximum_cuts": 6,
+      "minimum_duration_seconds": 8,
+      "maximum_duration_seconds": 15,
+      "question_minimum_characters": 25,
+      "question_maximum_characters": 120,
+      "human_context_first_required": true
+    },
+    "editorial_rhythm": {
+      "minimum_question_beats": 4,
+      "maximum_question_beats": 12,
+      "brief_accent_minimum_seconds": 1.5,
+      "brief_accent_maximum_seconds": 3,
+      "full_pause_minimum_seconds": 3
+    },
+    "opening_evidence": {
+      "required": true,
+      "allowed_kinds": [
+        "split_documents",
+        "official_document",
+        "official_figure",
+        "official_screen"
+      ],
+      "minimum_assets": 1,
+      "maximum_assets": 3,
+      "materialized_asset_prefix": "assets/evidence/",
+      "allowed_extensions": [".png", ".jpg", ".jpeg", ".webp"]
+    }
+  }
+}

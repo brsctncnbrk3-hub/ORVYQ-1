@@ -1,0 +1,841 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "status": "ready_for_acquisition",
+  "policy": {
+    "provider": "pexels",
+    "license_url": "https://www.pexels.com/license/",
+    "results_per_query": 50,
+    "minimum_resolution": "1280x720",
+    "preferred_resolution": "1920x1080_or_higher",
+    "orientation": "landscape",
+    "unique_provider_asset_required": true,
+    "contextual_footage_must_not_be_presented_as_location_specific_evidence": true,
+    "maximum_output_clip_seconds": 18,
+    "incremental_reuse_existing_assets": true
+  },
+  "assets": [
+    {
+      "scene_id": "scene_001",
+      "role": "human_context",
+      "queries": [
+        "research vessel crew ocean",
+        "ship crew at sea"
+      ],
+      "fallback_queries": [
+        "ocean research ship",
+        "cargo ship crew"
+      ],
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024",
+        "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/24pr-usvi-biotech-features-perfect-dive/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2024/07/rov-deployment-1920x1080-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "Exploration of Deepwater Habitats off Puerto Rico and the U.S. Virgin Islands for Biotechnology Potential",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted expedition media; preserve the complete expedition credit in provenance and do not imply that the vessel is Chikyu.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 0,
+        "output_duration_seconds": 18
+      },
+      "min_duration_seconds": 10,
+      "editorial_note": "Verified scientists launching an ROV from Research Vessel F.G. Walton Smith; use only for human-scale field operations and never identify it as Chikyu."
+    },
+    {
+      "scene_id": "scene_002",
+      "role": "context",
+      "queries": [
+        "research vessel rough ocean",
+        "large ship open ocean"
+      ],
+      "fallback_queries": [
+        "ship at sea aerial",
+        "vessel waves"
+      ],
+      "min_duration_seconds": 10,
+      "editorial_note": "Surface scale and isolation."
+    },
+    {
+      "scene_id": "scene_003",
+      "role": "context",
+      "queries": [],
+      "fallback_queries": [],
+      "min_duration_seconds": 8,
+      "editorial_note": "Deep-ocean atmosphere only; do not label as the Clarion-Clipperton Zone.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_EX1907_SEAFLOOR_EYES_2019",
+        "source_page_url": "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-ex1907-dailyupdates-nov16-media-dive09-seafloor-eyes/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2019/11/dive09-seafloor-eyes-1280x720-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ocean Exploration, 2019 Southeastern U.S. Deep-sea Exploration",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted expedition media. Use only as verified deep-seafloor context; do not identify it as the Clarion-Clipperton Zone or a mining site.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 4,
+        "output_duration_seconds": 12
+      }
+    },
+    {
+      "scene_id": "scene_004",
+      "role": "context",
+      "queries": [],
+      "fallback_queries": [],
+      "min_duration_seconds": 8,
+      "editorial_note": "Visible offshore industrial hardware establishes physical scale without claiming that the depicted platform or system is Japan's riser.",
+      "direct_source": {
+        "provider": "usgs_official_media",
+        "provider_asset_id": "USGS_ESCANABA_EXPEDITION_INTRO_2022",
+        "source_page_url": "https://oceanexplorer.noaa.gov/multimedia/explorations-22escanaba-gallery-media-escanaba-intro/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2022/06/escanaba-intro-1920x1080-1.mp4",
+        "source_institution": "U.S. Geological Survey",
+        "creator": "U.S. Geological Survey Escanaba Trough Expedition",
+        "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+        "license_note": "Official USGS expedition media hosted by NOAA Ocean Exploration. Preserve USGS credit and use only as marine field-operation context, not as Japan’s named riser system.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 5,
+        "output_duration_seconds": 12
+      }
+    },
+    {
+      "scene_id": "scene_005",
+      "role": "context",
+      "queries": [
+        "industrial control room operators",
+        "ship control room"
+      ],
+      "fallback_queries": [
+        "engineers control room",
+        "operations control center"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Human monitoring and technical decision-making."
+    },
+    {
+      "scene_id": "scene_006",
+      "role": "context",
+      "queries": [
+        "electric motor manufacturing",
+        "industrial motor factory"
+      ],
+      "fallback_queries": [
+        "robot factory assembly",
+        "precision manufacturing"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Connect rare-earth magnets to physical technology."
+    },
+    {
+      "scene_id": "scene_007",
+      "role": "governance_context",
+      "queries": [
+        "international assembly delegates conference",
+        "united nations delegates meeting"
+      ],
+      "fallback_queries": [
+        "multilateral conference delegates",
+        "international government assembly"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Use only if the source metadata and frame review verify a real international assembly; official legal documents retain the factual burden."
+    },
+    {
+      "scene_id": "scene_008",
+      "role": "context",
+      "queries": [
+        "wind turbine technicians maintenance",
+        "workers installing wind turbine"
+      ],
+      "fallback_queries": [
+        "wind turbine factory workers",
+        "renewable energy technicians"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Rare-earth end-use context."
+    },
+    {
+      "scene_id": "scene_009",
+      "role": "context",
+      "queries": [
+        "electric vehicle factory",
+        "car motor assembly"
+      ],
+      "fallback_queries": [
+        "automotive manufacturing robots",
+        "electric car production"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Technology demand context without claiming all EVs use the same chemistry."
+    },
+    {
+      "scene_id": "scene_010",
+      "role": "context",
+      "queries": [
+        "metal refinery industrial",
+        "mineral processing factory"
+      ],
+      "fallback_queries": [
+        "industrial chemical plant",
+        "metal production facility"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Processing and refining chokepoint."
+    },
+    {
+      "scene_id": "scene_011",
+      "role": "context",
+      "queries": [
+        "container port cranes",
+        "global shipping port"
+      ],
+      "fallback_queries": [
+        "cargo containers port",
+        "shipping logistics"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Global supply-chain dependency and export disruption."
+    },
+    {
+      "scene_id": "scene_012",
+      "role": "context",
+      "queries": [],
+      "fallback_queries": [],
+      "min_duration_seconds": 8,
+      "editorial_note": "Geographic isolation motif; never label as Minamitorishima without official imagery.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_EX1903_NEW_SEEP_SITE_2019",
+        "source_page_url": "https://oceanexplorer.noaa.gov/multimedia/video-playlist-ex1903-new-seep/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2019/07/new-seep-1920x1080-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ocean Exploration, Windows to the Deep 2019",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted deep-seafloor expedition media. Use as benthic observation context only; measured mining-track persistence remains carried by the cited evidence.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 4,
+        "output_duration_seconds": 12
+      }
+    },
+    {
+      "scene_id": "scene_013",
+      "role": "context",
+      "queries": [
+        "international conference delegates",
+        "united nations meeting"
+      ],
+      "fallback_queries": [
+        "government conference hall",
+        "diplomatic meeting"
+      ],
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023",
+        "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/okeanos-seascape-alaska-ex2304-features-summary/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2023/09/dive07-biodiversity-1920x1080-2.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ocean Exploration, Seascape Alaska",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted expedition media; preserve the Seascape Alaska credit and do not present this site as the cited industrial trial.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 4,
+        "output_duration_seconds": 18
+      },
+      "min_duration_seconds": 8,
+      "editorial_note": "Verified deep-sea biodiversity footage supports the statement that a disturbed site was not lifeless; the cited Nature figures carry the measured industrial-trial result."
+    },
+    {
+      "scene_id": "scene_014",
+      "role": "context",
+      "queries": [
+        "law document signing",
+        "government legal documents"
+      ],
+      "fallback_queries": [
+        "official paperwork close up",
+        "legal text desk"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Law and competing rulebooks."
+    },
+    {
+      "scene_id": "scene_015",
+      "role": "context",
+      "queries": [
+        "underwater sediment ocean floor",
+        "seabed sand underwater"
+      ],
+      "fallback_queries": [
+        "deep ocean floor",
+        "underwater sand particles"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Sediment and plume atmosphere; charts carry measured plume claims."
+    },
+    {
+      "scene_id": "scene_016",
+      "role": "context",
+      "queries": [
+        "marine scientist laboratory",
+        "ocean research laboratory"
+      ],
+      "fallback_queries": [
+        "scientist microscope marine",
+        "environmental science lab"
+      ],
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_NORTH_ATLANTIC_DIVE08_WALL_2021",
+        "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/okeanos-ex2104-features-summary/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2021/09/dive08-wall-1280x720-2.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ocean Exploration, 2021 North Atlantic Stepping Stones",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted expedition media; preserve the expedition credit and use only as verified deep-ocean context.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 3,
+        "output_duration_seconds": 18
+      },
+      "min_duration_seconds": 8,
+      "editorial_note": "Verified deep-ocean imagery supports the physical conditions of darkness, cold and crushing pressure; it is not footage of Japan's operation."
+    },
+    {
+      "scene_id": "scene_017",
+      "role": "context",
+      "queries": [
+        "open pit mine aerial",
+        "large mining trucks"
+      ],
+      "fallback_queries": [
+        "terrestrial mining quarry",
+        "industrial mine landscape"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Industry counterargument and land-mining trade-off; identify only as terrestrial mining context."
+    },
+    {
+      "scene_id": "scene_019",
+      "role": "metaphor",
+      "queries": [
+        "dark ocean waves night",
+        "ocean at night aerial"
+      ],
+      "fallback_queries": [
+        "stormy ocean night",
+        "black sea waves"
+      ],
+      "min_duration_seconds": 10,
+      "editorial_note": "Restrained frontier metaphor and transition bed."
+    },
+    {
+      "scene_id": "scene_020",
+      "role": "human_context",
+      "queries": [
+        "industrial port workers harbor",
+        "dock workers cargo terminal"
+      ],
+      "fallback_queries": [
+        "harbor workers shipping",
+        "port community workers"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Real workers in a visible port or cargo setting ground the distributed strategic benefits in people; do not use a generic contemplative horizon shot."
+    },
+    {
+      "scene_id": "scene_021",
+      "role": "context",
+      "queries": [
+        "industrial metal refinery processing",
+        "mineral processing factory"
+      ],
+      "fallback_queries": [
+        "metal smelter industrial plant",
+        "refinery factory machinery"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A visible refinery or mineral-processing environment supports the narrated bottleneck between extraction and usable material; source evidence carries all quantitative claims."
+    },
+    {
+      "scene_id": "scene_022",
+      "role": "context",
+      "queries": [
+        "industrial pilot plant engineers machinery",
+        "technology prototype testing laboratory"
+      ],
+      "fallback_queries": [
+        "engineers testing industrial equipment",
+        "research and development factory prototype"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Engineers testing pilot-scale industrial equipment directly visualise costly strategic capacity that may be built as an option rather than immediately used."
+    },
+    {
+      "scene_id": "scene_023",
+      "role": "human_context",
+      "queries": [
+        "international trade negotiation delegates",
+        "diplomatic negotiation meeting table"
+      ],
+      "fallback_queries": [
+        "government officials negotiation",
+        "international policy meeting delegates"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A real negotiation setting supports the sentence about bargaining power created by a credible alternative source; no specific country or institution is asserted."
+    },
+    {
+      "scene_id": "scene_024",
+      "role": "context",
+      "queries": [],
+      "fallback_queries": [],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Survey and mapping operations are the physical first step named in the narration; maps, permits and legal claims remain represented by their source-backed evidence elsewhere.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_OKEANOS_EXPLORER_TOUR_2018",
+        "source_page_url": "https://oceanexplorer.noaa.gov/technology/noaa-ship-okeanos-explorer/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2017/08/tour-1280x720-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ship Okeanos Explorer",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted research-vessel media. Use only for oceanographic mapping and survey operations; do not imply it is Chikyu or a commercial mining vessel.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 3,
+        "output_duration_seconds": 14
+      }
+    },
+    {
+      "scene_id": "scene_026",
+      "role": "human_context",
+      "queries": [
+        "marine scientists collecting water samples",
+        "ocean research scientists laboratory samples"
+      ],
+      "fallback_queries": [
+        "marine biology field sampling",
+        "environmental scientist ocean sample"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Scientists collecting baseline samples directly support the need for pre-disturbance ecological measurement without claiming a specific expedition or result."
+    },
+    {
+      "scene_id": "scene_027",
+      "role": "human_context",
+      "queries": [
+        "scientists engineers environmental planning meeting",
+        "technology policy risk assessment meeting"
+      ],
+      "fallback_queries": [
+        "researchers discussing environmental data",
+        "engineers scientists conference table"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A multidisciplinary decision meeting reflects the narrated trade-off among technological, ecological and social risks rather than presenting a simplistic pro- or anti-mining image."
+    },
+    {
+      "scene_id": "scene_028",
+      "role": "context",
+      "queries": [
+        "deep ocean floor sediment particles darkness",
+        "underwater sediment cloud dark seabed"
+      ],
+      "fallback_queries": [
+        "ocean floor particles underwater",
+        "deep sea sediment disturbance"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Dark seabed and suspended sediment provide restrained physical context for distant, hard-to-observe impacts; measured plume claims remain source-backed graphics and documents."
+    },
+    {
+      "scene_id": "scene_029",
+      "role": "human_context",
+      "queries": [
+        "research vessel crew preparing deck equipment",
+        "ocean expedition ship crew deployment"
+      ],
+      "fallback_queries": [
+        "marine research ship deck operations",
+        "scientists preparing ocean equipment ship"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A working research-vessel deck supports the announced return to field operations while avoiding any claim that generic footage depicts Chikyu or the 2027 trial itself."
+    },
+    {
+      "scene_id": "scene_030",
+      "role": "context",
+      "queries": [
+        "research ships at sea aerial",
+        "ocean survey vessels open sea"
+      ],
+      "fallback_queries": [
+        "scientific vessel ocean aerial",
+        "ships crossing ocean wide shot"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Multiple working vessels at sea give the strategic race a physical, non-sensational scale without inventing a confrontation or identifying the ships as specific national programmes."
+    },
+    {
+      "scene_id": "scene_031",
+      "role": "human_context",
+      "queries": [
+        "international conference delegates discussion",
+        "global maritime policy meeting"
+      ],
+      "fallback_queries": [
+        "diplomatic conference hall delegates",
+        "government rulemaking meeting"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "An international rulemaking setting directly supports the contest over governance; ISA and UNCLOS documents remain the factual legal evidence."
+    },
+    {
+      "scene_id": "scene_032",
+      "role": "context",
+      "queries": [],
+      "fallback_queries": [],
+      "min_duration_seconds": 14,
+      "max_duration_seconds": 120,
+      "editorial_note": "A restrained descent into darkness returns the film to physical depth while the narration shifts to the moral distance between technical capability and agreed limits.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_EX2107_HOLE_BOTTOM_SEA_2021",
+        "source_page_url": "https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-ex2107-gallery-media-dive08-hole-at-the-bottom-of-the-sea/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2021/11/dive08-hole-at-the-bottom-of-the-sea-1280x720-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ocean Exploration, Windows to the Deep 2021",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted deep-ocean ROV media. Use as verified dark deep-sea descent and ecosystem context; do not identify the location as the Clarion-Clipperton Zone.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 4,
+        "output_duration_seconds": 18
+      }
+    },
+    {
+      "scene_id": "scene_033",
+      "role": "context",
+      "queries": [
+        "deep sea plankton organisms darkness",
+        "midwater marine life underwater"
+      ],
+      "fallback_queries": [
+        "deep ocean organisms",
+        "underwater plankton particles"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Real midwater life restores physical ecological context after the discharge evidence; it does not claim to depict organisms from a specific trial."
+    },
+    {
+      "scene_id": "scene_034",
+      "role": "human_context",
+      "queries": [
+        "environmental scientists reviewing ocean data",
+        "marine researchers meeting data"
+      ],
+      "fallback_queries": [
+        "scientists reviewing research data",
+        "environmental research team meeting"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A multidisciplinary review setting embodies a decision made with incomplete evidence without implying that the people shown advise a named government."
+    },
+    {
+      "scene_id": "scene_035",
+      "role": "human_context",
+      "queries": [
+        "community near industrial mine landscape",
+        "workers mining town environment"
+      ],
+      "fallback_queries": [
+        "open pit mine workers",
+        "industrial mine community"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Terrestrial mining and nearby people give the alternative forms of damage a human scale; the scene is not evidence for a named mine or quantified impact."
+    },
+    {
+      "scene_id": "scene_036",
+      "role": "human_context",
+      "queries": [
+        "government policy science roundtable",
+        "officials scientists policy meeting"
+      ],
+      "fallback_queries": [
+        "public policy committee meeting",
+        "experts government conference table"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A real policy table represents economics, technology, law and ecology moving at once without identifying a specific institution."
+    },
+    {
+      "scene_id": "scene_037",
+      "role": "context",
+      "queries": [
+        "engineers evaluating industrial prototype",
+        "industrial technology testing engineers"
+      ],
+      "fallback_queries": [
+        "engineers inspecting machinery",
+        "prototype testing laboratory team"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Engineers evaluating a prototype distinguish technical capability from the threshold for an industrial decision."
+    },
+    {
+      "scene_id": "scene_038",
+      "role": "human_context",
+      "queries": [
+        "international assembly delegates voting",
+        "global governance conference delegates"
+      ],
+      "fallback_queries": [
+        "international policy conference",
+        "delegates government assembly"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "An international assembly provides human governance context for common heritage; UNCLOS and ISA documents remain the legal evidence."
+    },
+    {
+      "scene_id": "scene_039",
+      "role": "context",
+      "queries": [
+        "battery materials science laboratory",
+        "magnet technology research scientists"
+      ],
+      "fallback_queries": [
+        "advanced materials laboratory",
+        "battery research engineers"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Materials research gives physical context to technology-driven demand uncertainty without asserting a particular breakthrough."
+    },
+    {
+      "scene_id": "scene_040",
+      "role": "context",
+      "queries": [
+        "industrial metal recycling processing",
+        "electronics recycling factory metals"
+      ],
+      "fallback_queries": [
+        "metal sorting recycling plant",
+        "industrial recycling conveyor"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A real recycling process represents one partial alternative in the narration, not a complete substitute for new supply."
+    },
+    {
+      "scene_id": "scene_041",
+      "role": "human_context",
+      "queries": [
+        "diplomatic trade negotiation meeting",
+        "government officials negotiation table"
+      ],
+      "fallback_queries": [
+        "international negotiation delegates",
+        "policy bargaining meeting"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Negotiators embody the bargaining leverage created by an unused option without assigning the scene to a named state."
+    },
+    {
+      "scene_id": "scene_043",
+      "role": "human_context",
+      "queries": [
+        "working ships busy industrial port",
+        "maritime crews port operations"
+      ],
+      "fallback_queries": [
+        "vessels harbor workers",
+        "ships industrial harbor"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Visible industrial momentum at a port supports the warning that preparation can be mistaken for inevitability."
+    },
+    {
+      "scene_id": "scene_044",
+      "role": "context",
+      "queries": [
+        "factory production line stopped workers",
+        "industrial supply disruption factory"
+      ],
+      "fallback_queries": [
+        "factory workers machinery delay",
+        "manufacturing plant idle"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A disrupted production environment gives concentrated mineral supply risk a human and industrial scale without claiming a specific outage."
+    },
+    {
+      "scene_id": "scene_045",
+      "role": "human_context",
+      "queries": [
+        "international law delegates rulemaking meeting",
+        "government officials treaty negotiation"
+      ],
+      "fallback_queries": [
+        "international policy delegates conference",
+        "officials legal negotiation"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "Delegates in a formal negotiation provide governance context for the cost of delayed common rules."
+    },
+    {
+      "scene_id": "scene_047",
+      "role": "human_context",
+      "queries": [
+        "coastal industrial community workers",
+        "port town people industry"
+      ],
+      "fallback_queries": [
+        "industrial community people",
+        "coastal workers harbor"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "People living and working near industry give the distribution of risk a grounded human context without standing for a named affected community."
+    },
+    {
+      "scene_id": "scene_048",
+      "role": "human_context",
+      "queries": [
+        "young marine scientists ocean research",
+        "students marine biology fieldwork"
+      ],
+      "fallback_queries": [
+        "young researchers ocean science",
+        "marine science students laboratory"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A new generation doing ocean research provides a restrained image for inherited precedent without sentimentalising the claim."
+    },
+    {
+      "scene_id": "scene_050",
+      "role": "human_context",
+      "queries": [
+        "government maritime regulatory hearing",
+        "officials public policy hearing table"
+      ],
+      "fallback_queries": [
+        "government committee officials meeting",
+        "regulatory agency hearing"
+      ],
+      "min_duration_seconds": 12,
+      "max_duration_seconds": 120,
+      "editorial_note": "A regulatory hearing breaks up the dense document sequence in the United States route while NOAA and executive-order captures retain the factual burden."
+    },
+    {
+      "scene_id": "scene_051",
+      "role": "scientific_context",
+      "min_duration_seconds": 10,
+      "max_duration_seconds": 18,
+      "editorial_note": "Official NOAA ROV operations provide direct scientific observation context for examining persistent deep-seabed tracks; the cited 1979-to-2023 figures retain the evidentiary burden.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_D2_2018_TECHNOLOGY",
+        "source_page_url": "https://oceanexplorer.noaa.gov/technology/subs-deep-discoverer/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2018/09/d2-1280x720-2.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ocean Exploration",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official U.S. government source; retain source credit and verify any third-party credit displayed in the selected frames.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 4,
+        "output_duration_seconds": 18
+      }
+    },
+    {
+      "scene_id": "scene_052",
+      "role": "scientific_context",
+      "min_duration_seconds": 10,
+      "max_duration_seconds": 18,
+      "editorial_note": "Official expedition footage of sediment coring provides the visible physical measurement link for the plume-sampling sentence without being used as the numerical plume evidence.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_CASCADIA_SEDIMENT_CORING_2020",
+        "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/20cascadia-seeps-logs-sept29/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2025/04/coring-1920x1080-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "Oregon State University, NOAA OER, NOAA OCNMS, Ocean Exploration Trust, NA-121",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted expedition media with named partner credits; preserve the complete credit in provenance and end matter.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 3,
+        "output_duration_seconds": 18
+      }
+    },
+    {
+      "scene_id": "scene_053",
+      "role": "scientific_context",
+      "min_duration_seconds": 10,
+      "max_duration_seconds": 18,
+      "editorial_note": "Official NOAA water-column footage directly grounds the midwater food-web mechanism and marine-snow context while the cited paper supplies the experiment and result.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_WATER_COLUMN_2012",
+        "source_page_url": "https://oceanexplorer.noaa.gov/ocean-fact/water-column/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2012/09/water-column-1280x720-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "NOAA Ocean Exploration, Deep-Sea Symphony: Exploring the Musicians Seamounts",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted media; preserve the expedition credit in provenance and end matter.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 4,
+        "output_duration_seconds": 18
+      }
+    },
+    {
+      "scene_id": "scene_054",
+      "role": "scientific_context",
+      "min_duration_seconds": 10,
+      "max_duration_seconds": 18,
+      "editorial_note": "Official expedition operations footage provides a real field-assessment setting for decision under uncertainty, with mission objectives, weather, sampling and dive choices physically connected.",
+      "direct_source": {
+        "provider": "noaa_ocean_exploration",
+        "provider_asset_id": "NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019",
+        "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/19deepsearch-logs-apr19/",
+        "media_url": "https://oceanexplorer.noaa.gov/wp-content/uploads/2025/04/leg1-highlights-1280x720-1.mp4",
+        "source_institution": "NOAA Ocean Exploration",
+        "creator": "Ivan Hurzeler and DEEP SEARCH 2019 – BOEM, USGS, NOAA, ROV Jason, Woods Hole Oceanographic Institution",
+        "license_url": "https://www.noaa.gov/disclaimer",
+        "license_note": "Official NOAA-hosted partner expedition media; preserve the complete displayed credit and do not imply NOAA authorship of third-party frames.",
+        "attribution_required": true,
+        "source_trim_start_seconds": 6,
+        "output_duration_seconds": 18
+      }
+    }
+  ],
+  "acquisition_policy": {
+    "pages_per_query": 2,
+    "max_queries_per_scene": 4,
+    "max_requests_per_run": 80,
+    "rate_limit_reserve": 20,
+    "request_delay_ms": 200,
+    "max_search_retries": 1,
+    "max_retry_delay_ms": 3000
+  },
+  "planned_asset_count": 49,
+  "use_contract": "research/footage_use_contracts.json",
+  "use_contract_overrides": "research/footage_use_contract_overrides.json"
+}

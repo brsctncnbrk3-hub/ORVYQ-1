@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_basis": "Second byte-bound review of the twenty replacement clips retained by the claim-bound use contract. Decisions use the replacement media SHA-256, twelve-frame contact-sheet SHA-256 and only the narrowed claim/slice roles declared in footage_use_contracts.json.",
+  "decisions": [
+    {
+      "scene_id": "scene_002",
+      "provider_asset_id": "16223920",
+      "asset_sha256": "8bb0af9cf6826f89704c154ffdea6cee47b4d807f9a7139e6c8b9cd4420f800f",
+      "contact_sheet_sha256": "4be54b0ff0bc4238c08447bcffe7e9a76b58229f8123f847d2227c8046f54ccc",
+      "decision": "reject",
+      "reason": "The frames show a cargo ship and small boat, not a scientific or offshore working vessel appropriate to the technical expedition context."
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "33872851",
+      "asset_sha256": "277685b16fabf4e9f9bd49d40c9525b6870c81041329386a492b60cdeff752fc",
+      "contact_sheet_sha256": "286b412cb356f3291f86dbd3615ee95e9f63ca691b8bfe25cdd982fba9150e7a",
+      "decision": "reject",
+      "reason": "A clearly visible ray in bright shallow-looking water is wildlife beauty footage, not a restrained abyssal-plane or deep-seabed context."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "4911815",
+      "asset_sha256": "22a32088f0a3c2eaad09493eafe27d2c8067f699051ece1f43e58e39a8d333b9",
+      "contact_sheet_sha256": "4e74f16580644f14e93cbdeca2cf7f4190b314bf6d3a2b226406ebf33c45ba49",
+      "decision": "reject",
+      "reason": "The oil tanker creates a petroleum association and cannot represent the rare-earth-mud lifting test or its unfinished production chain."
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "6883825",
+      "asset_sha256": "a2ae43601ef42312854f3e6bb41704948def4d58c2385024c44f06856767082d",
+      "contact_sheet_sha256": "b0fb75e8d6cc6c53c006a1b754869e8365459409d98d5509ef8d1def898d29b7",
+      "decision": "reject",
+      "reason": "The frames show people monitoring an interview recording, not operators making technical decisions in an industrial or marine control room."
+    },
+    {
+      "scene_id": "scene_006",
+      "provider_asset_id": "32386518",
+      "asset_sha256": "1a1de746e2a767b2d589ea268312ccfa1f6133f9af4b6ab4232a5a6b47e0cd93",
+      "contact_sheet_sha256": "55cee1e1561718a7d70735ea554b0b4d6785dfca65ce7cb84ca61486bb068ba7",
+      "decision": "approve",
+      "reason": "The reviewed frames clearly show industrial robotics, directly supporting the narration's physical end-use example without carrying any quantitative claim."
+    },
+    {
+      "scene_id": "scene_008",
+      "provider_asset_id": "31079999",
+      "asset_sha256": "7027d5adda09ec70d48440b88f9c46744f0f2fa0d402264596654f8aad4d8e72",
+      "contact_sheet_sha256": "7071ff6ac246510b04752cf473873b8b94355210fab54577de0058ac68364b4f",
+      "decision": "approve",
+      "reason": "The turbines are valid downstream rare-earth end-use context at the single contracted industrial-chain target and are not presented as a mine or Japanese site."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "19773052",
+      "asset_sha256": "28f68fad79cc1ace043ed5d0cb68bfb8ecec59ea587347704c61105586393933",
+      "contact_sheet_sha256": "611c20b404510c753c0e0d75701ce297cb31dd3b1a981b36e6f27f5364ebfccf",
+      "decision": "reject",
+      "reason": "A tropical island aerial cannot carry the long-term persistence of disturbance on a dark deep seabed or a benthic survey context."
+    },
+    {
+      "scene_id": "scene_014",
+      "provider_asset_id": "8135853",
+      "asset_sha256": "7b4a291790e6ea72984374bd6c4dcac78d231a452b23c3da077918fc466270a1",
+      "contact_sheet_sha256": "c63ddd6fe65d5441db000d01a0faa4ece91c775f06244f032c2be21265fd98d6",
+      "decision": "approve",
+      "reason": "The document exchange with lawyers is suitable restrained governance context at the two contracted legal targets; treaty and permit documents retain factual authority."
+    },
+    {
+      "scene_id": "scene_020",
+      "provider_asset_id": "12903927",
+      "asset_sha256": "b2f4bab9d165f03defca34924f77a2c22f122cf61f19727aacd47ea2766f916a",
+      "contact_sheet_sha256": "7accd388eb9558fd80841fa09b6f2a035752b76bb57b0a9714d9605cc58ea3a2",
+      "decision": "approve",
+      "reason": "The reviewed harbor workers and ship provide real human and logistics context for the two contracted strategic-risk targets without identifying a named project."
+    },
+    {
+      "scene_id": "scene_021",
+      "provider_asset_id": "11585106",
+      "asset_sha256": "13d13929bd8cc0c97fa39b067ea19858f9ea3d40cbbc08cd22ae13007f8817ee",
+      "contact_sheet_sha256": "d8e0b46dfbf7f4cffcdf5198cac2fa4ca25c130e39afb5f8ada33f67a98fffbe",
+      "decision": "approve",
+      "reason": "The industrial metal-processing frames directly support the single contracted refining-bottleneck context while evidence sources carry mineral-specific facts."
+    },
+    {
+      "scene_id": "scene_023",
+      "provider_asset_id": "33637403",
+      "asset_sha256": "c4c23c24d9acef9081a2f5c84918555ac2d1d0192775f9ba0f4bda85cbbbbc8b",
+      "contact_sheet_sha256": "406a9208bca16db1b0facf6823e4d318438e7bc7af88b988752998c4a3a80ef6",
+      "decision": "approve",
+      "reason": "The active industrial dock makes material trade and physical supply movement visible at the two contracted concentration and export-control targets."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "26562748",
+      "asset_sha256": "2181c774294a1169504adeb9a0ab0351705969bf2583a34de987845280eb2392",
+      "contact_sheet_sha256": "e7ca7e677399069b6aa50f07c301d4f46b1eae3166fb8be902f31b7b77625acb",
+      "decision": "reject",
+      "reason": "The tiny leisure-scale boat lacks visible survey equipment or working-vessel context and cannot support the technical-test boundary."
+    },
+    {
+      "scene_id": "scene_026",
+      "provider_asset_id": "5752550",
+      "asset_sha256": "d8705f0eea04c2bcc2800dddf7d168b0b900650dfb52e736045333b9aa7abd1b",
+      "contact_sheet_sha256": "8631360994b926fe7c6db4daad81b32fb36cb2780dd9072e2c25129fa302aa8e",
+      "decision": "approve",
+      "reason": "The scientist handling samples is appropriate measurement and baseline-research context at the two contracted targets without impersonating the cited experiment."
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "5563401",
+      "asset_sha256": "564f31a6fcf054e77c79f1e060de2c70979ed278c3db5e550e0563265115bd04",
+      "contact_sheet_sha256": "ea9027cb814c4c486c1ed60d3b3a2d348326b457130627eac8cb81beb9019f22",
+      "decision": "reject",
+      "reason": "A stern view of open water does not show an international assembly or any human governance process required by the contracted target."
+    },
+    {
+      "scene_id": "scene_030",
+      "provider_asset_id": "34657205",
+      "asset_sha256": "734b5051e3fb807a9735274664b5ceca5dfe73f80a8c268157b0d5eb19d12c0a",
+      "contact_sheet_sha256": "6c625e5d73e890c62b0cedb3b4b968df6bf363f39d8034679332bb1dcdd2c1d9",
+      "decision": "approve",
+      "reason": "The multiple vessels provide a restrained physical metaphor for strategic competition at the two contracted synthesis targets without implying confrontation."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "38675561",
+      "asset_sha256": "4464468848515217eec9cd0ff063d429efefc14bbd00c4f16becb80cba084db3",
+      "contact_sheet_sha256": "7890547777433411ddb3b0ec308f3f94619e9231cd61bd02a2824a7b26e93141",
+      "decision": "reject",
+      "reason": "A science-fiction robot on a city rooftop is incompatible with real deep-ocean descent, seabed persistence and the evidence-led visual language."
+    },
+    {
+      "scene_id": "scene_034",
+      "provider_asset_id": "3196600",
+      "asset_sha256": "ef0dcf0c89d76d63b84285c9dec76947e3c7183a01f46aa7d70410236b7f5e10",
+      "contact_sheet_sha256": "eb8994731f649fc4e237a41f605678fc3c8086a218b13eb9bb62a1e0c0bfdab9",
+      "decision": "approve",
+      "reason": "Scientists discussing at a microscope provide credible unresolved-knowledge context at the single contracted precedent target without naming an institution."
+    },
+    {
+      "scene_id": "scene_038",
+      "provider_asset_id": "6951598",
+      "asset_sha256": "cea376d9871be50504e491c4a96a3c6707c1fc082d122b22c862356708a2be38",
+      "contact_sheet_sha256": "f744e821b4603a4ee15db1ab1d7e704c911c0c09d56749dfd73fc488f91aafe7",
+      "decision": "approve",
+      "reason": "The populated formal meeting is suitable human governance context at the two contracted targets and is never labelled as a named regulator or assembly."
+    },
+    {
+      "scene_id": "scene_047",
+      "provider_asset_id": "16222742",
+      "asset_sha256": "ed9aca959aedae279c7dda87e14b368aaa1eb213c4d23e8afab724292a9efb25",
+      "contact_sheet_sha256": "21b1598c234c48fbdf66b1b99efb15ad2ee0734a6690b35ea9b8e75b8f359774",
+      "decision": "approve",
+      "reason": "Workers maintaining transport infrastructure give export-control disruption a physical downstream consequence at the single contracted target."
+    },
+    {
+      "scene_id": "scene_048",
+      "provider_asset_id": "8540148",
+      "asset_sha256": "42f91f1e5b112028a424a40dd4368bd7347485d99205b2b548c565c3b12fb36c",
+      "contact_sheet_sha256": "764903f36bee6860702b63d71574824db212d8cd86f88eb343540cdb5ffe1be1",
+      "decision": "approve",
+      "reason": "The PPE laboratory team provides valid materials-research context for the single contracted battery-chemistry target without carrying the chemistry evidence itself."
+    }
+  ]
+}

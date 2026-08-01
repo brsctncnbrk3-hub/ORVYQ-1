@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "title": "The New War Beneath the Ocean",
+  "central_question": "Who gets to mine the deep ocean—and what happens when mineral security moves faster than science and international law?",
+  "audience_promise": "Reveal how critical-mineral chokepoints are turning the seabed into a strategic frontier, why the United States, China, Japan and private companies are moving now, and what may be lost before the rules are settled.",
+  "working_thesis": "The acceleration of deep-sea mining is driven as much by strategic control over critical-mineral supply chains as by resource demand. That pressure is pushing extraction technology and national permitting faster than international governance and ecological knowledge.",
+  "scope": {
+    "include": [
+      "Japan's 2026 Minamitorishima rare-earth-mud retrieval inside its EEZ",
+      "The Clarion–Clipperton Zone polymetallic-nodule race in international waters",
+      "China-centered rare-earth and mineral-processing chokepoints",
+      "The split between the ISA/UNCLOS framework and the U.S. DSHMRA route",
+      "Best available evidence on direct tracks, sediment plumes, midwater food webs and long-term recovery",
+      "Economic and technological uncertainty, including changing battery chemistry and processing constraints"
+    ],
+    "exclude": [
+      "Treating all seabed deposits as one technology or one legal regime",
+      "Declaring deep-sea mining categorically better or worse than all terrestrial mining",
+      "Speculative claims about undiscovered species without attribution",
+      "Presenting permit applications as approved mining permits"
+    ]
+  },
+  "emotional_arc": [
+    "Wonder: a machine reaches a place humans can barely observe",
+    "Temptation: the seabed appears to offer escape from mineral dependence",
+    "Escalation: maps become claims and national strategies",
+    "Fracture: international law and national permitting diverge",
+    "Unease: scientific evidence shows harm but also unresolved scale questions",
+    "Reflection: the first decision may define who the deep ocean is for"
+  ],
+  "status": "research_complete"
+}

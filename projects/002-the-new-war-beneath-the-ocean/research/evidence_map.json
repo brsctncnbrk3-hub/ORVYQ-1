@@ -1,0 +1,694 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "purpose": "Claim-level source, limitation, and visual-evidence map for the ORVYQ deep-sea-mining documentary.",
+  "status_policy": {
+    "verified": "The claim is supportable from the listed primary, official, intergovernmental or peer-reviewed source.",
+    "attributed_commentary": "The statement may remain only when clearly attributed in narration and on screen.",
+    "rewrite_required": "The wording is too strong or insufficiently sourced; Candidate Validation must fail until rewritten.",
+    "source_required": "A primary or authoritative source and visual evidence asset must be added before use."
+  },
+  "source_catalog": [
+    {
+      "source_id": "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026",
+      "publisher": "JAMSTEC",
+      "title": "Results of the rare-earth-mud mining-system connection test in the Minamitorishima EEZ",
+      "publication_date": "2026-07-24",
+      "url": "https://www.jamstec.go.jp/j/about/press_release/20260724/",
+      "source_type": "official_technical_release",
+      "official": true,
+      "visual_evidence_candidates": [
+        "Chikyu vessel photograph",
+        "Closed-loop mining-system diagram",
+        "Test timeline",
+        "Recovered mud photographs"
+      ],
+      "limitation": "Technical operation does not establish commercial viability, reserve scale or acceptable environmental impact."
+    },
+    {
+      "source_id": "SRC_METI_MINAMITORISHIMA_2026",
+      "publisher": "Ministry of Economy, Trade and Industry of Japan",
+      "title": "Press Conference by Minister Akazawa — successful test mining of rare-earth mud",
+      "publication_date": "2026-02-03",
+      "url": "https://www.meti.go.jp/english/speeches/press_conferences/2026/0203001.html",
+      "source_type": "official_government_statement",
+      "official": true,
+      "visual_evidence_candidates": [
+        "Ministerial transcript title/date",
+        "Supply-chain-security excerpt"
+      ],
+      "limitation": "Policy statement, not independent economic or environmental verification."
+    },
+    {
+      "source_id": "SRC_IEA_RARE_EARTHS_2026",
+      "publisher": "International Energy Agency",
+      "title": "Rare Earth Elements — Executive Summary",
+      "publication_date": "2026",
+      "url": "https://www.iea.org/reports/rare-earth-elements/executive-summary",
+      "source_type": "intergovernmental_supply_chain_analysis",
+      "official": true,
+      "visual_evidence_candidates": [
+        "2024 mining/refining/magnet concentration chart",
+        "2025 export-control timeline"
+      ],
+      "limitation": "Figures concern magnet rare earths and related permanent magnets."
+    },
+    {
+      "source_id": "SRC_IEA_CRITICAL_MINERALS_2026",
+      "publisher": "International Energy Agency",
+      "title": "Global Critical Minerals Outlook 2026",
+      "publication_date": "2026-07-16",
+      "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2026",
+      "source_type": "intergovernmental_market_analysis",
+      "official": true,
+      "visual_evidence_candidates": [
+        "Demand and chemistry chart",
+        "Refining-concentration chart",
+        "Recycling contribution chart"
+      ],
+      "limitation": "Scenario analysis varies with technology, policy, prices and project delivery."
+    },
+    {
+      "source_id": "SRC_ISA_COUNCIL_JULY_2026",
+      "publisher": "International Seabed Authority",
+      "title": "31st Session of the Council, Part II — 13–24 July 2026",
+      "publication_date": "2026-07",
+      "url": "https://isa.org.jm/session-31-council-part-2-july-2026/",
+      "source_type": "official_intergovernmental_negotiation_record",
+      "official": true,
+      "visual_evidence_candidates": [
+        "Revision 3 title page",
+        "Outstanding-issues list",
+        "July 24 roadmap agenda"
+      ],
+      "limitation": "Negotiations continue and status must be rechecked before final encode."
+    },
+    {
+      "source_id": "SRC_UNCLOS_ARTICLES_136_137",
+      "publisher": "United Nations",
+      "title": "United Nations Convention on the Law of the Sea — Articles 136 and 137",
+      "publication_date": "1982",
+      "url": "https://www.un.org/Depts/los/convention_agreements/texts/unclos/part112.htm",
+      "source_type": "primary_legal_text",
+      "official": true,
+      "visual_evidence_candidates": [
+        "Article 136 text",
+        "Article 137 text"
+      ],
+      "limitation": "The United States has not ratified UNCLOS and legal implications of national action are disputed."
+    },
+    {
+      "source_id": "SRC_WHITEHOUSE_EO14285",
+      "publisher": "The White House",
+      "title": "Executive Order 14285 — Unleashing America's Offshore Critical Minerals and Resources",
+      "publication_date": "2025-04-24",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/unleashing-americas-offshore-critical-minerals-and-resources/",
+      "source_type": "primary_executive_order",
+      "official": true,
+      "visual_evidence_candidates": [
+        "Executive-order title and signature",
+        "National-security language"
+      ],
+      "limitation": "Policy direction is not a permit or evidence of technical and economic feasibility."
+    },
+    {
+      "source_id": "SRC_NOAA_DSHMRA_2026",
+      "publisher": "National Oceanic and Atmospheric Administration",
+      "title": "Deep Seabed Hard Minerals Mining",
+      "publication_date": "2026",
+      "url": "https://oceanservice.noaa.gov/deep-seabed-mineral-resources/deep-seabed-mining/",
+      "source_type": "official_regulatory_guidance",
+      "official": true,
+      "visual_evidence_candidates": [
+        "Licence and permit pathway",
+        "Application list",
+        "No existing commercial permits entry"
+      ],
+      "limitation": "Application status changes quickly and must be rechecked."
+    },
+    {
+      "source_id": "SRC_NATURE_RECOVERY_2025",
+      "publisher": "Nature",
+      "title": "Long-term impact and biological recovery in a deep-sea mining track",
+      "publication_date": "2025-03-26",
+      "url": "https://www.nature.com/articles/s41586-025-08921-3",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "visual_evidence_candidates": [
+        "1979 versus 2023 track photographs",
+        "Recovery comparison chart",
+        "Track map"
+      ],
+      "limitation": "Historical small-scale test using older machinery."
+    },
+    {
+      "source_id": "SRC_NEE_MACROFAUNA_2026",
+      "publisher": "Nature Ecology & Environment",
+      "title": "Impacts of an industrial deep-sea mining trial on macrofaunal biodiversity",
+      "publication_date": "2026",
+      "url": "https://www.nature.com/articles/s41559-025-02911-4",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "visual_evidence_candidates": [
+        "Before-after-control-impact map",
+        "Mining-track images",
+        "Density and richness charts"
+      ],
+      "limitation": "Two-month follow-up does not establish long-term recovery or full commercial-scale effects."
+    },
+    {
+      "source_id": "SRC_NATURE_PLUME_2025",
+      "publisher": "Nature Communications",
+      "title": "Monitoring benthic plumes, sediment redeposition and seafloor imprints caused by deep-sea polymetallic nodule mining",
+      "publication_date": "2025",
+      "url": "https://www.nature.com/articles/s41467-025-56311-0",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "visual_evidence_candidates": [
+        "Collector-track photogrammetry",
+        "Plume sensor map",
+        "Concentration-distance chart"
+      ],
+      "limitation": "Trial scale and monitoring geometry do not represent years of commercial operations."
+    },
+    {
+      "source_id": "SRC_NCOMMS_MIDWATER_2025",
+      "publisher": "Nature Communications",
+      "title": "Deep-sea mining discharge can disrupt midwater food webs",
+      "publication_date": "2025",
+      "url": "https://www.nature.com/articles/s41467-025-65411-w",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "visual_evidence_candidates": [
+        "Food-web diagram",
+        "Particle comparison",
+        "Discharge-depth profile"
+      ],
+      "limitation": "Identifies a plausible mechanism, not observed commercial ecosystem collapse."
+    },
+    {
+      "source_id": "SRC_TMC_LIFECYCLE_POSITION",
+      "publisher": "The Metals Company",
+      "title": "Lifecycle",
+      "publication_date": "current",
+      "url": "https://metals.co/lifecycle/",
+      "source_type": "corporate_position_and_commissioned_analysis",
+      "official": false,
+      "visual_evidence_candidates": [
+        "Company lifecycle comparison",
+        "Nodule-to-metal process diagram"
+      ],
+      "limitation": "Company-commissioned advocacy; must remain attributed and paired with independent science."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "SEC_01_MUD_TO_DAYLIGHT",
+      "title": "The mud that reached daylight",
+      "script_lines": [
+        1,
+        53
+      ],
+      "dramatic_function": "Open on Japan's 2026 technical milestone and reveal the supply-chain motive.",
+      "required_visual_mix": {
+        "evidence": 0.3,
+        "context": 0.4,
+        "metaphor": 0.2,
+        "graphic": 0.1
+      }
+    },
+    {
+      "section_id": "SEC_02_CHOKEPOINT",
+      "title": "The chokepoint",
+      "script_lines": [
+        54,
+        94
+      ],
+      "dramatic_function": "Explain why refining and magnet concentration make the ocean strategically valuable.",
+      "required_visual_mix": {
+        "evidence": 0.4,
+        "context": 0.3,
+        "metaphor": 0.15,
+        "graphic": 0.15
+      }
+    },
+    {
+      "section_id": "SEC_03_BLACK_MAP",
+      "title": "The black map",
+      "script_lines": [
+        95,
+        126
+      ],
+      "dramatic_function": "Move from Japan's EEZ to polymetallic nodules in the Clarion–Clipperton Zone.",
+      "required_visual_mix": {
+        "evidence": 0.3,
+        "context": 0.35,
+        "metaphor": 0.2,
+        "graphic": 0.15
+      }
+    },
+    {
+      "section_id": "SEC_04_TWO_RULEBOOKS",
+      "title": "Two rulebooks",
+      "script_lines": [
+        127,
+        177
+      ],
+      "dramatic_function": "Show the unfinished ISA code and the parallel United States route without overstating permit status.",
+      "required_visual_mix": {
+        "evidence": 0.5,
+        "context": 0.2,
+        "metaphor": 0.15,
+        "graphic": 0.15
+      }
+    },
+    {
+      "section_id": "SEC_05_ARGUMENT_FOR_MINING",
+      "title": "The argument for mining",
+      "script_lines": [
+        178,
+        230
+      ],
+      "dramatic_function": "Present the strongest case for extraction, then separate mineral need from supply-chain control.",
+      "required_visual_mix": {
+        "evidence": 0.3,
+        "context": 0.35,
+        "metaphor": 0.2,
+        "graphic": 0.15
+      }
+    },
+    {
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "title": "What the machine leaves behind",
+      "script_lines": [
+        231,
+        282
+      ],
+      "dramatic_function": "Ground environmental uncertainty in measured track, plume and midwater evidence.",
+      "required_visual_mix": {
+        "evidence": 0.55,
+        "context": 0.2,
+        "metaphor": 0.1,
+        "graphic": 0.15
+      }
+    },
+    {
+      "section_id": "SEC_07_PRECEDENT",
+      "title": "The precedent",
+      "script_lines": [
+        283,
+        317
+      ],
+      "dramatic_function": "Resolve the film around governance, distribution of risk and irreversible precedent.",
+      "required_visual_mix": {
+        "evidence": 0.2,
+        "context": 0.25,
+        "metaphor": 0.4,
+        "graphic": 0.15
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "section_id": "SEC_01_MUD_TO_DAYLIGHT",
+      "importance": 5,
+      "narration_excerpt": "But it proved that material could be lifted continuously from more than five kilometres below the Pacific.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "evidence_requirements": [
+        "Show Chikyu and the official 5,569-metre figure.",
+        "State that technical recovery is not commercial viability."
+      ],
+      "visual_treatment": {
+        "primary": "document_evidence",
+        "secondary": "frontier_infrastructure",
+        "metaphor": "moving_frontier"
+      }
+    },
+    {
+      "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+      "section_id": "SEC_02_CHOKEPOINT",
+      "importance": 5,
+      "narration_excerpt": "In 2024, China produced about sixty percent of the world’s magnet rare earths.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_IEA_RARE_EARTHS_2026"
+      ],
+      "evidence_requirements": [
+        "Show 60% mining, 91% refining and 94% sintered permanent-magnet production with 2024 scope.",
+        "Do not generalise the percentages to all rare earths."
+      ],
+      "visual_treatment": {
+        "primary": "critical_inputs_map",
+        "secondary": "report_evidence",
+        "metaphor": "narrowing_gate"
+      }
+    },
+    {
+      "claim_id": "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK",
+      "section_id": "SEC_02_CHOKEPOINT",
+      "importance": 5,
+      "narration_excerpt": "In 2025, Chinese export controls turned that concentration into a physical problem.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_IEA_RARE_EARTHS_2026",
+        "SRC_IEA_CRITICAL_MINERALS_2026"
+      ],
+      "evidence_requirements": [
+        "Use dated export-control and disruption evidence.",
+        "Do not imply a permanent total cutoff."
+      ],
+      "visual_treatment": {
+        "primary": "source_timeline",
+        "secondary": "dated_release_context",
+        "metaphor": "narrowing_gate"
+      }
+    },
+    {
+      "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+      "section_id": "SEC_02_CHOKEPOINT",
+      "importance": 4,
+      "narration_excerpt": "A larger production-chain trial is planned for 2027, followed by technical and economic assessment.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026",
+        "SRC_METI_MINAMITORISHIMA_2026"
+      ],
+      "evidence_requirements": [
+        "Show the planned 2027 trial and 2028 assessment as future milestones.",
+        "Do not present the schedule as guaranteed."
+      ],
+      "visual_treatment": {
+        "primary": "process_timeline",
+        "secondary": "document_evidence",
+        "metaphor": "moving_frontier"
+      }
+    },
+    {
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "section_id": "SEC_03_BLACK_MAP",
+      "importance": 5,
+      "narration_excerpt": "Under the United Nations Convention on the Law of the Sea, the seabed beyond national jurisdiction is described as the common heritage of mankind.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_UNCLOS_ARTICLES_136_137"
+      ],
+      "evidence_requirements": [
+        "Show Articles 136 and 137 at readable size.",
+        "Distinguish the Area from national EEZ projects."
+      ],
+      "visual_treatment": {
+        "primary": "policy_document",
+        "secondary": "governance_context",
+        "metaphor": "distributed_risk"
+      }
+    },
+    {
+      "claim_id": "CLM_006_MINING_CODE_UNFINISHED",
+      "section_id": "SEC_04_TWO_RULEBOOKS",
+      "importance": 5,
+      "narration_excerpt": "As of July 24, 2026, the Authority had still not completed the regulations intended to govern exploitation.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_ISA_COUNCIL_JULY_2026"
+      ],
+      "evidence_requirements": [
+        "Show Revision 3, the outstanding-issues list and the July 24 roadmap agenda.",
+        "Date-lock the statement to July 24, 2026."
+      ],
+      "visual_treatment": {
+        "primary": "document_evidence",
+        "secondary": "process_timeline",
+        "metaphor": "moving_frontier"
+      }
+    },
+    {
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "section_id": "SEC_04_TWO_RULEBOOKS",
+      "importance": 5,
+      "narration_excerpt": "The United States has not ratified the Law of the Sea Convention.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_WHITEHOUSE_EO14285",
+        "SRC_NOAA_DSHMRA_2026"
+      ],
+      "evidence_requirements": [
+        "Show the domestic DSHMRA route and the executive order separately.",
+        "Do not state that U.S. policy settles the international-law dispute."
+      ],
+      "visual_treatment": {
+        "primary": "two_track_policy_matrix",
+        "secondary": "policy_document",
+        "metaphor": "parallel_acceleration"
+      }
+    },
+    {
+      "claim_id": "CLM_008_NO_US_COMMERCIAL_PERMIT",
+      "section_id": "SEC_04_TWO_RULEBOOKS",
+      "importance": 5,
+      "narration_excerpt": "But no United States commercial recovery permit had been issued.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_NOAA_DSHMRA_2026"
+      ],
+      "evidence_requirements": [
+        "Show NOAA's current 'N/A' commercial-permit entry and application status.",
+        "An application or certification must never be labelled approval."
+      ],
+      "visual_treatment": {
+        "primary": "comparison_overlay",
+        "secondary": "document_evidence",
+        "metaphor": "threshold_gate"
+      }
+    },
+    {
+      "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
+      "section_id": "SEC_05_ARGUMENT_FOR_MINING",
+      "importance": 4,
+      "narration_excerpt": "From that perspective, collecting nodules from an uninhabited abyssal plain could appear less destructive than opening new mines on land.",
+      "status": "attributed_commentary",
+      "source_ids": [
+        "SRC_TMC_LIFECYCLE_POSITION"
+      ],
+      "evidence_requirements": [
+        "Attribute lifecycle claims to proponents or the company.",
+        "Pair the claim with independent ecological limitations."
+      ],
+      "visual_treatment": {
+        "primary": "balanced_tradeoff_matrix",
+        "secondary": "report_frame",
+        "metaphor": "distributed_risk_vs_concentrated_control"
+      }
+    },
+    {
+      "claim_id": "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
+      "section_id": "SEC_05_ARGUMENT_FOR_MINING",
+      "importance": 5,
+      "narration_excerpt": "But the phrase “we need deep-sea mining for the energy transition” is too simple.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_IEA_CRITICAL_MINERALS_2026",
+        "SRC_IEA_RARE_EARTHS_2026"
+      ],
+      "evidence_requirements": [
+        "Show chemistry-specific demand differences and scenario uncertainty.",
+        "Do not claim that any mineral is categorically unnecessary."
+      ],
+      "visual_treatment": {
+        "primary": "evidence_comparison",
+        "secondary": "report_evidence",
+        "metaphor": "uncertain_transition"
+      }
+    },
+    {
+      "claim_id": "CLM_011_REFINING_BOTTLENECK",
+      "section_id": "SEC_05_ARGUMENT_FOR_MINING",
+      "importance": 5,
+      "narration_excerpt": "And for rare earths, the most important bottleneck may not be the mine.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_IEA_RARE_EARTHS_2026"
+      ],
+      "evidence_requirements": [
+        "Show the mine-to-refining-to-magnet chain.",
+        "Present 'may' as supply-chain analysis, not a universal law."
+      ],
+      "visual_treatment": {
+        "primary": "evidence_chain",
+        "secondary": "critical_inputs_map",
+        "metaphor": "narrowing_gate"
+      }
+    },
+    {
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 5,
+      "narration_excerpt": "Forty-four years later, the physical disturbance was still visible.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_NATURE_RECOVERY_2025"
+      ],
+      "evidence_requirements": [
+        "Show real comparison images and the 44-year interval.",
+        "State that some recolonisation occurred and that the historical test was small."
+      ],
+      "visual_treatment": {
+        "primary": "document_evidence",
+        "secondary": "evidence_comparison",
+        "metaphor": "uncertain_transition"
+      }
+    },
+    {
+      "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 5,
+      "narration_excerpt": "Two months after the test, macrofaunal density inside the mining tracks was thirty-seven percent lower.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_NEE_MACROFAUNA_2026"
+      ],
+      "evidence_requirements": [
+        "Show 37% density and 32% richness findings inside tracks.",
+        "Distinguish direct-track effects from plume-area community changes and retain the two-month limit."
+      ],
+      "visual_treatment": {
+        "primary": "evidence_comparison",
+        "secondary": "report_evidence",
+        "metaphor": "uncertain_transition"
+      }
+    },
+    {
+      "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 4,
+      "narration_excerpt": "Measurements from collector trials show that disturbed sediment can travel kilometres.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_NATURE_PLUME_2025"
+      ],
+      "evidence_requirements": [
+        "Show measured plume distance, near-bottom concentration and decline with distance/height/time.",
+        "Reject both 'strictly local' and 'whole-ocean poisoning' simplifications."
+      ],
+      "visual_treatment": {
+        "primary": "evidence_chain",
+        "secondary": "evidence_comparison",
+        "metaphor": "distributed_risk"
+      }
+    },
+    {
+      "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 4,
+      "narration_excerpt": "Research suggests those discharge particles may be nutritionally poor compared with the particles many midwater organisms normally consume.",
+      "status": "verified",
+      "source_ids": [
+        "SRC_NCOMMS_MIDWATER_2025"
+      ],
+      "evidence_requirements": [
+        "Show the food-web and particle-quality mechanism.",
+        "State that this is plausible risk, not observed commercial-scale collapse."
+      ],
+      "visual_treatment": {
+        "primary": "evidence_chain",
+        "secondary": "report_evidence",
+        "metaphor": "feedback_loop"
+      }
+    },
+    {
+      "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 4,
+      "narration_excerpt": "The strongest case for moving ahead is not that the damage will be harmless.",
+      "status": "attributed_commentary",
+      "source_ids": [],
+      "evidence_requirements": [
+        "Treat this as the film's balanced synthesis of the verified environmental and supply-security record.",
+        "Do not present either uncertainty or national-security risk as a measured universal conclusion."
+      ],
+      "visual_treatment": {
+        "primary": "balanced_tradeoff_matrix",
+        "secondary": "human_decision_context",
+        "metaphor": "distributed_risk"
+      }
+    },
+    {
+      "claim_id": "CLM_017_UNUSED_OPTION_SYNTHESIS",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 4,
+      "narration_excerpt": "There is another possibility.",
+      "status": "attributed_commentary",
+      "source_ids": [],
+      "evidence_requirements": [
+        "Treat the unused-option argument as synthesis built from the film's already-cited technical, market and governance evidence.",
+        "Do not imply that any specific project is certain to fail, proceed or deter another state."
+      ],
+      "visual_treatment": {
+        "primary": "evidence_recap_montage",
+        "secondary": "human_decision_context",
+        "metaphor": "uncertain_transition"
+      }
+    },
+    {
+      "claim_id": "CLM_018_CAPABILITY_IS_NOT_OBLIGATION",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 4,
+      "narration_excerpt": "The ability to reach a resource does not create an obligation to extract it.",
+      "status": "attributed_commentary",
+      "source_ids": [],
+      "evidence_requirements": [
+        "Present the distinction between capability, strategic option and extraction decision as editorial synthesis.",
+        "Build the recap only from earlier verified technology, supply-chain and governance evidence."
+      ],
+      "visual_treatment": {
+        "primary": "decision_tree",
+        "secondary": "human_decision_context",
+        "metaphor": "threshold_gate"
+      }
+    },
+    {
+      "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+      "section_id": "SEC_06_MACHINE_LEAVES_BEHIND",
+      "importance": 4,
+      "narration_excerpt": "The deep ocean may carry damage that cannot be seen from shore.",
+      "status": "attributed_commentary",
+      "source_ids": [],
+      "evidence_requirements": [
+        "Treat the distribution of risk across communities, industry, states and ecosystems as the film's synthesis.",
+        "Do not convert this synthesis into a quantified comparison not established by the cited sources."
+      ],
+      "visual_treatment": {
+        "primary": "human_decision_context",
+        "secondary": "balanced_tradeoff_matrix",
+        "metaphor": "distributed_risk"
+      }
+    },
+    {
+      "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+      "section_id": "SEC_07_PRECEDENT",
+      "importance": 4,
+      "narration_excerpt": "And future generations may inherit the precedent.",
+      "status": "attributed_commentary",
+      "source_ids": [],
+      "evidence_requirements": [
+        "Treat the ending as a recap of the film's verified technical, scientific and legal record rather than a new factual claim.",
+        "Keep the future programme, application and negotiation language conditional and date-aware."
+      ],
+      "visual_treatment": {
+        "primary": "systemic_risk_threshold",
+        "secondary": "evidence_recap_montage",
+        "metaphor": "moving_frontier"
+      }
+    }
+  ],
+  "full_render_gate": {
+    "minimum_weighted_verified_or_attributed_coverage": 0.95,
+    "rewrite_required_must_equal": 0,
+    "source_required_must_equal": 0,
+    "critical_claims_require_visual_evidence": true,
+    "human_editorial_review_required": true
+  }
+}

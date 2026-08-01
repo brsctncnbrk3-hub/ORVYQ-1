@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "871d8ab2cf8d8c69",
+  "scene_id": "scene_015",
+  "candidate_id": "ed4bf30c1279d75b6cfe8187",
+  "provider": "pexels",
+  "provider_asset_id": "35888104",
+  "source_page_url": "https://www.pexels.com/video/scrolling-smartphone-news-feed-in-close-up-35888104/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/35888104/15221272_1920_1080_25fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Scott Precious",
+  "retrieval_timestamp": "2026-07-12T02:17:40.065Z",
+  "content_type": "video/mp4",
+  "byte_size": 12784574,
+  "duration": 19.68,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "8d318f7859e024c98401d15fc3dbbeffc044f52d66a3863b9c1b381493d075a2",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

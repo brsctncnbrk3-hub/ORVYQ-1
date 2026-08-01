@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "purpose": "Open with a 14-second human-scale descent from surface command to abyssal life, state the central geopolitical and ecological question, then bridge directly into verified expedition evidence without a document carousel.",
+  "minimum_seconds": 10,
+  "maximum_seconds": 14,
+  "duration_seconds": 14,
+  "replace_opening_shot_count": 5,
+  "question_eyebrow": "BENEATH THE OCEAN",
+  "question": "Who gets to control the minerals beneath the sea — and who decides what must remain untouched?",
+  "question_deck": "A new strategic frontier is opening before the rules, science and consequences are settled.",
+  "evidence_bridge": [
+    { "source_shot_index": 0, "duration": 5, "transition_in": "dissolve" },
+    { "source_shot_index": 1, "duration": 4, "transition_in": "cut" }
+  ],
+  "shots": [
+    {
+      "duration": 3,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_001_direct.mp4",
+      "trim_in_sec": 0.5,
+      "trim_out_sec": 3.5,
+      "motion_variant": "hold",
+      "hook_footage": true,
+      "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+      "visual_role": "human_context",
+      "generic_stock": false,
+      "editorial_purpose": "Begin with a verified research-vessel crew and operational judgment so the race is framed as a human decision before it becomes an industrial spectacle."
+    },
+    {
+      "duration": 2.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_016_direct.mp4",
+      "trim_in_sec": 0.5,
+      "trim_out_sec": 3,
+      "motion_variant": "pull",
+      "hook_footage": true,
+      "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+      "visual_role": "context",
+      "generic_stock": false,
+      "editorial_purpose": "Descend into verified deep-ocean conditions so the shared legal space is introduced as a physical environment rather than an abstract map."
+    },
+    {
+      "duration": 3,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_013_direct.mp4",
+      "trim_in_sec": 1.5,
+      "trim_out_sec": 4.5,
+      "motion_variant": "push",
+      "hook_footage": true,
+      "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+      "visual_role": "context",
+      "generic_stock": false,
+      "editorial_purpose": "Introduce verified deep-sea life before the film asks what industrial intervention may leave behind."
+    },
+    {
+      "duration": 2.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_007_34b3f4906a6eee7e10be8f10.mp4",
+      "trim_in_sec": 2,
+      "trim_out_sec": 4.5,
+      "motion_variant": "drift_left",
+      "hook_footage": true,
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "visual_role": "context",
+      "generic_stock": true,
+      "editorial_purpose": "Shift from the physical frontier to a restrained human decision setting without identifying the generic meeting as a named institution."
+    },
+    {
+      "duration": 3,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_019_81d3921b615afae6bf8f9325.mp4",
+      "trim_in_sec": 0.5,
+      "trim_out_sec": 3.5,
+      "motion_variant": "drift_right",
+      "hook_footage": true,
+      "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+      "visual_role": "metaphor",
+      "generic_stock": true,
+      "editorial_purpose": "Return to the open ocean as a restrained frontier metaphor before dissolving into verified expedition evidence."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "f8adcd7d76c24af4",
+  "scene_id": "scene_004",
+  "candidate_id": "52abd7f745cc24b4ecad0215",
+  "provider": "pixabay",
+  "provider_asset_id": "1210",
+  "source_page_url": "https://pixabay.com/videos/id-1210/",
+  "final_media_hostname": "cdn.pixabay.com",
+  "final_media_path": "/video/2015/10/28/1210-143977098_large.mp4",
+  "license_url": "https://pixabay.com/service/license-summary/",
+  "attribution_required": false,
+  "creator": "TBIT",
+  "retrieval_timestamp": "2026-07-11T23:14:05.789Z",
+  "content_type": "video/mp4",
+  "byte_size": 4996629,
+  "duration": 10.09,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "b9777d53000bc3b7b81e653f1ea3d8aa8997df03ff009a4a2b77e644093d2484",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

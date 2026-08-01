@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "caee08feae26b59c",
+  "scene_id": "scene_005",
+  "candidate_id": "e98a421f0d9c432e4d2036fb",
+  "provider": "pixabay",
+  "provider_asset_id": "1058",
+  "source_page_url": "https://pixabay.com/videos/id-1058/",
+  "final_media_hostname": "cdn.pixabay.com",
+  "final_media_path": "/video/2015/10/16/1058-142621439_large.mp4",
+  "license_url": "https://pixabay.com/service/license-summary/",
+  "attribution_required": false,
+  "creator": "Coverr-Free-Footage",
+  "retrieval_timestamp": "2026-07-11T23:14:06.526Z",
+  "content_type": "video/mp4",
+  "byte_size": 3773936,
+  "duration": 11.68,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "830366a04694411d9cba40bfc2bca4d680261f7232a8ef1bff34fe65231f0db8",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

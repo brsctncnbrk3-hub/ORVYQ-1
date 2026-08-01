@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "project_id": "001-the-ai-race-no-one-can-afford-to-win",
+  "evidence_kind_overrides": {
+    "CLM_001_LABS_PUBLISH_SAFETY_FRAMEWORKS": {
+      "kind": "split_documents",
+      "evidence_asset_ids": ["EVID_RSP_COVER_CAPTURE", "EVID_FSF_COVER_CAPTURE"],
+      "image_assets": ["assets/evidence/anthropic_rsp_cover.png", "assets/evidence/deepmind_fsf_cover.png"],
+      "editorial_rationale": "The first post-hook evidence now shows the two strongest real framework covers side by side: Anthropic's Responsible Scaling Policy and Google DeepMind's Frontier Safety Framework. This satisfies the claim's two-publisher evidence requirement without forcing viewers through a three-page opening carousel; the film moves from human-scale footage to two legible primary sources, then back into cinematic context."
+    },
+    "CLM_004_AGENTIC_MISALIGNMENT_TEST": {
+      "kind": "official_figure",
+      "evidence_asset_ids": ["EVID_AGENTIC_FIG1"],
+      "image_assets": ["assets/evidence/anthropic_agentic_figure1.png"],
+      "editorial_rationale": "The claim describes a published controlled evaluation; showing the paper's own real Figure 1 (simulated blackmail rates across five models) is direct primary-source evidence of what was actually measured, in place of a source-derived recreation card."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "be779990f82725b2",
+  "scene_id": "scene_016",
+  "candidate_id": "e324304f99b3502cad464d69",
+  "provider": "pexels",
+  "provider_asset_id": "7947504",
+  "source_page_url": "https://www.pexels.com/video/working-with-graphs-and-charts-7947504/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/7947504/7947504-hd_1920_1080_30fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "RDNE Stock project",
+  "retrieval_timestamp": "2026-07-12T02:17:41.319Z",
+  "content_type": "video/mp4",
+  "byte_size": 5402396,
+  "duration": 8.633333,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "13ca62d90521442ca8f58f83e47c4ddd72b77ebeeff15e4c0f784dd2fab5186e",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "retrieved_at": "2026-07-27",
+  "source_policy": {
+    "primary_preference": "Use official government, intergovernmental, regulatory, scientific-journal and securities-filings sources for factual claims.",
+    "attribution_rule": "Corporate and advocacy claims must remain attributed and must not be presented as independent findings.",
+    "freshness_rule": "Current permit, negotiation and trial status must be rechecked immediately before script lock."
+  },
+  "sources": [
+    {
+      "source_id": "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026",
+      "publisher": "Japan Agency for Marine-Earth Science and Technology (JAMSTEC)",
+      "title": "Results of the rare-earth-mud mining-system connection test in the Minamitorishima EEZ",
+      "publication_date": "2026-07-24",
+      "url": "https://www.jamstec.go.jp/j/about/press_release/20260724/",
+      "source_type": "official_technical_release",
+      "official": true,
+      "supports": [
+        "Continuous lifting of rare-earth mud from a pipe depth of 5,569 metres",
+        "Recovery from three rare-earth layers during a three-day test",
+        "Planned approximately one-month production-chain trial beginning February 2027",
+        "Integrated industrial and economic assessment targeted by March 2028"
+      ],
+      "visual_evidence_candidates": [
+        "Chikyu vessel photograph",
+        "Closed-loop mining-system diagram",
+        "Test timeline",
+        "Recovered mud and operational photographs"
+      ],
+      "limitation": "Confirms technical operation, not commercial viability, reserve size or acceptable environmental impact."
+    },
+    {
+      "source_id": "SRC_METI_MINAMITORISHIMA_2026",
+      "publisher": "Ministry of Economy, Trade and Industry of Japan",
+      "title": "Press Conference by Minister Akazawa — successful test mining of rare-earth mud",
+      "publication_date": "2026-02-03",
+      "url": "https://www.meti.go.jp/english/speeches/press_conferences/2026/0203001.html",
+      "source_type": "official_government_statement",
+      "official": true,
+      "supports": [
+        "Japan frames the project as a supply-chain-security initiative",
+        "The mud was retrieved from roughly 6,000 metres",
+        "Cost reduction and an end-to-end separation/refining process remain unresolved"
+      ],
+      "visual_evidence_candidates": [
+        "Ministerial transcript title/date",
+        "Supply-chain framing excerpt"
+      ],
+      "limitation": "Policy statement; does not independently establish economics or environmental performance."
+    },
+    {
+      "source_id": "SRC_REUTERS_JAPAN_COMPOSITION_2026",
+      "publisher": "Reuters",
+      "title": "Japan identifies large share of rare earths in deep-sea mud off remote island",
+      "publication_date": "2026-07-24",
+      "url": "https://www.reuters.com/world/asia-pacific/japan-identifies-large-share-rare-earths-deep-sea-mud-off-remote-island-2026-07-24/",
+      "source_type": "reputable_secondary_reporting",
+      "official": false,
+      "supports": [
+        "Reported analysis that approximately 54% of rare-earth content was medium and heavy rare earths",
+        "Reported recovery of roughly 50 metric tonnes of mud",
+        "Reported target of 350 tonnes per day for the February 2027 trial"
+      ],
+      "visual_evidence_candidates": [
+        "Reuters headline/date",
+        "Reported element list: yttrium, gadolinium and dysprosium"
+      ],
+      "limitation": "The Japanese government had not disclosed deposit amount or extent; figures came from limited test sampling and must remain attributed."
+    },
+    {
+      "source_id": "SRC_IEA_CRITICAL_MINERALS_2026",
+      "publisher": "International Energy Agency",
+      "title": "Global Critical Minerals Outlook 2026",
+      "publication_date": "2026-07-16",
+      "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2026",
+      "source_type": "intergovernmental_market_analysis",
+      "official": true,
+      "supports": [
+        "Critical-mineral demand continues to grow through 2040",
+        "Cobalt demand growth has moderated as LFP battery chemistry expands",
+        "Announced and early-stage nickel projects could cover demand in a high-production case",
+        "Supply-chain concentration and export restrictions are immediate security risks",
+        "Recycling can materially expand but cannot alone eliminate near-term concentration"
+      ],
+      "visual_evidence_candidates": [
+        "Demand-growth charts",
+        "Refining-concentration charts",
+        "Export-control price-divergence chart",
+        "Recycling contribution chart"
+      ],
+      "limitation": "Scenario analysis, not a certainty; mineral balances vary by technology, policy and project delivery."
+    },
+    {
+      "source_id": "SRC_IEA_RARE_EARTHS_2026",
+      "publisher": "International Energy Agency",
+      "title": "Rare Earth Elements — Executive Summary",
+      "publication_date": "2026",
+      "url": "https://www.iea.org/reports/rare-earth-elements/executive-summary",
+      "source_type": "intergovernmental_supply_chain_analysis",
+      "official": true,
+      "supports": [
+        "China accounted for about 60% of magnet rare-earth mining, 91% of refining and 94% of sintered permanent-magnet production in 2024",
+        "April 2025 export controls caused sharp export declines and downstream production disruptions"
+      ],
+      "visual_evidence_candidates": [
+        "Rare-earth value-chain concentration chart",
+        "Export-control timeline"
+      ],
+      "limitation": "Figures concern magnet rare earths and related permanent magnets, not all rare-earth elements or all critical minerals."
+    },
+    {
+      "source_id": "SRC_ISA_COUNCIL_JULY_2026",
+      "publisher": "International Seabed Authority",
+      "title": "31st Session of the Council, Part II — 13–24 July 2026",
+      "publication_date": "2026-07",
+      "url": "https://isa.org.jm/session-31-council-part-2-july-2026/",
+      "source_type": "official_intergovernmental_negotiation_record",
+      "official": true,
+      "supports": [
+        "The Council was still working from a further revised consolidated text",
+        "An updated list of outstanding issues remained",
+        "The final meeting considered remaining work, a roadmap and intersessional work rather than recording an adopted exploitation code"
+      ],
+      "visual_evidence_candidates": [
+        "Revision 3 title page",
+        "Outstanding-issues list",
+        "July 24 meeting agenda and roadmap language"
+      ],
+      "limitation": "Assembly and later intersessional developments must be checked again before narration lock."
+    },
+    {
+      "source_id": "SRC_ISA_EXPLORATION_CONTRACTS",
+      "publisher": "International Seabed Authority",
+      "title": "Exploration Contracts",
+      "publication_date": "current",
+      "url": "https://isa.org.jm/exploration-contracts/",
+      "source_type": "official_contract_registry",
+      "official": true,
+      "supports": [
+        "ISA lists 22 contractors and 32 exploration contracts across nodules, sulphides and cobalt-rich crusts",
+        "Chinese entities hold contracts across all three deposit categories"
+      ],
+      "visual_evidence_candidates": [
+        "Contractor table",
+        "Contract-area maps",
+        "Deposit-type comparison"
+      ],
+      "limitation": "Exploration contracts are not commercial exploitation approvals."
+    },
+    {
+      "source_id": "SRC_UNCLOS_ARTICLES_136_137",
+      "publisher": "United Nations",
+      "title": "United Nations Convention on the Law of the Sea — Articles 136 and 137",
+      "publication_date": "1982",
+      "url": "https://www.un.org/Depts/los/convention_agreements/texts/unclos/part112.htm",
+      "source_type": "primary_legal_text",
+      "official": true,
+      "supports": [
+        "The seabed beyond national jurisdiction and its resources are described as the common heritage of mankind",
+        "States and private actors may not appropriate the Area outside the Convention's framework"
+      ],
+      "visual_evidence_candidates": [
+        "Article 136 text",
+        "Article 137 text"
+      ],
+      "limitation": "The United States has not ratified UNCLOS and disputes how this regime constrains its nationals; legal interpretation must be attributed."
+    },
+    {
+      "source_id": "SRC_WHITEHOUSE_EO14285",
+      "publisher": "The White House",
+      "title": "Executive Order 14285 — Unleashing America's Offshore Critical Minerals and Resources",
+      "publication_date": "2025-04-24",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/unleashing-americas-offshore-critical-minerals-and-resources/",
+      "source_type": "primary_executive_order",
+      "official": true,
+      "supports": [
+        "The United States explicitly frames seabed minerals as a national-security and economic priority",
+        "The order directs agencies to accelerate exploration, recovery, processing and international partnerships"
+      ],
+      "visual_evidence_candidates": [
+        "Executive-order title and signature",
+        "National-security language"
+      ],
+      "limitation": "Policy direction is not itself a permit or proof of technical/economic feasibility."
+    },
+    {
+      "source_id": "SRC_NOAA_DSHMRA_2026",
+      "publisher": "National Oceanic and Atmospheric Administration",
+      "title": "Deep Seabed Hard Minerals Mining",
+      "publication_date": "2026",
+      "url": "https://oceanservice.noaa.gov/deep-seabed-mineral-resources/deep-seabed-mining/",
+      "source_type": "official_regulatory_guidance",
+      "official": true,
+      "supports": [
+        "The United States is not a party to UNCLOS",
+        "U.S. law allows exploration licences and commercial recovery permits in areas beyond national jurisdiction subject to DSHMRA review",
+        "NOAA finalized a consolidated review rule on 21 January 2026",
+        "No DSHMRA commercial recovery permit had yet been issued on the page's current list"
+      ],
+      "visual_evidence_candidates": [
+        "Regulatory pathway graphic",
+        "Application list and dates",
+        "No existing commercial permits entry"
+      ],
+      "limitation": "Application and certification status changes quickly and must be rechecked before script lock."
+    },
+    {
+      "source_id": "SRC_SEC_TMC_Q1_2026",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "title": "The Metals Company Inc. Form 10-Q for quarter ended 31 March 2026",
+      "publication_date": "2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/1798562/000110465926061357/tmc-20260331x10q.htm",
+      "source_type": "primary_securities_filing",
+      "official": true,
+      "supports": [
+        "TMC submitted a consolidated exploration and commercial recovery application to NOAA",
+        "NOAA's compliance determination was procedural and did not grant or approve the requested licence or permit"
+      ],
+      "visual_evidence_candidates": [
+        "Filing cover",
+        "Procedural-status disclaimer"
+      ],
+      "limitation": "Company filing; resource estimates and timelines remain company statements unless independently verified."
+    },
+    {
+      "source_id": "SRC_NATURE_RECOVERY_2025",
+      "publisher": "Nature",
+      "title": "Long-term impact and biological recovery in a deep-sea mining track",
+      "publication_date": "2025-03-26",
+      "url": "https://www.nature.com/articles/s41586-025-08921-3",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "supports": [
+        "Visible physical disturbance persisted 44 years after a 1979 collector test",
+        "Many biological impacts persisted while some mobile and sediment communities showed recolonization",
+        "The test footprint was much smaller and mechanically different from a commercial operation"
+      ],
+      "visual_evidence_candidates": [
+        "1979 versus 2023 seabed photographs",
+        "Recovery comparison charts",
+        "Track map"
+      ],
+      "limitation": "Historical small-scale test; not a direct measurement of a future commercial mine."
+    },
+    {
+      "source_id": "SRC_NATURE_PLUME_2025",
+      "publisher": "Nature Communications",
+      "title": "Monitoring benthic plumes, sediment redeposition and seafloor imprints caused by deep-sea polymetallic nodule mining",
+      "publication_date": "2025",
+      "url": "https://www.nature.com/articles/s41467-025-56311-0",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "supports": [
+        "Collector-generated sediment moved kilometres but remained concentrated near the seabed",
+        "Concentrations decreased with time, distance and height",
+        "Measured redeposition and erosion provide real physical bounds for plume discussion"
+      ],
+      "visual_evidence_candidates": [
+        "Collector-track photogrammetry",
+        "Plume sensor map",
+        "Concentration-distance chart"
+      ],
+      "limitation": "Pre-prototype trial and monitoring geometry do not fully represent long-duration commercial operations."
+    },
+    {
+      "source_id": "SRC_NEE_MACROFAUNA_2026",
+      "publisher": "Nature Ecology & Evolution",
+      "title": "Impacts of an industrial deep-sea mining trial on macrofaunal biodiversity",
+      "publication_date": "2026",
+      "url": "https://www.nature.com/articles/s41559-025-02911-4",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "supports": [
+        "A 2022 trial recovered more than 3,000 tonnes of nodules",
+        "Macrofaunal density fell 37% and species richness fell 32% inside mining tracks two months after disturbance",
+        "Plume-affected areas showed altered species-dominance relationships even where abundance change was not detected"
+      ],
+      "visual_evidence_candidates": [
+        "Before-after-control-impact map",
+        "Mining-track images",
+        "Density and richness charts"
+      ],
+      "limitation": "Short post-impact window; does not establish long-term trajectory or full commercial scale."
+    },
+    {
+      "source_id": "SRC_NCOMMS_MIDWATER_2025",
+      "publisher": "Nature Communications",
+      "title": "Deep-sea mining discharge can disrupt midwater food webs",
+      "publication_date": "2025",
+      "url": "https://www.nature.com/articles/s41467-025-65411-w",
+      "source_type": "peer_reviewed_primary_research",
+      "official": false,
+      "supports": [
+        "Proposed discharge particles are nutritionally poor relative to natural particles",
+        "Food-web structure indicates a plausible pathway for disruption among particle feeders and predators"
+      ],
+      "visual_evidence_candidates": [
+        "Food-web diagram",
+        "Particle-size comparison",
+        "Discharge-depth profile"
+      ],
+      "limitation": "Demonstrates potential based on food-web and particle analyses, not observed ecosystem collapse from commercial discharge."
+    },
+    {
+      "source_id": "SRC_TMC_LIFECYCLE_POSITION",
+      "publisher": "The Metals Company",
+      "title": "Lifecycle",
+      "publication_date": "current",
+      "url": "https://metals.co/lifecycle/",
+      "source_type": "corporate_position_and_commissioned_analysis",
+      "official": false,
+      "supports": [
+        "The industry's strongest case: nodules may avoid some land disturbance, mine waste and selected lifecycle emissions",
+        "Onshore processing assumptions are central to claimed advantages"
+      ],
+      "visual_evidence_candidates": [
+        "Company lifecycle comparison",
+        "Nodule-to-metal process diagram"
+      ],
+      "limitation": "Company-commissioned and advocacy framing. Must be paired with independent science and must not be used to settle biodiversity comparisons."
+    }
+  ]
+}

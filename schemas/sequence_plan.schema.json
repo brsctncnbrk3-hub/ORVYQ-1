@@ -1,0 +1,36 @@
+{
+  "$id": "sequence_plan.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "direction/sequence_plan.json -- the canonical, hand-authored table of which claims get a real, materialized evidence-asset image instead of a native (concept_map/comparison/source_timeline/source_article/evidence_chain/boundary) card. This is deliberately narrow: scripts/orvyq_full_production_plan.mjs's existing FOOTAGE_ASSIGNMENTS / GRAPHIC_BREAK_ASSIGNMENTS / SLICE_COUNT_OVERRIDES tables are ALREADY real, hand-authored, non-mechanical sequence-level editorial decisions (no automatic evidence->context->metaphor rotation, no every-third-slice rule -- see that file's own header) with extensive load-bearing rationale comments explaining exactly why each real CI-confirmed edge case was resolved the way it was; migrating them into JSON would strip that documentation for no functional benefit and risk destabilizing a delicate, thoroughly-tested algorithm. evidence_kind_overrides is the one genuinely new mechanism this file adds: routing a specific claim's evidence shot(s) to a real materialized document/figure/screen image (schemas/evidence_asset_manifest.json / research/primary_evidence_manifest.json) instead of kindFor()'s NATIVE_KINDS-only default, which is the confirmed, structural reason the rejected review contained zero real evidence assets.",
+  "type": "object",
+  "required": ["schema_version", "project_id", "evidence_kind_overrides"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "project_id": { "type": "string" },
+    "evidence_kind_overrides": {
+      "type": "object",
+      "description": "Keyed by claim_id. Applies to every one of that claim's slices that would otherwise default to a NATIVE_KINDS card (i.e. slices with no FOOTAGE_ASSIGNMENTS or GRAPHIC_BREAK_ASSIGNMENTS entry of their own). distinct_image_per_occurrence rotates one real image per later occurrence; first_occurrence_asset_count may reserve a small opening set when the project profile explicitly requires multiple documents or figures in the first post-hook evidence shot.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["kind", "evidence_asset_ids", "image_assets"],
+        "properties": {
+          "kind": { "enum": ["split_documents", "official_document", "official_figure", "official_screen", "image_sequence", "recap"] },
+          "evidence_asset_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "image_assets": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "editorial_rationale": { "type": "string" },
+          "distinct_image_per_occurrence": {
+            "type": "boolean",
+            "description": "When true, each later native evidence slice gets exactly one image, cycling through the declared evidence_asset_ids/image_assets instead of attaching the full set on every slice."
+          },
+          "first_occurrence_asset_count": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Optional number of declared real assets attached together only to occurrence zero. Later occurrences still follow distinct_image_per_occurrence rotation, offset past the opening set so per-source reuse remains bounded."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,1670 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "request_revision": 10,
+  "policy": {
+    "selection_basis": "Pexels source-page title/slug must satisfy explicit positive and negative terms before download; the Full-Length Review remains the frame-level human verification gate.",
+    "blind_keyword_acceptance_forbidden": true
+  },
+  "scenes": {
+    "scene_001": {
+      "queries": [
+        "scientific research vessel crew deck",
+        "ocean expedition crew equipment"
+      ],
+      "fallback_queries": [
+        "marine survey vessel crew",
+        "research ship deck operations"
+      ],
+      "required_any_groups": [
+        [
+          "research",
+          "scientific",
+          "survey",
+          "expedition"
+        ],
+        [
+          "ship",
+          "vessel",
+          "crew",
+          "deck"
+        ]
+      ],
+      "forbidden_terms": [
+        "tour",
+        "tourist",
+        "fishing",
+        "yacht",
+        "sailboat",
+        "cruise",
+        "boarding"
+      ]
+    },
+    "scene_002": {
+      "queries": [
+        "research vessel ocean crew",
+        "offshore support vessel deck",
+        "marine workboat operations"
+      ],
+      "fallback_queries": [
+        "ocean expedition ship",
+        "working vessel crew at sea",
+        "scientific marine vessel"
+      ],
+      "required_any_groups": [
+        [
+          "research",
+          "scientific",
+          "expedition",
+          "offshore",
+          "marine",
+          "support",
+          "work",
+          "working",
+          "operations"
+        ],
+        [
+          "vessel",
+          "ship",
+          "boat",
+          "workboat",
+          "deck",
+          "crew"
+        ]
+      ],
+      "forbidden_terms": [
+        "cargo",
+        "container",
+        "tanker",
+        "oil",
+        "ferry",
+        "cruise",
+        "yacht",
+        "sailboat",
+        "fishing",
+        "shipyard",
+        "welding",
+        "dry dock",
+        "dockyard"
+      ]
+    },
+    "scene_003": {
+      "queries": [
+        "ROV lights abyssal seafloor",
+        "dark empty deep ocean floor",
+        "submersible over seabed at night"
+      ],
+      "fallback_queries": [
+        "abyssal plain underwater lights",
+        "deep sea floor no divers",
+        "dark seafloor exploration vehicle"
+      ],
+      "required_any_groups": [
+        [
+          "seabed",
+          "seafloor",
+          "ocean floor",
+          "abyssal",
+          "deep ocean"
+        ],
+        [
+          "rov",
+          "submersible",
+          "vehicle",
+          "lights",
+          "dark",
+          "floor"
+        ]
+      ],
+      "forbidden_terms": [
+        "cave",
+        "cavern",
+        "diving",
+        "diver",
+        "scuba",
+        "snorkel",
+        "swimmer",
+        "reef",
+        "coral",
+        "fish",
+        "shark",
+        "ray",
+        "wreck",
+        "tropical",
+        "clear blue",
+        "aquarium"
+      ]
+    },
+    "scene_004": {
+      "queries": [
+        "offshore supply vessel deck winch",
+        "marine pipe handling work vessel",
+        "ship deck crane equipment operation"
+      ],
+      "fallback_queries": [
+        "offshore workboat deck machinery",
+        "vessel deck hose winch",
+        "marine operations deck crane"
+      ],
+      "required_any_groups": [
+        [
+          "offshore",
+          "marine",
+          "vessel",
+          "ship",
+          "workboat",
+          "deck"
+        ],
+        [
+          "pipe",
+          "winch",
+          "hose",
+          "crane",
+          "deck equipment",
+          "machinery"
+        ]
+      ],
+      "forbidden_terms": [
+        "cargo",
+        "container",
+        "port",
+        "harbor",
+        "harbour",
+        "dock",
+        "terminal",
+        "bulk",
+        "coal",
+        "ore carrier",
+        "freighter",
+        "tanker",
+        "oil",
+        "petroleum",
+        "fuel",
+        "gas",
+        "drilling rig",
+        "refinery"
+      ]
+    },
+    "scene_005": {
+      "queries": [
+        "industrial control room operators",
+        "ship control room crew",
+        "engineers monitoring control center"
+      ],
+      "fallback_queries": [
+        "operators monitoring screens",
+        "technical operations control room",
+        "workers control center"
+      ],
+      "required_any_groups": [
+        [
+          "control",
+          "operator",
+          "monitoring",
+          "engineer",
+          "technician",
+          "operations"
+        ],
+        [
+          "room",
+          "center",
+          "screens",
+          "console",
+          "crew",
+          "team",
+          "workers"
+        ]
+      ],
+      "forbidden_terms": [
+        "interview",
+        "recording",
+        "camera",
+        "film",
+        "studio",
+        "television",
+        "podcast",
+        "gaming",
+        "smartphone",
+        "empty",
+        "textile",
+        "garment",
+        "sewing",
+        "fabric",
+        "clothing"
+      ]
+    },
+    "scene_006": {
+      "queries": [
+        "industrial robotics factory assembly",
+        "precision machinery manufacturing",
+        "automated factory production line"
+      ],
+      "fallback_queries": [
+        "electric motor factory assembly",
+        "robotic manufacturing line",
+        "precision industrial production"
+      ],
+      "required_any_groups": [
+        [
+          "motor",
+          "robot",
+          "robotic",
+          "automation",
+          "automated",
+          "precision",
+          "machinery",
+          "engine",
+          "electric"
+        ],
+        [
+          "factory",
+          "manufacturing",
+          "assembly",
+          "production",
+          "industrial",
+          "line"
+        ]
+      ],
+      "forbidden_terms": [
+        "motorcycle",
+        "bicycle",
+        "repair",
+        "toy",
+        "grinding",
+        "welding-only"
+      ]
+    },
+    "scene_007": {
+      "queries": [
+        "government conference delegates",
+        "international conference audience",
+        "parliament assembly officials"
+      ],
+      "fallback_queries": [
+        "conference speaker audience",
+        "official delegates meeting",
+        "public policy conference"
+      ],
+      "required_any_groups": [
+        [
+          "conference",
+          "meeting",
+          "assembly",
+          "summit",
+          "parliament",
+          "government"
+        ],
+        [
+          "delegate",
+          "official",
+          "speaker",
+          "audience",
+          "people",
+          "participants"
+        ]
+      ],
+      "forbidden_terms": [
+        "wedding",
+        "classroom",
+        "party",
+        "sales",
+        "product launch"
+      ]
+    },
+    "scene_008": {
+      "queries": [
+        "wind turbine people working",
+        "wind farm workers",
+        "engineer near wind turbine"
+      ],
+      "fallback_queries": [
+        "people at wind farm",
+        "wind energy worker",
+        "wind turbine team"
+      ],
+      "required_any_groups": [
+        [
+          "wind",
+          "turbine",
+          "wind-farm",
+          "wind farm"
+        ],
+        [
+          "worker",
+          "engineer",
+          "technician",
+          "crew",
+          "team",
+          "people",
+          "person",
+          "man",
+          "woman",
+          "working",
+          "maintenance",
+          "install"
+        ]
+      ],
+      "forbidden_terms": [
+        "sunset",
+        "silhouette",
+        "scenic",
+        "timelapse",
+        "animation"
+      ]
+    },
+    "scene_009": {
+      "queries": [
+        "electric vehicle motor assembly factory",
+        "EV powertrain production line"
+      ],
+      "fallback_queries": [
+        "electric car factory assembly",
+        "vehicle motor manufacturing"
+      ],
+      "required_any_groups": [
+        [
+          "electric",
+          "ev",
+          "vehicle",
+          "car"
+        ],
+        [
+          "factory",
+          "assembly",
+          "production",
+          "manufacturing"
+        ]
+      ],
+      "forbidden_terms": [
+        "generic car",
+        "showroom",
+        "driving",
+        "race",
+        "repair"
+      ]
+    },
+    "scene_010": {
+      "queries": [
+        "metal refinery molten metal industrial",
+        "mineral processing smelter factory"
+      ],
+      "fallback_queries": [
+        "industrial metal smelting",
+        "refining furnace metal"
+      ],
+      "required_any_groups": [
+        [
+          "metal",
+          "mineral",
+          "smelting",
+          "refinery",
+          "molten"
+        ],
+        [
+          "industrial",
+          "factory",
+          "processing",
+          "furnace"
+        ]
+      ],
+      "forbidden_terms": [
+        "jewelry",
+        "blacksmith",
+        "art",
+        "craft"
+      ]
+    },
+    "scene_011": {
+      "queries": [
+        "container port cranes terminal",
+        "global shipping container terminal"
+      ],
+      "fallback_queries": [
+        "cargo port logistics",
+        "container ship harbor cranes"
+      ],
+      "required_any_groups": [
+        [
+          "container",
+          "cargo",
+          "shipping"
+        ],
+        [
+          "port",
+          "terminal",
+          "crane",
+          "harbor"
+        ]
+      ],
+      "forbidden_terms": [
+        "marina",
+        "yacht",
+        "fishing",
+        "cruise"
+      ]
+    },
+    "scene_012": {
+      "queries": [
+        "ROV dark benthic seafloor survey",
+        "abyssal seabed track research",
+        "deep ocean floor disturbance survey"
+      ],
+      "fallback_queries": [
+        "dark seafloor ROV observation",
+        "benthic track deep sea",
+        "abyssal floor research lights"
+      ],
+      "required_any_groups": [
+        [
+          "seabed",
+          "seafloor",
+          "ocean floor",
+          "benthic",
+          "abyssal",
+          "deep sea"
+        ],
+        [
+          "rov",
+          "survey",
+          "research",
+          "track",
+          "disturbance",
+          "dark",
+          "observation"
+        ]
+      ],
+      "forbidden_terms": [
+        "diver",
+        "diving",
+        "scuba",
+        "snorkel",
+        "swimmer",
+        "cave",
+        "cavern",
+        "island",
+        "coast",
+        "beach",
+        "shallow",
+        "clear blue",
+        "tropical",
+        "resort",
+        "coral",
+        "reef",
+        "fish",
+        "wreck"
+      ]
+    },
+    "scene_013": {
+      "queries": [
+        "international assembly delegates conference",
+        "United Nations delegates meeting"
+      ],
+      "fallback_queries": [
+        "multilateral conference delegates",
+        "international policy assembly"
+      ],
+      "required_any_groups": [
+        [
+          "international",
+          "united-nations",
+          "multilateral",
+          "delegate"
+        ],
+        [
+          "assembly",
+          "conference",
+          "meeting"
+        ]
+      ],
+      "forbidden_terms": [
+        "business presentation",
+        "sales",
+        "office",
+        "party"
+      ]
+    },
+    "scene_014": {
+      "queries": [
+        "official law document government archive",
+        "treaty document institutional archive"
+      ],
+      "fallback_queries": [
+        "government legal record",
+        "official treaty archive"
+      ],
+      "required_any_groups": [
+        [
+          "law",
+          "legal",
+          "treaty",
+          "government"
+        ],
+        [
+          "document",
+          "archive",
+          "record"
+        ]
+      ],
+      "forbidden_terms": [
+        "generic signing",
+        "contract signing",
+        "notebook",
+        "blank paper"
+      ]
+    },
+    "scene_015": {
+      "queries": [
+        "deep seabed sediment particles dark ocean",
+        "underwater seafloor sediment disturbance"
+      ],
+      "fallback_queries": [
+        "dark ocean floor sediment",
+        "deep sea sand particles"
+      ],
+      "required_any_groups": [
+        [
+          "sediment",
+          "seabed",
+          "seafloor",
+          "ocean-floor",
+          "ocean floor"
+        ],
+        [
+          "underwater",
+          "deep",
+          "dark",
+          "particles"
+        ]
+      ],
+      "forbidden_terms": [
+        "turtle",
+        "coral reef",
+        "tropical",
+        "diver",
+        "scuba",
+        "snorkel"
+      ]
+    },
+    "scene_016": {
+      "queries": [
+        "marine science laboratory ocean samples",
+        "ocean research laboratory scientists"
+      ],
+      "fallback_queries": [
+        "marine biologist laboratory samples",
+        "oceanographic research lab"
+      ],
+      "required_any_groups": [
+        [
+          "marine",
+          "ocean",
+          "oceanographic"
+        ],
+        [
+          "scientist",
+          "research",
+          "laboratory",
+          "lab",
+          "sample"
+        ]
+      ],
+      "forbidden_terms": [
+        "medical",
+        "hospital",
+        "patient",
+        "generic chemistry"
+      ]
+    },
+    "scene_017": {
+      "queries": [
+        "open pit mine aerial industrial",
+        "large terrestrial mine trucks"
+      ],
+      "fallback_queries": [
+        "surface mining quarry aerial",
+        "open cast mine landscape"
+      ],
+      "required_any_groups": [
+        [
+          "mine",
+          "mining",
+          "quarry"
+        ],
+        [
+          "open-pit",
+          "open pit",
+          "surface",
+          "aerial",
+          "truck"
+        ]
+      ],
+      "forbidden_terms": [
+        "crypto",
+        "bitcoin",
+        "data-mining",
+        "minecraft",
+        "tourist"
+      ]
+    },
+    "scene_018": {
+      "queries": [
+        "metal recycling industrial sorting",
+        "scrap metal recycling facility",
+        "industrial metal waste processing"
+      ],
+      "fallback_queries": [
+        "metal recovery conveyor",
+        "scrap steel recycling plant",
+        "industrial material sorting metal"
+      ],
+      "required_any_groups": [
+        [
+          "metal",
+          "steel",
+          "scrap",
+          "aluminum",
+          "copper"
+        ],
+        [
+          "recycling",
+          "sorting",
+          "recovery",
+          "processing",
+          "facility",
+          "plant"
+        ]
+      ],
+      "forbidden_terms": [
+        "paper",
+        "cardboard",
+        "plastic",
+        "bottle",
+        "glass",
+        "household"
+      ]
+    },
+    "scene_019": {
+      "queries": [
+        "dark open ocean waves night",
+        "stormy ocean night surface"
+      ],
+      "fallback_queries": [
+        "open sea night waves",
+        "dark ocean surface"
+      ],
+      "required_any_groups": [
+        [
+          "ocean",
+          "sea"
+        ],
+        [
+          "night",
+          "dark",
+          "storm",
+          "wave"
+        ]
+      ],
+      "forbidden_terms": [
+        "city",
+        "skyline",
+        "beach",
+        "coast",
+        "harbor"
+      ]
+    },
+    "scene_020": {
+      "queries": [
+        "industrial port workers harbor",
+        "dock workers cargo terminal"
+      ],
+      "fallback_queries": [
+        "harbor workers shipping",
+        "port community workers"
+      ],
+      "required_any_groups": [
+        [
+          "port",
+          "harbor",
+          "dock",
+          "cargo",
+          "shipping"
+        ],
+        [
+          "worker",
+          "crew",
+          "people",
+          "person"
+        ]
+      ],
+      "forbidden_terms": [
+        "tourist",
+        "vacation",
+        "yacht",
+        "cruise",
+        "beach",
+        "marina"
+      ]
+    },
+    "scene_021": {
+      "queries": [
+        "industrial metal refinery processing",
+        "mineral processing factory"
+      ],
+      "fallback_queries": [
+        "metal smelter industrial plant",
+        "refinery factory machinery"
+      ],
+      "required_any_groups": [
+        [
+          "metal",
+          "mineral",
+          "smelter",
+          "refinery",
+          "processing"
+        ],
+        [
+          "industrial",
+          "factory",
+          "plant",
+          "machinery"
+        ]
+      ],
+      "forbidden_terms": [
+        "jewelry",
+        "blacksmith",
+        "craft",
+        "repair",
+        "office"
+      ]
+    },
+    "scene_022": {
+      "rejected_provider_asset_ids": [
+        "35548139"
+      ],
+      "queries": [
+        "engineers inspecting industrial machinery",
+        "factory engineers testing equipment",
+        "industrial technicians machinery blueprint"
+      ],
+      "fallback_queries": [
+        "engineers factory equipment",
+        "technicians industrial machine"
+      ],
+      "required_any_groups": [
+        [
+          "engineer",
+          "technician",
+          "worker",
+          "mechanic"
+        ]
+      ],
+      "forbidden_terms": [
+        "cherry",
+        "fruit",
+        "food",
+        "kitchen",
+        "cooking",
+        "agriculture"
+      ]
+    },
+    "scene_024": {
+      "rejected_provider_asset_ids": [
+        "35844496"
+      ],
+      "queries": [
+        "oceanographic research vessel deck equipment",
+        "scientific survey ship crew at sea",
+        "marine research vessel instruments"
+      ],
+      "fallback_queries": [
+        "research ship operations offshore",
+        "survey vessel deck crew",
+        "ocean science workboat equipment"
+      ],
+      "required_any_groups": [
+        [
+          "research",
+          "scientific",
+          "survey",
+          "oceanographic",
+          "ocean science"
+        ],
+        [
+          "vessel",
+          "ship",
+          "deck",
+          "crew",
+          "equipment",
+          "instruments"
+        ]
+      ],
+      "forbidden_terms": [
+        "port",
+        "harbor",
+        "harbour",
+        "canal",
+        "river",
+        "barge",
+        "cargo",
+        "container",
+        "dock",
+        "terminal",
+        "dredging",
+        "construction",
+        "yacht",
+        "leisure",
+        "speedboat",
+        "sailboat",
+        "tourist",
+        "recreation",
+        "fishing",
+        "fisherman",
+        "trawler",
+        "angler"
+      ]
+    },
+    "scene_025": {
+      "rejected_provider_asset_ids": [
+        "8823145"
+      ],
+      "queries": [
+        "underwater ROV robot seafloor",
+        "deep sea submersible robot",
+        "ocean floor remotely operated vehicle"
+      ],
+      "fallback_queries": [
+        "underwater exploration robot",
+        "marine ROV deep ocean",
+        "submersible vehicle seabed"
+      ],
+      "required_any_groups": [
+        [
+          "underwater",
+          "deep sea",
+          "ocean",
+          "seafloor",
+          "seabed",
+          "marine"
+        ],
+        [
+          "rov",
+          "robot",
+          "robotic",
+          "submersible",
+          "vehicle"
+        ]
+      ],
+      "forbidden_terms": [
+        "massage",
+        "therapy",
+        "medical",
+        "toy",
+        "humanoid",
+        "android",
+        "warehouse",
+        "delivery"
+      ]
+    },
+    "scene_026": {
+      "rejected_provider_asset_ids": [
+        "8822976"
+      ],
+      "queries": [
+        "marine scientist water sample",
+        "ocean researcher collecting samples",
+        "marine biology laboratory sample"
+      ],
+      "fallback_queries": [
+        "scientist water testing laboratory",
+        "researcher microscope marine sample"
+      ],
+      "required_any_groups": [
+        [
+          "scientist",
+          "researcher",
+          "laboratory",
+          "lab",
+          "biologist",
+          "technician"
+        ]
+      ],
+      "forbidden_terms": [
+        "diver",
+        "divers",
+        "scuba",
+        "swimmer",
+        "urchin",
+        "snorkel"
+      ]
+    },
+    "scene_028": {
+      "rejected_provider_asset_ids": [
+        "32790667"
+      ],
+      "queries": [
+        "underwater sediment seabed",
+        "ocean floor sediment particles",
+        "dark seabed underwater"
+      ],
+      "fallback_queries": [
+        "deep sea floor sand particles",
+        "underwater sand cloud"
+      ],
+      "required_any_groups": [
+        [
+          "sediment",
+          "seabed",
+          "ocean-floor",
+          "ocean floor",
+          "sea-floor",
+          "sea floor",
+          "sand",
+          "particles"
+        ]
+      ],
+      "forbidden_terms": [
+        "sunlight",
+        "coral",
+        "reef",
+        "tropical",
+        "diver",
+        "divers",
+        "snorkel"
+      ]
+    },
+    "scene_029": {
+      "rejected_provider_asset_ids": [
+        "29541109"
+      ],
+      "queries": [
+        "international assembly delegates",
+        "government conference podium",
+        "official policy meeting audience"
+      ],
+      "fallback_queries": [
+        "international conference participants",
+        "delegates formal meeting",
+        "public policy assembly"
+      ],
+      "required_any_groups": [
+        [
+          "international",
+          "government",
+          "official",
+          "policy",
+          "delegate",
+          "assembly"
+        ],
+        [
+          "conference",
+          "meeting",
+          "podium",
+          "audience",
+          "participants",
+          "delegates"
+        ]
+      ],
+      "forbidden_terms": [
+        "ship",
+        "boat",
+        "ocean",
+        "sea",
+        "empty",
+        "wedding",
+        "party",
+        "sales",
+        "school",
+        "student",
+        "classroom",
+        "graduation",
+        "children",
+        "child"
+      ]
+    },
+    "scene_030": {
+      "rejected_provider_asset_ids": [
+        "31330898"
+      ],
+      "queries": [
+        "research ships at sea aerial",
+        "scientific vessels ocean",
+        "ocean survey ships"
+      ],
+      "fallback_queries": [
+        "expedition vessels at sea",
+        "marine research boats aerial"
+      ],
+      "required_any_groups": [
+        [
+          "ship",
+          "vessel",
+          "boat"
+        ]
+      ],
+      "forbidden_terms": [
+        "ferry",
+        "cargo",
+        "freight",
+        "cruise",
+        "icebreaker",
+        "frozen"
+      ]
+    },
+    "scene_031": {
+      "rejected_provider_asset_ids": [
+        "8716786"
+      ],
+      "queries": [
+        "international conference delegates meeting",
+        "government officials policy meeting",
+        "diplomatic negotiation table"
+      ],
+      "fallback_queries": [
+        "delegates conference discussion",
+        "officials negotiation meeting"
+      ],
+      "required_any_groups": [
+        [
+          "meeting",
+          "conference",
+          "delegate",
+          "official",
+          "negotiation"
+        ]
+      ],
+      "forbidden_terms": [
+        "walking",
+        "after",
+        "leaving",
+        "party"
+      ]
+    },
+    "scene_032": {
+      "rejected_provider_asset_ids": [
+        "9338834"
+      ],
+      "queries": [
+        "submersible descending dark deep ocean",
+        "abyssal underwater darkness lights",
+        "dark empty ocean floor descent"
+      ],
+      "fallback_queries": [
+        "deep sea vehicle lights darkness",
+        "underwater descent no diver",
+        "abyssal seafloor dark blue"
+      ],
+      "required_any_groups": [
+        [
+          "underwater",
+          "deep sea",
+          "deep ocean",
+          "seabed",
+          "seafloor",
+          "submersible"
+        ],
+        [
+          "dark",
+          "darkness",
+          "descent",
+          "lights",
+          "abyssal",
+          "floor"
+        ]
+      ],
+      "forbidden_terms": [
+        "diver",
+        "diving",
+        "scuba",
+        "snorkel",
+        "swimmer",
+        "cave",
+        "cavern",
+        "reef",
+        "coral",
+        "fish",
+        "tropical",
+        "clear blue",
+        "wreck",
+        "city",
+        "rooftop",
+        "robot",
+        "android",
+        "futuristic",
+        "science fiction",
+        "sci-fi",
+        "building",
+        "street"
+      ]
+    },
+    "scene_033": {
+      "queries": [
+        "deep sea plankton organisms",
+        "midwater marine life underwater",
+        "deep ocean jellyfish"
+      ],
+      "fallback_queries": [
+        "underwater plankton particles",
+        "deep sea organisms"
+      ],
+      "required_any_groups": [
+        [
+          "plankton",
+          "organism",
+          "jellyfish",
+          "marine-life",
+          "marine life",
+          "creature"
+        ]
+      ],
+      "forbidden_terms": [
+        "aquarium",
+        "pool",
+        "diver",
+        "scuba",
+        "snorkel",
+        "coral-reef"
+      ]
+    },
+    "scene_034": {
+      "queries": [
+        "scientists reviewing research data",
+        "environmental researchers meeting",
+        "marine science team data"
+      ],
+      "fallback_queries": [
+        "research team meeting data",
+        "scientists discussion laboratory"
+      ],
+      "required_any_groups": [
+        [
+          "scientist",
+          "researcher",
+          "research",
+          "laboratory",
+          "data"
+        ]
+      ],
+      "forbidden_terms": [
+        "medical-patient",
+        "hospital-patient",
+        "school-child",
+        "party"
+      ]
+    },
+    "scene_035": {
+      "queries": [
+        "workers open pit mine",
+        "mining community industrial landscape",
+        "mine workers quarry"
+      ],
+      "fallback_queries": [
+        "industrial mine people",
+        "quarry workers machinery"
+      ],
+      "required_any_groups": [
+        [
+          "mine",
+          "mining",
+          "quarry"
+        ]
+      ],
+      "forbidden_terms": [
+        "crypto",
+        "bitcoin",
+        "data-mining",
+        "minecraft",
+        "toy"
+      ]
+    },
+    "scene_036": {
+      "queries": [
+        "government policy experts meeting",
+        "officials scientists roundtable",
+        "public policy committee"
+      ],
+      "fallback_queries": [
+        "experts conference table",
+        "government committee meeting"
+      ],
+      "required_any_groups": [
+        [
+          "meeting",
+          "conference",
+          "committee",
+          "roundtable",
+          "discussion"
+        ]
+      ],
+      "forbidden_terms": [
+        "party",
+        "wedding",
+        "restaurant",
+        "celebration"
+      ]
+    },
+    "scene_037": {
+      "queries": [
+        "engineers testing industrial machinery",
+        "engineers evaluating prototype",
+        "industrial equipment inspection"
+      ],
+      "fallback_queries": [
+        "engineers factory equipment",
+        "technology prototype testing"
+      ],
+      "required_any_groups": [
+        [
+          "engineer",
+          "technician",
+          "worker"
+        ]
+      ],
+      "forbidden_terms": [
+        "food",
+        "kitchen",
+        "cooking",
+        "agriculture",
+        "toy"
+      ]
+    },
+    "scene_038": {
+      "queries": [
+        "international assembly delegates meeting",
+        "global governance conference delegates",
+        "government assembly voting"
+      ],
+      "fallback_queries": [
+        "international policy conference",
+        "delegates government meeting"
+      ],
+      "required_any_groups": [
+        [
+          "delegate",
+          "official",
+          "assembly",
+          "conference",
+          "government"
+        ]
+      ],
+      "forbidden_terms": [
+        "party",
+        "concert",
+        "wedding",
+        "walking",
+        "leaving"
+      ]
+    },
+    "scene_039": {
+      "queries": [
+        "materials science laboratory researchers",
+        "metallurgy laboratory scientist",
+        "electronics research laboratory engineers",
+        "chemistry laboratory technology"
+      ],
+      "fallback_queries": [
+        "advanced materials research",
+        "technology laboratory scientists",
+        "engineers testing materials"
+      ],
+      "required_any_groups": [
+        [
+          "laboratory",
+          "lab",
+          "scientist",
+          "research",
+          "engineer",
+          "technology"
+        ]
+      ],
+      "forbidden_terms": [
+        "car-battery-repair",
+        "phone-repair",
+        "toy",
+        "kitchen"
+      ]
+    },
+    "scene_040": {
+      "queries": [
+        "industrial metal recycling plant",
+        "electronics recycling factory",
+        "metal sorting conveyor"
+      ],
+      "fallback_queries": [
+        "industrial recycling facility",
+        "scrap metal processing"
+      ],
+      "required_any_groups": [
+        [
+          "recycling",
+          "recycle",
+          "scrap",
+          "sorting"
+        ]
+      ],
+      "forbidden_terms": [
+        "household-bin",
+        "plastic-bottle",
+        "compost",
+        "fashion"
+      ]
+    },
+    "scene_041": {
+      "queries": [
+        "policy negotiation meeting table",
+        "international committee discussion",
+        "officials conference table",
+        "trade policy meeting"
+      ],
+      "fallback_queries": [
+        "professional roundtable discussion",
+        "committee meeting people",
+        "conference table discussion"
+      ],
+      "required_any_groups": [
+        [
+          "meeting",
+          "conference",
+          "discussion",
+          "committee",
+          "roundtable",
+          "official",
+          "delegate",
+          "people"
+        ]
+      ],
+      "forbidden_terms": [
+        "walking",
+        "leaving",
+        "party",
+        "wedding",
+        "restaurant"
+      ]
+    },
+    "scene_042": {
+      "queries": [
+        "scientific research vessel ocean survey",
+        "marine survey ship sonar",
+        "ocean mapping vessel",
+        "expedition boat open sea"
+      ],
+      "fallback_queries": [
+        "expedition vessel at sea",
+        "survey boat ocean",
+        "working ship ocean"
+      ],
+      "required_any_groups": [
+        [
+          "ship",
+          "vessel",
+          "boat",
+          "ocean",
+          "sea"
+        ]
+      ],
+      "forbidden_terms": [
+        "cargo",
+        "freight",
+        "ferry",
+        "cruise",
+        "yacht",
+        "fishing"
+      ]
+    },
+    "scene_043": {
+      "queries": [
+        "industrial port workers ships",
+        "maritime crew harbor operations",
+        "busy shipping port workers",
+        "dock workers harbor"
+      ],
+      "fallback_queries": [
+        "vessels harbor workers",
+        "industrial port operations",
+        "port cranes workers"
+      ],
+      "required_any_groups": [
+        [
+          "port",
+          "harbor",
+          "harbour",
+          "ship",
+          "vessel",
+          "dock",
+          "worker",
+          "crane"
+        ]
+      ],
+      "forbidden_terms": [
+        "cruise",
+        "tourist",
+        "beach",
+        "marina",
+        "yacht"
+      ]
+    },
+    "scene_044": {
+      "queries": [
+        "factory production delay workers",
+        "idle manufacturing plant workers",
+        "industrial supply disruption",
+        "workers inspecting factory machinery"
+      ],
+      "fallback_queries": [
+        "factory workers stopped machinery",
+        "manufacturing plant idle",
+        "industrial workers machine"
+      ],
+      "required_any_groups": [
+        [
+          "factory",
+          "manufacturing",
+          "industrial",
+          "production",
+          "machine",
+          "machinery",
+          "worker"
+        ]
+      ],
+      "forbidden_terms": [
+        "food",
+        "kitchen",
+        "farm",
+        "agriculture",
+        "toy"
+      ]
+    },
+    "scene_045": {
+      "queries": [
+        "international law delegates negotiation",
+        "government officials treaty meeting",
+        "policy rulemaking conference",
+        "legal committee discussion"
+      ],
+      "fallback_queries": [
+        "international policy delegates",
+        "officials legal meeting",
+        "committee conference people"
+      ],
+      "required_any_groups": [
+        [
+          "delegate",
+          "official",
+          "government",
+          "diplomatic",
+          "policy",
+          "meeting",
+          "conference",
+          "committee",
+          "discussion"
+        ]
+      ],
+      "forbidden_terms": [
+        "walking",
+        "leaving",
+        "party",
+        "wedding"
+      ]
+    },
+    "scene_046": {
+      "queries": [
+        "marine scientists collecting water samples",
+        "research vessel ocean sampling",
+        "marine biologist field research",
+        "scientist testing water laboratory"
+      ],
+      "fallback_queries": [
+        "ocean researcher sample collection",
+        "scientist water testing",
+        "researcher laboratory sample"
+      ],
+      "required_any_groups": [
+        [
+          "scientist",
+          "researcher",
+          "biologist",
+          "sample",
+          "marine",
+          "ocean",
+          "water",
+          "laboratory",
+          "lab"
+        ]
+      ],
+      "forbidden_terms": [
+        "diver",
+        "scuba",
+        "snorkel",
+        "aquarium",
+        "swimming-pool"
+      ]
+    },
+    "scene_047": {
+      "queries": [
+        "coastal industrial community workers",
+        "port town workers industry",
+        "harbor community people",
+        "industrial workers town"
+      ],
+      "fallback_queries": [
+        "industrial community people",
+        "coastal workers harbor",
+        "workers outside factory"
+      ],
+      "required_any_groups": [
+        [
+          "community",
+          "people",
+          "worker",
+          "person",
+          "town",
+          "industrial",
+          "factory",
+          "port",
+          "harbor"
+        ]
+      ],
+      "forbidden_terms": [
+        "tourist",
+        "vacation",
+        "beach-party",
+        "resort",
+        "wedding"
+      ]
+    },
+    "scene_048": {
+      "queries": [
+        "young marine scientists research",
+        "marine biology students fieldwork",
+        "young ocean researchers",
+        "science students laboratory research"
+      ],
+      "fallback_queries": [
+        "science students laboratory",
+        "young researchers ocean",
+        "research team laboratory"
+      ],
+      "required_any_groups": [
+        [
+          "student",
+          "young",
+          "researcher",
+          "scientist",
+          "science",
+          "laboratory",
+          "lab",
+          "team"
+        ]
+      ],
+      "forbidden_terms": [
+        "school-child",
+        "elementary",
+        "party",
+        "graduation",
+        "aquarium-tour"
+      ]
+    },
+    "scene_049": {
+      "queries": [
+        "research vessel sailing open ocean",
+        "scientific ship at sea",
+        "ocean expedition vessel",
+        "working boat open sea"
+      ],
+      "fallback_queries": [
+        "survey ship ocean",
+        "research boat sea",
+        "ship sailing ocean"
+      ],
+      "required_any_groups": [
+        [
+          "ship",
+          "vessel",
+          "boat",
+          "ocean",
+          "sea"
+        ]
+      ],
+      "forbidden_terms": [
+        "cargo",
+        "freight",
+        "ferry",
+        "cruise",
+        "yacht",
+        "fishing"
+      ]
+    },
+    "scene_050": {
+      "queries": [
+        "government officials committee hearing",
+        "regulatory public hearing officials",
+        "policy committee meeting",
+        "formal committee discussion"
+      ],
+      "fallback_queries": [
+        "government officials meeting table",
+        "regulatory agency meeting",
+        "conference table people"
+      ],
+      "required_any_groups": [
+        [
+          "official",
+          "government",
+          "regulatory",
+          "committee",
+          "policy",
+          "meeting",
+          "conference",
+          "discussion",
+          "people"
+        ]
+      ],
+      "forbidden_terms": [
+        "party",
+        "wedding",
+        "restaurant",
+        "walking",
+        "leaving"
+      ]
+    }
+  }
+}

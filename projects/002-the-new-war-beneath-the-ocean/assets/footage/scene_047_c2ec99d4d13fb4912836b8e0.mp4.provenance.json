@@ -1,0 +1,61 @@
+{
+  "stable_asset_id": "680637e4ee731f576aced2e4",
+  "scene_id": "scene_047",
+  "provider": "pexels",
+  "provider_asset_id": "16222742",
+  "source_page_url": "https://www.pexels.com/video/workers-are-working-on-a-railroad-track-16222742/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "khanhhoangminh",
+  "attribution_required": false,
+  "search_query": "coastal industrial community workers",
+  "editorial_role": "human_context",
+  "editorial_note": "People living and working near industry give the distribution of risk a grounded human context without standing for a named affected community.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "community",
+        "people",
+        "worker",
+        "person",
+        "town",
+        "industrial",
+        "factory",
+        "port",
+        "harbor"
+      ]
+    ],
+    "forbidden_terms": [
+      "tourist",
+      "vacation",
+      "beach-party",
+      "resort",
+      "wedding"
+    ]
+  },
+  "duration": 15,
+  "actual_duration_seconds": 15,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 4023851,
+  "sha256": "ed9aca959aedae279c7dda87e14b368aaa1eb213c4d23e8afab724292a9efb25",
+  "actual_sha256": "ed9aca959aedae279c7dda87e14b368aaa1eb213c4d23e8afab724292a9efb25",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "6673078",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:56:48.473Z",
+  "reviewed_asset_sha256": "ed9aca959aedae279c7dda87e14b368aaa1eb213c4d23e8afab724292a9efb25",
+  "reviewed_contact_sheet_sha256": "21b1598c234c48fbdf66b1b99efb15ad2ee0734a6690b35ea9b8e75b8f359774",
+  "human_review_reason": "Workers maintaining transport infrastructure give export-control disruption a physical downstream consequence at the single contracted target."
+}

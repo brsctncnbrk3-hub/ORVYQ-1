@@ -1,0 +1,57 @@
+{
+  "stable_asset_id": "52a304eaa97f3bcf8b44316e",
+  "scene_id": "scene_038",
+  "provider": "pexels",
+  "provider_asset_id": "6951598",
+  "source_page_url": "https://www.pexels.com/video/people-clapping-while-in-the-conference-room-6951598/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Werner Pfennig",
+  "attribution_required": false,
+  "search_query": "international assembly delegates meeting",
+  "editorial_role": "human_context",
+  "editorial_note": "An international assembly provides human governance context for common heritage; UNCLOS and ISA documents remain the legal evidence.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "delegate",
+        "official",
+        "assembly",
+        "conference",
+        "government"
+      ]
+    ],
+    "forbidden_terms": [
+      "party",
+      "concert",
+      "wedding",
+      "walking",
+      "leaving"
+    ]
+  },
+  "duration": 13,
+  "actual_duration_seconds": 13,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 2215353,
+  "sha256": "cea376d9871be50504e491c4a96a3c6707c1fc082d122b22c862356708a2be38",
+  "actual_sha256": "cea376d9871be50504e491c4a96a3c6707c1fc082d122b22c862356708a2be38",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "10244385",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:55:50.872Z",
+  "reviewed_asset_sha256": "cea376d9871be50504e491c4a96a3c6707c1fc082d122b22c862356708a2be38",
+  "reviewed_contact_sheet_sha256": "f744e821b4603a4ee15db1ab1d7e704c911c0c09d56749dfd73fc488f91aafe7",
+  "human_review_reason": "The populated formal meeting is suitable human governance context at the two contracted targets and is never labelled as a named regulator or assembly."
+}

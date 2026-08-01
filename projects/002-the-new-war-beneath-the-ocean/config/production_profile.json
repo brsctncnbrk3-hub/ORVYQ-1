@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "status": "ready",
+  "creative_profile": "orvyq-aperture-cinematic",
+  "visual_medium_balance": {
+    "contextual_footage_fraction_min": 0.6,
+    "contextual_footage_fraction_max": 0.7,
+    "primary_evidence_fraction_min": 0.2,
+    "graphic_card_fraction_max": 0.15,
+    "full_screen_text_card_fraction_max": 0.03,
+    "section_graphic_card_fraction_max": 0.25,
+    "maximum_consecutive_graphic_card_shots": 1,
+    "maximum_graphic_template_uses": 3,
+    "maximum_full_screen_template_uses": 2,
+    "project_overrides_may_only_tighten": true
+  },
+  "art_direction": {
+    "topic": "Deep-sea mining, critical-mineral geopolitics, and the race to control the ocean floor",
+    "palette": {
+      "ink": "#E8EDF2",
+      "accent": "#D96D45",
+      "information": "#6FA8C9",
+      "ground": "#020B13"
+    },
+    "source_treatment": "Full-screen official evidence, restrained map animation, real expedition imagery, and explicitly labelled source-derived graphics",
+    "visual_motifs": [
+      "Abyssal darkness interrupted by machine lights",
+      "Bathymetric maps and contract blocks replacing conventional borders",
+      "Polymetallic nodules and rare-earth mud presented as strategic objects rather than treasure",
+      "Surface command rooms contrasted with unknown deep-sea ecosystems"
+    ],
+    "avoid": [
+      "Generic futuristic AI graphics",
+      "Continuous document/table sequences without contextual footage",
+      "Unlabelled corporate promotional footage",
+      "Claims that all deep-sea mineral deposits or mining methods are environmentally equivalent"
+    ]
+  },
+  "end_card": {
+    "title": "WHAT WE CAN EXTRACT",
+    "subtitle": "AND WHAT WE AGREE NOT TO DESTROY"
+  },
+  "proof": {
+    "boundary_anchor_text": null
+  },
+  "hook": {
+    "first_shot_role": "human_context",
+    "first_shot_asset": null,
+    "target_cut_count": 5,
+    "target_duration_seconds": 14,
+    "question_minimum_characters": 35,
+    "question_maximum_characters": 100
+  },
+  "editorial_rhythm": {
+    "full_pause_target": 4,
+    "brief_accent_target": 3,
+    "brief_accent_minimum_seconds": 1.5,
+    "brief_accent_maximum_seconds": 3
+  },
+  "opening_evidence": {
+    "kind": "official_figure",
+    "target_asset_count": 2
+  },
+  "creative_polish": {
+    "require_repetition_reduction": true,
+    "source_review_run_id": null,
+    "footage_replacements": []
+  }
+}

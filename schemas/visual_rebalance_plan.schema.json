@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orvyq.dev/schemas/visual_rebalance_plan.schema.json",
+  "title": "ORVYQ visual rebalance plan",
+  "type": "object",
+  "required": ["schema_version", "project_id", "status", "baseline", "projected", "actions"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "project_id": { "type": "string", "pattern": "^[0-9]{3}-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "status": { "enum": ["blocked_pending_assets", "materialized"] },
+    "purpose": { "type": "string", "minLength": 24 },
+    "baseline": { "$ref": "#/$defs/mix" },
+    "projected": {
+      "allOf": [{ "$ref": "#/$defs/mix" }],
+      "properties": {
+        "maximum_consecutive_graphic_card_shots": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["baseline_shot_index", "claim_id", "duration_seconds", "decision", "projected_medium", "rationale"],
+        "properties": {
+          "baseline_shot_index": { "type": "integer", "minimum": 0 },
+          "claim_id": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" },
+          "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
+          "decision": { "enum": ["keep", "redesign", "replace_primary_evidence", "replace_contextual_footage", "remove"] },
+          "projected_medium": { "enum": ["contextual_footage", "primary_evidence", "graphic_card"] },
+          "projected_full_screen_text_card": { "type": "boolean" },
+          "template_id": { "type": "string", "minLength": 3 },
+          "asset_request_id": { "type": "string", "pattern": "^REQ_(EVD|FTG)_[A-Z0-9_]+$" },
+          "replacement_strategy": { "enum": ["extend_adjacent_footage"] },
+          "replacement_assets": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["asset_path"],
+              "properties": {
+                "asset_path": { "type": "string", "minLength": 8 },
+                "evidence_asset_id": { "type": "string", "pattern": "^EVID_[A-Z0-9_]+$" },
+                "source_region": { "type": "string", "minLength": 3 },
+                "trim_in_sec": { "type": "number", "minimum": 0 },
+                "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "rationale": { "type": "string", "minLength": 24 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "mix": {
+      "type": "object",
+      "required": [
+        "duration_frames",
+        "duration_seconds",
+        "contextual_footage_seconds",
+        "contextual_footage_fraction",
+        "primary_evidence_seconds",
+        "primary_evidence_fraction",
+        "graphic_card_seconds",
+        "graphic_card_fraction",
+        "full_screen_text_card_seconds",
+        "full_screen_text_card_fraction"
+      ],
+      "properties": {
+        "shot_count": { "type": "integer", "minimum": 1 },
+        "duration_frames": { "type": "integer", "minimum": 1 },
+        "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
+        "contextual_footage_seconds": { "type": "number", "minimum": 0 },
+        "contextual_footage_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "primary_evidence_seconds": { "type": "number", "minimum": 0 },
+        "primary_evidence_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "graphic_card_seconds": { "type": "number", "minimum": 0 },
+        "graphic_card_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "full_screen_text_card_seconds": { "type": "number", "minimum": 0 },
+        "full_screen_text_card_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "maximum_consecutive_graphic_card_shots": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

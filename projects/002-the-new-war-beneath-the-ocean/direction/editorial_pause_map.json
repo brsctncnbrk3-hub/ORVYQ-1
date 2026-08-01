@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "duration_policy": {
+    "minimum_final_duration_seconds": 1037.68,
+    "maximum_final_duration_seconds": null,
+    "rule": "The film may exceed the minimum. Final duration follows the real narration, the cold open, seven resolved editorial pauses and the terminal end card; no padding is added merely to hit a fixed target."
+  },
+  "proof": {
+    "source_narration_seconds": 0,
+    "editorial_pause_seconds": 0,
+    "speech_timeline_end_seconds": 0,
+    "proof_duration_seconds": 0,
+    "tail_release_seconds": 0,
+    "pauses": []
+  },
+  "full_film_pause_anchors": [
+    {
+      "anchor_text": "It was looking for a way out.",
+      "question": "What would make a country search six kilometres below the Pacific for independence?",
+      "purpose": "Full pause: reveal that the expedition is about strategic escape, not only geology",
+      "planned_seconds": 4,
+      "sound_cue": "tonal_bloom"
+    },
+    {
+      "anchor_text": "Owning a deposit is not the same as controlling a supply chain.",
+      "question": "What is a resource worth if someone else still controls the refinery?",
+      "purpose": "Brief accent: land the mine-versus-processing distinction",
+      "planned_seconds": 2,
+      "sound_cue": "low_impact"
+    },
+    {
+      "anchor_text": "The world now has one ocean, two rule books and no commercial precedent.",
+      "question": "Which rulebook governs the first mine?",
+      "purpose": "Full pause: hold the central legal fracture before the trade-off section",
+      "planned_seconds": 5,
+      "sound_cue": "tonal_bloom"
+    },
+    {
+      "anchor_text": "It is insurance.",
+      "question": "How much would a country pay for a supply source it may never need?",
+      "purpose": "Brief accent: turn mineral economics into strategic optionality",
+      "planned_seconds": 2,
+      "sound_cue": "low_impact"
+    },
+    {
+      "anchor_text": "Recovery was not complete.",
+      "question": "What does recovery mean in an ecosystem measured across centuries?",
+      "purpose": "Full pause: let the forty-four-year evidence land without overstating zero recovery",
+      "planned_seconds": 4,
+      "sound_cue": "tonal_bloom"
+    },
+    {
+      "anchor_text": "The unresolved issue is accumulation.",
+      "question": "What changes when a trial becomes an industry operating for years?",
+      "purpose": "Brief accent: pivot from measured single-trial effects to cumulative uncertainty",
+      "planned_seconds": 2,
+      "sound_cue": "low_impact"
+    },
+    {
+      "anchor_text": "agreed not to destroy.",
+      "question": "Can rules reach the frontier before extraction does?",
+      "purpose": "Full pause: final moral and governance landing with a clean musical decay",
+      "planned_seconds": 6,
+      "sound_cue": "tonal_bloom"
+    }
+  ]
+}

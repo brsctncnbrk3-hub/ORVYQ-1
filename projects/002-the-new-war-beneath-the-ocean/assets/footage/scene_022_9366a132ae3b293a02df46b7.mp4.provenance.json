@@ -1,0 +1,58 @@
+{
+  "stable_asset_id": "61be294409cf1bffc4d4b3c2",
+  "scene_id": "scene_022",
+  "provider": "pexels",
+  "provider_asset_id": "32243444",
+  "source_page_url": "https://www.pexels.com/video/industrial-factory-workers-operating-machinery-32243444/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Usman AbdulrasheedGambo",
+  "attribution_required": false,
+  "search_query": "engineers inspecting industrial machinery",
+  "editorial_role": "context",
+  "editorial_note": "Engineers testing pilot-scale industrial equipment directly visualise costly strategic capacity that may be built as an option rather than immediately used.",
+  "narration_anchor": "Governments may spend billions to create options they never fully use.",
+  "target_claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+  "target_slice_index": 22,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "engineer",
+        "technician",
+        "worker",
+        "mechanic"
+      ]
+    ],
+    "forbidden_terms": [
+      "cherry",
+      "fruit",
+      "food",
+      "kitchen",
+      "cooking",
+      "agriculture"
+    ]
+  },
+  "duration": 16,
+  "actual_duration_seconds": 16,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 6304979,
+  "sha256": "a44357a5e4b2552322f51c3ecf4d90ea468556984168e653e9f3fbac4f56ed06",
+  "actual_sha256": "a44357a5e4b2552322f51c3ecf4d90ea468556984168e653e9f3fbac4f56ed06",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "13751394",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-07-30T07:49:11.089Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "canonical_visual_review_registry",
+  "reviewed_asset_sha256": "a44357a5e4b2552322f51c3ecf4d90ea468556984168e653e9f3fbac4f56ed06",
+  "reviewed_contact_sheet_sha256": "188ecf2fa853952bf04a0b4917561f69ffa32544f88bfeb921004a3667c3c277",
+  "visual_qa_reason": "Approval restored from the canonical byte-bound visual review registry for the active runtime asset."
+}

@@ -1,0 +1,56 @@
+{
+  "stable_asset_id": "6145fab24a18fae1de946cc5",
+  "scene_id": "scene_040",
+  "provider": "pexels",
+  "provider_asset_id": "29702517",
+  "source_page_url": "https://www.pexels.com/video/aerial-view-of-industrial-recycling-facility-29702517/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "K",
+  "attribution_required": false,
+  "search_query": "industrial metal recycling plant",
+  "editorial_role": "context",
+  "editorial_note": "A real recycling process represents one partial alternative in the narration, not a complete substitute for new supply.",
+  "narration_anchor": "Recycling and diversified refining could weaken the security argument.",
+  "target_claim_id": "CLM_018_CAPABILITY_IS_NOT_OBLIGATION",
+  "target_slice_index": 2,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "recycling",
+        "recycle",
+        "scrap",
+        "sorting"
+      ]
+    ],
+    "forbidden_terms": [
+      "household-bin",
+      "plastic-bottle",
+      "compost",
+      "fashion"
+    ]
+  },
+  "duration": 15.015,
+  "actual_duration_seconds": 15.015,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 7968620,
+  "sha256": "f7a4d3d0168e142b140cd10bb8200ade91517728450fcc5292ed44a31f8b6cd8",
+  "actual_sha256": "f7a4d3d0168e142b140cd10bb8200ade91517728450fcc5292ed44a31f8b6cd8",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "12773206",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-07-30T07:53:46.351Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "canonical_visual_review_registry",
+  "reviewed_asset_sha256": "f7a4d3d0168e142b140cd10bb8200ade91517728450fcc5292ed44a31f8b6cd8",
+  "reviewed_contact_sheet_sha256": "97d012d26135fb43a12565c0c83d63bd10e173839153152d76a700a29911b2fb",
+  "visual_qa_reason": "Approval restored from the canonical byte-bound visual review registry for the active runtime asset."
+}

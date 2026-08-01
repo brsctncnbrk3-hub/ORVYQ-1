@@ -1,0 +1,874 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "status": "ready",
+  "generation_policy": "claim-bound footage use contracts plus explicit validated overrides; editorial role aliases are normalized to canonical render roles; one scene may appear only at listed claim/slice targets; no automatic backfill, silent retirement or scene-id-wide reassignment",
+  "footage_assignments": {
+    "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT": {
+      "0": {
+        "asset": "assets/footage/scene_023_a96b0c345a995af5baf0923a.mp4",
+        "trimInRatio": 0.02,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "changes the question. The ocean floor is no longer only a place scientists can study. It is becoming a place governments believe they may",
+        "semantic_rationale": "A busy industrial port makes concentrated trade and material movement physical while the IEA source carries the stated market shares.",
+        "semantic_link": "physical"
+      },
+      "2": {
+        "asset": "assets/footage/scene_006_cd809aab47833abf6ee1de6b.mp4",
+        "trimInRatio": 0.1,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "life. They help permanent magnets turn electric motors, guide precision robotics, power wind turbines, move aircraft",
+        "semantic_rationale": "Industrial robotics directly embodies one end use named by the narration; the IEA evidence retains the quantitative concentration claim.",
+        "semantic_link": "physical"
+      },
+      "4": {
+        "asset": "assets/footage/scene_010_9f0c1cd965d27101f9e31b3d.mp4",
+        "trimInRatio": 0.15,
+        "motion": "push",
+        "role": "context",
+        "reuse_reason": "This mineral-supply image is introduced while explaining concentration risk and returns under mineral-specific scarcity at a distinct trim window, narrowing the broad chokepoint argument to the metals and chemistries that actually matter."
+      }
+    },
+    "CLM_004_JAPAN_INDUSTRIAL_TIMELINE": {
+      "0": {
+        "asset": "assets/footage/scene_004_official_reuse.mp4",
+        "trimInRatio": 0.45,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "problem. Shipments of several heavy rare earths and related magnets fell sharply. Manufacturers outside China struggled",
+        "semantic_rationale": "A distinct trim of real offshore equipment bridges demonstrated lifting capability to the larger production chain that remains unfinished.",
+        "semantic_link": "physical",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_004 at a distinct narration target and trim window."
+      },
+      "2": {
+        "asset": "assets/footage/scene_011_9ee53a113509a6f291ad3414.mp4",
+        "trimInRatio": 0,
+        "motion": "drift_left",
+        "role": "context",
+        "reuse_reason": "This processing-chain image is introduced while separating Japan's test milestones and returns under the refining-bottleneck claim at a distinct trim window, connecting extraction hardware to the downstream gate that determines usable supply."
+      },
+      "4": {
+        "asset": "assets/footage/scene_009_8846f61745140cdcd70c4150.mp4",
+        "trimInRatio": 0.15,
+        "motion": "drift_left",
+        "role": "human_context",
+        "reuse_reason": "This human industrial-work image is introduced while describing the planned production chain and returns under the industry's counterargument at a distinct trim window, keeping real workers and operators present on both sides of the trade-off."
+      },
+      "5": {
+        "asset": "assets/footage/scene_008_8abb9c1116db94da4566f357.mp4",
+        "trimInRatio": 0.15,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "resource being discussed in most debates about deep sea mining. It lies inside Japan's exclusive economic zone. It contains",
+        "semantic_rationale": "Operating wind turbines make downstream rare-earth demand and the unfinished industrial chain visible without implying that the site belongs to Japan.",
+        "semantic_link": "physical"
+      },
+      "6": {
+        "asset": "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4",
+        "trimInRatio": 0.12,
+        "motion": "drift_right",
+        "role": "context",
+        "semantic_anchor": "The deposit contains rare earth elements in fine sediment beneath the seabed.",
+        "semantic_rationale": "A verified dark seabed-sediment view will carry the physical location and material form named in the sentence; the specific Japanese deposit remains established by primary evidence."
+      },
+      "8": {
+        "asset": "assets/footage/scene_022_9366a132ae3b293a02df46b7.mp4",
+        "trimInRatio": 0.34,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "A completed lift test is not an integrated commercial supply chain.",
+        "semantic_rationale": "Engineers testing pilot-scale industrial equipment directly support the gap between a technical milestone and the still-planned recovery, lifting, transport and processing chain.",
+        "reuse_reason": "A deliberately separated second use of the same verified clip, using a distinct trim window to connect two explicitly related narration beats; the footage is contextual and never replaces primary evidence."
+      }
+    },
+    "CLM_005_COMMON_HERITAGE_PRINCIPLE": {
+      "0": {
+        "asset": "assets/footage/scene_005_06daaaabbe0826dbedfa2207.mp4",
+        "trimInRatio": 0.12,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "clear. Japan is not simply looking for minerals. It is trying to reduce the power of a choke point and it is not alone.",
+        "semantic_rationale": "Visible operators making technical decisions keep the shared-ocean question human, provided the footage is a real operational control setting rather than an interview or studio.",
+        "semantic_link": "physical"
+      },
+      "2": {
+        "asset": "assets/footage/scene_003_official_reuse.mp4",
+        "trimInRatio": 0.08,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "Mexico. The Clarion Clipperton Zone is a vast abyssal plane. Across parts of its sediment lie polymetallic nodules.",
+        "semantic_rationale": "A dark, sparsely populated deep-seabed view gives the international Area a physical scale while official maps and treaty text retain the factual burden.",
+        "semantic_link": "physical"
+      },
+      "4": {
+        "asset": "assets/footage/scene_019_81d3921b615afae6bf8f9325.mp4",
+        "trimInRatio": 0.02,
+        "motion": "hold",
+        "role": "metaphor",
+        "semantic_anchor": "microscopic layer. They contain manganese, nickel, copper and cobalt. Unlike Japan's rare earth mud, these nodules often lie",
+        "semantic_rationale": "A restrained night-ocean view carries the scale and remoteness of the shared frontier without replacing treaty text or asserting a named location.",
+        "semantic_link": "conceptual"
+      },
+      "6": {
+        "asset": "assets/footage/scene_031_48cfc78463916f8222590c3f.mp4",
+        "trimInRatio": 0.34,
+        "motion": "pull",
+        "role": "human_context",
+        "semantic_anchor": "The seabed beyond national jurisdiction is governed through international rules rather than a single national claim.",
+        "semantic_rationale": "An international rulemaking setting directly reinforces the common-heritage principle while the ISA and UNCLOS documents remain the primary legal evidence.",
+        "reuse_reason": "A deliberately separated second use of the same verified clip, using a distinct trim window to connect two explicitly related narration beats; the footage is contextual and never replaces primary evidence."
+      }
+    },
+    "CLM_007_US_PARALLEL_ROUTE": {
+      "0": {
+        "asset": "assets/footage/scene_007_34b3f4906a6eee7e10be8f10.mp4",
+        "trimInRatio": 0.08,
+        "motion": "push",
+        "role": "context",
+        "reuse_reason": "The rulebook image returns from the opening hook under the U.S. parallel-route claim at a different trim window, a deliberate geopolitical callback rather than an incidental repeat."
+      },
+      "2": {
+        "asset": "assets/footage/scene_050_863b8a7dd26b4dd288235b75.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "fails. This is not a minor delay in paperwork. These rules are supposed to answer questions humanity has never answered at industrial",
+        "semantic_rationale": "A real regulatory hearing interrupts the dense legal-evidence sequence while the narration explains why unresolved rules matter at industrial scale; official documents retain every legal and factual claim.",
+        "semantic_link": "conceptual"
+      },
+      "5": {
+        "asset": "assets/footage/scene_038_9d962f32cfd2deda34a8ddf6.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "international law says belongs to humanity as a whole. And who has the authority to say no? While those negotiations",
+        "semantic_rationale": "A real formal meeting provides human governance context for competing legal routes while primary documents retain the factual burden.",
+        "semantic_link": "conceptual"
+      }
+    },
+    "CLM_008_NO_US_COMMERCIAL_PERMIT": {
+      "0": {
+        "asset": "assets/footage/scene_014_9ffed5eb663a6f6f21233078.mp4",
+        "trimInRatio": 0.48,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "Convention. Instead, it regulates deep seabed mineral activity by United States companies, under a domestic law",
+        "semantic_rationale": "A separate legal-document trim supports the distinction between an application process and a commercial permit without depicting a named proceeding.",
+        "semantic_link": "conceptual",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_014 at a distinct narration target and trim window."
+      },
+      "2": {
+        "asset": "assets/footage/scene_045_3cfaea76e4faea730fa72c95.mp4",
+        "trimInRatio": 0.5,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "An application entering review is not the same as a commercial recovery permit being issued.",
+        "semantic_rationale": "A formal institutional room keeps the distinction grounded in a decision process without identifying the generic delegates as NOAA officials or a permit hearing.",
+        "reuse_reason": "The institutional room first separates application review from approval and returns near the conclusion at a distinct trim window to frame precedent as a decision passed forward."
+      }
+    },
+    "CLM_009_INDUSTRY_COUNTERARGUMENT": {
+      "0": {
+        "asset": "assets/footage/scene_009_8846f61745140cdcd70c4150.mp4",
+        "trimInRatio": 0.24,
+        "motion": "drift_right",
+        "role": "human_context",
+        "reuse_reason": "This human industrial-work image returns from Japan's production timeline at a distinct trim window, deliberately grounding the industry's supply-security argument in the same real-world operational context rather than a new generic cutaway."
+      },
+      "2": {
+        "asset": "assets/footage/scene_054_direct.mp4",
+        "trimInRatio": 0.08,
+        "motion": "drift_left",
+        "role": "human_context",
+        "semantic_anchor": "between a plan and an operating industry. Still, the direction is unmistakable. The world now has",
+        "semantic_rationale": "Official expedition field-operations footage physically expresses the gap between a plan and an operating system without presenting the generic mission as a commercial mining project.",
+        "semantic_link": "physical"
+      },
+      "3": {
+        "asset": "assets/footage/scene_029_bec7ca5e63295de8aa016832.mp4",
+        "trimInRatio": 0.5,
+        "motion": "pull",
+        "role": "human_context",
+        "semantic_anchor": "has one ocean, two rule books and no commercial precedent. The first operation that crosses that line may do",
+        "semantic_rationale": "A populated formal assembly gives human form to the sentence about one ocean, two rulebooks and no commercial precedent; primary legal documents retain every factual proposition.",
+        "semantic_link": "conceptual"
+      },
+      "5": {
+        "asset": "assets/footage/scene_027_cee752d61ab26eeb024d411f.mp4",
+        "trimInRatio": 0.34,
+        "motion": "drift_right",
+        "role": "human_context",
+        "semantic_anchor": "The industry argument is a trade-off among supply security, cost and ecological uncertainty.",
+        "semantic_rationale": "A multidisciplinary decision meeting directly expresses the competing technological, economic and ecological considerations rather than reducing the argument to generic industrial imagery.",
+        "reuse_reason": "A deliberately separated second use of the same verified clip, using a distinct trim window to connect two explicitly related narration beats; the footage is contextual and never replaces primary evidence."
+      },
+      "7": {
+        "asset": "assets/footage/scene_017_3be5f14070d93db018c32640.mp4",
+        "trimInRatio": 0.35,
+        "motion": "drift_left",
+        "role": "context",
+        "reuse_reason": "The land-based open-pit mine's own reuse_reason (CLM_004) already names this claim as its intended second occurrence, keeping the film's land-vs-seabed mineral-rights motif visually consistent across the industrial-timeline and industry-counterargument claims."
+      }
+    },
+    "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC": {
+      "0": {
+        "asset": "assets/footage/scene_010_9f0c1cd965d27101f9e31b3d.mp4",
+        "trimInRatio": 0.32,
+        "motion": "pull",
+        "role": "context",
+        "reuse_reason": "This mineral-supply image returns from the China chokepoint sequence at a distinct trim window, deliberately shifting the same supply question from national concentration to mineral-specific demand and substitution."
+      }
+    },
+    "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY": {
+      "0": {
+        "asset": "assets/footage/scene_013_direct.mp4",
+        "trimInRatio": 0.16,
+        "motion": "drift_left",
+        "role": "human_context",
+        "reuse_reason": "The intervention image introduced briefly in the hook returns under the industrial-trial biodiversity claim at a different trim window, where the film supplies the measured ecological result."
+      },
+      "2": {
+        "asset": "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "context",
+        "reuse_reason": "This ecological-impact image is introduced with the measured biodiversity result and returns under midwater-discharge risk at a distinct trim window, carrying the film's evidence-led ecological consequence motif from seabed disturbance into the water column."
+      },
+      "5": {
+        "asset": "assets/footage/scene_001_direct.mp4",
+        "trimInRatio": 0.4,
+        "motion": "hold",
+        "role": "human_context",
+        "reuse_reason": "The research-vessel crew introduced in the opening hook returns at a distinct trim window, grounding the industrial-trial biodiversity result in the same real, working expedition rather than a generic stock cutaway."
+      }
+    },
+    "CLM_015_MIDWATER_DISCHARGE_RISK": {
+      "0": {
+        "asset": "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4",
+        "trimInRatio": 0.32,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "Discharge particles may alter the food available to midwater organisms.",
+        "semantic_rationale": "A previously established ecological-impact image returns to connect observed biological change with the broader discharge-risk mechanism.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "2": {
+        "asset": "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4",
+        "trimInRatio": 0,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "Many midwater organisms normally consume naturally sinking particles.",
+        "semantic_rationale": "Real midwater life grounds the food-web mechanism without claiming that the jellyfish came from a cited trial.",
+        "reuse_reason": "Midwater life first grounds the discharge-risk mechanism and returns near the conclusion at a distinct trim window to make the ecological inheritance behind precedent physically visible."
+      },
+      "4": {
+        "asset": "assets/footage/scene_028_b925e4019f461a8eb547df63.mp4",
+        "trimInRatio": 0,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "The danger depends on concentration, exposure and repeated operation.",
+        "semantic_rationale": "A real ocean-floor view restores physical scale while measured plume behaviour remains source-backed."
+      },
+      "5": {
+        "asset": "assets/footage/scene_026_a8425569c1d990a57f193a1d.mp4",
+        "trimInRatio": 0.05,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "occur once. They would become a new background condition. The mid -water ocean creates another uncertainty. Material",
+        "semantic_rationale": "A scientist handling samples represents measurement of particle effects without claiming that the generic laboratory depicts the cited experiment.",
+        "semantic_link": "physical"
+      },
+      "8": {
+        "asset": "assets/footage/scene_053_direct.mp4",
+        "trimInRatio": 0.05,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "Research suggests those discharge particles may be nutritionally poor compared with the particles many mid -water organisms normally consume.",
+        "semantic_rationale": "Official water-column footage directly grounds the midwater food-web mechanism while the cited paper carries the experiment and effect.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_016_DECISION_UNDER_UNCERTAINTY": {
+      "0": {
+        "asset": "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4",
+        "trimInRatio": 0,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "The studies identify a plausible mechanism of harm, not proof of commercial-scale ecosystem collapse.",
+        "semantic_rationale": "Verified midwater organisms will keep the qualified ecological mechanism visible while the cited study figures carry the measured scientific claim."
+      },
+      "1": {
+        "asset": "assets/footage/scene_036_44ae569942147848854a5fc6.mp4",
+        "trimInRatio": 0,
+        "motion": "drift_left",
+        "role": "human_context",
+        "semantic_anchor": "The alternatives also carry damage and mineral dependence can become a security risk.",
+        "semantic_rationale": "A real decision table gives the trade-off a human setting without identifying a specific government."
+      },
+      "2": {
+        "asset": "assets/footage/scene_039_d90b361d5f06560506e648bb.mp4",
+        "trimInRatio": 0,
+        "motion": "push",
+        "role": "human_context",
+        "semantic_anchor": "The strongest case against rushing is that science does not know every consequence.",
+        "semantic_rationale": "A scientist at a microscope directly supports the knowledge gap while cited research carries the factual burden."
+      }
+    },
+    "CLM_017_UNUSED_OPTION_SYNTHESIS": {
+      "0": {
+        "asset": "assets/footage/scene_040_247e04dcc7e0eb00bd1cfd2b.mp4",
+        "trimInRatio": 0,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "Alternatives also carry damage.",
+        "semantic_rationale": "A real recycling process represents one partial alternative without presenting it as harmless or complete."
+      },
+      "1": {
+        "asset": "assets/footage/scene_030_b39f52916266bceb2590b3fc.mp4",
+        "trimInRatio": 0,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "risk. Both arguments contain truth. That is what makes the decision dangerous. If deep sea mining were obviously",
+        "semantic_rationale": "Multiple working vessels at sea make the strategic race tangible without inventing confrontation or identifying a national programme.",
+        "semantic_link": "conceptual"
+      },
+      "2": {
+        "asset": "assets/footage/scene_036_44ae569942147848854a5fc6.mp4",
+        "trimInRatio": 0.34,
+        "motion": "drift_left",
+        "role": "human_context",
+        "semantic_anchor": "Governments face a precedent-setting decision while economics, technology, law and ecology are moving.",
+        "semantic_rationale": "The decision table returns at a distinct moment to connect uncertainty with institutional choice.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "3": {
+        "asset": "assets/footage/scene_022_9366a132ae3b293a02df46b7.mp4",
+        "trimInRatio": 0,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "Technology and economics are still moving.",
+        "semantic_rationale": "Industrial machinery provides physical scale for the still-developing production chain.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "4": {
+        "asset": "assets/footage/scene_037_77974e64872de8e33bf15db5.mp4",
+        "trimInRatio": 0,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "The decision will help define what uncertainty is enough to stop an industry.",
+        "semantic_rationale": "A textile-production machine represents operating industry rather than a speculative prototype."
+      },
+      "5": {
+        "asset": "assets/footage/scene_041_fb568a7886ffc7b5209cc5de.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "Law and policy are still moving.",
+        "semantic_rationale": "A professional roundtable gives the unresolved policy process a neutral human setting."
+      },
+      "6": {
+        "asset": "assets/footage/scene_029_bec7ca5e63295de8aa016832.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "can govern a frontier before powerful states create alternatives. And it will test whether the phrase common heritage of mankind has",
+        "semantic_rationale": "A real international assembly gives practical meaning to common heritage while treaty and ISA sources retain the legal claim.",
+        "semantic_link": "conceptual",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_029 at a distinct narration target and trim window."
+      }
+    },
+    "CLM_018_CAPABILITY_IS_NOT_OBLIGATION": {
+      "0": {
+        "asset": "assets/footage/scene_039_d90b361d5f06560506e648bb.mp4",
+        "trimInRatio": 0.34,
+        "motion": "drift_right",
+        "role": "human_context",
+        "semantic_anchor": "The most important outcome of this race may not be a mine.",
+        "semantic_rationale": "A distinct laboratory trim connects technical alternatives with uncertainty about whether extraction becomes necessary.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "2": {
+        "asset": "assets/footage/scene_040_247e04dcc7e0eb00bd1cfd2b.mp4",
+        "trimInRatio": 0.34,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "Recycling and diversified refining could weaken the security argument.",
+        "semantic_rationale": "A distinct industrial recycling trim shows one partial alternative without presenting it as a complete solution.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "3": {
+        "asset": "assets/footage/scene_030_b39f52916266bceb2590b3fc.mp4",
+        "trimInRatio": 0.5,
+        "motion": "drift_right",
+        "role": "context",
+        "semantic_anchor": "billions to create options they never fully use, but even an unused option changes power.",
+        "semantic_rationale": "A distinct fleet-scale trim represents strategic options that alter bargaining power even when a capability is not fully used.",
+        "semantic_link": "conceptual",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_030 at a distinct narration target and trim window."
+      },
+      "4": {
+        "asset": "assets/footage/scene_041_fb568a7886ffc7b5209cc5de.mp4",
+        "trimInRatio": 0.34,
+        "motion": "drift_left",
+        "role": "human_context",
+        "semantic_anchor": "The ability to reach a resource does not create an obligation to extract it.",
+        "semantic_rationale": "A separate roundtable trim visualises deliberate choice after capability exists.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "5": {
+        "asset": "assets/footage/scene_027_cee752d61ab26eeb024d411f.mp4",
+        "trimInRatio": 0.34,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "Capability is not obligation.",
+        "semantic_rationale": "Engineers reading plans keep the distinction between building capacity and authorising extraction physical.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "6": {
+        "asset": "assets/footage/scene_043_3274a7b8bb8853043b341006.mp4",
+        "trimInRatio": 0,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "The contest begins before commercial production.",
+        "semantic_rationale": "A working port shows preparation and positioning before any mine is represented."
+      },
+      "8": {
+        "asset": "assets/footage/scene_044_60259233df0534e7673a42ef.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "The world may mistake momentum for inevitability.",
+        "semantic_rationale": "An active production line gives industrial momentum a visible form without implying deep-sea output."
+      }
+    },
+    "CLM_019_DISTRIBUTED_RISK_SYNTHESIS": {
+      "0": {
+        "asset": "assets/footage/scene_044_60259233df0534e7673a42ef.mp4",
+        "trimInRatio": 0.34,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "Delay is not neutral either.",
+        "semantic_rationale": "A distinct production-line trim gives concentrated supply risk an industrial scale.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "1": {
+        "asset": "assets/footage/scene_037_77974e64872de8e33bf15db5.mp4",
+        "trimInRatio": 0.34,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "Supply delays carry costs through existing industry.",
+        "semantic_rationale": "A separated machine-operation trim connects mineral supply with downstream production.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "2": {
+        "asset": "assets/footage/scene_050_863b8a7dd26b4dd288235b75.mp4",
+        "trimInRatio": 0.34,
+        "motion": "drift_right",
+        "role": "human_context",
+        "semantic_anchor": "alternatives more room to become the default. And every year without baseline ecological research makes it harder to know what was lost after",
+        "semantic_rationale": "A distinct formal-hearing trim represents regulatory delay while source documents retain the factual burden.",
+        "semantic_link": "conceptual",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_050 at a distinct narration target and trim window."
+      },
+      "3": {
+        "asset": "assets/footage/scene_038_9d962f32cfd2deda34a8ddf6.mp4",
+        "trimInRatio": 0.5,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "lost after industrial activity begins. The decision is not between progress and preservation. It",
+        "semantic_rationale": "A distinct meeting trim represents unfinished international rules and institutional choice without naming the generic participants.",
+        "semantic_link": "conceptual",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_038 at a distinct narration target and trim window."
+      },
+      "4": {
+        "asset": "assets/footage/scene_026_a8425569c1d990a57f193a1d.mp4",
+        "trimInRatio": 0.5,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "preservation. It is between different forms of risk distributed across different people, places and generations.",
+        "semantic_rationale": "A separate sample-analysis trim directly represents the baseline research needed before industrial disturbance begins.",
+        "semantic_link": "physical",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_026 at a distinct narration target and trim window."
+      },
+      "6": {
+        "asset": "assets/footage/scene_020_94b6798729e2e19741f260c1.mp4",
+        "trimInRatio": 0.48,
+        "motion": "drift_right",
+        "role": "human_context",
+        "semantic_anchor": "Companies and states may capture the strategic benefit. The deep ocean may carry damage that cannot be seen from shore,",
+        "semantic_rationale": "A distinct harbor-work trim grounds distributed industrial benefit and exposure in real people and infrastructure rather than an abstract system.",
+        "semantic_link": "physical",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_020 at a distinct narration target and trim window."
+      }
+    },
+    "CLM_020_PRECEDENT_SYNTHESIS": {
+      "0": {
+        "asset": "assets/footage/scene_045_3cfaea76e4faea730fa72c95.mp4",
+        "trimInRatio": 0,
+        "motion": "drift_right",
+        "role": "human_context",
+        "semantic_anchor": "Future generations may inherit the precedent.",
+        "semantic_rationale": "A formal institutional room frames precedent as a decision passed forward rather than a sentimental portrait.",
+        "reuse_reason": "The institutional room first separates application review from approval and returns near the conclusion at a distinct trim window to frame precedent as a decision passed forward."
+      },
+      "2": {
+        "asset": "assets/footage/scene_043_3274a7b8bb8853043b341006.mp4",
+        "trimInRatio": 0.34,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "In 2027 Japan plans to return to the Pacific for a longer production-chain test.",
+        "semantic_rationale": "A distinct working-port trim supports renewed field activity without identifying the generic boat as Chikyu.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "3": {
+        "asset": "assets/footage/scene_034_dbd1819c871818356753f93e.mp4",
+        "trimInRatio": 0.12,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "where the commercial decision may arrive before the final answer. The race is real, but it is not only a race for minerals.",
+        "semantic_rationale": "Scientists discussing evidence embody unresolved knowledge before a commercial decision without implying that they advise a named government.",
+        "semantic_link": "physical"
+      },
+      "4": {
+        "asset": "assets/footage/scene_035_ef447180da828809758f0d18.mp4",
+        "trimInRatio": 0.34,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "The race is real.",
+        "semantic_rationale": "A distinct quarry trim makes the physical competition for mineral supply visible without identifying a particular project.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "5": {
+        "asset": "assets/footage/scene_031_48cfc78463916f8222590c3f.mp4",
+        "trimInRatio": 0,
+        "motion": "pull",
+        "role": "human_context",
+        "semantic_anchor": "It is a race to decide which rules will exist.",
+        "semantic_rationale": "A separate formal meeting trim provides governance context while primary legal sources remain on screen elsewhere.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "6": {
+        "asset": "assets/footage/scene_028_b925e4019f461a8eb547df63.mp4",
+        "trimInRatio": 0.34,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "The deepest part of the story is the distance between capability and agreed limits.",
+        "semantic_rationale": "A distinct seabed trim returns the conclusion to physical depth without claiming a mining site.",
+        "reuse_reason": "A second, deliberately separated use at a distinct trim window connects two related narration beats; the clip remains contextual and never substitutes for factual evidence."
+      },
+      "7": {
+        "asset": "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4",
+        "trimInRatio": 0.5,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "Future generations may inherit both the legal precedent and the environmental consequences.",
+        "semantic_rationale": "A distinct view of real midwater life makes the ecological inheritance behind precedent visible without assigning a measured effect to the generic animal footage.",
+        "reuse_reason": "Midwater life first grounds the discharge-risk mechanism and returns near the conclusion at a distinct trim window to make the ecological inheritance behind precedent physically visible."
+      },
+      "8": {
+        "asset": "assets/footage/scene_032_official_reuse.mp4",
+        "trimInRatio": 0.42,
+        "motion": "hold",
+        "role": "metaphor",
+        "semantic_anchor": "surface to the seabed. It is the distance between what humanity has learned how to extract and what it has agreed not to destroy.",
+        "semantic_rationale": "A long dark-ocean descent closes on the distance between technical capability and agreed limits without introducing a new factual claim.",
+        "semantic_link": "conceptual",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_032 at a distinct narration target and trim window."
+      }
+    },
+    "CLM_001_JAPAN_TECHNICAL_MILESTONE": {
+      "2": {
+        "asset": "assets/footage/scene_016_direct.mp4",
+        "trimInRatio": 0.02,
+        "motion": "drift_right",
+        "role": "context",
+        "semantic_anchor": "At that depth, there is no sunlight. The pressure is crushing. The water is close to freezing, and",
+        "semantic_rationale": "Official NOAA deep-ocean wall footage directly establishes darkness, cold and crushing-pressure conditions while JAMSTEC primary evidence retains the named Japanese operation.",
+        "semantic_link": "physical"
+      },
+      "4": {
+        "asset": "assets/footage/scene_004_official_reuse.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "cheekyew. It was not searching for oil. It was looking for a way out. For three days, Japan's marine science agency pumped",
+        "semantic_rationale": "Real offshore industrial equipment connects the technical test to a physical operation without substituting petroleum infrastructure or claiming a named vessel.",
+        "semantic_link": "physical"
+      },
+      "5": {
+        "asset": "assets/footage/scene_002_b78da07e94823deaae5ca74e.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "pumped rare earth -rich mud from beneath the seabed near Minamitarishima, a remote island in Japan's exclusive economic zone.",
+        "semantic_rationale": "A verified working research or offshore vessel may carry the exposed surface-logistics context, but it must never be identified as Chikyu or as the mining system itself.",
+        "semantic_link": "physical"
+      },
+      "6": {
+        "asset": "assets/footage/scene_024_official_reuse.mp4",
+        "trimInRatio": 0.08,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "zone. The test did not prove that commercial mining would be profitable. It did not end Japan's dependence on foreign processing, and",
+        "semantic_rationale": "A verified survey or working vessel keeps the boundary between a technical test and a commercial mine visible; leisure craft are forbidden.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_012_LONG_TERM_TRACK_PERSISTENCE": {
+      "0": {
+        "asset": "assets/footage/scene_012_official_reuse.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "Moving extraction to the ocean does not automatically move separation, metal production or magnet manufacturing out",
+        "semantic_rationale": "A real dark seabed or benthic survey view introduces persistent physical disturbance; tropical island imagery is forbidden for this claim.",
+        "semantic_link": "physical"
+      },
+      "3": {
+        "asset": "assets/footage/scene_020_94b6798729e2e19741f260c1.mp4",
+        "trimInRatio": 0,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "That is not ordinary mining economics. It is insurance and insurance is often purchased because of what might happen,",
+        "semantic_rationale": "A working harbor vessel gives the strategic-insurance argument a physical logistics context without presenting the ship as a mining project.",
+        "semantic_link": "conceptual"
+      },
+      "5": {
+        "asset": "assets/footage/scene_032_official_reuse.mp4",
+        "trimInRatio": 0,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "The deep ocean is not empty. It is dark, slow and poorly understood. Many organisms live on inside or",
+        "semantic_rationale": "A restrained descent through real dark water or over the deep seabed carries physical depth and persistence; science-fiction city imagery is forbidden.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_006_MINING_CODE_UNFINISHED": {
+      "0": {
+        "asset": "assets/footage/scene_014_9ffed5eb663a6f6f21233078.mp4",
+        "trimInRatio": 0.05,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "authority was created to organize and control mineral activities in that area. It has issued exploration",
+        "semantic_rationale": "A restrained legal-review setting provides human rulemaking context while UNCLOS and ISA documents remain the actual legal evidence.",
+        "semantic_link": "conceptual"
+      }
+    },
+    "CLM_011_REFINING_BOTTLENECK": {
+      "0": {
+        "asset": "assets/footage/scene_048_b73c8e4d41145089ab22de6e.mp4",
+        "trimInRatio": 0.08,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "simple. Battery chemistry is changing. Lithium ion phosphate batteries use neither nickel nor cobalt.",
+        "semantic_rationale": "Laboratory materials research supports changing battery chemistry while the source figure carries the specific LFP composition statement.",
+        "semantic_link": "physical"
+      },
+      "2": {
+        "asset": "assets/footage/scene_021_146b6b5935f192be27d07afd.mp4",
+        "trimInRatio": 0.12,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "technology, price and policy. And for rare earths, the most important bottleneck may not be the mine.",
+        "semantic_rationale": "Visible metal processing directly carries the downstream refining bottleneck; source-backed evidence retains all mineral-specific claims.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK": {
+      "0": {
+        "asset": "assets/footage/scene_047_c2ec99d4d13fb4912836b8e0.mp4",
+        "trimInRatio": 0.1,
+        "motion": "drift_left",
+        "role": "human_context",
+        "semantic_anchor": "earths. Its share of refining was about 91%. Its share of sintered permanent magnet production was approximately 94%.",
+        "semantic_rationale": "Workers maintaining transport infrastructure make material supply disruption visible while official evidence carries the export-control figures.",
+        "semantic_link": "physical"
+      },
+      "2": {
+        "asset": "assets/footage/scene_023_a96b0c345a995af5baf0923a.mp4",
+        "trimInRatio": 0.48,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "bottleneck. In 2025, Chinese export controls turn that concentration into a physical problem.",
+        "semantic_rationale": "A second dock-operation trim shows how export controls become a physical supply problem without claiming a named port or shipment.",
+        "semantic_link": "physical",
+        "reuse_reason": "A deliberate claim-bound reuse of scene_023 at a distinct narration target and trim window."
+      }
+    },
+    "CLM_014_PLUME_SCALE_IS_COMPLEX": {
+      "0": {
+        "asset": "assets/footage/scene_052_direct.mp4",
+        "trimInRatio": 0.05,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "lower. Species richness was 32 lower. Outside the direct tracks, the effects of the sediment",
+        "semantic_rationale": "Official sediment-coring footage shows the physical act of measurement while the cited plume figures retain the numerical result.",
+        "semantic_link": "physical"
+      }
+    }
+  },
+  "graphic_break_assignments": {
+    "CLM_004_JAPAN_INDUSTRIAL_TIMELINE": {
+      "3": {
+        "mode": "illustrative",
+        "title": "THE SCHEDULE IS PLANNED, NOT GUARANTEED",
+        "subtitle": "A larger trial and its assessment are declared milestones, not a completed record.",
+        "labels": [
+          "PLANNED",
+          "NOT GUARANTEED"
+        ]
+      }
+    },
+    "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC": {
+      "2": {
+        "mode": "illustrative",
+        "title": "NOT EVERY BATTERY NEEDS THE SAME METAL",
+        "subtitle": "Lithium-iron-phosphate chemistry uses neither nickel nor cobalt.",
+        "labels": [
+          "CHEMISTRY",
+          "DEMAND",
+          "SUBSTITUTION"
+        ]
+      }
+    },
+    "CLM_012_LONG_TERM_TRACK_PERSISTENCE": {
+      "2": {
+        "mode": "illustrative",
+        "title": "44 YEARS LATER: STILL VISIBLE",
+        "subtitle": "A 1979 test track remained physically visible in 2023.",
+        "labels": [
+          "1979 TEST",
+          "2023 SURVEY",
+          "44 YEARS"
+        ]
+      },
+      "7": {
+        "mode": "illustrative",
+        "title": "1979 MACHINE ≠ MODERN FLEET",
+        "subtitle": "A small experimental collector is not the same as continuous commercial operation.",
+        "labels": [
+          "1979: ONE MACHINE",
+          "TODAY: A FLEET"
+        ]
+      }
+    },
+    "CLM_014_PLUME_SCALE_IS_COMPLEX": {
+      "2": {
+        "mode": "illustrative",
+        "title": "NEITHER LOCAL NOR OCEAN-WIDE",
+        "subtitle": "Disturbed sediment can travel kilometres, but concentration declines with distance, height and time.",
+        "labels": [
+          "NEAR SEABED",
+          "DECLINES WITH DISTANCE",
+          "MEASURED, NOT ASSUMED"
+        ]
+      },
+      "4": {
+        "mode": "illustrative",
+        "title": "A DECLINE CURVE, NOT A VERDICT",
+        "subtitle": "The plume data describes a measured decline with distance and time -- not a verdict on ocean-wide impact.",
+        "labels": [
+          "MEASURED DECLINE",
+          "NOT A VERDICT"
+        ]
+      }
+    },
+    "CLM_015_MIDWATER_DISCHARGE_RISK": {
+      "6": {
+        "mode": "illustrative",
+        "title": "37% LOWER DENSITY. 32% LOWER RICHNESS.",
+        "subtitle": "Two months after an industrial-scale trial, inside the direct mining tracks.",
+        "labels": [
+          "DIRECT TRACKS",
+          "-37% DENSITY",
+          "-32% RICHNESS"
+        ]
+      }
+    }
+  },
+  "full_footage_pool": [
+    "assets/footage/scene_001_direct.mp4",
+    "assets/footage/scene_002_b78da07e94823deaae5ca74e.mp4",
+    "assets/footage/scene_003_official_reuse.mp4",
+    "assets/footage/scene_004_official_reuse.mp4",
+    "assets/footage/scene_005_06daaaabbe0826dbedfa2207.mp4",
+    "assets/footage/scene_006_cd809aab47833abf6ee1de6b.mp4",
+    "assets/footage/scene_007_34b3f4906a6eee7e10be8f10.mp4",
+    "assets/footage/scene_008_8abb9c1116db94da4566f357.mp4",
+    "assets/footage/scene_009_8846f61745140cdcd70c4150.mp4",
+    "assets/footage/scene_010_9f0c1cd965d27101f9e31b3d.mp4",
+    "assets/footage/scene_011_9ee53a113509a6f291ad3414.mp4",
+    "assets/footage/scene_012_official_reuse.mp4",
+    "assets/footage/scene_013_direct.mp4",
+    "assets/footage/scene_014_9ffed5eb663a6f6f21233078.mp4",
+    "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4",
+    "assets/footage/scene_016_direct.mp4",
+    "assets/footage/scene_017_3be5f14070d93db018c32640.mp4",
+    "assets/footage/scene_019_81d3921b615afae6bf8f9325.mp4",
+    "assets/footage/scene_020_94b6798729e2e19741f260c1.mp4",
+    "assets/footage/scene_021_146b6b5935f192be27d07afd.mp4",
+    "assets/footage/scene_022_9366a132ae3b293a02df46b7.mp4",
+    "assets/footage/scene_023_a96b0c345a995af5baf0923a.mp4",
+    "assets/footage/scene_024_official_reuse.mp4",
+    "assets/footage/scene_026_a8425569c1d990a57f193a1d.mp4",
+    "assets/footage/scene_027_cee752d61ab26eeb024d411f.mp4",
+    "assets/footage/scene_028_b925e4019f461a8eb547df63.mp4",
+    "assets/footage/scene_029_bec7ca5e63295de8aa016832.mp4",
+    "assets/footage/scene_030_b39f52916266bceb2590b3fc.mp4",
+    "assets/footage/scene_031_48cfc78463916f8222590c3f.mp4",
+    "assets/footage/scene_032_official_reuse.mp4",
+    "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4",
+    "assets/footage/scene_034_dbd1819c871818356753f93e.mp4",
+    "assets/footage/scene_035_ef447180da828809758f0d18.mp4",
+    "assets/footage/scene_036_44ae569942147848854a5fc6.mp4",
+    "assets/footage/scene_037_77974e64872de8e33bf15db5.mp4",
+    "assets/footage/scene_038_9d962f32cfd2deda34a8ddf6.mp4",
+    "assets/footage/scene_039_d90b361d5f06560506e648bb.mp4",
+    "assets/footage/scene_040_247e04dcc7e0eb00bd1cfd2b.mp4",
+    "assets/footage/scene_041_fb568a7886ffc7b5209cc5de.mp4",
+    "assets/footage/scene_043_3274a7b8bb8853043b341006.mp4",
+    "assets/footage/scene_044_60259233df0534e7673a42ef.mp4",
+    "assets/footage/scene_045_3cfaea76e4faea730fa72c95.mp4",
+    "assets/footage/scene_047_c2ec99d4d13fb4912836b8e0.mp4",
+    "assets/footage/scene_048_b73c8e4d41145089ab22de6e.mp4",
+    "assets/footage/scene_050_863b8a7dd26b4dd288235b75.mp4",
+    "assets/footage/scene_051_direct.mp4",
+    "assets/footage/scene_052_direct.mp4",
+    "assets/footage/scene_053_direct.mp4",
+    "assets/footage/scene_054_direct.mp4"
+  ],
+  "hook_preloaded_usage": {
+    "assets/footage/scene_001_53c6f3d7fa4dbb0af9451f2b.mp4": 1,
+    "assets/footage/scene_005_71bb9b48bc1563ab5d481f31.mp4": 1,
+    "assets/footage/scene_013_7d21d1167aa47957a7002e0e.mp4": 1,
+    "assets/footage/scene_007_7051fd0f969c083415562212.mp4": 1,
+    "assets/footage/scene_012_4a3b133f7bf224948e8ec9b7.mp4": 1
+  },
+  "slice_count_overrides": {},
+  "last_supplemental_footage_materialization": {
+    "generated_at": "2026-07-31T07:59:34.836Z",
+    "assignments": 0,
+    "unresolved_scenes": [],
+    "replaced_graphics": 0,
+    "retired_paths": [
+      "assets/footage/scene_004_c51a189c61e9aeb2f007d98a.mp4",
+      "assets/footage/scene_024_5ed9585f85fe45d33b59d5be.mp4",
+      "assets/footage/scene_003_fe4cd2265cbee22028b515c8.mp4",
+      "assets/footage/scene_032_483fc2523314e06bd95d90d9.mp4",
+      "assets/footage/scene_012_53cbfc483d206f886de331b9.mp4"
+    ]
+  },
+  "last_footage_use_contract_application": {
+    "generated_at": "2026-07-31T14:58:18.481Z",
+    "managed_scene_count": 31,
+    "pruned_scene_count": 5,
+    "assignment_count": 36,
+    "removed_previous_assignments": 36,
+    "explicit_retirement_count": 3,
+    "override_file": "research/footage_use_contract_overrides.json",
+    "visual_rebalance_resynchronized": true,
+    "deferred_targets": []
+  }
+}

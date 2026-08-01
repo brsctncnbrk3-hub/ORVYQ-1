@@ -1,0 +1,639 @@
+{
+  "schema_version": "1.1",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "policy": {
+    "allowed_modes": [
+      "labelled_recreation",
+      "official_page_capture",
+      "official_figure_capture",
+      "original_source_derived_diagram"
+    ],
+    "source_attribution_required": true,
+    "recreation_label_required": true,
+    "full_render_requires_all_required_assets_ready": true
+  },
+  "assets": [
+    {
+      "evidence_asset_id": "EVID_JAMSTEC_FIRST_MUD_SAMPLE",
+      "claim_ids": [
+        "CLM_001_JAPAN_TECHNICAL_MILESTONE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "mode": "official_figure_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_image",
+      "content": [
+        "First recovered rare-earth-mud sample",
+        "JAMSTEC",
+        "1 February 2026"
+      ],
+      "limitation": "The image documents recovery during the test; it does not establish reserve size or commercial viability."
+    },
+    {
+      "evidence_asset_id": "EVID_JAMSTEC_MINING_SYSTEM_DIAGRAM",
+      "claim_ids": [
+        "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+        "CLM_004_JAPAN_INDUSTRIAL_TIMELINE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "mode": "official_figure_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": [
+        "Closed-loop mining system",
+        "5,569-metre pipe length",
+        "Ship-to-seabed architecture"
+      ],
+      "limitation": "System concept and test configuration, not proof of economic operation at scale."
+    },
+    {
+      "evidence_asset_id": "EVID_JAMSTEC_CHIKYU_DEPARTURE",
+      "claim_ids": [
+        "CLM_001_JAPAN_TECHNICAL_MILESTONE",
+        "CLM_004_JAPAN_INDUSTRIAL_TIMELINE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "mode": "official_figure_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_image",
+      "content": [
+        "Chikyu departure",
+        "Shimizu Port",
+        "12 January 2026"
+      ],
+      "limitation": "Official voyage context."
+    },
+    {
+      "evidence_asset_id": "EVID_JAMSTEC_MINING_MACHINE",
+      "claim_ids": [
+        "CLM_001_JAPAN_TECHNICAL_MILESTONE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "mode": "official_figure_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_image",
+      "content": [
+        "Mining machine",
+        "JAMSTEC test hardware"
+      ],
+      "limitation": "Official equipment image from the 2026 test."
+    },
+    {
+      "evidence_asset_id": "EVID_JAMSTEC_MACHINE_ON_SEAFLOOR",
+      "claim_ids": [
+        "CLM_001_JAPAN_TECHNICAL_MILESTONE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "mode": "official_figure_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_image",
+      "content": [
+        "Mining machine on the seabed"
+      ],
+      "limitation": "Official test image; not footage of polymetallic-nodule collection in the CCZ."
+    },
+    {
+      "evidence_asset_id": "EVID_JAMSTEC_SEAFLOOR_HOLE",
+      "claim_ids": [
+        "CLM_001_JAPAN_TECHNICAL_MILESTONE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "mode": "official_figure_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_image",
+      "content": [
+        "Borehole after machine removal"
+      ],
+      "limitation": "Shows the direct footprint of this specific test method, not all deep-sea mining methods."
+    },
+    {
+      "evidence_asset_id": "EVID_JAMSTEC_2027_TRIAL_DIAGRAM",
+      "claim_ids": [
+        "CLM_004_JAPAN_INDUSTRIAL_TIMELINE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026"
+      ],
+      "mode": "official_figure_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": [
+        "Planned 2027 integrated trial",
+        "Transport",
+        "Dewatering",
+        "Separation and refining"
+      ],
+      "limitation": "Future plan; schedule and design may change."
+    },
+    {
+      "evidence_asset_id": "EVID_IEA_RARE_EARTH_CONCENTRATION",
+      "claim_ids": [
+        "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
+        "CLM_011_REFINING_BOTTLENECK"
+      ],
+      "source_ids": [
+        "SRC_IEA_RARE_EARTHS_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceChart.value_chain_concentration",
+      "content": [
+        "Mining 60%",
+        "Refining 91%",
+        "Sintered permanent magnets 94%",
+        "2024 magnet-rare-earth scope"
+      ],
+      "limitation": "Percentages apply to magnet rare earths and related permanent magnets, not all rare-earth elements."
+    },
+    {
+      "evidence_asset_id": "EVID_IEA_EXPORT_CONTROL_TIMELINE",
+      "claim_ids": [
+        "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK"
+      ],
+      "source_ids": [
+        "SRC_IEA_RARE_EARTHS_2026",
+        "SRC_IEA_CRITICAL_MINERALS_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceChart.source_timeline",
+      "content": [
+        "2025 export controls",
+        "Export decline",
+        "Downstream production disruption"
+      ],
+      "limitation": "Documents disruption, not a permanent total cutoff."
+    },
+    {
+      "evidence_asset_id": "EVID_JAPAN_2026_2028_TIMELINE",
+      "claim_ids": [
+        "CLM_004_JAPAN_INDUSTRIAL_TIMELINE"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026",
+        "SRC_METI_MINAMITORISHIMA_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceChart.source_timeline",
+      "content": [
+        "2026 connection test",
+        "February 2027 integrated trial",
+        "March 2028 technical and economic assessment"
+      ],
+      "limitation": "The later milestones are planned, not completed."
+    },
+    {
+      "evidence_asset_id": "EVID_UNCLOS_COMMON_HERITAGE",
+      "claim_ids": [
+        "CLM_005_COMMON_HERITAGE_PRINCIPLE"
+      ],
+      "source_ids": [
+        "SRC_UNCLOS_ARTICLES_136_137"
+      ],
+      "mode": "labelled_recreation",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceDocument.legal_text",
+      "content": [
+        "Article 136 — common heritage of mankind",
+        "Article 137 — no national appropriation of the Area"
+      ],
+      "limitation": "The United States has not ratified UNCLOS; the legal dispute over national action must remain attributed."
+    },
+    {
+      "evidence_asset_id": "EVID_ISA_REV3_COVER",
+      "claim_ids": [
+        "CLM_006_MINING_CODE_UNFINISHED"
+      ],
+      "source_ids": [
+        "SRC_ISA_COUNCIL_JULY_2026"
+      ],
+      "mode": "official_page_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": [
+        "Further Revised Consolidated Text — Revision 3",
+        "June 2026",
+        "335 pages"
+      ],
+      "limitation": "A negotiation text, not an adopted exploitation code."
+    },
+    {
+      "evidence_asset_id": "EVID_ISA_OUTSTANDING_ISSUES_COVER",
+      "claim_ids": [
+        "CLM_006_MINING_CODE_UNFINISHED"
+      ],
+      "source_ids": [
+        "SRC_ISA_COUNCIL_JULY_2026"
+      ],
+      "mode": "official_page_capture",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": [
+        "Updated draft indicative list of outstanding issues",
+        "July 2026"
+      ],
+      "limitation": "Shows unresolved negotiating items as of the dated session."
+    },
+    {
+      "evidence_asset_id": "EVID_TWO_RULEBOOKS_MATRIX",
+      "claim_ids": [
+        "CLM_007_US_PARALLEL_ROUTE",
+        "CLM_008_NO_US_COMMERCIAL_PERMIT"
+      ],
+      "source_ids": [
+        "SRC_UNCLOS_ARTICLES_136_137",
+        "SRC_WHITEHOUSE_EO14285",
+        "SRC_NOAA_DSHMRA_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceDiagram.two_track_policy_matrix",
+      "content": [
+        "ISA / UNCLOS route",
+        "United States DSHMRA route",
+        "No U.S. commercial recovery permit at research lock"
+      ],
+      "limitation": "The diagram explains parallel procedures; it does not resolve the international-law dispute."
+    },
+    {
+      "evidence_asset_id": "EVID_MINING_TRADEOFF_MATRIX",
+      "claim_ids": [
+        "CLM_009_INDUSTRY_COUNTERARGUMENT",
+        "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC"
+      ],
+      "source_ids": [
+        "SRC_TMC_LIFECYCLE_POSITION",
+        "SRC_IEA_CRITICAL_MINERALS_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceDiagram.balanced_tradeoff",
+      "content": [
+        "Land disturbance and tailings",
+        "Abyssal habitat loss",
+        "Chemistry-specific mineral demand",
+        "Processing assumptions"
+      ],
+      "limitation": "Company lifecycle claims remain attributed and do not settle biodiversity comparisons."
+    },
+    {
+      "evidence_asset_id": "EVID_MINERAL_CHEMISTRY_COMPARISON",
+      "claim_ids": [
+        "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
+        "CLM_011_REFINING_BOTTLENECK"
+      ],
+      "source_ids": [
+        "SRC_IEA_CRITICAL_MINERALS_2026",
+        "SRC_IEA_RARE_EARTHS_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceChart.comparison",
+      "content": [
+        "LFP batteries omit nickel and cobalt",
+        "Rare-earth magnet chokepoints remain",
+        "Recycling expands but does not erase near-term concentration"
+      ],
+      "limitation": "Scenario-dependent and mineral-specific."
+    },
+    {
+      "evidence_asset_id": "EVID_44_YEAR_TRACK_RECOVERY",
+      "claim_ids": [
+        "CLM_012_LONG_TERM_TRACK_PERSISTENCE"
+      ],
+      "source_ids": [
+        "SRC_NATURE_RECOVERY_2025"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceChart.recovery_boundary",
+      "content": [
+        "1979 collector test",
+        "2023 revisit",
+        "Physical disturbance still visible",
+        "Some recolonisation"
+      ],
+      "limitation": "Small historical test using older machinery; not a direct commercial-scale forecast."
+    },
+    {
+      "evidence_asset_id": "EVID_2022_TRIAL_BIODIVERSITY",
+      "claim_ids": [
+        "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY"
+      ],
+      "source_ids": [
+        "SRC_NEE_MACROFAUNA_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceChart.before_after_control_impact",
+      "content": [
+        "More than 3,000 tonnes of nodules recovered",
+        "37% lower macrofaunal density in tracks",
+        "32% lower species richness in tracks",
+        "Two-month follow-up"
+      ],
+      "limitation": "Short follow-up; plume-area findings differ from direct-track findings."
+    },
+    {
+      "evidence_asset_id": "EVID_PLUME_DISTANCE_PROFILE",
+      "claim_ids": [
+        "CLM_014_PLUME_SCALE_IS_COMPLEX"
+      ],
+      "source_ids": [
+        "SRC_NATURE_PLUME_2025"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceChart.distance_height_time",
+      "content": [
+        "Sediment travelled kilometres",
+        "Strongest near seabed",
+        "Declined with distance, height and time"
+      ],
+      "limitation": "Trial geometry does not establish cumulative commercial exposure."
+    },
+    {
+      "evidence_asset_id": "EVID_MIDWATER_FOOD_WEB",
+      "claim_ids": [
+        "CLM_015_MIDWATER_DISCHARGE_RISK"
+      ],
+      "source_ids": [
+        "SRC_NCOMMS_MIDWATER_2025"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceDiagram.food_web",
+      "content": [
+        "Natural nutritious particles",
+        "Nutritionally poor discharge particles",
+        "Particle feeders",
+        "Predators"
+      ],
+      "limitation": "Plausible disruption mechanism, not observed commercial-scale ecosystem collapse."
+    },
+    {
+      "evidence_asset_id": "EVID_PRECEDENT_RECAP",
+      "claim_ids": [
+        "CLM_016_FIRST_OPERATION_PRECEDENT"
+      ],
+      "source_ids": [
+        "SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026",
+        "SRC_ISA_COUNCIL_JULY_2026",
+        "SRC_NOAA_DSHMRA_2026"
+      ],
+      "mode": "original_source_derived_diagram",
+      "status": "ready",
+      "required_for_full": true,
+      "render_component": "EvidenceDiagram.evidence_recap",
+      "content": [
+        "Engineering milestone",
+        "Unfinished shared code",
+        "Parallel national route",
+        "Ecological uncertainty"
+      ],
+      "limitation": "The precedent argument is the film's synthesis, built from earlier dated evidence."
+    },
+    {
+      "evidence_asset_id": "EVID_IEA_MAGNET_SHARE_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_002_CHINA_RARE_EARTH_CHOKEPOINT"],
+      "source_ids": ["SRC_IEA_RARE_EARTHS_2026"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Official IEA supply-share chart", "Mining, refining and magnet manufacturing", "2024 scope"],
+      "limitation": "Magnet rare-earth supply chain, not every rare-earth use."
+    },
+    {
+      "evidence_asset_id": "EVID_IEA_EXPORT_TIMELINE_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK"],
+      "source_ids": ["SRC_IEA_RARE_EARTHS_2026"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Official IEA export-volume chart", "Dated restriction chronology"],
+      "limitation": "Shows disruption and restrictions, not a permanent total cutoff."
+    },
+    {
+      "evidence_asset_id": "EVID_IEA_DISTRIBUTED_CHAIN_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_018_CAPABILITY_IS_NOT_OBLIGATION", "CLM_019_DISTRIBUTED_RISK_SYNTHESIS"],
+      "source_ids": ["SRC_IEA_RARE_EARTHS_2026"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Official IEA rare-earth supply-chain stages", "Diversification context"],
+      "limitation": "A supply-chain framing, not a forecast that diversification will occur."
+    },
+    {
+      "evidence_asset_id": "EVID_UNCLOS_ARTICLES_136_137_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_005_COMMON_HERITAGE_PRINCIPLE"],
+      "source_ids": ["SRC_UNCLOS_ARTICLES_136_137"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Article 136", "Article 137", "United Nations Treaty Series"],
+      "limitation": "The United States is not a party to UNCLOS; the legal dispute remains attributed."
+    },
+    {
+      "evidence_asset_id": "EVID_US_EO14285_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_007_US_PARALLEL_ROUTE"],
+      "source_ids": ["SRC_WHITEHOUSE_EO14285"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Executive Order 14285", "24 April 2025", "Federal Register"],
+      "limitation": "The order directs acceleration; it is not itself a commercial recovery permit."
+    },
+    {
+      "evidence_asset_id": "EVID_NOAA_2026_FINAL_RULE_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_007_US_PARALLEL_ROUTE"],
+      "source_ids": ["SRC_NOAA_DSHMRA_2026"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["NOAA final rule", "Consolidated application process", "21 January 2026"],
+      "limitation": "A consolidated application path does not establish that a recovery permit has been issued."
+    },
+    {
+      "evidence_asset_id": "EVID_TMC_LCA_LIMITATION_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_009_INDUSTRY_COUNTERARGUMENT"],
+      "source_ids": ["SRC_TMC_LIFECYCLE_POSITION"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.interested_party_document",
+      "content": ["TMC-commissioned LCA scope", "Stated ecosystem limitations"],
+      "limitation": "Interested-party evidence; the LCA expressly does not measure deep-sea ecosystem impacts from collection."
+    },
+    {
+      "evidence_asset_id": "EVID_TMC_LCA_SYSTEM_BOUNDARY_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_009_INDUSTRY_COUNTERARGUMENT"],
+      "source_ids": ["SRC_TMC_LIFECYCLE_POSITION"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.interested_party_document",
+      "content": ["Nodule collection", "Transport", "Pyrometallurgy and hydrometallurgy"],
+      "limitation": "Interested-party system boundary, not independent proof of comparative ecological safety."
+    },
+    {
+      "evidence_asset_id": "EVID_IEA_BATTERY_CHEMISTRY_OFFICIAL_PAGE",
+      "claim_ids": ["CLM_010_SCARCITY_IS_MINERAL_SPECIFIC"],
+      "source_ids": ["SRC_IEA_CRITICAL_MINERALS_2026"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["LFP omits nickel and cobalt", "Energy-density trade-off", "Chemistry-dependent demand"],
+      "limitation": "Battery-chemistry evidence; it does not cover every use of nickel or cobalt."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_MAP_FIGURE",
+      "claim_ids": ["CLM_012_LONG_TERM_TRACK_PERSISTENCE"],
+      "source_ids": ["SRC_NATURE_RECOVERY_2025"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["OMCO track map", "1979 test", "2023 revisit"],
+      "limitation": "Small historical test with propulsion impacts different from modern tracked collectors."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_PHOTOS_FIGURE",
+      "claim_ids": ["CLM_012_LONG_TERM_TRACK_PERSISTENCE"],
+      "source_ids": ["SRC_NATURE_RECOVERY_2025"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["1979 collector track", "Track appearance in 2023", "Recolonisation details"],
+      "limitation": "Physical persistence coexists with partial biological re-establishment."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_RESPONSE_FIGURE",
+      "claim_ids": ["CLM_012_LONG_TERM_TRACK_PERSISTENCE"],
+      "source_ids": ["SRC_NATURE_RECOVERY_2025"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["Track, plume and control comparison", "Physical and biological responses"],
+      "limitation": "Not a direct commercial-scale forecast."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_2022_TRIAL_MAP_FIGURE",
+      "claim_ids": ["CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY"],
+      "source_ids": ["SRC_NEE_MACROFAUNA_2026"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["NORI-D study map", "Mining-track and plume sampling", "Seafloor photographs"],
+      "limitation": "Two-month post-test follow-up."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_2022_TRIAL_DENSITY_FIGURE",
+      "claim_ids": ["CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY"],
+      "source_ids": ["SRC_NEE_MACROFAUNA_2026"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["Macrofaunal density", "Before-after-control-impact comparison", "37% track reduction"],
+      "limitation": "Track and plume results differ and must not be conflated."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_2022_TRIAL_RICHNESS_FIGURE",
+      "claim_ids": ["CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY"],
+      "source_ids": ["SRC_NEE_MACROFAUNA_2026"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["Species richness", "Diversity and evenness", "32% track reduction"],
+      "limitation": "Short follow-up and sample-dependent diversity measures require the stated caveat."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_PLUME_SPATIAL_FIGURE",
+      "claim_ids": ["CLM_014_PLUME_SCALE_IS_COMPLEX"],
+      "source_ids": ["SRC_NATURE_PLUME_2025"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["Measured plume distribution", "Sensor locations", "ROV observations"],
+      "limitation": "Pre-prototype test geometry, not cumulative commercial exposure."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_PLUME_DECAY_FIGURE",
+      "claim_ids": ["CLM_014_PLUME_SCALE_IS_COMPLEX"],
+      "source_ids": ["SRC_NATURE_PLUME_2025"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["Concentration by distance", "Concentration by altitude", "Measured decay"],
+      "limitation": "Measured trial plume; commercial duration and cumulative exposure remain uncertain."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_MIDWATER_PARTICLES_FIGURE",
+      "claim_ids": ["CLM_015_MIDWATER_DISCHARGE_RISK"],
+      "source_ids": ["SRC_NCOMMS_MIDWATER_2025"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["Background particles", "Discharge and plume particles", "Amino-acid content"],
+      "limitation": "Mechanism and particle-quality result, not observed commercial-scale ecosystem collapse."
+    },
+    {
+      "evidence_asset_id": "EVID_NATURE_MIDWATER_FOODWEB_FIGURE",
+      "claim_ids": ["CLM_015_MIDWATER_DISCHARGE_RISK"],
+      "source_ids": ["SRC_NCOMMS_MIDWATER_2025"],
+      "mode": "published_source_figure",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.scientific_figure",
+      "content": ["Midwater food web", "Low-quality mining particles", "Potential bottom-up disruption"],
+      "limitation": "Published conceptual summary grounded in measured particle and trophic-source data."
+    }
+  ]
+}

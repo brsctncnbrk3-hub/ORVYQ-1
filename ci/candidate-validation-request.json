@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "requested_at": "2026-07-26T17:12:00+03:00",
+  "requested_for_source_commit": "a78e9645d3473b74816db47e2464b849dfedc12d",
+  "reason": "Validate the review-derived fundamental fixes: deterministic footage diversification, cinematic evidence layouts, mobile-safe typography and source-based dynamic audio remix.",
+  "render_policy": "pre-render-validation-only; do-not-start-review-or-final-encode"
+}

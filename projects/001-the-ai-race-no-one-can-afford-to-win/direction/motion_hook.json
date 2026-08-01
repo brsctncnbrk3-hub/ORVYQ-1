@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "project_id": "001-the-ai-race-no-one-can-afford-to-win",
+  "purpose": "Open with an 11-second human-scale cinematic hook carrying one concise central question, then move into primary evidence without a long document carousel.",
+  "minimum_seconds": 10,
+  "maximum_seconds": 14,
+  "duration_seconds": 11,
+  "replace_opening_shot_count": 4,
+  "question_eyebrow": "THE QUESTION",
+  "question": "What happens when AI moves faster than our ability to control it?",
+  "question_deck": "Every major lab sees the danger. None can afford to slow down.",
+  "evidence_bridge": [
+    { "source_shot_index": 1, "duration": 5, "transition_in": "dissolve" },
+    { "source_shot_index": 3, "duration": 4, "transition_in": "cut" }
+  ],
+  "shots": [
+    {
+      "duration": 3.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_024_6e6f4af26cad60cc78930d6d.mp4",
+      "trim_in_sec": 0.5,
+      "trim_out_sec": 4,
+      "motion_variant": "drift_right",
+      "hook_footage": true,
+      "claim_id": "CLM_003_GOVERNANCE_LAG",
+      "visual_role": "context",
+      "generic_stock": true,
+      "editorial_purpose": "Begin on a human operator actively monitoring a consequential system so the central question is grounded in people, judgment and oversight before expanding to institutional scale."
+    },
+    {
+      "duration": 2.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_001_52c2ebe35b131555e20a5ab5.mp4",
+      "trim_in_sec": 3,
+      "trim_out_sec": 5.5,
+      "motion_variant": "pull",
+      "hook_footage": true,
+      "claim_id": "CLM_001_LABS_PUBLISH_SAFETY_FRAMEWORKS",
+      "visual_role": "context",
+      "generic_stock": true,
+      "editorial_purpose": "Expand from one person to the city-scale institutions and infrastructure shaped by the race."
+    },
+    {
+      "duration": 2.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_017_17388828bde9ac80bd22eb8e.mp4",
+      "trim_in_sec": 3.5,
+      "trim_out_sec": 6,
+      "motion_variant": "push",
+      "hook_footage": true,
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "visual_role": "metaphor",
+      "generic_stock": true,
+      "editorial_purpose": "Move briefly into the accelerating technical network while the question turns from human control to machine speed."
+    },
+    {
+      "duration": 2.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_011_bff417a92fed9423fe0dd580.mp4",
+      "trim_in_sec": 0.5,
+      "trim_out_sec": 3,
+      "motion_variant": "drift_left",
+      "hook_footage": true,
+      "claim_id": "CLM_003_GOVERNANCE_LAG",
+      "visual_role": "context",
+      "generic_stock": true,
+      "editorial_purpose": "Land the completed question on institutional scale and dissolve into the first two published safety-framework covers."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "f7674fe2234cd059",
+  "scene_id": "scene_014",
+  "candidate_id": "416086d1c7285d9e6a01fc67",
+  "provider": "pexels",
+  "provider_asset_id": "13307522",
+  "source_page_url": "https://www.pexels.com/video/warehouses-and-mesh-fence-by-road-13307522/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/13307522/13307522-hd_1920_1080_60fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "James Cover",
+  "retrieval_timestamp": "2026-07-12T02:17:39.116Z",
+  "content_type": "video/mp4",
+  "byte_size": 14482288,
+  "duration": 21.353333,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "d8f7282af47935c275ab0719f476a79b25bacd632b895dd65c97d057bfcf0ce2",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

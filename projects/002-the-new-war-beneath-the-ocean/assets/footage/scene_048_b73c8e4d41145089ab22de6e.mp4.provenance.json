@@ -1,0 +1,60 @@
+{
+  "stable_asset_id": "cf3469b907390b4015a6e84b",
+  "scene_id": "scene_048",
+  "provider": "pexels",
+  "provider_asset_id": "8540148",
+  "source_page_url": "https://www.pexels.com/video/women-in-ppe-working-in-the-laboratory-8540148/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "https://kaboompics.com/",
+  "attribution_required": false,
+  "search_query": "young marine scientists research",
+  "editorial_role": "human_context",
+  "editorial_note": "A new generation doing ocean research provides a restrained image for inherited precedent without sentimentalising the claim.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "student",
+        "young",
+        "researcher",
+        "scientist",
+        "science",
+        "laboratory",
+        "lab",
+        "team"
+      ]
+    ],
+    "forbidden_terms": [
+      "school-child",
+      "elementary",
+      "party",
+      "graduation",
+      "aquarium-tour"
+    ]
+  },
+  "duration": 13,
+  "actual_duration_seconds": 13,
+  "width": 1920,
+  "height": 1012,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1012,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 2738221,
+  "sha256": "42f91f1e5b112028a424a40dd4368bd7347485d99205b2b548c565c3b12fb36c",
+  "actual_sha256": "42f91f1e5b112028a424a40dd4368bd7347485d99205b2b548c565c3b12fb36c",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "10887005",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T22:56:58.377Z",
+  "reviewed_asset_sha256": "42f91f1e5b112028a424a40dd4368bd7347485d99205b2b548c565c3b12fb36c",
+  "reviewed_contact_sheet_sha256": "764903f36bee6860702b63d71574824db212d8cd86f88eb343540cdb5ffe1be1",
+  "human_review_reason": "The PPE laboratory team provides valid materials-research context for the single contracted battery-chemistry target without carrying the chemistry evidence itself."
+}

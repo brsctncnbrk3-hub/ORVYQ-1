@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "8e80e74e4cdd5ccd",
+  "scene_id": "scene_020",
+  "candidate_id": "820a251a5b10ad8f5a63266f",
+  "provider": "pexels",
+  "provider_asset_id": "7735823",
+  "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-person-browsing-in-the-computer-7735823/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/7735823/7735823-hd_1920_1080_25fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Mikhail Nilov",
+  "retrieval_timestamp": "2026-07-12T02:23:56.025Z",
+  "content_type": "video/mp4",
+  "byte_size": 9250418,
+  "duration": 15.6,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "sha256": "d5242ed6dcf26729e07a38f0ea13c5cdb4c546b541ea0a4cbac54e43f3814771",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

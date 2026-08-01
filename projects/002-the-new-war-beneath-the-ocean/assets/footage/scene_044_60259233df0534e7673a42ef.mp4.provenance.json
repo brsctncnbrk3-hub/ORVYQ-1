@@ -1,0 +1,59 @@
+{
+  "stable_asset_id": "bc0fa954c7c4f9936c378376",
+  "scene_id": "scene_044",
+  "provider": "pexels",
+  "provider_asset_id": "32243765",
+  "source_page_url": "https://www.pexels.com/video/fabric-inspection-in-modern-textile-factory-32243765/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Usman AbdulrasheedGambo",
+  "attribution_required": false,
+  "search_query": "factory production delay workers",
+  "editorial_role": "context",
+  "editorial_note": "A disrupted production environment gives concentrated mineral supply risk a human and industrial scale without claiming a specific outage.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "factory",
+        "manufacturing",
+        "industrial",
+        "production",
+        "machine",
+        "machinery",
+        "worker"
+      ]
+    ],
+    "forbidden_terms": [
+      "food",
+      "kitchen",
+      "farm",
+      "agriculture",
+      "toy"
+    ]
+  },
+  "duration": 15,
+  "actual_duration_seconds": 15,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 2910064,
+  "sha256": "39d30fcf358faf880885fd153d3b0e6a61ab02b4bca43c8374a51df83585c22f",
+  "actual_sha256": "39d30fcf358faf880885fd153d3b0e6a61ab02b4bca43c8374a51df83585c22f",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "13751635",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:48:32.844Z",
+  "reviewed_asset_sha256": "39d30fcf358faf880885fd153d3b0e6a61ab02b4bca43c8374a51df83585c22f",
+  "reviewed_contact_sheet_sha256": "35a31a0eaf5afc302bc5a9db84a897cb489f6c1f4ad3ba2a06ee29614a22142d",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

@@ -1,0 +1,74 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+.env
+.env.local
+__pycache__/
+*.pyc
+
+# Generated runtime files
+projects/*/logs/*
+!projects/*/logs/.gitkeep
+projects/*/output/*
+!projects/*/output/.gitkeep
+projects/*/qa/*
+!projects/*/qa/.gitkeep
+
+# proof_approval.json is the one human-authored approval record -- see
+# schemas/proof_approval.schema.json. orvyq-final-encode.yml reads it from
+# the committed repo (not a workflow artifact), so it must be committed by
+# an explicit human action.
+#
+# frozen_candidate.json is deliberately NOT carved out here anymore: it is
+# always-regenerate build output, produced fresh by orvyq-review.yml on
+# every run and shipped only inside that run's render bundle artifact (see
+# docs/canonical-candidate-audit.md) -- committing it back to the branch was
+# what entangled candidate identity with an unrelated bot commit's SHA.
+# Historical frozen_candidate.json files already committed before this fix
+# remain tracked (this rule only affects untracked/new changes) and stay in
+# place as historical reference, per the task's own "do not delete history"
+# rule.
+!projects/*/qa/proof_approval.json
+
+# The byte-bound footage semantic audit is a canonical pre-review gate, not
+# disposable runtime output. It must be committed with the exact materialized
+# blueprint so Candidate Validation can verify the same reviewed state.
+!projects/*/qa/footage_semantic_review_audit.json
+
+# Always-regenerate build output -- see docs/golden-renderer-map.md section 5.
+# Never hand-commit this; if it must be inspected, add a CI check that it is
+# byte-identical to a fresh `build-project` run instead.
+projects/*/remotion/render_ready_project/
+projects/*/direction/edit_plan.json
+projects/*/direction/resolved_pause_plan.json
+projects/*/remotion/scene_config.json
+projects/*/remotion/asset_map.json
+projects/*/remotion/captions.json
+
+# The template's generated outputs are also operational and must never be
+# treated as renderer source. These rules replace the redundant nested
+# templates/remotion/.gitignore, whose hidden-file transport caused frozen
+# bundle integrity drift in GitHub Actions artifacts.
+templates/remotion/out/
+*.corrupt-617mb
+
+# Binary project assets are not committed to this repo. .gitattributes
+# configures Git LFS tracking for when they are (footage *.mp4 + provenance,
+# assets/audio/final_voice.mp3), matching the golden repo's own convention of
+# committing one-time-curated footage/narration but fetching evidence/music/
+# SFX fresh per build -- but this session's egress policy blocks the LFS
+# object-verify callback, which goes directly to lfs.github.com regardless of
+# the session's own repo-scoped git proxy (confirmed via
+# /root/.ccr/__agentproxy/status: "403 to CONNECT ... policy denial", the
+# same non-retriable class documented in /root/.ccr/README.md), so no LFS
+# push is possible from here even though the upload itself succeeds.
+# docs/source-audit.md section 4 and the Phase 5 report explain the existing
+# workaround this project already relies on for the motion hook's footage:
+# .github/workflows/*.yml recover real footage/narration from the golden
+# repo directly during the CI run, which has unrestricted network access.
+# scripts/orvyq_materialize_footage.mjs + projects/*/migration/
+# external_assets.json extend that same recovery mechanism to the full
+# 25-clip contextual footage set this project now uses in both modes. A
+# future session with working LFS push can commit these assets properly and
+# remove this ignore rule.
+projects/*/assets/

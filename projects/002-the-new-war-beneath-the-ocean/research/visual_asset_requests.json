@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "policy": {
+    "automatic_backfill_forbidden": true,
+    "decorative_document_recreation_forbidden": true,
+    "primary_evidence_requires_institution_title_date_and_provenance": true,
+    "same_content_different_crop_counts_once": true,
+    "footage_requires_contact_sheet_and_claim_specific_semantic_approval": true
+  },
+  "requests": [
+    {
+      "asset_request_id": "REQ_EVD_IEA_MAGNET_SHARE",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT"
+      ],
+      "required_source": "International Energy Agency rare-earth supply-chain publication cited in the evidence map",
+      "required_content": "Official chart or table showing the stated 2024 magnet rare-earth mining/refining/manufacturing concentration values.",
+      "acceptance": "Institution, publication title, publication date, page/figure identity, direct URL, SHA-256, and highlighted rows are recorded.",
+      "forbidden_substitutes": [
+        "recreated pie chart",
+        "generic factory",
+        "unattributed infographic"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/iea_magnet_share_page31.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_IEA_MAGNET_SHARE_OFFICIAL_PAGE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_IEA_EXPORT_TIMELINE",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK"
+      ],
+      "required_source": "Official IEA or named government chronology cited in the evidence map",
+      "required_content": "Dated export-control events directly supporting the narration.",
+      "acceptance": "Every shown date is visible in the source and fingerprinted by document, page, and region.",
+      "forbidden_substitutes": [
+        "generic calendar",
+        "undated timeline recreation",
+        "unrelated diplomacy footage"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/iea_export_timeline_page35.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_IEA_EXPORT_TIMELINE_OFFICIAL_PAGE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_JAMSTEC_SCHEDULE",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_004_JAPAN_INDUSTRIAL_TIMELINE"
+      ],
+      "required_source": "JAMSTEC official project result and schedule material cited in the evidence map",
+      "required_content": "Completed milestone and planned recovery/processing stages with dates.",
+      "acceptance": "Completed and planned stages are visually distinguished without altering the source.",
+      "forbidden_substitutes": [
+        "invented Gantt chart",
+        "generic ship schedule",
+        "corporate roadmap without provenance"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/jamstec_2027_trial_diagram.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_JAMSTEC_2027_TRIAL_DIAGRAM"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_UNCLOS_ARTICLES",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_005_COMMON_HERITAGE_PRINCIPLE"
+      ],
+      "required_source": "United Nations official UNCLOS text and official Area map",
+      "required_content": "Articles 136 and 137 plus the directly relevant official geographic context.",
+      "acceptance": "UN institution, treaty title, adoption date, page/article, direct URL, checksum, and highlighted clauses are recorded.",
+      "forbidden_substitutes": [
+        "parchment-style mock document",
+        "unofficial legal summary",
+        "decorative map"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/unclos_articles_136_137_page51.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_UNCLOS_ARTICLES_136_137_OFFICIAL_PAGE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_US_EO_NOAA",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_007_US_PARALLEL_ROUTE",
+        "CLM_008_NO_US_COMMERCIAL_PERMIT"
+      ],
+      "required_source": "White House Executive Order and NOAA official deep-seabed permit/application pages cited in the evidence map",
+      "required_content": "The parallel legal route, order date, and commercial recovery permit status.",
+      "acceptance": "Each document/page has institution, title, date, URL, checksum, content identity, and exact highlighted status language.",
+      "forbidden_substitutes": [
+        "person signing generic paper",
+        "generic government meeting",
+        "unverified permit list"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/us_eo_14285_page1.png",
+        "assets/evidence/noaa_dshmra_final_rule_page1.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_US_EO14285_OFFICIAL_PAGE",
+        "EVID_NOAA_2026_FINAL_RULE_OFFICIAL_PAGE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_TMC_LIFECYCLE",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_009_INDUSTRY_COUNTERARGUMENT"
+      ],
+      "required_source": "The Metals Company lifecycle material cited in the evidence map",
+      "required_content": "The company's stated environmental/lifecycle comparison.",
+      "acceptance": "The interested-party source is labeled on screen; title, access date, URL, checksum, and highlighted claim are recorded.",
+      "forbidden_substitutes": [
+        "claim presented as independent fact",
+        "generic green infographic",
+        "unattributed comparison"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/tmc_lca_limitations_page3.png",
+        "assets/evidence/tmc_lca_system_boundary_page5.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_TMC_LCA_LIMITATION_OFFICIAL_PAGE",
+        "EVID_TMC_LCA_SYSTEM_BOUNDARY_OFFICIAL_PAGE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_IEA_MINERAL_CHEMISTRY",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC"
+      ],
+      "required_source": "IEA official mineral-demand/technology chemistry table cited in the evidence map",
+      "required_content": "Rows showing that different battery chemistries require different mineral inputs.",
+      "acceptance": "Table cells remain legible on mobile and each crop has a distinct page-region content identity.",
+      "forbidden_substitutes": [
+        "decorative battery icons",
+        "invented chemistry table",
+        "generic battery factory"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/iea_battery_chemistry_page5.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_IEA_BATTERY_CHEMISTRY_OFFICIAL_PAGE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_012_LONG_TERM_TRACK_PERSISTENCE"
+      ],
+      "required_source": "Nature study cited for forty-four-year track persistence",
+      "required_content": "Original track image/figure, persistence result, and the historical-versus-modern equipment limitation.",
+      "acceptance": "Journal, paper title, publication date, DOI/URL, figure/page, checksum, and highlighted regions are recorded; distinct crops count once unless content identity differs.",
+      "forbidden_substitutes": [
+        "generic seabed texture",
+        "recreated track image",
+        "recreational diving footage"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/nature_44_year_track_figure1.png",
+        "assets/evidence/nature_44_year_track_figure2.png",
+        "assets/evidence/nature_44_year_track_figure3.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_NATURE_44_YEAR_TRACK_MAP_FIGURE",
+        "EVID_NATURE_44_YEAR_TRACK_PHOTOS_FIGURE",
+        "EVID_NATURE_44_YEAR_TRACK_RESPONSE_FIGURE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_NATURE_BIODIVERSITY",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY"
+      ],
+      "required_source": "Nature Ecology & Evolution industrial deep-sea mining trial paper cited in the evidence map",
+      "required_content": "Original density/richness figure and sampling context.",
+      "acceptance": "Exact values, units, time window, sample context, publication identity, and provenance are visible or recorded.",
+      "forbidden_substitutes": [
+        "numbers moved to another claim",
+        "generic microscope",
+        "invented bar chart"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/nature_2022_trial_figure1.png",
+        "assets/evidence/nature_2022_trial_figure2.png",
+        "assets/evidence/nature_2022_trial_figure3.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_NATURE_2022_TRIAL_MAP_FIGURE",
+        "EVID_NATURE_2022_TRIAL_DENSITY_FIGURE",
+        "EVID_NATURE_2022_TRIAL_RICHNESS_FIGURE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_PLUME_MEASUREMENTS",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_014_PLUME_SCALE_IS_COMPLEX"
+      ],
+      "required_source": "Nature Communications plume-monitoring paper cited in the evidence map",
+      "required_content": "Original plume map, transport measurement, decline curve, and limitations.",
+      "acceptance": "Figure number, publication date, units, region, DOI/URL, checksum, and highlighted data points are recorded.",
+      "forbidden_substitutes": [
+        "smoke footage",
+        "ocean-wide plume animation",
+        "decline curve without source"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/nature_plume_figure3.png",
+        "assets/evidence/nature_plume_figure6.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_NATURE_PLUME_SPATIAL_FIGURE",
+        "EVID_NATURE_PLUME_DECAY_FIGURE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_MIDWATER_FOODWEB",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_015_MIDWATER_DISCHARGE_RISK"
+      ],
+      "required_source": "Nature Communications midwater discharge study cited in the evidence map",
+      "required_content": "Original experimental or food-web figure showing particle-quality and organism effects.",
+      "acceptance": "The figure's experimental grain and limitations are preserved; institution/title/date/DOI/checksum are recorded.",
+      "forbidden_substitutes": [
+        "unrelated laboratory footage",
+        "CLM_013 biodiversity values",
+        "generic fish animation"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/nature_midwater_figure1.png",
+        "assets/evidence/nature_midwater_figure4.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_NATURE_MIDWATER_PARTICLES_FIGURE",
+        "EVID_NATURE_MIDWATER_FOODWEB_FIGURE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_JAMSTEC_OPTIONALITY",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_018_CAPABILITY_IS_NOT_OBLIGATION"
+      ],
+      "required_source": "JAMSTEC official milestone material cited in the evidence map",
+      "required_content": "Verified technical capability and the boundary between demonstration and future decision.",
+      "acceptance": "The captured region supports capability only and does not visually imply a commercial commitment.",
+      "forbidden_substitutes": [
+        "launch celebration",
+        "commercial mine imagery",
+        "invented commitment language"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/jamstec_mining_system_diagram.png",
+        "assets/evidence/jamstec_2027_trial_diagram.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_JAMSTEC_MINING_SYSTEM_DIAGRAM",
+        "EVID_JAMSTEC_2027_TRIAL_DIAGRAM"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_IEA_DISTRIBUTED_CHAIN",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_018_CAPABILITY_IS_NOT_OBLIGATION"
+      ],
+      "required_source": "IEA official supply-chain material cited in the evidence map",
+      "required_content": "Distinct supply-chain stages supporting the distributed-risk conclusion.",
+      "acceptance": "The actual source figure or table is used with highlighted stages and full provenance.",
+      "forbidden_substitutes": [
+        "generic arrows",
+        "unattributed world map",
+        "decorative supply-chain icons"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/iea_distributed_chain_page8.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_IEA_DISTRIBUTED_CHAIN_OFFICIAL_PAGE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_DEEPSEA_MACHINE",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_009_INDUSTRY_COUNTERARGUMENT"
+      ],
+      "required_content": "A real, institution-identified deep-sea mining machine that grounds the engineering process without being misattributed to TMC.",
+      "acceptance": "Official JAMSTEC source, machine identity, date, provenance and visible source label pass; the image is explicitly not presented as TMC hardware.",
+      "forbidden_substitutes": [
+        "generic land mining",
+        "textile machinery",
+        "decorative industrial b-roll"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/jamstec_mining_machine.jpg"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_JAMSTEC_MINING_MACHINE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_DEEPSEA_TRACK_ROV",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_012_LONG_TERM_TRACK_PERSISTENCE"
+      ],
+      "required_content": "Scientific ROV/AUV observation of a deep-sea track or directly comparable benthic survey.",
+      "acceptance": "Vehicle type and scientific context are verifiable; no recreational diver or unrelated coral footage.",
+      "forbidden_substitutes": [
+        "scuba diver",
+        "coral reef",
+        "generic submarine animation"
+      ],
+      "resolved_asset_paths": [
+        "assets/footage/scene_051_direct.mp4"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_PLUME_SAMPLING",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_014_PLUME_SCALE_IS_COMPLEX"
+      ],
+      "required_content": "Marine plume/sediment sampling or instrument deployment directly related to measurement.",
+      "acceptance": "The physical measurement link is visible and documented; footage is not treated as the numerical evidence.",
+      "forbidden_substitutes": [
+        "smoke cloud",
+        "muddy river",
+        "unrelated lab test"
+      ],
+      "resolved_asset_paths": [
+        "assets/footage/scene_052_direct.mp4"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_MIDWATER_RESEARCH",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_015_MIDWATER_DISCHARGE_RISK"
+      ],
+      "required_content": "Marine midwater sampling, particle experiment, or food-web observation tied to the narrated mechanism.",
+      "acceptance": "The marine context and experimental purpose are identifiable; no unrelated bench-lab footage.",
+      "forbidden_substitutes": [
+        "generic microscope",
+        "medical lab",
+        "aquarium beauty shot"
+      ],
+      "resolved_asset_paths": [
+        "assets/footage/scene_053_direct.mp4"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_UNCERTAINTY_DECISION",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_016_DECISION_UNDER_UNCERTAINTY"
+      ],
+      "required_content": "A real marine-science assessment or field-decision process where competing evidence is physically present.",
+      "acceptance": "Participants or documented field operations, instruments, and expedition setting establish the decision context; provenance does not claim a named meeting unless verified.",
+      "forbidden_substitutes": [
+        "generic boardroom",
+        "sales presentation",
+        "unrelated conference"
+      ],
+      "resolved_asset_paths": [
+        "assets/footage/scene_054_direct.mp4"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_CHIKYU_EXPEDITION",
+      "type": "primary_evidence",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_020_PRECEDENT_SYNTHESIS"
+      ],
+      "required_content": "Verified Chikyu expedition identity from the official JAMSTEC 2026 release, directly connected to the precedent sequence.",
+      "acceptance": "Vessel identity, official institution, release date, source URL and local checksum are recorded and visibly labelled.",
+      "forbidden_substitutes": [
+        "fishing boat",
+        "sailboat",
+        "recreational motorboat",
+        "unidentified cargo ship"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/jamstec_chikyu_departure.jpg"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_JAMSTEC_CHIKYU_DEPARTURE"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_LAND_MINING_TRADEOFF",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_009_INDUSTRY_COUNTERARGUMENT"
+      ],
+      "required_content": "A verified wide view of terrestrial extraction exactly where narration pivots from concentrated mineral demand to land-mining costs.",
+      "acceptance": "Asset and contact-sheet checksums, reviewed frames, exact narration anchor and claim-specific semantic rationale are recorded.",
+      "forbidden_substitutes": [
+        "generic industrial exterior",
+        "crypto mining",
+        "unidentified construction site"
+      ],
+      "resolved_asset_paths": [
+        "assets/footage/scene_017_3be5f14070d93db018c32640.mp4"
+      ]
+    }
+  ]
+}

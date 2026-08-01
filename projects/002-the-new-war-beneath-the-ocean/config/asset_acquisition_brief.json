@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "status": "source_selection_required",
+  "policy": {
+    "repository_owned_media_required": true,
+    "provenance_sidecar_required": true,
+    "approved_for_final_edit_required": true,
+    "automatic_visual_fallback_forbidden": true,
+    "unlabelled_corporate_promotional_media_forbidden": true,
+    "hydrothermal_vent_footage_as_nodule_field_forbidden": true,
+    "maximum_uses_per_clip": 2
+  },
+  "footage_slots": [
+    {"slot_id":"F001","role":"hook_human_context","description":"Researchers and deck crew aboard an ocean drilling or research vessel before deployment","minimum_seconds":8,"preferred_source":"JAMSTEC or another clearly licensed research-vessel source"},
+    {"slot_id":"F002","role":"hook_machine_context","description":"Pipe handling, winch, riser or launch-and-recovery operations at sea","minimum_seconds":8,"preferred_source":"official expedition footage or licensed maritime stock"},
+    {"slot_id":"F003","role":"abyssal_context","description":"Real deep-ocean ROV movement over sediment in darkness, not hydrothermal vents","minimum_seconds":12,"preferred_source":"NOAA Ocean Exploration, JAMSTEC or equivalent public/cleared source"},
+    {"slot_id":"F004","role":"rare_earth_processing","description":"Separation, refining or magnet-manufacturing process with real workers and machinery","minimum_seconds":12,"preferred_source":"licensed industrial footage with location and process identified"},
+    {"slot_id":"F005","role":"magnet_end_uses","description":"Electric motor, precision robotics, wind-turbine nacelle and aerospace/defence applications","minimum_seconds":12,"preferred_source":"licensed contextual footage; each use must match the narrated application"},
+    {"slot_id":"F006","role":"supply_disruption","description":"Factory production line slowing, component inspection or logistics interruption without fabricated news context","minimum_seconds":10,"preferred_source":"licensed industrial footage"},
+    {"slot_id":"F007","role":"nodule_field","description":"Real polymetallic nodules resting on abyssal sediment","minimum_seconds":12,"preferred_source":"scientific expedition or contractor footage with source labelling"},
+    {"slot_id":"F008","role":"collector_system","description":"Real collector vehicle, test sled or subsea mining prototype operating on sediment","minimum_seconds":12,"preferred_source":"scientific trial footage; corporate source must remain visibly attributed"},
+    {"slot_id":"F009","role":"institutional_context","description":"ISA Council chamber, delegates, legal drafting or international maritime governance","minimum_seconds":10,"preferred_source":"ISA/UN official media or clearly licensed news footage"},
+    {"slot_id":"F010","role":"terrestrial_mining_context","description":"Clearly identified terrestrial nickel, cobalt, copper or rare-earth extraction and waste systems","minimum_seconds":12,"preferred_source":"licensed footage with mineral and location metadata"},
+    {"slot_id":"F011","role":"track_persistence","description":"Scientific survey movement over old collector tracks and disturbed sediment","minimum_seconds":10,"preferred_source":"peer-reviewed study media or expedition footage with permission"},
+    {"slot_id":"F012","role":"plume_measurement","description":"Instrument deployment, turbidity sensors, sediment plume monitoring or water sampling","minimum_seconds":10,"preferred_source":"scientific research footage"},
+    {"slot_id":"F013","role":"midwater_ecology","description":"Real midwater particle feeders, zooplankton or marine-snow context","minimum_seconds":12,"preferred_source":"NOAA, MBARI or equivalent public/cleared research source"},
+    {"slot_id":"F014","role":"closing_human_context","description":"Scientists, regulators or coastal observers making decisions rather than a generic triumphant technology montage","minimum_seconds":10,"preferred_source":"official or licensed documentary footage"}
+  ],
+  "evidence_slots": [
+    {"slot_id":"E001","source_id":"SRC_JAMSTEC_MINAMITORISHIMA_RESULTS_2026","required_assets":["Chikyu photograph","5,569-metre system diagram","test timeline"]},
+    {"slot_id":"E002","source_id":"SRC_IEA_RARE_EARTHS_2026","required_assets":["60/91/94 concentration chart","2025 export-control evidence"]},
+    {"slot_id":"E003","source_id":"SRC_IEA_CRITICAL_MINERALS_2026","required_assets":["battery-chemistry comparison","refining concentration or diversification chart"]},
+    {"slot_id":"E004","source_id":"SRC_UNCLOS_ARTICLES_136_137","required_assets":["Article 136","Article 137"]},
+    {"slot_id":"E005","source_id":"SRC_ISA_COUNCIL_JULY_2026","required_assets":["Revision 3 cover","outstanding-issues list","July 24 roadmap agenda"]},
+    {"slot_id":"E006","source_id":"SRC_WHITEHOUSE_EO14285","required_assets":["executive-order heading","national-security language"]},
+    {"slot_id":"E007","source_id":"SRC_NOAA_DSHMRA_2026","required_assets":["application list","commercial recovery permits N/A entry"]},
+    {"slot_id":"E008","source_id":"SRC_NATURE_RECOVERY_2025","required_assets":["1979/2023 track comparison","44-year recovery chart"]},
+    {"slot_id":"E009","source_id":"SRC_NEE_MACROFAUNA_2026","required_assets":["37% density and 32% richness result","study map"]},
+    {"slot_id":"E010","source_id":"SRC_NATURE_PLUME_2025","required_assets":["plume sensor map","distance-height-time chart"]},
+    {"slot_id":"E011","source_id":"SRC_NCOMMS_MIDWATER_2025","required_assets":["food-web diagram","particle-quality comparison"]},
+    {"slot_id":"E012","source_id":"SRC_TMC_LIFECYCLE_POSITION","required_assets":["company lifecycle comparison with persistent corporate attribution"]}
+  ]
+}

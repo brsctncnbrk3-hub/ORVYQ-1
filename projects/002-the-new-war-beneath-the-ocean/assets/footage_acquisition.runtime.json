@@ -1,0 +1,312 @@
+{
+  "schema_version": "1.3-incremental-demand-led-semantic-metadata",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "generated_at": "2026-07-31T07:59:34.833Z",
+  "source": "pexels",
+  "license_url": "https://www.pexels.com/license/",
+  "planned_asset_count": 49,
+  "acquired_this_run": 5,
+  "reused_existing": 44,
+  "semantic_constraints_applied": 43,
+  "unresolved_scene_ids": [],
+  "provider_search_issues": [],
+  "provider_request_count": 40,
+  "provider_unavailable": false,
+  "records": [
+    {
+      "path": "assets/footage/scene_001_direct.mp4",
+      "scene_id": "scene_001",
+      "provider_asset_id": "NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_002_b78da07e94823deaae5ca74e.mp4",
+      "scene_id": "scene_002",
+      "provider_asset_id": "35861099",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_003_official_reuse.mp4",
+      "scene_id": "scene_003",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023_scene_003",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_004_official_reuse.mp4",
+      "scene_id": "scene_004",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024_scene_004",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_005_06daaaabbe0826dbedfa2207.mp4",
+      "scene_id": "scene_005",
+      "provider_asset_id": "31751351",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_006_cd809aab47833abf6ee1de6b.mp4",
+      "scene_id": "scene_006",
+      "provider_asset_id": "32386518",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_007_34b3f4906a6eee7e10be8f10.mp4",
+      "scene_id": "scene_007",
+      "provider_asset_id": "6952047",
+      "role": "governance_context"
+    },
+    {
+      "path": "assets/footage/scene_008_8abb9c1116db94da4566f357.mp4",
+      "scene_id": "scene_008",
+      "provider_asset_id": "31079999",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_009_8846f61745140cdcd70c4150.mp4",
+      "scene_id": "scene_009",
+      "provider_asset_id": "4468754",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_010_9f0c1cd965d27101f9e31b3d.mp4",
+      "scene_id": "scene_010",
+      "provider_asset_id": "33938964",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_011_9ee53a113509a6f291ad3414.mp4",
+      "scene_id": "scene_011",
+      "provider_asset_id": "37420128",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_012_official_reuse.mp4",
+      "scene_id": "scene_012",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_D2_2018_TECHNOLOGY_scene_012",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_013_direct.mp4",
+      "scene_id": "scene_013",
+      "provider_asset_id": "NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_014_9ffed5eb663a6f6f21233078.mp4",
+      "scene_id": "scene_014",
+      "provider_asset_id": "8135853",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4",
+      "scene_id": "scene_015",
+      "provider_asset_id": "33082707",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_016_direct.mp4",
+      "scene_id": "scene_016",
+      "provider_asset_id": "NOAA_NORTH_ATLANTIC_DIVE08_WALL_2021",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_017_3be5f14070d93db018c32640.mp4",
+      "scene_id": "scene_017",
+      "provider_asset_id": "28668454",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_019_81d3921b615afae6bf8f9325.mp4",
+      "scene_id": "scene_019",
+      "provider_asset_id": "36123915",
+      "role": "metaphor"
+    },
+    {
+      "path": "assets/footage/scene_020_94b6798729e2e19741f260c1.mp4",
+      "scene_id": "scene_020",
+      "provider_asset_id": "12903927",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_021_146b6b5935f192be27d07afd.mp4",
+      "scene_id": "scene_021",
+      "provider_asset_id": "11585106",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_022_9366a132ae3b293a02df46b7.mp4",
+      "scene_id": "scene_022",
+      "provider_asset_id": "32243444",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_023_a96b0c345a995af5baf0923a.mp4",
+      "scene_id": "scene_023",
+      "provider_asset_id": "33637403",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_024_official_reuse.mp4",
+      "scene_id": "scene_024",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019_scene_024",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_026_a8425569c1d990a57f193a1d.mp4",
+      "scene_id": "scene_026",
+      "provider_asset_id": "5752550",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_027_cee752d61ab26eeb024d411f.mp4",
+      "scene_id": "scene_027",
+      "provider_asset_id": "8829012",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_028_b925e4019f461a8eb547df63.mp4",
+      "scene_id": "scene_028",
+      "provider_asset_id": "31795058",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_029_bec7ca5e63295de8aa016832.mp4",
+      "scene_id": "scene_029",
+      "provider_asset_id": "34495148",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_030_b39f52916266bceb2590b3fc.mp4",
+      "scene_id": "scene_030",
+      "provider_asset_id": "34657205",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_031_48cfc78463916f8222590c3f.mp4",
+      "scene_id": "scene_031",
+      "provider_asset_id": "8716589",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_032_official_reuse.mp4",
+      "scene_id": "scene_032",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WATER_COLUMN_2012_scene_032",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4",
+      "scene_id": "scene_033",
+      "provider_asset_id": "34748647",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_034_dbd1819c871818356753f93e.mp4",
+      "scene_id": "scene_034",
+      "provider_asset_id": "3196600",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_035_ef447180da828809758f0d18.mp4",
+      "scene_id": "scene_035",
+      "provider_asset_id": "31100083",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_036_44ae569942147848854a5fc6.mp4",
+      "scene_id": "scene_036",
+      "provider_asset_id": "6951506",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_037_77974e64872de8e33bf15db5.mp4",
+      "scene_id": "scene_037",
+      "provider_asset_id": "30295544",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_038_9d962f32cfd2deda34a8ddf6.mp4",
+      "scene_id": "scene_038",
+      "provider_asset_id": "6951598",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_039_d90b361d5f06560506e648bb.mp4",
+      "scene_id": "scene_039",
+      "provider_asset_id": "4121351",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_040_247e04dcc7e0eb00bd1cfd2b.mp4",
+      "scene_id": "scene_040",
+      "provider_asset_id": "29702517",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_041_fb568a7886ffc7b5209cc5de.mp4",
+      "scene_id": "scene_041",
+      "provider_asset_id": "8426043",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_043_3274a7b8bb8853043b341006.mp4",
+      "scene_id": "scene_043",
+      "provider_asset_id": "37914269",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_044_60259233df0534e7673a42ef.mp4",
+      "scene_id": "scene_044",
+      "provider_asset_id": "32243765",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_045_3cfaea76e4faea730fa72c95.mp4",
+      "scene_id": "scene_045",
+      "provider_asset_id": "8426045",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_047_c2ec99d4d13fb4912836b8e0.mp4",
+      "scene_id": "scene_047",
+      "provider_asset_id": "16222742",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_048_b73c8e4d41145089ab22de6e.mp4",
+      "scene_id": "scene_048",
+      "provider_asset_id": "8540148",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_050_863b8a7dd26b4dd288235b75.mp4",
+      "scene_id": "scene_050",
+      "provider_asset_id": "6951601",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_051_direct.mp4",
+      "scene_id": "scene_051",
+      "provider_asset_id": "NOAA_D2_2018_TECHNOLOGY",
+      "role": "scientific_context"
+    },
+    {
+      "path": "assets/footage/scene_052_direct.mp4",
+      "scene_id": "scene_052",
+      "provider_asset_id": "NOAA_CASCADIA_SEDIMENT_CORING_2020",
+      "role": "scientific_context"
+    },
+    {
+      "path": "assets/footage/scene_053_direct.mp4",
+      "scene_id": "scene_053",
+      "provider_asset_id": "NOAA_WATER_COLUMN_2012",
+      "role": "scientific_context"
+    },
+    {
+      "path": "assets/footage/scene_054_direct.mp4",
+      "scene_id": "scene_054",
+      "provider_asset_id": "NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019",
+      "role": "scientific_context"
+    }
+  ],
+  "pass": true
+}

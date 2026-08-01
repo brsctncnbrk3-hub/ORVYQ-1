@@ -1,0 +1,60 @@
+{
+  "stable_asset_id": "faa507761f26261a9bf670f9",
+  "scene_id": "scene_043",
+  "provider": "pexels",
+  "provider_asset_id": "37914269",
+  "source_page_url": "https://www.pexels.com/video/automated-container-terminal-at-webb-dock-37914269/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Joolsmagools  ®️",
+  "attribution_required": false,
+  "search_query": "industrial port workers ships",
+  "editorial_role": "human_context",
+  "editorial_note": "Visible industrial momentum at a port supports the warning that preparation can be mistaken for inevitability.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "port",
+        "harbor",
+        "harbour",
+        "ship",
+        "vessel",
+        "dock",
+        "worker",
+        "crane"
+      ]
+    ],
+    "forbidden_terms": [
+      "cruise",
+      "tourist",
+      "beach",
+      "marina",
+      "yacht"
+    ]
+  },
+  "duration": 15,
+  "actual_duration_seconds": 15,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 7278141,
+  "sha256": "64a2d56a3b4349156bc18adbbfa1e372e7453f8bb64984b63ad74df3996a18d1",
+  "actual_sha256": "64a2d56a3b4349156bc18adbbfa1e372e7453f8bb64984b63ad74df3996a18d1",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "16087272",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:48:23.899Z",
+  "reviewed_asset_sha256": "64a2d56a3b4349156bc18adbbfa1e372e7453f8bb64984b63ad74df3996a18d1",
+  "reviewed_contact_sheet_sha256": "c96a51cacd187182867860a9a4e18af6048aa4a548e4eac3d91f70582211467b",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

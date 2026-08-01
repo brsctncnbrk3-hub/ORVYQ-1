@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "4ffe0a9716ae6946",
+  "scene_id": "scene_010",
+  "candidate_id": "6f7bc11f2a696985af0db15f",
+  "provider": "pexels",
+  "provider_asset_id": "17026821",
+  "source_page_url": "https://www.pexels.com/video/a-car-driving-down-a-road-near-mountains-17026821/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/17026821/17026821-hd_1920_1080_60fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Jorge Zaldívar Marroquín",
+  "retrieval_timestamp": "2026-07-12T01:58:02.861Z",
+  "content_type": "video/mp4",
+  "byte_size": 12331830,
+  "duration": 32.64,
+  "width": 1280,
+  "height": 720,
+  "codec": "h264",
+  "sha256": "a6b191059810a210b7fff6a1aa922d8ad9e9be1a3392d443ecb7938b2640a3c0",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

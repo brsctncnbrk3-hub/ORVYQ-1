@@ -1,0 +1,23 @@
+{
+  "stable_asset_id": "271d701bd442e7ab",
+  "scene_id": "scene_021",
+  "candidate_id": "d2e9e57773ef446f8e402456",
+  "provider": "pexels",
+  "provider_asset_id": "4474271",
+  "source_page_url": "https://www.pexels.com/video/panning-shot-of-the-texas-state-senate-chamber-4474271/",
+  "final_media_hostname": "videos.pexels.com",
+  "final_media_path": "/video-files/4474271/4474271-hd_1920_1080_30fps.mp4",
+  "license_url": "https://www.pexels.com/license/",
+  "attribution_required": false,
+  "creator": "Hirsh Philippe",
+  "retrieval_timestamp": "2026-07-12T02:23:56.684Z",
+  "content_type": "video/mp4",
+  "byte_size": 5167781,
+  "duration": 15.466667,
+  "width": 1280,
+  "height": 720,
+  "codec": "h264",
+  "sha256": "e663880c25bece3331e573dee875864f2b0ff25cbc019a397b6175948fcc30de",
+  "approved_for_final_edit": true,
+  "human_review_status": "NOT_REQUIRED"
+}

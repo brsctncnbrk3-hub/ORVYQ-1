@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "project_id": "001-the-ai-race-no-one-can-afford-to-win",
+  "status": "ready",
+  "creative_profile": "orvyq-aperture-cinematic",
+  "art_direction": {
+    "topic": "AI competition, safety frameworks, governance, and controlled agentic-misalignment evaluations",
+    "palette": {
+      "ink": "#F5F0E7",
+      "accent": "#D95B53",
+      "information": "#86A9CC",
+      "ground": "#07101A"
+    },
+    "source_treatment": "full-screen official captures and explicit source-derived graphics"
+  },
+  "end_card": {
+    "title": "It's still being decided… by people, right now.",
+    "subtitle": null
+  },
+  "proof": {
+    "boundary_anchor_text": "Slowing down alone doesn't remove the risk. It just hands the frontier to whoever doesn't."
+  },
+  "hook": {
+    "first_shot_role": "human_context",
+    "first_shot_asset": "assets/footage/scene_024_6e6f4af26cad60cc78930d6d.mp4",
+    "target_cut_count": 4,
+    "target_duration_seconds": 11,
+    "question_minimum_characters": 35,
+    "question_maximum_characters": 90
+  },
+  "editorial_rhythm": {
+    "full_pause_target": 3,
+    "brief_accent_target": 4,
+    "brief_accent_minimum_seconds": 1.5,
+    "brief_accent_maximum_seconds": 3
+  },
+  "opening_evidence": {
+    "kind": "split_documents",
+    "target_asset_count": 2
+  },
+  "creative_polish": {
+    "require_repetition_reduction": true,
+    "source_review_run_id": 30200283806,
+    "footage_replacements": [
+      {
+        "shot_id": "shot_010",
+        "asset": "assets/footage/scene_008_42946788405d61ee3a28fa31.mp4",
+        "trim_in_seconds": 1,
+        "motion": "push",
+        "reason": "Break the opening governance-lag aerial hold with the film's established market-pressure exterior; first use in the canonical body."
+      },
+      {
+        "shot_id": "shot_011",
+        "asset": "assets/footage/scene_012_d356fd9efe14c61c8594ff1f.mp4",
+        "trim_in_seconds": 3,
+        "motion": "drift_left",
+        "reason": "Move from institutional scale into a human operational environment instead of holding the opening aerial for a third consecutive shot."
+      },
+      {
+        "shot_id": "shot_040",
+        "asset": "assets/footage/scene_004_52abd7f745cc24b4ecad0215.mp4",
+        "trim_in_seconds": 1,
+        "motion": "push",
+        "reason": "Replace the middle of the long train/connective passage with the controlled-evaluation room already authored for this evidence arc."
+      },
+      {
+        "shot_id": "shot_041",
+        "asset": "assets/footage/scene_013_d8d3231e6f0b69b7def0fd48.mp4",
+        "trim_in_seconds": 24,
+        "motion": "hold",
+        "reason": "Second use at a distinct late trim window; the defensive SOC image balances the misuse sequence during its authored pause."
+      },
+      {
+        "shot_id": "shot_122",
+        "asset": "assets/footage/scene_016_e324304f99b3502cad464d69.mp4",
+        "trim_in_seconds": 0.5,
+        "motion": "pull",
+        "reason": "Break the closing three-shot code/interface repetition with the film's labor-forecast visual, which the synthesis explicitly revisits."
+      },
+      {
+        "shot_id": "shot_123",
+        "asset": "assets/footage/scene_006_7e0d77fb76615c10d441204a.mp4",
+        "trim_in_seconds": 3,
+        "motion": "drift_right",
+        "reason": "Second use at a different trim window; the fire-drill metaphor returns briefly as the closing synthesis asks what preparation can actually do."
+      },
+      {
+        "shot_id": "shot_131",
+        "asset": "assets/footage/scene_027_57a43a4f4b65321112dfb0bf.mp4",
+        "trim_in_seconds": 21,
+        "motion": "pull",
+        "reason": "Second use at a non-overlapping late trim window; a human-positive safeguards image interrupts the final repeated interface hold before the last pause."
+      }
+    ]
+  }
+}

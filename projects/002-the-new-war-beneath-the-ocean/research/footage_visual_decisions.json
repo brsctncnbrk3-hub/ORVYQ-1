@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_basis": "Every decision is bound to the current media SHA-256 and twelve-frame contact-sheet SHA-256, then checked against the exact claim, narration anchor and contextual role. Generic footage is rejected whenever it merely illustrates a noun, impersonates a named source or fails to carry the sentence meaning.",
+  "decisions": [
+    {
+      "scene_id": "scene_001",
+      "provider_asset_id": "NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024",
+      "asset_sha256": "42e20b2d517bafd26316bb036873f2a6b062cd1776f4d74583304e8a8ca07d51",
+      "contact_sheet_sha256": "347abb37ebd1b5988416369358d852055045caac0d2f0c8b2c218662d7abfbc6",
+      "decision": "approve",
+      "reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+    },
+    {
+      "scene_id": "scene_002",
+      "provider_asset_id": "32780340",
+      "asset_sha256": "8601753e6261d429160862b420a5bf7f437d4ca2cf30c16065caa41ab225dcf4",
+      "contact_sheet_sha256": "ade49b47268252c313da1203c73b7b5522f94b0458930678fa210b01ede00ad7",
+      "decision": "reject",
+      "reason": "A scenic tugboat assisting a cargo ship does not show a research vessel, scientific expedition, or rare-earth-mud operation."
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "11240197",
+      "asset_sha256": "c02e65c8fd7546d5cdcca80997caa7c75e41eb4708028346e8286105012002c1",
+      "contact_sheet_sha256": "05c11b86178b51a98184aef9bb32f343c56777f635db8d063be58f7821aeeb01",
+      "decision": "reject",
+      "reason": "A recreational speedboat is unrelated to export controls, abyssal geography, and deep-sea scientific operations."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "9654558",
+      "asset_sha256": "1989d00f1fb48a02221d791c0e87e77fac4e6510aa3adce9de9606b7a8f85219",
+      "contact_sheet_sha256": "205a02b7b0d1056481eae8382e304c723b39a447c219f8afc1d3364005800dc4",
+      "decision": "reject",
+      "reason": "An oil tanker falsely suggests petroleum infrastructure during narration about a Japanese rare-earth-mud technical operation."
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "31751360",
+      "asset_sha256": "71006188aee0f3e4f07bbfa23fb19084731ee2d35fd4c8184493ff2fe252ab35",
+      "contact_sheet_sha256": "526a76776a443cc448925621fb8a05b4d781f94acab70309d5b3ce70eeefbeb2",
+      "decision": "reject",
+      "reason": "An anonymous machinery control panel cannot carry the shared-ocean governance premise or the required human expedition context."
+    },
+    {
+      "scene_id": "scene_006",
+      "provider_asset_id": "32305283",
+      "asset_sha256": "14210bcf91653dc34fcd98c343f6ff296f3d974b26411ae0bca3f1ea939d2ee1",
+      "contact_sheet_sha256": "d41fdec4af80b7c228e5e51d8d9dfe5de785a12d51d30da5889a2d3f6f3be511",
+      "decision": "reject",
+      "reason": "Motorcycle assembly can illustrate an end use, but the current assignments also place it under unrelated legal and governance narration."
+    },
+    {
+      "scene_id": "scene_007",
+      "provider_asset_id": "6952047",
+      "asset_sha256": "d9d845194d60b2819c5c5055ec578dc121e0e034e555f9942ae03f79da404169",
+      "contact_sheet_sha256": "fa6c0804cabbf8c49ccd698323a0d74962f9a43cd7db492fa97e50b07aa46ba9",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_008",
+      "provider_asset_id": "35440558",
+      "asset_sha256": "fed0dd79c78356a10b95a674a38033051f80b01fb70f7b2c1cee3c8dcab57f3c",
+      "contact_sheet_sha256": "1c4278d39ac2657bf62843fe2f67e1c70d3b3315ba4a886588034df438a8234b",
+      "decision": "reject",
+      "reason": "Sunrise wind turbines are atmospheric end-use imagery, not visible maintenance, permitting, or a mineral production-chain mechanism."
+    },
+    {
+      "scene_id": "scene_009",
+      "provider_asset_id": "4468754",
+      "asset_sha256": "105e28383db6835b61361ace2ae4c3b9d4583f30b5c7eee760c5ce255d31208f",
+      "contact_sheet_sha256": "9225d0108f4ef8fc3299e22fca3f44578d259ec68f9d1500e274b40d7b29eef7",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_010",
+      "provider_asset_id": "33938964",
+      "asset_sha256": "345b462d2f6f0704b384ccbe4bd0f075e2d0186e82d2919f1e59283bd43c768e",
+      "contact_sheet_sha256": "990a9629f0bd5ff7c8668d90bf7ffe03a354b9d4c7c7884d0d4f4a70b2fa0afd",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "10910575",
+      "asset_sha256": "c9a5d337c7538f575cb876b64202a2f94d744004be6b903bd2957c25ef51ff0a",
+      "contact_sheet_sha256": "4b6ceef5d8738c795144ac609e247e3875d7e641c47fb698800cecf97b393efc",
+      "decision": "reject",
+      "reason": "An unidentified island cannot stand in for Minamitorishima or for measured long-term disturbance on the deep seabed."
+    },
+    {
+      "scene_id": "scene_013",
+      "provider_asset_id": "NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023",
+      "asset_sha256": "8b64b1ca31c4eac4528af74798279fef4b09ee3614d3e64c856f794b0aca17cf",
+      "contact_sheet_sha256": "c9134c8484ae8142061e65dd9ed36b35be7d3117907de46f6b42f161e73723f7",
+      "decision": "approve",
+      "reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+    },
+    {
+      "scene_id": "scene_014",
+      "provider_asset_id": "6101321",
+      "asset_sha256": "2b2f91c13b6d9233b298affc378f664b4915b49b9ca5dbacdd91d0115af30145",
+      "contact_sheet_sha256": "dbb00dc9c1c29f9a7511184834cfe0a9527d83608de32112fcc8037716cac2d6",
+      "decision": "reject",
+      "reason": "Generic lawyer paperwork cannot represent sediment-plume behaviour and turns primary legal evidence into decorative stock imagery."
+    },
+    {
+      "scene_id": "scene_015",
+      "provider_asset_id": "33082707",
+      "asset_sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
+      "contact_sheet_sha256": "13aac3475cd9338de5e877b4b9b54b3bb7531965a659474aeab00f5f9083200c",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_016",
+      "provider_asset_id": "NOAA_NORTH_ATLANTIC_DIVE08_WALL_2021",
+      "asset_sha256": "97c905c19aa7fc1889ac67dd7602af90ef467d228abc5a75b00cfa000d37c255",
+      "contact_sheet_sha256": "97383e399f385b5607eb721407cf857acd88fc5e7796e373f41b00cc5292f34e",
+      "decision": "approve",
+      "reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+    },
+    {
+      "scene_id": "scene_018",
+      "provider_asset_id": "33880535",
+      "asset_sha256": "55ad650b3673990cce00086f1262477c840017f45b9390b9db656eb13a7d2c53",
+      "contact_sheet_sha256": "f783ab2a1ba611174ee7ad4c1c2f7debf94362fddd8ec71aa8dbe93b65e48551",
+      "decision": "reject",
+      "reason": "A scrap yard cannot represent midwater discharge science, food-web effects, or an international governance negotiation."
+    },
+    {
+      "scene_id": "scene_019",
+      "provider_asset_id": "36123915",
+      "asset_sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
+      "contact_sheet_sha256": "ac3f26b07e5696922d2b0a186fd25f15c01b937bfec911b01f66571a03f49e3b",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_020",
+      "provider_asset_id": "16993709",
+      "asset_sha256": "5054b8d1bbdb51e9ab135e82358d527a152981bd6802a4a39c491d10ddeb590e",
+      "contact_sheet_sha256": "61e5f0083015d1acc898efe0cbb3c103ed2b37ccb2be72a0da55c7f94e54b14b",
+      "decision": "reject",
+      "reason": "The aerial port view does not contain the workers or contemplative human subject required by its assigned narration and rationale."
+    },
+    {
+      "scene_id": "scene_021",
+      "provider_asset_id": "5121701",
+      "asset_sha256": "712b3f2faddaba33f8396de88f91c2542946193188aefab2bd90ea3c3683d028",
+      "contact_sheet_sha256": "1b00cb942c02959e40886843c93cf14f760986b77696a7f2c748d3bb2d7d1061",
+      "decision": "reject",
+      "reason": "Molten metal supports refining context, but not the assigned battery-chemistry research and unresolved-precedent narration."
+    },
+    {
+      "scene_id": "scene_023",
+      "provider_asset_id": "1474411",
+      "asset_sha256": "2e9a7c33817e9d1767cdcf0e182b27017c802c31b8bb9aff16f1e8c7207e36ef",
+      "contact_sheet_sha256": "d61dec2b0f21b62540ce2eba9c818009b60663a465c7f37b2189c423b82634bd",
+      "decision": "reject",
+      "reason": "An aerial bulk carrier is not a negotiation setting and cannot visually carry bargaining leverage or institutional choice."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "36664946",
+      "asset_sha256": "810f0e64186f60f9fce5f357cbed3bf94066cd47ac85185d1c1dec22e0b6b452",
+      "contact_sheet_sha256": "0e8dcc621f4db9c418e24c3d86d2edb50d718edaafb750db8ceb508f1d990d7b",
+      "decision": "reject",
+      "reason": "A generic leisure-scale boat does not visibly establish survey, mapping, or strategic preparation before production."
+    },
+    {
+      "scene_id": "scene_025",
+      "provider_asset_id": "8084626",
+      "asset_sha256": "a1a2222157eba43ee9e0f923fb486df3f100a528ac183938d85fd9b4d5fe930d",
+      "contact_sheet_sha256": "a271407ed5c8fed2d101a31a6325bceec7e9d001334dd44b1d661fe981799678",
+      "decision": "reject",
+      "reason": "A moving toy robot is not a real underwater exploration vehicle and would make the technical distinction appear unserious."
+    },
+    {
+      "scene_id": "scene_026",
+      "provider_asset_id": "6290535",
+      "asset_sha256": "0ab85c3f51655623d2ecd89e98f65cfebb010307ab01f5b8488f2ee1efb07a7a",
+      "contact_sheet_sha256": "58cd64dca811a0eea22bbc9854841dad0359f3e37926474f2e3b13bff8d14064",
+      "decision": "reject",
+      "reason": "Medical-laboratory vials do not establish marine baseline ecology, midwater sampling, or the cited particle experiment."
+    },
+    {
+      "scene_id": "scene_027",
+      "provider_asset_id": "8829012",
+      "asset_sha256": "c8c3fb30e95ee3d14025b7fcea84a087e8b94826e6dac8bd483355f3430dc360",
+      "contact_sheet_sha256": "dfc29f47f9f6e1e8bb26df8709ac358b32f1010cb45aca31344925ece3b70328",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_028",
+      "provider_asset_id": "31795058",
+      "asset_sha256": "e93480573e0c2088b9281bae7ccb362ecd4541af1105eb0ab900f89e3ba6f150",
+      "contact_sheet_sha256": "d1b7355b5b91c03596f54b15d902bc8b0266ef2c02b8299eb32023b37d33ec13",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "10904397",
+      "asset_sha256": "3090e2b4c461801f4689a6dea5313ff506cbf5a2f8d831a5e7e652d9f2ec72f9",
+      "contact_sheet_sha256": "82e331461934650c92e242f1a1e1a52d4b138567616432d5f76b79749b93980e",
+      "decision": "reject",
+      "reason": "A view of the sea from a ship does not show a working research-vessel deck and has no exact claim-bound use."
+    },
+    {
+      "scene_id": "scene_030",
+      "provider_asset_id": "19264828",
+      "asset_sha256": "2fc3eec76f1b0171f183a1689ccd4f7ddf1164b34f2ff99a18e411290a81ba41",
+      "contact_sheet_sha256": "f153eaf3b030fa0e01426906c96c077ac996406cf6c975f5796ed604d669ca2b",
+      "decision": "reject",
+      "reason": "A generic boat beside a ship has no exact claim-bound narration use and does not establish a strategic or scientific operation."
+    },
+    {
+      "scene_id": "scene_031",
+      "provider_asset_id": "8716589",
+      "asset_sha256": "30064be56e69d769cc14a74807bdcaeca86399d696ed287d80a054b7a5e3bd67",
+      "contact_sheet_sha256": "8ad8f6864c301585587e44f098ccdc549acbf46972eec718e933f6b8d04aef32",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "17471486",
+      "asset_sha256": "20a6ffd1514a4c307aed79fc37cac06af1f13b4e50c07edb67a3a7fd4ef74a78",
+      "contact_sheet_sha256": "78762aec83304fafbf259194774ee2216af0f615c8860c194ffaac2be8a122f8",
+      "decision": "reject",
+      "reason": "A small yacht on calm surface water contradicts the assigned descent, abyssal depth, and persistent deep-seabed disturbance."
+    },
+    {
+      "scene_id": "scene_033",
+      "provider_asset_id": "34748647",
+      "asset_sha256": "44bc6d8ef52d1502a9cb0289b263146684c6446a63b26edfce805c1e861508ba",
+      "contact_sheet_sha256": "92329be8df434217ae07518258365875f52117bf115a5795bdb2e7550264f359",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_034",
+      "provider_asset_id": "4121354",
+      "asset_sha256": "8cfa01c0b64792b9551d5b9dfe34b1ae4ce60cff9f42dc8d92474f88508046a1",
+      "contact_sheet_sha256": "156df6084d611ed702f99d8d0f42d96d7d488a8177d3249233cc2a61f3a07702",
+      "decision": "reject",
+      "reason": "A medical laboratory does not show a multidisciplinary decision setting and the clip has no exact claim-bound use."
+    },
+    {
+      "scene_id": "scene_036",
+      "provider_asset_id": "6951506",
+      "asset_sha256": "9e2d7ec31ec67c8142992b18cc9f3dab001e30b8adfda11508d1b97363d08dd1",
+      "contact_sheet_sha256": "73f220594f4b03f2c936cc8b18f65542c30f256c712fb2c5d4d5bc1859b22cb8",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_037",
+      "provider_asset_id": "30295544",
+      "asset_sha256": "0ca016562a304da49f888669de1ac3313d16de5e6f5a436f36a95683d6ecefd8",
+      "contact_sheet_sha256": "a9729a62b1449e7f7cbe6b62cf299003368dc4a873c9e0a2d57af2a77d67ef43",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_038",
+      "provider_asset_id": "6951297",
+      "asset_sha256": "d38cf7ca096d2fb196b8842836f6851e62ef31f0cbb5f665f9c2ae0c08a5ee67",
+      "contact_sheet_sha256": "00d0c8007310f5fd02bbf51a89781a455ec552fb6ccab0904871007371277432",
+      "decision": "reject",
+      "reason": "An empty conference room cannot show an international assembly, formal podium, or human governance process."
+    },
+    {
+      "scene_id": "scene_039",
+      "provider_asset_id": "4121351",
+      "asset_sha256": "9089e6766777c90aaf3ee90a3f55d393d442ca9685e0dd40ed1ce3b83b43c918",
+      "contact_sheet_sha256": "3009044af6a65c07daf52d03f16ea370047e5f13adf949bd69a063f1e573a29f",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_041",
+      "provider_asset_id": "8426043",
+      "asset_sha256": "5fd48f9540b06f2ec2342543f4a00fd6a2d69f1398ea3c140d36da9c78c8abaf",
+      "contact_sheet_sha256": "57f938a0234c0612206ecfe9d49d0345870d03df204d49a6eccc6c0a500c529c",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_042",
+      "provider_asset_id": "20256990",
+      "asset_sha256": "80e0acd520967a8c18dac32a6d6577089274b17b5f63c0f37303711bb78b5846",
+      "contact_sheet_sha256": "b1d9429b032b3ddea0b6ef13239c31ac1b5f7a3320d52f3973ea1086bf9f1fc1",
+      "decision": "reject",
+      "reason": "A generic boat travelling across water has no exact claim-bound use and does not visibly establish survey operations."
+    },
+    {
+      "scene_id": "scene_043",
+      "provider_asset_id": "37914269",
+      "asset_sha256": "64a2d56a3b4349156bc18adbbfa1e372e7453f8bb64984b63ad74df3996a18d1",
+      "contact_sheet_sha256": "c96a51cacd187182867860a9a4e18af6048aa4a548e4eac3d91f70582211467b",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_044",
+      "provider_asset_id": "32243765",
+      "asset_sha256": "39d30fcf358faf880885fd153d3b0e6a61ab02b4bca43c8374a51df83585c22f",
+      "contact_sheet_sha256": "35a31a0eaf5afc302bc5a9db84a897cb489f6c1f4ad3ba2a06ee29614a22142d",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_045",
+      "provider_asset_id": "8426045",
+      "asset_sha256": "7dc649fdf42aff33fd2486762b2aa747b0f1529cfb0e5e2be80c6c4599cb3a2d",
+      "contact_sheet_sha256": "1ad74fafc0e59e87e2d38246651e7d24a7acc7a80fa738aea71902a81eafcf46",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_046",
+      "provider_asset_id": "3191247",
+      "asset_sha256": "a18c3ac095c77295d923b55a269f4891b0b16415cb12933ad62b726b13a43513",
+      "contact_sheet_sha256": "941ddca8f4f8d1766af878eb90d7e055fd83fdc2122a077774709fdf6e05e689",
+      "decision": "reject",
+      "reason": "Generic laboratory sampling lacks field and marine context and currently has no exact narration-bound use."
+    },
+    {
+      "scene_id": "scene_047",
+      "provider_asset_id": "15894768",
+      "asset_sha256": "757354a66a159c00899b8c89194745bacf59d199d98eae9898aeff85cbf1172f",
+      "contact_sheet_sha256": "68b5dcec6c17d7f3403e49932c1d5542bc45223c6f9225a5c4c8e8fbc8585919",
+      "decision": "reject",
+      "reason": "Fishing boats do not establish the risk-bearing community described by the rationale and the clip has no exact use."
+    },
+    {
+      "scene_id": "scene_048",
+      "provider_asset_id": "8327175",
+      "asset_sha256": "7c423673cd1d700b17d7b478b9d6bed7e431d94594a3a4d81adb1bd0ae0c36a6",
+      "contact_sheet_sha256": "d7909cc46d7b7d4b1d219284e8f66cc1ebf95d95fbb88c2ac7ef504b9f3389d0",
+      "decision": "reject",
+      "reason": "Theatrical mad-scientist imagery is incompatible with a credible evidence-led account of real ocean research and inherited precedent."
+    },
+    {
+      "scene_id": "scene_049",
+      "provider_asset_id": "5417209",
+      "asset_sha256": "69f62363c8390e767241978b589a01a8779320be6b5b112c36da6a345cfe9b83",
+      "contact_sheet_sha256": "d6803e886944d0a0dcca607f9c37c0773dec0b0665b220d620a1bcf40120f99c",
+      "decision": "reject",
+      "reason": "A boat bow is not a verified research vessel and the clip has no exact claim-bound use for the announced expedition return."
+    },
+    {
+      "scene_id": "scene_050",
+      "provider_asset_id": "6951601",
+      "asset_sha256": "3f75e1c6e9e2cce6aa69bb1003268f2dc1a491698898f5e551a5f385f5e545a9",
+      "contact_sheet_sha256": "c2b37844943989267124367c70e0c81f2b7130bce9880aa863a254326d1d953a",
+      "decision": "approve",
+      "reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+    },
+    {
+      "scene_id": "scene_051",
+      "provider_asset_id": "NOAA_D2_2018_TECHNOLOGY",
+      "asset_sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
+      "contact_sheet_sha256": "f24a4985008373f37a0a9a3b7a888312de75d30fafb17754c5e26494281ab357",
+      "decision": "approve",
+      "reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+    },
+    {
+      "scene_id": "scene_052",
+      "provider_asset_id": "NOAA_CASCADIA_SEDIMENT_CORING_2020",
+      "asset_sha256": "ec47cb4db426066cc46db457bcae6242e1b59252dc24962de047cc456afad28d",
+      "contact_sheet_sha256": "a6c089f09e788331569e722ded808151114662229bd160cd101447d9c0fd24da",
+      "decision": "approve",
+      "reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+    },
+    {
+      "scene_id": "scene_053",
+      "provider_asset_id": "NOAA_WATER_COLUMN_2012",
+      "asset_sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
+      "contact_sheet_sha256": "111999a43362b07ffb220ab99bb6f42e28ac59bd02f56c6edde6967ce12c9fd4",
+      "decision": "approve",
+      "reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+    },
+    {
+      "scene_id": "scene_054",
+      "provider_asset_id": "NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019",
+      "asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
+      "contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
+      "decision": "approve",
+      "reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+    }
+  ]
+}

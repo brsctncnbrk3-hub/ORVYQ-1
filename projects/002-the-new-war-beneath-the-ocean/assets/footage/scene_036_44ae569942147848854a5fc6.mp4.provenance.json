@@ -1,0 +1,56 @@
+{
+  "stable_asset_id": "89ba1e47fadd2312dc4c321e",
+  "scene_id": "scene_036",
+  "provider": "pexels",
+  "provider_asset_id": "6951506",
+  "source_page_url": "https://www.pexels.com/video/people-voting-in-the-conference-room-6951506/",
+  "license_url": "https://www.pexels.com/license/",
+  "creator": "Werner Pfennig",
+  "attribution_required": false,
+  "search_query": "government policy experts meeting",
+  "editorial_role": "human_context",
+  "editorial_note": "A real policy table represents economics, technology, law and ecology moving at once without identifying a specific institution.",
+  "narration_anchor": null,
+  "target_claim_id": null,
+  "target_slice_index": null,
+  "evidence_use_forbidden": true,
+  "semantic_metadata_verified": true,
+  "semantic_metadata_constraints": {
+    "required_any_groups": [
+      [
+        "meeting",
+        "conference",
+        "committee",
+        "roundtable",
+        "discussion"
+      ]
+    ],
+    "forbidden_terms": [
+      "party",
+      "wedding",
+      "restaurant",
+      "celebration"
+    ]
+  },
+  "duration": 13.88,
+  "actual_duration_seconds": 13.88,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "actual_width": 1920,
+  "actual_height": 1080,
+  "actual_codec": "h264",
+  "actual_container": "mov,mp4,m4a,3gp,3g2,mj2",
+  "byte_size": 1493863,
+  "sha256": "9e2d7ec31ec67c8142992b18cc9f3dab001e30b8adfda11508d1b97363d08dd1",
+  "actual_sha256": "9e2d7ec31ec67c8142992b18cc9f3dab001e30b8adfda11508d1b97363d08dd1",
+  "transformed_for_edit": true,
+  "selected_rendition_id": "10244191",
+  "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "downloaded_at": "2026-07-30T20:46:52.995Z",
+  "reviewed_asset_sha256": "9e2d7ec31ec67c8142992b18cc9f3dab001e30b8adfda11508d1b97363d08dd1",
+  "reviewed_contact_sheet_sha256": "73f220594f4b03f2c936cc8b18f65542c30f256c712fb2c5d4d5bc1859b22cb8",
+  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+}

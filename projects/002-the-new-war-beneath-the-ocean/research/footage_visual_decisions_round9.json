@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Ninth ORVYQ system-owned byte-bound semantic review. The exact existing scene_029 and scene_054 video bytes and twelve-frame contact sheets were already approved for restrained human-governance and official expedition-field context. This revision is re-applied after footage-contract reconciliation was made responsible for immediately re-materializing the effective visual-rebalance plan into the canonical blueprint. Scene_054 physically represents the gap between a plan and an operating system without being presented as commercial mining, while scene_029 gives human institutional form to the one-ocean/two-rulebooks proposition. Primary legal and quantitative evidence retains every factual burden, Git LFS contact-sheet identity remains canonical, and no quality threshold is weakened.",
+  "decisions": [
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "34495148",
+      "asset_sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
+      "contact_sheet_sha256": "63b37877b71b966180493c12c6bd6cc4831362aa494a4934f308bec07ac7ddd1",
+      "decision": "approve",
+      "reason": "The reviewed frames show a populated formal assembly with presenters and an engaged audience. The footage therefore supports the institutional and precedent-setting meaning of the CLM_009 one-ocean/two-rulebooks narration without identifying a named regulator, conference or permit process; source documents retain all legal claims."
+    },
+    {
+      "scene_id": "scene_054",
+      "provider_asset_id": "NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019",
+      "asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
+      "contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
+      "decision": "approve",
+      "reason": "The reviewed official expedition frames show real field operations, sampling and operational judgment. They physically support the narrated distinction between a plan and an operating system while remaining explicitly non-commercial and non-JAMSTEC; primary evidence retains all named-project and industrial-status claims."
+    }
+  ]
+}
