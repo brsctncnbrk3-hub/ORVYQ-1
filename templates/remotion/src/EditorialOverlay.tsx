@@ -25,7 +25,7 @@ export type EditorialOverlaySpec = {
   unit?: string;
 };
 
-const { color, type, safe } = ORVYQ_DESIGN;
+const { color, type, safe, surface } = ORVYQ_DESIGN;
 const ink = color.ink;
 const muted = color.muted;
 const accent = color.signal;
@@ -37,85 +37,160 @@ const SourceFooter: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => {
   const label = spec.recreation_label || ((spec.source_ids || []).length ? "PRIMARY SOURCE CONTEXT" : null);
   if (!label) return null;
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 20, color: muted, fontSize: 17, letterSpacing: ".13em", fontWeight: 700 }}>
-      <span style={{ width: 7, height: 7, borderRadius: 99, background: blue }} />
+    <div style={{ display: "flex", alignItems: "center", gap: 11, marginTop: 22, color: muted, fontSize: 15, letterSpacing: ".14em", fontWeight: type.labelWeight }}>
+      <span style={{ width: 22, height: 1, background: blue }} />
       {label}
     </div>
   );
 };
 
 const Comparison: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 22 }}>
-    {[spec.left, spec.right].map((value, index) => (
-      <div key={`${index}-${value}`} style={{ border: `1px solid ${index ? "rgba(245,240,231,.28)" : "rgba(134,169,204,.72)"}`, background: index ? "rgba(10,15,22,.72)" : "rgba(24,43,60,.76)", padding: "18px 20px", minHeight: 94, display: "flex", alignItems: "center" }}>
-        <div style={{ color: index ? muted : ink, fontSize: 27, lineHeight: 1.18, fontWeight: 680 }}>{value}</div>
-      </div>
-    ))}
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 24 }}>
+    {[spec.left, spec.right].map((value, index) => {
+      const localColor = index ? accent : blue;
+      return (
+        <div
+          key={`${index}-${value}`}
+          style={{
+            minHeight: 118,
+            padding: "18px 20px 20px",
+            background: "linear-gradient(145deg,rgba(18,28,39,.7),rgba(8,13,19,.86))",
+            borderTop: `2px solid ${localColor}`,
+            borderRight: `1px solid ${color.hairline}`,
+            borderBottom: `1px solid ${color.hairline}`,
+            borderLeft: `1px solid ${color.hairline}`,
+          }}
+        >
+          <div style={{ color: localColor, fontSize: 13, fontWeight: type.labelWeight, letterSpacing: ".14em" }}>
+            {index === 0 ? "POSITION A" : "POSITION B"}
+          </div>
+          <div style={{ marginTop: 16, color: ink, fontSize: 27, lineHeight: 1.18, fontWeight: type.displayWeight }}>{value}</div>
+        </div>
+      );
+    })}
   </div>
 );
 
 const SourceMosaic: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ display: "grid", gap: 10, marginTop: 20 }}>
+  <div style={{ display: "grid", gap: 0, marginTop: 22 }}>
     {(spec.items || []).map((item, index) => (
-      <div key={item} style={{ display: "grid", gridTemplateColumns: "36px 1fr", gap: 12, alignItems: "center", borderTop: "1px solid rgba(245,240,231,.18)", paddingTop: 13 }}>
-        <span style={{ color: blue, fontSize: 18, fontWeight: 800 }}>{String(index + 1).padStart(2, "0")}</span>
-        <span style={{ color: ink, fontSize: 25, lineHeight: 1.18, fontWeight: 650 }}>{item}</span>
+      <div key={item} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 14, alignItems: "start", borderTop: `1px solid ${color.hairline}`, padding: "14px 0 13px" }}>
+        <span style={{ color: blue, fontSize: 14, fontWeight: 800, letterSpacing: ".08em" }}>{String(index + 1).padStart(2, "0")}</span>
+        <span style={{ color: ink, fontSize: 24, lineHeight: 1.22, fontWeight: 560 }}>{item}</span>
       </div>
     ))}
   </div>
 );
 
 const Process: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ display: "grid", gap: 9, marginTop: 18 }}>
-    {(spec.steps || []).map((step, index) => (
-      <div key={step} style={{ display: "grid", gridTemplateColumns: "42px 1fr", gap: 12, alignItems: "center", background: "rgba(12,22,33,.75)", border: "1px solid rgba(134,169,204,.25)", padding: "12px 16px" }}>
-        <span style={{ width: 28, height: 28, display: "grid", placeItems: "center", borderRadius: 99, background: index === (spec.steps || []).length - 1 ? accent : blue, color: "#07101A", fontSize: 16, fontWeight: 900 }}>{index + 1}</span>
-        <span style={{ color: ink, fontSize: 24, lineHeight: 1.18, fontWeight: 650 }}>{step}</span>
-      </div>
-    ))}
+  <div style={{ display: "grid", gap: 0, marginTop: 22 }}>
+    {(spec.steps || []).map((step, index) => {
+      const isLast = index === (spec.steps || []).length - 1;
+      return (
+        <div key={step} style={{ display: "grid", gridTemplateColumns: "52px 1fr", gap: 14, minHeight: 62 }}>
+          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
+            {!isLast ? <span style={{ position: "absolute", top: 28, bottom: -5, width: 1, background: color.hairlineStrong }} /> : null}
+            <span style={{ position: "relative", width: 28, height: 28, display: "grid", placeItems: "center", background: isLast ? accent : color.canvasLift, border: `1px solid ${isLast ? accent : blue}`, color: isLast ? color.canvas : blue, fontSize: 12, fontWeight: 900 }}>{String(index + 1).padStart(2, "0")}</span>
+          </div>
+          <span style={{ color: ink, fontSize: 24, lineHeight: 1.2, fontWeight: 560, paddingBottom: 17, borderBottom: isLast ? "none" : `1px solid ${color.hairline}` }}>{step}</span>
+        </div>
+      );
+    })}
   </div>
 );
 
 const EmailRecreation: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ marginTop: 20, border: "1px solid rgba(245,240,231,.28)", background: "rgba(246,244,237,.94)", color: "#111820", boxShadow: "0 24px 70px rgba(0,0,0,.4)" }}>
-    <div style={{ padding: "12px 17px", borderBottom: "1px solid rgba(17,24,32,.16)", fontSize: 17, letterSpacing: ".12em", fontWeight: 800, color: "#4D5964" }}>SYNTHETIC CORPORATE EMAIL</div>
-    <div style={{ padding: "17px 20px 20px" }}>
-      <div style={{ fontSize: 25, lineHeight: 1.15, fontWeight: 820 }}>{spec.title}</div>
-      {spec.body ? <div style={{ fontSize: 23, lineHeight: 1.3, marginTop: 12, color: "#26313B" }}>{spec.body}</div> : null}
+  <div style={{ marginTop: 22, background: color.paper, color: color.paperInk, boxShadow: "0 28px 74px rgba(0,0,0,.38)", border: "1px solid rgba(255,255,255,.34)" }}>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 17px", borderBottom: "1px solid rgba(23,28,34,.16)", fontSize: 13, letterSpacing: ".13em", fontWeight: 800, color: "#59636D" }}>
+      <span>SYNTHETIC CORPORATE EMAIL</span>
+      <span style={{ color: "#7B858E" }}>RECREATION</span>
+    </div>
+    <div style={{ padding: "20px 22px 23px" }}>
+      <div style={{ fontFamily: type.displayFamily, fontSize: 28, lineHeight: 1.14, fontWeight: 720, letterSpacing: "-.02em" }}>{spec.title}</div>
+      {spec.body ? <div style={{ fontSize: 22, lineHeight: 1.38, marginTop: 14, color: "#303942" }}>{spec.body}</div> : null}
     </div>
   </div>
 );
 
 const DefaultBody: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
   <>
-    {spec.type === "stat" ? <div style={{ color: ink, fontSize: 76, lineHeight: .95, fontWeight: 850, letterSpacing: "-.045em", marginTop: 18 }}>{spec.title}</div> : null}
-    {spec.body ? <div style={{ color: ink, fontSize: Math.max(28, spec.font_px || 30), lineHeight: 1.27, fontWeight: spec.type === "quote" ? 680 : 560, marginTop: spec.type === "stat" ? 18 : 20 }}>{spec.body}</div> : null}
+    {spec.type === "stat" ? (
+      <div style={{ display: "inline-block", color: ink, fontFamily: type.displayFamily, fontSize: 74, lineHeight: .95, fontWeight: 680, letterSpacing: "-.05em", marginTop: 22, paddingBottom: 12, borderBottom: `2px solid ${blue}` }}>{spec.title}</div>
+    ) : null}
+    {spec.body ? (
+      <div
+        style={{
+          color: ink,
+          fontFamily: spec.type === "quote" ? type.editorialFamily : type.family,
+          fontSize: Math.max(28, spec.font_px || 30),
+          lineHeight: spec.type === "quote" ? 1.34 : 1.3,
+          fontWeight: spec.type === "quote" ? 500 : 520,
+          fontStyle: spec.type === "quote" ? "italic" : "normal",
+          marginTop: spec.type === "stat" ? 18 : 22,
+        }}
+      >
+        {spec.body}
+      </div>
+    ) : null}
   </>
 );
 
 export const EditorialOverlay: React.FC<{ spec: EditorialOverlaySpec; durationInFrames: number }> = ({ spec, durationInFrames }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const reveal = spring({ frame, fps, config: { damping: 22, stiffness: 100, mass: .9 }, durationInFrames: Math.min(34, durationInFrames) });
+  const reveal = spring({ frame, fps, config: { damping: 24, stiffness: 96, mass: .9 }, durationInFrames: Math.min(34, durationInFrames) });
   const fadeOut = interpolate(frame, [Math.max(1, durationInFrames - 13), durationInFrames], [1, 0], clamp);
   const opacity = reveal * fadeOut;
   const titleIsRepeatedInside = spec.type === "stat" || spec.type === "email_recreation";
   const isEvidenceVisual = EVIDENCE_TYPES.has(spec.type);
-  const width = isEvidenceVisual ? 980 : 760;
+  const width = isEvidenceVisual ? 1020 : 790;
+  const railColor = spec.type === "boundary" || spec.type === "quote" ? accent : blue;
 
   return (
-    <div style={{ position: "absolute", left: safe.x, top: safe.top, width, maxHeight: 790, opacity, transform: `translateY(${(1 - reveal) * 18}px)`, fontFamily: type.family, zIndex: 8 }}>
-      <div style={{ position: "absolute", inset: -18, background: "linear-gradient(90deg,rgba(5,9,14,.92),rgba(5,9,14,.68) 76%,rgba(5,9,14,0))", boxShadow: "0 28px 90px rgba(0,0,0,.42)", backdropFilter: "blur(12px)" }} />
-      <div style={{ position: "relative", padding: "22px 25px 23px", borderTop: `2px solid ${color.hairline}` }}>
-        <div style={{ color: blue, fontSize: 18, lineHeight: 1.15, fontWeight: type.labelWeight, letterSpacing: ".17em" }}>{spec.eyebrow}</div>
-        {!titleIsRepeatedInside ? <div style={{ color: ink, fontSize: Math.max(36, (spec.font_px || 30) + 5), lineHeight: 1.06, fontWeight: type.displayWeight, letterSpacing: "-.025em", marginTop: 13 }}>{spec.title}</div> : null}
+    <div
+      style={{
+        position: "absolute",
+        left: safe.x,
+        top: safe.top,
+        width,
+        maxHeight: 800,
+        opacity,
+        transform: `translateY(${(1 - reveal) * 16}px)`,
+        fontFamily: type.family,
+        zIndex: 8,
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          padding: "24px 28px 26px 34px",
+          background: "linear-gradient(135deg,rgba(10,16,23,.95),rgba(10,16,23,.84) 72%,rgba(10,16,23,.62))",
+          borderTop: `1px solid ${color.hairlineStrong}`,
+          borderRight: `1px solid ${color.hairline}`,
+          borderBottom: `1px solid ${color.hairline}`,
+          borderLeft: `3px solid ${railColor}`,
+          boxShadow: surface.shadow,
+          backdropFilter: `blur(${surface.blurPx}px)`,
+        }}
+      >
+        <div style={{ position: "absolute", right: 18, top: 17, width: 24, height: 24, borderTop: `1px solid ${railColor}`, borderRight: `1px solid ${railColor}`, opacity: .68 }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 12, color: railColor, fontSize: 15, lineHeight: 1.15, fontWeight: type.labelWeight, letterSpacing: type.trackingLabel, textTransform: "uppercase" }}>
+          <span style={{ width: 24, height: 1, background: railColor }} />
+          {spec.eyebrow}
+        </div>
+        {!titleIsRepeatedInside ? (
+          <div style={{ maxWidth: isEvidenceVisual ? 900 : 710, color: ink, fontFamily: type.displayFamily, fontSize: Math.max(37, (spec.font_px || 30) + 7), lineHeight: 1.06, fontWeight: type.displayWeight, letterSpacing: "-.03em", marginTop: 15 }}>{spec.title}</div>
+        ) : null}
         {spec.type === "source_mosaic" ? <SourceMosaic spec={spec} /> : null}
         {spec.type === "comparison" ? <Comparison spec={spec} /> : null}
         {spec.type === "process" ? <Process spec={spec} /> : null}
         {spec.type === "email_recreation" ? <EmailRecreation spec={spec} /> : null}
         {["document", "stat", "quote", "boundary"].includes(spec.type) ? <DefaultBody spec={spec} /> : null}
         {isEvidenceVisual ? <EvidenceVisual spec={spec as EvidenceVisualSpec} durationInFrames={durationInFrames} /> : null}
-        {spec.limitation ? <div style={{ marginTop: 18, borderLeft: `4px solid ${accent}`, background: "rgba(217,91,83,.12)", color: ink, padding: "12px 15px", fontSize: 22, lineHeight: 1.22, fontWeight: 720 }}>{spec.limitation}</div> : null}
+        {spec.limitation ? (
+          <div style={{ marginTop: 20, borderLeft: `2px solid ${accent}`, background: "rgba(201,107,95,.1)", color: ink, padding: "13px 16px", fontSize: 21, lineHeight: 1.28, fontWeight: 620 }}>{spec.limitation}</div>
+        ) : null}
         <SourceFooter spec={spec} />
       </div>
     </div>
