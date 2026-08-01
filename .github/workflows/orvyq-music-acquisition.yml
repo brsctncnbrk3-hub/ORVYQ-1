@@ -1,0 +1,119 @@
+name: ORVYQ Project Music Acquisition
+
+# Manual production-preparation workflow. It acquires only the licensed tracks
+# declared in the selected project's config/music_acquisition.json and never
+# renders video.
+on:
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Project directory id under projects/"
+        type: string
+        required: true
+      commit_package:
+        description: "Commit the verified music registry and project cue updates"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: orvyq-music-acquisition-${{ inputs.project_id }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PROJECT_ID: ${{ inputs.project_id }}
+
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate project production and music acquisition plans
+        run: |
+          set -euo pipefail
+          node --input-type=module -e "
+            import path from 'node:path';
+            import { loadProductionPolicy } from './scripts/lib/orvyq-project-profile.mjs';
+            import { projectDir, readJson } from './scripts/lib/fs-utils.mjs';
+            import { validateMusicAcquisitionPlan } from './scripts/orvyq_fetch_full_music.mjs';
+            await loadProductionPolicy(process.env.PROJECT_ID, { requireReady: false });
+            const plan = await readJson(path.join(projectDir(process.env.PROJECT_ID), 'config', 'music_acquisition.json'));
+            validateMusicAcquisitionPlan(plan, process.env.PROJECT_ID);
+          "
+
+      - name: Install ffmpeg and confirm Git LFS
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          git lfs version
+
+      - name: Download, verify and vendor project-declared tracks
+        run: node scripts/orvyq_fetch_full_music.mjs --project-id="$PROJECT_ID"
+
+      - name: Validate schemas and tests
+        run: |
+          npm run validate:canonical
+          npm test
+
+      - name: Confirm vendored tracks are stored through Git LFS
+        run: |
+          set -euo pipefail
+          for f in music_library/tracks/*.mp3; do
+            git check-attr filter "$f" | grep -q "filter: lfs" || { echo "::error::$f is not tracked by Git LFS"; exit 1; }
+          done
+
+      - name: Print resolved project music package
+        run: |
+          echo "--- project music cues ---"
+          node -e "
+            const s=require('./projects/$PROJECT_ID/direction/music_cue_sheet.json');
+            for (const c of (s.full_cues || s.cues || [])) console.log(c.cue_id, c.track_id, c.status);
+          "
+          echo "--- shared registry ---"
+          node -e "const r=require('./music_library/registry.json'); for (const t of r.tracks) console.log(t.track_id, t.title, t.approved_for_full, t.status)"
+
+      - name: Upload verified music package for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-music-${{ inputs.project_id }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            projects/${{ env.PROJECT_ID }}/config/music_acquisition.json
+            projects/${{ env.PROJECT_ID }}/direction/music_cue_sheet.json
+            projects/${{ env.PROJECT_ID }}/assets/music/youtube_description_attribution.txt
+            music_library/registry.json
+            music_library/license_snapshots/**
+          if-no-files-found: warn
+
+      - name: Commit verified music package when explicitly requested
+        if: ${{ inputs.commit_package == true }}
+        run: |
+          set -euo pipefail
+          git config user.name "orvyq-music-acquisition-bot"
+          git config user.email "orvyq-music-acquisition-bot@users.noreply.github.com"
+          git add -f music_library/ \
+            "projects/$PROJECT_ID/direction/music_cue_sheet.json" \
+            "projects/$PROJECT_ID/assets/music/youtube_description_attribution.txt"
+          if git diff --cached --quiet; then
+            echo "No music package changes"
+            exit 0
+          fi
+          git commit -m "Vendor licensed music package for $PROJECT_ID"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
