@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "status": "needs_editorial_input",
+  "creative_profile": "orvyq-aperture-cinematic",
+  "visual_medium_balance": {
+    "contextual_footage_fraction_min": 0.60,
+    "contextual_footage_fraction_max": 0.70,
+    "primary_evidence_fraction_min": 0.20,
+    "graphic_card_fraction_max": 0.15,
+    "full_screen_text_card_fraction_max": 0.03,
+    "section_graphic_card_fraction_max": 0.25,
+    "maximum_consecutive_graphic_card_shots": 1,
+    "maximum_graphic_template_uses": 3,
+    "maximum_full_screen_template_uses": 2,
+    "project_overrides_may_only_tighten": true
+  },
+  "art_direction": {
+    "topic": "The competitive race to build increasingly powerful artificial intelligence and the tension between catastrophic-risk reduction and concentrated control",
+    "palette": {
+      "ink": "#F5F0E7",
+      "accent": "#D95B53",
+      "information": "#86A9CC",
+      "ground": "#07101A"
+    },
+    "source_treatment": "full-screen primary evidence and explicitly source-derived graphics",
+    "old_project_visual_reuse_forbidden": true
+  },
+  "end_card": {
+    "title": "THE RACE IS STILL BEING DECIDED",
+    "subtitle": "By people. Right now."
+  },
+  "hook": {
+    "first_shot_role": "human_context",
+    "first_shot_asset": null,
+    "target_cut_count": 4,
+    "target_duration_seconds": 11,
+    "question_minimum_characters": 35,
+    "question_maximum_characters": 100
+  },
+  "editorial_rhythm": {
+    "full_pause_target": 3,
+    "brief_accent_target": 4,
+    "brief_accent_minimum_seconds": 1.5,
+    "brief_accent_maximum_seconds": 3
+  },
+  "opening_evidence": {
+    "kind": "official_document",
+    "target_asset_count": 1
+  },
+  "creative_polish": {
+    "require_repetition_reduction": true,
+    "source_review_run_id": null,
+    "footage_replacements": []
+  }
+}
