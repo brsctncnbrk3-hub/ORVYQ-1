@@ -3,59 +3,98 @@
   "$id": "https://orvyq.dev/schemas/visual_rebalance_plan.schema.json",
   "title": "ORVYQ visual rebalance plan",
   "type": "object",
-  "required": ["schema_version", "project_id", "status", "baseline", "projected", "actions"],
+  "required": ["schema_version", "project_id", "status", "projected", "actions"],
   "properties": {
     "schema_version": { "const": "1.0" },
     "project_id": { "type": "string", "pattern": "^[0-9]{3}-[a-z0-9]+(?:-[a-z0-9]+)*$" },
-    "status": { "enum": ["blocked_pending_assets", "materialized"] },
+    "status": { "enum": ["planned_pending_primary_evidence", "blocked_pending_assets", "materialized"] },
     "purpose": { "type": "string", "minLength": 24 },
-    "baseline": { "$ref": "#/$defs/mix" },
-    "projected": {
-      "allOf": [{ "$ref": "#/$defs/mix" }],
+    "projection_basis": { "type": "string", "minLength": 24 },
+    "materialization_note": { "type": "string", "minLength": 24 },
+    "visual_review_completed_at": { "type": "string", "format": "date-time" },
+    "thresholds": { "$ref": "#/$defs/thresholds" },
+    "target_balance": { "$ref": "#/$defs/thresholds" },
+    "rules": {
+      "type": "object",
       "properties": {
-        "maximum_consecutive_graphic_card_shots": { "type": "integer", "minimum": 0 }
-      }
+        "maximum_consecutive_graphic_card_shots": { "type": "integer", "minimum": 0 },
+        "section_graphic_card_fraction_max": { "type": "number", "minimum": 0, "maximum": 1 },
+        "old_project_asset_reuse_forbidden": { "const": true }
+      },
+      "additionalProperties": false
+    },
+    "blocked_asset_request_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^REQ_(EVD|FTG)_[A-Z0-9_]+$" }
+    },
+    "baseline": { "$ref": "#/$defs/measuredMix" },
+    "projected": {
+      "oneOf": [
+        { "$ref": "#/$defs/measuredMix" },
+        { "$ref": "#/$defs/projectedMix" }
+      ]
     },
     "actions": {
       "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "required": ["baseline_shot_index", "claim_id", "duration_seconds", "decision", "projected_medium", "rationale"],
-        "properties": {
-          "baseline_shot_index": { "type": "integer", "minimum": 0 },
-          "claim_id": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" },
-          "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
-          "decision": { "enum": ["keep", "redesign", "replace_primary_evidence", "replace_contextual_footage", "remove"] },
-          "projected_medium": { "enum": ["contextual_footage", "primary_evidence", "graphic_card"] },
-          "projected_full_screen_text_card": { "type": "boolean" },
-          "template_id": { "type": "string", "minLength": 3 },
-          "asset_request_id": { "type": "string", "pattern": "^REQ_(EVD|FTG)_[A-Z0-9_]+$" },
-          "replacement_strategy": { "enum": ["extend_adjacent_footage"] },
-          "replacement_assets": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "type": "object",
-              "required": ["asset_path"],
-              "properties": {
-                "asset_path": { "type": "string", "minLength": 8 },
-                "evidence_asset_id": { "type": "string", "pattern": "^EVID_[A-Z0-9_]+$" },
-                "source_region": { "type": "string", "minLength": 3 },
-                "trim_in_sec": { "type": "number", "minimum": 0 },
-                "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 }
-              },
-              "additionalProperties": false
-            }
-          },
-          "rationale": { "type": "string", "minLength": 24 }
-        },
-        "additionalProperties": false
-      }
+      "items": { "$ref": "#/$defs/action" }
     }
   },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "materialized" } }, "required": ["status"] },
+      "then": {
+        "required": ["baseline", "purpose"],
+        "properties": {
+          "projected": { "$ref": "#/$defs/measuredMix" },
+          "actions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/action" } }
+        }
+      },
+      "else": {
+        "required": ["projection_basis", "thresholds", "target_balance", "rules", "blocked_asset_request_ids", "materialization_note"]
+      }
+    }
+  ],
   "$defs": {
-    "mix": {
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "contextual_footage_fraction_min",
+        "contextual_footage_fraction_max",
+        "primary_evidence_fraction_min",
+        "graphic_card_fraction_max",
+        "full_screen_text_card_fraction_max"
+      ],
+      "properties": {
+        "contextual_footage_fraction_min": { "type": "number", "minimum": 0, "maximum": 1 },
+        "contextual_footage_fraction_max": { "type": "number", "minimum": 0, "maximum": 1 },
+        "primary_evidence_fraction_min": { "type": "number", "minimum": 0, "maximum": 1 },
+        "graphic_card_fraction_max": { "type": "number", "minimum": 0, "maximum": 1 },
+        "full_screen_text_card_fraction_max": { "type": "number", "minimum": 0, "maximum": 1 },
+        "maximum_consecutive_graphic_card_shots": { "type": "integer", "minimum": 0 },
+        "section_graphic_card_fraction_max": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "projectedMix": {
+      "type": "object",
+      "required": [
+        "contextual_footage_fraction",
+        "primary_evidence_fraction",
+        "graphic_card_fraction",
+        "full_screen_text_card_fraction",
+        "maximum_consecutive_graphic_card_shots"
+      ],
+      "properties": {
+        "contextual_footage_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "primary_evidence_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "graphic_card_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "full_screen_text_card_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
+        "maximum_consecutive_graphic_card_shots": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "measuredMix": {
       "type": "object",
       "required": [
         "duration_frames",
@@ -82,6 +121,36 @@
         "full_screen_text_card_seconds": { "type": "number", "minimum": 0 },
         "full_screen_text_card_fraction": { "type": "number", "minimum": 0, "maximum": 1 },
         "maximum_consecutive_graphic_card_shots": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "replacementAsset": {
+      "type": "object",
+      "required": ["asset_path"],
+      "properties": {
+        "asset_path": { "type": "string", "minLength": 8 },
+        "evidence_asset_id": { "type": "string", "pattern": "^EVID_[A-Z0-9_]+$" },
+        "source_region": { "type": "string", "minLength": 3 },
+        "trim_in_sec": { "type": "number", "minimum": 0 },
+        "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "action": {
+      "type": "object",
+      "required": ["baseline_shot_index", "claim_id", "duration_seconds", "decision", "projected_medium", "rationale"],
+      "properties": {
+        "baseline_shot_index": { "type": "integer", "minimum": 0 },
+        "claim_id": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" },
+        "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
+        "decision": { "enum": ["keep", "redesign", "replace_primary_evidence", "replace_contextual_footage", "remove"] },
+        "projected_medium": { "enum": ["contextual_footage", "primary_evidence", "graphic_card"] },
+        "projected_full_screen_text_card": { "type": "boolean" },
+        "template_id": { "type": "string", "minLength": 3 },
+        "asset_request_id": { "type": "string", "pattern": "^REQ_(EVD|FTG)_[A-Z0-9_]+$" },
+        "replacement_strategy": { "enum": ["extend_adjacent_footage"] },
+        "replacement_assets": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/replacementAsset" } },
+        "rationale": { "type": "string", "minLength": 24 }
       },
       "additionalProperties": false
     }
