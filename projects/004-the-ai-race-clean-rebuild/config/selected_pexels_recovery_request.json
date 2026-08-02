@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 5,
-  "reason": "Replace the four clips rejected by four-position semantic and cinematic review, preserve the other sixteen selections, and produce a new verified 20-of-20 footage package. No video render is permitted.",
-  "requested_at": "2026-08-02T09:18:00Z"
+  "request_revision": 6,
+  "reason": "Replace only scene_008 after the first replacement failed the premium cinematic review, preserve the other nineteen selections, and regenerate a verified 20-of-20 footage package. No video render is permitted.",
+  "requested_at": "2026-08-02T09:44:00Z"
 }
