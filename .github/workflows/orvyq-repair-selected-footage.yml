@@ -118,14 +118,15 @@ jobs:
           set -euo pipefail
           git config user.name "orvyq-footage-replacement-bot"
           git config user.email "orvyq-footage-replacement-bot@users.noreply.github.com"
-          git add -A \
+          git add -- \
             "projects/$PROJECT_ID/research/selected_pexels_manifest.json" \
             "projects/$PROJECT_ID/research/visual_asset_reviews.json" \
-            "projects/$PROJECT_ID/assets/footage" \
             "projects/$PROJECT_ID/assets/local_assets.json" \
             "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" \
-            "projects/$PROJECT_ID/qa/footage-contact-sheets" \
             "projects/$PROJECT_ID/qa/footage_review_queue.json"
+          git add -f -- \
+            "projects/$PROJECT_ID/assets/footage" \
+            "projects/$PROJECT_ID/qa/footage-contact-sheets"
           if git diff --cached --quiet; then
             echo "Replacement package is already published"
             exit 0
