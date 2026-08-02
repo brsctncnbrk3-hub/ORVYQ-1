@@ -2,9 +2,9 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 1,
-  "requested_at": "2026-08-02T09:14:00Z",
-  "review_basis": "Four-position byte-bound contact-sheet review of all 20 selected clips. Only the four rejected scenes are replaced; all other scene selections remain unchanged.",
+  "request_revision": 2,
+  "requested_at": "2026-08-02T09:43:00Z",
+  "review_basis": "Four-position byte-bound contact-sheet review of all 20 selected clips plus a second review of the first replacement set. Only the remaining rejected scene is changed; the other nineteen selections remain unchanged.",
   "overrides": [
     {
       "scene_id": "scene_001",
@@ -22,10 +22,10 @@
     },
     {
       "scene_id": "scene_008",
-      "replaced_provider_asset_ids": ["28709421", "1085656"],
-      "provider_asset_ids": ["6804656", "5377280"],
-      "reason": "The previous clip was an indistinct ping-terminal close-up and did not visually carry the scale or human oversight of an AI-assisted cyber operation.",
-      "semantic_rationale": "A technician actively handling network infrastructure provides a physical analogue for machine-scale technical operations with humans intervening at key moments; the provider report carries the factual burden."
+      "replaced_provider_asset_ids": ["28709421", "1085656", "6804656"],
+      "provider_asset_ids": ["5377280"],
+      "reason": "The first replacement showed a cramped cable tangle with an unintentionally comic, low-budget tone; it did not meet the premium cinematic standard even though the network context was technically relevant.",
+      "semantic_rationale": "A serious network-operations image should provide a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries every factual claim."
     },
     {
       "scene_id": "scene_016",
