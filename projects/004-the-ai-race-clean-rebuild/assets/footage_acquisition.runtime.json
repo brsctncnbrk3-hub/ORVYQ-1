@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.4-selected-public-pexels",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "generated_at": "2026-08-02T02:24:02.017Z",
+  "source": "pexels_public_download",
+  "license_url": "https://www.pexels.com/license/",
+  "planned_asset_count": 20,
+  "acquired_this_run": 15,
+  "reused_existing": 0,
+  "unresolved_scene_ids": [
+    "scene_005",
+    "scene_007",
+    "scene_009",
+    "scene_010",
+    "scene_016"
+  ],
+  "unresolved": [
+    {
+      "scene_id": "scene_005",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "errors": [
+        {
+          "provider_asset_id": "34406409",
+          "error": "portrait/square source 2160x3840"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_007",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "errors": [
+        {
+          "provider_asset_id": "7253660",
+          "error": "compacted clip failed landscape HD validation 1280x676"
+        },
+        {
+          "provider_asset_id": "5377775",
+          "error": "portrait/square source 2160x3840"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_009",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "errors": [
+        {
+          "provider_asset_id": "8381457",
+          "error": "source shorter than 8s"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_010",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "errors": [
+        {
+          "provider_asset_id": "6214601",
+          "error": "compacted clip failed landscape HD validation 1280x674"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "errors": [
+        {
+          "provider_asset_id": "3895141",
+          "error": "source shorter than 8s"
+        },
+        {
+          "provider_asset_id": "2070044",
+          "error": "source shorter than 8s"
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "path": "assets/footage/scene_001_8534745.mp4",
+      "scene_id": "scene_001",
+      "provider_asset_id": "8534745",
+      "role": "human_context",
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS"
+    },
+    {
+      "path": "assets/footage/scene_002_5028622.mp4",
+      "scene_id": "scene_002",
+      "provider_asset_id": "5028622",
+      "role": "context",
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE"
+    },
+    {
+      "path": "assets/footage/scene_003_5240935.mp4",
+      "scene_id": "scene_003",
+      "provider_asset_id": "5240935",
+      "role": "context",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
+    },
+    {
+      "path": "assets/footage/scene_004_7989678.mp4",
+      "scene_id": "scene_004",
+      "provider_asset_id": "7989678",
+      "role": "human_context",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT"
+    },
+    {
+      "path": "assets/footage/scene_006_7989454.mp4",
+      "scene_id": "scene_006",
+      "provider_asset_id": "7989454",
+      "role": "context",
+      "claim_id": "CLM_007_FRONTIER_GAP"
+    },
+    {
+      "path": "assets/footage/scene_008_1085656.mp4",
+      "scene_id": "scene_008",
+      "provider_asset_id": "1085656",
+      "role": "context",
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE"
+    },
+    {
+      "path": "assets/footage/scene_011_8201290.mp4",
+      "scene_id": "scene_011",
+      "provider_asset_id": "8201290",
+      "role": "human_context",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE"
+    },
+    {
+      "path": "assets/footage/scene_012_38081600.mp4",
+      "scene_id": "scene_012",
+      "provider_asset_id": "38081600",
+      "role": "context",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION"
+    },
+    {
+      "path": "assets/footage/scene_013_34900372.mp4",
+      "scene_id": "scene_013",
+      "provider_asset_id": "34900372",
+      "role": "governance_context",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS"
+    },
+    {
+      "path": "assets/footage/scene_014_7989455.mp4",
+      "scene_id": "scene_014",
+      "provider_asset_id": "7989455",
+      "role": "human_context",
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY"
+    },
+    {
+      "path": "assets/footage/scene_015_7989450.mp4",
+      "scene_id": "scene_015",
+      "provider_asset_id": "7989450",
+      "role": "human_context",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF"
+    },
+    {
+      "path": "assets/footage/scene_017_6930347.mp4",
+      "scene_id": "scene_017",
+      "provider_asset_id": "6930347",
+      "role": "human_context",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION"
+    },
+    {
+      "path": "assets/footage/scene_018_6951401.mp4",
+      "scene_id": "scene_018",
+      "provider_asset_id": "6951401",
+      "role": "governance_context",
+      "claim_id": "CLM_020_INCIDENT_REPORTING"
+    },
+    {
+      "path": "assets/footage/scene_019_992599.mp4",
+      "scene_id": "scene_019",
+      "provider_asset_id": "992599",
+      "role": "human_context",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS"
+    },
+    {
+      "path": "assets/footage/scene_020_7140928.mp4",
+      "scene_id": "scene_020",
+      "provider_asset_id": "7140928",
+      "role": "context",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS"
+    }
+  ],
+  "pass": false
+}

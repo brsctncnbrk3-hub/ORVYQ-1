@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "path": "assets/footage/scene_001_8534745.mp4"
+    },
+    {
+      "path": "assets/footage/scene_002_5028622.mp4"
+    },
+    {
+      "path": "assets/footage/scene_003_5240935.mp4"
+    },
+    {
+      "path": "assets/footage/scene_004_7989678.mp4"
+    },
+    {
+      "path": "assets/footage/scene_006_7989454.mp4"
+    },
+    {
+      "path": "assets/footage/scene_008_1085656.mp4"
+    },
+    {
+      "path": "assets/footage/scene_011_8201290.mp4"
+    },
+    {
+      "path": "assets/footage/scene_012_38081600.mp4"
+    },
+    {
+      "path": "assets/footage/scene_013_34900372.mp4"
+    },
+    {
+      "path": "assets/footage/scene_014_7989455.mp4"
+    },
+    {
+      "path": "assets/footage/scene_015_7989450.mp4"
+    },
+    {
+      "path": "assets/footage/scene_017_6930347.mp4"
+    },
+    {
+      "path": "assets/footage/scene_018_6951401.mp4"
+    },
+    {
+      "path": "assets/footage/scene_019_992599.mp4"
+    },
+    {
+      "path": "assets/footage/scene_020_7140928.mp4"
+    }
+  ]
+}
