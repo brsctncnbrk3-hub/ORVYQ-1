@@ -97,10 +97,23 @@ jobs:
             git check-attr filter "$f" | grep -q "filter: lfs" || { echo "::error::$f is not tracked by Git LFS"; exit 1; }
           done
 
-      - name: Validate schemas and tests
+      - name: Validate schemas and tests with diagnostics
+        shell: bash
         run: |
-          npm run validate:canonical
-          npm test
+          set +e
+          npm run validate:canonical > canonical-validation.log 2>&1
+          CANONICAL_STATUS=$?
+          npm test > unit-tests.log 2>&1
+          TEST_STATUS=$?
+          set -e
+          echo "--- canonical validation ---"
+          cat canonical-validation.log
+          echo "--- unit tests ---"
+          cat unit-tests.log
+          if [ "$CANONICAL_STATUS" -ne 0 ] || [ "$TEST_STATUS" -ne 0 ]; then
+            echo "::error::Canonical validation status=$CANONICAL_STATUS; unit test status=$TEST_STATUS"
+            exit 1
+          fi
 
       - name: Upload verified music package
         if: always()
@@ -110,6 +123,8 @@ jobs:
           retention-days: 30
           path: |
             music-acquisition.log
+            canonical-validation.log
+            unit-tests.log
             projects/${{ env.PROJECT_ID }}/config/music_acquisition.json
             projects/${{ env.PROJECT_ID }}/assets/music/youtube_description_attribution.txt
             music_library/registry.json
