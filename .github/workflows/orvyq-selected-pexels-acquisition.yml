@@ -55,7 +55,7 @@ jobs:
           grep -q 'timeStretchFactor' scripts/orvyq_acquire_selected_pexels.mjs
           grep -q 'actual_duration_seconds' scripts/orvyq_acquire_selected_pexels.mjs
 
-      - name: Set twelve-second cinematic capacity target
+      - name: Complete the thirty-five-scene twelve-second capacity plan
         shell: bash
         run: |
           set -euo pipefail
@@ -63,7 +63,42 @@ jobs:
           import { promises as fs } from 'node:fs';
           const file = `projects/${process.env.PROJECT_ID}/research/selected_pexels_manifest.json`;
           const manifest = JSON.parse(await fs.readFile(file, 'utf8'));
+          const additions = [
+            {
+              scene_id: 'scene_031', claim_id: 'CLM_004_TEST_NOT_DEPLOYMENT', provider_asset_ids: ['6804123'], role: 'human_context',
+              min_duration_seconds: 8, output_duration_seconds: 12,
+              narration_anchor: 'These were designed tests, built specifically to see how far a model would go.', semantic_link: 'physical',
+              semantic_rationale: 'A distinct developer-review setting adds controlled-test context without presenting stock footage as evidence of real deployment behavior.'
+            },
+            {
+              scene_id: 'scene_032', claim_id: 'CLM_006_INVESTMENT_SCALE', provider_asset_ids: ['7989454'], role: 'human_context',
+              min_duration_seconds: 8, output_duration_seconds: 12,
+              narration_anchor: 'The companies building frontier models are not operating like cautious scientific institutions.', semantic_link: 'conceptual',
+              semantic_rationale: 'A second technical team working under visible pressure gives the investment race a human operational scale while Stanford data carries the number.'
+            },
+            {
+              scene_id: 'scene_033', claim_id: 'CLM_016_COMPLIANCE_INCUMBENCY', provider_asset_ids: ['7989455'], role: 'human_context',
+              min_duration_seconds: 8, output_duration_seconds: 12,
+              narration_anchor: 'Established companies may also be better able to absorb the complex compliance costs.', semantic_link: 'physical',
+              semantic_rationale: 'A distinct small technical team reinforces the fixed-cost compliance analysis without claiming a measured outcome for any named firm.'
+            },
+            {
+              scene_id: 'scene_034', claim_id: 'CLM_018_CLOSED_ACCESS_TRADEOFF', provider_asset_ids: ['9460727'], role: 'context',
+              min_duration_seconds: 8, output_duration_seconds: 12,
+              narration_anchor: 'Closed models let a company monitor, restrict, and shut down misuse in real time.', semantic_link: 'conceptual',
+              semantic_rationale: 'A second controlled-access sequence makes centralized permission and revocation visible without depicting a specific AI provider.'
+            },
+            {
+              scene_id: 'scene_035', claim_id: 'CLM_020_INCIDENT_REPORTING', provider_asset_ids: ['34838666'], role: 'governance_context',
+              min_duration_seconds: 8, output_duration_seconds: 12,
+              narration_anchor: 'mandatory incident reporting when systems misbehave', semantic_link: 'conceptual',
+              semantic_rationale: 'A second formal policy meeting provides distinct reporting and oversight context without inventing a named hearing.'
+            }
+          ];
+          const existing = new Set(manifest.assets.map((asset) => asset.scene_id));
+          for (const addition of additions) if (!existing.has(addition.scene_id)) manifest.assets.push(addition);
           for (const asset of manifest.assets) asset.output_duration_seconds = 12;
+          manifest.request_revision = Math.max(Number(manifest.request_revision || 1), 4);
           manifest.selection_policy.maximum_output_duration_seconds = 12;
           await fs.writeFile(file, JSON.stringify(manifest, null, 2) + '\n');
           NODE
@@ -134,8 +169,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git add \
-            "projects/$PROJECT_ID/research/selected_pexels_manifest.json"
+          git add "projects/$PROJECT_ID/research/selected_pexels_manifest.json"
           git add -f \
             "projects/$PROJECT_ID/assets/footage" \
             "projects/$PROJECT_ID/assets/local_assets.json" \
@@ -145,7 +179,7 @@ jobs:
           git config user.name "orvyq-footage-bot"
           git config user.email "orvyq-footage-bot@users.noreply.github.com"
           if ! git diff --cached --quiet; then
-            git commit -m "Acquire twelve-second selected footage for $PROJECT_ID"
+            git commit -m "Acquire thirty-five twelve-second footage scenes for $PROJECT_ID"
             git pull --rebase origin "$TARGET_BRANCH"
             git push origin "HEAD:$TARGET_BRANCH"
           fi
@@ -155,6 +189,7 @@ jobs:
         run: |
           set -euo pipefail
           test "$(jq -r '.pass' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json")" = "true"
+          test "$(jq -r '.planned_asset_count' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json")" = "35"
           test "$(jq -r '.pass' "projects/$PROJECT_ID/qa/footage_contact_sheets.json")" = "true"
           test "$(jq '[.assets[].output_duration_seconds == 12] | all' "projects/$PROJECT_ID/research/selected_pexels_manifest.json")" = "true"
 
