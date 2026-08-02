@@ -47,67 +47,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
 
-      - name: Apply resilient media normalization
+      - name: Validate repository normalizer contract
         shell: bash
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/orvyq_acquire_selected_pexels.mjs')
-          text = p.read_text()
-          old_compact = '''async function compact(source, output, durationSeconds) {
-  await execFileAsync("ffmpeg", [
-    "-y",
-    "-i", source,
-    "-t", String(durationSeconds),
-    "-vf", "scale='min(1280,iw)':-2",
-    "-c:v", "libx264",
-    "-preset", "medium",
-    "-crf", "25",
-    "-pix_fmt", "yuv420p",
-    "-movflags", "+faststart",
-    "-an",
-    output,
-  ], { maxBuffer: 24 * 1024 * 1024 });
-}'''
-          new_compact = '''async function compact(source, output, durationSeconds) {
-  await execFileAsync("ffmpeg", [
-    "-y",
-    "-stream_loop", "-1",
-    "-i", source,
-    "-t", String(durationSeconds),
-    "-vf", "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,setsar=1",
-    "-c:v", "libx264",
-    "-preset", "medium",
-    "-crf", "25",
-    "-pix_fmt", "yuv420p",
-    "-movflags", "+faststart",
-    "-an",
-    output,
-  ], { maxBuffer: 24 * 1024 * 1024 });
-}'''
-          old_validation = '''    if (sourceInfo.width <= sourceInfo.height) throw new Error(`portrait/square source ${sourceInfo.width}x${sourceInfo.height}`);
-    if (sourceInfo.width < 1280 || sourceInfo.height < 720) throw new Error(`source below landscape HD ${sourceInfo.width}x${sourceInfo.height}`);
-    const minimumDuration = Number(item.min_duration_seconds || 8);
-    if (sourceInfo.duration + 0.05 < minimumDuration) throw new Error(`source shorter than ${minimumDuration}s`);
-    const requested = Math.min(
-      Number(item.output_duration_seconds || 10),
-      Number(sourceInfo.duration),
-      12,
-    );'''
-          new_validation = '''    if (sourceInfo.width < 480 || sourceInfo.height < 360) throw new Error(`source too small for safe HD normalization ${sourceInfo.width}x${sourceInfo.height}`);
-    if (sourceInfo.duration < 1) throw new Error(`source duration is unusable: ${sourceInfo.duration}s`);
-    const minimumDuration = Number(item.min_duration_seconds || 8);
-    const requested = Math.min(
-      Math.max(Number(item.output_duration_seconds || 10), minimumDuration),
-      12,
-    );'''
-          if old_compact not in text:
-              raise SystemExit('compact block not found')
-          if old_validation not in text:
-              raise SystemExit('validation block not found')
-          p.write_text(text.replace(old_compact, new_compact).replace(old_validation, new_validation))
-          PY
+          grep -q 'force_original_aspect_ratio' scripts/orvyq_acquire_selected_pexels.mjs
+          grep -q 'timeStretchFactor' scripts/orvyq_acquire_selected_pexels.mjs
+          grep -q 'actual_duration_seconds' scripts/orvyq_acquire_selected_pexels.mjs
 
       - name: Acquire selected licensed Pexels footage
         shell: bash
