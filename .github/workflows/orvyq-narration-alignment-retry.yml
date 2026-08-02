@@ -1,0 +1,72 @@
+name: ORVYQ Narration Alignment Retry
+
+on:
+  push:
+    branches:
+      - "agent/project-001-clean-rebuild"
+    paths:
+      - ".github/workflows/orvyq-narration-alignment-retry.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  align:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PROJECT_ID: 004-the-ai-race-clean-rebuild
+      TARGET_BRANCH: agent/project-001-clean-rebuild
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          lfs: true
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - name: Validate project profile without ready requirement
+        run: |
+          node --input-type=module -e "import { loadProductionPolicy } from './scripts/lib/orvyq-project-profile.mjs'; await loadProductionPolicy(process.env.PROJECT_ID, { requireReady: false });"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install speech tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          python -m pip install --disable-pip-version-check faster-whisper==1.2.0 requests==2.32.5
+      - name: Run full-duration speech QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" --output-name full_narration_speech_qa.json --model tiny.en | tee speech-qa.log
+      - name: Build canonical narration alignment
+        run: node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
+      - name: Commit alignment
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add "projects/$PROJECT_ID/qa/full_narration_speech_qa.json" "projects/$PROJECT_ID/voice/narration_alignment.json"
+          git config user.name "orvyq-narration-bot"
+          git config user.email "orvyq-narration-bot@users.noreply.github.com"
+          if ! git diff --cached --quiet; then
+            git commit -m "Record narration alignment for $PROJECT_ID"
+            git pull --rebase origin "$TARGET_BRANCH"
+            git push origin "HEAD:$TARGET_BRANCH"
+          fi
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-narration-alignment-retry-${{ github.run_id }}
+          retention-days: 14
+          path: |
+            speech-qa.log
+            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
+            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
+          if-no-files-found: warn
