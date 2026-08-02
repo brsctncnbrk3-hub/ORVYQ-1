@@ -1,0 +1,85 @@
+name: ORVYQ Apply Authored Footage Distribution
+
+on:
+  push:
+    branches:
+      - "agent/project-001-clean-rebuild"
+    paths:
+      - ".github/workflows/orvyq-apply-authored-footage-distribution.yml"
+      - "scripts/orvyq_apply_authored_footage_distribution.mjs"
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-authored-footage-distribution-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PROJECT_ID: 004-the-ai-race-clean-rebuild
+      TARGET_BRANCH: agent/project-001-clean-rebuild
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/project-001-clean-rebuild
+          lfs: true
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply authored distribution
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/orvyq_apply_authored_footage_distribution.mjs --project-id="$PROJECT_ID" | tee authored-footage-distribution.log
+          jq -e '.authored_distribution.target_footage_slices == 68 and .authored_distribution.predicted_footage_ratio >= 0.60 and .authored_distribution.predicted_footage_ratio <= 0.70 and .authored_distribution.predicted_evidence_ratio >= 0.20 and .authored_distribution.predicted_graphic_ratio <= 0.15 and .authored_distribution.predicted_max_uninterrupted_evidence_seconds <= 15 and ([.footage_assignments | to_entries[] | .value | to_entries[]] | length) == 68' "projects/$PROJECT_ID/config/editorial_asset_plan.json"
+
+      - name: Validate canonical state and unit tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run validate:canonical
+          npm test
+
+      - name: Commit and push authored distribution
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "orvyq-footage-director-bot"
+          git config user.email "orvyq-footage-director-bot@users.noreply.github.com"
+          git add "projects/$PROJECT_ID/config/editorial_asset_plan.json"
+          if git diff --cached --quiet; then
+            echo "Authored footage distribution is already published"
+            exit 0
+          fi
+          git commit -m "Author full-length footage distribution for $PROJECT_ID"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin "$TARGET_BRANCH" && git push origin "HEAD:$TARGET_BRANCH"; then exit 0; fi
+            git rebase --abort >/dev/null 2>&1 || true
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not publish authored footage distribution"
+          exit 1
+
+      - name: Report authored distribution result
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          BODY="Authored full-length footage distribution finished with **${JOB_STATUS}**. The plan targets 68 claim-bound footage slices, approximately 60.9% contextual footage, evidence above 20%, graphics below 15%, a 14.74-second maximum evidence run and every editorial pause on footage. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
