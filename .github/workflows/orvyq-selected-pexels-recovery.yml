@@ -43,8 +43,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
 
-      - name: Validate acquisition script syntax
-        run: node --check scripts/orvyq_acquire_selected_pexels.mjs
+      - name: Validate acquisition and override scripts
+        run: |
+          node --check scripts/orvyq_acquire_selected_pexels.mjs
+          node --check scripts/orvyq_apply_footage_candidate_overrides.mjs
+
+      - name: Apply reviewed footage candidate replacements
+        run: node scripts/orvyq_apply_footage_candidate_overrides.mjs --project-id="$PROJECT_ID"
 
       - name: Acquire all selected footage
         shell: bash
@@ -55,6 +60,22 @@ jobs:
           test "$(jq -r '.pass' "$RUNTIME")" = "true"
           test "$(jq '.records | length' "$RUNTIME")" -eq 20
           test "$(jq '.unresolved_scene_ids | length' "$RUNTIME")" -eq 0
+
+      - name: Confirm replacement scenes resolved to new candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="projects/$PROJECT_ID"
+          RUNTIME="$ROOT/assets/footage_acquisition.runtime.json"
+          OVERRIDES="$ROOT/config/footage_candidate_overrides.json"
+          jq -r '.overrides[] | [.scene_id, (.replaced_provider_asset_ids | join(","))] | @tsv' "$OVERRIDES" | while IFS=$'\t' read -r scene rejected; do
+            selected="$(jq -r --arg scene "$scene" '.records[] | select(.scene_id == $scene) | .provider_asset_id' "$RUNTIME")"
+            test -n "$selected"
+            if printf ',%s,' "$rejected" | grep -Fq ",$selected,"; then
+              echo "::error::$scene resolved back to rejected provider asset $selected"
+              exit 1
+            fi
+          done
 
       - name: Remove unselected acquisition variants
         shell: bash
@@ -98,13 +119,19 @@ jobs:
             selected-pexels-recovery.log
             projects/${{ env.PROJECT_ID }}/assets/footage_acquisition.runtime.json
             projects/${{ env.PROJECT_ID }}/assets/local_assets.json
+            projects/${{ env.PROJECT_ID }}/research/selected_pexels_manifest.json
+            projects/${{ env.PROJECT_ID }}/config/footage_candidate_overrides.json
           if-no-files-found: warn
 
       - name: Commit recovered footage state
         shell: bash
         run: |
           set -euo pipefail
-          git add scripts/orvyq_acquire_selected_pexels.mjs
+          git add \
+            scripts/orvyq_acquire_selected_pexels.mjs \
+            scripts/orvyq_apply_footage_candidate_overrides.mjs \
+            "projects/$PROJECT_ID/research/selected_pexels_manifest.json" \
+            "projects/$PROJECT_ID/config/footage_candidate_overrides.json"
           git add -f \
             "projects/$PROJECT_ID/assets/footage" \
             "projects/$PROJECT_ID/assets/local_assets.json" \
@@ -115,7 +142,7 @@ jobs:
             echo "No recovered footage changes to commit"
             exit 0
           fi
-          git commit -m "Complete selected footage acquisition for $PROJECT_ID"
+          git commit -m "Replace rejected footage for $PROJECT_ID"
           git pull --rebase origin "$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
 
@@ -126,8 +153,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
         run: |
-          DETAILS="$(jq -c '{planned_asset_count,acquired_this_run,unresolved_scene_ids,pass}' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" 2>/dev/null || true)"
-          BODY="Project 004 selected footage recovery finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          DETAILS="$(jq -c '{planned_asset_count,acquired_this_run,unresolved_scene_ids,pass,records: [.records[] | select(.scene_id == "scene_001" or .scene_id == "scene_003" or .scene_id == "scene_008" or .scene_id == "scene_016") | {scene_id,provider_asset_id}]}' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" 2>/dev/null || true)"
+          BODY="Project 004 reviewed footage replacement finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
           test -z "$DETAILS" || BODY="${BODY}"$'\n\n```json\n'"${DETAILS}"$'\n```'
           gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" ||
-            echo "::warning::Could not post recovery result to PR #5."
+            echo "::warning::Could not post replacement result to PR #5."
