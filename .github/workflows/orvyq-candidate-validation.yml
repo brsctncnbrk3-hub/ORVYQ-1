@@ -197,6 +197,9 @@ jobs:
             console.log('HOOK_DURATION_SECONDS=' + hookDuration);
           " | tee -a "$GITHUB_ENV"
 
+      - name: Build shot-derived canonical music cue sheet
+        run: node scripts/orvyq_build_music_cue_sheet.mjs --project-id="$PROJECT_ID" --target-duration-seconds="$CANDIDATE_DURATION_SECONDS"
+
       - name: Resolve canonical music
         run: node scripts/orvyq_music_resolve.mjs --project-id="$PROJECT_ID" --mode=full --target-duration-seconds="$CANDIDATE_DURATION_SECONDS"
 
