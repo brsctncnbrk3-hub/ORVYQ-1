@@ -6,14 +6,6 @@ on:
       - "agent/project-001-clean-rebuild"
     paths:
       - "projects/004-the-ai-race-clean-rebuild/config/selected_pexels_recovery_request.json"
-  pull_request:
-    branches:
-      - main
-    types: [opened, synchronize, reopened]
-    paths:
-      - ".github/workflows/orvyq-selected-pexels-recovery.yml"
-      - "scripts/orvyq_acquire_selected_pexels.mjs"
-      - "projects/004-the-ai-race-clean-rebuild/config/selected_pexels_recovery_request.json"
 
 permissions:
   contents: write
