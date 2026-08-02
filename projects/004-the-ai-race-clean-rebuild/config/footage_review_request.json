@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "status": "requested",
+  "request_revision": 1,
+  "reason": "Generate byte-bound four-position contact sheets for all 20 selected footage clips and prepare claim-specific semantic review inputs. No video render is permitted.",
+  "requested_at": "2026-08-02T08:57:00Z"
+}
