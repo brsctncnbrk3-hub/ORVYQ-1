@@ -1,0 +1,144 @@
+name: ORVYQ Footage Review Preparation
+
+on:
+  push:
+    branches:
+      - "agent/project-001-clean-rebuild"
+    paths:
+      - "projects/004-the-ai-race-clean-rebuild/config/footage_review_request.json"
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-footage-review-prep-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PROJECT_ID: 004-the-ai-race-clean-rebuild
+      TARGET_BRANCH: agent/project-001-clean-rebuild
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/project-001-clean-rebuild
+          lfs: true
+          fetch-depth: 2
+
+      - name: Install media tooling
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Confirm complete acquisition
+        run: |
+          set -euo pipefail
+          RUNTIME="projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
+          test "$(jq -r '.pass' "$RUNTIME")" = "true"
+          test "$(jq '.records | length' "$RUNTIME")" -eq 20
+
+      - name: Generate four-frame semantic contact sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="projects/$PROJECT_ID"
+          OUT="$ROOT/qa/footage-contact-sheets"
+          rm -rf "$OUT"
+          mkdir -p "$OUT"
+          find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0 | while IFS= read -r -d '' clip; do
+            base="$(basename "$clip" .mp4)"
+            ffmpeg -y -ss 0.5 -i "$clip" \
+              -vf "fps=1/2,scale=480:-2,tile=2x2:padding=8:margin=8" \
+              -frames:v 1 "$OUT/${base}.jpg" >/dev/null 2>&1
+          done
+          test "$(find "$OUT" -type f -name '*.jpg' | wc -l)" -eq 20
+
+      - name: Build byte-bound review queue
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import crypto from 'node:crypto';
+          import path from 'node:path';
+          import { promises as fs } from 'node:fs';
+          const projectId = process.env.PROJECT_ID;
+          const root = path.join('projects', projectId);
+          const runtime = JSON.parse(await fs.readFile(path.join(root, 'assets', 'footage_acquisition.runtime.json'), 'utf8'));
+          const manifest = JSON.parse(await fs.readFile(path.join(root, 'research', 'selected_pexels_manifest.json'), 'utf8'));
+          const byScene = new Map(manifest.assets.map((item) => [item.scene_id, item]));
+          const digest = (buffer) => crypto.createHash('sha256').update(buffer).digest('hex');
+          const records = [];
+          for (const record of runtime.records) {
+            const planned = byScene.get(record.scene_id) || {};
+            const provenancePath = path.join(root, `${record.path}.provenance.json`);
+            const provenance = JSON.parse(await fs.readFile(provenancePath, 'utf8'));
+            const contactSheet = `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`;
+            const sheetBuffer = await fs.readFile(path.join(root, contactSheet));
+            records.push({
+              scene_id: record.scene_id,
+              claim_id: record.claim_id,
+              provider_asset_id: record.provider_asset_id,
+              footage: record.path,
+              footage_sha256: provenance.actual_sha256 || provenance.sha256,
+              contact_sheet: contactSheet,
+              contact_sheet_sha256: digest(sheetBuffer),
+              duration_seconds: provenance.actual_duration_seconds || provenance.duration,
+              transformation: provenance.transformation || null,
+              narration_anchor: planned.narration_anchor,
+              semantic_rationale: planned.semantic_rationale,
+              semantic_link: planned.semantic_link,
+              review_status: 'pending_claim_specific_multiframe_review'
+            });
+          }
+          records.sort((a, b) => a.scene_id.localeCompare(b.scene_id));
+          await fs.writeFile(path.join(root, 'qa', 'footage_review_queue.json'), JSON.stringify({
+            schema_version: '1.1-multiframe',
+            project_id: projectId,
+            generated_at: new Date().toISOString(),
+            required_record_count: 20,
+            records
+          }, null, 2) + '\n');
+          NODE
+
+      - name: Upload semantic review package
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-footage-review-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            projects/${{ env.PROJECT_ID }}/qa/footage-contact-sheets/**
+            projects/${{ env.PROJECT_ID }}/qa/footage_review_queue.json
+            projects/${{ env.PROJECT_ID }}/research/selected_pexels_manifest.json
+          if-no-files-found: error
+
+      - name: Commit review package
+        run: |
+          set -euo pipefail
+          git config user.name "orvyq-footage-review-bot"
+          git config user.email "orvyq-footage-review-bot@users.noreply.github.com"
+          git add -f \
+            "projects/$PROJECT_ID/qa/footage-contact-sheets" \
+            "projects/$PROJECT_ID/qa/footage_review_queue.json"
+          if git diff --cached --quiet; then
+            echo "No review-package changes"
+            exit 0
+          fi
+          git commit -m "Prepare multiframe footage review for $PROJECT_ID"
+          git pull --rebase origin "$TARGET_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
+
+      - name: Report result
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          BODY="Project 004 multiframe footage review preparation finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
