@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 4,
-  "reason": "Regenerate the byte-bound four-position contact sheets after replacing the four rejected clips, and prepare a fresh 20-scene semantic review queue. No video render is permitted.",
-  "requested_at": "2026-08-02T09:38:00Z"
+  "request_revision": 5,
+  "reason": "Regenerate the final byte-bound four-position review package after replacing only scene_008 with provider asset 5377280, while preserving the other nineteen approved selections. No video render is permitted.",
+  "requested_at": "2026-08-02T09:54:00Z"
 }
