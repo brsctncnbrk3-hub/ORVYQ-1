@@ -131,5 +131,6 @@
   "source_pause_map": "direction/editorial_pause_map.json",
   "narration_source": "voice/voice_script.txt",
   "audio_source": "assets/audio/final_voice.mp3",
-  "old_project_timeline_reuse_forbidden": true
+  "old_project_timeline_reuse_forbidden": true,
+  "motion_hooks": []
 }

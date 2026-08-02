@@ -40,7 +40,7 @@
       "visual_role": "human_context",
       "generic_stock": true,
       "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
-      "editorial_purpose": "Use scene_001 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "editorial_purpose": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_link": "physical"
     },
@@ -59,7 +59,7 @@
       "visual_role": "context",
       "generic_stock": true,
       "narration_anchor": "And every one of them is still moving as fast as it can.",
-      "editorial_purpose": "Use scene_002 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "editorial_purpose": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_link": "physical"
     },
@@ -78,7 +78,7 @@
       "visual_role": "human_context",
       "generic_stock": true,
       "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
-      "editorial_purpose": "Use scene_006 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "editorial_purpose": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_link": "physical"
     },
@@ -97,7 +97,7 @@
       "visual_role": "context",
       "generic_stock": true,
       "narration_anchor": "A rival company. A rival government.",
-      "editorial_purpose": "Use scene_020 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "editorial_purpose": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "semantic_link": "physical"
     }
