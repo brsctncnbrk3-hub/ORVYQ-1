@@ -71,7 +71,7 @@ function buildReadyMotionHook({ motionHook, runtime, contracts }) {
         editorial_purpose: planned.semantic_rationale ||
           `Use ${planned.scene_id} as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.`,
         semantic_rationale: planned.semantic_rationale ||
-          `The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.`,
+          "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
         semantic_link: planned.semantic_link || "physical",
       };
     });
@@ -98,6 +98,10 @@ function buildReadyMotionHook({ motionHook, runtime, contracts }) {
   };
 }
 
+function requestIdForScene(sceneId) {
+  return `REQ_FTG_${String(sceneId).toUpperCase()}`;
+}
+
 export async function applyFootageReviewDecisions(projectId) {
   const dir = projectDir(projectId);
   const paths = {
@@ -107,40 +111,51 @@ export async function applyFootageReviewDecisions(projectId) {
     reviews: path.join(dir, "research", "visual_asset_reviews.json"),
     requests: path.join(dir, "research", "visual_asset_requests.json"),
     contracts: path.join(dir, "research", "footage_use_contracts.json"),
+    selectedManifest: path.join(dir, "research", "selected_pexels_manifest.json"),
     editorial: path.join(dir, "config", "editorial_asset_plan.json"),
     motionHook: path.join(dir, "direction", "motion_hook.json"),
     rebalance: path.join(dir, "direction", "visual_rebalance_plan.json"),
     project: path.join(dir, "project.json"),
     productionProfile: path.join(dir, "config", "production_profile.json"),
   };
-  const [queue, decisions, runtime, previousReviews, requests, contracts, editorial, motionHook, rebalance, project, productionProfile] = await Promise.all([
+  const [queue, decisions, runtime, previousReviews, requests, contracts, selectedManifest, editorial, motionHook, rebalance, project, productionProfile] = await Promise.all([
     readJson(paths.queue),
     readJson(paths.decisions),
     readJson(paths.runtime),
     readJson(paths.reviews),
     readJson(paths.requests),
     readJson(paths.contracts),
+    readJson(paths.selectedManifest),
     readJson(paths.editorial),
     readJson(paths.motionHook),
     readJson(paths.rebalance),
     readJson(paths.project),
     readJson(paths.productionProfile),
   ]);
-  for (const [label, document] of Object.entries({ queue, decisions, runtime, previousReviews, requests, contracts, editorial, motionHook, rebalance, project, productionProfile })) {
+  for (const [label, document] of Object.entries({ queue, decisions, runtime, previousReviews, requests, contracts, selectedManifest, editorial, motionHook, rebalance, project, productionProfile })) {
     if (document.project_id !== projectId) throw new Error(`${label} project_id mismatch`);
   }
-  if (runtime.pass !== true || Number(runtime.planned_asset_count) !== 20 || (runtime.records || []).length !== 20) {
-    throw new Error("Footage acquisition must pass with exactly 20 selected records before visual approval");
+
+  const expectedCount = (runtime.records || []).length;
+  if (
+    runtime.pass !== true ||
+    !expectedCount ||
+    Number(runtime.planned_asset_count) !== expectedCount ||
+    (runtime.unresolved_scene_ids || []).length !== 0 ||
+    (selectedManifest.assets || []).length !== expectedCount
+  ) {
+    throw new Error(`Footage acquisition must pass with every selected record before visual approval (planned=${runtime.planned_asset_count}, records=${expectedCount}, selected=${(selectedManifest.assets || []).length})`);
   }
   const entries = queue.entries || [];
-  if (entries.length !== 20 || Number(queue.pending_review_count) !== 20) {
-    throw new Error(`Review queue must contain exactly 20 pending entries, found ${entries.length}`);
+  if (entries.length !== expectedCount || Number(queue.pending_review_count) !== expectedCount) {
+    throw new Error(`Review queue must contain exactly ${expectedCount} pending entries, found ${entries.length}`);
   }
   const decisionList = decisions.decisions || [];
-  if (decisionList.length !== 20) throw new Error(`Decision file must contain exactly 20 decisions, found ${decisionList.length}`);
+  if (decisionList.length !== expectedCount) throw new Error(`Decision file must contain exactly ${expectedCount} decisions, found ${decisionList.length}`);
   const decisionByScene = new Map(decisionList.map((decision) => [decision.scene_id, decision]));
-  if (decisionByScene.size !== 20) throw new Error("Decision file contains duplicate scene ids");
+  if (decisionByScene.size !== expectedCount) throw new Error("Decision file contains duplicate scene ids");
   const recordByScene = new Map((runtime.records || []).map((record) => [record.scene_id, record]));
+  const selectedByScene = new Map((selectedManifest.assets || []).map((item) => [item.scene_id, item]));
   const approvalByScene = new Map();
   const reviewedAt = decisions.reviewed_at || new Date().toISOString();
 
@@ -150,9 +165,7 @@ export async function applyFootageReviewDecisions(projectId) {
     if (decision.decision !== "approve") {
       throw new Error(`${entry.scene_id}: decision is ${decision.decision}; replacement acquisition is required before the project can proceed`);
     }
-    if (String(decision.rationale || "").trim().length < 24) {
-      throw new Error(`${entry.scene_id}: approval rationale is too short`);
-    }
+    if (String(decision.rationale || "").trim().length < 24) throw new Error(`${entry.scene_id}: approval rationale is too short`);
     for (const [label, value] of [["asset_sha256", entry.asset_sha256], ["contact_sheet_sha256", entry.contact_sheet_sha256]]) {
       if (!HASH_PATTERN.test(String(value || ""))) throw new Error(`${entry.scene_id}: invalid ${label}`);
       if (String(decision[label] || "").toLowerCase() !== String(value).toLowerCase()) {
@@ -193,6 +206,7 @@ export async function applyFootageReviewDecisions(projectId) {
       asset_sha256: actualAssetHash,
       contact_sheet_path: entry.contact_sheet_path,
       contact_sheet_sha256: actualSheetHash,
+      reviewed_frame_count: 4,
       approved_uses: approvedUses,
       decision: "approved",
       decision_rationale: String(decision.rationale).trim(),
@@ -202,6 +216,7 @@ export async function applyFootageReviewDecisions(projectId) {
   }
 
   const approvals = [...approvalByScene.values()].sort((a, b) => a.scene_id.localeCompare(b.scene_id));
+  const rejectedAssets = [...(previousReviews.rejected_assets || [])];
   const reviews = {
     ...previousReviews,
     schema_version: "1.0",
@@ -209,22 +224,44 @@ export async function applyFootageReviewDecisions(projectId) {
     review_basis: "Fresh clean-rebuild four-frame contact-sheet review bound to current footage and contact-sheet SHA-256 values. No prior-project approval was reused.",
     summary: {
       pool_assets: runtime.records.length,
-      rejected_from_metadata: 0,
+      rejected_from_metadata: rejectedAssets.length,
       pending_frame_review: 0,
       approved: approvals.length,
     },
     pending_frame_review_scene_ids: [],
-    rejected_assets: [],
+    rejected_assets: rejectedAssets,
     approved_assets: approvals,
     completed_at: reviewedAt,
   };
 
+  const requestByScene = new Map();
   for (const request of requests.requests || []) {
     if (request.type !== "contextual_footage") continue;
-    const sceneId = request.scene_ids?.[0];
-    const record = recordByScene.get(sceneId);
-    const approval = approvalByScene.get(sceneId);
-    if (!record || !approval) throw new Error(`${request.asset_request_id}: reviewed footage resolution is missing`);
+    for (const sceneId of request.scene_ids || []) requestByScene.set(sceneId, request);
+  }
+  for (const entry of entries) {
+    if (requestByScene.has(entry.scene_id)) continue;
+    const selected = selectedByScene.get(entry.scene_id);
+    if (!selected) throw new Error(`${entry.scene_id}: selected manifest item is missing`);
+    const request = {
+      asset_request_id: requestIdForScene(entry.scene_id),
+      type: "contextual_footage",
+      status: "pending_frame_review",
+      claim_ids: [selected.claim_id],
+      scene_ids: [entry.scene_id],
+      required_source: "Fresh Pexels-licensed contextual footage selected for Project 004",
+      required_content: selected.semantic_rationale,
+      acceptance: "Exact current footage bytes must pass four-position claim-specific review and remain bound to the approved narration use.",
+      forbidden_substitutes: ["generic evidence substitute", "unreviewed footage", "old Project 001 footage"],
+    };
+    requests.requests.push(request);
+    requestByScene.set(entry.scene_id, request);
+  }
+  for (const entry of entries) {
+    const request = requestByScene.get(entry.scene_id);
+    const record = recordByScene.get(entry.scene_id);
+    const approval = approvalByScene.get(entry.scene_id);
+    if (!request || !record || !approval) throw new Error(`${entry.scene_id}: reviewed footage request resolution is missing`);
     request.status = "ready";
     request.resolved_asset_paths = [record.path];
     request.visual_review_binding = {
@@ -233,12 +270,12 @@ export async function applyFootageReviewDecisions(projectId) {
       reviewed_at: reviewedAt,
     };
   }
+  requests.requests.sort((a, b) => a.asset_request_id.localeCompare(b.asset_request_id));
 
-  const recordBySceneId = recordByScene;
   editorial.status = "ready";
   editorial.footage_assignments = {};
   for (const contract of contracts.assignments || []) {
-    const record = recordBySceneId.get(contract.scene_id);
+    const record = recordByScene.get(contract.scene_id);
     const approval = approvalByScene.get(contract.scene_id);
     if (!record || !approval) throw new Error(`${contract.scene_id}: approved contract footage is missing`);
     editorial.footage_assignments[contract.claim_id] ||= {};
@@ -250,6 +287,7 @@ export async function applyFootageReviewDecisions(projectId) {
       semantic_anchor: approval.approved_uses[0].narration_anchor,
       semantic_rationale: contract.semantic_rationale,
       semantic_link: contract.semantic_link || "physical",
+      ...(Number.isInteger(contract.span) && contract.span > 1 ? { span: contract.span } : {}),
     };
   }
   editorial.graphic_break_assignments ||= {};
@@ -282,6 +320,7 @@ export async function applyFootageReviewDecisions(projectId) {
   return {
     project_id: projectId,
     approved_asset_count: approvals.length,
+    preserved_rejected_asset_count: rejectedAssets.length,
     footage_assignment_count: (contracts.assignments || []).length,
     motion_hook_shot_count: readyHook.shots.length,
     render_authorized: false,
