@@ -92,32 +92,34 @@ jobs:
             if (String(approved.contact_sheet_sha256).toLowerCase() !== String(entry.contact_sheet_sha256).toLowerCase()) {
               throw new Error(`${entry.scene_id}: contact-sheet SHA-256 mismatch`);
             }
-            if (!Array.isArray(approved.approved_uses) || approved.approved_uses.length !== 1) {
-              throw new Error(`${entry.scene_id}: expected exactly one claim-bound approved use`);
+            if (!Array.isArray(approved.approved_uses) || approved.approved_uses.length < 1) {
+              throw new Error(`${entry.scene_id}: missing claim-bound approved use`);
             }
-            const use = approved.approved_uses[0];
-            if (!use.claim_id || !use.narration_anchor || !use.semantic_rationale) {
-              throw new Error(`${entry.scene_id}: incomplete claim-bound approved use`);
+            for (const approvedUse of approved.approved_uses) {
+              if (!approvedUse.claim_id || !approvedUse.narration_anchor || !approvedUse.semantic_rationale) {
+                throw new Error(`${entry.scene_id}: incomplete claim-bound approved use`);
+              }
             }
-            return { entry, approved, use };
+            const primaryUse = approved.approved_uses[0];
+            return { entry, approved, primaryUse, approvedUses: approved.approved_uses };
           });
 
           const expectedClaims = Array.from({ length: 21 }, (_, index) => `CLM_${String(index + 1).padStart(3, '0')}`);
           const byClaim = new Map(expectedClaims.map((claimId) => [claimId, []]));
           for (const item of normalized) {
-            const bucket = byClaim.get(item.use.claim_id);
-            if (!bucket) throw new Error(`${item.entry.scene_id}: unexpected claim ${item.use.claim_id}`);
+            const bucket = byClaim.get(item.primaryUse.claim_id);
+            if (!bucket) throw new Error(`${item.entry.scene_id}: unexpected primary claim ${item.primaryUse.claim_id}`);
             bucket.push(item);
           }
           for (const [claimId, items] of byClaim) {
             items.sort((a, b) => a.entry.scene_id.localeCompare(b.entry.scene_id));
             if (items.length < 1 || items.length > 2) {
-              throw new Error(`${claimId}: expected one or two approved footage assets, found ${items.length}`);
+              throw new Error(`${claimId}: expected one or two primary footage assets, found ${items.length}`);
             }
           }
           const singletonClaims = [...byClaim].filter(([, items]) => items.length === 1).map(([claimId]) => claimId);
-          if (singletonClaims.length !== 1 || singletonClaims[0] !== 'CLM_010') {
-            throw new Error(`Expected CLM_010 to be the only single-footage claim, found ${singletonClaims.join(',')}`);
+          if (singletonClaims.length !== 1) {
+            throw new Error(`Expected exactly one single-footage primary claim, found ${singletonClaims.join(',')}`);
           }
 
           const assignments = [];
@@ -130,7 +132,7 @@ jobs:
           for (const claimId of expectedClaims) {
             const items = byClaim.get(claimId);
             items.forEach((item, sliceIndex) => {
-              const { entry, approved, use } = item;
+              const { entry, approved, primaryUse, approvedUses } = item;
               const assetId = `local-footage-${entry.scene_id}`;
               const assignment = {
                 claim_id: claimId,
@@ -150,8 +152,9 @@ jobs:
                 source_type: 'pexels_footage',
                 license_scope: 'Pexels licensed footage with repository-local source and byte-bound review provenance',
                 claim_id: claimId,
-                narration_anchor: use.narration_anchor,
-                semantic_rationale: use.semantic_rationale,
+                narration_anchor: primaryUse.narration_anchor,
+                semantic_rationale: primaryUse.semantic_rationale,
+                approved_uses: approvedUses,
                 provider_asset_id: String(entry.provider_asset_id),
                 asset_sha256: entry.asset_sha256,
                 contact_sheet_path: entry.contact_sheet_path,
@@ -161,12 +164,13 @@ jobs:
 
               contracts.push({
                 assignment_id: `assignment_${entry.scene_id}`,
-                narration_anchor: use.narration_anchor,
+                narration_anchor: primaryUse.narration_anchor,
                 claim_id: claimId,
                 asset_path: entry.asset_path,
                 asset_sha256: entry.asset_sha256,
-                semantic_link: use.semantic_link || 'physical',
-                semantic_rationale: use.semantic_rationale,
+                semantic_link: primaryUse.semantic_link || 'physical',
+                semantic_rationale: primaryUse.semantic_rationale,
+                approved_uses: approvedUses,
                 review_method: approved.review_method,
                 contact_sheet_path: entry.contact_sheet_path,
                 contact_sheet_sha256: entry.contact_sheet_sha256,
@@ -177,9 +181,10 @@ jobs:
               requests.push({
                 request_id: `footage_${entry.scene_id}`,
                 type: 'footage',
-                claim_ids: [claimId],
-                intended_use: use.semantic_rationale,
-                required_semantics: use.narration_anchor,
+                claim_ids: [...new Set(approvedUses.map((use) => use.claim_id))],
+                intended_use: approvedUses.map((use) => use.semantic_rationale).join(' '),
+                required_semantics: approvedUses.map((use) => use.narration_anchor).join(' / '),
+                approved_uses: approvedUses,
                 status: 'approved_for_edit',
                 asset_path: entry.asset_path,
                 provider_asset_id: String(entry.provider_asset_id),
@@ -197,7 +202,7 @@ jobs:
                 contact_sheet_sha256: entry.contact_sheet_sha256,
                 decision: 'approved',
                 decision_rationale: approved.decision_rationale,
-                approved_uses: approved.approved_uses,
+                approved_uses: approvedUses,
                 reviewed_at: approved.reviewed_at || reviews.completed_at
               });
             });
@@ -214,7 +219,7 @@ jobs:
             approved_pool: approvedPool,
             candidate_assets: [],
             assignments,
-            notes: 'Synchronized from the exact current 41-of-41 four-position manual visual review. The first approved asset for each claim occupies slice 0; the second occupies slice 1. No rejected predecessor path is retained.'
+            notes: 'Synchronized from the exact current 41-of-41 four-position manual visual review. Each asset is assigned by its primary approved use; additional claim-specific approved uses remain preserved in the review, request and contract records. No rejected predecessor path is retained.'
           };
 
           const footageContracts = {
@@ -272,7 +277,7 @@ jobs:
             contracts: contracts.length,
             requests: requests.length,
             decisions: decisions.length,
-            singleton_claim: singletonClaims[0]
+            singleton_primary_claim: singletonClaims[0]
           }, null, 2));
           NODE
 
