@@ -2,6 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "requested_at": "2026-08-02T09:27:00Z",
-  "reason": "Insert the shot-derived music cue generation step before canonical music resolution. No render is permitted."
+  "request_revision": 2,
+  "requested_at": "2026-08-02T09:51:00Z",
+  "reason": "Insert and verify the shot-derived music cue generation step immediately before canonical music resolution, with diagnostics and PR reporting. No render is permitted."
 }
