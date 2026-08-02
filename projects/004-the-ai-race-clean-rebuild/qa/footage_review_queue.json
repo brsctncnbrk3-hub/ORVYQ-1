@@ -1,0 +1,762 @@
+{
+  "schema_version": "1.2-four-position",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "generated_at": "2026-08-02T09:03:22.938Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "pending_review_count": 20,
+  "entries_with_exact_uses": 20,
+  "entries": [
+    {
+      "scene_id": "scene_001",
+      "provider_asset_id": "8534745",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_001_8534745.mp4",
+      "asset_sha256": "c97db2d827d7938fd12d341970e9ef0ec4127f37a4f324d75d0a2015756aa76c",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_001_8534745.jpg",
+      "contact_sheet_sha256": "c796aade919d471b4e13e179a9ae0bcebfad70273436ce887dd9081df133e236",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+          "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
+          "semantic_rationale": "Researchers working together establishes the human institutions making frontier safety decisions without identifying a specific company.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_002",
+      "provider_asset_id": "5028622",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_002_5028622.mp4",
+      "asset_sha256": "f89c1403115494636b44694fa651f8eec685f82c49380ad57e1b26af61a04521",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_002_5028622.jpg",
+      "contact_sheet_sha256": "cd55f8a0b7a82cdca8e4fe3b063f01ba6eea1b940ad5904e0b15aa86c9645729",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "And every one of them is still moving as fast as it can.",
+          "semantic_rationale": "A moving view through active server infrastructure makes the physical acceleration and scale of the AI race visible.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "5240935",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_003_5240935.mp4",
+      "asset_sha256": "3a4124f4d1a8aebba1c090b9dd6995529d07f61aecd7e939d4ff3816f8a1d4a8",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_003_5240935.jpg",
+      "contact_sheet_sha256": "0c805700c3469ec56de62f7f416e114f9faef71e0f8da6f05185905ac65b7d13",
+      "duration_seconds": 10.01,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+          "semantic_rationale": "A monitored workstation and deliberate review process represents a controlled evaluation environment rather than a real-world incident.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "7989678",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_004_7989678.mp4",
+      "asset_sha256": "e07a5ce6af88da1b92f5b1438c10bc7eeb538cb98615333dcc036df4c1587d02",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_004_7989678.jpg",
+      "contact_sheet_sha256": "637f79bd1f737e7b189a631d7f9dd5e287a91bfa01ec39aacd6ab79bead0cc66",
+      "duration_seconds": 9.96,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.0281014041089305,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go.",
+          "semantic_rationale": "People reviewing software in a controlled office makes the test-versus-deployment distinction concrete without reenactment.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "34406409",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_005_34406409.mp4",
+      "asset_sha256": "f4525afc6cb7707430ce91c3ff1def747b3bf6350032b68bb9b6990f7045d8eb",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_005_34406409.jpg",
+      "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fill_and_center_crop",
+        "time_stretch_factor": 1.1194030268433965,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "Stanford's 2025 AI Index reported nearly thirty-four billion dollars in private generative-AI investment in 2024.",
+          "semantic_rationale": "A professional market-data environment supports the narration about capital flow while the factual number remains carried by primary evidence.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_006",
+      "provider_asset_id": "6803583",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_006_6803583.mp4",
+      "asset_sha256": "39548bd35e47c9aae3b6fc41fdafe5181df357fa8a5367035496592647960f74",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_006_6803583.jpg",
+      "contact_sheet_sha256": "a12d43d09d04facfa5d02bfa810e4c61932322d9ec56a4acb63fa5087685d129",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_007_FRONTIER_GAP",
+          "narration_anchor": "That closeness turns each major release into a strategic event.",
+          "semantic_rationale": "Parallel technical teams working under time pressure physically expresses competitive closeness without claiming to depict named laboratories.",
+          "semantic_link": "physical"
+        },
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
+          "semantic_rationale": "Use scene_006 as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_007",
+      "provider_asset_id": "7253660",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_007_7253660.mp4",
+      "asset_sha256": "5bd6d728232bbb41f50f3b34a3fdcf7e716c4140116122c82e06d8af68b4e2d2",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_007_7253660.jpg",
+      "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_008_CYBER_EXTORTION",
+          "narration_anchor": "In cybersecurity, AI has already lowered the barrier to entry.",
+          "semantic_rationale": "Security analysts investigating screens provides defensive operations context and is not presented as footage of a named victim or attacker.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_008",
+      "provider_asset_id": "28709421",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_008_28709421.mp4",
+      "asset_sha256": "0089ca8c1ac3f3caa5e166f49673ed813df05de6db5a2ad082b8e794fef2a934",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_008_28709421.jpg",
+      "contact_sheet_sha256": "fa067c5b0a4a4c89a4eef1640e5d4fafbbc4ba1c941d7cf72d442217390a5fc0",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fill_and_center_crop",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+          "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
+          "semantic_rationale": "Network data and active infrastructure visualize machine-scale technical operations while the provider report carries the factual burden.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_009",
+      "provider_asset_id": "8381457",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_009_8381457.mp4",
+      "asset_sha256": "a503ffba2794de82a49521775a313d4cdce78a8753dad105c181df6382efd9c3",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_009_8381457.jpg",
+      "contact_sheet_sha256": "f7dd7ff14f7c04361fe37415945850ba7d19aa73b529b4ea25f8a71ee526a85e",
+      "duration_seconds": 9.96,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.3736263736263736,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "On biological risk, Anthropic said its internal testing suggested Claude Opus 4 could provide a meaningful capability uplift.",
+          "semantic_rationale": "Properly protected laboratory personnel establishes biosafety and responsible research context without depicting weaponization.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_010",
+      "provider_asset_id": "6214601",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_010_6214601.mp4",
+      "asset_sha256": "6a6b742214c42024ad7bafc04fe3e076f2d61b487ef0c3ecad7118b7b89e1f39",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_010_6214601.jpg",
+      "contact_sheet_sha256": "6c30f4947e1becf582b806494f8d3c6101e1192cde88bd58a675ea4e7f1d5694",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "General-purpose AI can generate persuasive synthetic content cheaply and at scale.",
+          "semantic_rationale": "People consuming social feeds on phones shows the human distribution surface without asserting that any individual belief was changed.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_011",
+      "provider_asset_id": "8201290",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_011_8201290.mp4",
+      "asset_sha256": "5b991f9d15f1904ba0314f440373dec860cb3478c9eee6d6467ca95ef1ca1bd5",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_011_8201290.jpg",
+      "contact_sheet_sha256": "260eec169e85da64361530da1e382a5ce228b6edf352e67a8a7fc9cf1bff7dc1",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "The evidence measures exposure more reliably than it predicts unemployment.",
+          "semantic_rationale": "Workers performing computer-mediated service tasks illustrates occupational exposure and transformation rather than unemployment.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "38081600",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_012_38081600.mp4",
+      "asset_sha256": "ffeedbf38cc64e11e895367ea33dcf98be45f7c90c8cf78a9a8136b15c32137a",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_012_38081600.jpg",
+      "contact_sheet_sha256": "6d4db1c66047daa699d9ef694b1542086b5312c2c95d068957b80734c606d5f9",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_013_MARKET_CONCENTRATION",
+          "narration_anchor": "Frontier AI depends on costly computing power, cloud infrastructure, data, and capital.",
+          "semantic_rationale": "Large centralized infrastructure gives physical form to critical-input concentration without presenting a specific company as the subject.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_013",
+      "provider_asset_id": "34900372",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_013_34900372.mp4",
+      "asset_sha256": "01482f6eda32567e9326afd9d9bc0729f7fc1099ce6ebe61449a64878833da33",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_013_34900372.jpg",
+      "contact_sheet_sha256": "3f03023278f82ce9a15f15cc9436376a4aa53efa5720ac90ff81b8ab038ec4dc",
+      "duration_seconds": 10.01,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "Take Europe's AI Act. It uses different rules for different systems.",
+          "semantic_rationale": "European institutional imagery locates the governance discussion while the regulation itself remains the primary evidence.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_014",
+      "provider_asset_id": "6805175",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_014_6805175.mp4",
+      "asset_sha256": "56ca068294525f5f3325d256d131985387b8932c7cf4eccf929ea842996c9c8c",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_014_6805175.jpg",
+      "contact_sheet_sha256": "ef788d0bd910f3811ab4adb7620f821eba24afaa9343858645e89763e6a182bc",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+          "narration_anchor": "Established companies may also be better able to absorb the complex compliance, evaluation, reporting, and legal costs.",
+          "semantic_rationale": "A small technical team gives the possible compliance burden a human scale while the narration clearly presents the incumbency effect as analysis.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_015",
+      "provider_asset_id": "6804109",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_015_6804109.mp4",
+      "asset_sha256": "8847145526f469431869c6e914a9e399876a6bafa94029c54afa0c3c939fb3e4",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_015_6804109.jpg",
+      "contact_sheet_sha256": "671f9cb554070020fdcdaa8458cdc7c006982c037eba4a54cdf0f7788c5ff63a",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "Open-weight models let independent researchers audit them, find flaws, and build defensive tools.",
+          "semantic_rationale": "Developers collaborating openly represents independent inspection and adaptation without implying the displayed code is a specific model.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_016",
+      "provider_asset_id": "3895141",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_016_3895141.mp4",
+      "asset_sha256": "390a96a54572c129c4ffd85b64649cb6fce2d63d74fd3360e65c6ad7ded6b657",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_016_3895141.jpg",
+      "contact_sheet_sha256": "714d3782135479f0c931f2439118264b0aa0c15a45888bb64301038d11a0dfec",
+      "duration_seconds": 4.25425,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.75,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 4.3283327499999995,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+          "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
+          "semantic_rationale": "Restricted physical access provides a restrained visual analogue for centralized permission, monitoring and revocation.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_017",
+      "provider_asset_id": "6930347",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_017_6930347.mp4",
+      "asset_sha256": "2c1d3e84d16555d8f3c5c797ab440c874bd9a6e70c2b07d12e0dac9566b68d99",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_017_6930347.jpg",
+      "contact_sheet_sha256": "5f804ec59be0ad67c44fe8b80664f19d501ba930d44d0717f1b1d5903592b754",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "subjecting them to independent evaluations and audits before they ship",
+          "semantic_rationale": "A team jointly examining data and challenging conclusions represents independent evaluation as a human process rather than a safety certificate.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_018",
+      "provider_asset_id": "6951401",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_018_6951401.mp4",
+      "asset_sha256": "481a5622980b70b4c0692b964b51fbfe328c652de5e6a47a8c0c541cca1611aa",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_018_6951401.jpg",
+      "contact_sheet_sha256": "46b55cb263bfb72dbc6746981280ea013ad902701d3f06a0e7323b7282983a22",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_020_INCIDENT_REPORTING",
+          "narration_anchor": "mandatory incident reporting when systems misbehave, real legal liability and insurance",
+          "semantic_rationale": "A formal technology meeting supports reporting and oversight context without inventing a named hearing or regulatory proceeding.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_019",
+      "provider_asset_id": "992599",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_019_992599.mp4",
+      "asset_sha256": "fcf837643d484d801be8712ffd5b2f7eb21736d2d3ee6f6bb99892895d77a902",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_019_992599.jpg",
+      "contact_sheet_sha256": "1236e8d43a850617c2d02b9d90010e07cd208dd9cf508c7f02e9d109fd74c4b9",
+      "duration_seconds": 10,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "decisions that add up to a world shaped by whoever moved fastest, or whoever accumulated the most control",
+          "semantic_rationale": "Ordinary people moving through shared urban space returns the consequences of concentrated decisions to a distributed human scale.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_020",
+      "provider_asset_id": "7140928",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_020_7140928.mp4",
+      "asset_sha256": "e38d9c32788f7bbc654fe8d8786b9d921f6393f094fae23dc52d1229f04b7988",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_020_7140928.jpg",
+      "contact_sheet_sha256": "3e695669395970007f53c3c32343dee00c0173e623fbee8260123711571b05ce",
+      "duration_seconds": 9.958333,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.065340871259202,
+        "requested_duration_seconds": 10,
+        "normalized_duration_seconds": 10,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "It's still being decided... by people, right now.",
+          "semantic_rationale": "A close view of active server hardware ends on the physical machine while the narration places responsibility back on human choices.",
+          "semantic_link": "physical"
+        },
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "A rival company. A rival government.",
+          "semantic_rationale": "Use scene_020 as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    }
+  ]
+}
