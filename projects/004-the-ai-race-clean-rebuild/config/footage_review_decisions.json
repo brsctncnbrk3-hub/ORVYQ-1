@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "decisions": [
+    {
+      "scene_id": "scene_001",
+      "decision": "approve",
+      "asset_sha256": "6b63d924fc4d8fb2b688ca7e428e15a0f529942ea17f7a8b3d2750a4bd7aeef1",
+      "contact_sheet_sha256": "0221ba882ab8f71462fc7888ebf78297eec14dfc25953dc0f39875dcab897bbd",
+      "rationale": "Across all four frames, the clip consistently shows developers examining software together; it supplies credible human AI-development context without implying a named laboratory."
+    },
+    {
+      "scene_id": "scene_002",
+      "decision": "approve",
+      "asset_sha256": "f89c1403115494636b44694fa651f8eec685f82c49380ad57e1b26af61a04521",
+      "contact_sheet_sha256": "cd55f8a0b7a82cdca8e4fe3b063f01ba6eea1b940ad5904e0b15aa86c9645729",
+      "rationale": "All sampled frames maintain a moving view through active server infrastructure, clearly carrying the physical scale and acceleration of the AI race."
+    },
+    {
+      "scene_id": "scene_003",
+      "decision": "approve",
+      "asset_sha256": "d43e41ab3f2badf8b1c1d533888b7421151309e9d9c628228aac2e5d648553db",
+      "contact_sheet_sha256": "450a5d0bbf81ba39236399d62131ca55ab6ab731e09ba91e8523442e615432ff",
+      "rationale": "The four frames consistently show two developers conducting a deliberate shared-screen review, avoiding the rejected hacker cliché and supporting controlled-evaluation context."
+    },
+    {
+      "scene_id": "scene_004",
+      "decision": "approve",
+      "asset_sha256": "e07a5ce6af88da1b92f5b1438c10bc7eeb538cb98615333dcc036df4c1587d02",
+      "contact_sheet_sha256": "637f79bd1f737e7b189a631d7f9dd5e287a91bfa01ec39aacd6ab79bead0cc66",
+      "rationale": "The sampled sequence remains a controlled office software review, clearly reinforcing the distinction between designed tests and real-world deployment without reenactment."
+    },
+    {
+      "scene_id": "scene_005",
+      "decision": "approve",
+      "asset_sha256": "f4525afc6cb7707430ce91c3ff1def747b3bf6350032b68bb9b6990f7045d8eb",
+      "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
+      "rationale": "All frames preserve a professional market-data environment, supporting the investment-scale narration while leaving the factual figure to primary evidence."
+    },
+    {
+      "scene_id": "scene_006",
+      "decision": "approve",
+      "asset_sha256": "39548bd35e47c9aae3b6fc41fdafe5181df357fa8a5367035496592647960f74",
+      "contact_sheet_sha256": "a12d43d09d04facfa5d02bfa810e4c61932322d9ec56a4acb63fa5087685d129",
+      "rationale": "The contact sheet consistently shows parallel technical work under time pressure, conveying competitive proximity without pretending to depict named frontier laboratories."
+    },
+    {
+      "scene_id": "scene_007",
+      "decision": "approve",
+      "asset_sha256": "5bd6d728232bbb41f50f3b34a3fdcf7e716c4140116122c82e06d8af68b4e2d2",
+      "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
+      "rationale": "Across the clip, security personnel investigate technical displays in a credible defensive-operations setting without identifying a victim, attacker, or real incident."
+    },
+    {
+      "scene_id": "scene_008",
+      "decision": "approve",
+      "asset_sha256": "069627c79973511d26fa6be1fff64fa7df66bce66e47f13207fee1553c739017",
+      "contact_sheet_sha256": "883d1dc826d452b2b3a3d10273b70aedaea5b58045d78350f2438e8aa2ba0627",
+      "rationale": "The four frames maintain a restrained, premium network-operations display with enough visual development to suggest machine-scale technical activity; it is used only as context and not evidence."
+    },
+    {
+      "scene_id": "scene_009",
+      "decision": "approve",
+      "asset_sha256": "a503ffba2794de82a49521775a313d4cdce78a8753dad105c181df6382efd9c3",
+      "contact_sheet_sha256": "f7dd7ff14f7c04361fe37415945850ba7d19aa73b529b4ea25f8a71ee526a85e",
+      "rationale": "All sampled positions show properly protected laboratory work, providing responsible biosafety context without depicting weaponization or a specific organization."
+    },
+    {
+      "scene_id": "scene_010",
+      "decision": "approve",
+      "asset_sha256": "6a6b742214c42024ad7bafc04fe3e076f2d61b487ef0c3ecad7118b7b89e1f39",
+      "contact_sheet_sha256": "6c30f4947e1becf582b806494f8d3c6101e1192cde88bd58a675ea4e7f1d5694",
+      "rationale": "The sequence consistently shows people consuming mobile social content, accurately representing the distribution surface without asserting that beliefs were changed."
+    },
+    {
+      "scene_id": "scene_011",
+      "decision": "approve",
+      "asset_sha256": "5b991f9d15f1904ba0314f440373dec860cb3478c9eee6d6467ca95ef1ca1bd5",
+      "contact_sheet_sha256": "260eec169e85da64361530da1e382a5ce228b6edf352e67a8a7fc9cf1bff7dc1",
+      "rationale": "Across four frames, workers perform computer-mediated service tasks, illustrating occupational exposure and transformation rather than unemployment or replacement."
+    },
+    {
+      "scene_id": "scene_012",
+      "decision": "approve",
+      "asset_sha256": "ffeedbf38cc64e11e895367ea33dcf98be45f7c90c8cf78a9a8136b15c32137a",
+      "contact_sheet_sha256": "6d4db1c66047daa699d9ef694b1542086b5312c2c95d068957b80734c606d5f9",
+      "rationale": "The sampled frames consistently present large centralized technical infrastructure, giving physical form to compute concentration without identifying a particular company."
+    },
+    {
+      "scene_id": "scene_013",
+      "decision": "approve",
+      "asset_sha256": "01482f6eda32567e9326afd9d9bc0729f7fc1099ce6ebe61449a64878833da33",
+      "contact_sheet_sha256": "3f03023278f82ce9a15f15cc9436376a4aa53efa5720ac90ff81b8ab038ec4dc",
+      "rationale": "All frames retain European institutional context, locating the governance discussion while the actual AI Act remains the primary evidentiary source."
+    },
+    {
+      "scene_id": "scene_014",
+      "decision": "approve",
+      "asset_sha256": "56ca068294525f5f3325d256d131985387b8932c7cf4eccf929ea842996c9c8c",
+      "contact_sheet_sha256": "ef788d0bd910f3811ab4adb7620f821eba24afaa9343858645e89763e6a182bc",
+      "rationale": "The sequence consistently shows a small technical team at work, giving compliance burden a human scale while preserving the incumbency point as analysis."
+    },
+    {
+      "scene_id": "scene_015",
+      "decision": "approve",
+      "asset_sha256": "8847145526f469431869c6e914a9e399876a6bafa94029c54afa0c3c939fb3e4",
+      "contact_sheet_sha256": "671f9cb554070020fdcdaa8458cdc7c006982c037eba4a54cdf0f7788c5ff63a",
+      "rationale": "Across the clip, developers collaborate around code in a credible open-review setting without implying that the displayed material is a specific model or repository."
+    },
+    {
+      "scene_id": "scene_016",
+      "decision": "approve",
+      "asset_sha256": "89d25bad6cad8946af820e9784faf6da78108badd4c9a12d8d0c0d625d6ba109",
+      "contact_sheet_sha256": "99cbee965be9201c1e58491605354d3cc41ca7a15fd2852de115797855d03c0c",
+      "rationale": "All four frames show active use of a controlled-access keypad, adding motion and clearly visualizing permission, monitoring, and revocation without naming a company."
+    },
+    {
+      "scene_id": "scene_017",
+      "decision": "approve",
+      "asset_sha256": "2c1d3e84d16555d8f3c5c797ab440c874bd9a6e70c2b07d12e0dac9566b68d99",
+      "contact_sheet_sha256": "5f804ec59be0ad67c44fe8b80664f19d501ba930d44d0717f1b1d5903592b754",
+      "rationale": "The sampled sequence consistently shows a team jointly examining data, supporting independent evaluation as a human process rather than presenting a safety certificate."
+    },
+    {
+      "scene_id": "scene_018",
+      "decision": "approve",
+      "asset_sha256": "481a5622980b70b4c0692b964b51fbfe328c652de5e6a47a8c0c541cca1611aa",
+      "contact_sheet_sha256": "46b55cb263bfb72dbc6746981280ea013ad902701d3f06a0e7323b7282983a22",
+      "rationale": "All frames maintain a formal technology-meeting context suitable for reporting and oversight without inventing a named hearing or regulatory proceeding."
+    },
+    {
+      "scene_id": "scene_019",
+      "decision": "approve",
+      "asset_sha256": "fcf837643d484d801be8712ffd5b2f7eb21736d2d3ee6f6bb99892895d77a902",
+      "contact_sheet_sha256": "1236e8d43a850617c2d02b9d90010e07cd208dd9cf508c7f02e9d109fd74c4b9",
+      "rationale": "Across four positions, ordinary people move through shared urban space, returning the consequences of concentrated decisions to a broad human scale."
+    },
+    {
+      "scene_id": "scene_020",
+      "decision": "approve",
+      "asset_sha256": "e38d9c32788f7bbc654fe8d8786b9d921f6393f094fae23dc52d1229f04b7988",
+      "contact_sheet_sha256": "3e695669395970007f53c3c32343dee00c0173e623fbee8260123711571b05ce",
+      "rationale": "The sequence consistently holds on active server hardware with sufficient detail and motion, ending on the physical machine while narration returns responsibility to people."
+    }
+  ]
+}
