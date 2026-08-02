@@ -1,10 +1,12 @@
-name: ORVYQ Repair Selected Footage
+name: ORVYQ Replace Rejected Footage
 
 on:
   push:
     branches:
       - "agent/project-001-clean-rebuild"
     paths:
+      - "projects/004-the-ai-race-clean-rebuild/config/footage_candidate_overrides.json"
+      - "scripts/orvyq_acquire_selected_pexels.mjs"
       - ".github/workflows/orvyq-repair-selected-footage.yml"
 
 permissions:
@@ -12,8 +14,12 @@ permissions:
   issues: write
   pull-requests: write
 
+concurrency:
+  group: orvyq-replace-rejected-footage-${{ github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
-  repair-and-acquire:
+  replace:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 180
@@ -38,166 +44,131 @@ jobs:
           npm ci
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
+          git lfs version
 
-      - name: Repair selected-footage handling and candidates
+      - name: Record rejected byte identities and apply candidate overrides
         shell: bash
         run: |
           set -euo pipefail
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-
-          script = Path('scripts/orvyq_acquire_selected_pexels.mjs')
-          text = script.read_text()
-          old = '''async function compact(source, output, durationSeconds) {
-  await execFileAsync("ffmpeg", [
-    "-y",
-    "-i", source,
-    "-t", String(durationSeconds),
-    "-vf", "scale='min(1280,iw)':-2",
-    "-c:v", "libx264",
-    "-preset", "medium",
-    "-crf", "25",
-    "-pix_fmt", "yuv420p",
-    "-movflags", "+faststart",
-    "-an",
-    output,
-  ], { maxBuffer: 24 * 1024 * 1024 });
-}
-'''
-          new = '''async function compact(source, output, durationSeconds, sourceDurationSeconds) {
-  const shouldLoop = Number(sourceDurationSeconds) + 0.05 < Number(durationSeconds);
-  const args = ["-y"];
-  if (shouldLoop) args.push("-stream_loop", "-1");
-  args.push(
-    "-i", source,
-    "-t", String(durationSeconds),
-    "-vf", "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2:black",
-    "-c:v", "libx264",
-    "-preset", "medium",
-    "-crf", "25",
-    "-pix_fmt", "yuv420p",
-    "-movflags", "+faststart",
-    "-an",
-    output,
-  );
-  await execFileAsync("ffmpeg", args, { maxBuffer: 24 * 1024 * 1024 });
-}
-'''
-          if old in text:
-            text = text.replace(old, new)
-          elif new not in text:
-            raise SystemExit('compact function not found')
-
-          old2 = '''    if (sourceInfo.width <= sourceInfo.height) throw new Error(`portrait/square source ${sourceInfo.width}x${sourceInfo.height}`);
-    if (sourceInfo.width < 1280 || sourceInfo.height < 720) throw new Error(`source below landscape HD ${sourceInfo.width}x${sourceInfo.height}`);
-    const minimumDuration = Number(item.min_duration_seconds || 8);
-    if (sourceInfo.duration + 0.05 < minimumDuration) throw new Error(`source shorter than ${minimumDuration}s`);
-    const requested = Math.min(
-      Number(item.output_duration_seconds || 10),
-      Number(sourceInfo.duration),
-      12,
-    );
-    await compact(source, output, requested);
-'''
-          new2 = '''    if (sourceInfo.width <= sourceInfo.height) throw new Error(`portrait/square source ${sourceInfo.width}x${sourceInfo.height}`);
-    if (sourceInfo.width < 960 || sourceInfo.height < 540) throw new Error(`source below usable landscape resolution ${sourceInfo.width}x${sourceInfo.height}`);
-    const minimumDuration = Number(item.min_duration_seconds || 8);
-    const requested = Math.min(Number(item.output_duration_seconds || 10), 12);
-    await compact(source, output, Math.max(minimumDuration, requested), sourceInfo.duration);
-'''
-          if old2 in text:
-            text = text.replace(old2, new2)
-          elif new2 not in text:
-            raise SystemExit('candidate validation block not found')
-          script.write_text(text)
-
-          manifest_path = Path('projects/004-the-ai-race-clean-rebuild/research/selected_pexels_manifest.json')
-          manifest = json.loads(manifest_path.read_text())
-          replacements = {
-            'scene_005': ['30289540', '36435706', '36825184', '34406409'],
-            'scene_007': ['7253660', '5377775'],
-            'scene_009': ['5752559', '8381407', '9244463', '8381457'],
-            'scene_010': ['6214601'],
-            'scene_016': ['2070044', '3895141'],
-          }
-          for asset in manifest['assets']:
-            if asset['scene_id'] in replacements:
-              asset['provider_asset_ids'] = replacements[asset['scene_id']]
-              asset['output_duration_seconds'] = 10
-          manifest['request_revision'] = int(manifest.get('request_revision', 1)) + 1
-          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
-          PY
-
-      - name: Acquire all selected Pexels footage
-        shell: bash
-        run: |
-          set -euo pipefail
-          node scripts/orvyq_acquire_selected_pexels.mjs --project-id="$PROJECT_ID" | tee selected-pexels-acquisition.log
-          jq -e '.pass == true and .acquired_this_run == .planned_asset_count' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
-
-      - name: Generate resilient contact sheets
-        shell: bash
-        run: |
-          set -euo pipefail
-          ROOT="projects/$PROJECT_ID"
-          OUT="$ROOT/qa/footage-contact-sheets"
-          rm -rf "$OUT"
-          mkdir -p "$OUT"
-          find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0 | while IFS= read -r -d '' clip; do
-            base="$(basename "$clip" .mp4)"
-            if ! ffmpeg -y -ss 1 -i "$clip" -frames:v 1 -vf "scale=640:-2" "$OUT/${base}.jpg" >/dev/null 2>&1; then
-              ffmpeg -y -ss 0 -i "$clip" -frames:v 1 -vf "scale=640:-2" "$OUT/${base}.jpg" >/dev/null 2>&1
-            fi
-            test -s "$OUT/${base}.jpg"
-          done
           node --input-type=module - <<'NODE'
           import path from 'node:path';
           import { promises as fs } from 'node:fs';
-          const projectId = process.env.PROJECT_ID;
-          const root = path.join('projects', projectId);
-          const runtime = JSON.parse(await fs.readFile(path.join(root, 'assets', 'footage_acquisition.runtime.json'), 'utf8'));
-          const records = runtime.records.map((record) => ({
-            scene_id: record.scene_id,
-            claim_id: record.claim_id,
-            footage: record.path,
-            contact_sheet: `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`,
-            review_status: 'pending_claim_specific_frame_review',
-          }));
-          await fs.writeFile(path.join(root, 'qa', 'footage_contact_sheets.json'), JSON.stringify({
-            schema_version: '1.0', project_id: projectId, generated_at: new Date().toISOString(), records,
-          }, null, 2) + '\n');
+          const root = path.join('projects', process.env.PROJECT_ID);
+          const override = JSON.parse(await fs.readFile(path.join(root, 'config', 'footage_candidate_overrides.json'), 'utf8'));
+          const queue = JSON.parse(await fs.readFile(path.join(root, 'qa', 'footage_review_queue.json'), 'utf8'));
+          const reviewsPath = path.join(root, 'research', 'visual_asset_reviews.json');
+          const reviews = JSON.parse(await fs.readFile(reviewsPath, 'utf8'));
+          const queueByScene = new Map(queue.entries.map((entry) => [entry.scene_id, entry]));
+          const existing = new Set((reviews.rejected_assets || []).map((item) => `${item.scene_id}:${item.provider_asset_id}:${item.asset_sha256 || ''}`));
+          reviews.rejected_assets ||= [];
+          for (const item of override.overrides) {
+            const entry = queueByScene.get(item.scene_id);
+            if (!entry) throw new Error(`${item.scene_id}: current review queue entry is missing`);
+            const key = `${entry.scene_id}:${entry.provider_asset_id}:${entry.asset_sha256}`;
+            if (!existing.has(key)) {
+              reviews.rejected_assets.push({
+                scene_id: entry.scene_id,
+                provider_asset_id: String(entry.provider_asset_id),
+                asset_path: entry.asset_path,
+                asset_sha256: entry.asset_sha256,
+                reason: String(item.reason),
+                rejected_at: override.requested_at,
+              });
+              existing.add(key);
+            }
+          }
+          reviews.summary ||= {};
+          reviews.summary.rejected_from_metadata = reviews.rejected_assets.length;
+          await fs.writeFile(reviewsPath, JSON.stringify(reviews, null, 2) + '\n');
           NODE
+          node scripts/orvyq_apply_footage_candidate_overrides.mjs --project-id="$PROJECT_ID" | tee footage-override-application.log
+          SCENE_IDS="$(jq -r '[.overrides[].scene_id] | join(",")' "projects/$PROJECT_ID/config/footage_candidate_overrides.json")"
+          test -n "$SCENE_IDS"
+          echo "SCENE_IDS=$SCENE_IDS" >> "$GITHUB_ENV"
 
-      - name: Commit repaired footage state
+      - name: Replace only rejected scenes
         shell: bash
         run: |
           set -euo pipefail
-          git add scripts/orvyq_acquire_selected_pexels.mjs \
-            "projects/$PROJECT_ID/research/selected_pexels_manifest.json"
-          git add -f "projects/$PROJECT_ID/assets/footage" \
-            "projects/$PROJECT_ID/assets/local_assets.json" \
-            "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" \
-            "projects/$PROJECT_ID/qa/footage-contact-sheets" \
-            "projects/$PROJECT_ID/qa/footage_contact_sheets.json"
-          git config user.name "orvyq-footage-bot"
-          git config user.email "orvyq-footage-bot@users.noreply.github.com"
-          if git diff --cached --quiet; then
-            echo "Footage state unchanged."
-            exit 0
-          fi
-          git commit -m "Complete selected footage acquisition for $PROJECT_ID"
-          git pull --rebase origin "$TARGET_BRANCH"
-          git push origin "HEAD:$TARGET_BRANCH"
+          node scripts/orvyq_acquire_selected_pexels.mjs --project-id="$PROJECT_ID" --scene-ids="$SCENE_IDS" | tee rejected-footage-replacement.log
+          jq -e '.pass == true and .planned_asset_count == 41 and .acquired_this_run == 6 and .reused_existing == 35 and (.records | length) == 41 and (.unresolved_scene_ids | length) == 0' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
 
-      - name: Report result
+      - name: Verify every current media byte stream
+        shell: bash
+        run: |
+          set -euo pipefail
+          count=0
+          while IFS= read -r -d '' media; do
+            count=$((count + 1))
+            test "$(stat -c '%s' "$media")" -gt 100000
+            ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$media" | grep -qx '1280,720'
+          done < <(find "projects/$PROJECT_ID/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0)
+          test "$count" -eq 41
+
+      - name: Rebuild byte-bound four-position review package
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/orvyq_prepare_footage_review.mjs --project-id="$PROJECT_ID" | tee replacement-review-preparation.log
+          jq -e '.pending_review_count == 41 and (.entries | length) == 41' "projects/$PROJECT_ID/qa/footage_review_queue.json"
+
+      - name: Commit replacement package on latest branch head
+        shell: bash
+        run: |
+          set -euo pipefail
+          PACKAGE_TAR="$RUNNER_TEMP/orvyq-replacement-package.tar"
+          PACKAGE_PATHS=(
+            "projects/$PROJECT_ID/research/selected_pexels_manifest.json"
+            "projects/$PROJECT_ID/research/visual_asset_reviews.json"
+            "projects/$PROJECT_ID/assets/footage"
+            "projects/$PROJECT_ID/assets/local_assets.json"
+            "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
+            "projects/$PROJECT_ID/qa/footage-contact-sheets"
+            "projects/$PROJECT_ID/qa/footage_review_queue.json"
+          )
+          tar -cf "$PACKAGE_TAR" "${PACKAGE_PATHS[@]}"
+          git config user.name "orvyq-footage-replacement-bot"
+          git config user.email "orvyq-footage-replacement-bot@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin "$TARGET_BRANCH"
+            git reset --hard "origin/$TARGET_BRANCH"
+            tar -xf "$PACKAGE_TAR"
+            git add "projects/$PROJECT_ID/research/selected_pexels_manifest.json" \
+              "projects/$PROJECT_ID/research/visual_asset_reviews.json" \
+              "projects/$PROJECT_ID/assets/local_assets.json" \
+              "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" \
+              "projects/$PROJECT_ID/qa/footage_review_queue.json"
+            git add -f "projects/$PROJECT_ID/assets/footage" "projects/$PROJECT_ID/qa/footage-contact-sheets"
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Replace six rejected footage scenes for $PROJECT_ID"
+            if git push origin "HEAD:$TARGET_BRANCH"; then exit 0; fi
+          done
+          echo "::error::Could not publish replacement package after three attempts"
+          exit 1
+
+      - name: Upload replacement review artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-replacement-review-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            footage-override-application.log
+            rejected-footage-replacement.log
+            replacement-review-preparation.log
+            projects/${{ env.PROJECT_ID }}/assets/footage_acquisition.runtime.json
+            projects/${{ env.PROJECT_ID }}/qa/footage_review_queue.json
+            projects/${{ env.PROJECT_ID }}/qa/footage-contact-sheets/*.jpg
+          if-no-files-found: warn
+
+      - name: Report replacement result
         if: always()
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
         run: |
-          SUMMARY="$(jq -c '{planned_asset_count,acquired_this_run,unresolved_scene_ids,pass}' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" 2>/dev/null || true)"
-          BODY="Project 004 footage repair finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          SUMMARY="$(jq -c '{planned_asset_count,acquired_this_run,reused_existing,replacement_scene_ids,unresolved_scene_ids,pass}' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" 2>/dev/null || true)"
+          BODY="Six-scene footage replacement and four-position review preparation finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
           test -z "$SUMMARY" || BODY="${BODY}"$'\n\n```json\n'"${SUMMARY}"$'\n```'
-          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY"
+          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
