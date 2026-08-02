@@ -12,11 +12,12 @@ import {
   writeJsonAtomic,
   parseArgs,
   printJson,
+  pathExists,
 } from "./lib/fs-utils.mjs";
 
 const execFileAsync = promisify(execFile);
 const PEXELS_LICENSE = "https://www.pexels.com/license/";
-const USER_AGENT = "ORVYQ-selected-pexels-acquisition/1.0";
+const USER_AGENT = "ORVYQ-selected-pexels-acquisition/1.1";
 const ALLOWED_FINAL_HOSTS = new Set(["videos.pexels.com"]);
 
 const sha256 = (buffer) => crypto.createHash("sha256").update(buffer).digest("hex");
@@ -88,9 +89,7 @@ async function resolveMediaUrl(providerAssetId) {
   if (!page.ok) throw new Error(`Pexels source page failed ${page.status}`);
   const html = await page.text();
   const candidates = extractPexelsVideoUrls(html);
-  if (!candidates.length) {
-    throw new Error(`No Pexels CDN video URL found for provider asset ${providerAssetId}`);
-  }
+  if (!candidates.length) throw new Error(`No Pexels CDN video URL found for provider asset ${providerAssetId}`);
   for (const candidate of candidates) {
     const response = await fetchWithTimeout(candidate, { redirect: "follow" }, 180000);
     const contentType = String(response.headers.get("content-type") || "").toLowerCase();
@@ -126,23 +125,13 @@ async function compact(source, output, durationSeconds, sourceInfo) {
     filters.push(`setpts=${timeStretchFactor.toFixed(6)}*PTS`);
   }
   await execFileAsync("ffmpeg", [
-    "-y",
-    "-i", source,
-    "-t", String(outputDuration),
-    "-vf", filters.join(","),
-    "-c:v", "libx264",
-    "-preset", "medium",
-    "-crf", "25",
-    "-pix_fmt", "yuv420p",
-    "-movflags", "+faststart",
-    "-an",
-    output,
+    "-y", "-i", source, "-t", String(outputDuration),
+    "-vf", filters.join(","), "-c:v", "libx264", "-preset", "medium",
+    "-crf", "25", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", output,
   ], { maxBuffer: 24 * 1024 * 1024 });
   return {
     aspectPolicy: isPortraitOrSquare ? "fill_and_center_crop" : "fit_and_pad",
-    timeStretchFactor,
-    requestedDuration,
-    outputDuration,
+    timeStretchFactor, requestedDuration, outputDuration,
   };
 }
 
@@ -165,10 +154,7 @@ async function acquireCandidate(projectId, dir, item, providerAssetId) {
       throw new Error(`invalid source media ${sourceInfo.width}x${sourceInfo.height} duration=${sourceInfo.duration}`);
     }
     const minimumDuration = Number(item.min_duration_seconds || 8);
-    const requested = Math.min(
-      Math.max(Number(item.output_duration_seconds || 10), minimumDuration),
-      12,
-    );
+    const requested = Math.min(Math.max(Number(item.output_duration_seconds || 10), minimumDuration), 12);
     transformation = await compact(source, output, requested, sourceInfo);
   } finally {
     await fs.rm(source, { force: true });
@@ -183,73 +169,66 @@ async function acquireCandidate(projectId, dir, item, providerAssetId) {
   const digest = sha256(buffer);
   const sourcePageUrl = `https://www.pexels.com/video/${providerAssetId}/`;
   const provenance = {
-    schema_version: "1.0",
-    project_id: projectId,
-    scene_id: id,
-    claim_id: item.claim_id,
-    provider: "pexels",
-    provider_asset_id: String(providerAssetId),
-    source_page_url: sourcePageUrl,
-    resolved_media_url: finalUrl,
-    resolution_mode: resolutionMode,
-    license_name: "Pexels License",
-    license_url: PEXELS_LICENSE,
-    creator: item.creator || null,
-    source_title: item.source_title || null,
-    retrieval_timestamp: new Date().toISOString(),
-    editorial_role: item.role || "context",
-    narration_anchor: item.narration_anchor,
-    semantic_rationale: item.semantic_rationale,
-    semantic_link: item.semantic_link || "physical",
-    evidence_use_forbidden: true,
-    source_byte_size: sourceBytes,
-    byte_size: buffer.length,
-    duration: info.duration,
-    actual_duration_seconds: info.duration,
-    width: info.width,
-    height: info.height,
-    codec: info.codec,
-    container: info.container,
-    sha256: digest,
-    actual_sha256: digest,
+    schema_version: "1.0", project_id: projectId, scene_id: id, claim_id: item.claim_id,
+    provider: "pexels", provider_asset_id: String(providerAssetId), source_page_url: sourcePageUrl,
+    resolved_media_url: finalUrl, resolution_mode: resolutionMode, license_name: "Pexels License",
+    license_url: PEXELS_LICENSE, creator: item.creator || null, source_title: item.source_title || null,
+    retrieval_timestamp: new Date().toISOString(), editorial_role: item.role || "context",
+    narration_anchor: item.narration_anchor, semantic_rationale: item.semantic_rationale,
+    semantic_link: item.semantic_link || "physical", evidence_use_forbidden: true,
+    source_byte_size: sourceBytes, byte_size: buffer.length, duration: info.duration,
+    actual_duration_seconds: info.duration, width: info.width, height: info.height,
+    codec: info.codec, container: info.container, sha256: digest, actual_sha256: digest,
     transformed_for_edit: true,
     transformation: {
-      output_width: 1280,
-      output_height: 720,
-      aspect_policy: transformation.aspectPolicy,
+      output_width: 1280, output_height: 720, aspect_policy: transformation.aspectPolicy,
       time_stretch_factor: transformation.timeStretchFactor,
       requested_duration_seconds: transformation.requestedDuration,
       normalized_duration_seconds: transformation.outputDuration,
-      loop_short_source_when_required: false,
-      codec: "h264",
-      crf: 25,
-      audio_removed: true,
+      loop_short_source_when_required: false, codec: "h264", crf: 25, audio_removed: true,
     },
     approved_for_final_edit: false,
     human_review_status: "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   };
   await writeJsonAtomic(`${output}.provenance.json`, provenance);
-  return {
-    path: relative,
-    scene_id: id,
-    provider_asset_id: String(providerAssetId),
-    role: item.role || "context",
-    claim_id: item.claim_id,
-  };
+  return { path: relative, scene_id: id, provider_asset_id: String(providerAssetId), role: item.role || "context", claim_id: item.claim_id };
 }
 
-export async function acquireSelectedPexels(projectId) {
+async function removeSceneOutputs(dir, sceneId) {
+  const footageDir = path.join(dir, "assets", "footage");
+  if (!(await pathExists(footageDir))) return;
+  const prefix = `${sceneId}_`;
+  for (const name of await fs.readdir(footageDir)) {
+    if (name.startsWith(prefix) && (name.endsWith(".mp4") || name.endsWith(".mp4.provenance.json"))) {
+      await fs.rm(path.join(footageDir, name), { force: true });
+    }
+  }
+}
+
+export async function acquireSelectedPexels(projectId, { sceneIds = null } = {}) {
   const dir = projectDir(projectId);
   const manifest = await readJson(path.join(dir, "research", "selected_pexels_manifest.json"));
   if (manifest.project_id !== projectId) throw new Error("selected Pexels manifest project_id mismatch");
   if (!Array.isArray(manifest.assets) || !manifest.assets.length) throw new Error("selected Pexels manifest has no assets");
-  const sceneIds = manifest.assets.map((item) => safeSceneId(item.scene_id));
-  if (new Set(sceneIds).size !== sceneIds.length) throw new Error("selected Pexels manifest has duplicate scene ids");
+  const allSceneIds = manifest.assets.map((item) => safeSceneId(item.scene_id));
+  if (new Set(allSceneIds).size !== allSceneIds.length) throw new Error("selected Pexels manifest has duplicate scene ids");
 
-  const usedProviderIds = new Set();
-  const records = [];
+  const requestedSceneIds = sceneIds?.length ? new Set(sceneIds.map(safeSceneId)) : null;
+  if (requestedSceneIds) {
+    for (const id of requestedSceneIds) if (!allSceneIds.includes(id)) throw new Error(`${id}: not present in selected manifest`);
+  }
+  const selectedItems = requestedSceneIds ? manifest.assets.filter((item) => requestedSceneIds.has(item.scene_id)) : manifest.assets;
+  const existingRuntimePath = path.join(dir, "assets", "footage_acquisition.runtime.json");
+  const existingRuntime = requestedSceneIds && await pathExists(existingRuntimePath)
+    ? await readJson(existingRuntimePath)
+    : { records: [] };
+  const preservedRecords = (existingRuntime.records || []).filter((record) => !requestedSceneIds?.has(record.scene_id));
+  const usedProviderIds = new Set(preservedRecords.map((record) => String(record.provider_asset_id)));
+  const acquiredRecords = [];
   const unresolved = [];
-  for (const item of manifest.assets) {
+
+  for (const item of selectedItems) {
+    await removeSceneOutputs(dir, item.scene_id);
     const candidates = (item.provider_asset_ids || []).map(String).filter(Boolean);
     if (!candidates.length) throw new Error(`${item.scene_id}: no provider_asset_ids`);
     let record = null;
@@ -264,36 +243,29 @@ export async function acquireSelectedPexels(projectId) {
         errors.push({ provider_asset_id: candidate, error: String(error.message || error) });
       }
     }
-    if (record) records.push(record);
+    if (record) acquiredRecords.push(record);
     else unresolved.push({ scene_id: item.scene_id, claim_id: item.claim_id, errors });
   }
 
   await fs.rm(path.join(dir, "assets", ".acquisition-tmp"), { recursive: true, force: true });
+  const records = [...preservedRecords, ...acquiredRecords].sort((a, b) => a.scene_id.localeCompare(b.scene_id));
   await writeJsonAtomic(path.join(dir, "assets", "local_assets.json"), {
     schema_version: 1,
     assets: records.map(({ path: assetPath }) => ({ path: assetPath })),
   });
-  await writeJsonAtomic(path.join(dir, "assets", "footage_acquisition.runtime.json"), {
-    schema_version: "1.4-selected-public-pexels",
-    project_id: projectId,
-    generated_at: new Date().toISOString(),
-    source: "pexels_public_download",
-    license_url: PEXELS_LICENSE,
-    planned_asset_count: manifest.assets.length,
-    acquired_this_run: records.length,
-    reused_existing: 0,
-    unresolved_scene_ids: unresolved.map((item) => item.scene_id),
-    unresolved,
-    records,
+  await writeJsonAtomic(existingRuntimePath, {
+    schema_version: "1.5-selected-public-pexels-partial",
+    project_id: projectId, generated_at: new Date().toISOString(), source: "pexels_public_download",
+    license_url: PEXELS_LICENSE, planned_asset_count: manifest.assets.length,
+    acquired_this_run: acquiredRecords.length, reused_existing: preservedRecords.length,
+    replacement_scene_ids: requestedSceneIds ? [...requestedSceneIds].sort() : [],
+    unresolved_scene_ids: unresolved.map((item) => item.scene_id), unresolved, records,
     pass: unresolved.length === 0 && records.length === manifest.assets.length,
   });
   return {
-    project_id: projectId,
-    planned: manifest.assets.length,
-    acquired: records.length,
-    unresolved: unresolved.length,
-    unresolved_scene_ids: unresolved.map((item) => item.scene_id),
-    pass: unresolved.length === 0,
+    project_id: projectId, planned: manifest.assets.length, acquired: acquiredRecords.length,
+    reused_existing: preservedRecords.length, unresolved: unresolved.length,
+    unresolved_scene_ids: unresolved.map((item) => item.scene_id), pass: unresolved.length === 0 && records.length === manifest.assets.length,
   };
 }
 
@@ -301,7 +273,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const args = parseArgs(process.argv.slice(2));
   const projectId = args["project-id"] || process.env.ORVYQ_PROJECT_ID;
   if (!projectId) throw new Error("--project-id is required");
-  acquireSelectedPexels(projectId)
+  const sceneIds = String(args["scene-ids"] || "").split(",").map((value) => value.trim()).filter(Boolean);
+  acquireSelectedPexels(projectId, { sceneIds: sceneIds.length ? sceneIds : null })
     .then((result) => printJson({ ok: true, ...result }))
     .catch((error) => {
       console.error(JSON.stringify({ ok: false, error: error.message }));
