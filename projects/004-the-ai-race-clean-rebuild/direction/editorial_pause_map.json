@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "duration_policy": {
+    "minimum_final_duration_seconds": 844.362,
+    "maximum_final_duration_seconds": null,
+    "rule": "Fresh clean-rebuild baseline derived from the locked 804.362-second narration, the project-authored 11-second motion hook, 25 seconds of newly authored full-film editorial pauses, and the canonical 4-second end card. The full-production planner remains the final source of truth and may reconcile this value only from current Project 004 inputs; no Project 001 proof or timeline timings may be reused."
+  },
+  "proof": {
+    "source_narration_seconds": 0,
+    "editorial_pause_seconds": 0,
+    "speech_timeline_end_seconds": 0,
+    "proof_duration_seconds": 0,
+    "tail_release_seconds": 0,
+    "pauses": []
+  },
+  "full_film_pause_anchors": [
+    {
+      "anchor_text": "That assumption is exactly what makes the evidence so unsettling. It isn't hidden. It's sitting in the safety reports the AI companies publish themselves.",
+      "question": "What do the laboratories' own safety reports actually reveal?",
+      "purpose": "Full pause: open the evidence phase on the companies' own documented warnings",
+      "planned_seconds": 4,
+      "sound_cue": "tonal_bloom"
+    },
+    {
+      "anchor_text": "That distinction matters. It's the difference between a fire drill and a fire.",
+      "question": "How much should a controlled warning change our judgment?",
+      "purpose": "Brief accent: preserve the experimental limitation before widening the argument",
+      "planned_seconds": 2,
+      "sound_cue": "low_impact"
+    },
+    {
+      "anchor_text": "A laboratory that slows down cannot assume its rivals will do the same.",
+      "question": "Can any one laboratory choose restraint without losing the frontier?",
+      "purpose": "Brief accent: crystallize the asymmetric competitive incentive",
+      "planned_seconds": 2,
+      "sound_cue": "low_impact"
+    },
+    {
+      "anchor_text": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
+      "question": "Does the same automation make defense stronger or attack easier?",
+      "purpose": "Brief accent: hold the dual-use tension without overstating the cyber evidence",
+      "planned_seconds": 2,
+      "sound_cue": "low_impact"
+    },
+    {
+      "anchor_text": "Power, in this story, isn't only about what the machine can do. It's about who gets to decide.",
+      "question": "Who should control the systems that everyone else must depend on?",
+      "purpose": "Full pause: pivot from capability risk to institutional concentration",
+      "planned_seconds": 5,
+      "sound_cue": "tonal_bloom"
+    },
+    {
+      "anchor_text": "Because the line between legitimate safety oversight and rules that simply lock in whoever already won the race can be thinner than it looks.",
+      "question": "When does safety oversight become protection for the incumbents?",
+      "purpose": "Brief accent: expose the governance paradox before the open-versus-closed debate",
+      "planned_seconds": 2,
+      "sound_cue": "low_impact"
+    },
+    {
+      "anchor_text": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
+      "question": "Which failure is society actually prepared to risk?",
+      "purpose": "Brief accent: hold the unresolved tradeoff between openness and centralized control",
+      "planned_seconds": 2,
+      "sound_cue": "tonal_bloom"
+    },
+    {
+      "anchor_text": "That work hasn't been done yet.",
+      "question": "What choices are still available before today's incentives harden?",
+      "purpose": "Full pause: create a final reflective breath before the human-agency closing line",
+      "planned_seconds": 6,
+      "sound_cue": "tonal_bloom"
+    }
+  ]
+}
