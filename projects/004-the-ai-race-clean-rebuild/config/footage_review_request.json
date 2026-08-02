@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 2,
-  "reason": "Regenerate byte-bound four-position contact sheets for all 20 selected clips with FFmpeg standard input disabled, then prepare claim-specific semantic review inputs. No video render is permitted.",
-  "requested_at": "2026-08-02T09:02:00Z"
+  "request_revision": 3,
+  "reason": "Generate the 20 byte-bound four-position contact sheets through the deterministic Node preparation script and prepare claim-specific semantic review inputs. No video render is permitted.",
+  "requested_at": "2026-08-02T09:07:00Z"
 }
