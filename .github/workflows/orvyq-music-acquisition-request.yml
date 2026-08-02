@@ -131,24 +131,56 @@ jobs:
             music_library/license_snapshots/sb_resonance*
           if-no-files-found: warn
 
-      - name: Commit verified music package
+      - name: Commit verified music package on latest branch head
         shell: bash
         run: |
           set -euo pipefail
+          TARGET_BRANCH="$GITHUB_REF_NAME"
+          PACKAGE_TAR="$RUNNER_TEMP/orvyq-music-package.tar"
+          PACKAGE_PATHS=(
+            music_library/tracks/sb_resonance.mp3
+            music_library/tracks/sb_resonance_altmix.mp3
+            music_library/license_snapshots/sb_resonance.page.html
+            music_library/license_snapshots/sb_resonance.page.json
+            music_library/license_snapshots/sb_resonance_altmix.page.html
+            music_library/license_snapshots/sb_resonance_altmix.page.json
+            music_library/registry.json
+            "projects/$PROJECT_ID/assets/music/youtube_description_attribution.txt"
+          )
+          for file in "${PACKAGE_PATHS[@]}"; do
+            test -s "$file" || { echo "::error::Verified package file is missing: $file"; exit 1; }
+          done
+          tar -cf "$PACKAGE_TAR" "${PACKAGE_PATHS[@]}"
           git config user.name "orvyq-music-acquisition-bot"
           git config user.email "orvyq-music-acquisition-bot@users.noreply.github.com"
-          git add -f \
-            music_library/tracks/sb_resonance*.mp3 \
-            music_library/license_snapshots/sb_resonance* \
-            music_library/registry.json \
-            "projects/$PROJECT_ID/assets/music/youtube_description_attribution.txt"
-          if git diff --cached --quiet; then
-            echo "No music package changes"
-            exit 0
-          fi
-          git commit -m "Vendor fresh Resonance music for $PROJECT_ID"
-          git pull --rebase origin "${{ github.ref_name }}"
-          git push origin "HEAD:${{ github.ref_name }}"
+
+          for attempt in 1 2 3; do
+            echo "Publishing verified music package, attempt $attempt" | tee -a music-commit.log
+            git fetch origin "$TARGET_BRANCH" 2>&1 | tee -a music-commit.log
+            git reset --hard "origin/$TARGET_BRANCH" 2>&1 | tee -a music-commit.log
+            tar -xf "$PACKAGE_TAR"
+            git add -f "${PACKAGE_PATHS[@]}"
+            if git diff --cached --quiet; then
+              echo "Verified music package is already present on the branch" | tee -a music-commit.log
+              exit 0
+            fi
+            git commit -m "Vendor fresh Resonance music for $PROJECT_ID" 2>&1 | tee -a music-commit.log
+            if git push origin "HEAD:$TARGET_BRANCH" 2>&1 | tee -a music-commit.log; then
+              exit 0
+            fi
+            echo "Push raced with another branch update; rebuilding commit from latest head" | tee -a music-commit.log
+          done
+          echo "::error::Could not publish the verified music package after three attempts"
+          exit 1
+
+      - name: Upload commit diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-music-commit-diagnostics-${{ github.run_id }}
+          retention-days: 30
+          path: music-commit.log
+          if-no-files-found: warn
 
       - name: Report result
         if: always()
