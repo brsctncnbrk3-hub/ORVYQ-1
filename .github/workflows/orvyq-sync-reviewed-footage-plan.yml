@@ -37,8 +37,15 @@ jobs:
           node-version: "20"
           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies and media tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          ffmpeg -version
+          ffprobe -version
 
       - name: Synchronize exact reviewed footage package
         shell: bash
