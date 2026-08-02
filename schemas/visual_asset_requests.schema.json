@@ -57,18 +57,10 @@
       "allOf": [
         {
           "if": {
-            "properties": {
-              "type": { "const": "contextual_footage" },
-              "status": { "const": "ready" }
-            },
-            "required": ["type", "status"]
+            "properties": { "status": { "const": "ready" } },
+            "required": ["status"]
           },
-          "then": {
-            "required": ["scene_ids", "required_source", "resolved_asset_paths", "visual_review_binding"]
-          },
-          "else": {
-            "required": ["required_content", "acceptance", "forbidden_substitutes"]
-          }
+          "then": { "required": ["resolved_asset_paths"] }
         },
         {
           "if": {
@@ -78,9 +70,7 @@
             },
             "required": ["type", "status"]
           },
-          "then": {
-            "required": ["required_source", "required_content", "acceptance", "forbidden_substitutes", "resolved_asset_paths", "resolved_evidence_asset_ids"]
-          }
+          "then": { "required": ["resolved_evidence_asset_ids"] }
         }
       ],
       "additionalProperties": false
