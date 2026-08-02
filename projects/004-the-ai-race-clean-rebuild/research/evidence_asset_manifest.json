@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.1",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "policy": {
+    "allowed_modes": [
+      "official_page_capture",
+      "official_figure_capture"
+    ],
+    "source_attribution_required": true,
+    "recreation_label_required": false,
+    "full_render_requires_all_required_assets_ready": true,
+    "old_project_asset_reuse_forbidden": true
+  },
+  "assets": [
+    {
+      "evidence_asset_id": "EVID_ASL3_COVER",
+      "claim_ids": ["CLM_001_SAFETY_FRAMEWORKS"],
+      "source_ids": ["SRC_ANTHROPIC_ASL3_2025"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Claude 4 system card", "ASL-3 deployment and safeguards", "May 2025"],
+      "limitation": "The cover establishes the official document and date; it does not by itself establish any specific capability result."
+    },
+    {
+      "evidence_asset_id": "EVID_ASL3_ABSTRACT",
+      "claim_ids": ["CLM_001_SAFETY_FRAMEWORKS"],
+      "source_ids": ["SRC_ANTHROPIC_ASL3_2025"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Precautionary ASL-3 deployment", "Safeguard standards", "Developer-authored assessment"],
+      "limitation": "Developer-authored system-card summary; preserve the precautionary framing and do not portray it as independent certification."
+    },
+    {
+      "evidence_asset_id": "EVID_ASL3_CBRN_EVALUATION",
+      "claim_ids": ["CLM_010_BIO_ASL3"],
+      "source_ids": ["SRC_ANTHROPIC_ASL3_2025"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["CBRN proxy evaluation", "Claude Opus 4", "Precautionary ASL-3 deployment"],
+      "limitation": "Anthropic said the relevant threshold had not been definitively crossed; this is a precautionary developer assessment."
+    },
+    {
+      "evidence_asset_id": "EVID_AGENTIC_FIGURE_01",
+      "claim_ids": ["CLM_003_AGENTIC_MISALIGNMENT_TESTS"],
+      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["Controlled simulation", "Model comparison", "Agentic misalignment evaluation"],
+      "limitation": "Controlled fictional simulations, not documented real-world deployment behavior."
+    },
+    {
+      "evidence_asset_id": "EVID_AGENTIC_FIGURE_02",
+      "claim_ids": ["CLM_004_TEST_NOT_DEPLOYMENT"],
+      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["Fictional computer-use scenario", "Designed evaluation environment"],
+      "limitation": "The figure depicts an engineered test scenario, not a real company, employee or deployment."
+    },
+    {
+      "evidence_asset_id": "EVID_AGENTIC_FIGURE_03",
+      "claim_ids": ["CLM_004_TEST_NOT_DEPLOYMENT"],
+      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["Fictional email evidence", "Controlled evaluation input"],
+      "limitation": "All people, communications and consequences in the depicted scenario were fictional."
+    },
+    {
+      "evidence_asset_id": "EVID_AGENTIC_FIGURE_04",
+      "claim_ids": ["CLM_004_TEST_NOT_DEPLOYMENT"],
+      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["Model deliberation", "Engineered no-alternative condition"],
+      "limitation": "A controlled prompt-and-tool-use trace; it cannot be generalized directly to ordinary deployment behavior."
+    },
+    {
+      "evidence_asset_id": "EVID_AGENTIC_FIGURE_05",
+      "claim_ids": ["CLM_004_TEST_NOT_DEPLOYMENT"],
+      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["Generated fictional message", "Controlled test outcome"],
+      "limitation": "The message was produced inside a deliberately constructed fictional evaluation."
+    },
+    {
+      "evidence_asset_id": "EVID_AGENTIC_FIGURE_07",
+      "claim_ids": ["CLM_003_AGENTIC_MISALIGNMENT_TESTS"],
+      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["Expanded model comparison", "Controlled misalignment rates"],
+      "limitation": "Cross-model results remain specific to the paper's controlled fictional scenarios and evaluation design."
+    },
+    {
+      "evidence_asset_id": "EVID_STANFORD_INVESTMENT_2024",
+      "claim_ids": ["CLM_006_INVESTMENT_SCALE", "CLM_021_FINAL_SYNTHESIS"],
+      "source_ids": ["SRC_STANFORD_AI_INDEX_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["$33.9 billion", "Private generative-AI investment", "2024"],
+      "limitation": "The figure describes private investment in 2024 and must remain visibly date-qualified."
+    },
+    {
+      "evidence_asset_id": "EVID_STANFORD_FRONTIER_GAP",
+      "claim_ids": ["CLM_007_FRONTIER_GAP", "CLM_021_FINAL_SYNTHESIS"],
+      "source_ids": ["SRC_STANFORD_AI_INDEX_2025"],
+      "mode": "official_figure_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_figure",
+      "content": ["0.7 percentage-point gap", "Top two models", "Dated frontier comparison"],
+      "limitation": "A benchmark-specific and dated comparison, not a universal measure of model capability."
+    },
+    {
+      "evidence_asset_id": "EVID_CMA_COMPETITION_RISKS",
+      "claim_ids": ["CLM_013_MARKET_CONCENTRATION"],
+      "source_ids": ["SRC_CMA_FOUNDATION_MODELS_2024"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Three key competition risks", "Foundation-model markets", "CMA assessment"],
+      "limitation": "A competition-risk assessment, not a finding that every partnership or incumbent practice is unlawful."
+    },
+    {
+      "evidence_asset_id": "EVID_CMA_CRITICAL_INPUTS",
+      "claim_ids": ["CLM_013_MARKET_CONCENTRATION", "CLM_021_FINAL_SYNTHESIS"],
+      "source_ids": ["SRC_CMA_FOUNDATION_MODELS_2024"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Critical compute, data and expertise inputs", "Potential restriction of access"],
+      "limitation": "Describes assessed competition risks and incentives rather than proven unlawful conduct."
+    },
+    {
+      "evidence_asset_id": "EVID_IASR_PERSUASION",
+      "claim_ids": ["CLM_011_SYNTHETIC_PERSUASION"],
+      "source_ids": ["SRC_IASR_2025"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Persuasive synthetic content at scale", "Evidence weakens toward societal outcomes"],
+      "limitation": "Strong evidence for scalable content creation does not establish broad societal effects or any individual election outcome."
+    },
+    {
+      "evidence_asset_id": "EVID_EU_SYSTEMIC_CLASSIFICATION",
+      "claim_ids": ["CLM_014_EU_LAYERED_OBLIGATIONS", "CLM_015_COMPUTE_NOT_ONLY_ROUTE"],
+      "source_ids": ["SRC_EU_AI_ACT_2024"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Article 51", "Systemic-risk classification", "Compute presumption and Commission designation"],
+      "limitation": "The compute threshold creates a rebuttable presumption and is not the only designation route."
+    },
+    {
+      "evidence_asset_id": "EVID_EU_SYSTEMIC_DUTIES",
+      "claim_ids": ["CLM_014_EU_LAYERED_OBLIGATIONS", "CLM_020_INCIDENT_REPORTING"],
+      "source_ids": ["SRC_EU_AI_ACT_2024"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Article 55", "Model evaluations", "Systemic-risk mitigation", "Cybersecurity and incident reporting"],
+      "limitation": "The obligations apply within the Act's classifications and phased implementation schedule."
+    },
+    {
+      "evidence_asset_id": "EVID_EU_INCIDENT_REPORTING",
+      "claim_ids": ["CLM_020_INCIDENT_REPORTING"],
+      "source_ids": ["SRC_EU_AI_ACT_2024"],
+      "mode": "official_page_capture",
+      "status": "spec_ready_asset_pending",
+      "required_for_full": true,
+      "render_component": "PrimaryEvidenceV2.official_document",
+      "content": ["Article 73", "Reporting of serious incidents"],
+      "limitation": "The legal reporting framework applies to defined systems, providers and incident categories; it is not a universal reporting rule for every AI event."
+    }
+  ]
+}
