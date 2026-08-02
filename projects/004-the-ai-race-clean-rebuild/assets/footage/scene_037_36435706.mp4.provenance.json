@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_037_36435706.jpg",
+  "contact_sheet_sha256": "3e6416a179420f3f5bd3f48271431254e825ddc2f694f74bf49d45c9702c434e",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "narration_anchor": "The companies building frontier models are operating like actors in a high-stakes competition.",
+      "semantic_rationale": "A second fresh market-and-infrastructure candidate broadens the race section without treating generic footage as proof of a specific investment.",
+      "semantic_link": "conceptual"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second fresh market-and-infrastructure candidate broadens the race section without treating generic footage as proof of a specific investment."
 }

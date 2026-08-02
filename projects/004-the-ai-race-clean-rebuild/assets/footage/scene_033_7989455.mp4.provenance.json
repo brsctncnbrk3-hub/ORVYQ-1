@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_033_7989455.jpg",
+  "contact_sheet_sha256": "49123f48a07ccbc8e090ac6d955603405bd4be6970b890fdee61312ce66727a2",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "narration_anchor": "Established companies may also be better able to absorb the complex compliance costs.",
+      "semantic_rationale": "A distinct small technical team reinforces the fixed-cost compliance analysis without claiming a measured outcome for any named firm.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A distinct small technical team reinforces the fixed-cost compliance analysis without claiming a measured outcome for any named firm."
 }

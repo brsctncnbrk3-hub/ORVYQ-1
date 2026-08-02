@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_003_8632599.jpg",
+  "contact_sheet_sha256": "59ac8f5ed03d44106c1196950c012d4cea10c3fea11b5af6676717de3b15aabc",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+      "semantic_rationale": "Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence."
 }

@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_029_5599977.jpg",
+  "contact_sheet_sha256": "2a675c63267689947940a10cb61c35eced4606c6fe2f4302a03b29a476ff755a",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "narration_anchor": "That work hasn't been done yet.",
+      "semantic_rationale": "A distinct human-city image creates a reflective closing pause and keeps responsibility grounded in ordinary people rather than abstract machinery.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A distinct human-city image creates a reflective closing pause and keeps responsibility grounded in ordinary people rather than abstract machinery."
 }

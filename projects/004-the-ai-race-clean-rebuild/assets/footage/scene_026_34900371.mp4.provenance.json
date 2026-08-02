@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_026_34900371.jpg",
+  "contact_sheet_sha256": "70a3e091d9fa49b08705b56807c1146646dc0f8124d5747fa2ac953ebc7a15f0",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+      "narration_anchor": "Compute alone is not the only route to designation.",
+      "semantic_rationale": "A clearly European Union flag on an institutional building locates the legal-designation discussion without introducing a non-EU national symbol; the regulation page remains the direct evidence.",
+      "semantic_link": "conceptual"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A clearly European Union flag on an institutional building locates the legal-designation discussion without introducing a non-EU national symbol; the regulation page remains the direct evidence."
 }

@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_019_12699538.jpg",
+  "contact_sheet_sha256": "553cf62367e8f1aefb19570718a362653961b38b661853b84b8ea155b16bd0c3",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "narration_anchor": "decisions that add up to a world shaped by whoever moved fastest, or whoever accumulated the most control",
+      "semantic_rationale": "Diverse pedestrians moving through an ordinary public city street return the consequences of concentrated AI decisions to a credible everyday human scale.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Diverse pedestrians moving through an ordinary public city street return the consequences of concentrated AI decisions to a credible everyday human scale."
 }

@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_025_20591257.jpg",
+  "contact_sheet_sha256": "0fa4c181d14a4f5004161673b524c7121879e9e3ff2c9a2e4bfd2d067228347d",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "narration_anchor": "Power, in this story, isn't only about what the machine can do. It's about who gets to decide.",
+      "semantic_rationale": "A second large-scale infrastructure view sustains the concentration argument while the CMA document supplies the evidence.",
+      "semantic_link": "conceptual"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second large-scale infrastructure view sustains the concentration argument while the CMA document supplies the evidence."
 }

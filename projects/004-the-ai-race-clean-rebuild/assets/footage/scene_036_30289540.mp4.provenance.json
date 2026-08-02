@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_036_30289540.jpg",
+  "contact_sheet_sha256": "5e865cbdf08e82e62165c6260a7593f4201e3c1306e91cee5effb62959c606b5",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "narration_anchor": "Competition is visible in the money, and in how narrow the frontier has become.",
+      "semantic_rationale": "A fresh capital-and-technology context candidate reserved for the investment-pressure section; the Stanford figure remains the factual evidence.",
+      "semantic_link": "conceptual"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A fresh capital-and-technology context candidate reserved for the investment-pressure section; the Stanford figure remains the factual evidence."
 }

@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_007_7253660.jpg",
+  "contact_sheet_sha256": "3eb219f058afa79a914f02dc4f1dfe4a1a5ba8211da0fc4827a095eba572ea40",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "narration_anchor": "In cybersecurity, AI has already lowered the barrier to entry.",
+      "semantic_rationale": "Security analysts investigating screens provides defensive operations context and is not presented as footage of a named victim or attacker.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Security analysts investigating screens provides defensive operations context and is not presented as footage of a named victim or attacker."
 }

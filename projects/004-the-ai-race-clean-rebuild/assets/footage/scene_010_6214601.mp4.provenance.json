@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_010_6214601.jpg",
+  "contact_sheet_sha256": "18acaa42f5152be98112dba50795b3e5e9dd6379c07f5f8c85c7cbc3189ce225",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "narration_anchor": "General-purpose AI can generate persuasive synthetic content cheaply and at scale.",
+      "semantic_rationale": "People consuming social feeds on phones shows the human distribution surface without asserting that any individual belief was changed.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. People consuming social feeds on phones shows the human distribution surface without asserting that any individual belief was changed."
 }

@@ -41,6 +41,26 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_006_6803583.jpg",
+  "contact_sheet_sha256": "fa7a7d60dfe4ac99eab4355426594e12e1252f6f7c613f17482a65649e5804c3",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_007_FRONTIER_GAP",
+      "narration_anchor": "That closeness turns each major release into a strategic event.",
+      "semantic_rationale": "Parallel technical teams working under time pressure physically expresses competitive closeness without claiming to depict named laboratories.",
+      "semantic_link": "physical"
+    },
+    {
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
+      "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Parallel technical teams working under time pressure physically expresses competitive closeness without claiming to depict named laboratories. The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence."
 }

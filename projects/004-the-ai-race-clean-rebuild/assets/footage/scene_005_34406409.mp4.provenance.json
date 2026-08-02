@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_005_34406409.jpg",
+  "contact_sheet_sha256": "d40aa8df65525f8dd120878369e2e57a8379f9318373c3fdc12d72d6f46b08fa",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "narration_anchor": "Stanford's 2025 AI Index reported nearly thirty-four billion dollars in private generative-AI investment in 2024.",
+      "semantic_rationale": "A professional market-data environment supports the narration about capital flow while the factual number remains carried by primary evidence.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A professional market-data environment supports the narration about capital flow while the factual number remains carried by primary evidence."
 }

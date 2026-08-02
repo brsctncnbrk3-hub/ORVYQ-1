@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_011_8201290.jpg",
+  "contact_sheet_sha256": "c376d2c7ab494aa74dd9b45395eb74630047cfddb7b2244965513ec86f9fd8d9",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "narration_anchor": "The evidence measures exposure more reliably than it predicts unemployment.",
+      "semantic_rationale": "Workers performing computer-mediated service tasks illustrates occupational exposure and transformation rather than unemployment.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Workers performing computer-mediated service tasks illustrates occupational exposure and transformation rather than unemployment."
 }

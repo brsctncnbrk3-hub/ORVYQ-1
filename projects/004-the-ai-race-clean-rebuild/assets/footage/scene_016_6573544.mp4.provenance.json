@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_016_6573544.jpg",
+  "contact_sheet_sha256": "e5cfa00f8a22d786cab587067603798ab8a64d576407aac052daf41da38abde2",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
+      "semantic_rationale": "A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company.",
+      "semantic_link": "conceptual"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company."
 }

@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_004_7989678.jpg",
+  "contact_sheet_sha256": "577741d8484811b1cdaf5648f99a2ffabac5414e4af35bf49c021cbf76f2618c",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "narration_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go.",
+      "semantic_rationale": "People reviewing software in a controlled office makes the test-versus-deployment distinction concrete without reenactment.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. People reviewing software in a controlled office makes the test-versus-deployment distinction concrete without reenactment."
 }

@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_018_6951401.jpg",
+  "contact_sheet_sha256": "98a17deeabe5d7dad022a3c1a7fe2b3aa66f742df2ca7a882eb97de147b0a834",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "narration_anchor": "mandatory incident reporting when systems misbehave, real legal liability and insurance",
+      "semantic_rationale": "A formal technology meeting supports reporting and oversight context without inventing a named hearing or regulatory proceeding.",
+      "semantic_link": "conceptual"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A formal technology meeting supports reporting and oversight context without inventing a named hearing or regulatory proceeding."
 }

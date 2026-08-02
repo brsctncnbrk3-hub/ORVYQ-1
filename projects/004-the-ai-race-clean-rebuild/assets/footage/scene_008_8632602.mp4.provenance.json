@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_008_8632602.jpg",
+  "contact_sheet_sha256": "d2ad88cb8bf6af092a1d35687f31f33ba109ec04b81c19f4031f7882cf289b80",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
+      "semantic_rationale": "A real technical team reviewing code and system activity gives the agentic-espionage narration a credible human-operator context while the attributed provider report carries every factual claim.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A real technical team reviewing code and system activity gives the agentic-espionage narration a credible human-operator context while the attributed provider report carries every factual claim."
 }

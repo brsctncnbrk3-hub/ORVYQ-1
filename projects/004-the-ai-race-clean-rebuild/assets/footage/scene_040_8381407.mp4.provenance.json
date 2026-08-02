@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_040_8381407.jpg",
+  "contact_sheet_sha256": "f91193641844a8f733c972f2ecaa094a14fbcf11f41cef23d4e3cc01f453f505",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_010_BIO_ASL3",
+      "narration_anchor": "Anthropic responded by deploying the model under its higher ASL-3 safety standard.",
+      "semantic_rationale": "A second fresh protected-laboratory candidate supports safeguard narration without implying that the stock footage depicts Anthropic or a named facility.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second fresh protected-laboratory candidate supports safeguard narration without implying that the stock footage depicts Anthropic or a named facility."
 }

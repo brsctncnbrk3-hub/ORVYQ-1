@@ -41,6 +41,20 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "reviewed_at": "2026-08-02T19:47:18.720Z",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_024_7255101.jpg",
+  "contact_sheet_sha256": "b972002e425928e1b6b7f6c3815875713d8a7b2231468d377674c0f48ea19537",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
+      "semantic_rationale": "A real monitoring team in a control-room environment supports the defensive side of the dual-use cyber argument without reenacting a named attack or presenting stock footage as evidence.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_decision": "approved",
+  "review_decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A real monitoring team in a control-room environment supports the defensive side of the dual-use cyber argument without reenacting a named attack or presenting stock footage as evidence."
 }
