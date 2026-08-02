@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "evidence_kind_overrides": [
+    {
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+      "kind": "official_document",
+      "evidence_asset_ids": [
+        "EVID_ASL3_COVER",
+        "EVID_ASL3_ABSTRACT"
+      ],
+      "image_assets": [
+        "assets/evidence/anthropic_asl3_cover.png",
+        "assets/evidence/anthropic_asl3_abstract.png"
+      ],
+      "first_occurrence_asset_count": 2,
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "kind": "image_sequence",
+      "evidence_asset_ids": [
+        "EVID_AGENTIC_FIGURE_01",
+        "EVID_AGENTIC_FIGURE_07"
+      ],
+      "image_assets": [
+        "assets/evidence/anthropic_agentic_figure_01.png",
+        "assets/evidence/anthropic_agentic_figure_07.png"
+      ],
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "kind": "image_sequence",
+      "evidence_asset_ids": [
+        "EVID_AGENTIC_FIGURE_02",
+        "EVID_AGENTIC_FIGURE_03",
+        "EVID_AGENTIC_FIGURE_04",
+        "EVID_AGENTIC_FIGURE_05"
+      ],
+      "image_assets": [
+        "assets/evidence/anthropic_agentic_figure_02.png",
+        "assets/evidence/anthropic_agentic_figure_03.png",
+        "assets/evidence/anthropic_agentic_figure_04.png",
+        "assets/evidence/anthropic_agentic_figure_05.png"
+      ],
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "kind": "official_figure",
+      "evidence_asset_ids": ["EVID_STANFORD_INVESTMENT_2024"],
+      "image_assets": ["assets/evidence/stanford_ai_index_investment_page249.png"],
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_007_FRONTIER_GAP",
+      "kind": "official_figure",
+      "evidence_asset_ids": ["EVID_STANFORD_FRONTIER_GAP"],
+      "image_assets": ["assets/evidence/stanford_ai_index_frontier_gap_page99.png"],
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_010_BIO_ASL3",
+      "kind": "official_document",
+      "evidence_asset_ids": ["EVID_ASL3_CBRN_EVALUATION"],
+      "image_assets": ["assets/evidence/anthropic_asl3_cbrn_evaluation.png"],
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "kind": "split_documents",
+      "evidence_asset_ids": [
+        "EVID_CMA_COMPETITION_RISKS",
+        "EVID_CMA_CRITICAL_INPUTS"
+      ],
+      "image_assets": [
+        "assets/evidence/cma_competition_risks_page12.png",
+        "assets/evidence/cma_critical_inputs_page14.png"
+      ],
+      "first_occurrence_asset_count": 2,
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "kind": "split_documents",
+      "evidence_asset_ids": [
+        "EVID_EU_SYSTEMIC_CLASSIFICATION",
+        "EVID_EU_SYSTEMIC_DUTIES"
+      ],
+      "image_assets": [
+        "assets/evidence/eu_ai_act_article51_page83.png",
+        "assets/evidence/eu_ai_act_article55_page86.png"
+      ],
+      "first_occurrence_asset_count": 2,
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+      "kind": "official_document",
+      "evidence_asset_ids": ["EVID_EU_SYSTEMIC_CLASSIFICATION"],
+      "image_assets": ["assets/evidence/eu_ai_act_article51_page83.png"],
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "kind": "split_documents",
+      "evidence_asset_ids": [
+        "EVID_EU_SYSTEMIC_DUTIES",
+        "EVID_EU_INCIDENT_REPORTING"
+      ],
+      "image_assets": [
+        "assets/evidence/eu_ai_act_article55_page86.png",
+        "assets/evidence/eu_ai_act_article73_page101.png"
+      ],
+      "first_occurrence_asset_count": 2,
+      "distinct_image_per_occurrence": true
+    },
+    {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "kind": "recap",
+      "evidence_asset_ids": [
+        "EVID_STANFORD_INVESTMENT_2024",
+        "EVID_STANFORD_FRONTIER_GAP",
+        "EVID_CMA_CRITICAL_INPUTS"
+      ],
+      "image_assets": [
+        "assets/evidence/stanford_ai_index_investment_page249.png",
+        "assets/evidence/stanford_ai_index_frontier_gap_page99.png",
+        "assets/evidence/cma_critical_inputs_page14.png"
+      ],
+      "first_occurrence_asset_count": 3,
+      "distinct_image_per_occurrence": true
+    }
+  ]
+}
