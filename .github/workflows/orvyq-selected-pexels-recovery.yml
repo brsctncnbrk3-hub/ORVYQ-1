@@ -51,8 +51,10 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/orvyq_acquire_selected_pexels.mjs --project-id="$PROJECT_ID" | tee selected-pexels-recovery.log
-          test "$(jq -r '.pass' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json")" = "true"
-          test "$(jq '.records | length' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json")" -eq 20
+          RUNTIME="projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
+          test "$(jq -r '.pass' "$RUNTIME")" = "true"
+          test "$(jq '.records | length' "$RUNTIME")" -eq 20
+          test "$(jq '.unresolved_scene_ids | length' "$RUNTIME")" -eq 0
 
       - name: Remove unselected acquisition variants
         shell: bash
@@ -70,55 +72,23 @@ jobs:
           done
           rm -f "$KEEP_FILE"
           test "$(find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' | wc -l)" -eq 20
+          test "$(find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4.provenance.json' | wc -l)" -eq 20
 
-      - name: Generate claim review frames
+      - name: Verify selected media and provenance
         shell: bash
         run: |
           set -euo pipefail
           ROOT="projects/$PROJECT_ID"
           RUNTIME="$ROOT/assets/footage_acquisition.runtime.json"
-          OUT="$ROOT/qa/footage-contact-sheets"
-          rm -rf "$OUT"
-          mkdir -p "$OUT"
           jq -r '.records[].path' "$RUNTIME" | while IFS= read -r relative; do
             clip="$ROOT/$relative"
-            base="$(basename "$clip" .mp4)"
-            ffmpeg -y -ss 1 -i "$clip" -frames:v 1 -vf "scale=640:-2" "$OUT/${base}.jpg" >/dev/null 2>&1
+            test -s "$clip"
+            test -s "$clip.provenance.json"
+            dimensions="$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$clip")"
+            test "$dimensions" = "1280x720"
           done
-          test "$(find "$OUT" -type f -name '*.jpg' | wc -l)" -eq 20
 
-      - name: Record pending semantic review queue
-        shell: bash
-        run: |
-          set -euo pipefail
-          node --input-type=module - <<'NODE'
-          import path from 'node:path';
-          import { promises as fs } from 'node:fs';
-          const projectId = process.env.PROJECT_ID;
-          const root = path.join('projects', projectId);
-          const runtime = JSON.parse(await fs.readFile(path.join(root, 'assets', 'footage_acquisition.runtime.json'), 'utf8'));
-          const manifest = JSON.parse(await fs.readFile(path.join(root, 'research', 'selected_pexels_manifest.json'), 'utf8'));
-          const byScene = new Map(manifest.assets.map((x) => [x.scene_id, x]));
-          const records = runtime.records.map((record) => {
-            const planned = byScene.get(record.scene_id) || {};
-            return {
-              scene_id: record.scene_id,
-              claim_id: record.claim_id,
-              footage: record.path,
-              contact_sheet: `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`,
-              narration_anchor: planned.narration_anchor,
-              semantic_rationale: planned.semantic_rationale,
-              semantic_link: planned.semantic_link,
-              review_status: 'pending_claim_specific_frame_review'
-            };
-          });
-          await fs.mkdir(path.join(root, 'qa'), {recursive: true});
-          await fs.writeFile(path.join(root, 'qa', 'footage_review_queue.json'), JSON.stringify({
-            schema_version: '1.0', project_id: projectId, generated_at: new Date().toISOString(), records
-          }, null, 2) + '\n');
-          NODE
-
-      - name: Upload recovery diagnostics
+      - name: Upload acquisition diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -127,8 +97,7 @@ jobs:
           path: |
             selected-pexels-recovery.log
             projects/${{ env.PROJECT_ID }}/assets/footage_acquisition.runtime.json
-            projects/${{ env.PROJECT_ID }}/qa/footage-contact-sheets/**
-            projects/${{ env.PROJECT_ID }}/qa/footage_review_queue.json
+            projects/${{ env.PROJECT_ID }}/assets/local_assets.json
           if-no-files-found: warn
 
       - name: Commit recovered footage state
@@ -139,9 +108,7 @@ jobs:
           git add -f \
             "projects/$PROJECT_ID/assets/footage" \
             "projects/$PROJECT_ID/assets/local_assets.json" \
-            "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" \
-            "projects/$PROJECT_ID/qa/footage-contact-sheets" \
-            "projects/$PROJECT_ID/qa/footage_review_queue.json"
+            "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
           git config user.name "orvyq-footage-bot"
           git config user.email "orvyq-footage-bot@users.noreply.github.com"
           if git diff --cached --quiet; then
