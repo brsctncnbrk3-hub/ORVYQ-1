@@ -1,19 +1,19 @@
 {
   "schema_version": "1.2-four-position",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T09:03:22.938Z",
+  "generated_at": "2026-08-02T09:21:38.896Z",
   "review_method": "four-position claim-specific contact-sheet review",
   "pending_review_count": 20,
   "entries_with_exact_uses": 20,
   "entries": [
     {
       "scene_id": "scene_001",
-      "provider_asset_id": "8534745",
+      "provider_asset_id": "7989689",
       "status": "pending_visual_review",
-      "asset_path": "assets/footage/scene_001_8534745.mp4",
-      "asset_sha256": "c97db2d827d7938fd12d341970e9ef0ec4127f37a4f324d75d0a2015756aa76c",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_001_8534745.jpg",
-      "contact_sheet_sha256": "c796aade919d471b4e13e179a9ae0bcebfad70273436ce887dd9081df133e236",
+      "asset_path": "assets/footage/scene_001_7989689.mp4",
+      "asset_sha256": "829c9da1d215294746618cf7af486f86352f3b658407a61e0eaa840f5cbf9d21",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_001_7989689.jpg",
+      "contact_sheet_sha256": "ee71d9a38b6e9e7fd184bbd9d30a8ba8ef291b17b73870cbdfc657e20a0ade63",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
@@ -37,7 +37,7 @@
         {
           "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
           "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
-          "semantic_rationale": "Researchers working together establishes the human institutions making frontier safety decisions without identifying a specific company.",
+          "semantic_rationale": "Developers jointly examining software gives the opening a credible human frontier-technology context without suggesting that the stock footage depicts a named AI laboratory.",
           "semantic_link": "physical"
         }
       ],
@@ -82,18 +82,18 @@
     },
     {
       "scene_id": "scene_003",
-      "provider_asset_id": "5240935",
+      "provider_asset_id": "8632599",
       "status": "pending_visual_review",
-      "asset_path": "assets/footage/scene_003_5240935.mp4",
-      "asset_sha256": "3a4124f4d1a8aebba1c090b9dd6995529d07f61aecd7e939d4ff3816f8a1d4a8",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_003_5240935.jpg",
-      "contact_sheet_sha256": "0c805700c3469ec56de62f7f416e114f9faef71e0f8da6f05185905ac65b7d13",
-      "duration_seconds": 10.01,
+      "asset_path": "assets/footage/scene_003_8632599.mp4",
+      "asset_sha256": "d43e41ab3f2badf8b1c1d533888b7421151309e9d9c628228aac2e5d648553db",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_003_8632599.jpg",
+      "contact_sheet_sha256": "450a5d0bbf81ba39236399d62131ca55ab6ab731e09ba91e8523442e615432ff",
+      "duration_seconds": 9.96,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1,
+        "time_stretch_factor": 1.4124293785310735,
         "requested_duration_seconds": 10,
         "normalized_duration_seconds": 10,
         "loop_short_source_when_required": false,
@@ -111,7 +111,7 @@
         {
           "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
           "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
-          "semantic_rationale": "A monitored workstation and deliberate review process represents a controlled evaluation environment rather than a real-world incident.",
+          "semantic_rationale": "Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence.",
           "semantic_link": "physical"
         }
       ],
@@ -159,9 +159,9 @@
       "provider_asset_id": "34406409",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_005_34406409.mp4",
-      "asset_sha256": "f4525afc6cb7707430ce91c3ff1def747b3bf6350032b68bb9b6990f7045d8eb",
+      "asset_sha256": "04525570d0d02e2a6aedcf6a21908d0099c99e5afb9e75ef4182dd376b66e288",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_005_34406409.jpg",
-      "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
+      "contact_sheet_sha256": "750be574d6458cc897074deb8fec54ccd85809a57687b5e5567c34a7778cb27e",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
@@ -239,9 +239,9 @@
       "provider_asset_id": "7253660",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_007_7253660.mp4",
-      "asset_sha256": "5bd6d728232bbb41f50f3b34a3fdcf7e716c4140116122c82e06d8af68b4e2d2",
+      "asset_sha256": "12e0fbb35a64680077941c993ebbd15885bfc973d14babe7c85a1113e9d02119",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_007_7253660.jpg",
-      "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
+      "contact_sheet_sha256": "d04fa22d6c51570a64cee9011941c87143cbf69e9b14af1a07d6c35d5174eca9",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
@@ -273,17 +273,17 @@
     },
     {
       "scene_id": "scene_008",
-      "provider_asset_id": "28709421",
+      "provider_asset_id": "6804656",
       "status": "pending_visual_review",
-      "asset_path": "assets/footage/scene_008_28709421.mp4",
-      "asset_sha256": "0089ca8c1ac3f3caa5e166f49673ed813df05de6db5a2ad082b8e794fef2a934",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_008_28709421.jpg",
-      "contact_sheet_sha256": "fa067c5b0a4a4c89a4eef1640e5d4fafbbc4ba1c941d7cf72d442217390a5fc0",
+      "asset_path": "assets/footage/scene_008_6804656.mp4",
+      "asset_sha256": "67128e2867f5b1765759b5c0dea9cb85745ab6700e19e3b64858155883a9c0fb",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_008_6804656.jpg",
+      "contact_sheet_sha256": "c23f0912afd137eee27fb8082f992b5a94e1d28d82c4723c530c7a572f133596",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
-        "aspect_policy": "fill_and_center_crop",
+        "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
         "requested_duration_seconds": 10,
         "normalized_duration_seconds": 10,
@@ -302,7 +302,7 @@
         {
           "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
           "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
-          "semantic_rationale": "Network data and active infrastructure visualize machine-scale technical operations while the provider report carries the factual burden.",
+          "semantic_rationale": "A technician actively handling network infrastructure provides a physical analogue for machine-scale technical operations with humans intervening at key moments; the provider report carries the factual burden.",
           "semantic_link": "physical"
         }
       ],
@@ -569,20 +569,20 @@
     },
     {
       "scene_id": "scene_016",
-      "provider_asset_id": "3895141",
+      "provider_asset_id": "6573544",
       "status": "pending_visual_review",
-      "asset_path": "assets/footage/scene_016_3895141.mp4",
-      "asset_sha256": "390a96a54572c129c4ffd85b64649cb6fce2d63d74fd3360e65c6ad7ded6b657",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_016_3895141.jpg",
-      "contact_sheet_sha256": "714d3782135479f0c931f2439118264b0aa0c15a45888bb64301038d11a0dfec",
-      "duration_seconds": 4.25425,
+      "asset_path": "assets/footage/scene_016_6573544.mp4",
+      "asset_sha256": "e377890563b57b014dbb82941b468bfc9b7d5c021bf147ac570cf600b76e4d3a",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_016_6573544.jpg",
+      "contact_sheet_sha256": "8f5d484d282ad4971dde7be810c4aebd1761d8d21e88dae7cd50e3f20a5229b0",
+      "duration_seconds": 9.966667,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1.75,
+        "time_stretch_factor": 1.1990407673860912,
         "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 4.3283327499999995,
+        "normalized_duration_seconds": 10,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -598,7 +598,7 @@
         {
           "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
           "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
-          "semantic_rationale": "Restricted physical access provides a restrained visual analogue for centralized permission, monitoring and revocation.",
+          "semantic_rationale": "A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company.",
           "semantic_link": "conceptual"
         }
       ],
