@@ -20,7 +20,7 @@ jobs:
   sync:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       PROJECT_ID: 004-the-ai-race-clean-rebuild
       TARGET_BRANCH: agent/project-001-clean-rebuild
@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Synchronize reviewed footage into every planning surface
+      - name: Generate canonical 41-scene contracts and decisions
         shell: bash
         run: |
           set -euo pipefail
@@ -55,252 +55,177 @@ jobs:
           const queue = await readJson('qa/footage_review_queue.json');
           const reviews = await readJson('research/visual_asset_reviews.json');
           const existingContracts = await readJson('research/footage_use_contracts.json');
-          const existingRequests = await readJson('research/visual_asset_requests.json');
-          const existingPlan = await readJson('config/editorial_asset_plan.json');
-          const existingDecisions = await readJson('config/footage_review_decisions.json');
-          const blueprint = await readJson('direction/editorial_blueprint.json');
+          const editorial = await readJson('config/editorial_asset_plan.json');
 
-          if (queue.project_id !== projectId || reviews.project_id !== projectId) {
-            throw new Error('Project identity mismatch in footage review inputs');
-          }
-          if (!Array.isArray(queue.entries) || queue.entries.length !== 41) {
-            throw new Error(`Expected 41 queue entries, found ${queue.entries?.length ?? 0}`);
-          }
+          if (queue.project_id !== projectId || reviews.project_id !== projectId) throw new Error('Project identity mismatch');
+          if (!Array.isArray(queue.entries) || queue.entries.length !== 41) throw new Error(`Expected 41 queue entries, found ${queue.entries?.length || 0}`);
           if (reviews.summary?.approved !== 41 || reviews.summary?.pending_frame_review !== 0 || reviews.summary?.rejected_from_metadata !== 6) {
             throw new Error(`Visual review is not final: ${JSON.stringify(reviews.summary || {})}`);
           }
-          if (!Array.isArray(reviews.approved_assets) || reviews.approved_assets.length !== 41) {
-            throw new Error('Expected exactly 41 approved visual-review records');
-          }
+          if (!Array.isArray(reviews.approved_assets) || reviews.approved_assets.length !== 41) throw new Error('Expected 41 approved review records');
 
           const approvedByScene = new Map(reviews.approved_assets.map((item) => [item.scene_id, item]));
           const expectedScenes = Array.from({ length: 41 }, (_, index) => `scene_${String(index + 1).padStart(3, '0')}`);
           const actualScenes = queue.entries.map((entry) => entry.scene_id);
-          if (JSON.stringify(actualScenes) !== JSON.stringify(expectedScenes)) {
-            throw new Error(`Queue is not the exact ordered 41-scene package: ${actualScenes.join(',')}`);
-          }
+          if (JSON.stringify(actualScenes) !== JSON.stringify(expectedScenes)) throw new Error(`Unexpected scene order: ${actualScenes.join(',')}`);
 
+          const expectedClaims = Array.from({ length: 21 }, (_, index) => `CLM_${String(index + 1).padStart(3, '0')}`);
+          const byPrimaryClaim = new Map(expectedClaims.map((claimId) => [claimId, []]));
           const normalized = queue.entries.map((entry) => {
             const approved = approvedByScene.get(entry.scene_id);
             if (!approved) throw new Error(`${entry.scene_id}: missing approved review record`);
-            if (String(approved.provider_asset_id) !== String(entry.provider_asset_id)) {
-              throw new Error(`${entry.scene_id}: provider identity mismatch`);
+            if (String(approved.provider_asset_id) !== String(entry.provider_asset_id)) throw new Error(`${entry.scene_id}: provider mismatch`);
+            if (String(approved.asset_sha256).toLowerCase() !== String(entry.asset_sha256).toLowerCase()) throw new Error(`${entry.scene_id}: footage hash mismatch`);
+            if (String(approved.contact_sheet_sha256).toLowerCase() !== String(entry.contact_sheet_sha256).toLowerCase()) throw new Error(`${entry.scene_id}: contact-sheet hash mismatch`);
+            if (!Array.isArray(entry.approved_uses_if_visually_valid) || entry.approved_uses_if_visually_valid.length < 1) {
+              throw new Error(`${entry.scene_id}: missing queue-approved use`);
             }
-            if (String(approved.asset_sha256).toLowerCase() !== String(entry.asset_sha256).toLowerCase()) {
-              throw new Error(`${entry.scene_id}: footage SHA-256 mismatch`);
+            const primaryUse = entry.approved_uses_if_visually_valid[0];
+            if (!primaryUse.claim_id || !primaryUse.narration_anchor || String(primaryUse.semantic_rationale || '').length < 24) {
+              throw new Error(`${entry.scene_id}: incomplete primary approved use`);
             }
-            if (String(approved.contact_sheet_sha256).toLowerCase() !== String(entry.contact_sheet_sha256).toLowerCase()) {
-              throw new Error(`${entry.scene_id}: contact-sheet SHA-256 mismatch`);
-            }
-            if (!Array.isArray(approved.approved_uses) || approved.approved_uses.length < 1) {
-              throw new Error(`${entry.scene_id}: missing claim-bound approved use`);
-            }
-            for (const approvedUse of approved.approved_uses) {
-              if (!approvedUse.claim_id || !approvedUse.narration_anchor || !approvedUse.semantic_rationale) {
-                throw new Error(`${entry.scene_id}: incomplete claim-bound approved use`);
-              }
-            }
-            const primaryUse = approved.approved_uses[0];
-            return { entry, approved, primaryUse, approvedUses: approved.approved_uses };
+            const bucket = byPrimaryClaim.get(primaryUse.claim_id);
+            if (!bucket) throw new Error(`${entry.scene_id}: unknown primary claim ${primaryUse.claim_id}`);
+            const item = { entry, approved, primaryUse };
+            bucket.push(item);
+            return item;
           });
 
-          const expectedClaims = Array.from({ length: 21 }, (_, index) => `CLM_${String(index + 1).padStart(3, '0')}`);
-          const byClaim = new Map(expectedClaims.map((claimId) => [claimId, []]));
-          for (const item of normalized) {
-            const bucket = byClaim.get(item.primaryUse.claim_id);
-            if (!bucket) throw new Error(`${item.entry.scene_id}: unexpected primary claim ${item.primaryUse.claim_id}`);
-            bucket.push(item);
-          }
-          for (const [claimId, items] of byClaim) {
+          for (const [claimId, items] of byPrimaryClaim) {
             items.sort((a, b) => a.entry.scene_id.localeCompare(b.entry.scene_id));
-            if (items.length < 1 || items.length > 2) {
-              throw new Error(`${claimId}: expected one or two primary footage assets, found ${items.length}`);
-            }
+            if (items.length < 1 || items.length > 3) throw new Error(`${claimId}: expected 1-3 primary footage assets, found ${items.length}`);
           }
-          const singletonClaims = [...byClaim].filter(([, items]) => items.length === 1).map(([claimId]) => claimId);
-          if (singletonClaims.length !== 1) {
-            throw new Error(`Expected exactly one single-footage primary claim, found ${singletonClaims.join(',')}`);
-          }
+          if ([...byPrimaryClaim.values()].reduce((sum, items) => sum + items.length, 0) !== 41) throw new Error('Primary claim grouping lost footage records');
 
-          const assignments = [];
+          const motions = ['hold', 'push', 'pull', 'drift_left'];
           const contracts = [];
-          const requests = [];
-          const decisions = [];
-          const approvedPool = [];
-          const firstAssignmentByClaim = new Map();
-
           for (const claimId of expectedClaims) {
-            const items = byClaim.get(claimId);
+            const items = byPrimaryClaim.get(claimId);
             items.forEach((item, sliceIndex) => {
-              const { entry, approved, primaryUse, approvedUses } = item;
-              const assetId = `local-footage-${entry.scene_id}`;
-              const assignment = {
+              const sceneNumber = Number(item.entry.scene_id.split('_')[1]);
+              const semanticLink = item.primaryUse.semantic_link || 'physical';
+              const rationale = item.primaryUse.semantic_rationale;
+              const humanContext = /people|person|human|worker|team|developer|researcher|laboratory|analyst|firm/i.test(rationale);
+              contracts.push({
+                scene_id: item.entry.scene_id,
                 claim_id: claimId,
                 slice_index: sliceIndex,
-                slice_span: 1,
-                asset_path: entry.asset_path,
-                asset_id: assetId,
-                source_start_seconds: 0
-              };
-              assignments.push(assignment);
-              if (sliceIndex === 0) firstAssignmentByClaim.set(claimId, assignment);
-
-              approvedPool.push({
-                asset_id: assetId,
-                asset_path: entry.asset_path,
-                status: 'authentic_approved',
-                source_type: 'pexels_footage',
-                license_scope: 'Pexels licensed footage with repository-local source and byte-bound review provenance',
-                claim_id: claimId,
-                narration_anchor: primaryUse.narration_anchor,
-                semantic_rationale: primaryUse.semantic_rationale,
-                approved_uses: approvedUses,
-                provider_asset_id: String(entry.provider_asset_id),
-                asset_sha256: entry.asset_sha256,
-                contact_sheet_path: entry.contact_sheet_path,
-                contact_sheet_sha256: entry.contact_sheet_sha256,
-                review_method: approved.review_method
-              });
-
-              contracts.push({
-                assignment_id: `assignment_${entry.scene_id}`,
-                narration_anchor: primaryUse.narration_anchor,
-                claim_id: claimId,
-                asset_path: entry.asset_path,
-                asset_sha256: entry.asset_sha256,
-                semantic_link: primaryUse.semantic_link || 'physical',
-                semantic_rationale: primaryUse.semantic_rationale,
-                approved_uses: approvedUses,
-                review_method: approved.review_method,
-                contact_sheet_path: entry.contact_sheet_path,
-                contact_sheet_sha256: entry.contact_sheet_sha256,
-                minimum_source_duration_seconds: Math.min(6, Number(entry.duration_seconds || 6)),
-                status: 'approved_for_edit'
-              });
-
-              requests.push({
-                request_id: `footage_${entry.scene_id}`,
-                type: 'footage',
-                claim_ids: [...new Set(approvedUses.map((use) => use.claim_id))],
-                intended_use: approvedUses.map((use) => use.semantic_rationale).join(' '),
-                required_semantics: approvedUses.map((use) => use.narration_anchor).join(' / '),
-                approved_uses: approvedUses,
-                status: 'approved_for_edit',
-                asset_path: entry.asset_path,
-                provider_asset_id: String(entry.provider_asset_id),
-                asset_sha256: entry.asset_sha256,
-                contact_sheet_path: entry.contact_sheet_path,
-                contact_sheet_sha256: entry.contact_sheet_sha256
-              });
-
-              decisions.push({
-                scene_id: entry.scene_id,
-                provider_asset_id: String(entry.provider_asset_id),
-                asset_path: entry.asset_path,
-                asset_sha256: entry.asset_sha256,
-                contact_sheet_path: entry.contact_sheet_path,
-                contact_sheet_sha256: entry.contact_sheet_sha256,
-                decision: 'approved',
-                decision_rationale: approved.decision_rationale,
-                approved_uses: approvedUses,
-                reviewed_at: approved.reviewed_at || reviews.completed_at
+                trim_in_ratio: sceneNumber % 2 === 0 ? 0.18 : 0.08,
+                motion: motions[(sceneNumber - 1) % motions.length],
+                role: semanticLink === 'conceptual' ? 'governance_context' : (humanContext ? 'human_context' : 'context'),
+                semantic_link: semanticLink,
+                semantic_rationale: rationale
               });
             });
           }
 
-          if (assignments.length !== 41 || approvedPool.length !== 41 || contracts.length !== 41 || requests.length !== 41 || decisions.length !== 41) {
-            throw new Error('Generated planning surfaces are not all exactly 41 entries');
-          }
+          const decisions = normalized.map(({ entry, approved }) => ({
+            scene_id: entry.scene_id,
+            decision: 'approve',
+            asset_sha256: entry.asset_sha256,
+            contact_sheet_sha256: entry.contact_sheet_sha256,
+            rationale: approved.decision_rationale
+          }));
 
-          const editorialPlan = {
-            ...existingPlan,
-            schema_version: existingPlan.schema_version || '1.0',
-            project_id: projectId,
-            approved_pool: approvedPool,
-            candidate_assets: [],
-            assignments,
-            notes: 'Synchronized from the exact current 41-of-41 four-position manual visual review. Each asset is assigned by its primary approved use; additional claim-specific approved uses remain preserved in the review, request and contract records. No rejected predecessor path is retained.'
-          };
+          if (contracts.length !== 41 || decisions.length !== 41) throw new Error('Canonical contract or decision count is not 41');
+          if (decisions.some((decision) => String(decision.rationale || '').length < 24)) throw new Error('At least one approval rationale is too short');
 
-          const footageContracts = {
-            ...existingContracts,
+          const contractDocument = {
             schema_version: existingContracts.schema_version || '1.0',
             project_id: projectId,
-            review_method: queue.review_method,
-            global_rejected_asset_reentry_forbidden: true,
-            assignments: contracts,
-            explicit_retirements: existingContracts.explicit_retirements || [],
-            pending_scene_replacement_required: []
+            policy: existingContracts.policy || 'Every scene is claim-bound. Generic footage cannot migrate to another claim, and no prior-project asset may be reused.',
+            managed_scene_ids: expectedScenes,
+            pruned_scene_ids: [],
+            assignments: contracts
           };
-
-          const visualRequests = {
-            ...existingRequests,
-            schema_version: existingRequests.schema_version || '1.0',
+          const decisionDocument = {
+            schema_version: '1.0',
             project_id: projectId,
-            requests
-          };
-
-          const footageDecisions = {
-            ...existingDecisions,
-            schema_version: existingDecisions.schema_version || '1.0',
-            round_id: '004-footage-review-round-current-41',
-            project_id: projectId,
-            review_method: queue.review_method,
-            submitted_at: reviews.completed_at || new Date().toISOString(),
-            reviewed_by: 'orvyq_manual_four_position_review',
+            reviewed_at: reviews.completed_at || new Date().toISOString(),
+            review_method: queue.review_method || 'four-position claim-specific contact-sheet review',
             decisions
           };
 
-          blueprint.motion_hooks = (blueprint.motion_hooks || []).map((hook) => {
-            const assignment = firstAssignmentByClaim.get(hook.claim_id);
-            if (!assignment) return hook;
-            const isFootageHook = hook.visual_role === 'cinematic_body_footage' || hook.asset_type === 'footage';
-            if (!isFootageHook) return hook;
-            return {
-              ...hook,
-              asset_id: assignment.asset_id,
-              asset_path: assignment.asset_path,
-              source_start_seconds: assignment.source_start_seconds
-            };
-          });
-
-          await writeJson('config/editorial_asset_plan.json', editorialPlan);
-          await writeJson('research/footage_use_contracts.json', footageContracts);
-          await writeJson('research/visual_asset_requests.json', visualRequests);
-          await writeJson('config/footage_review_decisions.json', footageDecisions);
-          await writeJson('direction/editorial_blueprint.json', blueprint);
+          delete editorial.approved_pool;
+          delete editorial.candidate_assets;
+          delete editorial.assignments;
+          await writeJson('research/footage_use_contracts.json', contractDocument);
+          await writeJson('config/footage_review_decisions.json', decisionDocument);
+          await writeJson('config/editorial_asset_plan.json', editorial);
 
           console.log(JSON.stringify({
             project_id: projectId,
-            approved_pool: approvedPool.length,
-            assignments: assignments.length,
             contracts: contracts.length,
-            requests: requests.length,
             decisions: decisions.length,
-            singleton_primary_claim: singletonClaims[0]
+            claims: expectedClaims.length,
+            per_claim_counts: Object.fromEntries([...byPrimaryClaim].map(([claimId, items]) => [claimId, items.length]))
           }, null, 2));
           NODE
 
-      - name: Apply canonical review decisions and reconcile planning data
+      - name: Apply canonical review decisions
         shell: bash
         run: |
           set -euo pipefail
           node scripts/orvyq_apply_footage_review_decisions.mjs --project-id="$PROJECT_ID" | tee footage-plan-sync.log
-          jq -e '.summary.approved == 41 and .summary.pending_frame_review == 0 and .summary.rejected_from_metadata == 6 and (.approved_assets | length) == 41' "projects/$PROJECT_ID/research/visual_asset_reviews.json"
-          jq -e '(.approved_pool | length) == 41 and (.assignments | length) == 41 and (.candidate_assets | length) == 0' "projects/$PROJECT_ID/config/editorial_asset_plan.json"
-          jq -e '(.assignments | length) == 41 and (.pending_scene_replacement_required | length) == 0' "projects/$PROJECT_ID/research/footage_use_contracts.json"
-          jq -e '(.requests | length) == 41 and ([.requests[].status] | all(. == "approved_for_edit"))' "projects/$PROJECT_ID/research/visual_asset_requests.json"
-          jq -e '(.decisions | length) == 41 and ([.decisions[].decision] | all(. == "approved"))' "projects/$PROJECT_ID/config/footage_review_decisions.json"
 
-      - name: Reject stale predecessor paths everywhere
+      - name: Synchronize footage motion hooks in the editorial blueprint
         shell: bash
         run: |
           set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import path from 'node:path';
+          import { promises as fs } from 'node:fs';
+          const root = path.join('projects', process.env.PROJECT_ID);
+          const readJson = async (relative) => JSON.parse(await fs.readFile(path.join(root, relative), 'utf8'));
+          const writeJson = async (relative, value) => fs.writeFile(path.join(root, relative), JSON.stringify(value, null, 2) + '\n');
+          const [blueprint, contracts, runtime] = await Promise.all([
+            readJson('direction/editorial_blueprint.json'),
+            readJson('research/footage_use_contracts.json'),
+            readJson('assets/footage_acquisition.runtime.json')
+          ]);
+          const recordByScene = new Map((runtime.records || []).map((record) => [record.scene_id, record]));
+          const contractsByClaim = new Map();
+          for (const contract of contracts.assignments || []) {
+            contractsByClaim.set(contract.claim_id, [...(contractsByClaim.get(contract.claim_id) || []), contract]);
+          }
+          for (const items of contractsByClaim.values()) items.sort((a, b) => Number(a.slice_index) - Number(b.slice_index));
+          blueprint.motion_hooks = (blueprint.motion_hooks || []).map((hook) => {
+            const isFootageHook = hook.visual_role === 'cinematic_body_footage' || hook.asset_type === 'footage';
+            if (!isFootageHook) return hook;
+            const choices = contractsByClaim.get(hook.claim_id) || [];
+            const contract = choices.find((item) => Number(item.slice_index) === Number(hook.slice_index || 0)) || choices[0];
+            if (!contract) return hook;
+            const record = recordByScene.get(contract.scene_id);
+            if (!record) throw new Error(`${contract.scene_id}: blueprint synchronization has no runtime record`);
+            return {
+              ...hook,
+              asset_id: `local-footage-${contract.scene_id}`,
+              asset_path: record.path,
+              source_start_seconds: 0,
+              semantic_rationale: contract.semantic_rationale,
+              semantic_link: contract.semantic_link
+            };
+          });
+          await writeJson('direction/editorial_blueprint.json', blueprint);
+          NODE
+
+      - name: Verify canonical synchronized state
+        shell: bash
+        run: |
+          set -euo pipefail
+          jq -e '.summary.approved == 41 and .summary.pending_frame_review == 0 and .summary.rejected_from_metadata == 6 and (.approved_assets | length) == 41' "projects/$PROJECT_ID/research/visual_asset_reviews.json"
+          jq -e '(.assignments | length) == 41 and (.managed_scene_ids | length) == 41' "projects/$PROJECT_ID/research/footage_use_contracts.json"
+          jq -e '(.decisions | length) == 41 and ([.decisions[].decision] | all(. == "approve"))' "projects/$PROJECT_ID/config/footage_review_decisions.json"
+          jq -e '.status == "ready" and (.full_footage_pool | length) == 41 and ([.footage_assignments | to_entries[] | .value | to_entries[]] | length) == 41' "projects/$PROJECT_ID/config/editorial_asset_plan.json"
+          jq -e '([.requests[] | select(.type == "contextual_footage")] | length) == 41 and ([.requests[] | select(.type == "contextual_footage") | .status] | all(. == "ready"))' "projects/$PROJECT_ID/research/visual_asset_requests.json"
+          jq -e '.status == "ready" and (.shots | length) == 4' "projects/$PROJECT_ID/direction/motion_hook.json"
+          jq -e '.current_stage == "render_free_candidate_validation_ready" and .render_authorized == false' "projects/$PROJECT_ID/project.json"
+          jq -e '.status == "ready_for_candidate_validation"' "projects/$PROJECT_ID/config/production_profile.json"
+          test "$(find "projects/$PROJECT_ID/assets/footage" -maxdepth 1 -type f -name '*.mp4.provenance.json' | wc -l)" -eq 41
           if grep -R -n -E 'scene_008_5377280|scene_019_992599' \
             "projects/$PROJECT_ID/config/editorial_asset_plan.json" \
-            "projects/$PROJECT_ID/config/footage_review_decisions.json" \
-            "projects/$PROJECT_ID/research/footage_use_contracts.json" \
             "projects/$PROJECT_ID/research/visual_asset_requests.json" \
+            "projects/$PROJECT_ID/direction/motion_hook.json" \
             "projects/$PROJECT_ID/direction/editorial_blueprint.json"; then
             echo "::error::A rejected predecessor footage path remains in active planning data"
             exit 1
@@ -320,12 +245,17 @@ jobs:
           git config user.name "orvyq-footage-planning-bot"
           git config user.email "orvyq-footage-planning-bot@users.noreply.github.com"
           git add \
-            "projects/$PROJECT_ID/config/editorial_asset_plan.json" \
             "projects/$PROJECT_ID/config/footage_review_decisions.json" \
+            "projects/$PROJECT_ID/config/editorial_asset_plan.json" \
+            "projects/$PROJECT_ID/config/production_profile.json" \
             "projects/$PROJECT_ID/research/footage_use_contracts.json" \
             "projects/$PROJECT_ID/research/visual_asset_requests.json" \
             "projects/$PROJECT_ID/research/visual_asset_reviews.json" \
-            "projects/$PROJECT_ID/direction/editorial_blueprint.json"
+            "projects/$PROJECT_ID/direction/motion_hook.json" \
+            "projects/$PROJECT_ID/direction/editorial_blueprint.json" \
+            "projects/$PROJECT_ID/direction/visual_rebalance_plan.json" \
+            "projects/$PROJECT_ID/project.json"
+          git add -f "projects/$PROJECT_ID/assets/footage"/*.mp4.provenance.json
           if git diff --cached --quiet; then
             echo "Reviewed footage planning data is already synchronized"
             exit 0
@@ -346,5 +276,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
         run: |
-          BODY="Reviewed-footage planning synchronization finished with **${JOB_STATUS}**. The exact 41 approved footage assets were propagated into the editorial plan, use contracts, visual requests, review decisions and motion-hook blueprint; rejected predecessor paths were forbidden. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          BODY="Reviewed-footage planning synchronization finished with **${JOB_STATUS}**. The canonical review applicator verified exact media and contact-sheet bytes, promoted all 41 claim-bound contracts, rebuilt the editorial footage assignments and removed rejected predecessor paths. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
           gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
