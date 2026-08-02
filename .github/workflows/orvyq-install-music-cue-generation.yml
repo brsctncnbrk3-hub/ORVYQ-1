@@ -1,0 +1,67 @@
+name: ORVYQ Install Music Cue Generation
+
+on:
+  push:
+    branches:
+      - "agent/project-001-clean-rebuild"
+    paths:
+      - "projects/004-the-ai-race-clean-rebuild/config/install_music_cue_generation_request.json"
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/project-001-clean-rebuild
+          fetch-depth: 2
+
+      - name: Install exact shot-derived cue generation step
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('.github/workflows/orvyq-candidate-validation.yml')
+          text = path.read_text()
+          old = '''      - name: Resolve canonical music
+        run: node scripts/orvyq_music_resolve.mjs --project-id="$PROJECT_ID" --mode=full --target-duration-seconds="$CANDIDATE_DURATION_SECONDS"
+'''
+          new = '''      - name: Build shot-derived canonical music cue sheet
+        run: node scripts/orvyq_build_music_cue_sheet.mjs --project-id="$PROJECT_ID" --target-duration-seconds="$CANDIDATE_DURATION_SECONDS"
+
+      - name: Resolve canonical music
+        run: node scripts/orvyq_music_resolve.mjs --project-id="$PROJECT_ID" --mode=full --target-duration-seconds="$CANDIDATE_DURATION_SECONDS"
+'''
+          if new in text:
+              print('Music cue generation step already installed')
+          elif old in text:
+              path.write_text(text.replace(old, new, 1))
+          else:
+              raise SystemExit('Expected canonical music step was not found; refusing to modify workflow')
+          PY
+
+      - name: Validate workflow patch
+        run: |
+          set -euo pipefail
+          grep -Fq 'Build shot-derived canonical music cue sheet' .github/workflows/orvyq-candidate-validation.yml
+          grep -Fq 'orvyq_build_music_cue_sheet.mjs' .github/workflows/orvyq-candidate-validation.yml
+          node --check scripts/orvyq_build_music_cue_sheet.mjs
+
+      - name: Commit maintenance patch
+        run: |
+          set -euo pipefail
+          git config user.name "orvyq-maintenance-bot"
+          git config user.email "orvyq-maintenance-bot@users.noreply.github.com"
+          git add .github/workflows/orvyq-candidate-validation.yml
+          if git diff --cached --quiet; then
+            echo "No workflow change needed"
+            exit 0
+          fi
+          git commit -m "Generate music cues from current production shots"
+          git pull --rebase origin agent/project-001-clean-rebuild
+          git push origin HEAD:agent/project-001-clean-rebuild
