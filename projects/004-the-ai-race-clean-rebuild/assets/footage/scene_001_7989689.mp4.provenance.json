@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_001_7989689.jpg",
+  "contact_sheet_sha256": "0221ba882ab8f71462fc7888ebf78297eec14dfc25953dc0f39875dcab897bbd",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+      "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
+      "semantic_rationale": "Developers jointly examining software gives the opening a credible human frontier-technology context without suggesting that the stock footage depicts a named AI laboratory.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "Across all four frames, the clip consistently shows developers examining software together; it supplies credible human AI-development context without implying a named laboratory."
 }

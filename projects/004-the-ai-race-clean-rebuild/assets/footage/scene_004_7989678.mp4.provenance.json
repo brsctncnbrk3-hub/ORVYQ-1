@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_004_7989678.jpg",
+  "contact_sheet_sha256": "637f79bd1f737e7b189a631d7f9dd5e287a91bfa01ec39aacd6ab79bead0cc66",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "narration_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go.",
+      "semantic_rationale": "People reviewing software in a controlled office makes the test-versus-deployment distinction concrete without reenactment.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "The sampled sequence remains a controlled office software review, clearly reinforcing the distinction between designed tests and real-world deployment without reenactment."
 }

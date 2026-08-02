@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_005_34406409.jpg",
+  "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "narration_anchor": "Stanford's 2025 AI Index reported nearly thirty-four billion dollars in private generative-AI investment in 2024.",
+      "semantic_rationale": "A professional market-data environment supports the narration about capital flow while the factual number remains carried by primary evidence.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "All frames preserve a professional market-data environment, supporting the investment-scale narration while leaving the factual figure to primary evidence."
 }

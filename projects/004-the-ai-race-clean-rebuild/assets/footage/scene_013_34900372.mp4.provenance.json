@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_013_34900372.jpg",
+  "contact_sheet_sha256": "3f03023278f82ce9a15f15cc9436376a4aa53efa5720ac90ff81b8ab038ec4dc",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "narration_anchor": "Take Europe's AI Act. It uses different rules for different systems.",
+      "semantic_rationale": "European institutional imagery locates the governance discussion while the regulation itself remains the primary evidence.",
+      "semantic_link": "conceptual"
+    }
+  ],
+  "review_rationale": "All frames retain European institutional context, locating the governance discussion while the actual AI Act remains the primary evidentiary source."
 }

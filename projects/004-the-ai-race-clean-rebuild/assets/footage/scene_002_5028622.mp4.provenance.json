@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_002_5028622.jpg",
+  "contact_sheet_sha256": "cd55f8a0b7a82cdca8e4fe3b063f01ba6eea1b940ad5904e0b15aa86c9645729",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "narration_anchor": "And every one of them is still moving as fast as it can.",
+      "semantic_rationale": "A moving view through active server infrastructure makes the physical acceleration and scale of the AI race visible.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "All sampled frames maintain a moving view through active server infrastructure, clearly carrying the physical scale and acceleration of the AI race."
 }

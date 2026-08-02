@@ -1,12 +1,250 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "blocked_pending_new_assets",
-  "footage_assignments": {},
+  "status": "ready",
+  "footage_assignments": {
+    "CLM_001_SAFETY_FRAMEWORKS": {
+      "0": {
+        "asset": "assets/footage/scene_001_7989689.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
+        "semantic_rationale": "Real people building and operating frontier systems; no company identity implied.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_002_COMPETITIVE_INCENTIVE": {
+      "0": {
+        "asset": "assets/footage/scene_002_5028622.mp4",
+        "trimInRatio": 0.18,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "And every one of them is still moving as fast as it can.",
+        "semantic_rationale": "Physical infrastructure and acceleration pressure.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_003_AGENTIC_MISALIGNMENT_TESTS": {
+      "0": {
+        "asset": "assets/footage/scene_003_8632599.mp4",
+        "trimInRatio": 0.08,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+        "semantic_rationale": "Controlled test environment context only; the actual evidence remains the official research figures.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_004_TEST_NOT_DEPLOYMENT": {
+      "0": {
+        "asset": "assets/footage/scene_004_7989678.mp4",
+        "trimInRatio": 0.18,
+        "motion": "drift_left",
+        "role": "human_context",
+        "semantic_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go.",
+        "semantic_rationale": "Make the fire-drill-versus-fire distinction physical.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_006_INVESTMENT_SCALE": {
+      "0": {
+        "asset": "assets/footage/scene_005_34406409.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "Stanford's 2025 AI Index reported nearly thirty-four billion dollars in private generative-AI investment in 2024.",
+        "semantic_rationale": "Capital flowing toward frontier development without depicting a named transaction.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_007_FRONTIER_GAP": {
+      "0": {
+        "asset": "assets/footage/scene_006_6803583.mp4",
+        "trimInRatio": 0.18,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "That closeness turns each major release into a strategic event.",
+        "semantic_rationale": "Competitive closeness and release pressure.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_008_CYBER_EXTORTION": {
+      "0": {
+        "asset": "assets/footage/scene_007_7253660.mp4",
+        "trimInRatio": 0.08,
+        "motion": "pull",
+        "role": "human_context",
+        "semantic_anchor": "In cybersecurity, AI has already lowered the barrier to entry.",
+        "semantic_rationale": "Defensive operations context; no reenactment of a named victim.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_009_AGENTIC_ESPIONAGE": {
+      "0": {
+        "asset": "assets/footage/scene_008_5377280.mp4",
+        "trimInRatio": 0.18,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
+        "semantic_rationale": "Agentic cyber-operation scale, with provider report carrying the factual burden.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_010_BIO_ASL3": {
+      "0": {
+        "asset": "assets/footage/scene_009_8381457.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "On biological risk, Anthropic said its internal testing suggested Claude Opus 4 could provide a meaningful capability uplift.",
+        "semantic_rationale": "Responsible laboratory and safeguard context; no weapon imagery.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_011_SYNTHETIC_PERSUASION": {
+      "0": {
+        "asset": "assets/footage/scene_010_6214601.mp4",
+        "trimInRatio": 0.18,
+        "motion": "push",
+        "role": "human_context",
+        "semantic_anchor": "General-purpose AI can generate persuasive synthetic content cheaply and at scale.",
+        "semantic_rationale": "Human exposure to synthetic information without asserting changed beliefs.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_012_LABOUR_EXPOSURE": {
+      "0": {
+        "asset": "assets/footage/scene_011_8201290.mp4",
+        "trimInRatio": 0.08,
+        "motion": "pull",
+        "role": "human_context",
+        "semantic_anchor": "The evidence measures exposure more reliably than it predicts unemployment.",
+        "semantic_rationale": "Occupational task transformation rather than unemployment imagery.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_013_MARKET_CONCENTRATION": {
+      "0": {
+        "asset": "assets/footage/scene_012_38081600.mp4",
+        "trimInRatio": 0.18,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "Frontier AI depends on costly computing power, cloud infrastructure, data, and capital.",
+        "semantic_rationale": "Critical compute and infrastructure concentration.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_014_EU_LAYERED_OBLIGATIONS": {
+      "0": {
+        "asset": "assets/footage/scene_013_34900372.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "governance_context",
+        "semantic_anchor": "Take Europe's AI Act. It uses different rules for different systems.",
+        "semantic_rationale": "Official governance setting; the regulation text remains primary evidence.",
+        "semantic_link": "conceptual"
+      }
+    },
+    "CLM_016_COMPLIANCE_INCUMBENCY": {
+      "0": {
+        "asset": "assets/footage/scene_014_6805175.mp4",
+        "trimInRatio": 0.18,
+        "motion": "push",
+        "role": "human_context",
+        "semantic_anchor": "Established companies may also be better able to absorb the complex compliance, evaluation, reporting, and legal costs.",
+        "semantic_rationale": "Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_017_OPEN_WEIGHT_TRADEOFF": {
+      "0": {
+        "asset": "assets/footage/scene_015_6804109.mp4",
+        "trimInRatio": 0.08,
+        "motion": "pull",
+        "role": "human_context",
+        "semantic_anchor": "Open-weight models let independent researchers audit them, find flaws, and build defensive tools.",
+        "semantic_rationale": "Independent research and adaptation context.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_018_CLOSED_ACCESS_TRADEOFF": {
+      "0": {
+        "asset": "assets/footage/scene_016_6573544.mp4",
+        "trimInRatio": 0.18,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
+        "semantic_rationale": "Centralized monitoring and access control.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_019_INDEPENDENT_EVALUATION": {
+      "0": {
+        "asset": "assets/footage/scene_017_6930347.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "subjecting them to independent evaluations and audits before they ship",
+        "semantic_rationale": "Independent evaluation process and human judgment.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_020_INCIDENT_REPORTING": {
+      "0": {
+        "asset": "assets/footage/scene_018_6951401.mp4",
+        "trimInRatio": 0.18,
+        "motion": "push",
+        "role": "governance_context",
+        "semantic_anchor": "mandatory incident reporting when systems misbehave, real legal liability and insurance",
+        "semantic_rationale": "Reporting and oversight context without inventing a named proceeding.",
+        "semantic_link": "conceptual"
+      }
+    },
+    "CLM_021_FINAL_SYNTHESIS": {
+      "0": {
+        "asset": "assets/footage/scene_020_7140928.mp4",
+        "trimInRatio": 0.18,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "It's still being decided... by people, right now.",
+        "semantic_rationale": "Return to the physical machine and concentrated infrastructure for the ending.",
+        "semantic_link": "physical"
+      }
+    }
+  },
   "graphic_break_assignments": {},
-  "full_footage_pool": [],
-  "hook_preloaded_usage": {},
+  "full_footage_pool": [
+    "assets/footage/scene_001_7989689.mp4",
+    "assets/footage/scene_002_5028622.mp4",
+    "assets/footage/scene_003_8632599.mp4",
+    "assets/footage/scene_004_7989678.mp4",
+    "assets/footage/scene_005_34406409.mp4",
+    "assets/footage/scene_006_6803583.mp4",
+    "assets/footage/scene_007_7253660.mp4",
+    "assets/footage/scene_008_5377280.mp4",
+    "assets/footage/scene_009_8381457.mp4",
+    "assets/footage/scene_010_6214601.mp4",
+    "assets/footage/scene_011_8201290.mp4",
+    "assets/footage/scene_012_38081600.mp4",
+    "assets/footage/scene_013_34900372.mp4",
+    "assets/footage/scene_014_6805175.mp4",
+    "assets/footage/scene_015_6804109.mp4",
+    "assets/footage/scene_016_6573544.mp4",
+    "assets/footage/scene_017_6930347.mp4",
+    "assets/footage/scene_018_6951401.mp4",
+    "assets/footage/scene_019_992599.mp4",
+    "assets/footage/scene_020_7140928.mp4"
+  ],
+  "hook_preloaded_usage": {
+    "assets/footage/scene_001_7989689.mp4": 1,
+    "assets/footage/scene_002_5028622.mp4": 1,
+    "assets/footage/scene_006_6803583.mp4": 1,
+    "assets/footage/scene_020_7140928.mp4": 1
+  },
   "slice_count_overrides": {},
   "source_plan": "research/footage_use_contracts.json",
-  "old_project_asset_reuse_forbidden": true
+  "old_project_asset_reuse_forbidden": true,
+  "generation_policy": "Only current clean-rebuild footage with byte-bound multiframe approval may be assigned; all assignments remain claim-bound and generic stock never carries factual proof.",
+  "review_completed_at": "2026-08-02T09:36:00Z"
 }

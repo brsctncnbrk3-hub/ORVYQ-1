@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_007_7253660.jpg",
+  "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "narration_anchor": "In cybersecurity, AI has already lowered the barrier to entry.",
+      "semantic_rationale": "Security analysts investigating screens provides defensive operations context and is not presented as footage of a named victim or attacker.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "Across the clip, security personnel investigate technical displays in a credible defensive-operations setting without identifying a victim, attacker, or real incident."
 }

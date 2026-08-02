@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_012_38081600.jpg",
+  "contact_sheet_sha256": "6d4db1c66047daa699d9ef694b1542086b5312c2c95d068957b80734c606d5f9",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "narration_anchor": "Frontier AI depends on costly computing power, cloud infrastructure, data, and capital.",
+      "semantic_rationale": "Large centralized infrastructure gives physical form to critical-input concentration without presenting a specific company as the subject.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "The sampled frames consistently present large centralized technical infrastructure, giving physical form to compute concentration without identifying a particular company."
 }

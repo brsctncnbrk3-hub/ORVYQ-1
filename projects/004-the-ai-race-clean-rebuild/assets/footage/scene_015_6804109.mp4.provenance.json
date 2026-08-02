@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_015_6804109.jpg",
+  "contact_sheet_sha256": "671f9cb554070020fdcdaa8458cdc7c006982c037eba4a54cdf0f7788c5ff63a",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "narration_anchor": "Open-weight models let independent researchers audit them, find flaws, and build defensive tools.",
+      "semantic_rationale": "Developers collaborating openly represents independent inspection and adaptation without implying the displayed code is a specific model.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "Across the clip, developers collaborate around code in a credible open-review setting without implying that the displayed material is a specific model or repository."
 }

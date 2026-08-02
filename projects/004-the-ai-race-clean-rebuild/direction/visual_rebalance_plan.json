@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "planned_pending_visual_review",
+  "status": "planned_pending_primary_evidence",
   "projection_basis": "Pre-materialization editorial target only. Candidate Validation must replace this projection with measured shot-level ratios and all post-plan audits must pass before review render authorization.",
   "thresholds": {
     "contextual_footage_fraction_min": 0.6,
@@ -45,27 +45,8 @@
     "REQ_EVD_EU_AI_ACT_2024",
     "REQ_EVD_EC_GPAI_GUIDANCE_2025",
     "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
-    "REQ_EVD_UK_AISI_EVALUATIONS_2024",
-    "REQ_FTG_SCENE_001",
-    "REQ_FTG_SCENE_002",
-    "REQ_FTG_SCENE_003",
-    "REQ_FTG_SCENE_004",
-    "REQ_FTG_SCENE_005",
-    "REQ_FTG_SCENE_006",
-    "REQ_FTG_SCENE_007",
-    "REQ_FTG_SCENE_008",
-    "REQ_FTG_SCENE_009",
-    "REQ_FTG_SCENE_010",
-    "REQ_FTG_SCENE_011",
-    "REQ_FTG_SCENE_012",
-    "REQ_FTG_SCENE_013",
-    "REQ_FTG_SCENE_014",
-    "REQ_FTG_SCENE_015",
-    "REQ_FTG_SCENE_016",
-    "REQ_FTG_SCENE_017",
-    "REQ_FTG_SCENE_018",
-    "REQ_FTG_SCENE_019",
-    "REQ_FTG_SCENE_020"
+    "REQ_EVD_UK_AISI_EVALUATIONS_2024"
   ],
-  "materialization_note": "Acquisition and byte-bound semantic approval must complete before the editorial blueprint can be materialized."
+  "materialization_note": "Acquisition and byte-bound semantic approval must complete before the editorial blueprint can be materialized.",
+  "visual_review_completed_at": "2026-08-02T09:36:00Z"
 }

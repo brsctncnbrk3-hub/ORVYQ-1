@@ -1,41 +1,105 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "blocked_pending_new_assets",
+  "status": "ready",
+  "purpose": "Open with an eleven-second human-scale cinematic hook, then move quickly into official primary evidence without a document carousel.",
+  "minimum_seconds": 10,
+  "maximum_seconds": 14,
+  "duration_seconds": 11,
   "target_duration_seconds": 11,
   "target_cut_count": 4,
+  "replace_opening_shot_count": 4,
+  "question_eyebrow": "THE QUESTION",
+  "question": "What happens when AI moves faster than our ability to govern it?",
+  "question_deck": "Every major lab sees the danger. None can afford to slow down alone.",
+  "evidence_bridge": [
+    {
+      "source_shot_index": 1,
+      "duration": 5,
+      "transition_in": "dissolve"
+    },
+    {
+      "source_shot_index": 3,
+      "duration": 4,
+      "transition_in": "cut"
+    }
+  ],
   "shots": [
     {
       "order": 1,
       "scene_id": "scene_001",
+      "duration": 3,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_001_7989689.mp4",
+      "asset": "assets/footage/scene_001_7989689.mp4",
+      "trim_in_sec": 0.5,
+      "trim_out_sec": 3.5,
+      "motion_variant": "hold",
+      "hook_footage": true,
       "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
-      "role": "human_context",
       "visual_role": "human_context",
-      "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous."
+      "generic_stock": true,
+      "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
+      "editorial_purpose": "Use scene_001 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+      "semantic_link": "physical"
     },
     {
       "order": 2,
       "scene_id": "scene_002",
+      "duration": 2.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_002_5028622.mp4",
+      "asset": "assets/footage/scene_002_5028622.mp4",
+      "trim_in_sec": 1,
+      "trim_out_sec": 3.5,
+      "motion_variant": "push",
+      "hook_footage": true,
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
-      "role": "context",
       "visual_role": "context",
-      "narration_anchor": "And every one of them is still moving as fast as it can."
+      "generic_stock": true,
+      "narration_anchor": "And every one of them is still moving as fast as it can.",
+      "editorial_purpose": "Use scene_002 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+      "semantic_link": "physical"
     },
     {
       "order": 3,
       "scene_id": "scene_006",
+      "duration": 2.5,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_006_6803583.mp4",
+      "asset": "assets/footage/scene_006_6803583.mp4",
+      "trim_in_sec": 1,
+      "trim_out_sec": 3.5,
+      "motion_variant": "push",
+      "hook_footage": true,
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
-      "role": "human_context",
       "visual_role": "human_context",
-      "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't."
+      "generic_stock": true,
+      "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
+      "editorial_purpose": "Use scene_006 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+      "semantic_link": "physical"
     },
     {
       "order": 4,
       "scene_id": "scene_020",
+      "duration": 3,
+      "asset_type": "footage",
+      "video_asset": "assets/footage/scene_020_7140928.mp4",
+      "asset": "assets/footage/scene_020_7140928.mp4",
+      "trim_in_sec": 0.5,
+      "trim_out_sec": 3.5,
+      "motion_variant": "drift_left",
+      "hook_footage": true,
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
-      "role": "context",
       "visual_role": "context",
-      "narration_anchor": "A rival company. A rival government."
+      "generic_stock": true,
+      "narration_anchor": "A rival company. A rival government.",
+      "editorial_purpose": "Use scene_020 as a brief human-scale opening image tied to the stated narration without presenting generic stock as factual proof.",
+      "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+      "semantic_link": "physical"
     }
   ],
   "first_shot_project001_asset_forbidden": true

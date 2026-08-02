@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_009_8381457.jpg",
+  "contact_sheet_sha256": "f7dd7ff14f7c04361fe37415945850ba7d19aa73b529b4ea25f8a71ee526a85e",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_010_BIO_ASL3",
+      "narration_anchor": "On biological risk, Anthropic said its internal testing suggested Claude Opus 4 could provide a meaningful capability uplift.",
+      "semantic_rationale": "Properly protected laboratory personnel establishes biosafety and responsible research context without depicting weaponization.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "All sampled positions show properly protected laboratory work, providing responsible biosafety context without depicting weaponization or a specific organization."
 }

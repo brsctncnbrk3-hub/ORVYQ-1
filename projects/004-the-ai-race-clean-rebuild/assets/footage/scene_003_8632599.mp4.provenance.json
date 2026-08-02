@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_003_8632599.jpg",
+  "contact_sheet_sha256": "450a5d0bbf81ba39236399d62131ca55ab6ab731e09ba91e8523442e615432ff",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+      "semantic_rationale": "Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "The four frames consistently show two developers conducting a deliberate shared-screen review, avoiding the rejected hacker cliché and supporting controlled-evaluation context."
 }

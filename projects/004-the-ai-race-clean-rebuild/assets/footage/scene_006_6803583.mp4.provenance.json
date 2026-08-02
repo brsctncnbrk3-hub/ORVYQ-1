@@ -41,6 +41,25 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_006_6803583.jpg",
+  "contact_sheet_sha256": "a12d43d09d04facfa5d02bfa810e4c61932322d9ec56a4acb63fa5087685d129",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_007_FRONTIER_GAP",
+      "narration_anchor": "That closeness turns each major release into a strategic event.",
+      "semantic_rationale": "Parallel technical teams working under time pressure physically expresses competitive closeness without claiming to depict named laboratories.",
+      "semantic_link": "physical"
+    },
+    {
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
+      "semantic_rationale": "Use scene_006 as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "The contact sheet consistently shows parallel technical work under time pressure, conveying competitive proximity without pretending to depict named frontier laboratories."
 }

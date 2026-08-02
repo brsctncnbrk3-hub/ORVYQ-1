@@ -41,6 +41,19 @@
     "crf": 25,
     "audio_removed": true
   },
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW"
+  "approved_for_final_edit": true,
+  "human_review_status": "APPROVED_CLAIM_SPECIFIC_MULTIFRAME_REVIEW",
+  "reviewed_at": "2026-08-02T09:36:00Z",
+  "review_method": "four-position claim-specific contact-sheet review",
+  "contact_sheet_path": "qa/footage-contact-sheets/scene_019_992599.jpg",
+  "contact_sheet_sha256": "1236e8d43a850617c2d02b9d90010e07cd208dd9cf508c7f02e9d109fd74c4b9",
+  "approved_uses": [
+    {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "narration_anchor": "decisions that add up to a world shaped by whoever moved fastest, or whoever accumulated the most control",
+      "semantic_rationale": "Ordinary people moving through shared urban space returns the consequences of concentrated decisions to a distributed human scale.",
+      "semantic_link": "physical"
+    }
+  ],
+  "review_rationale": "Across four positions, ordinary people move through shared urban space, returning the consequences of concentrated decisions to a broad human scale."
 }

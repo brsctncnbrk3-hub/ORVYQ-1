@@ -1,1 +1,414 @@
-{"schema_version":"1.0","project_id":"004-the-ai-race-clean-rebuild","request_revision":2,"policy":{"automatic_backfill_forbidden":true,"decorative_document_recreation_forbidden":true,"primary_evidence_requires_institution_title_date_and_provenance":true,"same_content_different_crop_counts_once":true,"footage_requires_contact_sheet_and_claim_specific_semantic_approval":true},"requests":[{"asset_request_id":"REQ_FTG_SCENE_001","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_001_SAFETY_FRAMEWORKS"],"scene_ids":["scene_001"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_002","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_002_COMPETITIVE_INCENTIVE"],"scene_ids":["scene_002"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_003","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_003_AGENTIC_MISALIGNMENT_TESTS"],"scene_ids":["scene_003"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_004","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_004_TEST_NOT_DEPLOYMENT"],"scene_ids":["scene_004"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_005","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_006_INVESTMENT_SCALE"],"scene_ids":["scene_005"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_006","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_007_FRONTIER_GAP"],"scene_ids":["scene_006"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_007","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_008_CYBER_EXTORTION"],"scene_ids":["scene_007"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_008","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_009_AGENTIC_ESPIONAGE"],"scene_ids":["scene_008"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_009","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_010_BIO_ASL3"],"scene_ids":["scene_009"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_010","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_011_SYNTHETIC_PERSUASION"],"scene_ids":["scene_010"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_011","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_012_LABOUR_EXPOSURE"],"scene_ids":["scene_011"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_012","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_013_MARKET_CONCENTRATION"],"scene_ids":["scene_012"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_013","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_014_EU_LAYERED_OBLIGATIONS"],"scene_ids":["scene_013"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_014","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_016_COMPLIANCE_INCUMBENCY"],"scene_ids":["scene_014"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_015","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_017_OPEN_WEIGHT_TRADEOFF"],"scene_ids":["scene_015"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_016","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_018_CLOSED_ACCESS_TRADEOFF"],"scene_ids":["scene_016"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_017","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_019_INDEPENDENT_EVALUATION"],"scene_ids":["scene_017"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_018","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_020_INCIDENT_REPORTING"],"scene_ids":["scene_018"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_019","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_021_FINAL_SYNTHESIS"],"scene_ids":["scene_019"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]},{"asset_request_id":"REQ_FTG_SCENE_020","type":"contextual_footage","status":"blocked_pending_acquisition","claim_ids":["CLM_021_FINAL_SYNTHESIS"],"scene_ids":["scene_020"],"required_source":"new licensed clean-rebuild footage","resolved_asset_paths":[]}]}
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "request_revision": 2,
+  "policy": {
+    "automatic_backfill_forbidden": true,
+    "decorative_document_recreation_forbidden": true,
+    "primary_evidence_requires_institution_title_date_and_provenance": true,
+    "same_content_different_crop_counts_once": true,
+    "footage_requires_contact_sheet_and_claim_specific_semantic_approval": true
+  },
+  "requests": [
+    {
+      "asset_request_id": "REQ_FTG_SCENE_001",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_001_SAFETY_FRAMEWORKS"
+      ],
+      "scene_ids": [
+        "scene_001"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_001_7989689.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "6b63d924fc4d8fb2b688ca7e428e15a0f529942ea17f7a8b3d2750a4bd7aeef1",
+        "contact_sheet_sha256": "0221ba882ab8f71462fc7888ebf78297eec14dfc25953dc0f39875dcab897bbd",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_002",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_002_COMPETITIVE_INCENTIVE"
+      ],
+      "scene_ids": [
+        "scene_002"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_002_5028622.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "f89c1403115494636b44694fa651f8eec685f82c49380ad57e1b26af61a04521",
+        "contact_sheet_sha256": "cd55f8a0b7a82cdca8e4fe3b063f01ba6eea1b940ad5904e0b15aa86c9645729",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_003",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
+      ],
+      "scene_ids": [
+        "scene_003"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_003_8632599.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "d43e41ab3f2badf8b1c1d533888b7421151309e9d9c628228aac2e5d648553db",
+        "contact_sheet_sha256": "450a5d0bbf81ba39236399d62131ca55ab6ab731e09ba91e8523442e615432ff",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_004",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_004_TEST_NOT_DEPLOYMENT"
+      ],
+      "scene_ids": [
+        "scene_004"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_004_7989678.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "e07a5ce6af88da1b92f5b1438c10bc7eeb538cb98615333dcc036df4c1587d02",
+        "contact_sheet_sha256": "637f79bd1f737e7b189a631d7f9dd5e287a91bfa01ec39aacd6ab79bead0cc66",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_005",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_006_INVESTMENT_SCALE"
+      ],
+      "scene_ids": [
+        "scene_005"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_005_34406409.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "f4525afc6cb7707430ce91c3ff1def747b3bf6350032b68bb9b6990f7045d8eb",
+        "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_006",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_007_FRONTIER_GAP"
+      ],
+      "scene_ids": [
+        "scene_006"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_006_6803583.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "39548bd35e47c9aae3b6fc41fdafe5181df357fa8a5367035496592647960f74",
+        "contact_sheet_sha256": "a12d43d09d04facfa5d02bfa810e4c61932322d9ec56a4acb63fa5087685d129",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_007",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_008_CYBER_EXTORTION"
+      ],
+      "scene_ids": [
+        "scene_007"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_007_7253660.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "5bd6d728232bbb41f50f3b34a3fdcf7e716c4140116122c82e06d8af68b4e2d2",
+        "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_008",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_009_AGENTIC_ESPIONAGE"
+      ],
+      "scene_ids": [
+        "scene_008"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_008_5377280.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "069627c79973511d26fa6be1fff64fa7df66bce66e47f13207fee1553c739017",
+        "contact_sheet_sha256": "883d1dc826d452b2b3a3d10273b70aedaea5b58045d78350f2438e8aa2ba0627",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_009",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_010_BIO_ASL3"
+      ],
+      "scene_ids": [
+        "scene_009"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_009_8381457.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "a503ffba2794de82a49521775a313d4cdce78a8753dad105c181df6382efd9c3",
+        "contact_sheet_sha256": "f7dd7ff14f7c04361fe37415945850ba7d19aa73b529b4ea25f8a71ee526a85e",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_010",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_011_SYNTHETIC_PERSUASION"
+      ],
+      "scene_ids": [
+        "scene_010"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_010_6214601.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "6a6b742214c42024ad7bafc04fe3e076f2d61b487ef0c3ecad7118b7b89e1f39",
+        "contact_sheet_sha256": "6c30f4947e1becf582b806494f8d3c6101e1192cde88bd58a675ea4e7f1d5694",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_011",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_012_LABOUR_EXPOSURE"
+      ],
+      "scene_ids": [
+        "scene_011"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_011_8201290.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "5b991f9d15f1904ba0314f440373dec860cb3478c9eee6d6467ca95ef1ca1bd5",
+        "contact_sheet_sha256": "260eec169e85da64361530da1e382a5ce228b6edf352e67a8a7fc9cf1bff7dc1",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_012",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_013_MARKET_CONCENTRATION"
+      ],
+      "scene_ids": [
+        "scene_012"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_012_38081600.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "ffeedbf38cc64e11e895367ea33dcf98be45f7c90c8cf78a9a8136b15c32137a",
+        "contact_sheet_sha256": "6d4db1c66047daa699d9ef694b1542086b5312c2c95d068957b80734c606d5f9",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_013",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_014_EU_LAYERED_OBLIGATIONS"
+      ],
+      "scene_ids": [
+        "scene_013"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_013_34900372.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "01482f6eda32567e9326afd9d9bc0729f7fc1099ce6ebe61449a64878833da33",
+        "contact_sheet_sha256": "3f03023278f82ce9a15f15cc9436376a4aa53efa5720ac90ff81b8ab038ec4dc",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_014",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_016_COMPLIANCE_INCUMBENCY"
+      ],
+      "scene_ids": [
+        "scene_014"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_014_6805175.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "56ca068294525f5f3325d256d131985387b8932c7cf4eccf929ea842996c9c8c",
+        "contact_sheet_sha256": "ef788d0bd910f3811ab4adb7620f821eba24afaa9343858645e89763e6a182bc",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_015",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_017_OPEN_WEIGHT_TRADEOFF"
+      ],
+      "scene_ids": [
+        "scene_015"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_015_6804109.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "8847145526f469431869c6e914a9e399876a6bafa94029c54afa0c3c939fb3e4",
+        "contact_sheet_sha256": "671f9cb554070020fdcdaa8458cdc7c006982c037eba4a54cdf0f7788c5ff63a",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_016",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_018_CLOSED_ACCESS_TRADEOFF"
+      ],
+      "scene_ids": [
+        "scene_016"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_016_6573544.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "89d25bad6cad8946af820e9784faf6da78108badd4c9a12d8d0c0d625d6ba109",
+        "contact_sheet_sha256": "99cbee965be9201c1e58491605354d3cc41ca7a15fd2852de115797855d03c0c",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_017",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_019_INDEPENDENT_EVALUATION"
+      ],
+      "scene_ids": [
+        "scene_017"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_017_6930347.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "2c1d3e84d16555d8f3c5c797ab440c874bd9a6e70c2b07d12e0dac9566b68d99",
+        "contact_sheet_sha256": "5f804ec59be0ad67c44fe8b80664f19d501ba930d44d0717f1b1d5903592b754",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_018",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_020_INCIDENT_REPORTING"
+      ],
+      "scene_ids": [
+        "scene_018"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_018_6951401.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "481a5622980b70b4c0692b964b51fbfe328c652de5e6a47a8c0c541cca1611aa",
+        "contact_sheet_sha256": "46b55cb263bfb72dbc6746981280ea013ad902701d3f06a0e7323b7282983a22",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_019",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_021_FINAL_SYNTHESIS"
+      ],
+      "scene_ids": [
+        "scene_019"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_019_992599.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "fcf837643d484d801be8712ffd5b2f7eb21736d2d3ee6f6bb99892895d77a902",
+        "contact_sheet_sha256": "1236e8d43a850617c2d02b9d90010e07cd208dd9cf508c7f02e9d109fd74c4b9",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_020",
+      "type": "contextual_footage",
+      "status": "ready",
+      "claim_ids": [
+        "CLM_021_FINAL_SYNTHESIS"
+      ],
+      "scene_ids": [
+        "scene_020"
+      ],
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_020_7140928.mp4"
+      ],
+      "visual_review_binding": {
+        "asset_sha256": "e38d9c32788f7bbc654fe8d8786b9d921f6393f094fae23dc52d1229f04b7988",
+        "contact_sheet_sha256": "3e695669395970007f53c3c32343dee00c0173e623fbee8260123711571b05ce",
+        "reviewed_at": "2026-08-02T09:36:00Z"
+      }
+    }
+  ]
+}
