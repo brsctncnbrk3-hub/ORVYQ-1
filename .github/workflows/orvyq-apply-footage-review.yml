@@ -1,0 +1,97 @@
+name: ORVYQ Apply Footage Review
+
+on:
+  push:
+    branches:
+      - "agent/project-001-clean-rebuild"
+    paths:
+      - "projects/004-the-ai-race-clean-rebuild/config/footage_review_decisions.json"
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-apply-footage-review-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PROJECT_ID: 004-the-ai-race-clean-rebuild
+      TARGET_BRANCH: agent/project-001-clean-rebuild
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/project-001-clean-rebuild
+          lfs: true
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply byte-bound multiframe decisions
+        run: node scripts/orvyq_apply_footage_review_decisions.mjs --project-id="$PROJECT_ID"
+
+      - name: Verify all selected footage is locally approved
+        run: node scripts/orvyq_materialize_footage.mjs --project-id="$PROJECT_ID"
+
+      - name: Validate completed visual QA and projected readiness
+        run: node scripts/orvyq_review_readiness_audit.mjs --project-id="$PROJECT_ID" --check-only
+
+      - name: Validate canonical schemas and data contracts
+        run: npm run validate:canonical
+
+      - name: Upload review-application diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-footage-review-application-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            projects/${{ env.PROJECT_ID }}/config/footage_review_decisions.json
+            projects/${{ env.PROJECT_ID }}/research/visual_asset_reviews.json
+            projects/${{ env.PROJECT_ID }}/config/editorial_asset_plan.json
+            projects/${{ env.PROJECT_ID }}/direction/motion_hook.json
+            projects/${{ env.PROJECT_ID }}/direction/visual_rebalance_plan.json
+          if-no-files-found: warn
+
+      - name: Commit approved render-free project state
+        run: |
+          set -euo pipefail
+          git config user.name "orvyq-footage-review-bot"
+          git config user.email "orvyq-footage-review-bot@users.noreply.github.com"
+          git add -f "projects/$PROJECT_ID/assets/footage"/*.provenance.json
+          git add \
+            "projects/$PROJECT_ID/research/visual_asset_reviews.json" \
+            "projects/$PROJECT_ID/research/visual_asset_requests.json" \
+            "projects/$PROJECT_ID/config/editorial_asset_plan.json" \
+            "projects/$PROJECT_ID/direction/motion_hook.json" \
+            "projects/$PROJECT_ID/direction/visual_rebalance_plan.json" \
+            "projects/$PROJECT_ID/project.json" \
+            "projects/$PROJECT_ID/config/production_profile.json"
+          if git diff --cached --quiet; then
+            echo "No approved-state changes to commit"
+            exit 0
+          fi
+          git commit -m "Apply multiframe footage approvals for $PROJECT_ID"
+          git pull --rebase origin "$TARGET_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
+
+      - name: Report result
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          BODY="Project 004 footage review decisions finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
