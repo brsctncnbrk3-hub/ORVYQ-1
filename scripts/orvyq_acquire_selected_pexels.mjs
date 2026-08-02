@@ -109,15 +109,27 @@ async function writeResponseToFile(response, target) {
   return stat.size;
 }
 
-async function compact(source, output, durationSeconds, sourceDurationSeconds) {
-  const args = ["-y"];
-  if (Number(sourceDurationSeconds || 0) + 0.05 < Number(durationSeconds || 0)) {
-    args.push("-stream_loop", "-1");
+async function compact(source, output, durationSeconds, sourceInfo) {
+  const sourceDuration = Number(sourceInfo?.duration || 0);
+  const requestedDuration = Number(durationSeconds || 0);
+  const isPortraitOrSquare = Number(sourceInfo?.width || 0) <= Number(sourceInfo?.height || 0);
+  const filters = [
+    isPortraitOrSquare
+      ? "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,setsar=1"
+      : "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2:black,setsar=1",
+  ];
+  let outputDuration = requestedDuration;
+  let timeStretchFactor = 1;
+  if (sourceDuration + 0.05 < requestedDuration) {
+    timeStretchFactor = Math.min(1.75, requestedDuration / sourceDuration);
+    outputDuration = Math.min(requestedDuration, sourceDuration * timeStretchFactor);
+    filters.push(`setpts=${timeStretchFactor.toFixed(6)}*PTS`);
   }
-  args.push(
+  await execFileAsync("ffmpeg", [
+    "-y",
     "-i", source,
-    "-t", String(durationSeconds),
-    "-vf", "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2:black,setsar=1",
+    "-t", String(outputDuration),
+    "-vf", filters.join(","),
     "-c:v", "libx264",
     "-preset", "medium",
     "-crf", "25",
@@ -125,8 +137,13 @@ async function compact(source, output, durationSeconds, sourceDurationSeconds) {
     "-movflags", "+faststart",
     "-an",
     output,
-  );
-  await execFileAsync("ffmpeg", args, { maxBuffer: 24 * 1024 * 1024 });
+  ], { maxBuffer: 24 * 1024 * 1024 });
+  return {
+    aspectPolicy: isPortraitOrSquare ? "fill_and_center_crop" : "fit_and_pad",
+    timeStretchFactor,
+    requestedDuration,
+    outputDuration,
+  };
 }
 
 async function acquireCandidate(projectId, dir, item, providerAssetId) {
@@ -140,6 +157,7 @@ async function acquireCandidate(projectId, dir, item, providerAssetId) {
   const output = path.join(dir, relative);
   const { response, finalUrl, resolutionMode } = await resolveMediaUrl(providerAssetId);
   let sourceBytes = 0;
+  let transformation = null;
   try {
     sourceBytes = await writeResponseToFile(response, source);
     const sourceInfo = await probe(source);
@@ -151,7 +169,7 @@ async function acquireCandidate(projectId, dir, item, providerAssetId) {
       Math.max(Number(item.output_duration_seconds || 10), minimumDuration),
       12,
     );
-    await compact(source, output, requested, sourceInfo.duration);
+    transformation = await compact(source, output, requested, sourceInfo);
   } finally {
     await fs.rm(source, { force: true });
   }
@@ -198,8 +216,11 @@ async function acquireCandidate(projectId, dir, item, providerAssetId) {
     transformation: {
       output_width: 1280,
       output_height: 720,
-      aspect_policy: "fit_and_pad",
-      loop_short_source_when_required: true,
+      aspect_policy: transformation.aspectPolicy,
+      time_stretch_factor: transformation.timeStretchFactor,
+      requested_duration_seconds: transformation.requestedDuration,
+      normalized_duration_seconds: transformation.outputDuration,
+      loop_short_source_when_required: false,
       codec: "h264",
       crf: 25,
       audio_removed: true,
