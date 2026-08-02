@@ -49,10 +49,12 @@ jobs:
         run: |
           set -euo pipefail
           ROOT="projects/$PROJECT_ID"
+          RUNTIME="$ROOT/assets/footage_acquisition.runtime.json"
           OUT="$ROOT/qa/footage-contact-sheets"
           rm -rf "$OUT"
           mkdir -p "$OUT"
-          find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0 | while IFS= read -r -d '' clip; do
+          jq -r '.records[].path' "$RUNTIME" | while IFS= read -r relative; do
+            clip="$ROOT/$relative"
             base="$(basename "$clip" .mp4)"
             ffmpeg -y -ss 0.5 -i "$clip" \
               -vf "fps=1/2,scale=480:-2,tile=2x2:padding=8:margin=8" \
@@ -72,7 +74,19 @@ jobs:
           const root = path.join('projects', projectId);
           const runtime = JSON.parse(await fs.readFile(path.join(root, 'assets', 'footage_acquisition.runtime.json'), 'utf8'));
           const manifest = JSON.parse(await fs.readFile(path.join(root, 'research', 'selected_pexels_manifest.json'), 'utf8'));
+          const motionHook = JSON.parse(await fs.readFile(path.join(root, 'direction', 'motion_hook.json'), 'utf8'));
           const byScene = new Map(manifest.assets.map((item) => [item.scene_id, item]));
+          const hookUsesByScene = new Map();
+          for (const hookShot of motionHook.shots || []) {
+            const list = hookUsesByScene.get(hookShot.scene_id) || [];
+            list.push({
+              claim_id: hookShot.claim_id,
+              narration_anchor: hookShot.narration_anchor,
+              semantic_rationale: hookShot.semantic_rationale || `Use ${hookShot.scene_id} as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.`,
+              semantic_link: hookShot.semantic_link || 'physical'
+            });
+            hookUsesByScene.set(hookShot.scene_id, list);
+          }
           const digest = (buffer) => crypto.createHash('sha256').update(buffer).digest('hex');
           const entries = [];
           for (const record of runtime.records) {
@@ -82,6 +96,20 @@ jobs:
             const provenance = JSON.parse(await fs.readFile(provenancePath, 'utf8'));
             const contactSheetPath = `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`;
             const sheetBuffer = await fs.readFile(path.join(root, contactSheetPath));
+            const approvedUses = [{
+              claim_id: record.claim_id,
+              narration_anchor: planned.narration_anchor,
+              semantic_rationale: planned.semantic_rationale,
+              semantic_link: planned.semantic_link || 'physical'
+            }, ...(hookUsesByScene.get(record.scene_id) || [])];
+            const uniqueUses = [];
+            const seen = new Set();
+            for (const use of approvedUses) {
+              const key = `${use.claim_id}\u0000${use.narration_anchor}`;
+              if (seen.has(key)) continue;
+              seen.add(key);
+              uniqueUses.push(use);
+            }
             entries.push({
               scene_id: record.scene_id,
               provider_asset_id: String(record.provider_asset_id),
@@ -92,12 +120,7 @@ jobs:
               contact_sheet_sha256: digest(sheetBuffer),
               duration_seconds: provenance.actual_duration_seconds || provenance.duration,
               transformation: provenance.transformation || null,
-              approved_uses_if_visually_valid: [{
-                claim_id: record.claim_id,
-                narration_anchor: planned.narration_anchor,
-                semantic_rationale: planned.semantic_rationale,
-                semantic_link: planned.semantic_link || 'physical'
-              }],
+              approved_uses_if_visually_valid: uniqueUses,
               review_blockers: []
             });
           }
@@ -126,6 +149,7 @@ jobs:
             projects/${{ env.PROJECT_ID }}/qa/footage-contact-sheets/**
             projects/${{ env.PROJECT_ID }}/qa/footage_review_queue.json
             projects/${{ env.PROJECT_ID }}/research/selected_pexels_manifest.json
+            projects/${{ env.PROJECT_ID }}/direction/motion_hook.json
           if-no-files-found: error
 
       - name: Commit review package
