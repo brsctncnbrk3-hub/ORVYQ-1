@@ -6,6 +6,14 @@ on:
       - "agent/project-001-clean-rebuild"
     paths:
       - "projects/004-the-ai-race-clean-rebuild/config/selected_pexels_recovery_request.json"
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+    paths:
+      - ".github/workflows/orvyq-selected-pexels-recovery.yml"
+      - "scripts/orvyq_acquire_selected_pexels.mjs"
+      - "projects/004-the-ai-race-clean-rebuild/config/selected_pexels_recovery_request.json"
 
 permissions:
   contents: write
@@ -43,71 +51,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
 
-      - name: Apply runtime normalization correction
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/orvyq_acquire_selected_pexels.mjs')
-          text = p.read_text()
-          old_compact = '''async function compact(source, output, durationSeconds) {
-  await execFileAsync("ffmpeg", [
-    "-y",
-    "-i", source,
-    "-t", String(durationSeconds),
-    "-vf", "scale='min(1280,iw)':-2",
-    "-c:v", "libx264",
-    "-preset", "medium",
-    "-crf", "25",
-    "-pix_fmt", "yuv420p",
-    "-movflags", "+faststart",
-    "-an",
-    output,
-  ], { maxBuffer: 24 * 1024 * 1024 });
-}
-'''
-          new_compact = '''async function compact(source, output, durationSeconds, sourceDurationSeconds) {
-  const args = ["-y"];
-  if (Number(sourceDurationSeconds || 0) + 0.05 < Number(durationSeconds || 0)) args.push("-stream_loop", "-1");
-  args.push(
-    "-i", source,
-    "-t", String(durationSeconds),
-    "-vf", "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2:black,setsar=1",
-    "-c:v", "libx264",
-    "-preset", "medium",
-    "-crf", "25",
-    "-pix_fmt", "yuv420p",
-    "-movflags", "+faststart",
-    "-an",
-    output,
-  );
-  await execFileAsync("ffmpeg", args, { maxBuffer: 24 * 1024 * 1024 });
-}
-'''
-          old_validation = '''    if (sourceInfo.width <= sourceInfo.height) throw new Error(`portrait/square source ${sourceInfo.width}x${sourceInfo.height}`);
-    if (sourceInfo.width < 1280 || sourceInfo.height < 720) throw new Error(`source below landscape HD ${sourceInfo.width}x${sourceInfo.height}`);
-    const minimumDuration = Number(item.min_duration_seconds || 8);
-    if (sourceInfo.duration + 0.05 < minimumDuration) throw new Error(`source shorter than ${minimumDuration}s`);
-    const requested = Math.min(
-      Number(item.output_duration_seconds || 10),
-      Number(sourceInfo.duration),
-      12,
-    );
-    await compact(source, output, requested);
-'''
-          new_validation = '''    if (!(sourceInfo.width > 0 && sourceInfo.height > 0 && sourceInfo.duration > 0)) throw new Error(`invalid source media ${sourceInfo.width}x${sourceInfo.height} duration=${sourceInfo.duration}`);
-    const minimumDuration = Number(item.min_duration_seconds || 8);
-    const requested = Math.min(Math.max(Number(item.output_duration_seconds || 10), minimumDuration), 12);
-    await compact(source, output, requested, sourceInfo.duration);
-'''
-          for old, new, label in [(old_compact, new_compact, 'compact'), (old_validation, new_validation, 'validation')]:
-            if old in text:
-              text = text.replace(old, new)
-            elif new not in text:
-              raise SystemExit(f'Could not patch {label}')
-          p.write_text(text)
-          PY
+      - name: Validate acquisition script syntax
+        run: node --check scripts/orvyq_acquire_selected_pexels.mjs
 
       - name: Acquire all selected footage
         shell: bash
@@ -132,7 +77,7 @@ jobs:
               continue
             }
           done
-          test "$(find "$OUT" -type f -name '*.jpg' | wc -l)" -ge 18
+          test "$(find "$OUT" -type f -name '*.jpg' | wc -l)" -eq 20
 
       - name: Record pending semantic review queue
         shell: bash
@@ -165,6 +110,19 @@ jobs:
           }, null, 2) + '\n');
           NODE
 
+      - name: Upload recovery diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-selected-pexels-recovery-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            selected-pexels-recovery.log
+            projects/${{ env.PROJECT_ID }}/assets/footage_acquisition.runtime.json
+            projects/${{ env.PROJECT_ID }}/qa/footage-contact-sheets/**
+            projects/${{ env.PROJECT_ID }}/qa/footage_review_queue.json
+          if-no-files-found: warn
+
       - name: Commit recovered footage state
         shell: bash
         run: |
@@ -178,6 +136,10 @@ jobs:
             "projects/$PROJECT_ID/qa/footage_review_queue.json"
           git config user.name "orvyq-footage-bot"
           git config user.email "orvyq-footage-bot@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "No recovered footage changes to commit"
+            exit 0
+          fi
           git commit -m "Complete selected footage acquisition for $PROJECT_ID"
           git pull --rebase origin "$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
@@ -192,4 +154,5 @@ jobs:
           DETAILS="$(jq -c '{planned_asset_count,acquired_this_run,unresolved_scene_ids,pass}' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" 2>/dev/null || true)"
           BODY="Project 004 selected footage recovery finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
           test -z "$DETAILS" || BODY="${BODY}"$'\n\n```json\n'"${DETAILS}"$'\n```'
-          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY"
+          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" ||
+            echo "::warning::Could not post recovery result to PR #5."
