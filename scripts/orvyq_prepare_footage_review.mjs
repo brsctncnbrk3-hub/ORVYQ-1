@@ -82,8 +82,17 @@ export async function prepareFootageReview(projectId) {
   if (runtime.project_id !== projectId || manifest.project_id !== projectId || motionHook.project_id !== projectId) {
     throw new Error("Project id mismatch while preparing footage review");
   }
-  if (runtime.pass !== true || (runtime.records || []).length !== 20 || (runtime.unresolved_scene_ids || []).length !== 0) {
-    throw new Error("Footage acquisition must pass with exactly 20 selected records");
+  const expectedCount = Array.isArray(manifest.assets) ? manifest.assets.length : 0;
+  if (!expectedCount) throw new Error("Selected footage manifest has no reviewable assets");
+  if (
+    runtime.pass !== true ||
+    Number(runtime.planned_asset_count) !== expectedCount ||
+    (runtime.records || []).length !== expectedCount ||
+    (runtime.unresolved_scene_ids || []).length !== 0
+  ) {
+    throw new Error(
+      `Footage acquisition must pass with every selected record (expected=${expectedCount}, planned=${runtime.planned_asset_count}, records=${(runtime.records || []).length})`,
+    );
   }
 
   const byScene = new Map((manifest.assets || []).map((item) => [item.scene_id, item]));
@@ -162,7 +171,7 @@ export async function prepareFootageReview(projectId) {
   }
 
   entries.sort((a, b) => a.scene_id.localeCompare(b.scene_id));
-  if (entries.length !== 20) throw new Error(`Expected 20 review entries, found ${entries.length}`);
+  if (entries.length !== expectedCount) throw new Error(`Expected ${expectedCount} review entries, found ${entries.length}`);
   const queue = {
     schema_version: "1.2-four-position",
     project_id: projectId,
