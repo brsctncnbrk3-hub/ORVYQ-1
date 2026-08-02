@@ -11,12 +11,61 @@
   },
   "summary": {
     "pool_assets": 20,
-    "rejected_from_metadata": 0,
+    "rejected_from_metadata": 6,
     "pending_frame_review": 0,
     "approved": 20
   },
   "pending_frame_review_scene_ids": [],
-  "rejected_assets": [],
+  "rejected_assets": [
+    {
+      "scene_id": "scene_008",
+      "provider_asset_id": "5377280",
+      "asset_path": "assets/footage/scene_008_5377280.mp4",
+      "asset_sha256": "57f8e6b920797b7eff91005f9b3de97ec1ebaa57e7a029b45c458581a21f65d7",
+      "reason": "The blue synthetic hacking interface looked like a low-cost science-fiction overlay and did not provide a credible physical analogue for agentic cyber operations.",
+      "rejected_at": "2026-08-02T14:55:00Z"
+    },
+    {
+      "scene_id": "scene_019",
+      "provider_asset_id": "992599",
+      "asset_path": "assets/footage/scene_019_992599.mp4",
+      "asset_sha256": "8d1bb9d2c574f1c0c46334bf04c2447d082d6676de188e82f9411abdc4f419ac",
+      "reason": "The stadium corridor crowd did not represent ordinary shared urban life and would misstate the narration's distributed social consequences.",
+      "rejected_at": "2026-08-02T14:55:00Z"
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "5377775",
+      "asset_path": "assets/footage/scene_024_5377775.mp4",
+      "asset_sha256": "7a495bd568debbb447e81cd97d6c918a11d829a1aee54c14bf649e2eb1f78a07",
+      "reason": "The green hacker-screen imagery was a visual cliché and could be mistaken for proof of an attack rather than defensive cyber operations context.",
+      "rejected_at": "2026-08-02T14:55:00Z"
+    },
+    {
+      "scene_id": "scene_026",
+      "provider_asset_id": "33780459",
+      "asset_path": "assets/footage/scene_026_33780459.mp4",
+      "asset_sha256": "0e46c4940dbf1908e392e8244521fc5669edc037c2205bda61970554e54509ad",
+      "reason": "The previous shot prominently combined Swiss and EU flags and was misleading in a section specifically about EU AI Act designation rules.",
+      "rejected_at": "2026-08-02T14:55:00Z"
+    },
+    {
+      "scene_id": "scene_028",
+      "provider_asset_id": "8643888",
+      "asset_path": "assets/footage/scene_028_8643888.mp4",
+      "asset_sha256": "e972878e30c4fb9d86c5bb9db5f88df59c67689a4ddce6c9bf64295c3d026c16",
+      "reason": "The previous computer screen visibly showed a sales-customer interface and was unrelated to independent technical evaluation or audit.",
+      "rejected_at": "2026-08-02T14:55:00Z"
+    },
+    {
+      "scene_id": "scene_035",
+      "provider_asset_id": "34838666",
+      "asset_path": "assets/footage/scene_035_34838666.mp4",
+      "asset_sha256": "0e40b95b70f375b64631cd95203f10fecf97c8bb660884f388dac175b4b806c6",
+      "reason": "The classroom-style technology-business presentation lacked the authority and visual quality required for incident reporting and formal oversight.",
+      "rejected_at": "2026-08-02T14:55:00Z"
+    }
+  ],
   "approved_assets": [
     {
       "scene_id": "scene_001",

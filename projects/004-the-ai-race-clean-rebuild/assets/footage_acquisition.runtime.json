@@ -1,13 +1,20 @@
 {
   "schema_version": "1.5-selected-public-pexels-partial",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T15:04:50.661Z",
+  "generated_at": "2026-08-02T19:34:16.878Z",
   "source": "pexels_public_download",
   "license_url": "https://www.pexels.com/license/",
   "planned_asset_count": 41,
-  "acquired_this_run": 41,
-  "reused_existing": 0,
-  "replacement_scene_ids": [],
+  "acquired_this_run": 6,
+  "reused_existing": 35,
+  "replacement_scene_ids": [
+    "scene_008",
+    "scene_019",
+    "scene_024",
+    "scene_026",
+    "scene_028",
+    "scene_035"
+  ],
   "unresolved_scene_ids": [],
   "unresolved": [],
   "records": [
@@ -61,9 +68,9 @@
       "claim_id": "CLM_008_CYBER_EXTORTION"
     },
     {
-      "path": "assets/footage/scene_008_5377280.mp4",
+      "path": "assets/footage/scene_008_8632602.mp4",
       "scene_id": "scene_008",
-      "provider_asset_id": "5377280",
+      "provider_asset_id": "8632602",
       "role": "context",
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE"
     },
@@ -138,9 +145,9 @@
       "claim_id": "CLM_020_INCIDENT_REPORTING"
     },
     {
-      "path": "assets/footage/scene_019_992599.mp4",
+      "path": "assets/footage/scene_019_12699538.mp4",
       "scene_id": "scene_019",
-      "provider_asset_id": "992599",
+      "provider_asset_id": "12699538",
       "role": "human_context",
       "claim_id": "CLM_021_FINAL_SYNTHESIS"
     },
@@ -173,9 +180,9 @@
       "claim_id": "CLM_005_2026_MITIGATION_UPDATE"
     },
     {
-      "path": "assets/footage/scene_024_5377775.mp4",
+      "path": "assets/footage/scene_024_7255101.mp4",
       "scene_id": "scene_024",
-      "provider_asset_id": "5377775",
+      "provider_asset_id": "7255101",
       "role": "context",
       "claim_id": "CLM_008_CYBER_EXTORTION"
     },
@@ -187,9 +194,9 @@
       "claim_id": "CLM_013_MARKET_CONCENTRATION"
     },
     {
-      "path": "assets/footage/scene_026_33780459.mp4",
+      "path": "assets/footage/scene_026_34900371.mp4",
       "scene_id": "scene_026",
-      "provider_asset_id": "33780459",
+      "provider_asset_id": "34900371",
       "role": "governance_context",
       "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE"
     },
@@ -201,9 +208,9 @@
       "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF"
     },
     {
-      "path": "assets/footage/scene_028_8643888.mp4",
+      "path": "assets/footage/scene_028_7552431.mp4",
       "scene_id": "scene_028",
-      "provider_asset_id": "8643888",
+      "provider_asset_id": "7552431",
       "role": "human_context",
       "claim_id": "CLM_019_INDEPENDENT_EVALUATION"
     },
@@ -250,9 +257,9 @@
       "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF"
     },
     {
-      "path": "assets/footage/scene_035_34838666.mp4",
+      "path": "assets/footage/scene_035_8731230.mp4",
       "scene_id": "scene_035",
-      "provider_asset_id": "34838666",
+      "provider_asset_id": "8731230",
       "role": "governance_context",
       "claim_id": "CLM_020_INCIDENT_REPORTING"
     },

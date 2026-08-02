@@ -110,14 +110,24 @@
       "scene_id": "scene_008",
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
       "provider_asset_ids": [
-        "5377280"
+        "8632602",
+        "7655216",
+        "8048240"
       ],
       "role": "context",
       "min_duration_seconds": 8,
       "output_duration_seconds": 12,
       "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
       "semantic_link": "physical",
-      "semantic_rationale": "A serious network-operations image provides a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries the factual claim."
+      "semantic_rationale": "A real technical team reviewing code and system activity gives the agentic-espionage narration a credible human-operator context while the attributed provider report carries every factual claim.",
+      "replacement_review": {
+        "reason": "The blue synthetic hacking interface looked like a low-cost science-fiction overlay and did not provide a credible physical analogue for agentic cyber operations.",
+        "replaced_provider_asset_ids": [
+          "5377280"
+        ],
+        "requested_at": "2026-08-02T14:55:00Z",
+        "request_revision": 3
+      }
     },
     {
       "scene_id": "scene_009",
@@ -253,14 +263,24 @@
       "scene_id": "scene_019",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
       "provider_asset_ids": [
-        "992599"
+        "12699538",
+        "34901487",
+        "29152591"
       ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "output_duration_seconds": 12,
       "narration_anchor": "decisions that add up to a world shaped by whoever moved fastest, or whoever accumulated the most control",
       "semantic_link": "physical",
-      "semantic_rationale": "Ordinary people moving through shared urban space returns the consequences of concentrated decisions to a distributed human scale."
+      "semantic_rationale": "Diverse pedestrians moving through an ordinary public city street return the consequences of concentrated AI decisions to a credible everyday human scale.",
+      "replacement_review": {
+        "reason": "The stadium corridor crowd did not represent ordinary shared urban life and would misstate the narration's distributed social consequences.",
+        "replaced_provider_asset_ids": [
+          "992599"
+        ],
+        "requested_at": "2026-08-02T14:55:00Z",
+        "request_revision": 3
+      }
     },
     {
       "scene_id": "scene_020",
@@ -318,14 +338,23 @@
       "scene_id": "scene_024",
       "claim_id": "CLM_008_CYBER_EXTORTION",
       "provider_asset_ids": [
-        "5377775"
+        "7255101",
+        "8865843"
       ],
       "role": "context",
       "min_duration_seconds": 8,
       "output_duration_seconds": 12,
       "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
       "semantic_link": "physical",
-      "semantic_rationale": "A second security-operations view carries the defensive side of the dual-use cyber argument without reenacting a named attack."
+      "semantic_rationale": "A real monitoring team in a control-room environment supports the defensive side of the dual-use cyber argument without reenacting a named attack or presenting stock footage as evidence.",
+      "replacement_review": {
+        "reason": "The green hacker-screen imagery was a visual cliché and could be mistaken for proof of an attack rather than defensive cyber operations context.",
+        "replaced_provider_asset_ids": [
+          "5377775"
+        ],
+        "requested_at": "2026-08-02T14:55:00Z",
+        "request_revision": 3
+      }
     },
     {
       "scene_id": "scene_025",
@@ -344,14 +373,22 @@
       "scene_id": "scene_026",
       "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
       "provider_asset_ids": [
-        "33780459"
+        "34900371"
       ],
       "role": "governance_context",
       "min_duration_seconds": 8,
       "output_duration_seconds": 12,
       "narration_anchor": "Compute alone is not the only route to designation.",
       "semantic_link": "conceptual",
-      "semantic_rationale": "A distinct European institutional view supports the legal-designation qualification while the regulation page remains the direct evidence."
+      "semantic_rationale": "A clearly European Union flag on an institutional building locates the legal-designation discussion without introducing a non-EU national symbol; the regulation page remains the direct evidence.",
+      "replacement_review": {
+        "reason": "The previous shot prominently combined Swiss and EU flags and was misleading in a section specifically about EU AI Act designation rules.",
+        "replaced_provider_asset_ids": [
+          "33780459"
+        ],
+        "requested_at": "2026-08-02T14:55:00Z",
+        "request_revision": 3
+      }
     },
     {
       "scene_id": "scene_027",
@@ -370,14 +407,24 @@
       "scene_id": "scene_028",
       "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
       "provider_asset_ids": [
-        "8643888"
+        "7552431",
+        "7148539",
+        "8731401"
       ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "output_duration_seconds": 12,
       "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
       "semantic_link": "conceptual",
-      "semantic_rationale": "A second independent review setting supports the evaluation and trade-off sequence while avoiding repeated use of the first audit clip."
+      "semantic_rationale": "A diverse professional team critically reviewing documents and data represents independent evaluation and human judgment without implying that the stock material is an actual audit record.",
+      "replacement_review": {
+        "reason": "The previous computer screen visibly showed a sales-customer interface and was unrelated to independent technical evaluation or audit.",
+        "replaced_provider_asset_ids": [
+          "8643888"
+        ],
+        "requested_at": "2026-08-02T14:55:00Z",
+        "request_revision": 3
+      }
     },
     {
       "scene_id": "scene_029",
@@ -461,14 +508,24 @@
       "scene_id": "scene_035",
       "claim_id": "CLM_020_INCIDENT_REPORTING",
       "provider_asset_ids": [
-        "34838666"
+        "8731230",
+        "8425706",
+        "8731407"
       ],
       "role": "governance_context",
       "min_duration_seconds": 8,
       "output_duration_seconds": 12,
       "narration_anchor": "mandatory incident reporting when systems misbehave",
       "semantic_link": "conceptual",
-      "semantic_rationale": "A second formal policy meeting provides distinct reporting and oversight context without inventing a named hearing."
+      "semantic_rationale": "A formal group reviewing documents provides credible reporting, governance and oversight context without inventing a named hearing, regulator or incident.",
+      "replacement_review": {
+        "reason": "The classroom-style technology-business presentation lacked the authority and visual quality required for incident reporting and formal oversight.",
+        "replaced_provider_asset_ids": [
+          "34838666"
+        ],
+        "requested_at": "2026-08-02T14:55:00Z",
+        "request_revision": 3
+      }
     },
     {
       "scene_id": "scene_036",
@@ -548,5 +605,7 @@
       "semantic_link": "physical",
       "semantic_rationale": "A third fresh biosafety candidate sustains the limitation and precaution sequence without sensational imagery or reenactment."
     }
-  ]
+  ],
+  "generated_at": "2026-08-02T19:33:21.120Z",
+  "replacement_override_revision": 3
 }
