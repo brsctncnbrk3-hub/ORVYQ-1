@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "status": "requested",
+  "request_revision": 1,
+  "requested_at": "2026-08-02T09:34:00Z",
+  "reason": "Download and vendor the fresh Resonance full and no-melody variants from the official Scott Buckley source with license snapshots, hashes, provenance and LFS storage. No video render is permitted."
+}
