@@ -64,7 +64,7 @@ jobs:
           jq -r '.records[].path' "$RUNTIME" | while IFS= read -r relative; do
             clip="$ROOT/$relative"
             base="$(basename "$clip" .mp4)"
-            duration="$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$clip")"
+            duration="$(ffprobe -nostdin -v error -show_entries format=duration -of default=nw=1:nk=1 "$clip")"
             read -r t1 t2 t3 t4 <<< "$(python3 - "$duration" <<'PY'
           import sys
           d = max(float(sys.argv[1]), 0.1)
@@ -82,11 +82,11 @@ jobs:
             index=0
             for timestamp in "$t1" "$t2" "$t3" "$t4"; do
               index=$((index + 1))
-              ffmpeg -v error -y -ss "$timestamp" -i "$clip" \
+              ffmpeg -nostdin -v error -y -ss "$timestamp" -i "$clip" \
                 -frames:v 1 -vf "scale=480:270:force_original_aspect_ratio=decrease,pad=480:270:(ow-iw)/2:(oh-ih)/2:black,setsar=1" \
                 "$clip_tmp/frame_${index}.jpg"
             done
-            ffmpeg -v error -y \
+            ffmpeg -nostdin -v error -y \
               -i "$clip_tmp/frame_1.jpg" -i "$clip_tmp/frame_2.jpg" \
               -i "$clip_tmp/frame_3.jpg" -i "$clip_tmp/frame_4.jpg" \
               -filter_complex "[0:v][1:v]hstack=inputs=2[top];[2:v][3:v]hstack=inputs=2[bottom];[top][bottom]vstack=inputs=2[sheet]" \
