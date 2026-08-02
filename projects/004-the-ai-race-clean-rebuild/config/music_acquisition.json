@@ -1,32 +1,41 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1-single-tonal-world",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "ready_for_acquisition",
+  "status": "ready",
   "artist": "Scott Buckley",
   "license_name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "attribution_template": "Music by Scott Buckley — released under CC BY 4.0. www.scottbuckley.com.au",
+  "attribution_template": "'{title}' by {artist} — released under CC-BY 4.0. www.scottbuckley.com.au",
+  "music_direction": {
+    "single_tonal_world_required": true,
+    "composition_family": "resonance",
+    "creative_intent": "Dark electronic documentary underscore with controlled pulse, analytical unease and a stronger synth-backed acceleration state; narration remains primary throughout.",
+    "project001_music_reuse_forbidden": true
+  },
   "tracks": [
     {
-      "track_id": "SB_THE_LONG_DARK",
-      "title": "The Long Dark",
-      "source_page_url": "https://www.scottbuckley.com.au/library/the-long-dark/",
-      "editorial_role": "opening tension and controlled-risk evidence",
-      "reuse_from_project001_forbidden": true
+      "cue_id": "CUE_01_CONTROLLED_TENSION",
+      "track_id": "sb_resonance_altmix",
+      "title": "Resonance (No Melody in Backend)",
+      "composition_family": "resonance",
+      "source_page_url": "https://www.scottbuckley.com.au/library/resonance/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2018/04/sb_resonance_altmix.mp3",
+      "editorial_role": "restrained analytical underscore for narration-heavy evidence and governance sections",
+      "approved_for_proof": false,
+      "approved_for_full": true,
+      "notes": "Fresh Project 004 music asset; not reused from Project 001."
     },
     {
-      "track_id": "SB_TITAN",
-      "title": "Titan",
-      "source_page_url": "https://www.scottbuckley.com.au/library/titan/",
-      "editorial_role": "competitive acceleration and infrastructure scale",
-      "reuse_from_project001_forbidden": true
-    },
-    {
-      "track_id": "SB_REAWAKENING",
-      "title": "Reawakening",
-      "source_page_url": "https://www.scottbuckley.com.au/library/reawakening/",
-      "editorial_role": "final human-agency synthesis",
-      "reuse_from_project001_forbidden": true
+      "cue_id": "CUE_03_ACCELERATION",
+      "track_id": "sb_resonance",
+      "title": "Resonance",
+      "composition_family": "resonance",
+      "source_page_url": "https://www.scottbuckley.com.au/library/resonance/",
+      "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2018/04/sb_resonance.mp3",
+      "editorial_role": "driving synth-backed state for competitive acceleration, misuse and constructive momentum",
+      "approved_for_proof": false,
+      "approved_for_full": true,
+      "notes": "Fresh Project 004 music asset; not reused from Project 001."
     }
   ]
 }
