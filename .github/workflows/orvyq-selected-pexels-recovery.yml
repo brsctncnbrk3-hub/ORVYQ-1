@@ -54,20 +54,36 @@ jobs:
           test "$(jq -r '.pass' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json")" = "true"
           test "$(jq '.records | length' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json")" -eq 20
 
+      - name: Remove unselected acquisition variants
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="projects/$PROJECT_ID"
+          RUNTIME="$ROOT/assets/footage_acquisition.runtime.json"
+          KEEP_FILE="$(mktemp)"
+          jq -r '.records[].path' "$RUNTIME" | sort -u > "$KEEP_FILE"
+          find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0 | while IFS= read -r -d '' clip; do
+            relative="${clip#${ROOT}/}"
+            if ! grep -Fxq "$relative" "$KEEP_FILE"; then
+              rm -f "$clip" "$clip.provenance.json"
+            fi
+          done
+          rm -f "$KEEP_FILE"
+          test "$(find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' | wc -l)" -eq 20
+
       - name: Generate claim review frames
         shell: bash
         run: |
           set -euo pipefail
           ROOT="projects/$PROJECT_ID"
+          RUNTIME="$ROOT/assets/footage_acquisition.runtime.json"
           OUT="$ROOT/qa/footage-contact-sheets"
           rm -rf "$OUT"
           mkdir -p "$OUT"
-          find "$ROOT/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0 | while IFS= read -r -d '' clip; do
+          jq -r '.records[].path' "$RUNTIME" | while IFS= read -r relative; do
+            clip="$ROOT/$relative"
             base="$(basename "$clip" .mp4)"
-            ffmpeg -y -ss 1 -i "$clip" -frames:v 1 -vf "scale=640:-2" "$OUT/${base}.jpg" >/dev/null 2>&1 || {
-              echo "::warning::Could not create review frame for $clip"
-              continue
-            }
+            ffmpeg -y -ss 1 -i "$clip" -frames:v 1 -vf "scale=640:-2" "$OUT/${base}.jpg" >/dev/null 2>&1
           done
           test "$(find "$OUT" -type f -name '*.jpg' | wc -l)" -eq 20
 
