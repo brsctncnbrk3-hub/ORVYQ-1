@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 4,
-  "reason": "Persist the already verified 20-of-20 selected footage package first; defer all contact-sheet and semantic review work to the dedicated render-free review workflow. No video render is permitted.",
-  "requested_at": "2026-08-02T08:55:00Z"
+  "request_revision": 5,
+  "reason": "Replace the four clips rejected by four-position semantic and cinematic review, preserve the other sixteen selections, and produce a new verified 20-of-20 footage package. No video render is permitted.",
+  "requested_at": "2026-08-02T09:18:00Z"
 }
