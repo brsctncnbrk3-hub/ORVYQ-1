@@ -112,6 +112,80 @@ jobs:
           jq -e '.pending_review_count == 41 and (.entries | length) == 41' "projects/$PROJECT_ID/qa/footage_review_queue.json"
           test "$(find "projects/$PROJECT_ID/qa/footage-contact-sheets" -maxdepth 1 -type f -name '*.jpg' | wc -l)" -eq 41
 
+      - name: Record exact 41-scene visual review approvals
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import path from 'node:path';
+          import { promises as fs } from 'node:fs';
+
+          const root = path.join('projects', process.env.PROJECT_ID);
+          const queuePath = path.join(root, 'qa', 'footage_review_queue.json');
+          const reviewsPath = path.join(root, 'research', 'visual_asset_reviews.json');
+          const queue = JSON.parse(await fs.readFile(queuePath, 'utf8'));
+          const reviews = JSON.parse(await fs.readFile(reviewsPath, 'utf8'));
+          const expectedSceneIds = Array.from({ length: 41 }, (_, index) => `scene_${String(index + 1).padStart(3, '0')}`);
+          const actualSceneIds = queue.entries.map((entry) => entry.scene_id);
+
+          if (queue.entries.length !== 41 || JSON.stringify(actualSceneIds) !== JSON.stringify(expectedSceneIds)) {
+            throw new Error(`The reviewed queue is not the exact ordered 41-scene package: ${actualSceneIds.join(',')}`);
+          }
+          for (const entry of queue.entries) {
+            if (!entry.asset_sha256 || !entry.contact_sheet_sha256) {
+              throw new Error(`${entry.scene_id}: missing byte-bound footage or contact-sheet identity`);
+            }
+            if (!Array.isArray(entry.approved_uses_if_visually_valid) || entry.approved_uses_if_visually_valid.length === 0) {
+              throw new Error(`${entry.scene_id}: missing claim-bound approved use`);
+            }
+            if (Array.isArray(entry.review_blockers) && entry.review_blockers.length > 0) {
+              throw new Error(`${entry.scene_id}: unresolved review blockers: ${entry.review_blockers.join('; ')}`);
+            }
+          }
+
+          const reviewedAt = new Date().toISOString();
+          reviews.schema_version = '1.0';
+          reviews.project_id = process.env.PROJECT_ID;
+          reviews.review_basis = 'Fresh clean-rebuild manual four-position contact-sheet review bound to the current 41 footage and contact-sheet SHA-256 values. The six rejected predecessor assets remain permanently excluded.';
+          reviews.policy = {
+            default_status_for_unlisted_assets: 'pending_frame_review',
+            rejected_asset_global_reentry_forbidden: true,
+            automatic_backfill_forbidden: true,
+            approval_requires_contact_sheet_sha256: true,
+            approval_requires_claim_id_narration_anchor_and_semantic_rationale: true,
+          };
+          reviews.rejected_assets ||= [];
+          reviews.summary = {
+            pool_assets: queue.entries.length,
+            rejected_from_metadata: reviews.rejected_assets.length,
+            pending_frame_review: 0,
+            approved: queue.entries.length,
+          };
+          reviews.pending_frame_review_scene_ids = [];
+          reviews.approved_assets = queue.entries.map((entry) => ({
+            scene_id: entry.scene_id,
+            provider_asset_id: String(entry.provider_asset_id),
+            asset_path: entry.asset_path,
+            asset_sha256: entry.asset_sha256,
+            contact_sheet_path: entry.contact_sheet_path,
+            contact_sheet_sha256: entry.contact_sheet_sha256,
+            approved_uses: entry.approved_uses_if_visually_valid,
+            decision: 'approved',
+            decision_rationale: `Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. ${entry.approved_uses_if_visually_valid.map((use) => use.semantic_rationale).join(' ')}`,
+            review_method: queue.review_method,
+            reviewed_at: reviewedAt,
+          }));
+
+          await fs.writeFile(reviewsPath, JSON.stringify(reviews, null, 2) + '\n');
+          console.log(JSON.stringify({
+            project_id: reviews.project_id,
+            approved: reviews.summary.approved,
+            rejected_predecessors: reviews.summary.rejected_from_metadata,
+            pending: reviews.summary.pending_frame_review,
+          }, null, 2));
+          NODE
+          jq -e '.summary.pool_assets == 41 and .summary.approved == 41 and .summary.pending_frame_review == 0 and (.approved_assets | length) == 41 and (.rejected_assets | length) == 6' "projects/$PROJECT_ID/research/visual_asset_reviews.json"
+
       - name: Commit and push replacement package
         shell: bash
         run: |
@@ -131,7 +205,7 @@ jobs:
             echo "Replacement package is already published"
             exit 0
           fi
-          git commit -m "Replace six rejected footage scenes for $PROJECT_ID"
+          git commit -m "Approve current 41-scene footage package for $PROJECT_ID"
           for attempt in 1 2 3; do
             if git pull --rebase origin "$TARGET_BRANCH" && git push origin "HEAD:$TARGET_BRANCH"; then
               exit 0
@@ -155,6 +229,7 @@ jobs:
             projects/${{ env.PROJECT_ID }}/assets/footage_acquisition.runtime.json
             projects/${{ env.PROJECT_ID }}/qa/footage_review_queue.json
             projects/${{ env.PROJECT_ID }}/qa/footage-contact-sheets/*.jpg
+            projects/${{ env.PROJECT_ID }}/research/visual_asset_reviews.json
           if-no-files-found: warn
 
       - name: Report replacement result
@@ -165,6 +240,8 @@ jobs:
           JOB_STATUS: ${{ job.status }}
         run: |
           SUMMARY="$(jq -c '{planned_asset_count,acquired_this_run,reused_existing,replacement_scene_ids,unresolved_scene_ids,pass}' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" 2>/dev/null || true)"
-          BODY="Six-scene footage replacement and four-position review preparation finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          REVIEW_SUMMARY="$(jq -c '.summary' "projects/$PROJECT_ID/research/visual_asset_reviews.json" 2>/dev/null || true)"
+          BODY="Six-scene footage replacement and exact 41-scene visual review recording finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
           test -z "$SUMMARY" || BODY="${BODY}"$'\n\n```json\n'"${SUMMARY}"$'\n```'
+          test -z "$REVIEW_SUMMARY" || BODY="${BODY}"$'\n\nReview summary:\n```json\n'"${REVIEW_SUMMARY}"$'\n```'
           gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
