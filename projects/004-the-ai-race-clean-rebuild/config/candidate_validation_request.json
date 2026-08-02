@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 7,
-  "reason": "Run the complete render-free Candidate Validation chain after committing the exact current 41-of-41 manual four-position footage approvals and permanently excluding the six rejected predecessor assets. Rebuild and validate the full production plan, primary-evidence routing, edit plan, audio plan, captions, render-ready package, frozen candidate and pre-render QA against the current byte-bound media set and the project limits of 60-70% contextual footage, at least 20% primary evidence and no more than 15% graphic/cards. No video render is permitted.",
+  "request_revision": 8,
+  "reason": "Run the complete render-free Candidate Validation chain after promoting all 41 current footage provenance records to approved_for_final_edit using exact scene, provider asset, footage SHA-256 and four-position contact-sheet SHA-256 bindings. Rebuild and validate the full production plan, primary-evidence routing, edit plan, audio plan, captions, render-ready package, frozen candidate and pre-render QA against the current media set and the project limits of 60-70% contextual footage, at least 20% primary evidence and no more than 15% graphic/cards. No video render is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-08-02T19:48:00Z"
+  "requested_at": "2026-08-02T19:56:00Z"
 }
