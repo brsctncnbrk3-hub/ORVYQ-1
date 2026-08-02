@@ -1,11 +1,11 @@
 {
   "schema_version": "1.4-selected-public-pexels",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T09:28:22.119Z",
+  "generated_at": "2026-08-02T14:43:52.157Z",
   "source": "pexels_public_download",
   "license_url": "https://www.pexels.com/license/",
-  "planned_asset_count": 20,
-  "acquired_this_run": 20,
+  "planned_asset_count": 41,
+  "acquired_this_run": 41,
   "reused_existing": 0,
   "unresolved_scene_ids": [],
   "unresolved": [],
@@ -149,6 +149,153 @@
       "provider_asset_id": "7140928",
       "role": "context",
       "claim_id": "CLM_021_FINAL_SYNTHESIS"
+    },
+    {
+      "path": "assets/footage/scene_021_7989676.mp4",
+      "scene_id": "scene_021",
+      "provider_asset_id": "7989676",
+      "role": "human_context",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
+    },
+    {
+      "path": "assets/footage/scene_022_34279676.mp4",
+      "scene_id": "scene_022",
+      "provider_asset_id": "34279676",
+      "role": "context",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
+    },
+    {
+      "path": "assets/footage/scene_023_7989469.mp4",
+      "scene_id": "scene_023",
+      "provider_asset_id": "7989469",
+      "role": "human_context",
+      "claim_id": "CLM_005_2026_MITIGATION_UPDATE"
+    },
+    {
+      "path": "assets/footage/scene_024_5377775.mp4",
+      "scene_id": "scene_024",
+      "provider_asset_id": "5377775",
+      "role": "context",
+      "claim_id": "CLM_008_CYBER_EXTORTION"
+    },
+    {
+      "path": "assets/footage/scene_025_20591257.mp4",
+      "scene_id": "scene_025",
+      "provider_asset_id": "20591257",
+      "role": "context",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION"
+    },
+    {
+      "path": "assets/footage/scene_026_33780459.mp4",
+      "scene_id": "scene_026",
+      "provider_asset_id": "33780459",
+      "role": "governance_context",
+      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE"
+    },
+    {
+      "path": "assets/footage/scene_027_7989450.mp4",
+      "scene_id": "scene_027",
+      "provider_asset_id": "7989450",
+      "role": "human_context",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF"
+    },
+    {
+      "path": "assets/footage/scene_028_8643888.mp4",
+      "scene_id": "scene_028",
+      "provider_asset_id": "8643888",
+      "role": "human_context",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION"
+    },
+    {
+      "path": "assets/footage/scene_029_5599977.mp4",
+      "scene_id": "scene_029",
+      "provider_asset_id": "5599977",
+      "role": "human_context",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS"
+    },
+    {
+      "path": "assets/footage/scene_030_7140931.mp4",
+      "scene_id": "scene_030",
+      "provider_asset_id": "7140931",
+      "role": "context",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS"
+    },
+    {
+      "path": "assets/footage/scene_031_6804123.mp4",
+      "scene_id": "scene_031",
+      "provider_asset_id": "6804123",
+      "role": "human_context",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT"
+    },
+    {
+      "path": "assets/footage/scene_032_7989454.mp4",
+      "scene_id": "scene_032",
+      "provider_asset_id": "7989454",
+      "role": "human_context",
+      "claim_id": "CLM_006_INVESTMENT_SCALE"
+    },
+    {
+      "path": "assets/footage/scene_033_7989455.mp4",
+      "scene_id": "scene_033",
+      "provider_asset_id": "7989455",
+      "role": "human_context",
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY"
+    },
+    {
+      "path": "assets/footage/scene_034_9460727.mp4",
+      "scene_id": "scene_034",
+      "provider_asset_id": "9460727",
+      "role": "context",
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF"
+    },
+    {
+      "path": "assets/footage/scene_035_34838666.mp4",
+      "scene_id": "scene_035",
+      "provider_asset_id": "34838666",
+      "role": "governance_context",
+      "claim_id": "CLM_020_INCIDENT_REPORTING"
+    },
+    {
+      "path": "assets/footage/scene_036_30289540.mp4",
+      "scene_id": "scene_036",
+      "provider_asset_id": "30289540",
+      "role": "context",
+      "claim_id": "CLM_006_INVESTMENT_SCALE"
+    },
+    {
+      "path": "assets/footage/scene_037_36435706.mp4",
+      "scene_id": "scene_037",
+      "provider_asset_id": "36435706",
+      "role": "context",
+      "claim_id": "CLM_006_INVESTMENT_SCALE"
+    },
+    {
+      "path": "assets/footage/scene_038_36825184.mp4",
+      "scene_id": "scene_038",
+      "provider_asset_id": "36825184",
+      "role": "context",
+      "claim_id": "CLM_006_INVESTMENT_SCALE"
+    },
+    {
+      "path": "assets/footage/scene_039_5752559.mp4",
+      "scene_id": "scene_039",
+      "provider_asset_id": "5752559",
+      "role": "human_context",
+      "claim_id": "CLM_010_BIO_ASL3"
+    },
+    {
+      "path": "assets/footage/scene_040_8381407.mp4",
+      "scene_id": "scene_040",
+      "provider_asset_id": "8381407",
+      "role": "human_context",
+      "claim_id": "CLM_010_BIO_ASL3"
+    },
+    {
+      "path": "assets/footage/scene_041_9244463.mp4",
+      "scene_id": "scene_041",
+      "provider_asset_id": "9244463",
+      "role": "human_context",
+      "claim_id": "CLM_010_BIO_ASL3"
     }
   ],
   "pass": true

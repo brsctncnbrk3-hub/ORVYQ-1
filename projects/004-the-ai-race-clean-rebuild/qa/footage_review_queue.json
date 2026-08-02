@@ -1,27 +1,27 @@
 {
   "schema_version": "1.2-four-position",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T09:33:25.596Z",
+  "generated_at": "2026-08-02T14:44:28.568Z",
   "review_method": "four-position claim-specific contact-sheet review",
-  "pending_review_count": 20,
-  "entries_with_exact_uses": 20,
+  "pending_review_count": 41,
+  "entries_with_exact_uses": 41,
   "entries": [
     {
       "scene_id": "scene_001",
       "provider_asset_id": "7989689",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_001_7989689.mp4",
-      "asset_sha256": "6b63d924fc4d8fb2b688ca7e428e15a0f529942ea17f7a8b3d2750a4bd7aeef1",
+      "asset_sha256": "7acae27b73c5cbf650c88cd5a8593eb61becbc17cd2d1a406665455048177d3b",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_001_7989689.jpg",
-      "contact_sheet_sha256": "0221ba882ab8f71462fc7888ebf78297eec14dfc25953dc0f39875dcab897bbd",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "cca6622f25381430b9109635b8dcc12b055713fbd2bba3c6d6b3e4f6791d9367",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -48,17 +48,17 @@
       "provider_asset_id": "5028622",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_002_5028622.mp4",
-      "asset_sha256": "f89c1403115494636b44694fa651f8eec685f82c49380ad57e1b26af61a04521",
+      "asset_sha256": "fbc92964e38be1389b07b1139b4352572d767535bfc2bcc793419ecd1dac9daa",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_002_5028622.jpg",
-      "contact_sheet_sha256": "cd55f8a0b7a82cdca8e4fe3b063f01ba6eea1b940ad5904e0b15aa86c9645729",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "4ee76cd47ac70eac42b22a81ca23ba4bd43b9946e7c889b06e3236f79a707733",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -85,17 +85,17 @@
       "provider_asset_id": "8632599",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_003_8632599.mp4",
-      "asset_sha256": "d43e41ab3f2badf8b1c1d533888b7421151309e9d9c628228aac2e5d648553db",
+      "asset_sha256": "160c1fb1be3b8b04392101aed32d9ba7f394850b09bbef31ee0f415f74600f3f",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_003_8632599.jpg",
-      "contact_sheet_sha256": "450a5d0bbf81ba39236399d62131ca55ab6ab731e09ba91e8523442e615432ff",
-      "duration_seconds": 9.96,
+      "contact_sheet_sha256": "59ac8f5ed03d44106c1196950c012d4cea10c3fea11b5af6676717de3b15aabc",
+      "duration_seconds": 11.96,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1.4124293785310735,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.694915254237288,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -122,17 +122,17 @@
       "provider_asset_id": "7989678",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_004_7989678.mp4",
-      "asset_sha256": "e07a5ce6af88da1b92f5b1438c10bc7eeb538cb98615333dcc036df4c1587d02",
+      "asset_sha256": "39e440c420ea26dd2d7112280f96b6f450c5af6e6e752c5e1077eb270c778dc2",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_004_7989678.jpg",
-      "contact_sheet_sha256": "637f79bd1f737e7b189a631d7f9dd5e287a91bfa01ec39aacd6ab79bead0cc66",
-      "duration_seconds": 9.96,
+      "contact_sheet_sha256": "577741d8484811b1cdaf5648f99a2ffabac5414e4af35bf49c021cbf76f2618c",
+      "duration_seconds": 11.96,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1.0281014041089305,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.2337216849307167,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -159,17 +159,17 @@
       "provider_asset_id": "34406409",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_005_34406409.mp4",
-      "asset_sha256": "f4525afc6cb7707430ce91c3ff1def747b3bf6350032b68bb9b6990f7045d8eb",
+      "asset_sha256": "9a315760c332e9711fa5279ae2e3ccac5fabfdc76f36a6e9608a6317bb5e53f2",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_005_34406409.jpg",
-      "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "d40aa8df65525f8dd120878369e2e57a8379f9318373c3fdc12d72d6f46b08fa",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fill_and_center_crop",
-        "time_stretch_factor": 1.1194030268433965,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.343283632212076,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -196,17 +196,17 @@
       "provider_asset_id": "6803583",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_006_6803583.mp4",
-      "asset_sha256": "39548bd35e47c9aae3b6fc41fdafe5181df357fa8a5367035496592647960f74",
+      "asset_sha256": "f032ff4ad1b041a92af42853fa233baddf3b047c98390fef101397e026fc2e8b",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_006_6803583.jpg",
-      "contact_sheet_sha256": "a12d43d09d04facfa5d02bfa810e4c61932322d9ec56a4acb63fa5087685d129",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "fa7a7d60dfe4ac99eab4355426594e12e1252f6f7c613f17482a65649e5804c3",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -228,7 +228,7 @@
         {
           "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
           "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
-          "semantic_rationale": "Use scene_006 as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
           "semantic_link": "physical"
         }
       ],
@@ -239,17 +239,17 @@
       "provider_asset_id": "7253660",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_007_7253660.mp4",
-      "asset_sha256": "5bd6d728232bbb41f50f3b34a3fdcf7e716c4140116122c82e06d8af68b4e2d2",
+      "asset_sha256": "80188a8b015c4dcefa5123ae7b87f0dabaa407a8c31f9302498d7de348a31d41",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_007_7253660.jpg",
-      "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "3eb219f058afa79a914f02dc4f1dfe4a1a5ba8211da0fc4827a095eba572ea40",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -276,17 +276,17 @@
       "provider_asset_id": "5377280",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_008_5377280.mp4",
-      "asset_sha256": "069627c79973511d26fa6be1fff64fa7df66bce66e47f13207fee1553c739017",
+      "asset_sha256": "57f8e6b920797b7eff91005f9b3de97ec1ebaa57e7a029b45c458581a21f65d7",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_008_5377280.jpg",
-      "contact_sheet_sha256": "883d1dc826d452b2b3a3d10273b70aedaea5b58045d78350f2438e8aa2ba0627",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "bb139bce7890d74268b40fb40a98bdea317386b974e973dd01d21882d5c2067c",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -302,7 +302,7 @@
         {
           "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
           "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
-          "semantic_rationale": "A serious network-operations image should provide a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries every factual claim.",
+          "semantic_rationale": "A serious network-operations image provides a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries the factual claim.",
           "semantic_link": "physical"
         }
       ],
@@ -313,17 +313,17 @@
       "provider_asset_id": "8381457",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_009_8381457.mp4",
-      "asset_sha256": "a503ffba2794de82a49521775a313d4cdce78a8753dad105c181df6382efd9c3",
+      "asset_sha256": "d48a0f79abb9804fb9fe10ead54c22da9e4e662531a664611688cb7af41a6e31",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_009_8381457.jpg",
-      "contact_sheet_sha256": "f7dd7ff14f7c04361fe37415945850ba7d19aa73b529b4ea25f8a71ee526a85e",
-      "duration_seconds": 9.96,
+      "contact_sheet_sha256": "28213600716361cce57b38b183f506a617dd741a0ea6f755f6df496073291874",
+      "duration_seconds": 11.96,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1.3736263736263736,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.6483516483516483,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -350,17 +350,17 @@
       "provider_asset_id": "6214601",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_010_6214601.mp4",
-      "asset_sha256": "6a6b742214c42024ad7bafc04fe3e076f2d61b487ef0c3ecad7118b7b89e1f39",
+      "asset_sha256": "a1a5553c8eaaf7fe3b07845dfb6a2617820a6088cd9fb25cc3e3222b467b71c1",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_010_6214601.jpg",
-      "contact_sheet_sha256": "6c30f4947e1becf582b806494f8d3c6101e1192cde88bd58a675ea4e7f1d5694",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "18acaa42f5152be98112dba50795b3e5e9dd6379c07f5f8c85c7cbc3189ce225",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -387,17 +387,17 @@
       "provider_asset_id": "8201290",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_011_8201290.mp4",
-      "asset_sha256": "5b991f9d15f1904ba0314f440373dec860cb3478c9eee6d6467ca95ef1ca1bd5",
+      "asset_sha256": "bc32e8c638a4db9f9125d3b1e95e175c387676f308a4346ca5d61142f98af8e9",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_011_8201290.jpg",
-      "contact_sheet_sha256": "260eec169e85da64361530da1e382a5ce228b6edf352e67a8a7fc9cf1bff7dc1",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "c376d2c7ab494aa74dd9b45395eb74630047cfddb7b2244965513ec86f9fd8d9",
+      "duration_seconds": 11.96,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.1857707509881423,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -424,17 +424,17 @@
       "provider_asset_id": "38081600",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_012_38081600.mp4",
-      "asset_sha256": "ffeedbf38cc64e11e895367ea33dcf98be45f7c90c8cf78a9a8136b15c32137a",
+      "asset_sha256": "ebcf35eb55b0bbfc490e56ea21aca1342d5f08e37e3c030dfeaed63bac7ea615",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_012_38081600.jpg",
-      "contact_sheet_sha256": "6d4db1c66047daa699d9ef694b1542086b5312c2c95d068957b80734c606d5f9",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "9f315c4eac6ee6940894db7c16fd007d27927164f9a8b914e9cb21306e4dd38c",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -461,17 +461,17 @@
       "provider_asset_id": "34900372",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_013_34900372.mp4",
-      "asset_sha256": "01482f6eda32567e9326afd9d9bc0729f7fc1099ce6ebe61449a64878833da33",
+      "asset_sha256": "fc21d323fbd3f2a388ce126fec425516544a0559e55e42717f4a03482845fdbd",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_013_34900372.jpg",
-      "contact_sheet_sha256": "3f03023278f82ce9a15f15cc9436376a4aa53efa5720ac90ff81b8ab038ec4dc",
-      "duration_seconds": 10.01,
+      "contact_sheet_sha256": "e4f5c988d7f330234c73fbad04747e5f1cd86a9dd10a706940653756e75636ef",
+      "duration_seconds": 12.012,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -498,17 +498,17 @@
       "provider_asset_id": "6805175",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_014_6805175.mp4",
-      "asset_sha256": "56ca068294525f5f3325d256d131985387b8932c7cf4eccf929ea842996c9c8c",
+      "asset_sha256": "34e62f4d96cfd6ddfbfe1a7f34acb6eb35f99213c8517ba7f5b58d393a1f3c7a",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_014_6805175.jpg",
-      "contact_sheet_sha256": "ef788d0bd910f3811ab4adb7620f821eba24afaa9343858645e89763e6a182bc",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "90be558fbe73d88042fec03167048459b5246a0c951425c0214b3cb3d1b14f43",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -535,17 +535,17 @@
       "provider_asset_id": "6804109",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_015_6804109.mp4",
-      "asset_sha256": "8847145526f469431869c6e914a9e399876a6bafa94029c54afa0c3c939fb3e4",
+      "asset_sha256": "efdc0477e0b635c365c0a922302880a1a26268285fd8b4f964db8d8791411e68",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_015_6804109.jpg",
-      "contact_sheet_sha256": "671f9cb554070020fdcdaa8458cdc7c006982c037eba4a54cdf0f7788c5ff63a",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "c7077fb66347eb79be50c85396959166254c5e8b8d1eb068a733b40a08526087",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -572,17 +572,17 @@
       "provider_asset_id": "6573544",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_016_6573544.mp4",
-      "asset_sha256": "89d25bad6cad8946af820e9784faf6da78108badd4c9a12d8d0c0d625d6ba109",
+      "asset_sha256": "b4f332b41ac7e04eeddfc67ba194c42b43566d6f3c831cf0e2e08e51117cfa1c",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_016_6573544.jpg",
-      "contact_sheet_sha256": "99cbee965be9201c1e58491605354d3cc41ca7a15fd2852de115797855d03c0c",
-      "duration_seconds": 9.966667,
+      "contact_sheet_sha256": "e5cfa00f8a22d786cab587067603798ab8a64d576407aac052daf41da38abde2",
+      "duration_seconds": 11.966667,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1.1990407673860912,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.4388489208633093,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -609,17 +609,17 @@
       "provider_asset_id": "6930347",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_017_6930347.mp4",
-      "asset_sha256": "2c1d3e84d16555d8f3c5c797ab440c874bd9a6e70c2b07d12e0dac9566b68d99",
+      "asset_sha256": "be88ef7ae0e0c125d9b8416daebbcb0eb6907abb2bf9d388c653f3236d0e7eb7",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_017_6930347.jpg",
-      "contact_sheet_sha256": "5f804ec59be0ad67c44fe8b80664f19d501ba930d44d0717f1b1d5903592b754",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "541f8e422d6c71b82249d53dda14af89f551614e2096b05f403d0e5782937714",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -646,17 +646,17 @@
       "provider_asset_id": "6951401",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_018_6951401.mp4",
-      "asset_sha256": "481a5622980b70b4c0692b964b51fbfe328c652de5e6a47a8c0c541cca1611aa",
+      "asset_sha256": "738f14c48b4e1fe7d09801595a5edafb7f6bf56419f409a3cf646cbc957eaa76",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_018_6951401.jpg",
-      "contact_sheet_sha256": "46b55cb263bfb72dbc6746981280ea013ad902701d3f06a0e7323b7282983a22",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "98a17deeabe5d7dad022a3c1a7fe2b3aa66f742df2ca7a882eb97de147b0a834",
+      "duration_seconds": 12,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
         "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -683,17 +683,17 @@
       "provider_asset_id": "992599",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_019_992599.mp4",
-      "asset_sha256": "fcf837643d484d801be8712ffd5b2f7eb21736d2d3ee6f6bb99892895d77a902",
+      "asset_sha256": "8d1bb9d2c574f1c0c46334bf04c2447d082d6676de188e82f9411abdc4f419ac",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_019_992599.jpg",
-      "contact_sheet_sha256": "1236e8d43a850617c2d02b9d90010e07cd208dd9cf508c7f02e9d109fd74c4b9",
-      "duration_seconds": 10,
+      "contact_sheet_sha256": "e863256bd955cda44d04b246dfa6f56533614deaa8ac585d9a87bc0571395e79",
+      "duration_seconds": 11.96,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.085972850678733,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -720,17 +720,17 @@
       "provider_asset_id": "7140928",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_020_7140928.mp4",
-      "asset_sha256": "e38d9c32788f7bbc654fe8d8786b9d921f6393f094fae23dc52d1229f04b7988",
+      "asset_sha256": "2acd0b6f1105520ceb89264361d7088a843561beeb358c925c24de6cbf8280b8",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_020_7140928.jpg",
-      "contact_sheet_sha256": "3e695669395970007f53c3c32343dee00c0173e623fbee8260123711571b05ce",
-      "duration_seconds": 9.958333,
+      "contact_sheet_sha256": "a4dbfe424f3b4d358f7a8b1f1d06155d51545fe48f7ead5aecb9bab627fc6e69",
+      "duration_seconds": 11.958333,
       "transformation": {
         "output_width": 1280,
         "output_height": 720,
         "aspect_policy": "fit_and_pad",
-        "time_stretch_factor": 1.065340871259202,
-        "requested_duration_seconds": 10,
-        "normalized_duration_seconds": 10,
+        "time_stretch_factor": 1.2784090455110426,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
         "loop_short_source_when_required": false,
         "codec": "h264",
         "crf": 25,
@@ -752,7 +752,784 @@
         {
           "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
           "narration_anchor": "A rival company. A rival government.",
-          "semantic_rationale": "Use scene_020 as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_021",
+      "provider_asset_id": "7989676",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_021_7989676.mp4",
+      "asset_sha256": "b9a767ce64ddab95790f8a005c96ffc62b28a4dad58444ebe11b934018137d0e",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_021_7989676.jpg",
+      "contact_sheet_sha256": "666c233b7f6461927610b2803aa6426c150e9ca3e3dbddb20b7352e05bc7723d",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "The models were given fictional emails, access to fictional company systems, and goals that could be blocked by fictional employees.",
+          "semantic_rationale": "A second controlled software-review setting provides human experimental context without presenting stock footage as the test evidence itself.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_022",
+      "provider_asset_id": "34279676",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_022_34279676.mp4",
+      "asset_sha256": "cac8fe1d5f06bdbddc31b692222c3caa2b282395322c04505ba1808502d5bbfb",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_022_34279676.jpg",
+      "contact_sheet_sha256": "63f282f9f5a3f628c16f2e942d7f5129094e9fee599bed683f352d7144238f7a",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.2987012987012987,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+          "semantic_rationale": "A distinct technical testing environment breaks up the long controlled-evaluation section while official figures continue to carry the factual burden.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_023",
+      "provider_asset_id": "7989469",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_023_7989469.mp4",
+      "asset_sha256": "19e96bd3a46fbc5b903743a12268bcad2568cd31f1850bcf69d5c74a466f5a30",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_023_7989469.jpg",
+      "contact_sheet_sha256": "f537123f324be572e0add2a35a138536527bca6ee32ef8b4b620a2baca56147e",
+      "duration_seconds": 11.96,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.171875,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "That distinction matters. It's the difference between a fire drill and a fire.",
+          "semantic_rationale": "People reviewing a controlled software test supports the fire-drill-versus-fire distinction without implying a real deployment incident.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "5377775",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_024_5377775.mp4",
+      "asset_sha256": "7a495bd568debbb447e81cd97d6c918a11d829a1aee54c14bf649e2eb1f78a07",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_024_5377775.jpg",
+      "contact_sheet_sha256": "5d3fab25e6029b46f0da02a6f0c43ff579be86cf483a0f6452d079e6e55e0548",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fill_and_center_crop",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_008_CYBER_EXTORTION",
+          "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
+          "semantic_rationale": "A second security-operations view carries the defensive side of the dual-use cyber argument without reenacting a named attack.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_025",
+      "provider_asset_id": "20591257",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_025_20591257.mp4",
+      "asset_sha256": "0c6ed9324ac395e2642f9e2e42e81a19692def48fe4e1b87f95909c0e00ecfdb",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_025_20591257.jpg",
+      "contact_sheet_sha256": "0fa4c181d14a4f5004161673b524c7121879e9e3ff2c9a2e4bfd2d067228347d",
+      "duration_seconds": 12.012,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_013_MARKET_CONCENTRATION",
+          "narration_anchor": "Power, in this story, isn't only about what the machine can do. It's about who gets to decide.",
+          "semantic_rationale": "A second large-scale infrastructure view sustains the concentration argument while the CMA document supplies the evidence.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_026",
+      "provider_asset_id": "33780459",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_026_33780459.mp4",
+      "asset_sha256": "0e46c4940dbf1908e392e8244521fc5669edc037c2205bda61970554e54509ad",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_026_33780459.jpg",
+      "contact_sheet_sha256": "b77510b7ef50b9fad67ff999644745ef4046f1482d54c0752bf2d80f816fd0cc",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+          "narration_anchor": "Compute alone is not the only route to designation.",
+          "semantic_rationale": "A distinct European institutional view supports the legal-designation qualification while the regulation page remains the direct evidence.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_027",
+      "provider_asset_id": "7989450",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_027_7989450.mp4",
+      "asset_sha256": "d5d9a515b6be61798763b7adef64ad85bd8ec64ca408bc0dc3c69251f1d77138",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_027_7989450.jpg",
+      "contact_sheet_sha256": "d538381cd53c548544474504aad35bff656ac535cd8deaf7a908cd390ed88f7d",
+      "duration_seconds": 11.96,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.094391244870041,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "Because the line between legitimate safety oversight and rules that simply lock in whoever already won the race can be thinner than it looks.",
+          "semantic_rationale": "A second collaborative developer scene gives the governance trade-off a human scale without depicting any named model or company.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_028",
+      "provider_asset_id": "8643888",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_028_8643888.mp4",
+      "asset_sha256": "e972878e30c4fb9d86c5bb9db5f88df59c67689a4ddce6c9bf64295c3d026c16",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_028_8643888.jpg",
+      "contact_sheet_sha256": "33f6073e8391f6a7a6d3ac572f35ebdefc07514070aa3a2dba788dcceb015dbd",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
+          "semantic_rationale": "A second independent review setting supports the evaluation and trade-off sequence while avoiding repeated use of the first audit clip.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "5599977",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_029_5599977.mp4",
+      "asset_sha256": "fe010105a4551b5b2b0cc253ad7ebc3a07c038b3cb1472a7062821bc1e61fd61",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_029_5599977.jpg",
+      "contact_sheet_sha256": "2a675c63267689947940a10cb61c35eced4606c6fe2f4302a03b29a476ff755a",
+      "duration_seconds": 12.012,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "That work hasn't been done yet.",
+          "semantic_rationale": "A distinct human-city image creates a reflective closing pause and keeps responsibility grounded in ordinary people rather than abstract machinery.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_030",
+      "provider_asset_id": "7140931",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_030_7140931.mp4",
+      "asset_sha256": "9703f55194dd713bb82e516d7a3203dee0634bd30b40addd8413dcacce78587d",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_030_7140931.jpg",
+      "contact_sheet_sha256": "730ef07a0676e8d8bf67344139c34089f640d4782364af2d4edd730cd8cb5869",
+      "duration_seconds": 11.958333,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.3081395824178628,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "The race is still being decided by people, right now.",
+          "semantic_rationale": "A second server-hardware movement provides a distinct physical closing motif without repeating the same footage bytes.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_031",
+      "provider_asset_id": "6804123",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_031_6804123.mp4",
+      "asset_sha256": "eb1a286d88b5a32a93a74abeb833f71a79124d5ef3c8fe5909d31dc77ef0b209",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_031_6804123.jpg",
+      "contact_sheet_sha256": "cc5880fd4e0a3fde56608d260aa3f4137b6537428feeebf5bf657823067f54f1",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "These were designed tests, built specifically to see how far a model would go.",
+          "semantic_rationale": "A distinct developer-review setting adds controlled-test context without presenting stock footage as evidence of real deployment behavior.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "7989454",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_032_7989454.mp4",
+      "asset_sha256": "21b86aa3b5b26ab3bfbab9cc2abc75f365b04fd7e1454559f5bf2bd773a97c76",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_032_7989454.jpg",
+      "contact_sheet_sha256": "7e92a61949be58c63cb0456722fd3c791c471170da82d5925401958df53b01da",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "The companies building frontier models are not operating like cautious scientific institutions.",
+          "semantic_rationale": "A second technical team working under visible pressure gives the investment race a human operational scale while Stanford data carries the number.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_033",
+      "provider_asset_id": "7989455",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_033_7989455.mp4",
+      "asset_sha256": "8bcf1218af50cd584139c91129c8454542113a97d2b9c23e22d7b0671a33e087",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_033_7989455.jpg",
+      "contact_sheet_sha256": "49123f48a07ccbc8e090ac6d955603405bd4be6970b890fdee61312ce66727a2",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+          "narration_anchor": "Established companies may also be better able to absorb the complex compliance costs.",
+          "semantic_rationale": "A distinct small technical team reinforces the fixed-cost compliance analysis without claiming a measured outcome for any named firm.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_034",
+      "provider_asset_id": "9460727",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_034_9460727.mp4",
+      "asset_sha256": "ac33c1391467cb9e0ec7f73ed83f8c6104866743e454db9427b8e21a697679a1",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_034_9460727.jpg",
+      "contact_sheet_sha256": "cae26ea9df59d1d9d916bd344b32979aa0ad037fa4f319627a06e31428a4845b",
+      "duration_seconds": 12.012,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fill_and_center_crop",
+        "time_stretch_factor": 1.1988011988011988,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+          "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
+          "semantic_rationale": "A second controlled-access sequence makes centralized permission and revocation visible without depicting a specific AI provider.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_035",
+      "provider_asset_id": "34838666",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_035_34838666.mp4",
+      "asset_sha256": "0e40b95b70f375b64631cd95203f10fecf97c8bb660884f388dac175b4b806c6",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_035_34838666.jpg",
+      "contact_sheet_sha256": "9230de6afae57faba40d447c043130eede6fdba0aca6d3e9167b3b418cf5a83e",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_020_INCIDENT_REPORTING",
+          "narration_anchor": "mandatory incident reporting when systems misbehave",
+          "semantic_rationale": "A second formal policy meeting provides distinct reporting and oversight context without inventing a named hearing.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_036",
+      "provider_asset_id": "30289540",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_036_30289540.mp4",
+      "asset_sha256": "c90fdb3d065e563c8d77a0f228131a7064b7f338ec7bb77f90110d0ee256bdc0",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_036_30289540.jpg",
+      "contact_sheet_sha256": "5e865cbdf08e82e62165c6260a7593f4201e3c1306e91cee5effb62959c606b5",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "Competition is visible in the money, and in how narrow the frontier has become.",
+          "semantic_rationale": "A fresh capital-and-technology context candidate reserved for the investment-pressure section; the Stanford figure remains the factual evidence.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_037",
+      "provider_asset_id": "36435706",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_037_36435706.mp4",
+      "asset_sha256": "cd3b566881a534421d196fa82a5d60a36d8688b7f78a92aa0af95ee8d791bc0e",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_037_36435706.jpg",
+      "contact_sheet_sha256": "3e6416a179420f3f5bd3f48271431254e825ddc2f694f74bf49d45c9702c434e",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.0135135135135136,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "The companies building frontier models are operating like actors in a high-stakes competition.",
+          "semantic_rationale": "A second fresh market-and-infrastructure candidate broadens the race section without treating generic footage as proof of a specific investment.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_038",
+      "provider_asset_id": "36825184",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_038_36825184.mp4",
+      "asset_sha256": "8e109724ecae2d8f65f08f15c35e1b833918607003985dee5f074fd13e03e365",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_038_36825184.jpg",
+      "contact_sheet_sha256": "3539bb014cc4c227b37764df0ff6078e86b037949afbbab44d33305acc1f52a9",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fill_and_center_crop",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "Nearly thirty-four billion dollars in private generative-AI investment in 2024.",
+          "semantic_rationale": "A third fresh capital-flow candidate supplies cinematic coverage around the dated Stanford evidence without replacing the primary source.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_039",
+      "provider_asset_id": "5752559",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_039_5752559.mp4",
+      "asset_sha256": "162f291621fd67cb4208d1f54210804a03f28f11af1ce86861b09996087ed324",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_039_5752559.jpg",
+      "contact_sheet_sha256": "a4c1a16808e346c7a4dd613c9d68684125e69ad56d240f136dd4f7a9059667a2",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "On biological risk, Anthropic said its internal testing suggested a meaningful capability uplift.",
+          "semantic_rationale": "A fresh responsible-laboratory candidate adds biosafety context while avoiding weapon imagery and leaving all factual burden with the ASL-3 documents.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_040",
+      "provider_asset_id": "8381407",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_040_8381407.mp4",
+      "asset_sha256": "c979751b8384c24894d1bdc8b4ef376fd281dc8fbc8fd9dabb0d09f238c13c3a",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_040_8381407.jpg",
+      "contact_sheet_sha256": "f91193641844a8f733c972f2ecaa094a14fbcf11f41cef23d4e3cc01f453f505",
+      "duration_seconds": 11.96,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1.2048192771084336,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "Anthropic responded by deploying the model under its higher ASL-3 safety standard.",
+          "semantic_rationale": "A second fresh protected-laboratory candidate supports safeguard narration without implying that the stock footage depicts Anthropic or a named facility.",
+          "semantic_link": "physical"
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_041",
+      "provider_asset_id": "9244463",
+      "status": "pending_visual_review",
+      "asset_path": "assets/footage/scene_041_9244463.mp4",
+      "asset_sha256": "8b710de3e260591778246ac2e36fc180b0b2b9e52b9b2af91b9bd8bfa3402acd",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_041_9244463.jpg",
+      "contact_sheet_sha256": "7be251c69d4e8b01962f508afb0c29502a63de818a4d7d6c8cf7f9dc84e12273",
+      "duration_seconds": 12,
+      "transformation": {
+        "output_width": 1280,
+        "output_height": 720,
+        "aspect_policy": "fit_and_pad",
+        "time_stretch_factor": 1,
+        "requested_duration_seconds": 12,
+        "normalized_duration_seconds": 12,
+        "loop_short_source_when_required": false,
+        "codec": "h264",
+        "crf": 25,
+        "audio_removed": true
+      },
+      "sampled_positions": [
+        "opening",
+        "one_third",
+        "two_thirds",
+        "near_end"
+      ],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "The claim is not that the model can create a biological weapon on its own.",
+          "semantic_rationale": "A third fresh biosafety candidate sustains the limitation and precaution sequence without sensational imagery or reenactment.",
           "semantic_link": "physical"
         }
       ],

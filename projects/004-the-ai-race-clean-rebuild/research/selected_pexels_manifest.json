@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 3,
+  "request_revision": 5,
   "selection_policy": {
     "provider": "pexels",
     "license_url": "https://www.pexels.com/license/",
@@ -18,10 +18,12 @@
     {
       "scene_id": "scene_001",
       "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
-      "provider_asset_ids": ["7989689"],
+      "provider_asset_ids": [
+        "7989689"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
       "semantic_link": "physical",
       "semantic_rationale": "Developers jointly examining software gives the opening a credible human frontier-technology context without suggesting that the stock footage depicts a named AI laboratory."
@@ -29,10 +31,12 @@
     {
       "scene_id": "scene_002",
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
-      "provider_asset_ids": ["5028622"],
+      "provider_asset_ids": [
+        "5028622"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "And every one of them is still moving as fast as it can.",
       "semantic_link": "physical",
       "semantic_rationale": "A moving view through active server infrastructure makes the physical acceleration and scale of the AI race visible."
@@ -40,10 +44,12 @@
     {
       "scene_id": "scene_003",
       "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
-      "provider_asset_ids": ["8632599"],
+      "provider_asset_ids": [
+        "8632599"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
       "semantic_link": "physical",
       "semantic_rationale": "Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence."
@@ -51,10 +57,12 @@
     {
       "scene_id": "scene_004",
       "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
-      "provider_asset_ids": ["7989678"],
+      "provider_asset_ids": [
+        "7989678"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go.",
       "semantic_link": "physical",
       "semantic_rationale": "People reviewing software in a controlled office makes the test-versus-deployment distinction concrete without reenactment."
@@ -62,10 +70,12 @@
     {
       "scene_id": "scene_005",
       "claim_id": "CLM_006_INVESTMENT_SCALE",
-      "provider_asset_ids": ["34406409"],
+      "provider_asset_ids": [
+        "34406409"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Stanford's 2025 AI Index reported nearly thirty-four billion dollars in private generative-AI investment in 2024.",
       "semantic_link": "physical",
       "semantic_rationale": "A professional market-data environment supports the narration about capital flow while the factual number remains carried by primary evidence."
@@ -73,10 +83,12 @@
     {
       "scene_id": "scene_006",
       "claim_id": "CLM_007_FRONTIER_GAP",
-      "provider_asset_ids": ["6803583"],
+      "provider_asset_ids": [
+        "6803583"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "That closeness turns each major release into a strategic event.",
       "semantic_link": "physical",
       "semantic_rationale": "Parallel technical teams working under time pressure physically expresses competitive closeness without claiming to depict named laboratories."
@@ -84,10 +96,12 @@
     {
       "scene_id": "scene_007",
       "claim_id": "CLM_008_CYBER_EXTORTION",
-      "provider_asset_ids": ["7253660"],
+      "provider_asset_ids": [
+        "7253660"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "In cybersecurity, AI has already lowered the barrier to entry.",
       "semantic_link": "physical",
       "semantic_rationale": "Security analysts investigating screens provides defensive operations context and is not presented as footage of a named victim or attacker."
@@ -95,10 +109,12 @@
     {
       "scene_id": "scene_008",
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
-      "provider_asset_ids": ["5377280"],
+      "provider_asset_ids": [
+        "5377280"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
       "semantic_link": "physical",
       "semantic_rationale": "A serious network-operations image provides a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries the factual claim."
@@ -106,10 +122,12 @@
     {
       "scene_id": "scene_009",
       "claim_id": "CLM_010_BIO_ASL3",
-      "provider_asset_ids": ["8381457"],
+      "provider_asset_ids": [
+        "8381457"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "On biological risk, Anthropic said its internal testing suggested Claude Opus 4 could provide a meaningful capability uplift.",
       "semantic_link": "physical",
       "semantic_rationale": "Properly protected laboratory personnel establishes biosafety and responsible research context without depicting weaponization."
@@ -117,10 +135,12 @@
     {
       "scene_id": "scene_010",
       "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
-      "provider_asset_ids": ["6214601"],
+      "provider_asset_ids": [
+        "6214601"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "General-purpose AI can generate persuasive synthetic content cheaply and at scale.",
       "semantic_link": "physical",
       "semantic_rationale": "People consuming social feeds on phones shows the human distribution surface without asserting that any individual belief was changed."
@@ -128,10 +148,12 @@
     {
       "scene_id": "scene_011",
       "claim_id": "CLM_012_LABOUR_EXPOSURE",
-      "provider_asset_ids": ["8201290"],
+      "provider_asset_ids": [
+        "8201290"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "The evidence measures exposure more reliably than it predicts unemployment.",
       "semantic_link": "physical",
       "semantic_rationale": "Workers performing computer-mediated service tasks illustrates occupational exposure and transformation rather than unemployment."
@@ -139,10 +161,12 @@
     {
       "scene_id": "scene_012",
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
-      "provider_asset_ids": ["38081600"],
+      "provider_asset_ids": [
+        "38081600"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Frontier AI depends on costly computing power, cloud infrastructure, data, and capital.",
       "semantic_link": "physical",
       "semantic_rationale": "Large centralized infrastructure gives physical form to critical-input concentration without presenting a specific company as the subject."
@@ -150,10 +174,12 @@
     {
       "scene_id": "scene_013",
       "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
-      "provider_asset_ids": ["34900372"],
+      "provider_asset_ids": [
+        "34900372"
+      ],
       "role": "governance_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Take Europe's AI Act. It uses different rules for different systems.",
       "semantic_link": "conceptual",
       "semantic_rationale": "European institutional imagery locates the governance discussion while the regulation itself remains the primary evidence."
@@ -161,10 +187,12 @@
     {
       "scene_id": "scene_014",
       "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
-      "provider_asset_ids": ["6805175"],
+      "provider_asset_ids": [
+        "6805175"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Established companies may also be better able to absorb the complex compliance, evaluation, reporting, and legal costs.",
       "semantic_link": "physical",
       "semantic_rationale": "A small technical team gives the possible compliance burden a human scale while the narration clearly presents the incumbency effect as analysis."
@@ -172,10 +200,12 @@
     {
       "scene_id": "scene_015",
       "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
-      "provider_asset_ids": ["6804109"],
+      "provider_asset_ids": [
+        "6804109"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Open-weight models let independent researchers audit them, find flaws, and build defensive tools.",
       "semantic_link": "physical",
       "semantic_rationale": "Developers collaborating openly represents independent inspection and adaptation without implying the displayed code is a specific model."
@@ -183,10 +213,12 @@
     {
       "scene_id": "scene_016",
       "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
-      "provider_asset_ids": ["6573544"],
+      "provider_asset_ids": [
+        "6573544"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
       "semantic_link": "conceptual",
       "semantic_rationale": "A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company."
@@ -194,10 +226,12 @@
     {
       "scene_id": "scene_017",
       "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-      "provider_asset_ids": ["6930347"],
+      "provider_asset_ids": [
+        "6930347"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "subjecting them to independent evaluations and audits before they ship",
       "semantic_link": "physical",
       "semantic_rationale": "A team jointly examining data and challenging conclusions represents independent evaluation as a human process rather than a safety certificate."
@@ -205,10 +239,12 @@
     {
       "scene_id": "scene_018",
       "claim_id": "CLM_020_INCIDENT_REPORTING",
-      "provider_asset_ids": ["6951401"],
+      "provider_asset_ids": [
+        "6951401"
+      ],
       "role": "governance_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "mandatory incident reporting when systems misbehave, real legal liability and insurance",
       "semantic_link": "conceptual",
       "semantic_rationale": "A formal technology meeting supports reporting and oversight context without inventing a named hearing or regulatory proceeding."
@@ -216,10 +252,12 @@
     {
       "scene_id": "scene_019",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "provider_asset_ids": ["992599"],
+      "provider_asset_ids": [
+        "992599"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "decisions that add up to a world shaped by whoever moved fastest, or whoever accumulated the most control",
       "semantic_link": "physical",
       "semantic_rationale": "Ordinary people moving through shared urban space returns the consequences of concentrated decisions to a distributed human scale."
@@ -227,10 +265,12 @@
     {
       "scene_id": "scene_020",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "provider_asset_ids": ["7140928"],
+      "provider_asset_ids": [
+        "7140928"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "It's still being decided... by people, right now.",
       "semantic_link": "physical",
       "semantic_rationale": "A close view of active server hardware ends on the physical machine while the narration places responsibility back on human choices."
@@ -238,10 +278,12 @@
     {
       "scene_id": "scene_021",
       "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
-      "provider_asset_ids": ["7989676"],
+      "provider_asset_ids": [
+        "7989676"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "The models were given fictional emails, access to fictional company systems, and goals that could be blocked by fictional employees.",
       "semantic_link": "physical",
       "semantic_rationale": "A second controlled software-review setting provides human experimental context without presenting stock footage as the test evidence itself."
@@ -249,10 +291,12 @@
     {
       "scene_id": "scene_022",
       "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
-      "provider_asset_ids": ["34279676"],
+      "provider_asset_ids": [
+        "34279676"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
       "semantic_link": "conceptual",
       "semantic_rationale": "A distinct technical testing environment breaks up the long controlled-evaluation section while official figures continue to carry the factual burden."
@@ -260,10 +304,12 @@
     {
       "scene_id": "scene_023",
       "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
-      "provider_asset_ids": ["7989469"],
+      "provider_asset_ids": [
+        "7989469"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "That distinction matters. It's the difference between a fire drill and a fire.",
       "semantic_link": "physical",
       "semantic_rationale": "People reviewing a controlled software test supports the fire-drill-versus-fire distinction without implying a real deployment incident."
@@ -271,10 +317,12 @@
     {
       "scene_id": "scene_024",
       "claim_id": "CLM_008_CYBER_EXTORTION",
-      "provider_asset_ids": ["5377775"],
+      "provider_asset_ids": [
+        "5377775"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
       "semantic_link": "physical",
       "semantic_rationale": "A second security-operations view carries the defensive side of the dual-use cyber argument without reenacting a named attack."
@@ -282,10 +330,12 @@
     {
       "scene_id": "scene_025",
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
-      "provider_asset_ids": ["20591257"],
+      "provider_asset_ids": [
+        "20591257"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Power, in this story, isn't only about what the machine can do. It's about who gets to decide.",
       "semantic_link": "conceptual",
       "semantic_rationale": "A second large-scale infrastructure view sustains the concentration argument while the CMA document supplies the evidence."
@@ -293,10 +343,12 @@
     {
       "scene_id": "scene_026",
       "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
-      "provider_asset_ids": ["33780459"],
+      "provider_asset_ids": [
+        "33780459"
+      ],
       "role": "governance_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Compute alone is not the only route to designation.",
       "semantic_link": "conceptual",
       "semantic_rationale": "A distinct European institutional view supports the legal-designation qualification while the regulation page remains the direct evidence."
@@ -304,10 +356,12 @@
     {
       "scene_id": "scene_027",
       "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
-      "provider_asset_ids": ["7989450"],
+      "provider_asset_ids": [
+        "7989450"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Because the line between legitimate safety oversight and rules that simply lock in whoever already won the race can be thinner than it looks.",
       "semantic_link": "physical",
       "semantic_rationale": "A second collaborative developer scene gives the governance trade-off a human scale without depicting any named model or company."
@@ -315,10 +369,12 @@
     {
       "scene_id": "scene_028",
       "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-      "provider_asset_ids": ["8643888"],
+      "provider_asset_ids": [
+        "8643888"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
       "semantic_link": "conceptual",
       "semantic_rationale": "A second independent review setting supports the evaluation and trade-off sequence while avoiding repeated use of the first audit clip."
@@ -326,10 +382,12 @@
     {
       "scene_id": "scene_029",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "provider_asset_ids": ["5599977"],
+      "provider_asset_ids": [
+        "5599977"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "That work hasn't been done yet.",
       "semantic_link": "physical",
       "semantic_rationale": "A distinct human-city image creates a reflective closing pause and keeps responsibility grounded in ordinary people rather than abstract machinery."
@@ -337,13 +395,158 @@
     {
       "scene_id": "scene_030",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "provider_asset_ids": ["7140931"],
+      "provider_asset_ids": [
+        "7140931"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
-      "output_duration_seconds": 10,
+      "output_duration_seconds": 12,
       "narration_anchor": "The race is still being decided by people, right now.",
       "semantic_link": "physical",
       "semantic_rationale": "A second server-hardware movement provides a distinct physical closing motif without repeating the same footage bytes."
+    },
+    {
+      "scene_id": "scene_031",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "provider_asset_ids": [
+        "6804123"
+      ],
+      "role": "human_context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "These were designed tests, built specifically to see how far a model would go.",
+      "semantic_link": "physical",
+      "semantic_rationale": "A distinct developer-review setting adds controlled-test context without presenting stock footage as evidence of real deployment behavior."
+    },
+    {
+      "scene_id": "scene_032",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "provider_asset_ids": [
+        "7989454"
+      ],
+      "role": "human_context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "The companies building frontier models are not operating like cautious scientific institutions.",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A second technical team working under visible pressure gives the investment race a human operational scale while Stanford data carries the number."
+    },
+    {
+      "scene_id": "scene_033",
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "provider_asset_ids": [
+        "7989455"
+      ],
+      "role": "human_context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "Established companies may also be better able to absorb the complex compliance costs.",
+      "semantic_link": "physical",
+      "semantic_rationale": "A distinct small technical team reinforces the fixed-cost compliance analysis without claiming a measured outcome for any named firm."
+    },
+    {
+      "scene_id": "scene_034",
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "provider_asset_ids": [
+        "9460727"
+      ],
+      "role": "context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A second controlled-access sequence makes centralized permission and revocation visible without depicting a specific AI provider."
+    },
+    {
+      "scene_id": "scene_035",
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "provider_asset_ids": [
+        "34838666"
+      ],
+      "role": "governance_context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "mandatory incident reporting when systems misbehave",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A second formal policy meeting provides distinct reporting and oversight context without inventing a named hearing."
+    },
+    {
+      "scene_id": "scene_036",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "provider_asset_ids": [
+        "30289540"
+      ],
+      "role": "context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "Competition is visible in the money, and in how narrow the frontier has become.",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A fresh capital-and-technology context candidate reserved for the investment-pressure section; the Stanford figure remains the factual evidence."
+    },
+    {
+      "scene_id": "scene_037",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "provider_asset_ids": [
+        "36435706"
+      ],
+      "role": "context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "The companies building frontier models are operating like actors in a high-stakes competition.",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A second fresh market-and-infrastructure candidate broadens the race section without treating generic footage as proof of a specific investment."
+    },
+    {
+      "scene_id": "scene_038",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "provider_asset_ids": [
+        "36825184"
+      ],
+      "role": "context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "Nearly thirty-four billion dollars in private generative-AI investment in 2024.",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A third fresh capital-flow candidate supplies cinematic coverage around the dated Stanford evidence without replacing the primary source."
+    },
+    {
+      "scene_id": "scene_039",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "provider_asset_ids": [
+        "5752559"
+      ],
+      "role": "human_context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "On biological risk, Anthropic said its internal testing suggested a meaningful capability uplift.",
+      "semantic_link": "physical",
+      "semantic_rationale": "A fresh responsible-laboratory candidate adds biosafety context while avoiding weapon imagery and leaving all factual burden with the ASL-3 documents."
+    },
+    {
+      "scene_id": "scene_040",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "provider_asset_ids": [
+        "8381407"
+      ],
+      "role": "human_context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "Anthropic responded by deploying the model under its higher ASL-3 safety standard.",
+      "semantic_link": "physical",
+      "semantic_rationale": "A second fresh protected-laboratory candidate supports safeguard narration without implying that the stock footage depicts Anthropic or a named facility."
+    },
+    {
+      "scene_id": "scene_041",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "provider_asset_ids": [
+        "9244463"
+      ],
+      "role": "human_context",
+      "min_duration_seconds": 8,
+      "output_duration_seconds": 12,
+      "narration_anchor": "The claim is not that the model can create a biological weapon on its own.",
+      "semantic_link": "physical",
+      "semantic_rationale": "A third fresh biosafety candidate sustains the limitation and precaution sequence without sensational imagery or reenactment."
     }
   ]
 }
