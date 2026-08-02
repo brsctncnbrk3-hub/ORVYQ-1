@@ -17,7 +17,7 @@ import { loadMusicRegistry, saveMusicRegistry, findTrack } from "./lib/orvyq-mus
 
 const exec = promisify(execFile);
 const REQUIRED_FIELDS = [
-  "trackId", "title", "artist", "sourcePageUrl", "licenseName", "licenseUrl", "attribution", "acquisitionProvenance"
+  "trackId", "title", "artist", "compositionFamily", "sourcePageUrl", "licenseName", "licenseUrl", "attribution", "acquisitionProvenance"
 ];
 
 async function probe(file) {
@@ -59,6 +59,7 @@ export async function intakeMusicTrack(options) {
     track_id: options.trackId,
     title: options.title,
     artist: options.artist,
+    composition_family: options.compositionFamily,
     asset_path: assetRelativePath.split(path.sep).join("/"),
     sha256,
     bytes: bytes.length,
@@ -96,6 +97,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     trackId: args["track-id"],
     title: args.title,
     artist: args.artist,
+    compositionFamily: args["composition-family"],
     sourcePageUrl: args["source-page-url"],
     licenseName: args["license-name"],
     licenseUrl: args["license-url"],
