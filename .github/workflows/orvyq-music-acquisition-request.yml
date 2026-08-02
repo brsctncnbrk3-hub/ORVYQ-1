@@ -1,0 +1,149 @@
+name: ORVYQ Music Acquisition Request
+
+on:
+  push:
+    branches:
+      - "agent/**"
+      - "claude/**"
+    paths:
+      - "projects/*/config/music_acquisition_request.json"
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-music-acquisition-request-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  acquire:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          lfs: true
+          fetch-depth: 2
+
+      - name: Resolve one requested project
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t REQUESTS < <(
+            git diff --name-only HEAD^ HEAD |
+              grep -E '^projects/[^/]+/config/music_acquisition_request\.json$' || true
+          )
+          test "${#REQUESTS[@]}" -eq 1 || {
+            echo "::error::Music acquisition requires exactly one changed request file; found ${#REQUESTS[@]}."
+            exit 1
+          }
+          REQUEST_FILE="${REQUESTS[0]}"
+          test "$(jq -r '.status' "$REQUEST_FILE")" = "requested"
+          PROJECT_ID="$(jq -r '.project_id' "$REQUEST_FILE")"
+          [[ "$PROJECT_ID" =~ ^[0-9]{3}-[a-z0-9]+(-[a-z0-9]+)*$ ]]
+          test -f "projects/$PROJECT_ID/config/music_acquisition.json"
+          echo "PROJECT_ID=$PROJECT_ID" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies and media tooling
+        run: |
+          set -euo pipefail
+          npm ci
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          git lfs version
+
+      - name: Validate project music acquisition plan
+        run: |
+          set -euo pipefail
+          node --input-type=module -e "
+            import path from 'node:path';
+            import { projectDir, readJson } from './scripts/lib/fs-utils.mjs';
+            import { validateMusicAcquisitionPlan } from './scripts/orvyq_fetch_full_music.mjs';
+            const plan = await readJson(path.join(projectDir(process.env.PROJECT_ID), 'config', 'music_acquisition.json'));
+            validateMusicAcquisitionPlan(plan, process.env.PROJECT_ID);
+          "
+
+      - name: Download, verify and vendor project-declared tracks
+        run: node scripts/orvyq_fetch_full_music.mjs --project-id="$PROJECT_ID" | tee music-acquisition.log
+
+      - name: Confirm new tracks are LFS-managed and registry-approved
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import path from 'node:path';
+          import { projectDir, readJson } from './scripts/lib/fs-utils.mjs';
+          const projectId = process.env.PROJECT_ID;
+          const plan = await readJson(path.join(projectDir(projectId), 'config', 'music_acquisition.json'));
+          const registry = await readJson('music_library/registry.json');
+          for (const requested of plan.tracks) {
+            const registered = registry.tracks.find((track) => track.track_id === requested.track_id);
+            if (!registered) throw new Error(`${requested.track_id}: missing from registry`);
+            if (registered.status !== 'approved' || registered.approved_for_full !== true) throw new Error(`${requested.track_id}: not approved for full`);
+            if (registered.composition_family !== requested.composition_family) throw new Error(`${requested.track_id}: composition family mismatch`);
+          }
+          NODE
+          for f in music_library/tracks/sb_resonance*.mp3; do
+            test -s "$f"
+            git check-attr filter "$f" | grep -q "filter: lfs" || { echo "::error::$f is not tracked by Git LFS"; exit 1; }
+          done
+
+      - name: Validate schemas and tests
+        run: |
+          npm run validate:canonical
+          npm test
+
+      - name: Upload verified music package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-music-acquisition-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            music-acquisition.log
+            projects/${{ env.PROJECT_ID }}/config/music_acquisition.json
+            projects/${{ env.PROJECT_ID }}/assets/music/youtube_description_attribution.txt
+            music_library/registry.json
+            music_library/license_snapshots/sb_resonance*
+          if-no-files-found: warn
+
+      - name: Commit verified music package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "orvyq-music-acquisition-bot"
+          git config user.email "orvyq-music-acquisition-bot@users.noreply.github.com"
+          git add -f \
+            music_library/tracks/sb_resonance*.mp3 \
+            music_library/license_snapshots/sb_resonance* \
+            music_library/registry.json \
+            "projects/$PROJECT_ID/assets/music/youtube_description_attribution.txt"
+          if git diff --cached --quiet; then
+            echo "No music package changes"
+            exit 0
+          fi
+          git commit -m "Vendor fresh Resonance music for $PROJECT_ID"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
+
+      - name: Report result
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        shell: bash
+        run: |
+          BODY="Project music acquisition finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. Project: \`${PROJECT_ID:-unresolved}\`. No video render was started."
+          PR_NUMBER="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$GITHUB_REF_NAME" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$PR_NUMBER" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -f body="$BODY" || true
+          fi
