@@ -2,37 +2,51 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 2,
-  "requested_at": "2026-08-02T09:43:00Z",
-  "review_basis": "Four-position byte-bound contact-sheet review of all 20 selected clips plus a second review of the first replacement set. Only the remaining rejected scene is changed; the other nineteen selections remain unchanged.",
+  "request_revision": 3,
+  "requested_at": "2026-08-02T14:55:00Z",
+  "review_basis": "Four-position byte-bound contact-sheet review of all 41 twelve-second clips. Thirty-five clips passed; six clips are rejected for cinematic or claim-semantic reasons and must be replaced without altering the approved thirty-five footage byte streams.",
   "overrides": [
     {
-      "scene_id": "scene_001",
-      "replaced_provider_asset_ids": ["8534745"],
-      "provider_asset_ids": ["7989689", "6804123"],
-      "reason": "The previous biology-laboratory imagery falsely implied medical research during narration about frontier AI laboratories.",
-      "semantic_rationale": "Developers jointly examining software gives the opening a credible human frontier-technology context without suggesting that the stock footage depicts a named AI laboratory."
-    },
-    {
-      "scene_id": "scene_003",
-      "replaced_provider_asset_ids": ["5240935"],
-      "provider_asset_ids": ["8632599", "7989676", "34279676"],
-      "reason": "The previous clip displayed a literal password-decryption interface and read as a hacker cliché rather than a controlled model evaluation.",
-      "semantic_rationale": "Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence."
-    },
-    {
       "scene_id": "scene_008",
-      "replaced_provider_asset_ids": ["28709421", "1085656", "6804656"],
-      "provider_asset_ids": ["5377280"],
-      "reason": "The first replacement showed a cramped cable tangle with an unintentionally comic, low-budget tone; it did not meet the premium cinematic standard even though the network context was technically relevant.",
-      "semantic_rationale": "A serious network-operations image should provide a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries every factual claim."
+      "replaced_provider_asset_ids": ["5377280"],
+      "provider_asset_ids": ["8632602", "7655216", "8048240"],
+      "reason": "The blue synthetic hacking interface looked like a low-cost science-fiction overlay and did not provide a credible physical analogue for agentic cyber operations.",
+      "semantic_rationale": "A real technical team reviewing code and system activity gives the agentic-espionage narration a credible human-operator context while the attributed provider report carries every factual claim."
     },
     {
-      "scene_id": "scene_016",
-      "replaced_provider_asset_ids": ["3895141", "2070044"],
-      "provider_asset_ids": ["6573544", "9460727"],
-      "reason": "The previous static restricted-door shot lacked enough motion and visual development for a premium eight-to-ten-second sequence.",
-      "semantic_rationale": "A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company."
+      "scene_id": "scene_019",
+      "replaced_provider_asset_ids": ["992599"],
+      "provider_asset_ids": ["12699538", "34901487", "29152591"],
+      "reason": "The stadium corridor crowd did not represent ordinary shared urban life and would misstate the narration's distributed social consequences.",
+      "semantic_rationale": "Diverse pedestrians moving through an ordinary public city street return the consequences of concentrated AI decisions to a credible everyday human scale."
+    },
+    {
+      "scene_id": "scene_024",
+      "replaced_provider_asset_ids": ["5377775"],
+      "provider_asset_ids": ["7255101", "8865843"],
+      "reason": "The green hacker-screen imagery was a visual cliché and could be mistaken for proof of an attack rather than defensive cyber operations context.",
+      "semantic_rationale": "A real monitoring team in a control-room environment supports the defensive side of the dual-use cyber argument without reenacting a named attack or presenting stock footage as evidence."
+    },
+    {
+      "scene_id": "scene_026",
+      "replaced_provider_asset_ids": ["33780459"],
+      "provider_asset_ids": ["34900371"],
+      "reason": "The previous shot prominently combined Swiss and EU flags and was misleading in a section specifically about EU AI Act designation rules.",
+      "semantic_rationale": "A clearly European Union flag on an institutional building locates the legal-designation discussion without introducing a non-EU national symbol; the regulation page remains the direct evidence."
+    },
+    {
+      "scene_id": "scene_028",
+      "replaced_provider_asset_ids": ["8643888"],
+      "provider_asset_ids": ["7552431", "7148539", "8731401"],
+      "reason": "The previous computer screen visibly showed a sales-customer interface and was unrelated to independent technical evaluation or audit.",
+      "semantic_rationale": "A diverse professional team critically reviewing documents and data represents independent evaluation and human judgment without implying that the stock material is an actual audit record."
+    },
+    {
+      "scene_id": "scene_035",
+      "replaced_provider_asset_ids": ["34838666"],
+      "provider_asset_ids": ["8731230", "8425706", "8731407"],
+      "reason": "The classroom-style technology-business presentation lacked the authority and visual quality required for incident reporting and formal oversight.",
+      "semantic_rationale": "A formal group reviewing documents provides credible reporting, governance and oversight context without inventing a named hearing, regulator or incident."
     }
   ]
 }
