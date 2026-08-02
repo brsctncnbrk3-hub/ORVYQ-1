@@ -1,0 +1,102 @@
+name: ORVYQ Full Production Coverage Diagnostic
+
+on:
+  push:
+    branches:
+      - "agent/project-001-clean-rebuild"
+    paths:
+      - ".github/workflows/orvyq-full-production-diagnostic.yml"
+      - "scripts/orvyq_full_production_diagnostic.mjs"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-full-production-diagnostic-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  diagnose:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      PROJECT_ID: 004-the-ai-race-clean-rebuild
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/project-001-clean-rebuild
+          lfs: true
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Validate repository-local footage and provenance
+        run: node scripts/orvyq_materialize_footage.mjs --project-id="$PROJECT_ID"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install media and speech tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg poppler-utils
+          python -m pip install --disable-pip-version-check faster-whisper==1.2.0 requests==2.32.5
+
+      - name: Build narration alignment prerequisites
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" \
+            --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" \
+            --output-name full_narration_speech_qa.json \
+            --model tiny.en | tee diagnostic-speech-qa.log
+          node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
+          node scripts/orvyq_resolve_pauses.mjs --project-id="$PROJECT_ID"
+
+      - name: Generate exact failed-plan coverage diagnostic
+        shell: bash
+        run: |
+          set +e
+          node scripts/orvyq_full_production_diagnostic.mjs --project-id="$PROJECT_ID" > full-production-diagnostic.log 2>&1
+          echo $? > full-production-diagnostic.status
+          cat full-production-diagnostic.log
+          test -s "projects/$PROJECT_ID/qa/full_production_coverage_diagnostic.json"
+          exit 0
+
+      - name: Upload coverage diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-full-production-diagnostic-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 30
+          path: |
+            full-production-diagnostic.log
+            full-production-diagnostic.status
+            diagnostic-speech-qa.log
+            projects/${{ env.PROJECT_ID }}/qa/full_production_coverage_diagnostic.json
+            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
+            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
+            projects/${{ env.PROJECT_ID }}/direction/resolved_pause_plan.json
+          if-no-files-found: error
+
+      - name: Report diagnostic result
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          BODY="Full-production coverage diagnostic finished with **${JOB_STATUS}**. The quality gate remained active; the run only exported exact shot, source-slice and pause locations for the unresolved coverage gaps. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
