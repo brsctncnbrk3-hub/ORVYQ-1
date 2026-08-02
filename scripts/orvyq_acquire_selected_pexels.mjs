@@ -109,12 +109,15 @@ async function writeResponseToFile(response, target) {
   return stat.size;
 }
 
-async function compact(source, output, durationSeconds) {
-  await execFileAsync("ffmpeg", [
-    "-y",
+async function compact(source, output, durationSeconds, sourceDurationSeconds) {
+  const args = ["-y"];
+  if (Number(sourceDurationSeconds || 0) + 0.05 < Number(durationSeconds || 0)) {
+    args.push("-stream_loop", "-1");
+  }
+  args.push(
     "-i", source,
     "-t", String(durationSeconds),
-    "-vf", "scale='min(1280,iw)':-2",
+    "-vf", "scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2:black,setsar=1",
     "-c:v", "libx264",
     "-preset", "medium",
     "-crf", "25",
@@ -122,7 +125,8 @@ async function compact(source, output, durationSeconds) {
     "-movflags", "+faststart",
     "-an",
     output,
-  ], { maxBuffer: 24 * 1024 * 1024 });
+  );
+  await execFileAsync("ffmpeg", args, { maxBuffer: 24 * 1024 * 1024 });
 }
 
 async function acquireCandidate(projectId, dir, item, providerAssetId) {
@@ -139,24 +143,23 @@ async function acquireCandidate(projectId, dir, item, providerAssetId) {
   try {
     sourceBytes = await writeResponseToFile(response, source);
     const sourceInfo = await probe(source);
-    if (sourceInfo.width <= sourceInfo.height) throw new Error(`portrait/square source ${sourceInfo.width}x${sourceInfo.height}`);
-    if (sourceInfo.width < 1280 || sourceInfo.height < 720) throw new Error(`source below landscape HD ${sourceInfo.width}x${sourceInfo.height}`);
+    if (!(sourceInfo.width > 0 && sourceInfo.height > 0 && sourceInfo.duration > 0)) {
+      throw new Error(`invalid source media ${sourceInfo.width}x${sourceInfo.height} duration=${sourceInfo.duration}`);
+    }
     const minimumDuration = Number(item.min_duration_seconds || 8);
-    if (sourceInfo.duration + 0.05 < minimumDuration) throw new Error(`source shorter than ${minimumDuration}s`);
     const requested = Math.min(
-      Number(item.output_duration_seconds || 10),
-      Number(sourceInfo.duration),
+      Math.max(Number(item.output_duration_seconds || 10), minimumDuration),
       12,
     );
-    await compact(source, output, requested);
+    await compact(source, output, requested, sourceInfo.duration);
   } finally {
     await fs.rm(source, { force: true });
   }
 
   const info = await probe(output);
-  if (info.width < 1280 || info.height < 720 || info.width <= info.height) {
+  if (info.width !== 1280 || info.height !== 720) {
     await fs.rm(output, { force: true });
-    throw new Error(`compacted clip failed landscape HD validation ${info.width}x${info.height}`);
+    throw new Error(`compacted clip failed exact HD validation ${info.width}x${info.height}`);
   }
   const buffer = await fs.readFile(output);
   const digest = sha256(buffer);
@@ -193,7 +196,10 @@ async function acquireCandidate(projectId, dir, item, providerAssetId) {
     actual_sha256: digest,
     transformed_for_edit: true,
     transformation: {
-      maximum_width: 1280,
+      output_width: 1280,
+      output_height: 720,
+      aspect_policy: "fit_and_pad",
+      loop_short_source_when_required: true,
       codec: "h264",
       crf: 25,
       audio_removed: true,
