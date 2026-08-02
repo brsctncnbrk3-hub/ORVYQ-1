@@ -54,9 +54,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git add "projects/$PROJECT_ID/qa/full_narration_speech_qa.json" "projects/$PROJECT_ID/voice/narration_alignment.json"
+          git add -f "projects/$PROJECT_ID/qa/full_narration_speech_qa.json"
+          git add "projects/$PROJECT_ID/voice/narration_alignment.json"
           git config user.name "orvyq-narration-bot"
           git config user.email "orvyq-narration-bot@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "Narration alignment outputs unchanged."
+            exit 0
+          fi
           git commit -m "Complete narration alignment for $PROJECT_ID"
           git pull --rebase origin "$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
