@@ -182,6 +182,10 @@ jobs:
             "projects/$PROJECT_ID/qa/footage_contact_sheets.json"
           git config user.name "orvyq-footage-bot"
           git config user.email "orvyq-footage-bot@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "Footage state unchanged."
+            exit 0
+          fi
           git commit -m "Complete selected footage acquisition for $PROJECT_ID"
           git pull --rebase origin "$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
