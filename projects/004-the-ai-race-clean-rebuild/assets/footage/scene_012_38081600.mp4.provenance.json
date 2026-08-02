@@ -12,7 +12,7 @@
   "license_url": "https://www.pexels.com/license/",
   "creator": null,
   "source_title": null,
-  "retrieval_timestamp": "2026-08-02T02:23:00.721Z",
+  "retrieval_timestamp": "2026-08-02T08:55:00.829Z",
   "editorial_role": "context",
   "narration_anchor": "Frontier AI depends on costly computing power, cloud infrastructure, data, and capital.",
   "semantic_rationale": "Large centralized infrastructure gives physical form to critical-input concentration without presenting a specific company as the subject.",
@@ -30,7 +30,13 @@
   "actual_sha256": "ffeedbf38cc64e11e895367ea33dcf98be45f7c90c8cf78a9a8136b15c32137a",
   "transformed_for_edit": true,
   "transformation": {
-    "maximum_width": 1280,
+    "output_width": 1280,
+    "output_height": 720,
+    "aspect_policy": "fit_and_pad",
+    "time_stretch_factor": 1,
+    "requested_duration_seconds": 10,
+    "normalized_duration_seconds": 10,
+    "loop_short_source_when_required": false,
     "codec": "h264",
     "crf": 25,
     "audio_removed": true

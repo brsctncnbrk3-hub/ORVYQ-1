@@ -12,7 +12,7 @@
   "license_url": "https://www.pexels.com/license/",
   "creator": null,
   "source_title": null,
-  "retrieval_timestamp": "2026-08-02T02:23:05.790Z",
+  "retrieval_timestamp": "2026-08-02T08:55:05.396Z",
   "editorial_role": "governance_context",
   "narration_anchor": "Take Europe's AI Act. It uses different rules for different systems.",
   "semantic_rationale": "European institutional imagery locates the governance discussion while the regulation itself remains the primary evidence.",
@@ -30,7 +30,13 @@
   "actual_sha256": "01482f6eda32567e9326afd9d9bc0729f7fc1099ce6ebe61449a64878833da33",
   "transformed_for_edit": true,
   "transformation": {
-    "maximum_width": 1280,
+    "output_width": 1280,
+    "output_height": 720,
+    "aspect_policy": "fit_and_pad",
+    "time_stretch_factor": 1,
+    "requested_duration_seconds": 10,
+    "normalized_duration_seconds": 10,
+    "loop_short_source_when_required": false,
     "codec": "h264",
     "crf": 25,
     "audio_removed": true
