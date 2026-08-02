@@ -21,7 +21,7 @@ jobs:
   apply:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       PROJECT_ID: 004-the-ai-race-clean-rebuild
       TARGET_BRANCH: agent/project-001-clean-rebuild
@@ -37,8 +37,15 @@ jobs:
           node-version: "20"
           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies and media tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          ffmpeg -version
+          ffprobe -version
 
       - name: Apply authored distribution
         shell: bash
