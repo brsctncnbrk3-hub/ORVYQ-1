@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2-four-position",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T09:21:38.896Z",
+  "generated_at": "2026-08-02T09:33:25.596Z",
   "review_method": "four-position claim-specific contact-sheet review",
   "pending_review_count": 20,
   "entries_with_exact_uses": 20,
@@ -11,9 +11,9 @@
       "provider_asset_id": "7989689",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_001_7989689.mp4",
-      "asset_sha256": "829c9da1d215294746618cf7af486f86352f3b658407a61e0eaa840f5cbf9d21",
+      "asset_sha256": "6b63d924fc4d8fb2b688ca7e428e15a0f529942ea17f7a8b3d2750a4bd7aeef1",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_001_7989689.jpg",
-      "contact_sheet_sha256": "ee71d9a38b6e9e7fd184bbd9d30a8ba8ef291b17b73870cbdfc657e20a0ade63",
+      "contact_sheet_sha256": "0221ba882ab8f71462fc7888ebf78297eec14dfc25953dc0f39875dcab897bbd",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
@@ -159,9 +159,9 @@
       "provider_asset_id": "34406409",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_005_34406409.mp4",
-      "asset_sha256": "04525570d0d02e2a6aedcf6a21908d0099c99e5afb9e75ef4182dd376b66e288",
+      "asset_sha256": "f4525afc6cb7707430ce91c3ff1def747b3bf6350032b68bb9b6990f7045d8eb",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_005_34406409.jpg",
-      "contact_sheet_sha256": "750be574d6458cc897074deb8fec54ccd85809a57687b5e5567c34a7778cb27e",
+      "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
@@ -239,9 +239,9 @@
       "provider_asset_id": "7253660",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_007_7253660.mp4",
-      "asset_sha256": "12e0fbb35a64680077941c993ebbd15885bfc973d14babe7c85a1113e9d02119",
+      "asset_sha256": "5bd6d728232bbb41f50f3b34a3fdcf7e716c4140116122c82e06d8af68b4e2d2",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_007_7253660.jpg",
-      "contact_sheet_sha256": "d04fa22d6c51570a64cee9011941c87143cbf69e9b14af1a07d6c35d5174eca9",
+      "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
@@ -273,12 +273,12 @@
     },
     {
       "scene_id": "scene_008",
-      "provider_asset_id": "6804656",
+      "provider_asset_id": "5377280",
       "status": "pending_visual_review",
-      "asset_path": "assets/footage/scene_008_6804656.mp4",
-      "asset_sha256": "67128e2867f5b1765759b5c0dea9cb85745ab6700e19e3b64858155883a9c0fb",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_008_6804656.jpg",
-      "contact_sheet_sha256": "c23f0912afd137eee27fb8082f992b5a94e1d28d82c4723c530c7a572f133596",
+      "asset_path": "assets/footage/scene_008_5377280.mp4",
+      "asset_sha256": "069627c79973511d26fa6be1fff64fa7df66bce66e47f13207fee1553c739017",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_008_5377280.jpg",
+      "contact_sheet_sha256": "883d1dc826d452b2b3a3d10273b70aedaea5b58045d78350f2438e8aa2ba0627",
       "duration_seconds": 10,
       "transformation": {
         "output_width": 1280,
@@ -302,7 +302,7 @@
         {
           "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
           "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
-          "semantic_rationale": "A technician actively handling network infrastructure provides a physical analogue for machine-scale technical operations with humans intervening at key moments; the provider report carries the factual burden.",
+          "semantic_rationale": "A serious network-operations image should provide a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries every factual claim.",
           "semantic_link": "physical"
         }
       ],
@@ -572,9 +572,9 @@
       "provider_asset_id": "6573544",
       "status": "pending_visual_review",
       "asset_path": "assets/footage/scene_016_6573544.mp4",
-      "asset_sha256": "e377890563b57b014dbb82941b468bfc9b7d5c021bf147ac570cf600b76e4d3a",
+      "asset_sha256": "89d25bad6cad8946af820e9784faf6da78108badd4c9a12d8d0c0d625d6ba109",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_016_6573544.jpg",
-      "contact_sheet_sha256": "8f5d484d282ad4971dde7be810c4aebd1761d8d21e88dae7cd50e3f20a5229b0",
+      "contact_sheet_sha256": "99cbee965be9201c1e58491605354d3cc41ca7a15fd2852de115797855d03c0c",
       "duration_seconds": 9.966667,
       "transformation": {
         "output_width": 1280,
