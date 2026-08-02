@@ -1,9 +1,8 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "evidence_kind_overrides": [
-    {
-      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+  "evidence_kind_overrides": {
+    "CLM_001_SAFETY_FRAMEWORKS": {
       "kind": "official_document",
       "evidence_asset_ids": [
         "EVID_ASL3_COVER",
@@ -13,11 +12,11 @@
         "assets/evidence/anthropic_asl3_cover.png",
         "assets/evidence/anthropic_asl3_abstract.png"
       ],
+      "editorial_rationale": "Open on two distinct real Anthropic safety-document pages so the film establishes published risk governance before any analytical card appears.",
       "first_occurrence_asset_count": 2,
       "distinct_image_per_occurrence": true
     },
-    {
-      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+    "CLM_003_AGENTIC_MISALIGNMENT_TESTS": {
       "kind": "image_sequence",
       "evidence_asset_ids": [
         "EVID_AGENTIC_FIGURE_01",
@@ -27,10 +26,10 @@
         "assets/evidence/anthropic_agentic_figure_01.png",
         "assets/evidence/anthropic_agentic_figure_07.png"
       ],
+      "editorial_rationale": "Use the paper's own controlled-simulation comparison figures instead of recreating the result as an invented chart.",
       "distinct_image_per_occurrence": true
     },
-    {
-      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+    "CLM_004_TEST_NOT_DEPLOYMENT": {
       "kind": "image_sequence",
       "evidence_asset_ids": [
         "EVID_AGENTIC_FIGURE_02",
@@ -44,17 +43,17 @@
         "assets/evidence/anthropic_agentic_figure_04.png",
         "assets/evidence/anthropic_agentic_figure_05.png"
       ],
+      "editorial_rationale": "Rotate through the paper's fictional test interface, email and generated-message figures to make the test-versus-deployment limitation visually undeniable.",
       "distinct_image_per_occurrence": true
     },
-    {
-      "claim_id": "CLM_006_INVESTMENT_SCALE",
+    "CLM_006_INVESTMENT_SCALE": {
       "kind": "official_figure",
       "evidence_asset_ids": ["EVID_STANFORD_INVESTMENT_2024"],
       "image_assets": ["assets/evidence/stanford_ai_index_investment_page249.png"],
+      "editorial_rationale": "Show Stanford's dated investment figure directly rather than substituting decorative financial-market footage.",
       "distinct_image_per_occurrence": true
     },
-    {
-      "claim_id": "CLM_010_BIO_ASL3",
+    "CLM_010_BIO_ASL3": {
       "kind": "split_documents",
       "evidence_asset_ids": [
         "EVID_ASL3_ABSTRACT",
@@ -64,11 +63,11 @@
         "assets/evidence/anthropic_asl3_abstract.png",
         "assets/evidence/anthropic_asl3_cbrn_evaluation.png"
       ],
+      "editorial_rationale": "Pair the precautionary deployment language with the CBRN evaluation page while keeping Anthropic's uncertainty visible.",
       "first_occurrence_asset_count": 2,
       "distinct_image_per_occurrence": true
     },
-    {
-      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+    "CLM_014_EU_LAYERED_OBLIGATIONS": {
       "kind": "split_documents",
       "evidence_asset_ids": [
         "EVID_EU_SYSTEMIC_CLASSIFICATION",
@@ -78,15 +77,16 @@
         "assets/evidence/eu_ai_act_article51_page83.png",
         "assets/evidence/eu_ai_act_article55_page86.png"
       ],
+      "editorial_rationale": "Use the actual classification and duty provisions to distinguish systemic-risk designation from the obligations that follow.",
       "first_occurrence_asset_count": 2,
       "distinct_image_per_occurrence": true
     },
-    {
-      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+    "CLM_015_COMPUTE_NOT_ONLY_ROUTE": {
       "kind": "official_document",
       "evidence_asset_ids": ["EVID_EU_SYSTEMIC_CLASSIFICATION"],
       "image_assets": ["assets/evidence/eu_ai_act_article51_page83.png"],
+      "editorial_rationale": "Return once to Article 51 for the compute-presumption qualification, keeping this exact page within the two-use ceiling.",
       "distinct_image_per_occurrence": true
     }
-  ]
+  }
 }
