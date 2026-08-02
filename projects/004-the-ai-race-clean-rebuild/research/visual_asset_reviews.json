@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "review_basis": "Fresh clean-rebuild four-frame contact-sheet review bound to current footage and contact-sheet SHA-256 values. No prior-project approval was reused.",
+  "review_basis": "Fresh clean-rebuild manual four-position contact-sheet review bound to the current 41 footage and contact-sheet SHA-256 values. The six rejected predecessor assets remain permanently excluded.",
   "policy": {
     "default_status_for_unlisted_assets": "pending_frame_review",
     "rejected_asset_global_reentry_forbidden": true,
@@ -10,10 +10,10 @@
     "approval_requires_claim_id_narration_anchor_and_semantic_rationale": true
   },
   "summary": {
-    "pool_assets": 20,
+    "pool_assets": 41,
     "rejected_from_metadata": 6,
     "pending_frame_review": 0,
-    "approved": 20
+    "approved": 41
   },
   "pending_frame_review_scene_ids": [],
   "rejected_assets": [
@@ -71,9 +71,9 @@
       "scene_id": "scene_001",
       "provider_asset_id": "7989689",
       "asset_path": "assets/footage/scene_001_7989689.mp4",
-      "asset_sha256": "6b63d924fc4d8fb2b688ca7e428e15a0f529942ea17f7a8b3d2750a4bd7aeef1",
+      "asset_sha256": "7acae27b73c5cbf650c88cd5a8593eb61becbc17cd2d1a406665455048177d3b",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_001_7989689.jpg",
-      "contact_sheet_sha256": "0221ba882ab8f71462fc7888ebf78297eec14dfc25953dc0f39875dcab897bbd",
+      "contact_sheet_sha256": "cca6622f25381430b9109635b8dcc12b055713fbd2bba3c6d6b3e4f6791d9367",
       "approved_uses": [
         {
           "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
@@ -83,17 +83,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "Across all four frames, the clip consistently shows developers examining software together; it supplies credible human AI-development context without implying a named laboratory.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Developers jointly examining software gives the opening a credible human frontier-technology context without suggesting that the stock footage depicts a named AI laboratory.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_002",
       "provider_asset_id": "5028622",
       "asset_path": "assets/footage/scene_002_5028622.mp4",
-      "asset_sha256": "f89c1403115494636b44694fa651f8eec685f82c49380ad57e1b26af61a04521",
+      "asset_sha256": "fbc92964e38be1389b07b1139b4352572d767535bfc2bcc793419ecd1dac9daa",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_002_5028622.jpg",
-      "contact_sheet_sha256": "cd55f8a0b7a82cdca8e4fe3b063f01ba6eea1b940ad5904e0b15aa86c9645729",
+      "contact_sheet_sha256": "4ee76cd47ac70eac42b22a81ca23ba4bd43b9946e7c889b06e3236f79a707733",
       "approved_uses": [
         {
           "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
@@ -103,17 +103,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "All sampled frames maintain a moving view through active server infrastructure, clearly carrying the physical scale and acceleration of the AI race.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A moving view through active server infrastructure makes the physical acceleration and scale of the AI race visible.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_003",
       "provider_asset_id": "8632599",
       "asset_path": "assets/footage/scene_003_8632599.mp4",
-      "asset_sha256": "d43e41ab3f2badf8b1c1d533888b7421151309e9d9c628228aac2e5d648553db",
+      "asset_sha256": "160c1fb1be3b8b04392101aed32d9ba7f394850b09bbef31ee0f415f74600f3f",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_003_8632599.jpg",
-      "contact_sheet_sha256": "450a5d0bbf81ba39236399d62131ca55ab6ab731e09ba91e8523442e615432ff",
+      "contact_sheet_sha256": "59ac8f5ed03d44106c1196950c012d4cea10c3fea11b5af6676717de3b15aabc",
       "approved_uses": [
         {
           "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
@@ -123,17 +123,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The four frames consistently show two developers conducting a deliberate shared-screen review, avoiding the rejected hacker cliché and supporting controlled-evaluation context.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_004",
       "provider_asset_id": "7989678",
       "asset_path": "assets/footage/scene_004_7989678.mp4",
-      "asset_sha256": "e07a5ce6af88da1b92f5b1438c10bc7eeb538cb98615333dcc036df4c1587d02",
+      "asset_sha256": "39e440c420ea26dd2d7112280f96b6f450c5af6e6e752c5e1077eb270c778dc2",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_004_7989678.jpg",
-      "contact_sheet_sha256": "637f79bd1f737e7b189a631d7f9dd5e287a91bfa01ec39aacd6ab79bead0cc66",
+      "contact_sheet_sha256": "577741d8484811b1cdaf5648f99a2ffabac5414e4af35bf49c021cbf76f2618c",
       "approved_uses": [
         {
           "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
@@ -143,17 +143,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The sampled sequence remains a controlled office software review, clearly reinforcing the distinction between designed tests and real-world deployment without reenactment.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. People reviewing software in a controlled office makes the test-versus-deployment distinction concrete without reenactment.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_005",
       "provider_asset_id": "34406409",
       "asset_path": "assets/footage/scene_005_34406409.mp4",
-      "asset_sha256": "f4525afc6cb7707430ce91c3ff1def747b3bf6350032b68bb9b6990f7045d8eb",
+      "asset_sha256": "9a315760c332e9711fa5279ae2e3ccac5fabfdc76f36a6e9608a6317bb5e53f2",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_005_34406409.jpg",
-      "contact_sheet_sha256": "5f5ff51df931a1437026dd0786db257b1aec08aadc131562830fb79c38c43201",
+      "contact_sheet_sha256": "d40aa8df65525f8dd120878369e2e57a8379f9318373c3fdc12d72d6f46b08fa",
       "approved_uses": [
         {
           "claim_id": "CLM_006_INVESTMENT_SCALE",
@@ -163,17 +163,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "All frames preserve a professional market-data environment, supporting the investment-scale narration while leaving the factual figure to primary evidence.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A professional market-data environment supports the narration about capital flow while the factual number remains carried by primary evidence.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_006",
       "provider_asset_id": "6803583",
       "asset_path": "assets/footage/scene_006_6803583.mp4",
-      "asset_sha256": "39548bd35e47c9aae3b6fc41fdafe5181df357fa8a5367035496592647960f74",
+      "asset_sha256": "f032ff4ad1b041a92af42853fa233baddf3b047c98390fef101397e026fc2e8b",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_006_6803583.jpg",
-      "contact_sheet_sha256": "a12d43d09d04facfa5d02bfa810e4c61932322d9ec56a4acb63fa5087685d129",
+      "contact_sheet_sha256": "fa7a7d60dfe4ac99eab4355426594e12e1252f6f7c613f17482a65649e5804c3",
       "approved_uses": [
         {
           "claim_id": "CLM_007_FRONTIER_GAP",
@@ -184,22 +184,22 @@
         {
           "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
           "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
-          "semantic_rationale": "Use scene_006 as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
           "semantic_link": "physical"
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The contact sheet consistently shows parallel technical work under time pressure, conveying competitive proximity without pretending to depict named frontier laboratories.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Parallel technical teams working under time pressure physically expresses competitive closeness without claiming to depict named laboratories. The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_007",
       "provider_asset_id": "7253660",
       "asset_path": "assets/footage/scene_007_7253660.mp4",
-      "asset_sha256": "5bd6d728232bbb41f50f3b34a3fdcf7e716c4140116122c82e06d8af68b4e2d2",
+      "asset_sha256": "80188a8b015c4dcefa5123ae7b87f0dabaa407a8c31f9302498d7de348a31d41",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_007_7253660.jpg",
-      "contact_sheet_sha256": "26226a8fd57cfc2de1c601f9dedf79266796dd3476eab2367b3cd03da77d6187",
+      "contact_sheet_sha256": "3eb219f058afa79a914f02dc4f1dfe4a1a5ba8211da0fc4827a095eba572ea40",
       "approved_uses": [
         {
           "claim_id": "CLM_008_CYBER_EXTORTION",
@@ -209,37 +209,37 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "Across the clip, security personnel investigate technical displays in a credible defensive-operations setting without identifying a victim, attacker, or real incident.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Security analysts investigating screens provides defensive operations context and is not presented as footage of a named victim or attacker.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_008",
-      "provider_asset_id": "5377280",
-      "asset_path": "assets/footage/scene_008_5377280.mp4",
-      "asset_sha256": "069627c79973511d26fa6be1fff64fa7df66bce66e47f13207fee1553c739017",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_008_5377280.jpg",
-      "contact_sheet_sha256": "883d1dc826d452b2b3a3d10273b70aedaea5b58045d78350f2438e8aa2ba0627",
+      "provider_asset_id": "8632602",
+      "asset_path": "assets/footage/scene_008_8632602.mp4",
+      "asset_sha256": "18294538ce6518b0fb8152ef607641ed96259a207355b038555e1aebbf497272",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_008_8632602.jpg",
+      "contact_sheet_sha256": "d2ad88cb8bf6af092a1d35687f31f33ba109ec04b81c19f4031f7882cf289b80",
       "approved_uses": [
         {
           "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
           "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
-          "semantic_rationale": "A serious network-operations image should provide a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries every factual claim.",
+          "semantic_rationale": "A real technical team reviewing code and system activity gives the agentic-espionage narration a credible human-operator context while the attributed provider report carries every factual claim.",
           "semantic_link": "physical"
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The four frames maintain a restrained, premium network-operations display with enough visual development to suggest machine-scale technical activity; it is used only as context and not evidence.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A real technical team reviewing code and system activity gives the agentic-espionage narration a credible human-operator context while the attributed provider report carries every factual claim.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_009",
       "provider_asset_id": "8381457",
       "asset_path": "assets/footage/scene_009_8381457.mp4",
-      "asset_sha256": "a503ffba2794de82a49521775a313d4cdce78a8753dad105c181df6382efd9c3",
+      "asset_sha256": "d48a0f79abb9804fb9fe10ead54c22da9e4e662531a664611688cb7af41a6e31",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_009_8381457.jpg",
-      "contact_sheet_sha256": "f7dd7ff14f7c04361fe37415945850ba7d19aa73b529b4ea25f8a71ee526a85e",
+      "contact_sheet_sha256": "28213600716361cce57b38b183f506a617dd741a0ea6f755f6df496073291874",
       "approved_uses": [
         {
           "claim_id": "CLM_010_BIO_ASL3",
@@ -249,17 +249,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "All sampled positions show properly protected laboratory work, providing responsible biosafety context without depicting weaponization or a specific organization.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Properly protected laboratory personnel establishes biosafety and responsible research context without depicting weaponization.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_010",
       "provider_asset_id": "6214601",
       "asset_path": "assets/footage/scene_010_6214601.mp4",
-      "asset_sha256": "6a6b742214c42024ad7bafc04fe3e076f2d61b487ef0c3ecad7118b7b89e1f39",
+      "asset_sha256": "a1a5553c8eaaf7fe3b07845dfb6a2617820a6088cd9fb25cc3e3222b467b71c1",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_010_6214601.jpg",
-      "contact_sheet_sha256": "6c30f4947e1becf582b806494f8d3c6101e1192cde88bd58a675ea4e7f1d5694",
+      "contact_sheet_sha256": "18acaa42f5152be98112dba50795b3e5e9dd6379c07f5f8c85c7cbc3189ce225",
       "approved_uses": [
         {
           "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
@@ -269,17 +269,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The sequence consistently shows people consuming mobile social content, accurately representing the distribution surface without asserting that beliefs were changed.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. People consuming social feeds on phones shows the human distribution surface without asserting that any individual belief was changed.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_011",
       "provider_asset_id": "8201290",
       "asset_path": "assets/footage/scene_011_8201290.mp4",
-      "asset_sha256": "5b991f9d15f1904ba0314f440373dec860cb3478c9eee6d6467ca95ef1ca1bd5",
+      "asset_sha256": "bc32e8c638a4db9f9125d3b1e95e175c387676f308a4346ca5d61142f98af8e9",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_011_8201290.jpg",
-      "contact_sheet_sha256": "260eec169e85da64361530da1e382a5ce228b6edf352e67a8a7fc9cf1bff7dc1",
+      "contact_sheet_sha256": "c376d2c7ab494aa74dd9b45395eb74630047cfddb7b2244965513ec86f9fd8d9",
       "approved_uses": [
         {
           "claim_id": "CLM_012_LABOUR_EXPOSURE",
@@ -289,17 +289,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "Across four frames, workers perform computer-mediated service tasks, illustrating occupational exposure and transformation rather than unemployment or replacement.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Workers performing computer-mediated service tasks illustrates occupational exposure and transformation rather than unemployment.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_012",
       "provider_asset_id": "38081600",
       "asset_path": "assets/footage/scene_012_38081600.mp4",
-      "asset_sha256": "ffeedbf38cc64e11e895367ea33dcf98be45f7c90c8cf78a9a8136b15c32137a",
+      "asset_sha256": "ebcf35eb55b0bbfc490e56ea21aca1342d5f08e37e3c030dfeaed63bac7ea615",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_012_38081600.jpg",
-      "contact_sheet_sha256": "6d4db1c66047daa699d9ef694b1542086b5312c2c95d068957b80734c606d5f9",
+      "contact_sheet_sha256": "9f315c4eac6ee6940894db7c16fd007d27927164f9a8b914e9cb21306e4dd38c",
       "approved_uses": [
         {
           "claim_id": "CLM_013_MARKET_CONCENTRATION",
@@ -309,17 +309,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The sampled frames consistently present large centralized technical infrastructure, giving physical form to compute concentration without identifying a particular company.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Large centralized infrastructure gives physical form to critical-input concentration without presenting a specific company as the subject.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_013",
       "provider_asset_id": "34900372",
       "asset_path": "assets/footage/scene_013_34900372.mp4",
-      "asset_sha256": "01482f6eda32567e9326afd9d9bc0729f7fc1099ce6ebe61449a64878833da33",
+      "asset_sha256": "fc21d323fbd3f2a388ce126fec425516544a0559e55e42717f4a03482845fdbd",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_013_34900372.jpg",
-      "contact_sheet_sha256": "3f03023278f82ce9a15f15cc9436376a4aa53efa5720ac90ff81b8ab038ec4dc",
+      "contact_sheet_sha256": "e4f5c988d7f330234c73fbad04747e5f1cd86a9dd10a706940653756e75636ef",
       "approved_uses": [
         {
           "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
@@ -329,17 +329,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "All frames retain European institutional context, locating the governance discussion while the actual AI Act remains the primary evidentiary source.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. European institutional imagery locates the governance discussion while the regulation itself remains the primary evidence.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_014",
       "provider_asset_id": "6805175",
       "asset_path": "assets/footage/scene_014_6805175.mp4",
-      "asset_sha256": "56ca068294525f5f3325d256d131985387b8932c7cf4eccf929ea842996c9c8c",
+      "asset_sha256": "34e62f4d96cfd6ddfbfe1a7f34acb6eb35f99213c8517ba7f5b58d393a1f3c7a",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_014_6805175.jpg",
-      "contact_sheet_sha256": "ef788d0bd910f3811ab4adb7620f821eba24afaa9343858645e89763e6a182bc",
+      "contact_sheet_sha256": "90be558fbe73d88042fec03167048459b5246a0c951425c0214b3cb3d1b14f43",
       "approved_uses": [
         {
           "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
@@ -349,17 +349,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The sequence consistently shows a small technical team at work, giving compliance burden a human scale while preserving the incumbency point as analysis.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A small technical team gives the possible compliance burden a human scale while the narration clearly presents the incumbency effect as analysis.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_015",
       "provider_asset_id": "6804109",
       "asset_path": "assets/footage/scene_015_6804109.mp4",
-      "asset_sha256": "8847145526f469431869c6e914a9e399876a6bafa94029c54afa0c3c939fb3e4",
+      "asset_sha256": "efdc0477e0b635c365c0a922302880a1a26268285fd8b4f964db8d8791411e68",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_015_6804109.jpg",
-      "contact_sheet_sha256": "671f9cb554070020fdcdaa8458cdc7c006982c037eba4a54cdf0f7788c5ff63a",
+      "contact_sheet_sha256": "c7077fb66347eb79be50c85396959166254c5e8b8d1eb068a733b40a08526087",
       "approved_uses": [
         {
           "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
@@ -369,17 +369,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "Across the clip, developers collaborate around code in a credible open-review setting without implying that the displayed material is a specific model or repository.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Developers collaborating openly represents independent inspection and adaptation without implying the displayed code is a specific model.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_016",
       "provider_asset_id": "6573544",
       "asset_path": "assets/footage/scene_016_6573544.mp4",
-      "asset_sha256": "89d25bad6cad8946af820e9784faf6da78108badd4c9a12d8d0c0d625d6ba109",
+      "asset_sha256": "b4f332b41ac7e04eeddfc67ba194c42b43566d6f3c831cf0e2e08e51117cfa1c",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_016_6573544.jpg",
-      "contact_sheet_sha256": "99cbee965be9201c1e58491605354d3cc41ca7a15fd2852de115797855d03c0c",
+      "contact_sheet_sha256": "e5cfa00f8a22d786cab587067603798ab8a64d576407aac052daf41da38abde2",
       "approved_uses": [
         {
           "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
@@ -389,17 +389,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "All four frames show active use of a controlled-access keypad, adding motion and clearly visualizing permission, monitoring, and revocation without naming a company.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_017",
       "provider_asset_id": "6930347",
       "asset_path": "assets/footage/scene_017_6930347.mp4",
-      "asset_sha256": "2c1d3e84d16555d8f3c5c797ab440c874bd9a6e70c2b07d12e0dac9566b68d99",
+      "asset_sha256": "be88ef7ae0e0c125d9b8416daebbcb0eb6907abb2bf9d388c653f3236d0e7eb7",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_017_6930347.jpg",
-      "contact_sheet_sha256": "5f804ec59be0ad67c44fe8b80664f19d501ba930d44d0717f1b1d5903592b754",
+      "contact_sheet_sha256": "541f8e422d6c71b82249d53dda14af89f551614e2096b05f403d0e5782937714",
       "approved_uses": [
         {
           "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
@@ -409,17 +409,17 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The sampled sequence consistently shows a team jointly examining data, supporting independent evaluation as a human process rather than presenting a safety certificate.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A team jointly examining data and challenging conclusions represents independent evaluation as a human process rather than a safety certificate.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_018",
       "provider_asset_id": "6951401",
       "asset_path": "assets/footage/scene_018_6951401.mp4",
-      "asset_sha256": "481a5622980b70b4c0692b964b51fbfe328c652de5e6a47a8c0c541cca1611aa",
+      "asset_sha256": "738f14c48b4e1fe7d09801595a5edafb7f6bf56419f409a3cf646cbc957eaa76",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_018_6951401.jpg",
-      "contact_sheet_sha256": "46b55cb263bfb72dbc6746981280ea013ad902701d3f06a0e7323b7282983a22",
+      "contact_sheet_sha256": "98a17deeabe5d7dad022a3c1a7fe2b3aa66f742df2ca7a882eb97de147b0a834",
       "approved_uses": [
         {
           "claim_id": "CLM_020_INCIDENT_REPORTING",
@@ -429,37 +429,37 @@
         }
       ],
       "decision": "approved",
-      "decision_rationale": "All frames maintain a formal technology-meeting context suitable for reporting and oversight without inventing a named hearing or regulatory proceeding.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A formal technology meeting supports reporting and oversight context without inventing a named hearing or regulatory proceeding.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_019",
-      "provider_asset_id": "992599",
-      "asset_path": "assets/footage/scene_019_992599.mp4",
-      "asset_sha256": "fcf837643d484d801be8712ffd5b2f7eb21736d2d3ee6f6bb99892895d77a902",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_019_992599.jpg",
-      "contact_sheet_sha256": "1236e8d43a850617c2d02b9d90010e07cd208dd9cf508c7f02e9d109fd74c4b9",
+      "provider_asset_id": "12699538",
+      "asset_path": "assets/footage/scene_019_12699538.mp4",
+      "asset_sha256": "49c9cd31247f090c825662f4c02c117bbbc515cc3c57407380be51d96d179c42",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_019_12699538.jpg",
+      "contact_sheet_sha256": "553cf62367e8f1aefb19570718a362653961b38b661853b84b8ea155b16bd0c3",
       "approved_uses": [
         {
           "claim_id": "CLM_021_FINAL_SYNTHESIS",
           "narration_anchor": "decisions that add up to a world shaped by whoever moved fastest, or whoever accumulated the most control",
-          "semantic_rationale": "Ordinary people moving through shared urban space returns the consequences of concentrated decisions to a distributed human scale.",
+          "semantic_rationale": "Diverse pedestrians moving through an ordinary public city street return the consequences of concentrated AI decisions to a credible everyday human scale.",
           "semantic_link": "physical"
         }
       ],
       "decision": "approved",
-      "decision_rationale": "Across four positions, ordinary people move through shared urban space, returning the consequences of concentrated decisions to a broad human scale.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. Diverse pedestrians moving through an ordinary public city street return the consequences of concentrated AI decisions to a credible everyday human scale.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     },
     {
       "scene_id": "scene_020",
       "provider_asset_id": "7140928",
       "asset_path": "assets/footage/scene_020_7140928.mp4",
-      "asset_sha256": "e38d9c32788f7bbc654fe8d8786b9d921f6393f094fae23dc52d1229f04b7988",
+      "asset_sha256": "2acd0b6f1105520ceb89264361d7088a843561beeb358c925c24de6cbf8280b8",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_020_7140928.jpg",
-      "contact_sheet_sha256": "3e695669395970007f53c3c32343dee00c0173e623fbee8260123711571b05ce",
+      "contact_sheet_sha256": "a4dbfe424f3b4d358f7a8b1f1d06155d51545fe48f7ead5aecb9bab627fc6e69",
       "approved_uses": [
         {
           "claim_id": "CLM_021_FINAL_SYNTHESIS",
@@ -470,15 +470,435 @@
         {
           "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
           "narration_anchor": "A rival company. A rival government.",
-          "semantic_rationale": "Use scene_020 as a brief opening image that gives the stated race-and-governance narration a concrete physical context without treating generic stock as proof.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
           "semantic_link": "physical"
         }
       ],
       "decision": "approved",
-      "decision_rationale": "The sequence consistently holds on active server hardware with sufficient detail and motion, ending on the physical machine while narration returns responsibility to people.",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A close view of active server hardware ends on the physical machine while the narration places responsibility back on human choices. The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
       "review_method": "four-position claim-specific contact-sheet review",
-      "reviewed_at": "2026-08-02T09:36:00Z"
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_021",
+      "provider_asset_id": "7989676",
+      "asset_path": "assets/footage/scene_021_7989676.mp4",
+      "asset_sha256": "b9a767ce64ddab95790f8a005c96ffc62b28a4dad58444ebe11b934018137d0e",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_021_7989676.jpg",
+      "contact_sheet_sha256": "666c233b7f6461927610b2803aa6426c150e9ca3e3dbddb20b7352e05bc7723d",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "The models were given fictional emails, access to fictional company systems, and goals that could be blocked by fictional employees.",
+          "semantic_rationale": "A second controlled software-review setting provides human experimental context without presenting stock footage as the test evidence itself.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second controlled software-review setting provides human experimental context without presenting stock footage as the test evidence itself.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_022",
+      "provider_asset_id": "34279676",
+      "asset_path": "assets/footage/scene_022_34279676.mp4",
+      "asset_sha256": "cac8fe1d5f06bdbddc31b692222c3caa2b282395322c04505ba1808502d5bbfb",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_022_34279676.jpg",
+      "contact_sheet_sha256": "63f282f9f5a3f628c16f2e942d7f5129094e9fee599bed683f352d7144238f7a",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+          "semantic_rationale": "A distinct technical testing environment breaks up the long controlled-evaluation section while official figures continue to carry the factual burden.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A distinct technical testing environment breaks up the long controlled-evaluation section while official figures continue to carry the factual burden.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_023",
+      "provider_asset_id": "7989469",
+      "asset_path": "assets/footage/scene_023_7989469.mp4",
+      "asset_sha256": "19e96bd3a46fbc5b903743a12268bcad2568cd31f1850bcf69d5c74a466f5a30",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_023_7989469.jpg",
+      "contact_sheet_sha256": "f537123f324be572e0add2a35a138536527bca6ee32ef8b4b620a2baca56147e",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "That distinction matters. It's the difference between a fire drill and a fire.",
+          "semantic_rationale": "People reviewing a controlled software test supports the fire-drill-versus-fire distinction without implying a real deployment incident.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. People reviewing a controlled software test supports the fire-drill-versus-fire distinction without implying a real deployment incident.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "7255101",
+      "asset_path": "assets/footage/scene_024_7255101.mp4",
+      "asset_sha256": "b5f7a803bb07a1177bf050f33bff60d1622c5a11998671961b72811e18a9c020",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_024_7255101.jpg",
+      "contact_sheet_sha256": "b972002e425928e1b6b7f6c3815875713d8a7b2231468d377674c0f48ea19537",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_008_CYBER_EXTORTION",
+          "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
+          "semantic_rationale": "A real monitoring team in a control-room environment supports the defensive side of the dual-use cyber argument without reenacting a named attack or presenting stock footage as evidence.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A real monitoring team in a control-room environment supports the defensive side of the dual-use cyber argument without reenacting a named attack or presenting stock footage as evidence.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_025",
+      "provider_asset_id": "20591257",
+      "asset_path": "assets/footage/scene_025_20591257.mp4",
+      "asset_sha256": "0c6ed9324ac395e2642f9e2e42e81a19692def48fe4e1b87f95909c0e00ecfdb",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_025_20591257.jpg",
+      "contact_sheet_sha256": "0fa4c181d14a4f5004161673b524c7121879e9e3ff2c9a2e4bfd2d067228347d",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_013_MARKET_CONCENTRATION",
+          "narration_anchor": "Power, in this story, isn't only about what the machine can do. It's about who gets to decide.",
+          "semantic_rationale": "A second large-scale infrastructure view sustains the concentration argument while the CMA document supplies the evidence.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second large-scale infrastructure view sustains the concentration argument while the CMA document supplies the evidence.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_026",
+      "provider_asset_id": "34900371",
+      "asset_path": "assets/footage/scene_026_34900371.mp4",
+      "asset_sha256": "38f1c90e6cf7dfb68d63e791adf06dad0cc7ef191cc66cad86eca43764adbba5",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_026_34900371.jpg",
+      "contact_sheet_sha256": "70a3e091d9fa49b08705b56807c1146646dc0f8124d5747fa2ac953ebc7a15f0",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+          "narration_anchor": "Compute alone is not the only route to designation.",
+          "semantic_rationale": "A clearly European Union flag on an institutional building locates the legal-designation discussion without introducing a non-EU national symbol; the regulation page remains the direct evidence.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A clearly European Union flag on an institutional building locates the legal-designation discussion without introducing a non-EU national symbol; the regulation page remains the direct evidence.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_027",
+      "provider_asset_id": "7989450",
+      "asset_path": "assets/footage/scene_027_7989450.mp4",
+      "asset_sha256": "d5d9a515b6be61798763b7adef64ad85bd8ec64ca408bc0dc3c69251f1d77138",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_027_7989450.jpg",
+      "contact_sheet_sha256": "d538381cd53c548544474504aad35bff656ac535cd8deaf7a908cd390ed88f7d",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "Because the line between legitimate safety oversight and rules that simply lock in whoever already won the race can be thinner than it looks.",
+          "semantic_rationale": "A second collaborative developer scene gives the governance trade-off a human scale without depicting any named model or company.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second collaborative developer scene gives the governance trade-off a human scale without depicting any named model or company.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_028",
+      "provider_asset_id": "7552431",
+      "asset_path": "assets/footage/scene_028_7552431.mp4",
+      "asset_sha256": "c3a7af0eeb53c4315ae15030c3380b4814e712258cfb3a63ff8d662b1ddf44e9",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_028_7552431.jpg",
+      "contact_sheet_sha256": "2660b109ab6bd8c4b82764a6d5867dc2de18c2b772710f1beddb56e2abbf21f0",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
+          "semantic_rationale": "A diverse professional team critically reviewing documents and data represents independent evaluation and human judgment without implying that the stock material is an actual audit record.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A diverse professional team critically reviewing documents and data represents independent evaluation and human judgment without implying that the stock material is an actual audit record.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "5599977",
+      "asset_path": "assets/footage/scene_029_5599977.mp4",
+      "asset_sha256": "fe010105a4551b5b2b0cc253ad7ebc3a07c038b3cb1472a7062821bc1e61fd61",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_029_5599977.jpg",
+      "contact_sheet_sha256": "2a675c63267689947940a10cb61c35eced4606c6fe2f4302a03b29a476ff755a",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "That work hasn't been done yet.",
+          "semantic_rationale": "A distinct human-city image creates a reflective closing pause and keeps responsibility grounded in ordinary people rather than abstract machinery.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A distinct human-city image creates a reflective closing pause and keeps responsibility grounded in ordinary people rather than abstract machinery.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_030",
+      "provider_asset_id": "7140931",
+      "asset_path": "assets/footage/scene_030_7140931.mp4",
+      "asset_sha256": "9703f55194dd713bb82e516d7a3203dee0634bd30b40addd8413dcacce78587d",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_030_7140931.jpg",
+      "contact_sheet_sha256": "730ef07a0676e8d8bf67344139c34089f640d4782364af2d4edd730cd8cb5869",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "The race is still being decided by people, right now.",
+          "semantic_rationale": "A second server-hardware movement provides a distinct physical closing motif without repeating the same footage bytes.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second server-hardware movement provides a distinct physical closing motif without repeating the same footage bytes.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_031",
+      "provider_asset_id": "6804123",
+      "asset_path": "assets/footage/scene_031_6804123.mp4",
+      "asset_sha256": "eb1a286d88b5a32a93a74abeb833f71a79124d5ef3c8fe5909d31dc77ef0b209",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_031_6804123.jpg",
+      "contact_sheet_sha256": "cc5880fd4e0a3fde56608d260aa3f4137b6537428feeebf5bf657823067f54f1",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "These were designed tests, built specifically to see how far a model would go.",
+          "semantic_rationale": "A distinct developer-review setting adds controlled-test context without presenting stock footage as evidence of real deployment behavior.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A distinct developer-review setting adds controlled-test context without presenting stock footage as evidence of real deployment behavior.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "7989454",
+      "asset_path": "assets/footage/scene_032_7989454.mp4",
+      "asset_sha256": "21b86aa3b5b26ab3bfbab9cc2abc75f365b04fd7e1454559f5bf2bd773a97c76",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_032_7989454.jpg",
+      "contact_sheet_sha256": "7e92a61949be58c63cb0456722fd3c791c471170da82d5925401958df53b01da",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "The companies building frontier models are not operating like cautious scientific institutions.",
+          "semantic_rationale": "A second technical team working under visible pressure gives the investment race a human operational scale while Stanford data carries the number.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second technical team working under visible pressure gives the investment race a human operational scale while Stanford data carries the number.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_033",
+      "provider_asset_id": "7989455",
+      "asset_path": "assets/footage/scene_033_7989455.mp4",
+      "asset_sha256": "8bcf1218af50cd584139c91129c8454542113a97d2b9c23e22d7b0671a33e087",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_033_7989455.jpg",
+      "contact_sheet_sha256": "49123f48a07ccbc8e090ac6d955603405bd4be6970b890fdee61312ce66727a2",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+          "narration_anchor": "Established companies may also be better able to absorb the complex compliance costs.",
+          "semantic_rationale": "A distinct small technical team reinforces the fixed-cost compliance analysis without claiming a measured outcome for any named firm.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A distinct small technical team reinforces the fixed-cost compliance analysis without claiming a measured outcome for any named firm.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_034",
+      "provider_asset_id": "9460727",
+      "asset_path": "assets/footage/scene_034_9460727.mp4",
+      "asset_sha256": "ac33c1391467cb9e0ec7f73ed83f8c6104866743e454db9427b8e21a697679a1",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_034_9460727.jpg",
+      "contact_sheet_sha256": "cae26ea9df59d1d9d916bd344b32979aa0ad037fa4f319627a06e31428a4845b",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+          "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
+          "semantic_rationale": "A second controlled-access sequence makes centralized permission and revocation visible without depicting a specific AI provider.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second controlled-access sequence makes centralized permission and revocation visible without depicting a specific AI provider.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_035",
+      "provider_asset_id": "8731230",
+      "asset_path": "assets/footage/scene_035_8731230.mp4",
+      "asset_sha256": "2196e8a56af5abe52bd84663c5dbafb6b2e45ed152389b770338eb03bc0438a2",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_035_8731230.jpg",
+      "contact_sheet_sha256": "e2173a88c8e35390d2d7e98b8ef28284e7fa88a909427e59dbdc111dc62384c4",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_020_INCIDENT_REPORTING",
+          "narration_anchor": "mandatory incident reporting when systems misbehave",
+          "semantic_rationale": "A formal group reviewing documents provides credible reporting, governance and oversight context without inventing a named hearing, regulator or incident.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A formal group reviewing documents provides credible reporting, governance and oversight context without inventing a named hearing, regulator or incident.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_036",
+      "provider_asset_id": "30289540",
+      "asset_path": "assets/footage/scene_036_30289540.mp4",
+      "asset_sha256": "c90fdb3d065e563c8d77a0f228131a7064b7f338ec7bb77f90110d0ee256bdc0",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_036_30289540.jpg",
+      "contact_sheet_sha256": "5e865cbdf08e82e62165c6260a7593f4201e3c1306e91cee5effb62959c606b5",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "Competition is visible in the money, and in how narrow the frontier has become.",
+          "semantic_rationale": "A fresh capital-and-technology context candidate reserved for the investment-pressure section; the Stanford figure remains the factual evidence.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A fresh capital-and-technology context candidate reserved for the investment-pressure section; the Stanford figure remains the factual evidence.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_037",
+      "provider_asset_id": "36435706",
+      "asset_path": "assets/footage/scene_037_36435706.mp4",
+      "asset_sha256": "cd3b566881a534421d196fa82a5d60a36d8688b7f78a92aa0af95ee8d791bc0e",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_037_36435706.jpg",
+      "contact_sheet_sha256": "3e6416a179420f3f5bd3f48271431254e825ddc2f694f74bf49d45c9702c434e",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "The companies building frontier models are operating like actors in a high-stakes competition.",
+          "semantic_rationale": "A second fresh market-and-infrastructure candidate broadens the race section without treating generic footage as proof of a specific investment.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second fresh market-and-infrastructure candidate broadens the race section without treating generic footage as proof of a specific investment.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_038",
+      "provider_asset_id": "36825184",
+      "asset_path": "assets/footage/scene_038_36825184.mp4",
+      "asset_sha256": "8e109724ecae2d8f65f08f15c35e1b833918607003985dee5f074fd13e03e365",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_038_36825184.jpg",
+      "contact_sheet_sha256": "3539bb014cc4c227b37764df0ff6078e86b037949afbbab44d33305acc1f52a9",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "Nearly thirty-four billion dollars in private generative-AI investment in 2024.",
+          "semantic_rationale": "A third fresh capital-flow candidate supplies cinematic coverage around the dated Stanford evidence without replacing the primary source.",
+          "semantic_link": "conceptual"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A third fresh capital-flow candidate supplies cinematic coverage around the dated Stanford evidence without replacing the primary source.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_039",
+      "provider_asset_id": "5752559",
+      "asset_path": "assets/footage/scene_039_5752559.mp4",
+      "asset_sha256": "162f291621fd67cb4208d1f54210804a03f28f11af1ce86861b09996087ed324",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_039_5752559.jpg",
+      "contact_sheet_sha256": "a4c1a16808e346c7a4dd613c9d68684125e69ad56d240f136dd4f7a9059667a2",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "On biological risk, Anthropic said its internal testing suggested a meaningful capability uplift.",
+          "semantic_rationale": "A fresh responsible-laboratory candidate adds biosafety context while avoiding weapon imagery and leaving all factual burden with the ASL-3 documents.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A fresh responsible-laboratory candidate adds biosafety context while avoiding weapon imagery and leaving all factual burden with the ASL-3 documents.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_040",
+      "provider_asset_id": "8381407",
+      "asset_path": "assets/footage/scene_040_8381407.mp4",
+      "asset_sha256": "c979751b8384c24894d1bdc8b4ef376fd281dc8fbc8fd9dabb0d09f238c13c3a",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_040_8381407.jpg",
+      "contact_sheet_sha256": "f91193641844a8f733c972f2ecaa094a14fbcf11f41cef23d4e3cc01f453f505",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "Anthropic responded by deploying the model under its higher ASL-3 safety standard.",
+          "semantic_rationale": "A second fresh protected-laboratory candidate supports safeguard narration without implying that the stock footage depicts Anthropic or a named facility.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A second fresh protected-laboratory candidate supports safeguard narration without implying that the stock footage depicts Anthropic or a named facility.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
+    },
+    {
+      "scene_id": "scene_041",
+      "provider_asset_id": "9244463",
+      "asset_path": "assets/footage/scene_041_9244463.mp4",
+      "asset_sha256": "8b710de3e260591778246ac2e36fc180b0b2b9e52b9b2af91b9bd8bfa3402acd",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_041_9244463.jpg",
+      "contact_sheet_sha256": "7be251c69d4e8b01962f508afb0c29502a63de818a4d7d6c8cf7f9dc84e12273",
+      "approved_uses": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "The claim is not that the model can create a biological weapon on its own.",
+          "semantic_rationale": "A third fresh biosafety candidate sustains the limitation and precaution sequence without sensational imagery or reenactment.",
+          "semantic_link": "physical"
+        }
+      ],
+      "decision": "approved",
+      "decision_rationale": "Manual inspection of the opening, one-third, two-thirds, and near-end frames confirmed stable visual content and no hidden semantic reversal. A third fresh biosafety candidate sustains the limitation and precaution sequence without sensational imagery or reenactment.",
+      "review_method": "four-position claim-specific contact-sheet review",
+      "reviewed_at": "2026-08-02T19:47:18.720Z"
     }
   ],
-  "completed_at": "2026-08-02T09:36:00Z"
+  "completed_at": "2026-08-02T19:47:18.720Z"
 }
