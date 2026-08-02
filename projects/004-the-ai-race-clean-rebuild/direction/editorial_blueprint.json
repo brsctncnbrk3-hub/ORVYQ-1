@@ -1,1 +1,135 @@
-{"schema_version":"1.0","project_id":"004-the-ai-race-clean-rebuild","full_production":{"status":"blocked_pending_visual_assets","shots":[]},"source_evidence_map":"research/evidence_map.json","source_footage_plan":"research/footage_acquisition_plan.json","narration_source":"voice/voice_script.txt","audio_source":"assets/audio/final_voice.mp3","old_project_timeline_reuse_forbidden":true}
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "production_mode": "evidence_led_cinematic_video_essay",
+  "reference": "Aperture-inspired editorial discipline without visual, structural or textual copying",
+  "global_rules": {
+    "max_uses_per_source": 2,
+    "generic_stock_fraction_max": 0.7,
+    "evidence_and_archive_fraction_min": 0.2,
+    "full_screen_graphic_fraction_max": 0.03,
+    "max_shot_seconds": 8,
+    "max_uninterrupted_evidence_seconds": 15,
+    "mobile_safe_title_chars": 42,
+    "mobile_safe_body_chars": 110,
+    "minimum_overlay_font_px": 28,
+    "minimum_script_similarity": 0.85,
+    "full_render_requires_zero_placeholders": true,
+    "automatic_asset_fallback_forbidden": true,
+    "human_review_required_for_95": true
+  },
+  "full_production": {
+    "status": "blocked_pending_visual_assets",
+    "blocking_claim_ids": [],
+    "blocking_visual_asset_request_ids": [],
+    "sections": [
+      {
+        "section_id": "SEC_01_RACE_PARADOX",
+        "target_seconds": 78,
+        "music_state": "controlled_tension",
+        "visual_strategy": "Human-scale frontier infrastructure, then two real Anthropic safety-document pages that establish the race paradox without decorative dashboards.",
+        "deliverables": [
+          "four-cut human-context hook",
+          "two-document opening evidence beat",
+          "competitive-incentive context"
+        ]
+      },
+      {
+        "section_id": "SEC_02_CONTROLLED_EVIDENCE",
+        "target_seconds": 98,
+        "music_state": "analytical_unease",
+        "visual_strategy": "Official Anthropic research figures, clearly labelled fictional test context and restrained source-derived explanation between real footage breaks.",
+        "deliverables": [
+          "controlled-simulation figure sequence",
+          "test-versus-deployment limitation",
+          "dated mitigation update"
+        ]
+      },
+      {
+        "section_id": "SEC_03_COMPETITIVE_PRESSURE",
+        "target_seconds": 109,
+        "music_state": "accelerating_pressure",
+        "visual_strategy": "Dated Stanford investment evidence, frontier-compute context and physical competition metaphors; no stock-market interface or fabricated benchmark screen.",
+        "deliverables": [
+          "2024 investment figure",
+          "frontier-gap comparison",
+          "unilateral-slowing incentive chain"
+        ]
+      },
+      {
+        "section_id": "SEC_04_REAL_WORLD_MISUSE",
+        "target_seconds": 89,
+        "music_state": "procedural_threat",
+        "visual_strategy": "Claim-specific cyber and biological context, provider-attributed reporting and ASL-3 primary documents with limitations visible on screen.",
+        "deliverables": [
+          "cyber-extortion sequence",
+          "agentic-espionage process",
+          "ASL-3 biological-risk evidence"
+        ]
+      },
+      {
+        "section_id": "SEC_05_PERSUASION_WORK_POWER",
+        "target_seconds": 70,
+        "music_state": "uncertain_transition",
+        "visual_strategy": "Human work and information environments supported by source-derived persuasion, labour-exposure and market-concentration evidence; generic stock never carries proof.",
+        "deliverables": [
+          "persuasion evidence chain",
+          "exposure-versus-displacement distinction",
+          "critical-input concentration map"
+        ]
+      },
+      {
+        "section_id": "SEC_06_REGULATION_PARADOX",
+        "target_seconds": 99,
+        "music_state": "institutional_gravity",
+        "visual_strategy": "Real EU AI Act pages for classification and duties, followed by a concise compliance-cost analysis that remains clearly labelled as inference.",
+        "deliverables": [
+          "Article 51 classification page",
+          "Article 55 duties page",
+          "incumbency-cost caveat"
+        ]
+      },
+      {
+        "section_id": "SEC_07_OPEN_CLOSED",
+        "target_seconds": 89,
+        "music_state": "balanced_tension",
+        "visual_strategy": "Symmetrical open-versus-closed trade-off treatment with matched human and technical context; neither release model is framed as universally safe.",
+        "deliverables": [
+          "open-weight auditability case",
+          "closed-access control case",
+          "balanced failure-mode comparison"
+        ]
+      },
+      {
+        "section_id": "SEC_08_SAFETY_ARCHITECTURE",
+        "target_seconds": 89,
+        "music_state": "constructive_momentum",
+        "visual_strategy": "Independent evaluation, incident reporting, cybersecurity and structural oversight presented as a layered system rather than a single solution.",
+        "deliverables": [
+          "pre-deployment evaluation pipeline",
+          "incident-reporting flow",
+          "layered safeguard architecture"
+        ]
+      },
+      {
+        "section_id": "SEC_09_FINAL_SYNTHESIS",
+        "target_seconds": 83,
+        "music_state": "reflective_resolution",
+        "visual_strategy": "Recap only previously established evidence, then return to human decisions and institutional responsibility before a restrained branded close.",
+        "deliverables": [
+          "verified evidence recap",
+          "human-agency closing montage",
+          "four-second ORVYQ end card"
+        ]
+      }
+    ],
+    "shots": []
+  },
+  "source_evidence_map": "research/evidence_map.json",
+  "source_footage_plan": "research/footage_acquisition_plan.json",
+  "source_sequence_plan": "direction/sequence_plan.json",
+  "source_pause_map": "direction/editorial_pause_map.json",
+  "narration_source": "voice/voice_script.txt",
+  "audio_source": "assets/audio/final_voice.mp3",
+  "old_project_timeline_reuse_forbidden": true
+}
