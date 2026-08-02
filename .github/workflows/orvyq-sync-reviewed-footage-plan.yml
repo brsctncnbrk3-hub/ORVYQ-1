@@ -68,11 +68,11 @@ jobs:
             exit 1
           fi
 
-      - name: Validate schemas and unit tests
+      - name: Validate canonical state and unit tests
         shell: bash
         run: |
           set -euo pipefail
-          npm run validate:schemas
+          npm run validate:canonical
           npm test
 
       - name: Commit and push synchronized planning data
