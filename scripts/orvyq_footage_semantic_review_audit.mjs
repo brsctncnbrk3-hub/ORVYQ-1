@@ -3,9 +3,11 @@ import path from "node:path";
 import { projectDir, readJson, writeJsonAtomic, parseArgs, printJson } from "./lib/fs-utils.mjs";
 import { resolveProjectId } from "./lib/orvyq-project-profile.mjs";
 import { auditFootageSemanticReviews } from "./lib/orvyq-footage-semantic-review.mjs";
+import { syncFootageApprovals } from "./orvyq_sync_footage_approvals.mjs";
 
 export async function runFootageSemanticReviewAudit(projectId) {
   const dir = projectDir(projectId);
+  await syncFootageApprovals(projectId);
   const [blueprint, reviews] = await Promise.all([
     readJson(path.join(dir, "direction", "editorial_blueprint.json")),
     readJson(path.join(dir, "research", "visual_asset_reviews.json")),
