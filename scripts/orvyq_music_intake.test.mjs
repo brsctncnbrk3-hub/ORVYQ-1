@@ -16,10 +16,6 @@ async function makeFixtureAudio() {
   await exec("ffmpeg", ["-y", "-f", "lavfi", "-i", "sine=frequency=440:duration=1", "-c:a", "libmp3lame", FIXTURE_SOURCE]);
 }
 
-// intakeMusicTrack reads/writes the real music_library/registry.json (there
-// is exactly one canonical registry, by design) -- these tests back it up
-// and restore it (and remove any test asset file) around every test so
-// running the suite never leaves test fixtures in the real registry.
 async function withRegistryBackup(fn) {
   const hadRegistry = await pathExists(MUSIC_REGISTRY_PATH);
   const backup = hadRegistry ? await fs.readFile(MUSIC_REGISTRY_PATH, "utf8") : null;
@@ -37,6 +33,7 @@ function validOptions(overrides = {}) {
     trackId: TEST_TRACK_ID,
     title: "Test Fixture Track",
     artist: "Test Fixture Artist",
+    compositionFamily: "test_fixture_family",
     sourcePageUrl: "https://example.invalid/track",
     licenseName: "CC BY 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
@@ -58,6 +55,7 @@ test("intakeMusicTrack verifies and adds a valid track to the canonical registry
   await withRegistryBackup(async () => {
     const entry = await intakeMusicTrack(validOptions());
     assert.equal(entry.track_id, TEST_TRACK_ID);
+    assert.equal(entry.composition_family, "test_fixture_family");
     assert.equal(entry.codec, "mp3");
     assert.ok(entry.duration_seconds > 0);
     assert.ok(await pathExists(TEST_ASSET_PATH));
@@ -71,6 +69,12 @@ test("intakeMusicTrack rejects when required license/attribution metadata is mis
     await assert.rejects(() => intakeMusicTrack(validOptions({ attribution: "" })), /missing or incomplete required field "attribution"/);
     const registry = JSON.parse(await fs.readFile(MUSIC_REGISTRY_PATH, "utf8"));
     assert.ok(!registry.tracks.some((track) => track.track_id === TEST_TRACK_ID), "a rejected intake must not be added to the registry");
+  });
+});
+
+test("intakeMusicTrack rejects when composition family metadata is missing", async () => {
+  await withRegistryBackup(async () => {
+    await assert.rejects(() => intakeMusicTrack(validOptions({ compositionFamily: "" })), /missing or incomplete required field "compositionFamily"/);
   });
 });
 
