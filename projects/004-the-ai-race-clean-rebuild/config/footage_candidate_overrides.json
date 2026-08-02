@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "status": "requested",
+  "request_revision": 1,
+  "requested_at": "2026-08-02T09:14:00Z",
+  "review_basis": "Four-position byte-bound contact-sheet review of all 20 selected clips. Only the four rejected scenes are replaced; all other scene selections remain unchanged.",
+  "overrides": [
+    {
+      "scene_id": "scene_001",
+      "replaced_provider_asset_ids": ["8534745"],
+      "provider_asset_ids": ["7989689", "6804123"],
+      "reason": "The previous biology-laboratory imagery falsely implied medical research during narration about frontier AI laboratories.",
+      "semantic_rationale": "Developers jointly examining software gives the opening a credible human frontier-technology context without suggesting that the stock footage depicts a named AI laboratory."
+    },
+    {
+      "scene_id": "scene_003",
+      "replaced_provider_asset_ids": ["5240935"],
+      "provider_asset_ids": ["8632599", "7989676", "34279676"],
+      "reason": "The previous clip displayed a literal password-decryption interface and read as a hacker cliché rather than a controlled model evaluation.",
+      "semantic_rationale": "Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence."
+    },
+    {
+      "scene_id": "scene_008",
+      "replaced_provider_asset_ids": ["28709421", "1085656"],
+      "provider_asset_ids": ["6804656", "5377280"],
+      "reason": "The previous clip was an indistinct ping-terminal close-up and did not visually carry the scale or human oversight of an AI-assisted cyber operation.",
+      "semantic_rationale": "A technician actively handling network infrastructure provides a physical analogue for machine-scale technical operations with humans intervening at key moments; the provider report carries the factual burden."
+    },
+    {
+      "scene_id": "scene_016",
+      "replaced_provider_asset_ids": ["3895141", "2070044"],
+      "provider_asset_ids": ["6573544", "9460727"],
+      "reason": "The previous static restricted-door shot lacked enough motion and visual development for a premium eight-to-ten-second sequence.",
+      "semantic_rationale": "A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company."
+    }
+  ]
+}
