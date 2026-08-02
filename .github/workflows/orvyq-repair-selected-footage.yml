@@ -46,24 +46,37 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg
           git lfs version
 
-      - name: Record rejected identities and apply candidate overrides
+      - name: Normalize rejected identities and apply candidate overrides
         shell: bash
         run: |
           set -euo pipefail
           node --input-type=module - <<'NODE'
           import path from 'node:path';
           import { promises as fs } from 'node:fs';
+
           const root = path.join('projects', process.env.PROJECT_ID);
           const override = JSON.parse(await fs.readFile(path.join(root, 'config', 'footage_candidate_overrides.json'), 'utf8'));
           const queue = JSON.parse(await fs.readFile(path.join(root, 'qa', 'footage_review_queue.json'), 'utf8'));
           const reviewsPath = path.join(root, 'research', 'visual_asset_reviews.json');
           const reviews = JSON.parse(await fs.readFile(reviewsPath, 'utf8'));
           const queueByScene = new Map(queue.entries.map((entry) => [entry.scene_id, entry]));
-          const existing = new Set((reviews.rejected_assets || []).map((item) => `${item.scene_id}:${item.provider_asset_id}:${item.asset_sha256 || ''}`));
-          reviews.rejected_assets ||= [];
+          const candidateKeys = new Set(
+            override.overrides.flatMap((item) =>
+              (item.provider_asset_ids || []).map((id) => `${item.scene_id}:${String(id)}`),
+            ),
+          );
+
+          reviews.rejected_assets = (reviews.rejected_assets || []).filter(
+            (item) => !candidateKeys.has(`${item.scene_id}:${String(item.provider_asset_id)}`),
+          );
+          const existing = new Set(
+            reviews.rejected_assets.map((item) => `${item.scene_id}:${item.provider_asset_id}:${item.asset_sha256 || ''}`),
+          );
+
           for (const item of override.overrides) {
             const entry = queueByScene.get(item.scene_id);
             if (!entry) throw new Error(`${item.scene_id}: current review queue entry is missing`);
+            if (candidateKeys.has(`${entry.scene_id}:${String(entry.provider_asset_id)}`)) continue;
             const key = `${entry.scene_id}:${entry.provider_asset_id}:${entry.asset_sha256}`;
             if (existing.has(key)) continue;
             reviews.rejected_assets.push({
@@ -76,6 +89,7 @@ jobs:
             });
             existing.add(key);
           }
+
           reviews.summary ||= {};
           reviews.summary.rejected_from_metadata = reviews.rejected_assets.length;
           await fs.writeFile(reviewsPath, JSON.stringify(reviews, null, 2) + '\n');
@@ -121,20 +135,38 @@ jobs:
           import { promises as fs } from 'node:fs';
 
           const root = path.join('projects', process.env.PROJECT_ID);
-          const queuePath = path.join(root, 'qa', 'footage_review_queue.json');
+          const queue = JSON.parse(await fs.readFile(path.join(root, 'qa', 'footage_review_queue.json'), 'utf8'));
+          const override = JSON.parse(await fs.readFile(path.join(root, 'config', 'footage_candidate_overrides.json'), 'utf8'));
           const reviewsPath = path.join(root, 'research', 'visual_asset_reviews.json');
-          const queue = JSON.parse(await fs.readFile(queuePath, 'utf8'));
           const reviews = JSON.parse(await fs.readFile(reviewsPath, 'utf8'));
           const expectedSceneIds = Array.from({ length: 41 }, (_, index) => `scene_${String(index + 1).padStart(3, '0')}`);
           const actualSceneIds = queue.entries.map((entry) => entry.scene_id);
-
           if (queue.entries.length !== 41 || JSON.stringify(actualSceneIds) !== JSON.stringify(expectedSceneIds)) {
             throw new Error(`The reviewed queue is not the exact ordered 41-scene package: ${actualSceneIds.join(',')}`);
           }
+
+          const replacementKeys = new Set(
+            override.overrides.flatMap((item) =>
+              (item.provider_asset_ids || []).map((id) => `${item.scene_id}:${String(id)}`),
+            ),
+          );
+          const expectedRejectedKeys = new Set(
+            override.overrides.flatMap((item) =>
+              (item.replaced_provider_asset_ids || []).map((id) => `${item.scene_id}:${String(id)}`),
+            ),
+          );
+          reviews.rejected_assets = (reviews.rejected_assets || []).filter(
+            (item) => !replacementKeys.has(`${item.scene_id}:${String(item.provider_asset_id)}`),
+          );
+          const actualRejectedKeys = new Set(
+            reviews.rejected_assets.map((item) => `${item.scene_id}:${String(item.provider_asset_id)}`),
+          );
+          if (actualRejectedKeys.size !== expectedRejectedKeys.size || [...expectedRejectedKeys].some((key) => !actualRejectedKeys.has(key))) {
+            throw new Error(`Rejected predecessor identities do not match the six reviewed replacements: ${[...actualRejectedKeys].join(',')}`);
+          }
+
           for (const entry of queue.entries) {
-            if (!entry.asset_sha256 || !entry.contact_sheet_sha256) {
-              throw new Error(`${entry.scene_id}: missing byte-bound footage or contact-sheet identity`);
-            }
+            if (!entry.asset_sha256 || !entry.contact_sheet_sha256) throw new Error(`${entry.scene_id}: missing byte identity`);
             if (!Array.isArray(entry.approved_uses_if_visually_valid) || entry.approved_uses_if_visually_valid.length === 0) {
               throw new Error(`${entry.scene_id}: missing claim-bound approved use`);
             }
@@ -154,12 +186,11 @@ jobs:
             approval_requires_contact_sheet_sha256: true,
             approval_requires_claim_id_narration_anchor_and_semantic_rationale: true,
           };
-          reviews.rejected_assets ||= [];
           reviews.summary = {
-            pool_assets: queue.entries.length,
+            pool_assets: 41,
             rejected_from_metadata: reviews.rejected_assets.length,
             pending_frame_review: 0,
-            approved: queue.entries.length,
+            approved: 41,
           };
           reviews.pending_frame_review_scene_ids = [];
           reviews.approved_assets = queue.entries.map((entry) => ({
@@ -175,16 +206,10 @@ jobs:
             review_method: queue.review_method,
             reviewed_at: reviewedAt,
           }));
-
+          reviews.completed_at = reviewedAt;
           await fs.writeFile(reviewsPath, JSON.stringify(reviews, null, 2) + '\n');
-          console.log(JSON.stringify({
-            project_id: reviews.project_id,
-            approved: reviews.summary.approved,
-            rejected_predecessors: reviews.summary.rejected_from_metadata,
-            pending: reviews.summary.pending_frame_review,
-          }, null, 2));
           NODE
-          jq -e '.summary.pool_assets == 41 and .summary.approved == 41 and .summary.pending_frame_review == 0 and (.approved_assets | length) == 41 and (.rejected_assets | length) == 6' "projects/$PROJECT_ID/research/visual_asset_reviews.json"
+          jq -e '.summary.pool_assets == 41 and .summary.approved == 41 and .summary.pending_frame_review == 0 and .summary.rejected_from_metadata == 6 and (.approved_assets | length) == 41 and (.rejected_assets | length) == 6' "projects/$PROJECT_ID/research/visual_asset_reviews.json"
 
       - name: Commit and push replacement package
         shell: bash
@@ -207,9 +232,7 @@ jobs:
           fi
           git commit -m "Approve current 41-scene footage package for $PROJECT_ID"
           for attempt in 1 2 3; do
-            if git pull --rebase origin "$TARGET_BRANCH" && git push origin "HEAD:$TARGET_BRANCH"; then
-              exit 0
-            fi
+            if git pull --rebase origin "$TARGET_BRANCH" && git push origin "HEAD:$TARGET_BRANCH"; then exit 0; fi
             git rebase --abort >/dev/null 2>&1 || true
             sleep $((attempt * 3))
           done
