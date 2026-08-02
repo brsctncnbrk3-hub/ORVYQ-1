@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 3,
-  "reason": "Re-run the complete render-free Candidate Validation chain after normalizing the production profile to the canonical ready status. Preserve the approved 20-of-20 footage and verified Resonance music package; build and validate all production, evidence, edit, audio, caption, render-ready and pre-render QA outputs. No video render is permitted.",
+  "request_revision": 4,
+  "reason": "Run the complete render-free Candidate Validation chain after authoring a fresh Project 004 editorial pause map with exactly three full pauses and five brief accents. Preserve the approved 20-of-20 footage and verified Resonance music package; build and validate the production plan, official evidence, edit plan, music cues, final audio mix, captions, render-ready project, frozen candidate and every pre-render QA gate. No video render is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-08-02T10:20:00Z"
+  "requested_at": "2026-08-02T13:30:00Z"
 }
