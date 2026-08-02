@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 3,
-  "requested_at": "2026-08-02T09:55:00Z",
-  "reason": "Repeat the already verified Resonance acquisition after updating all composition-family unit fixtures; require canonical validation and the full test suite to pass before committing the licensed package. No video render is permitted."
+  "request_revision": 4,
+  "requested_at": "2026-08-02T10:04:00Z",
+  "reason": "Publish the already verified Resonance package from the latest branch head using the race-safe package restore and push sequence. Canonical validation and all unit tests must pass; no video render is permitted."
 }
