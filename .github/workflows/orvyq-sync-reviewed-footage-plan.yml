@@ -69,8 +69,11 @@ jobs:
           const actualScenes = queue.entries.map((entry) => entry.scene_id);
           if (JSON.stringify(actualScenes) !== JSON.stringify(expectedScenes)) throw new Error(`Unexpected scene order: ${actualScenes.join(',')}`);
 
-          const expectedClaims = Array.from({ length: 21 }, (_, index) => `CLM_${String(index + 1).padStart(3, '0')}`);
-          const byPrimaryClaim = new Map(expectedClaims.map((claimId) => [claimId, []]));
+          const claimNumber = (claimId) => {
+            const match = String(claimId || '').match(/^CLM_(\d{3})_/i);
+            return match ? Number(match[1]) : Number.NaN;
+          };
+          const byPrimaryClaim = new Map();
           const normalized = queue.entries.map((entry) => {
             const approved = approvedByScene.get(entry.scene_id);
             if (!approved) throw new Error(`${entry.scene_id}: missing approved review record`);
@@ -84,14 +87,23 @@ jobs:
             if (!primaryUse.claim_id || !primaryUse.narration_anchor || String(primaryUse.semantic_rationale || '').length < 24) {
               throw new Error(`${entry.scene_id}: incomplete primary approved use`);
             }
-            const bucket = byPrimaryClaim.get(primaryUse.claim_id);
-            if (!bucket) throw new Error(`${entry.scene_id}: unknown primary claim ${primaryUse.claim_id}`);
+            const number = claimNumber(primaryUse.claim_id);
+            if (!Number.isInteger(number) || number < 1 || number > 21) {
+              throw new Error(`${entry.scene_id}: malformed primary claim id ${primaryUse.claim_id}`);
+            }
             const item = { entry, approved, primaryUse };
-            bucket.push(item);
+            byPrimaryClaim.set(primaryUse.claim_id, [...(byPrimaryClaim.get(primaryUse.claim_id) || []), item]);
             return item;
           });
 
-          for (const [claimId, items] of byPrimaryClaim) {
+          const primaryClaimIds = [...byPrimaryClaim.keys()].sort((a, b) => claimNumber(a) - claimNumber(b));
+          const primaryClaimNumbers = primaryClaimIds.map(claimNumber);
+          const expectedClaimNumbers = Array.from({ length: 21 }, (_, index) => index + 1);
+          if (JSON.stringify(primaryClaimNumbers) !== JSON.stringify(expectedClaimNumbers)) {
+            throw new Error(`Expected exact claim numbers 1-21, found ${primaryClaimIds.join(',')}`);
+          }
+          for (const claimId of primaryClaimIds) {
+            const items = byPrimaryClaim.get(claimId);
             items.sort((a, b) => a.entry.scene_id.localeCompare(b.entry.scene_id));
             if (items.length < 1 || items.length > 3) throw new Error(`${claimId}: expected 1-3 primary footage assets, found ${items.length}`);
           }
@@ -99,7 +111,7 @@ jobs:
 
           const motions = ['hold', 'push', 'pull', 'drift_left'];
           const contracts = [];
-          for (const claimId of expectedClaims) {
+          for (const claimId of primaryClaimIds) {
             const items = byPrimaryClaim.get(claimId);
             items.forEach((item, sliceIndex) => {
               const sceneNumber = Number(item.entry.scene_id.split('_')[1]);
@@ -157,8 +169,8 @@ jobs:
             project_id: projectId,
             contracts: contracts.length,
             decisions: decisions.length,
-            claims: expectedClaims.length,
-            per_claim_counts: Object.fromEntries([...byPrimaryClaim].map(([claimId, items]) => [claimId, items.length]))
+            claims: primaryClaimIds.length,
+            per_claim_counts: Object.fromEntries(primaryClaimIds.map((claimId) => [claimId, byPrimaryClaim.get(claimId).length]))
           }, null, 2));
           NODE
 
