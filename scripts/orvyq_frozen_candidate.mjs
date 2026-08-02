@@ -67,6 +67,23 @@ async function readOptionalJson(absPath) {
   return readJson(absPath);
 }
 
+export async function promoteCandidateWorkspaceAndValidate(projectId = PROJECT_ID) {
+  const dir = projectDir(projectId);
+  const profilePath = path.join(dir, "config", "production_profile.json");
+  const profile = await readJson(profilePath);
+  if (profile.status === "ready_for_candidate_validation") {
+    profile.status = "ready";
+    await writeJsonAtomic(profilePath, profile);
+  }
+  if (profile.status !== "ready") {
+    throw new Error(`Cannot freeze candidate: production profile status=${profile.status || "missing"}`);
+  }
+  execSync("node scripts/validate_canonical.mjs", {
+    stdio: "inherit",
+    env: { ...process.env, ORVYQ_PROJECT_ID: projectId },
+  });
+}
+
 // Deterministic recursive hash of every file under a directory tree (sorted
 // by relative path, hash-of-hashes -- NOT a hash of any single concatenated
 // blob, so adding/removing/renaming a file always changes the result).
@@ -239,7 +256,9 @@ export async function buildCanonicalFrozenCandidate(projectId = PROJECT_ID, opti
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const args = parseArgs(process.argv.slice(2));
-  buildCanonicalFrozenCandidate(args["project-id"] || PROJECT_ID, { renderReadyDir: args["render-ready-dir"] || undefined })
+  const projectId = args["project-id"] || PROJECT_ID;
+  promoteCandidateWorkspaceAndValidate(projectId)
+    .then(() => buildCanonicalFrozenCandidate(projectId, { renderReadyDir: args["render-ready-dir"] || undefined }))
     .then((candidate) => printJson({ ok: true, ...candidate }))
     .catch((error) => {
       console.error(JSON.stringify({ ok: false, error: error.message }));
