@@ -9,6 +9,7 @@ import {
 
 export const SYSTEM_PROFILE_PATH = path.join(REPO_ROOT, "config", "orvyq-system-profile.json");
 export const PROJECT_PROFILE_RELATIVE_PATH = path.join("config", "production_profile.json");
+export const VALIDATABLE_PRODUCTION_STATUSES = new Set(["ready_for_candidate_validation", "ready"]);
 
 export function resolveProjectId(args = {}, { required = true } = {}) {
   const value = args["project-id"] || process.env.ORVYQ_PROJECT_ID || null;
@@ -36,9 +37,9 @@ export function validateProductionProfile(profile, systemProfile, { requireReady
     throw new CliError("Project production profile must be a JSON object", "INVALID_PRODUCTION_PROFILE");
   }
   assertValidProjectId(profile.project_id);
-  if (requireReady && profile.status !== "ready") {
+  if (requireReady && !VALIDATABLE_PRODUCTION_STATUSES.has(profile.status)) {
     throw new CliError(
-      `Project ${profile.project_id} production profile is not ready (status=${profile.status || "missing"})`,
+      `Project ${profile.project_id} production profile is not ready for Candidate Validation (status=${profile.status || "missing"})`,
       "PRODUCTION_PROFILE_NOT_READY",
     );
   }
