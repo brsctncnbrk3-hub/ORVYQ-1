@@ -1,0 +1,146 @@
+name: ORVYQ Promote Approved Footage Provenance
+
+on:
+  push:
+    branches:
+      - "agent/project-001-clean-rebuild"
+    paths:
+      - ".github/workflows/orvyq-promote-footage-approvals.yml"
+      - "projects/004-the-ai-race-clean-rebuild/research/visual_asset_reviews.json"
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: orvyq-promote-footage-approvals-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  promote:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PROJECT_ID: 004-the-ai-race-clean-rebuild
+      TARGET_BRANCH: agent/project-001-clean-rebuild
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/project-001-clean-rebuild
+          lfs: true
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Promote exact reviewed footage provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import path from 'node:path';
+          import { promises as fs } from 'node:fs';
+
+          const root = path.join('projects', process.env.PROJECT_ID);
+          const reviews = JSON.parse(await fs.readFile(path.join(root, 'research', 'visual_asset_reviews.json'), 'utf8'));
+          if (reviews.summary?.approved !== 41 || reviews.summary?.pending_frame_review !== 0 || reviews.summary?.rejected_from_metadata !== 6) {
+            throw new Error(`Visual review is not final: ${JSON.stringify(reviews.summary || {})}`);
+          }
+          if (!Array.isArray(reviews.approved_assets) || reviews.approved_assets.length !== 41) {
+            throw new Error('Expected exactly 41 approved footage records');
+          }
+
+          const expectedScenes = Array.from({ length: 41 }, (_, index) => `scene_${String(index + 1).padStart(3, '0')}`);
+          const actualScenes = reviews.approved_assets.map((item) => item.scene_id);
+          if (JSON.stringify(actualScenes) !== JSON.stringify(expectedScenes)) {
+            throw new Error(`Approved scenes are incomplete or unordered: ${actualScenes.join(',')}`);
+          }
+
+          const reviewedAt = reviews.completed_at || new Date().toISOString();
+          for (const approved of reviews.approved_assets) {
+            const provenancePath = path.join(root, `${approved.asset_path}.provenance.json`);
+            const provenance = JSON.parse(await fs.readFile(provenancePath, 'utf8'));
+            if (String(provenance.scene_id) !== String(approved.scene_id)) {
+              throw new Error(`${approved.scene_id}: provenance scene mismatch`);
+            }
+            if (String(provenance.provider_asset_id) !== String(approved.provider_asset_id)) {
+              throw new Error(`${approved.scene_id}: provenance provider asset mismatch`);
+            }
+            const provenanceHash = String(provenance.sha256 || provenance.actual_sha256 || '').toLowerCase();
+            if (provenanceHash !== String(approved.asset_sha256).toLowerCase()) {
+              throw new Error(`${approved.scene_id}: provenance SHA-256 mismatch`);
+            }
+            if (!approved.contact_sheet_sha256 || !Array.isArray(approved.approved_uses) || approved.approved_uses.length === 0) {
+              throw new Error(`${approved.scene_id}: incomplete review binding`);
+            }
+
+            provenance.approved_for_final_edit = true;
+            provenance.human_review_status = 'APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW';
+            provenance.review_method = approved.review_method;
+            provenance.reviewed_at = approved.reviewed_at || reviewedAt;
+            provenance.contact_sheet_path = approved.contact_sheet_path;
+            provenance.contact_sheet_sha256 = approved.contact_sheet_sha256;
+            provenance.approved_uses = approved.approved_uses;
+            provenance.review_decision = approved.decision;
+            provenance.review_decision_rationale = approved.decision_rationale;
+            await fs.writeFile(provenancePath, JSON.stringify(provenance, null, 2) + '\n');
+          }
+
+          console.log(JSON.stringify({ project_id: process.env.PROJECT_ID, promoted: 41, approved_for_final_edit: true }, null, 2));
+          NODE
+
+      - name: Verify all provenance approvals
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import path from 'node:path';
+          import { promises as fs } from 'node:fs';
+          const root = path.join('projects', process.env.PROJECT_ID, 'assets', 'footage');
+          const files = (await fs.readdir(root)).filter((name) => name.endsWith('.mp4.provenance.json')).sort();
+          if (files.length !== 41) throw new Error(`Expected 41 provenance files, found ${files.length}`);
+          for (const file of files) {
+            const item = JSON.parse(await fs.readFile(path.join(root, file), 'utf8'));
+            if (item.approved_for_final_edit !== true) throw new Error(`${file}: not approved_for_final_edit`);
+            if (item.human_review_status !== 'APPROVED_CLAIM_SPECIFIC_FOUR_POSITION_REVIEW') throw new Error(`${file}: review status mismatch`);
+            if (!item.contact_sheet_sha256) throw new Error(`${file}: missing contact-sheet binding`);
+          }
+          console.log(`Verified ${files.length} approved provenance records`);
+          NODE
+
+      - name: Commit and push promoted provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "orvyq-footage-review-bot"
+          git config user.email "orvyq-footage-review-bot@users.noreply.github.com"
+          git add -f "projects/$PROJECT_ID/assets/footage"/*.mp4.provenance.json
+          if git diff --cached --quiet; then
+            echo "All footage provenance is already promoted"
+            exit 0
+          fi
+          git commit -m "Promote 41 reviewed footage assets for final edit"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin "$TARGET_BRANCH" && git push origin "HEAD:$TARGET_BRANCH"; then exit 0; fi
+            git rebase --abort >/dev/null 2>&1 || true
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not publish promoted footage provenance"
+          exit 1
+
+      - name: Report promotion result
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          BODY="Footage provenance promotion finished with **${JOB_STATUS}**. All 41 current footage assets were checked against exact visual-review SHA-256 and provider identities. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
