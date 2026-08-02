@@ -12,7 +12,7 @@
   "license_url": "https://www.pexels.com/license/",
   "creator": null,
   "source_title": null,
-  "retrieval_timestamp": "2026-08-02T09:10:50.486Z",
+  "retrieval_timestamp": "2026-08-02T09:26:32.736Z",
   "editorial_role": "human_context",
   "narration_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go.",
   "semantic_rationale": "People reviewing software in a controlled office makes the test-versus-deployment distinction concrete without reenactment.",

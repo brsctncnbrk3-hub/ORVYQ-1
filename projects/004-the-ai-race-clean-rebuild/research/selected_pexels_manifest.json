@@ -30,8 +30,8 @@
         "replaced_provider_asset_ids": [
           "8534745"
         ],
-        "requested_at": "2026-08-02T09:14:00Z",
-        "request_revision": 1
+        "requested_at": "2026-08-02T09:43:00Z",
+        "request_revision": 2
       }
     },
     {
@@ -64,8 +64,8 @@
         "replaced_provider_asset_ids": [
           "5240935"
         ],
-        "requested_at": "2026-08-02T09:14:00Z",
-        "request_revision": 1
+        "requested_at": "2026-08-02T09:43:00Z",
+        "request_revision": 2
       }
     },
     {
@@ -123,22 +123,22 @@
       "scene_id": "scene_008",
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
       "provider_asset_ids": [
-        "6804656",
         "5377280"
       ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
       "semantic_link": "physical",
-      "semantic_rationale": "A technician actively handling network infrastructure provides a physical analogue for machine-scale technical operations with humans intervening at key moments; the provider report carries the factual burden.",
+      "semantic_rationale": "A serious network-operations image should provide a physical analogue for machine-scale technical activity and limited human intervention while the attributed provider report carries every factual claim.",
       "replacement_review": {
-        "reason": "The previous clip was an indistinct ping-terminal close-up and did not visually carry the scale or human oversight of an AI-assisted cyber operation.",
+        "reason": "The first replacement showed a cramped cable tangle with an unintentionally comic, low-budget tone; it did not meet the premium cinematic standard even though the network context was technically relevant.",
         "replaced_provider_asset_ids": [
           "28709421",
-          "1085656"
+          "1085656",
+          "6804656"
         ],
-        "requested_at": "2026-08-02T09:14:00Z",
-        "request_revision": 1
+        "requested_at": "2026-08-02T09:43:00Z",
+        "request_revision": 2
       }
     },
     {
@@ -247,8 +247,8 @@
           "3895141",
           "2070044"
         ],
-        "requested_at": "2026-08-02T09:14:00Z",
-        "request_revision": 1
+        "requested_at": "2026-08-02T09:43:00Z",
+        "request_revision": 2
       }
     },
     {
@@ -304,6 +304,6 @@
       "semantic_rationale": "A close view of active server hardware ends on the physical machine while the narration places responsibility back on human choices."
     }
   ],
-  "generated_at": "2026-08-02T09:10:26.935Z",
-  "replacement_override_revision": 1
+  "generated_at": "2026-08-02T09:26:07.836Z",
+  "replacement_override_revision": 2
 }

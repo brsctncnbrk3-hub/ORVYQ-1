@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4-selected-public-pexels",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T09:12:32.210Z",
+  "generated_at": "2026-08-02T09:28:22.119Z",
   "source": "pexels_public_download",
   "license_url": "https://www.pexels.com/license/",
   "planned_asset_count": 20,
@@ -60,9 +60,9 @@
       "claim_id": "CLM_008_CYBER_EXTORTION"
     },
     {
-      "path": "assets/footage/scene_008_6804656.mp4",
+      "path": "assets/footage/scene_008_5377280.mp4",
       "scene_id": "scene_008",
-      "provider_asset_id": "6804656",
+      "provider_asset_id": "5377280",
       "role": "context",
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE"
     },
