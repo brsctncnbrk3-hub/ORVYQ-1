@@ -31,9 +31,15 @@ jobs:
           lfs: true
           fetch-depth: 2
 
-      - name: Install media tooling
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies and media tooling
         run: |
           set -euo pipefail
+          npm ci
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
 
@@ -43,23 +49,50 @@ jobs:
           RUNTIME="projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
           test "$(jq -r '.pass' "$RUNTIME")" = "true"
           test "$(jq '.records | length' "$RUNTIME")" -eq 20
+          test "$(jq '.unresolved_scene_ids | length' "$RUNTIME")" -eq 0
 
-      - name: Generate four-frame semantic contact sheets
+      - name: Generate four-position semantic contact sheets
         shell: bash
         run: |
           set -euo pipefail
           ROOT="projects/$PROJECT_ID"
           RUNTIME="$ROOT/assets/footage_acquisition.runtime.json"
           OUT="$ROOT/qa/footage-contact-sheets"
-          rm -rf "$OUT"
-          mkdir -p "$OUT"
+          TMP="$ROOT/qa/.footage-contact-sheet-tmp"
+          rm -rf "$OUT" "$TMP"
+          mkdir -p "$OUT" "$TMP"
           jq -r '.records[].path' "$RUNTIME" | while IFS= read -r relative; do
             clip="$ROOT/$relative"
             base="$(basename "$clip" .mp4)"
-            ffmpeg -y -ss 0.5 -i "$clip" \
-              -vf "fps=1/2,scale=480:-2,tile=2x2:padding=8:margin=8" \
-              -frames:v 1 "$OUT/${base}.jpg" >/dev/null 2>&1
+            duration="$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$clip")"
+            read -r t1 t2 t3 t4 <<< "$(python3 - "$duration" <<'PY'
+          import sys
+          d = max(float(sys.argv[1]), 0.1)
+          points = [
+              min(0.5, max(0.0, d - 0.05)),
+              max(0.0, min(d * 0.33, d - 0.05)),
+              max(0.0, min(d * 0.66, d - 0.05)),
+              max(0.0, d - 0.5),
+          ]
+          print(' '.join(f'{p:.3f}' for p in points))
+          PY
+          )"
+            clip_tmp="$TMP/$base"
+            mkdir -p "$clip_tmp"
+            index=0
+            for timestamp in "$t1" "$t2" "$t3" "$t4"; do
+              index=$((index + 1))
+              ffmpeg -v error -y -ss "$timestamp" -i "$clip" \
+                -frames:v 1 -vf "scale=480:270:force_original_aspect_ratio=decrease,pad=480:270:(ow-iw)/2:(oh-ih)/2:black,setsar=1" \
+                "$clip_tmp/frame_${index}.jpg"
+            done
+            ffmpeg -v error -y \
+              -i "$clip_tmp/frame_1.jpg" -i "$clip_tmp/frame_2.jpg" \
+              -i "$clip_tmp/frame_3.jpg" -i "$clip_tmp/frame_4.jpg" \
+              -filter_complex "[0:v][1:v]hstack=inputs=2[top];[2:v][3:v]hstack=inputs=2[bottom];[top][bottom]vstack=inputs=2[sheet]" \
+              -map "[sheet]" -frames:v 1 "$OUT/${base}.jpg"
           done
+          rm -rf "$TMP"
           test "$(find "$OUT" -type f -name '*.jpg' | wc -l)" -eq 20
 
       - name: Build byte-bound review queue
@@ -92,8 +125,13 @@ jobs:
           for (const record of runtime.records) {
             const planned = byScene.get(record.scene_id);
             if (!planned) throw new Error(`${record.scene_id}: selected manifest entry is missing`);
+            const assetPath = path.join(root, record.path);
+            const assetBuffer = await fs.readFile(assetPath);
+            const actualAssetSha = digest(assetBuffer);
             const provenancePath = path.join(root, `${record.path}.provenance.json`);
             const provenance = JSON.parse(await fs.readFile(provenancePath, 'utf8'));
+            const provenanceSha = String(provenance.actual_sha256 || provenance.sha256 || '').toLowerCase();
+            if (actualAssetSha !== provenanceSha) throw new Error(`${record.scene_id}: footage bytes do not match provenance`);
             const contactSheetPath = `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`;
             const sheetBuffer = await fs.readFile(path.join(root, contactSheetPath));
             const approvedUses = [{
@@ -115,11 +153,12 @@ jobs:
               provider_asset_id: String(record.provider_asset_id),
               status: 'pending_visual_review',
               asset_path: record.path,
-              asset_sha256: provenance.actual_sha256 || provenance.sha256,
+              asset_sha256: actualAssetSha,
               contact_sheet_path: contactSheetPath,
               contact_sheet_sha256: digest(sheetBuffer),
               duration_seconds: provenance.actual_duration_seconds || provenance.duration,
               transformation: provenance.transformation || null,
+              sampled_positions: ['opening', 'one_third', 'two_thirds', 'near_end'],
               approved_uses_if_visually_valid: uniqueUses,
               review_blockers: []
             });
@@ -127,10 +166,10 @@ jobs:
           entries.sort((a, b) => a.scene_id.localeCompare(b.scene_id));
           if (entries.length !== 20) throw new Error(`Expected 20 review entries, found ${entries.length}`);
           await fs.writeFile(path.join(root, 'qa', 'footage_review_queue.json'), JSON.stringify({
-            schema_version: '1.1-multiframe',
+            schema_version: '1.2-four-position',
             project_id: projectId,
             generated_at: new Date().toISOString(),
-            review_method: 'four-frame claim-specific contact-sheet review',
+            review_method: 'four-position claim-specific contact-sheet review',
             pending_review_count: entries.length,
             entries_with_exact_uses: entries.filter((entry) => entry.approved_uses_if_visually_valid.length > 0).length,
             entries
@@ -174,5 +213,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
         run: |
-          BODY="Project 004 multiframe footage review preparation finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
+          BODY="Project 004 four-position footage review preparation finished with **${JOB_STATUS}**. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. No video render was started."
           gh api "repos/$GITHUB_REPOSITORY/issues/5/comments" -f body="$BODY" || true
