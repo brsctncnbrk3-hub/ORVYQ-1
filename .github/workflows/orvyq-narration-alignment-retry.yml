@@ -40,14 +40,23 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
           python -m pip install --disable-pip-version-check faster-whisper==1.2.0 requests==2.32.5
-      - name: Run full-duration speech QA
+      - name: Run full-duration speech QA and preserve report
         shell: bash
         run: |
-          set -euo pipefail
-          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" --output-name full_narration_speech_qa.json --model tiny.en | tee speech-qa.log
-      - name: Build canonical narration alignment
+          set +e
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" \
+            --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" \
+            --output-name full_narration_speech_qa.json \
+            --model tiny.en 2>&1 | tee speech-qa.log
+          status=${PIPESTATUS[0]}
+          echo "$status" > speech-qa.status
+          test -s "projects/$PROJECT_ID/qa/full_narration_speech_qa.json" || {
+            echo "::error::Speech QA did not produce a report."
+            exit 1
+          }
+      - name: Build canonical narration alignment from produced timestamps
         run: node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
-      - name: Commit alignment
+      - name: Commit alignment and QA report
         shell: bash
         run: |
           set -euo pipefail
@@ -59,6 +68,8 @@ jobs:
             git pull --rebase origin "$TARGET_BRANCH"
             git push origin "HEAD:$TARGET_BRANCH"
           fi
+      - name: Enforce narration QA after alignment is preserved
+        run: test "$(cat speech-qa.status)" = "0"
       - name: Upload diagnostics
         if: always()
         uses: actions/upload-artifact@v4
@@ -67,6 +78,7 @@ jobs:
           retention-days: 14
           path: |
             speech-qa.log
+            speech-qa.status
             projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
             projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
           if-no-files-found: warn
