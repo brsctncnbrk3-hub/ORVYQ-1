@@ -29,11 +29,11 @@ jobs:
       PROJECT_ID: 004-the-ai-race-clean-rebuild
       TARGET_BRANCH: ${{ github.ref_name }}
     steps:
-      - name: Checkout exact branch
+      - name: Checkout exact branch with LFS materialized
         uses: actions/checkout@v4
         with:
           ref: ${{ env.TARGET_BRANCH }}
-          lfs: false
+          lfs: true
           fetch-depth: 2
 
       - uses: actions/setup-node@v4
@@ -47,6 +47,7 @@ jobs:
           npm ci
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
+          git lfs version
 
       - name: Validate repository media contracts
         shell: bash
@@ -93,17 +94,25 @@ jobs:
           node scripts/orvyq_acquire_selected_pexels.mjs --project-id="$PROJECT_ID" | tee selected-pexels-acquisition.log
           jq -e '.pass == true and .planned_asset_count == 41 and (.records | length) == 41' "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json"
 
-      - name: Verify compact normal-Git media
+      - name: Verify materialized media bytes
         shell: bash
         run: |
           set -euo pipefail
+          count=0
           while IFS= read -r -d '' media; do
+            count=$((count + 1))
             bytes="$(stat -c '%s' "$media")"
+            test "$bytes" -gt 100000 || { echo "::error::$media is not materialized media ($bytes bytes)"; exit 1; }
             test "$bytes" -lt 95000000 || { echo "::error::$media exceeds 95 MB"; exit 1; }
-            attr="$(git check-attr filter -- "$media")"
-            ! grep -q 'filter: lfs$' <<<"$attr" || { echo "::error::$media is routed through Git LFS"; exit 1; }
             ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 "$media" | grep -qx '1280,720'
+            attr="$(git check-attr filter -- "$media")"
+            if grep -q 'filter: lfs$' <<<"$attr"; then
+              echo "Verified LFS-managed materialized media: $media"
+            else
+              echo "Verified normal-Git materialized media: $media"
+            fi
           done < <(find "projects/$PROJECT_ID/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0)
+          test "$count" -eq 41 || { echo "::error::Expected 41 materialized MP4 files, found $count"; exit 1; }
 
       - name: Build byte-bound four-position review package
         shell: bash
