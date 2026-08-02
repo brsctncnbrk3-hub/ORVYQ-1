@@ -1,7 +1,7 @@
 {
   "schema_version": "1.4-selected-public-pexels",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T08:55:48.915Z",
+  "generated_at": "2026-08-02T09:12:32.210Z",
   "source": "pexels_public_download",
   "license_url": "https://www.pexels.com/license/",
   "planned_asset_count": 20,
@@ -11,9 +11,9 @@
   "unresolved": [],
   "records": [
     {
-      "path": "assets/footage/scene_001_8534745.mp4",
+      "path": "assets/footage/scene_001_7989689.mp4",
       "scene_id": "scene_001",
-      "provider_asset_id": "8534745",
+      "provider_asset_id": "7989689",
       "role": "human_context",
       "claim_id": "CLM_001_SAFETY_FRAMEWORKS"
     },
@@ -25,9 +25,9 @@
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE"
     },
     {
-      "path": "assets/footage/scene_003_5240935.mp4",
+      "path": "assets/footage/scene_003_8632599.mp4",
       "scene_id": "scene_003",
-      "provider_asset_id": "5240935",
+      "provider_asset_id": "8632599",
       "role": "context",
       "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
     },
@@ -60,9 +60,9 @@
       "claim_id": "CLM_008_CYBER_EXTORTION"
     },
     {
-      "path": "assets/footage/scene_008_28709421.mp4",
+      "path": "assets/footage/scene_008_6804656.mp4",
       "scene_id": "scene_008",
-      "provider_asset_id": "28709421",
+      "provider_asset_id": "6804656",
       "role": "context",
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE"
     },
@@ -116,9 +116,9 @@
       "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF"
     },
     {
-      "path": "assets/footage/scene_016_3895141.mp4",
+      "path": "assets/footage/scene_016_6573544.mp4",
       "scene_id": "scene_016",
-      "provider_asset_id": "3895141",
+      "provider_asset_id": "6573544",
       "role": "context",
       "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF"
     },

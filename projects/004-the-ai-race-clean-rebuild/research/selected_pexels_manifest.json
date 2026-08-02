@@ -16,17 +16,30 @@
     {
       "scene_id": "scene_001",
       "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
-      "provider_asset_ids": ["8534745"],
+      "provider_asset_ids": [
+        "7989689",
+        "6804123"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
       "semantic_link": "physical",
-      "semantic_rationale": "Researchers working together establishes the human institutions making frontier safety decisions without identifying a specific company."
+      "semantic_rationale": "Developers jointly examining software gives the opening a credible human frontier-technology context without suggesting that the stock footage depicts a named AI laboratory.",
+      "replacement_review": {
+        "reason": "The previous biology-laboratory imagery falsely implied medical research during narration about frontier AI laboratories.",
+        "replaced_provider_asset_ids": [
+          "8534745"
+        ],
+        "requested_at": "2026-08-02T09:14:00Z",
+        "request_revision": 1
+      }
     },
     {
       "scene_id": "scene_002",
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
-      "provider_asset_ids": ["5028622"],
+      "provider_asset_ids": [
+        "5028622"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "And every one of them is still moving as fast as it can.",
@@ -36,17 +49,32 @@
     {
       "scene_id": "scene_003",
       "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
-      "provider_asset_ids": ["5240935", "7989450"],
+      "provider_asset_ids": [
+        "8632599",
+        "7989676",
+        "34279676"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
       "semantic_link": "physical",
-      "semantic_rationale": "A monitored workstation and deliberate review process represents a controlled evaluation environment rather than a real-world incident."
+      "semantic_rationale": "Two developers deliberately reviewing software on a shared screen represents a controlled evaluation process while the official research remains the factual evidence.",
+      "replacement_review": {
+        "reason": "The previous clip displayed a literal password-decryption interface and read as a hacker cliché rather than a controlled model evaluation.",
+        "replaced_provider_asset_ids": [
+          "5240935"
+        ],
+        "requested_at": "2026-08-02T09:14:00Z",
+        "request_revision": 1
+      }
     },
     {
       "scene_id": "scene_004",
       "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
-      "provider_asset_ids": ["7989678", "7989469"],
+      "provider_asset_ids": [
+        "7989678",
+        "7989469"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go.",
@@ -56,7 +84,9 @@
     {
       "scene_id": "scene_005",
       "claim_id": "CLM_006_INVESTMENT_SCALE",
-      "provider_asset_ids": ["34406409"],
+      "provider_asset_ids": [
+        "34406409"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "Stanford's 2025 AI Index reported nearly thirty-four billion dollars in private generative-AI investment in 2024.",
@@ -66,7 +96,10 @@
     {
       "scene_id": "scene_006",
       "claim_id": "CLM_007_FRONTIER_GAP",
-      "provider_asset_ids": ["6803583", "7989454"],
+      "provider_asset_ids": [
+        "6803583",
+        "7989454"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "That closeness turns each major release into a strategic event.",
@@ -76,7 +109,10 @@
     {
       "scene_id": "scene_007",
       "claim_id": "CLM_008_CYBER_EXTORTION",
-      "provider_asset_ids": ["7253660", "5377775"],
+      "provider_asset_ids": [
+        "7253660",
+        "5377775"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "In cybersecurity, AI has already lowered the barrier to entry.",
@@ -86,17 +122,31 @@
     {
       "scene_id": "scene_008",
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
-      "provider_asset_ids": ["28709421", "1085656"],
+      "provider_asset_ids": [
+        "6804656",
+        "5377280"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "An AI agent carried out the large majority of the technical intrusion work itself, with human operators checking in only at key moments.",
       "semantic_link": "physical",
-      "semantic_rationale": "Network data and active infrastructure visualize machine-scale technical operations while the provider report carries the factual burden."
+      "semantic_rationale": "A technician actively handling network infrastructure provides a physical analogue for machine-scale technical operations with humans intervening at key moments; the provider report carries the factual burden.",
+      "replacement_review": {
+        "reason": "The previous clip was an indistinct ping-terminal close-up and did not visually carry the scale or human oversight of an AI-assisted cyber operation.",
+        "replaced_provider_asset_ids": [
+          "28709421",
+          "1085656"
+        ],
+        "requested_at": "2026-08-02T09:14:00Z",
+        "request_revision": 1
+      }
     },
     {
       "scene_id": "scene_009",
       "claim_id": "CLM_010_BIO_ASL3",
-      "provider_asset_ids": ["8381457"],
+      "provider_asset_ids": [
+        "8381457"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "On biological risk, Anthropic said its internal testing suggested Claude Opus 4 could provide a meaningful capability uplift.",
@@ -106,7 +156,9 @@
     {
       "scene_id": "scene_010",
       "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
-      "provider_asset_ids": ["6214601"],
+      "provider_asset_ids": [
+        "6214601"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "General-purpose AI can generate persuasive synthetic content cheaply and at scale.",
@@ -116,7 +168,9 @@
     {
       "scene_id": "scene_011",
       "claim_id": "CLM_012_LABOUR_EXPOSURE",
-      "provider_asset_ids": ["8201290"],
+      "provider_asset_ids": [
+        "8201290"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "The evidence measures exposure more reliably than it predicts unemployment.",
@@ -126,7 +180,10 @@
     {
       "scene_id": "scene_012",
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
-      "provider_asset_ids": ["38081600", "20591257"],
+      "provider_asset_ids": [
+        "38081600",
+        "20591257"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "Frontier AI depends on costly computing power, cloud infrastructure, data, and capital.",
@@ -136,7 +193,10 @@
     {
       "scene_id": "scene_013",
       "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
-      "provider_asset_ids": ["34900372", "33780459"],
+      "provider_asset_ids": [
+        "34900372",
+        "33780459"
+      ],
       "role": "governance_context",
       "min_duration_seconds": 8,
       "narration_anchor": "Take Europe's AI Act. It uses different rules for different systems.",
@@ -146,7 +206,10 @@
     {
       "scene_id": "scene_014",
       "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
-      "provider_asset_ids": ["6805175", "7989455"],
+      "provider_asset_ids": [
+        "6805175",
+        "7989455"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "Established companies may also be better able to absorb the complex compliance, evaluation, reporting, and legal costs.",
@@ -156,7 +219,10 @@
     {
       "scene_id": "scene_015",
       "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
-      "provider_asset_ids": ["6804109", "7989450"],
+      "provider_asset_ids": [
+        "6804109",
+        "7989450"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "Open-weight models let independent researchers audit them, find flaws, and build defensive tools.",
@@ -166,17 +232,32 @@
     {
       "scene_id": "scene_016",
       "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
-      "provider_asset_ids": ["3895141", "2070044"],
+      "provider_asset_ids": [
+        "6573544",
+        "9460727"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "Closed models let a company monitor, restrict, and shut down misuse in real time.",
       "semantic_link": "conceptual",
-      "semantic_rationale": "Restricted physical access provides a restrained visual analogue for centralized permission, monitoring and revocation."
+      "semantic_rationale": "A person actively using a controlled-access keypad makes centralized permission, monitoring and revocation visible without presenting the location as a specific AI company.",
+      "replacement_review": {
+        "reason": "The previous static restricted-door shot lacked enough motion and visual development for a premium eight-to-ten-second sequence.",
+        "replaced_provider_asset_ids": [
+          "3895141",
+          "2070044"
+        ],
+        "requested_at": "2026-08-02T09:14:00Z",
+        "request_revision": 1
+      }
     },
     {
       "scene_id": "scene_017",
       "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-      "provider_asset_ids": ["6930347", "8643888"],
+      "provider_asset_ids": [
+        "6930347",
+        "8643888"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "subjecting them to independent evaluations and audits before they ship",
@@ -186,7 +267,10 @@
     {
       "scene_id": "scene_018",
       "claim_id": "CLM_020_INCIDENT_REPORTING",
-      "provider_asset_ids": ["6951401", "34838666"],
+      "provider_asset_ids": [
+        "6951401",
+        "34838666"
+      ],
       "role": "governance_context",
       "min_duration_seconds": 8,
       "narration_anchor": "mandatory incident reporting when systems misbehave, real legal liability and insurance",
@@ -196,7 +280,10 @@
     {
       "scene_id": "scene_019",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "provider_asset_ids": ["992599", "5599977"],
+      "provider_asset_ids": [
+        "992599",
+        "5599977"
+      ],
       "role": "human_context",
       "min_duration_seconds": 8,
       "narration_anchor": "decisions that add up to a world shaped by whoever moved fastest, or whoever accumulated the most control",
@@ -206,12 +293,17 @@
     {
       "scene_id": "scene_020",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "provider_asset_ids": ["7140928", "7140931"],
+      "provider_asset_ids": [
+        "7140928",
+        "7140931"
+      ],
       "role": "context",
       "min_duration_seconds": 8,
       "narration_anchor": "It's still being decided... by people, right now.",
       "semantic_link": "physical",
       "semantic_rationale": "A close view of active server hardware ends on the physical machine while the narration places responsibility back on human choices."
     }
-  ]
+  ],
+  "generated_at": "2026-08-02T09:10:26.935Z",
+  "replacement_override_revision": 1
 }
