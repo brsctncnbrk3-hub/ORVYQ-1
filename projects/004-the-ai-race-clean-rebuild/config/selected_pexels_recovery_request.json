@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 1,
-  "reason": "Complete the five unresolved selected footage scenes with deterministic 1280x720 normalization and controlled looping. No video render is permitted.",
-  "requested_at": "2026-08-02T07:28:00Z"
+  "request_revision": 2,
+  "reason": "Re-run acquisition after permanently applying deterministic 1280x720 normalization and controlled looping for the five unresolved selected footage scenes. No video render is permitted.",
+  "requested_at": "2026-08-02T08:31:00Z"
 }
