@@ -55,7 +55,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["scene_id", "provider_asset_id", "asset_sha256", "contact_sheet_sha256", "approved_uses", "decision", "decision_rationale", "review_method", "reviewed_at"],
+        "required": ["scene_id", "provider_asset_id", "asset_sha256", "contact_sheet_sha256", "approved_uses"],
         "properties": {
           "scene_id": { "type": "string", "pattern": "^scene_[0-9]{3}$" },
           "provider_asset_id": { "type": "string", "minLength": 1 },
