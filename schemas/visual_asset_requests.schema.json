@@ -7,31 +7,83 @@
   "properties": {
     "schema_version": { "const": "1.0" },
     "project_id": { "type": "string", "pattern": "^[0-9]{3}-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "request_revision": { "type": "integer", "minimum": 1 },
     "policy": {
       "type": "object",
       "required": ["automatic_backfill_forbidden", "decorative_document_recreation_forbidden", "same_content_different_crop_counts_once"],
-      "additionalProperties": { "type": "boolean" }
+      "properties": {
+        "automatic_backfill_forbidden": { "const": true },
+        "decorative_document_recreation_forbidden": { "const": true },
+        "same_content_different_crop_counts_once": { "const": true },
+        "primary_evidence_requires_institution_title_date_and_provenance": { "const": true },
+        "footage_requires_contact_sheet_and_claim_specific_semantic_approval": { "const": true }
+      },
+      "additionalProperties": false
     },
     "requests": {
       "type": "array",
       "minItems": 1,
-      "items": {
-        "type": "object",
-        "required": ["asset_request_id", "type", "status", "claim_ids", "required_content", "acceptance", "forbidden_substitutes"],
-        "properties": {
-          "asset_request_id": { "type": "string", "pattern": "^REQ_(EVD|FTG)_[A-Z0-9_]+$" },
-          "type": { "enum": ["primary_evidence", "contextual_footage"] },
-          "status": { "enum": ["pending_direct_asset", "pending_acquisition", "pending_frame_review", "ready"] },
-          "claim_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" } },
-          "required_source": { "type": "string", "minLength": 8 },
-          "required_content": { "type": "string", "minLength": 24 },
-          "acceptance": { "type": "string", "minLength": 24 },
-          "forbidden_substitutes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 3 } },
-          "resolved_asset_paths": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 8 } },
-          "resolved_evidence_asset_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^EVID_[A-Z0-9_]+$" } }
+      "items": { "$ref": "#/$defs/request" }
+    }
+  },
+  "$defs": {
+    "visualReviewBinding": {
+      "type": "object",
+      "required": ["asset_sha256", "contact_sheet_sha256", "reviewed_at"],
+      "properties": {
+        "asset_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "contact_sheet_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+        "reviewed_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "request": {
+      "type": "object",
+      "required": ["asset_request_id", "type", "status", "claim_ids"],
+      "properties": {
+        "asset_request_id": { "type": "string", "pattern": "^REQ_(EVD|FTG)_[A-Z0-9_]+$" },
+        "type": { "enum": ["primary_evidence", "contextual_footage"] },
+        "status": { "enum": ["pending_direct_asset", "pending_acquisition", "pending_frame_review", "ready"] },
+        "claim_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" } },
+        "scene_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^scene_[0-9]{3}$" } },
+        "required_source": { "type": "string", "minLength": 8 },
+        "required_content": { "type": "string", "minLength": 24 },
+        "acceptance": { "type": "string", "minLength": 24 },
+        "forbidden_substitutes": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 3 } },
+        "resolved_asset_paths": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 8 } },
+        "resolved_evidence_asset_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^EVID_[A-Z0-9_]+$" } },
+        "visual_review_binding": { "$ref": "#/$defs/visualReviewBinding" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": { "const": "contextual_footage" },
+              "status": { "const": "ready" }
+            },
+            "required": ["type", "status"]
+          },
+          "then": {
+            "required": ["scene_ids", "required_source", "resolved_asset_paths", "visual_review_binding"]
+          },
+          "else": {
+            "required": ["required_content", "acceptance", "forbidden_substitutes"]
+          }
         },
-        "additionalProperties": false
-      }
+        {
+          "if": {
+            "properties": {
+              "type": { "const": "primary_evidence" },
+              "status": { "const": "ready" }
+            },
+            "required": ["type", "status"]
+          },
+          "then": {
+            "required": ["required_source", "required_content", "acceptance", "forbidden_substitutes", "resolved_asset_paths", "resolved_evidence_asset_ids"]
+          }
+        }
+      ],
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
