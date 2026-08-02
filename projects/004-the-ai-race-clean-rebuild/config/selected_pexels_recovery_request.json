@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 3,
-  "reason": "Re-run the verified 20-of-20 acquisition and restrict cleanup/contact-sheet generation to runtime-selected footage only. No video render is permitted.",
-  "requested_at": "2026-08-02T08:46:00Z"
+  "request_revision": 4,
+  "reason": "Persist the already verified 20-of-20 selected footage package first; defer all contact-sheet and semantic review work to the dedicated render-free review workflow. No video render is permitted.",
+  "requested_at": "2026-08-02T08:55:00Z"
 }
