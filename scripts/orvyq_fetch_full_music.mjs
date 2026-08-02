@@ -2,7 +2,9 @@
 // Acquires the exact licensed tracks declared by the selected project's
 // config/music_acquisition.json. The system contains no artist, track, cue,
 // URL, or license choice: those are project data. This script only validates,
-// downloads, probes, registers, attributes, and marks declared cues ready.
+// downloads, probes, registers and attributes the declared music. Cue status
+// is synchronized when a project cue sheet already exists; acquisition itself
+// may safely happen before the shot-derived cue sheet is generated.
 import path from "node:path";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
@@ -13,6 +15,7 @@ import {
   REPO_ROOT,
   projectDir,
   readJson,
+  readJsonSafe,
   writeJsonAtomic,
   parseArgs,
   printJson,
@@ -24,6 +27,7 @@ import { downloadWithRetry } from "./orvyq_fetch_music.mjs";
 const exec = promisify(execFile);
 const LICENSE_SNAPSHOT_DIR = path.join(REPO_ROOT, "music_library", "license_snapshots");
 const TRACK_ID_PATTERN = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
+const FAMILY_PATTERN = /^[a-z0-9]+(?:_[a-z0-9]+)*$/;
 
 export function validateMusicAcquisitionPlan(plan, projectId = plan?.project_id) {
   if (!plan || typeof plan !== "object") throw new Error("Music acquisition plan must be a JSON object");
@@ -35,17 +39,23 @@ export function validateMusicAcquisitionPlan(plan, projectId = plan?.project_id)
   if (!Array.isArray(plan.tracks) || !plan.tracks.length) throw new Error("Music acquisition plan requires at least one track");
   const cueIds = new Set();
   const trackIds = new Set();
+  const families = new Set();
   for (const [index, track] of plan.tracks.entries()) {
-    for (const key of ["cue_id", "track_id", "title", "source_page_url", "download_url"]) {
+    for (const key of ["cue_id", "track_id", "title", "composition_family", "source_page_url", "download_url"]) {
       if (!String(track?.[key] || "").trim()) throw new Error(`tracks[${index}].${key} is required`);
     }
     if (!TRACK_ID_PATTERN.test(track.track_id)) throw new Error(`Invalid track_id ${track.track_id}`);
+    if (!FAMILY_PATTERN.test(track.composition_family)) throw new Error(`Invalid composition_family ${track.composition_family}`);
     if (!String(track.source_page_url).startsWith("https://")) throw new Error(`${track.track_id} source_page_url must use HTTPS`);
     if (!String(track.download_url).startsWith("https://")) throw new Error(`${track.track_id} download_url must use HTTPS`);
     if (cueIds.has(track.cue_id)) throw new Error(`Duplicate cue_id in music acquisition plan: ${track.cue_id}`);
     if (trackIds.has(track.track_id)) throw new Error(`Duplicate track_id in music acquisition plan: ${track.track_id}`);
     cueIds.add(track.cue_id);
     trackIds.add(track.track_id);
+    families.add(track.composition_family);
+  }
+  if (families.size !== 1) {
+    throw new Error(`Music acquisition plan must declare one composition family; found ${[...families].join(", ")}`);
   }
   return plan;
 }
@@ -126,6 +136,7 @@ async function acquireOneTrack(plan, track) {
       trackId: track.track_id,
       title: track.title,
       artist: plan.artist,
+      compositionFamily: track.composition_family,
       sourcePageUrl: track.source_page_url,
       licenseName: plan.license_name,
       licenseUrl: plan.license_url,
@@ -134,10 +145,12 @@ async function acquireOneTrack(plan, track) {
       approvedForProof: track.approved_for_proof === true,
       approvedForFull: track.approved_for_full === true,
       status: "approved",
+      notes: track.notes || null,
     });
     return {
       cue_id: track.cue_id,
       track_id: track.track_id,
+      composition_family: track.composition_family,
       sha256,
       bytes: bytes.length,
       ...probed,
@@ -149,24 +162,27 @@ async function acquireOneTrack(plan, track) {
   }
 }
 
-async function markCueReady(projectId, cueId, trackId) {
+async function markCueReadyIfPresent(projectId, cueId, trackId) {
   const dir = projectDir(projectId);
   const cueSheetPath = path.join(dir, "direction", "music_cue_sheet.json");
-  const cueSheet = await readJson(cueSheetPath);
+  const cueSheet = await readJsonSafe(cueSheetPath, null);
+  if (!cueSheet) return false;
   const cues = cueSheet.full_cues || cueSheet.cues || [];
   const cue = cues.find((entry) => entry.cue_id === cueId);
-  if (!cue) throw new Error(`music_cue_sheet.json has no cue entry for ${cueId}`);
+  if (!cue) return false;
   if (cue.track_id !== trackId) throw new Error(`${cueId} declares track_id ${cue.track_id}, expected ${trackId}`);
   cue.status = "ready";
   await writeJsonAtomic(cueSheetPath, cueSheet);
+  return true;
 }
 
 async function writeConsolidatedAttribution(projectId, plan, results) {
   const dir = projectDir(projectId);
   const byTrackId = new Map(plan.tracks.map((track) => [track.track_id, track]));
+  const uniqueTrackIds = [...new Set(results.map((result) => result.track_id))];
   const lines = [
     "Music",
-    ...results.map((result) => attributionFor(plan, byTrackId.get(result.track_id).title)),
+    ...uniqueTrackIds.map((trackId) => attributionFor(plan, byTrackId.get(trackId).title)),
   ];
   const outputPath = path.join(dir, "assets", "music", "youtube_description_attribution.txt");
   await mkdir(path.dirname(outputPath), { recursive: true });
@@ -177,16 +193,21 @@ async function writeConsolidatedAttribution(projectId, plan, results) {
 export async function fetchAndVendorFullMusicPackage(projectId) {
   const plan = await loadMusicAcquisitionPlan(projectId);
   const results = [];
+  const cuesMarkedReady = [];
   for (const track of plan.tracks) {
     const result = await acquireOneTrack(plan, track);
-    await markCueReady(projectId, track.cue_id, track.track_id);
+    if (await markCueReadyIfPresent(projectId, track.cue_id, track.track_id)) {
+      cuesMarkedReady.push(track.cue_id);
+    }
     results.push(result);
   }
   const attributionPath = await writeConsolidatedAttribution(projectId, plan, results);
   return {
     project_id: projectId,
     tracks: results.length,
-    cues_marked_ready: results.map((result) => result.cue_id),
+    composition_family: results[0]?.composition_family || null,
+    cues_marked_ready: cuesMarkedReady,
+    cue_sheet_pending_generation: cuesMarkedReady.length === 0,
     attribution_file: attributionPath,
   };
 }
