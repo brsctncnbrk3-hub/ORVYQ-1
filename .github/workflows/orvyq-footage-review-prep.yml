@@ -74,38 +74,48 @@ jobs:
           const manifest = JSON.parse(await fs.readFile(path.join(root, 'research', 'selected_pexels_manifest.json'), 'utf8'));
           const byScene = new Map(manifest.assets.map((item) => [item.scene_id, item]));
           const digest = (buffer) => crypto.createHash('sha256').update(buffer).digest('hex');
-          const records = [];
+          const entries = [];
           for (const record of runtime.records) {
-            const planned = byScene.get(record.scene_id) || {};
+            const planned = byScene.get(record.scene_id);
+            if (!planned) throw new Error(`${record.scene_id}: selected manifest entry is missing`);
             const provenancePath = path.join(root, `${record.path}.provenance.json`);
             const provenance = JSON.parse(await fs.readFile(provenancePath, 'utf8'));
-            const contactSheet = `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`;
-            const sheetBuffer = await fs.readFile(path.join(root, contactSheet));
-            records.push({
+            const contactSheetPath = `qa/footage-contact-sheets/${path.basename(record.path, '.mp4')}.jpg`;
+            const sheetBuffer = await fs.readFile(path.join(root, contactSheetPath));
+            entries.push({
               scene_id: record.scene_id,
-              claim_id: record.claim_id,
-              provider_asset_id: record.provider_asset_id,
-              footage: record.path,
-              footage_sha256: provenance.actual_sha256 || provenance.sha256,
-              contact_sheet: contactSheet,
+              provider_asset_id: String(record.provider_asset_id),
+              status: 'pending_visual_review',
+              asset_path: record.path,
+              asset_sha256: provenance.actual_sha256 || provenance.sha256,
+              contact_sheet_path: contactSheetPath,
               contact_sheet_sha256: digest(sheetBuffer),
               duration_seconds: provenance.actual_duration_seconds || provenance.duration,
               transformation: provenance.transformation || null,
-              narration_anchor: planned.narration_anchor,
-              semantic_rationale: planned.semantic_rationale,
-              semantic_link: planned.semantic_link,
-              review_status: 'pending_claim_specific_multiframe_review'
+              approved_uses_if_visually_valid: [{
+                claim_id: record.claim_id,
+                narration_anchor: planned.narration_anchor,
+                semantic_rationale: planned.semantic_rationale,
+                semantic_link: planned.semantic_link || 'physical'
+              }],
+              review_blockers: []
             });
           }
-          records.sort((a, b) => a.scene_id.localeCompare(b.scene_id));
+          entries.sort((a, b) => a.scene_id.localeCompare(b.scene_id));
+          if (entries.length !== 20) throw new Error(`Expected 20 review entries, found ${entries.length}`);
           await fs.writeFile(path.join(root, 'qa', 'footage_review_queue.json'), JSON.stringify({
             schema_version: '1.1-multiframe',
             project_id: projectId,
             generated_at: new Date().toISOString(),
-            required_record_count: 20,
-            records
+            review_method: 'four-frame claim-specific contact-sheet review',
+            pending_review_count: entries.length,
+            entries_with_exact_uses: entries.filter((entry) => entry.approved_uses_if_visually_valid.length > 0).length,
+            entries
           }, null, 2) + '\n');
           NODE
+
+      - name: Validate render-free review readiness inputs
+        run: node scripts/orvyq_review_readiness_audit.mjs --project-id="$PROJECT_ID" --check-only
 
       - name: Upload semantic review package
         uses: actions/upload-artifact@v4
