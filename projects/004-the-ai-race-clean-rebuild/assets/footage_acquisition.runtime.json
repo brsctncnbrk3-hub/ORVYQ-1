@@ -1,12 +1,13 @@
 {
-  "schema_version": "1.4-selected-public-pexels",
+  "schema_version": "1.5-selected-public-pexels-partial",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T14:43:52.157Z",
+  "generated_at": "2026-08-02T15:04:50.661Z",
   "source": "pexels_public_download",
   "license_url": "https://www.pexels.com/license/",
   "planned_asset_count": 41,
   "acquired_this_run": 41,
   "reused_existing": 0,
+  "replacement_scene_ids": [],
   "unresolved_scene_ids": [],
   "unresolved": [],
   "records": [
