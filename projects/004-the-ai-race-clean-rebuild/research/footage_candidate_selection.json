@@ -1,0 +1,340 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "generated_at": "2026-08-03T10:29:32.000Z",
+  "source_shortlist": "research/footage_candidate_shortlist.json",
+  "review_method": "Every scene judged from its contact board in qa/footage-candidate-boards/, then each intended pick re-checked against the provider slug before it was written here. Provider ranking was treated as an inspection order only. Three picks were reversed at the slug check: 32386531 is an industrial conveyor and not server racks, 13008924 is people colliding and not an airlock, and 5940166 is a teacher with students and not independent researchers.",
+  "policy": "A scene is filled only when a candidate actually shows the required content. Where nothing fits, the scene is blocked with the reason recorded, rather than filled with an approximate frame.",
+  "scene_count": 45,
+  "selected_count": 34,
+  "blocked_count": 11,
+  "selections": [
+    {
+      "scene_id": "scene_001",
+      "decision": "selected",
+      "provider_asset_id": "4630103",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/video-of-women-working-together-4630103/",
+      "inspection_note": "Two engineers at one shared display, one driving and one reviewing. The only frame in the set showing genuine joint review rather than a lone operator or an empty desk."
+    },
+    {
+      "scene_id": "scene_002",
+      "decision": "blocked",
+      "reason": "No live server infrastructure exists in this candidate set. The frame that looked like a motion pass through racks is an industrial conveyor system with red lights (32386531); the only other hardware shot is a hard drive being inserted into a storage enclosure (38496192). The rest are a video-editing timeline, a pedestrian underpass and a metal workshop. Filling this would misrepresent a conveyor belt as compute."
+    },
+    {
+      "scene_id": "scene_003",
+      "decision": "selected",
+      "provider_asset_id": "6248596",
+      "candidate_rank": 5,
+      "source_page_url": "https://www.pexels.com/video/people-in-a-meeting-6248596/",
+      "inspection_note": "Two people at a desk reading time-series and dashboard output on monitor and laptop. Closest available to plural observers watching a run; reads as an analytics review rather than a lab evaluation, so cut it short and let narration carry the specificity."
+    },
+    {
+      "scene_id": "scene_004",
+      "decision": "selected",
+      "provider_asset_id": "33656654",
+      "candidate_rank": 3,
+      "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+      "inspection_note": "Operator leaning into a multi-monitor setup with green terminal text on the secondary screen. Delivers both halves of the brief: scrolling terminal output and a person deliberately watching it."
+    },
+    {
+      "scene_id": "scene_005",
+      "decision": "selected",
+      "provider_asset_id": "17969418",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/fire-department-training-17969418/",
+      "inspection_note": "Fire department training ground: crews spraying into open air with no fire present. Unmistakably rehearsed rather than a real emergency, which is the whole point of the scene."
+    },
+    {
+      "scene_id": "scene_006",
+      "decision": "selected",
+      "provider_asset_id": "8381406",
+      "candidate_rank": 6,
+      "source_page_url": "https://www.pexels.com/video/samples-in-a-test-tube-rotator-8381406/",
+      "inspection_note": "Sample rotator with tubes loaded and run time set on the panel. Shows a controlled run being configured rather than generic lab atmosphere."
+    },
+    {
+      "scene_id": "scene_007",
+      "decision": "selected",
+      "provider_asset_id": "8632201",
+      "candidate_rank": 5,
+      "source_page_url": "https://www.pexels.com/video/women-planning-together-while-writing-on-whiteboard-8632201/",
+      "inspection_note": "Hands drawing and annotating a curve on a whiteboard with prior working still visible. Reads as scenario analysis being reworked, not a generic meeting at a board."
+    },
+    {
+      "scene_id": "scene_008",
+      "decision": "selected",
+      "provider_asset_id": "29575342",
+      "candidate_rank": 2,
+      "source_page_url": "https://www.pexels.com/video/modern-skyscrapers-in-urban-tokyo-29575342/",
+      "inspection_note": "Tokyo towers shot from below. Conveys capital at scale with no legible corporate mark and no named transaction, unlike the branded alternatives in this set."
+    },
+    {
+      "scene_id": "scene_009",
+      "decision": "selected",
+      "provider_asset_id": "5977461",
+      "candidate_rank": 5,
+      "source_page_url": "https://www.pexels.com/video/a-man-and-a-woman-working-on-portable-cubicles-5977461/",
+      "inspection_note": "Two identical booth workstations side by side, one person in each, working separately but within arm's reach. The closeness of the frontier made literal and human."
+    },
+    {
+      "scene_id": "scene_010",
+      "decision": "blocked",
+      "reason": "No security operations centre. The set is a man on a phone at a podium, crypto and stock dashboards, a lone programmer in a red-lit room, a business meeting, and a 'hacker' scene whose monitor shows a Guy Fawkes mask on a video call. The last would be actively damaging: it imports an internet-meme image of hacking into a claim about real cyber extortion."
+    },
+    {
+      "scene_id": "scene_011",
+      "decision": "blocked",
+      "reason": "No network traffic analysis. Four of six are trading or crypto desks, one is a man on a phone, and the top-ranked frame is a man typing while holding a bank card, which would imply consumer payment fraud rather than incident response."
+    },
+    {
+      "scene_id": "scene_012",
+      "decision": "blocked",
+      "reason": "No server hall. Same empty pool as scene_002 — conveyor, hard drive, processor close-up — plus a laundry room with people dancing on a table and a crypto trading setup. Nothing here can carry a night-time server hall under defence."
+    },
+    {
+      "scene_id": "scene_013",
+      "decision": "blocked",
+      "reason": "No large-scale network activity. Three frames are crypto or stock dashboards, one is a code desk, one is a man reading a corporate KPI wall, and the remaining one is a rotating CGI geometric shape — a decorative graphic that visualises no real data. Using it would put a fabricated visualisation under an espionage claim."
+    },
+    {
+      "scene_id": "scene_014",
+      "decision": "selected",
+      "provider_asset_id": "4121126",
+      "candidate_rank": 2,
+      "source_page_url": "https://www.pexels.com/video/lab-laboratory-medical-medicine-4121126/",
+      "inspection_note": "Mask, goggles and gloves at a microscope in natural lab light. The most credible PPE frame available; the alternatives are studio-lit gel backdrops that read as staged."
+    },
+    {
+      "scene_id": "scene_015",
+      "decision": "selected",
+      "provider_asset_id": "8940768",
+      "candidate_rank": 2,
+      "source_page_url": "https://www.pexels.com/video/a-lab-technician-working-with-samples-8940768/",
+      "inspection_note": "Gloved hands working plates inside a cabinet with the sash in frame. Genuine containment work rather than an open bench."
+    },
+    {
+      "scene_id": "scene_016",
+      "decision": "blocked",
+      "reason": "No controlled access to a secured facility. Ranked candidates are a person entering a train station, women bumping shoulders near glass doors, an empty hallway, two lab-analyser shots, and a woman entering a building signed for University of the Arts London. Nothing shows access being granted or restricted."
+    },
+    {
+      "scene_id": "scene_017",
+      "decision": "selected",
+      "provider_asset_id": "17586685",
+      "candidate_rank": 3,
+      "source_page_url": "https://www.pexels.com/video/girl-using-phone-device-at-home-17586685/",
+      "inspection_note": "One person at home absorbed in her phone in ordinary low light. Single subject, no event, no performance — the ordinariness is the point."
+    },
+    {
+      "scene_id": "scene_018",
+      "decision": "selected",
+      "provider_asset_id": "3252019",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/a-group-of-people-standing-side-by-side-with-one-another-are-busy-using-their-cellular-phones-3252019/",
+      "inspection_note": "A row of people standing together, each looking down at their own handset. Literal reading of the brief; the crowd alternatives are all people pointing phones at one shared event."
+    },
+    {
+      "scene_id": "scene_019",
+      "decision": "selected",
+      "provider_asset_id": "8632783",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/person-drinking-coffee-while-using-a-laptop-8632783/",
+      "inspection_note": "Hands typing a document on a laptop with a coffee at the desk. Unglamorous office work carried out through software, no code-editor styling."
+    },
+    {
+      "scene_id": "scene_020",
+      "decision": "selected",
+      "provider_asset_id": "31006321",
+      "candidate_rank": 5,
+      "source_page_url": "https://www.pexels.com/video/textile-workers-operating-machines-in-factory-31006321/",
+      "inspection_note": "Textile worker handling output beside a running machine line with its own control panel. The human step and the automated step sit adjacent in one frame. Note the automation shown is industrial, not software — acceptable for the visual argument but worth checking against narration wording."
+    },
+    {
+      "scene_id": "scene_021",
+      "decision": "blocked",
+      "reason": "No data centre. Every candidate is an office block, a glass tower, or a logistics site: warehouse roofs with solar panels, an industrial park shot from a hot air balloon, an industrial area and car park. Presenting a distribution warehouse as a hyperscale data centre would be a factual misrepresentation of the shot."
+    },
+    {
+      "scene_id": "scene_022",
+      "decision": "blocked",
+      "reason": "No compute racks. The set is the hard drive insertion, a red bokeh light, a man scanning stock in a pallet warehouse, the same industrial conveyor, and two CGI abstractions (a circuit-board cityscape and a hexagonal surface). No hall of racks exists to concentrate."
+    },
+    {
+      "scene_id": "scene_023",
+      "decision": "selected",
+      "provider_asset_id": "30243443",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/industrial-power-plant-machinery-operations-30243443/",
+      "inspection_note": "Power plant switchgear and insulators. Unmistakable electrical generation and distribution infrastructure, which is the dependency the scene names."
+    },
+    {
+      "scene_id": "scene_024",
+      "decision": "selected",
+      "provider_asset_id": "34430011",
+      "candidate_rank": 3,
+      "source_page_url": "https://www.pexels.com/video/drone-view-of-budapest-parliament-building-34430011/",
+      "inspection_note": "Drone view of the Budapest parliament building, read wide as an institution. Caveat for editorial: this is a national parliament, not an EU body, and Budapest is recognisable. Fine if narration is about legislatures generally; re-brief if the line is specifically about Brussels."
+    },
+    {
+      "scene_id": "scene_025",
+      "decision": "selected",
+      "provider_asset_id": "10956356",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/the-european-union-flag-waving-on-a-pole-10956356/",
+      "inspection_note": "Clean EU flag on a pole, stars fully legible. Shortfall recorded honestly: there is no official building in frame, so this delivers 'the EU' but not 'flags outside a building'. Every candidate that had a building had Italian flags at Milan station or Swiss flags at Bundesplatz, both of which would have been wrong."
+    },
+    {
+      "scene_id": "scene_026",
+      "decision": "blocked",
+      "reason": "No European formal chamber. The set is an ornate ballroom ceiling, two museum interiors, an aerial of the Utah State Capitol, a generic conference room, and a masked press conference beside a US flag. The two that are genuinely legislative are American."
+    },
+    {
+      "scene_id": "scene_027",
+      "decision": "selected",
+      "provider_asset_id": "6952088",
+      "candidate_rank": 5,
+      "source_page_url": "https://www.pexels.com/video/people-conversing-while-waiting-in-the-hallway-6952088/",
+      "inspection_note": "Suited officials in conversation in a corridor with more of them in the background. The only frame in the set that is institutional rather than an airport concourse."
+    },
+    {
+      "scene_id": "scene_028",
+      "decision": "blocked",
+      "reason": "Nothing measured or monitored. The processor close-up shows compute but no measurement; the rest are a video-editing timeline, crypto dashboards, a code desk and a backlit keyboard. No utilisation, telemetry or capacity readout appears anywhere in the set."
+    },
+    {
+      "scene_id": "scene_029",
+      "decision": "selected",
+      "provider_asset_id": "8134447",
+      "candidate_rank": 2,
+      "source_page_url": "https://www.pexels.com/video/people-arguing-while-looking-at-documents-8134447/",
+      "inspection_note": "Three colleagues working through a document together, actively disagreeing over it. The friction suits 'obligations' better than a calm read-through."
+    },
+    {
+      "scene_id": "scene_030",
+      "decision": "selected",
+      "provider_asset_id": "5940061",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/women-using-laptop-in-a-library-5940061/",
+      "inspection_note": "Colleagues collaborating over a laptop at a library desk. Chosen over the higher-ranked frame from the same shoot because that one is a teacher with students — a hierarchy the brief's 'independent' explicitly rules out."
+    },
+    {
+      "scene_id": "scene_031",
+      "decision": "selected",
+      "provider_asset_id": "8534546",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/man-and-woman-having-a-conversation-8534546/",
+      "inspection_note": "Two researchers at a lab bench with tubes and microscopes, one walking the other through the work. Reads as a university lab passing on shared technique."
+    },
+    {
+      "scene_id": "scene_032",
+      "decision": "selected",
+      "provider_asset_id": "13522087",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/programming-on-laptop-13522087/",
+      "inspection_note": "A code editor open on a personal laptop with hands on the keys. One developer, own machine, actually editing rather than browsing."
+    },
+    {
+      "scene_id": "scene_033",
+      "decision": "blocked",
+      "reason": "No access control or centralised monitoring. The set is an empty office, a man on a phone, two crypto dashboards, a camera device screen, and the same masked video-call frame rejected at scene_010."
+    },
+    {
+      "scene_id": "scene_034",
+      "decision": "selected",
+      "provider_asset_id": "8512981",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/women-looking-at-documents-together-in-an-office-8512981/",
+      "inspection_note": "Two people jointly reading a document in a neutral office. Held distinct from scene_029 by staging: this is a quiet two-hander read, that one is a three-way argument."
+    },
+    {
+      "scene_id": "scene_035",
+      "decision": "selected",
+      "provider_asset_id": "8381452",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/a-scientist-working-inside-a-laboratory-8381452/",
+      "inspection_note": "Gowned and masked operator working through automated analysers. Chosen over the soldering frame, which shows assembly rather than evaluation — the brief asks for testing, not building."
+    },
+    {
+      "scene_id": "scene_036",
+      "decision": "selected",
+      "provider_asset_id": "6951445",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/man-and-woman-on-a-meeting-6951445/",
+      "inspection_note": "Panel table with desk microphones and members in discussion. No flag or national marker, so it reads as an evaluation panel rather than a specific institution."
+    },
+    {
+      "scene_id": "scene_037",
+      "decision": "selected",
+      "provider_asset_id": "4121059",
+      "candidate_rank": 3,
+      "source_page_url": "https://www.pexels.com/video/a-man-looking-through-a-microscope-4121059/",
+      "inspection_note": "One person at the microscope inspecting while a second writes on a clipboard. Inspection, measurement and the recording of it all present in a single frame."
+    },
+    {
+      "scene_id": "scene_038",
+      "decision": "selected",
+      "provider_asset_id": "7710454",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/close-up-view-of-a-person-looking-at-documents-7710454/",
+      "inspection_note": "Hands working through a thick paper stack beside ring binders. Record-keeping in motion, with no document type legible — the alternative had a divorce decree readable on screen."
+    },
+    {
+      "scene_id": "scene_039",
+      "decision": "selected",
+      "provider_asset_id": "2881980",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/people-waiting-to-cross-a-street-on-the-pedestrian-lane-2881980/",
+      "inspection_note": "A full pedestrian crossing mid-flow. Ordinary people, ordinary movement, faces visible, no event to explain."
+    },
+    {
+      "scene_id": "scene_040",
+      "decision": "selected",
+      "provider_asset_id": "29152589",
+      "candidate_rank": 5,
+      "source_page_url": "https://www.pexels.com/video/istanbul-urban-transit-busy-day-on-metrobus-lane-29152589/",
+      "inspection_note": "Commuters streaming out of a metrobus stop beside moving traffic. Everyday transit at human scale, unbranded, no station signage dominating."
+    },
+    {
+      "scene_id": "scene_041",
+      "decision": "selected",
+      "provider_asset_id": "7394103",
+      "candidate_rank": 6,
+      "source_page_url": "https://www.pexels.com/video/mother-and-child-talking-7394103/",
+      "inspection_note": "Mother and child resting together on a sofa with no device anywhere in frame. The 'away from the technology' condition is met literally, which most of this set fails."
+    },
+    {
+      "scene_id": "scene_042",
+      "decision": "selected",
+      "provider_asset_id": "9574129",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/view-of-a-empty-hallway-9574129/",
+      "inspection_note": "Empty white corridor receding to a vanishing point. Works as the machine's corridor by architecture and emptiness; note it is a metaphor, not literal server infrastructure, since none exists in this pool."
+    },
+    {
+      "scene_id": "scene_043",
+      "decision": "selected",
+      "provider_asset_id": "7141174",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-electronic-processor-7141174/",
+      "inspection_note": "Close-up of a processor and memory slots. Concentrated compute in the most literal available sense — the silicon itself, since no data centre footage was obtainable."
+    },
+    {
+      "scene_id": "scene_044",
+      "decision": "selected",
+      "provider_asset_id": "11690475",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/birds-eye-view-of-mexico-city-downtown-11690475/",
+      "inspection_note": "Mexico City downtown at dusk from above, sprawling to the horizon. Genuine dusk light and no legible signage, unlike the branded skylines and the Las Vegas strip in this set."
+    },
+    {
+      "scene_id": "scene_045",
+      "decision": "selected",
+      "provider_asset_id": "5281602",
+      "candidate_rank": 4,
+      "source_page_url": "https://www.pexels.com/video/man-talking-on-the-phone-and-using-his-computer-in-the-dark-5281602/",
+      "inspection_note": "A face lit only by its own screen in a dark room. One person, one display, closing intimacy; he is on a call, which is a minor distraction but does not break the read."
+    }
+  ]
+}

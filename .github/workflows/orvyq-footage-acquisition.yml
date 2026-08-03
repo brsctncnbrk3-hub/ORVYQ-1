@@ -13,9 +13,18 @@ on:
       - "claude/**"
     paths:
       - ".github/workflows/orvyq-footage-acquisition.yml"
+      # Media storage policy lives here. Acquisition writes the clips, so a
+      # change to how they are stored must be able to re-run acquisition
+      # rather than waiting for an unrelated push.
+      - ".gitattributes"
       - "schemas/footage_visual_decisions.schema.json"
       - "scripts/lib/orvyq-footage-visual-decisions.mjs"
       - "scripts/lib/orvyq-footage-visual-decisions.test.mjs"
+      - "scripts/lib/orvyq-footage-candidates.mjs"
+      - "scripts/lib/orvyq-footage-candidates.test.mjs"
+      - "scripts/orvyq_shortlist_footage_candidates.mjs"
+      - "scripts/orvyq_apply_footage_candidate_selection.mjs"
+      - "scripts/orvyq_apply_footage_candidate_overrides.mjs"
       - "scripts/orvyq_apply_footage_use_contracts.mjs"
       - "scripts/orvyq_prune_orphan_footage.mjs"
       - "scripts/orvyq_apply_footage_visual_decisions.mjs"
@@ -31,6 +40,10 @@ on:
       - "projects/*/research/footage_use_contracts.json"
       - "projects/*/research/footage_use_contract_overrides.json"
       - "projects/*/research/footage_visual_decisions*.json"
+      # The inspected selection is the input acquisition exists to act on:
+      # pushing it must be what starts the download.
+      - "projects/*/research/footage_candidate_shortlist.json"
+      - "projects/*/research/footage_candidate_selection.json"
       - "projects/*/research/visual_asset_requests.json"
       - "projects/*/research/visual_asset_reviews.json"
 
