@@ -21,9 +21,14 @@ projects/*/assets/evidence/*.png -filter -diff -merge -text
 projects/*/assets/evidence/*.jpg -filter -diff -merge -text
 projects/*/assets/evidence/*.jpeg -filter -diff -merge -text
 
-# Contact sheets exist to be looked at during review, so they must be
-# fetchable without LFS for the same reason.
-projects/*/qa/footage-contact-sheets/*.jpg -filter -diff -merge -text
+# Review imagery exists to be looked at, so it has to be fetchable without
+# LFS -- a reviewer holding a pointer file cannot inspect anything. Written
+# for everything under qa/ rather than per directory: naming one directory is
+# how the candidate boards ended up as pointers after the contact sheets were
+# already exempt.
+projects/*/qa/**/*.jpg -filter -diff -merge -text
+projects/*/qa/**/*.jpeg -filter -diff -merge -text
+projects/*/qa/**/*.png -filter -diff -merge -text
 
 # Committed as a plain blob (LFS push is blocked in the session that added
 # it -- see scripts/README.md / the commit that introduced this file), so the
