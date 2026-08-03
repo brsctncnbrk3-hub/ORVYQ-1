@@ -38,11 +38,12 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9863993",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": true,
+  "approved_for_final_edit": false,
   "downloaded_at": "2026-08-03T18:27:48.091Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "9047c9c3e49c858104ce19479d043a64f6de75ca3c8b7d12d754a253a5a68473",
   "reviewed_contact_sheet_sha256": "4e2b088f35bec272eda31db5573286d067d9347ef500a8f5ca4b3fa71c00eb70",
-  "visual_qa_reason": "Colleagues collaborating over a laptop at a library desk among open stacks. Independent work done in the open, which is the open-weights side of the trade-off."
+  "visual_qa_reason": "Colleagues collaborating over a laptop at a library desk among open stacks. Independent work done in the open, which is the open-weights side of the trade-off.",
+  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
 }

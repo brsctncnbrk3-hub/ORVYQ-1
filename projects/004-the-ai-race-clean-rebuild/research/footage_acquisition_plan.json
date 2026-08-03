@@ -425,13 +425,13 @@
       "semantic_link": "conceptual",
       "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
       "provider_asset_ids": [
-        "34430011"
+        "30740060"
       ],
       "inspected_selection": {
-        "provider_asset_id": "34430011",
-        "source_page_url": "https://www.pexels.com/video/drone-view-of-budapest-parliament-building-34430011/",
-        "inspection_note": "Drone view of the Budapest parliament building, read wide as an institution. Caveat for editorial: this is a national parliament, not an EU body, and Budapest is recognisable. Fine if narration is about legislatures generally; re-brief if the line is specifically about Brussels.",
-        "selected_at": "2026-08-03T18:23:51.601Z"
+        "provider_asset_id": "30740060",
+        "source_page_url": "https://www.pexels.com/video/european-union-flag-waving-in-the-sky-30740060/",
+        "inspection_note": "The candidate frame shows only a clean EU flag against the sky, with no national building, national flag or commercial logo that could misidentify the institution. It supplies unambiguous EU governance context while the legal claim remains on primary evidence.",
+        "selected_at": "2026-08-03T20:10:43.899Z"
       }
     },
     {
@@ -555,13 +555,13 @@
       "semantic_link": "physical",
       "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
       "provider_asset_ids": [
-        "8534546"
+        "8534001"
       ],
       "inspected_selection": {
-        "provider_asset_id": "8534546",
-        "source_page_url": "https://www.pexels.com/video/man-and-woman-having-a-conversation-8534546/",
-        "inspection_note": "Two researchers at a lab bench with tubes and microscopes, one walking the other through the work. Reads as a university lab passing on shared technique.",
-        "selected_at": "2026-08-03T18:23:51.601Z"
+        "provider_asset_id": "8534001",
+        "source_page_url": "https://www.pexels.com/video/man-and-woman-talking-while-in-the-laboratory-8534001/",
+        "inspection_note": "The candidate frame shows two lab-coated researchers working together over a microscope and written notes in a shared laboratory setting; no visible brand or saturated studio backdrop dominates the frame.",
+        "selected_at": "2026-08-03T20:10:43.899Z"
       }
     },
     {
@@ -633,13 +633,13 @@
       "semantic_link": "physical",
       "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
       "provider_asset_ids": [
-        "8381452"
+        "8327148"
       ],
       "inspected_selection": {
-        "provider_asset_id": "8381452",
-        "source_page_url": "https://www.pexels.com/video/a-scientist-working-inside-a-laboratory-8381452/",
-        "inspection_note": "Gowned and masked operator working through automated analysers. Chosen over the soldering frame, which shows assembly rather than evaluation — the brief asks for testing, not building.",
-        "selected_at": "2026-08-03T18:23:51.601Z"
+        "provider_asset_id": "8327148",
+        "source_page_url": "https://www.pexels.com/video/a-scientist-mixing-an-experiment-8327148/",
+        "inspection_note": "The candidate frame shows an unbranded scientist in a neutral laboratory lifting and visually inspecting a sample tube, a clear physical analogue for methodical independent testing rather than assembly, repair or product endorsement.",
+        "selected_at": "2026-08-03T20:10:43.899Z"
       }
     },
     {

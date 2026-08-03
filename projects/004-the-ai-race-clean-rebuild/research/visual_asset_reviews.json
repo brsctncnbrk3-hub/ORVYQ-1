@@ -12,11 +12,15 @@
   },
   "summary": {
     "pool_assets": 34,
-    "rejected_from_metadata": 3,
-    "pending_frame_review": 0,
+    "rejected_from_metadata": 0,
+    "pending_frame_review": 3,
     "approved": 31
   },
-  "pending_frame_review_scene_ids": [],
+  "pending_frame_review_scene_ids": [
+    "scene_024",
+    "scene_031",
+    "scene_035"
+  ],
   "rejected_assets": [
     {
       "scene_id": "scene_008",

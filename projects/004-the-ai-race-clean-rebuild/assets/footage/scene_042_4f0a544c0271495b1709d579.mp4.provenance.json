@@ -38,11 +38,12 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "11130933",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": true,
+  "approved_for_final_edit": false,
   "downloaded_at": "2026-08-03T18:29:45.801Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "f350bb48031d81932eaf6c4474f45c191e3718edb32f8bf2e7a298fa19c06944",
   "reviewed_contact_sheet_sha256": "6d7bc3c15450e551646ca6512e073ef5856dee9d99358009cca1ba5906480fe7",
-  "visual_qa_reason": "An empty white corridor receding to a vanishing point. Works as the machine's corridor by architecture and emptiness, and is plainly a metaphor rather than a real facility."
+  "visual_qa_reason": "An empty white corridor receding to a vanishing point. Works as the machine's corridor by architecture and emptiness, and is plainly a metaphor rather than a real facility.",
+  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
 }

@@ -38,11 +38,12 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9400072",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": true,
+  "approved_for_final_edit": false,
   "downloaded_at": "2026-08-03T18:24:13.700Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "1784d3f78e4dc78d22b3aa98eeb6a3bc7f79584a5cbf56cae52427e83f392b4d",
   "reviewed_contact_sheet_sha256": "e6777679bf804311cc54ce48d50964f945cd9df743d015360a95fa97523373a7",
-  "visual_qa_reason": "Twelve frames show two people at one shared display, one driving and one reviewing, in ordinary daylight. Neutral human context for the opening line; it asserts nothing about any lab."
+  "visual_qa_reason": "Twelve frames show two people at one shared display, one driving and one reviewing, in ordinary daylight. Neutral human context for the opening line; it asserts nothing about any lab.",
+  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
 }
