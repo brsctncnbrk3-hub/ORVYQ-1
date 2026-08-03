@@ -11,12 +11,24 @@
     "superseded_asset_reentry_forbidden": true
   },
   "summary": {
-    "pool_assets": 34,
+    "pool_assets": 45,
     "rejected_from_metadata": 0,
-    "pending_frame_review": 0,
+    "pending_frame_review": 11,
     "approved": 34
   },
-  "pending_frame_review_scene_ids": [],
+  "pending_frame_review_scene_ids": [
+    "scene_002",
+    "scene_010",
+    "scene_011",
+    "scene_012",
+    "scene_013",
+    "scene_016",
+    "scene_021",
+    "scene_022",
+    "scene_026",
+    "scene_028",
+    "scene_033"
+  ],
   "rejected_assets": [
     {
       "scene_id": "scene_008",

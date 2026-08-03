@@ -1,117 +1,268 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-03T21:27:25.356Z",
+  "generated_at": "2026-08-03T21:33:58.017Z",
   "frame_count_per_sheet": 12,
-  "pending_review_count": 3,
+  "pending_review_count": 11,
   "entries": [
     {
-      "scene_id": "scene_024",
-      "asset_path": "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
+      "scene_id": "scene_002",
+      "asset_path": "assets/footage/scene_002_fdb84df7db3545dc091ce5e2.mp4",
       "provider": "pexels",
-      "provider_asset_id": "30740060",
-      "source_page_url": "https://www.pexels.com/video/european-union-flag-waving-in-the-sky-30740060/",
-      "creator": "Samar Layek",
-      "asset_sha256": "4e8508ac967027b2f1e3997193ee6f53887d880fa429f0469ad2ae340730e333",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_024.jpg",
-      "contact_sheet_sha256": "baa60730358b4d722e3339fe0274f6d281ee1d2b88ada290caea4f1b7f72f5bc",
+      "provider_asset_id": "1085656",
+      "source_page_url": "https://www.pexels.com/video/blue-colored-cables-1085656/",
+      "creator": "Dima Krivoy",
+      "asset_sha256": "a627863318862371049e3e36835fe83b50d890e5bbd59cae171932d898a1a1b9",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_002.jpg",
+      "contact_sheet_sha256": "ca5468a577c7db7bd74dafe03d0150b9e5fbdafffdfbaad1a93df6219a32267b",
       "reviewed_frame_count": 12,
-      "duration_seconds": 11.011,
+      "duration_seconds": 12,
+      "editorial_role": "context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "A close moving detail of connected network cabling and active infrastructure",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "And every one of them is still moving as fast as it can.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "trim_in_sec": 1,
+          "trim_out_sec": 3.5
+        }
+      ],
+      "review_blockers": []
+    },
+    {
+      "scene_id": "scene_010",
+      "asset_path": "assets/footage/scene_010_9099198b8c8f8be1a29c4412.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "38779107",
+      "source_page_url": "https://www.pexels.com/video/high-tech-control-room-monitoring-operations-38779107/",
+      "creator": "Kiwi and Camera",
+      "asset_sha256": "268e2e4af00499f2c3e36a6a8d8e1b9f268379514d27347a86c4fe11f65e3208",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_010.jpg",
+      "contact_sheet_sha256": "9f5d3780d2e17d704811bd7aadf074b733b5f49e3cd81cc911a93a5733751ad7",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 8,
+      "editorial_role": "context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "Operators coordinating around a live multi-screen control room",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
+    },
+    {
+      "scene_id": "scene_011",
+      "asset_path": "assets/footage/scene_011_1b0b1d8b210caef20d443569.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "38779098",
+      "source_page_url": "https://www.pexels.com/video/high-tech-control-room-for-traffic-monitoring-38779098/",
+      "creator": "Kiwi and Camera",
+      "asset_sha256": "aede8f18bcf49cb6d8f98124d004d1d3b34940ae8455f07ea6c40f1fb81bf0de",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_011.jpg",
+      "contact_sheet_sha256": "a3799b400942a5f88700525e9a218f516a7229d1bfd2b7a74e4bef722b754e1f",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 8,
+      "editorial_role": "human_context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "An operator reading several live monitoring displays at one workstation",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
+    },
+    {
+      "scene_id": "scene_012",
+      "asset_path": "assets/footage/scene_012_d7c9b266260de54974b55c76.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "7140939",
+      "source_page_url": "https://www.pexels.com/video/lights-blue-internet-date-7140939/",
+      "creator": "MrColo",
+      "asset_sha256": "13bbabe72718e257fb897306ba49e01a6a3aaefa735f086f8c0d2192d96ed989",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_012.jpg",
+      "contact_sheet_sha256": "7f6dead87470c76782313339e11e0717dd13ee5707fb0ba6976fef786d2ed66e",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 10.583333,
+      "editorial_role": "context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "Rack-mounted server and storage units with active status lights",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
+    },
+    {
+      "scene_id": "scene_013",
+      "asset_path": "assets/footage/scene_013_6fd30e09c5428c1891b1343f.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "38779110",
+      "source_page_url": "https://www.pexels.com/video/modern-traffic-management-control-room-38779110/",
+      "creator": "Kiwi and Camera",
+      "asset_sha256": "8331b6fa2690c5e5aa8117f75218f728b123207f740c1f1d7095b0823549284c",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_013.jpg",
+      "contact_sheet_sha256": "c2cbe409582650fe79bc1d95b4ef827b8576a34610f2ca6b11864fc8f7ecbe77",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 9,
+      "editorial_role": "context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "Several operators following a large live system across wall displays",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
+    },
+    {
+      "scene_id": "scene_016",
+      "asset_path": "assets/footage/scene_016_44e1d131b9450523e6c53952.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "9910318",
+      "source_page_url": "https://www.pexels.com/video/a-person-tapping-it-s-card-on-a-machine-9910318/",
+      "creator": "Evgenij Mikhailov",
+      "asset_sha256": "f6be6f82819bf5a2f032c2192d7f28d1a4c0bda3c1839fdef554d48a847e5fcf",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_016.jpg",
+      "contact_sheet_sha256": "e739f47090a5b5b37c07bc788884650c0272cf8feccc3530e2f82a324c4d5790",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 12.012,
+      "editorial_role": "context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "A person presenting a card while entering through a controlled turnstile",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
+    },
+    {
+      "scene_id": "scene_021",
+      "asset_path": "assets/footage/scene_021_62c828ecdd6fdb511a3ff22c.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "29959327",
+      "source_page_url": "https://www.pexels.com/video/aerial-view-of-large-industrial-warehouse-facility-29959327/",
+      "creator": "Toàn BDS",
+      "asset_sha256": "12984106f7db81eb7688a2b6951bafe839fd56bc0286d00660fffa6d4553d56b",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_021.jpg",
+      "contact_sheet_sha256": "85c012f2763456c51da53d0356512bb7865e2b313fa0b3baf412c0814cd90ab3",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 12.012,
+      "editorial_role": "context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "A large industrial facility seen from above as concentrated physical capacity",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
+    },
+    {
+      "scene_id": "scene_022",
+      "asset_path": "assets/footage/scene_022_e37dafefc958b7c1c615e4ae.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "19285752",
+      "source_page_url": "https://www.pexels.com/video/hard-disk-drive-19285752/",
+      "creator": "Lech Pierchała",
+      "asset_sha256": "9f933b09422b5a0f7afeb2bd271da6998a92d644990df87a864edc70c145d13f",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_022.jpg",
+      "contact_sheet_sha256": "1297af943ad170834561e7c6b2790e00eb76547facb45221ed71410f690c99bc",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 12,
+      "editorial_role": "context",
+      "narration_anchor": null,
+      "claim_id": null,
+      "semantic_rationale": "Exposed mechanical data-storage hardware operating at close range",
+      "status": "pending_visual_review",
+      "contact_sheet_is_lfs_pointer": false,
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
+    },
+    {
+      "scene_id": "scene_026",
+      "asset_path": "assets/footage/scene_026_6afdbda2f85e7b938b587af0.mp4",
+      "provider": "pexels",
+      "provider_asset_id": "6952138",
+      "source_page_url": "https://www.pexels.com/video/a-woman-in-a-podium-giving-a-speech-6952138/",
+      "creator": "Werner Pfennig",
+      "asset_sha256": "2145cd9c52ebb99beca94980ba6b4f0259633e14dee3ffe8c5aa6e27a4f0e755",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_026.jpg",
+      "contact_sheet_sha256": "b2627e6676015e8b5b4b92f68fd18d49585a23b4df867d126d8e11b295419c90",
+      "reviewed_frame_count": 12,
+      "duration_seconds": 12,
       "editorial_role": "governance_context",
       "narration_anchor": null,
       "claim_id": null,
-      "semantic_rationale": "EU flag seen as an unambiguous institutional marker",
+      "semantic_rationale": "A recognisably European formal chamber or institutional meeting setting",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [
-        {
-          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
-          "narration_anchor": "uses different rules for different systems, providers of high -risk AI, face -life cycle, risk management duties,",
-          "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
-          "trim_in_sec": 3.211,
-          "trim_out_sec": 11.011
-        }
-      ],
-      "review_blockers": []
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
     },
     {
-      "scene_id": "scene_031",
-      "asset_path": "assets/footage/scene_031_ad35981abc75b74b0dca7d31.mp4",
+      "scene_id": "scene_028",
+      "asset_path": "assets/footage/scene_028_9871e30c03cb8fb61d7eb05b.mp4",
       "provider": "pexels",
-      "provider_asset_id": "8534001",
-      "source_page_url": "https://www.pexels.com/video/man-and-woman-talking-while-in-the-laboratory-8534001/",
-      "creator": "Artem Podrez",
-      "asset_sha256": "505bb5eb989e106c297a59d083a1f8d1c6603fb35b3bee3aa932e8224eb3167a",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_031.jpg",
-      "contact_sheet_sha256": "24facef334fae32e5ba07801e601a23e34586495afbf7a869d6fa4f7d7f7810b",
+      "provider_asset_id": "6804656",
+      "source_page_url": "https://www.pexels.com/video/man-checking-the-computer-cables-6804656/",
+      "creator": "cottonbro studio",
+      "asset_sha256": "c07a08f61142d4229acf2319f18827296f2aa065fd31e20764ccf4bfb62462cc",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_028.jpg",
+      "contact_sheet_sha256": "8c5d8e18aab2f3c96e06af57ba672369dcba4a502c107451b41ba06b4a871c13",
       "reviewed_frame_count": 12,
-      "duration_seconds": 11.9,
-      "editorial_role": "human_context",
+      "duration_seconds": 12,
+      "editorial_role": "context",
       "narration_anchor": null,
       "claim_id": null,
-      "semantic_rationale": "Two researchers reviewing shared laboratory work together",
+      "semantic_rationale": "A technician physically checking connected computer and network cables",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [
-        {
-          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
-          "narration_anchor": "place. That's not an argument against regulation. It's a reason to look closely at who writes the rules and who",
-          "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
-          "trim_in_sec": 0.952,
-          "trim_out_sec": 8.319
-        },
-        {
-          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
-          "narration_anchor": "for anyone to inspect and build on, or kept closed, held inside a small number of companies that monitor how they're used?",
-          "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
-          "trim_in_sec": 3.808,
-          "trim_out_sec": 11.541
-        }
-      ],
-      "review_blockers": []
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
     },
     {
-      "scene_id": "scene_035",
-      "asset_path": "assets/footage/scene_035_61249c23acf3b765104d567e.mp4",
+      "scene_id": "scene_033",
+      "asset_path": "assets/footage/scene_033_b3ba8c075f16bc6e692fc3bc.mp4",
       "provider": "pexels",
-      "provider_asset_id": "8327148",
-      "source_page_url": "https://www.pexels.com/video/a-scientist-mixing-an-experiment-8327148/",
-      "creator": "Kindel Media",
-      "asset_sha256": "817e1a4b5adddcc0e5edf0923e394a5ac8b5d69307cdeabdbfb075c059f512d5",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_035.jpg",
-      "contact_sheet_sha256": "f796c7ba0de994e6eadb87a9cc2b70a0e34d9d71e341f21446299e1d580316de",
+      "provider_asset_id": "38779095",
+      "source_page_url": "https://www.pexels.com/video/high-tech-control-room-with-multiple-cctv-monitors-38779095/",
+      "creator": "Kiwi and Camera",
+      "asset_sha256": "9502928f886eb7f2da644366ee7e66d08f50733243b4cbae3e33a02b38e3b6d8",
+      "contact_sheet_path": "qa/footage-contact-sheets/scene_033.jpg",
+      "contact_sheet_sha256": "00816caa01c29d641b97425084f569eb0d24a25023da0bccac0bd13ab6d1dbd1",
       "reviewed_frame_count": 12,
-      "duration_seconds": 11.633333,
-      "editorial_role": "human_context",
+      "duration_seconds": 10,
+      "editorial_role": "governance_context",
       "narration_anchor": null,
       "claim_id": null,
-      "semantic_rationale": "An unbranded scientist methodically inspecting a test sample",
+      "semantic_rationale": "A central monitoring room consolidating many live feeds in one place",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [
-        {
-          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-          "narration_anchor": "case described earlier both happened on a closed, tightly monitored model. Centralized access did not",
-          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
-          "trim_in_sec": 0.931,
-          "trim_out_sec": 8.497
-        },
-        {
-          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-          "narration_anchor": "the safe option, choosing between them is choosing which kind of failure you're willing to risk. None of this argues",
-          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
-          "trim_in_sec": 2.167,
-          "trim_out_sec": 9.633
-        },
-        {
-          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-          "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
-          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
-          "trim_in_sec": 9.633,
-          "trim_out_sec": 11.633
-        }
-      ],
-      "review_blockers": []
+      "approved_uses_if_visually_valid": [],
+      "review_blockers": [
+        "No exact claim-specific use could be resolved for this asset."
+      ]
     }
   ]
 }

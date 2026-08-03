@@ -1,16 +1,16 @@
 {
   "schema_version": "1.3-incremental-demand-led-semantic-metadata",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-03T20:11:14.821Z",
+  "generated_at": "2026-08-03T21:33:47.147Z",
   "source": "pexels",
   "license_url": "https://www.pexels.com/license/",
-  "planned_asset_count": 34,
-  "acquired_this_run": 3,
-  "reused_existing": 31,
-  "semantic_constraints_applied": 34,
+  "planned_asset_count": 45,
+  "acquired_this_run": 11,
+  "reused_existing": 34,
+  "semantic_constraints_applied": 45,
   "unresolved_scene_ids": [],
   "provider_search_issues": [],
-  "provider_request_count": 3,
+  "provider_request_count": 11,
   "provider_unavailable": false,
   "records": [
     {
@@ -216,6 +216,72 @@
       "scene_id": "scene_045",
       "provider_asset_id": "5281602",
       "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_002_fdb84df7db3545dc091ce5e2.mp4",
+      "scene_id": "scene_002",
+      "provider_asset_id": "1085656",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_010_9099198b8c8f8be1a29c4412.mp4",
+      "scene_id": "scene_010",
+      "provider_asset_id": "38779107",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_011_1b0b1d8b210caef20d443569.mp4",
+      "scene_id": "scene_011",
+      "provider_asset_id": "38779098",
+      "role": "human_context"
+    },
+    {
+      "path": "assets/footage/scene_012_d7c9b266260de54974b55c76.mp4",
+      "scene_id": "scene_012",
+      "provider_asset_id": "7140939",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_013_6fd30e09c5428c1891b1343f.mp4",
+      "scene_id": "scene_013",
+      "provider_asset_id": "38779110",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_016_44e1d131b9450523e6c53952.mp4",
+      "scene_id": "scene_016",
+      "provider_asset_id": "9910318",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_021_62c828ecdd6fdb511a3ff22c.mp4",
+      "scene_id": "scene_021",
+      "provider_asset_id": "29959327",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_022_e37dafefc958b7c1c615e4ae.mp4",
+      "scene_id": "scene_022",
+      "provider_asset_id": "19285752",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_026_6afdbda2f85e7b938b587af0.mp4",
+      "scene_id": "scene_026",
+      "provider_asset_id": "6952138",
+      "role": "governance_context"
+    },
+    {
+      "path": "assets/footage/scene_028_9871e30c03cb8fb61d7eb05b.mp4",
+      "scene_id": "scene_028",
+      "provider_asset_id": "6804656",
+      "role": "context"
+    },
+    {
+      "path": "assets/footage/scene_033_b3ba8c075f16bc6e692fc3bc.mp4",
+      "scene_id": "scene_033",
+      "provider_asset_id": "38779095",
+      "role": "governance_context"
     }
   ],
   "pass": true

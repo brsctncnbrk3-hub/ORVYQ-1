@@ -28,14 +28,17 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_002",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_002_COMPETITIVE_INCENTIVE"
       ],
       "scene_ids": [
         "scene_002"
       ],
-      "required_source": "new licensed clean-rebuild footage"
+      "required_source": "new licensed clean-rebuild footage",
+      "resolved_asset_paths": [
+        "assets/footage/scene_002_fdb84df7db3545dc091ce5e2.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_003",
@@ -145,50 +148,62 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_010",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
       "scene_ids": [
         "scene_010"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_010_9099198b8c8f8be1a29c4412.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_011",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
       "scene_ids": [
         "scene_011"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_011_1b0b1d8b210caef20d443569.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_012",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
       "scene_ids": [
         "scene_012"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_012_d7c9b266260de54974b55c76.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_013",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_009_AGENTIC_ESPIONAGE"
       ],
       "scene_ids": [
         "scene_013"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_013_6fd30e09c5428c1891b1343f.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_014",
@@ -223,14 +238,17 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_016",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_010_BIO_ASL3"
       ],
       "scene_ids": [
         "scene_016"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_016_44e1d131b9450523e6c53952.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_017",
@@ -295,26 +313,32 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_021",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_013_MARKET_CONCENTRATION"
       ],
       "scene_ids": [
         "scene_021"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_021_62c828ecdd6fdb511a3ff22c.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_022",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_013_MARKET_CONCENTRATION"
       ],
       "scene_ids": [
         "scene_022"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_022_e37dafefc958b7c1c615e4ae.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_023",
@@ -364,14 +388,17 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_026",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_014_EU_LAYERED_OBLIGATIONS"
       ],
       "scene_ids": [
         "scene_026"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_026_6afdbda2f85e7b938b587af0.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_027",
@@ -391,14 +418,17 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_028",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_015_COMPUTE_NOT_ONLY_ROUTE"
       ],
       "scene_ids": [
         "scene_028"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_028_9871e30c03cb8fb61d7eb05b.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_029",
@@ -463,14 +493,17 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_033",
       "type": "contextual_footage",
-      "status": "pending_acquisition",
+      "status": "pending_frame_review",
       "claim_ids": [
         "CLM_018_CLOSED_ACCESS_TRADEOFF"
       ],
       "scene_ids": [
         "scene_033"
       ],
-      "required_source": "licensed claim-bound footage from the active acquisition plan"
+      "required_source": "licensed claim-bound footage from the active acquisition plan",
+      "resolved_asset_paths": [
+        "assets/footage/scene_033_b3ba8c075f16bc6e692fc3bc.mp4"
+      ]
     },
     {
       "asset_request_id": "REQ_FTG_SCENE_034",
