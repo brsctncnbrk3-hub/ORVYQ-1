@@ -5,7 +5,7 @@
   "footage_assignments": {
     "CLM_001_SAFETY_FRAMEWORKS": {
       "0": {
-        "asset": "assets/footage/scene_001_64f83425b7646e01b727c7ff.mp4",
+        "asset": "assets/footage/scene_001_e2204b131ea4cba28c67330e.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "human_context",
@@ -16,7 +16,7 @@
     },
     "CLM_003_AGENTIC_MISALIGNMENT_TESTS": {
       "0": {
-        "asset": "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4",
+        "asset": "assets/footage/scene_003_9f6ee5840658332c646b2341.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -25,7 +25,7 @@
         "semantic_link": "physical"
       },
       "3": {
-        "asset": "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
+        "asset": "assets/footage/scene_004_64f83425b7646e01b727c7ff.mp4",
         "trimInRatio": 0.08,
         "motion": "drift_left",
         "role": "context",
@@ -34,7 +34,7 @@
         "semantic_link": "physical"
       },
       "5": {
-        "asset": "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4",
+        "asset": "assets/footage/scene_003_9f6ee5840658332c646b2341.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "human_context",
@@ -44,7 +44,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_003 at a distinct narration target and trim window."
       },
       "7": {
-        "asset": "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
+        "asset": "assets/footage/scene_004_64f83425b7646e01b727c7ff.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "context",
@@ -56,7 +56,7 @@
     },
     "CLM_004_TEST_NOT_DEPLOYMENT": {
       "0": {
-        "asset": "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4",
+        "asset": "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -65,7 +65,7 @@
         "semantic_link": "physical"
       },
       "3": {
-        "asset": "assets/footage/scene_006_ec17c3027de8f7ed991e36d6.mp4",
+        "asset": "assets/footage/scene_006_53716a15faced3320767b242.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "context",
@@ -74,7 +74,7 @@
         "semantic_link": "physical"
       },
       "6": {
-        "asset": "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4",
+        "asset": "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4",
         "trimInRatio": 0.32,
         "motion": "drift_left",
         "role": "human_context",
@@ -86,7 +86,7 @@
     },
     "CLM_005_2026_MITIGATION_UPDATE": {
       "0": {
-        "asset": "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
+        "asset": "assets/footage/scene_007_dbd3f40142582e1219009df4.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -95,7 +95,7 @@
         "semantic_link": "conceptual"
       },
       "1": {
-        "asset": "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
+        "asset": "assets/footage/scene_007_dbd3f40142582e1219009df4.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "human_context",
@@ -128,7 +128,7 @@
     },
     "CLM_007_FRONTIER_GAP": {
       "0": {
-        "asset": "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4",
+        "asset": "assets/footage/scene_009_f7c2291cc8d710065492baf4.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -137,7 +137,7 @@
         "semantic_link": "conceptual"
       },
       "1": {
-        "asset": "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4",
+        "asset": "assets/footage/scene_009_f7c2291cc8d710065492baf4.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "human_context",
@@ -149,7 +149,7 @@
     },
     "CLM_010_BIO_ASL3": {
       "0": {
-        "asset": "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
+        "asset": "assets/footage/scene_014_f8f51ed9fdd05b81d657beb1.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -158,7 +158,7 @@
         "semantic_link": "physical"
       },
       "2": {
-        "asset": "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4",
+        "asset": "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4",
         "trimInRatio": 0.08,
         "motion": "pull",
         "role": "human_context",
@@ -167,7 +167,7 @@
         "semantic_link": "physical"
       },
       "3": {
-        "asset": "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
+        "asset": "assets/footage/scene_014_f8f51ed9fdd05b81d657beb1.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "human_context",
@@ -177,7 +177,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_014 at a distinct narration target and trim window."
       },
       "4": {
-        "asset": "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4",
+        "asset": "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "human_context",
@@ -189,7 +189,7 @@
     },
     "CLM_011_SYNTHETIC_PERSUASION": {
       "0": {
-        "asset": "assets/footage/scene_017_8bd21a438123e76632597041.mp4",
+        "asset": "assets/footage/scene_017_9fa0d96f31712ca79307e781.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -198,7 +198,7 @@
         "semantic_link": "physical"
       },
       "2": {
-        "asset": "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4",
+        "asset": "assets/footage/scene_018_92d72ebd3d36be91adf4a939.mp4",
         "trimInRatio": 0.08,
         "motion": "pull",
         "role": "human_context",
@@ -207,7 +207,7 @@
         "semantic_link": "physical"
       },
       "3": {
-        "asset": "assets/footage/scene_017_8bd21a438123e76632597041.mp4",
+        "asset": "assets/footage/scene_017_9fa0d96f31712ca79307e781.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "human_context",
@@ -217,7 +217,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_017 at a distinct narration target and trim window."
       },
       "4": {
-        "asset": "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4",
+        "asset": "assets/footage/scene_018_92d72ebd3d36be91adf4a939.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "human_context",
@@ -229,7 +229,7 @@
     },
     "CLM_012_LABOUR_EXPOSURE": {
       "0": {
-        "asset": "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4",
+        "asset": "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -238,7 +238,7 @@
         "semantic_link": "physical"
       },
       "3": {
-        "asset": "assets/footage/scene_020_4d10965a1f568d448e7000bc.mp4",
+        "asset": "assets/footage/scene_020_d60466fe10702bd1f4459bab.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "human_context",
@@ -247,7 +247,7 @@
         "semantic_link": "physical"
       },
       "5": {
-        "asset": "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4",
+        "asset": "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "human_context",
@@ -259,7 +259,7 @@
     },
     "CLM_013_MARKET_CONCENTRATION": {
       "0": {
-        "asset": "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
+        "asset": "assets/footage/scene_023_26fce08fc02604907dff5200.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "context",
@@ -268,7 +268,7 @@
         "semantic_link": "physical"
       },
       "4": {
-        "asset": "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
+        "asset": "assets/footage/scene_023_26fce08fc02604907dff5200.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "context",
@@ -280,7 +280,7 @@
     },
     "CLM_014_EU_LAYERED_OBLIGATIONS": {
       "0": {
-        "asset": "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
+        "asset": "assets/footage/scene_024_7a94a6191932d27f7d7d26b0.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "context",
@@ -289,7 +289,7 @@
         "semantic_link": "conceptual"
       },
       "2": {
-        "asset": "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4",
+        "asset": "assets/footage/scene_025_a66d0630ff34598619c0ecb4.mp4",
         "trimInRatio": 0.08,
         "motion": "pull",
         "role": "context",
@@ -298,7 +298,7 @@
         "semantic_link": "conceptual"
       },
       "3": {
-        "asset": "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4",
+        "asset": "assets/footage/scene_027_21d51a5f8b6bb2def9e46308.mp4",
         "trimInRatio": 0.08,
         "motion": "drift_left",
         "role": "context",
@@ -307,7 +307,7 @@
         "semantic_link": "physical"
       },
       "4": {
-        "asset": "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
+        "asset": "assets/footage/scene_024_7a94a6191932d27f7d7d26b0.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "context",
@@ -317,7 +317,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_024 at a distinct narration target and trim window."
       },
       "5": {
-        "asset": "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4",
+        "asset": "assets/footage/scene_025_a66d0630ff34598619c0ecb4.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "context",
@@ -327,7 +327,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_025 at a distinct narration target and trim window."
       },
       "6": {
-        "asset": "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4",
+        "asset": "assets/footage/scene_027_21d51a5f8b6bb2def9e46308.mp4",
         "trimInRatio": 0.32,
         "motion": "drift_left",
         "role": "context",
@@ -360,7 +360,7 @@
     },
     "CLM_017_OPEN_WEIGHT_TRADEOFF": {
       "0": {
-        "asset": "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
+        "asset": "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -369,7 +369,7 @@
         "semantic_link": "physical"
       },
       "1": {
-        "asset": "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4",
+        "asset": "assets/footage/scene_031_b8a4cbbdf375fe24d25d3835.mp4",
         "trimInRatio": 0.08,
         "motion": "push",
         "role": "human_context",
@@ -378,7 +378,7 @@
         "semantic_link": "physical"
       },
       "2": {
-        "asset": "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4",
+        "asset": "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4",
         "trimInRatio": 0.08,
         "motion": "pull",
         "role": "human_context",
@@ -387,7 +387,7 @@
         "semantic_link": "physical"
       },
       "3": {
-        "asset": "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
+        "asset": "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "human_context",
@@ -397,7 +397,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_030 at a distinct narration target and trim window."
       },
       "5": {
-        "asset": "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4",
+        "asset": "assets/footage/scene_031_b8a4cbbdf375fe24d25d3835.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "human_context",
@@ -407,7 +407,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_031 at a distinct narration target and trim window."
       },
       "7": {
-        "asset": "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4",
+        "asset": "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "human_context",
@@ -419,7 +419,7 @@
     },
     "CLM_019_INDEPENDENT_EVALUATION": {
       "0": {
-        "asset": "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4",
+        "asset": "assets/footage/scene_034_a355ee12b856c4f93970a938.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -428,7 +428,7 @@
         "semantic_link": "physical"
       },
       "1": {
-        "asset": "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
+        "asset": "assets/footage/scene_035_28b5d814ad4d0990009c5c54.mp4",
         "trimInRatio": 0.08,
         "motion": "push",
         "role": "human_context",
@@ -437,7 +437,7 @@
         "semantic_link": "physical"
       },
       "2": {
-        "asset": "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4",
+        "asset": "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4",
         "trimInRatio": 0.08,
         "motion": "pull",
         "role": "context",
@@ -446,7 +446,7 @@
         "semantic_link": "conceptual"
       },
       "3": {
-        "asset": "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4",
+        "asset": "assets/footage/scene_037_de499ed1dc6841226820f14b.mp4",
         "trimInRatio": 0.08,
         "motion": "drift_left",
         "role": "context",
@@ -455,7 +455,7 @@
         "semantic_link": "physical"
       },
       "4": {
-        "asset": "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4",
+        "asset": "assets/footage/scene_034_a355ee12b856c4f93970a938.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "human_context",
@@ -465,7 +465,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_034 at a distinct narration target and trim window."
       },
       "5": {
-        "asset": "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
+        "asset": "assets/footage/scene_035_28b5d814ad4d0990009c5c54.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "human_context",
@@ -475,7 +475,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_035 at a distinct narration target and trim window."
       },
       "6": {
-        "asset": "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4",
+        "asset": "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4",
         "trimInRatio": 0.32,
         "motion": "drift_left",
         "role": "context",
@@ -485,7 +485,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_036 at a distinct narration target and trim window."
       },
       "8": {
-        "asset": "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4",
+        "asset": "assets/footage/scene_037_de499ed1dc6841226820f14b.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "context",
@@ -518,7 +518,7 @@
     },
     "CLM_021_FINAL_SYNTHESIS": {
       "0": {
-        "asset": "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4",
+        "asset": "assets/footage/scene_039_9ca1566fc002934853930d5c.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -527,7 +527,7 @@
         "semantic_link": "physical"
       },
       "2": {
-        "asset": "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4",
+        "asset": "assets/footage/scene_040_48a91534d02a8292c164d622.mp4",
         "trimInRatio": 0.08,
         "motion": "pull",
         "role": "human_context",
@@ -536,7 +536,7 @@
         "semantic_link": "physical"
       },
       "4": {
-        "asset": "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4",
+        "asset": "assets/footage/scene_041_21a26e188115b478fa89ffd1.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
@@ -545,7 +545,7 @@
         "semantic_link": "physical"
       },
       "5": {
-        "asset": "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4",
+        "asset": "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4",
         "trimInRatio": 0.08,
         "motion": "push",
         "role": "context",
@@ -554,7 +554,7 @@
         "semantic_link": "physical"
       },
       "6": {
-        "asset": "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
+        "asset": "assets/footage/scene_043_3f392beefa3e0d96797e36f3.mp4",
         "trimInRatio": 0.08,
         "motion": "pull",
         "role": "context",
@@ -563,7 +563,7 @@
         "semantic_link": "physical"
       },
       "8": {
-        "asset": "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4",
+        "asset": "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4",
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "context",
@@ -572,7 +572,7 @@
         "semantic_link": "conceptual"
       },
       "9": {
-        "asset": "assets/footage/scene_045_014f7d61f9b25a0e5ed4711d.mp4",
+        "asset": "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4",
         "trimInRatio": 0.08,
         "motion": "push",
         "role": "human_context",
@@ -581,7 +581,7 @@
         "semantic_link": "physical"
       },
       "10": {
-        "asset": "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4",
+        "asset": "assets/footage/scene_039_9ca1566fc002934853930d5c.mp4",
         "trimInRatio": 0.32,
         "motion": "drift_left",
         "role": "human_context",
@@ -591,7 +591,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_039 at a distinct narration target and trim window."
       },
       "11": {
-        "asset": "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4",
+        "asset": "assets/footage/scene_040_48a91534d02a8292c164d622.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "human_context",
@@ -601,7 +601,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_040 at a distinct narration target and trim window."
       },
       "12": {
-        "asset": "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4",
+        "asset": "assets/footage/scene_041_21a26e188115b478fa89ffd1.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "human_context",
@@ -611,7 +611,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_041 at a distinct narration target and trim window."
       },
       "13": {
-        "asset": "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4",
+        "asset": "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4",
         "trimInRatio": 0.32,
         "motion": "pull",
         "role": "context",
@@ -621,7 +621,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_042 at a distinct narration target and trim window."
       },
       "14": {
-        "asset": "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
+        "asset": "assets/footage/scene_043_3f392beefa3e0d96797e36f3.mp4",
         "trimInRatio": 0.32,
         "motion": "drift_left",
         "role": "context",
@@ -631,7 +631,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_043 at a distinct narration target and trim window."
       },
       "15": {
-        "asset": "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4",
+        "asset": "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4",
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "context",
@@ -641,7 +641,7 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_044 at a distinct narration target and trim window."
       },
       "16": {
-        "asset": "assets/footage/scene_045_014f7d61f9b25a0e5ed4711d.mp4",
+        "asset": "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "human_context",
@@ -654,40 +654,40 @@
   },
   "graphic_break_assignments": {},
   "full_footage_pool": [
-    "assets/footage/scene_001_64f83425b7646e01b727c7ff.mp4",
-    "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4",
-    "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
-    "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4",
-    "assets/footage/scene_006_ec17c3027de8f7ed991e36d6.mp4",
-    "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
+    "assets/footage/scene_001_e2204b131ea4cba28c67330e.mp4",
+    "assets/footage/scene_003_9f6ee5840658332c646b2341.mp4",
+    "assets/footage/scene_004_64f83425b7646e01b727c7ff.mp4",
+    "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4",
+    "assets/footage/scene_006_53716a15faced3320767b242.mp4",
+    "assets/footage/scene_007_dbd3f40142582e1219009df4.mp4",
     "assets/footage/scene_008_880103e81291b0e714325d52.mp4",
-    "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4",
-    "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
-    "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4",
-    "assets/footage/scene_017_8bd21a438123e76632597041.mp4",
-    "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4",
-    "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4",
-    "assets/footage/scene_020_4d10965a1f568d448e7000bc.mp4",
-    "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
-    "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
-    "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4",
-    "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4",
+    "assets/footage/scene_009_f7c2291cc8d710065492baf4.mp4",
+    "assets/footage/scene_014_f8f51ed9fdd05b81d657beb1.mp4",
+    "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4",
+    "assets/footage/scene_017_9fa0d96f31712ca79307e781.mp4",
+    "assets/footage/scene_018_92d72ebd3d36be91adf4a939.mp4",
+    "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4",
+    "assets/footage/scene_020_d60466fe10702bd1f4459bab.mp4",
+    "assets/footage/scene_023_26fce08fc02604907dff5200.mp4",
+    "assets/footage/scene_024_7a94a6191932d27f7d7d26b0.mp4",
+    "assets/footage/scene_025_a66d0630ff34598619c0ecb4.mp4",
+    "assets/footage/scene_027_21d51a5f8b6bb2def9e46308.mp4",
     "assets/footage/scene_029_839cdc1b998a76259f43b05a.mp4",
-    "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
-    "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4",
-    "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4",
-    "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4",
-    "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
-    "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4",
-    "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4",
+    "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4",
+    "assets/footage/scene_031_b8a4cbbdf375fe24d25d3835.mp4",
+    "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4",
+    "assets/footage/scene_034_a355ee12b856c4f93970a938.mp4",
+    "assets/footage/scene_035_28b5d814ad4d0990009c5c54.mp4",
+    "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4",
+    "assets/footage/scene_037_de499ed1dc6841226820f14b.mp4",
     "assets/footage/scene_038_ab7ab46fa73a69f0a599c705.mp4",
-    "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4",
-    "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4",
-    "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4",
-    "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4",
-    "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
-    "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4",
-    "assets/footage/scene_045_014f7d61f9b25a0e5ed4711d.mp4"
+    "assets/footage/scene_039_9ca1566fc002934853930d5c.mp4",
+    "assets/footage/scene_040_48a91534d02a8292c164d622.mp4",
+    "assets/footage/scene_041_21a26e188115b478fa89ffd1.mp4",
+    "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4",
+    "assets/footage/scene_043_3f392beefa3e0d96797e36f3.mp4",
+    "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4",
+    "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4"
   ],
   "hook_preloaded_usage": {},
   "slice_count_overrides": {},
@@ -720,11 +720,11 @@
   },
   "notes": "Authored against the exact 127-shot coverage diagnostic: 68 contextual-footage slices target 60.87% footage, keep evidence above 20%, keep graphics below 15%, cap uninterrupted evidence at 14.74 seconds, and land every editorial pause on footage.",
   "last_footage_use_contract_application": {
-    "generated_at": "2026-08-03T18:14:43.491Z",
+    "generated_at": "2026-08-03T18:30:55.093Z",
     "managed_scene_count": 34,
     "pruned_scene_count": 0,
     "assignment_count": 65,
-    "removed_previous_assignments": 0,
+    "removed_previous_assignments": 65,
     "explicit_retirement_count": 0,
     "override_file": null,
     "visual_rebalance_resynchronized": false,
@@ -739,7 +739,7 @@
         "target": "CLM_021_FINAL_SYNTHESIS:16",
         "scene_id": "scene_045",
         "required_seconds": 13.7,
-        "available_seconds": 10.84
+        "available_seconds": 11.678333
       }
     ],
     "source_duration_fit": {
@@ -751,87 +751,84 @@
       "minimum_hook_seconds": 10,
       "removed_optional_hook_uses": [],
       "final_use_counts": {
-        "assets/footage/scene_001_64f83425b7646e01b727c7ff.mp4": 1,
         "assets/footage/scene_001_7989689.mp4": 1,
+        "assets/footage/scene_001_e2204b131ea4cba28c67330e.mp4": 1,
         "assets/footage/scene_002_5028622.mp4": 1,
-        "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4": 2,
-        "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4": 2,
-        "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4": 2,
+        "assets/footage/scene_003_9f6ee5840658332c646b2341.mp4": 2,
+        "assets/footage/scene_004_64f83425b7646e01b727c7ff.mp4": 2,
+        "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4": 2,
+        "assets/footage/scene_006_53716a15faced3320767b242.mp4": 1,
         "assets/footage/scene_006_6803583.mp4": 1,
-        "assets/footage/scene_006_ec17c3027de8f7ed991e36d6.mp4": 1,
-        "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4": 2,
+        "assets/footage/scene_007_dbd3f40142582e1219009df4.mp4": 2,
         "assets/footage/scene_008_880103e81291b0e714325d52.mp4": 2,
-        "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4": 2,
-        "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4": 2,
-        "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4": 2,
-        "assets/footage/scene_017_8bd21a438123e76632597041.mp4": 2,
-        "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4": 2,
-        "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4": 2,
-        "assets/footage/scene_020_4d10965a1f568d448e7000bc.mp4": 1,
+        "assets/footage/scene_009_f7c2291cc8d710065492baf4.mp4": 2,
+        "assets/footage/scene_014_f8f51ed9fdd05b81d657beb1.mp4": 2,
+        "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4": 2,
+        "assets/footage/scene_017_9fa0d96f31712ca79307e781.mp4": 2,
+        "assets/footage/scene_018_92d72ebd3d36be91adf4a939.mp4": 2,
+        "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4": 2,
         "assets/footage/scene_020_7140928.mp4": 1,
-        "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4": 2,
-        "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4": 1,
-        "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4": 2,
-        "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4": 2,
+        "assets/footage/scene_020_d60466fe10702bd1f4459bab.mp4": 1,
+        "assets/footage/scene_023_26fce08fc02604907dff5200.mp4": 2,
+        "assets/footage/scene_024_7a94a6191932d27f7d7d26b0.mp4": 1,
+        "assets/footage/scene_025_a66d0630ff34598619c0ecb4.mp4": 2,
+        "assets/footage/scene_027_21d51a5f8b6bb2def9e46308.mp4": 2,
         "assets/footage/scene_029_839cdc1b998a76259f43b05a.mp4": 2,
-        "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4": 2,
-        "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4": 2,
-        "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4": 2,
-        "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4": 2,
-        "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4": 2,
-        "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4": 2,
-        "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4": 2,
+        "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4": 2,
+        "assets/footage/scene_031_b8a4cbbdf375fe24d25d3835.mp4": 2,
+        "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4": 2,
+        "assets/footage/scene_034_a355ee12b856c4f93970a938.mp4": 2,
+        "assets/footage/scene_035_28b5d814ad4d0990009c5c54.mp4": 2,
+        "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4": 2,
+        "assets/footage/scene_037_de499ed1dc6841226820f14b.mp4": 2,
         "assets/footage/scene_038_ab7ab46fa73a69f0a599c705.mp4": 2,
-        "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4": 2,
-        "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4": 2,
-        "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4": 2,
-        "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4": 2,
-        "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4": 2,
-        "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4": 2,
-        "assets/footage/scene_045_014f7d61f9b25a0e5ed4711d.mp4": 1
+        "assets/footage/scene_039_9ca1566fc002934853930d5c.mp4": 2,
+        "assets/footage/scene_040_48a91534d02a8292c164d622.mp4": 2,
+        "assets/footage/scene_041_21a26e188115b478fa89ffd1.mp4": 2,
+        "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4": 2,
+        "assets/footage/scene_043_3f392beefa3e0d96797e36f3.mp4": 2,
+        "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4": 2,
+        "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4": 1
       }
     }
   },
   "last_supplemental_footage_materialization": {
-    "generated_at": "2026-08-03T13:25:40.379Z",
+    "generated_at": "2026-08-03T18:30:23.486Z",
     "assignments": 0,
     "unresolved_scenes": [],
     "replaced_graphics": 0,
     "retired_paths": [
-      "assets/footage/scene_001_16283a73e6b73cfe4876cc12.mp4",
-      "assets/footage/scene_003_4136cd8ba18b4e8cbb8058dd.mp4",
-      "assets/footage/scene_004_29d8f37795126027ff32a0e4.mp4",
-      "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4",
-      "assets/footage/scene_006_463958245578652d5f51c663.mp4",
-      "assets/footage/scene_007_cf48c42b15be10e701c2fc28.mp4",
-      "assets/footage/scene_008_4cd3bd367d7b854e8636620e.mp4",
-      "assets/footage/scene_009_062d23b640ce65c20f6a74d4.mp4",
-      "assets/footage/scene_014_9ae5f540abcbca00c744ac91.mp4",
-      "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4",
-      "assets/footage/scene_017_27b45d44d44c4ba992c14c2f.mp4",
-      "assets/footage/scene_018_5b32703be82ceacecffbe103.mp4",
-      "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4",
-      "assets/footage/scene_020_2fb03ac5424462a495e99b73.mp4",
-      "assets/footage/scene_023_3f392beefa3e0d96797e36f3.mp4",
-      "assets/footage/scene_024_7a94a6191932d27f7d7d26b0.mp4",
-      "assets/footage/scene_025_6e6e89b434c3ad4d8dc163d9.mp4",
-      "assets/footage/scene_027_503e34655ec8329333fa764f.mp4",
-      "assets/footage/scene_029_a355ee12b856c4f93970a938.mp4",
-      "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4",
-      "assets/footage/scene_031_b8a4cbbdf375fe24d25d3835.mp4",
-      "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4",
-      "assets/footage/scene_034_69cfac90d1544c4e335846f5.mp4",
-      "assets/footage/scene_035_61249c23acf3b765104d567e.mp4",
-      "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4",
-      "assets/footage/scene_037_053530ea53841f005188bfe5.mp4",
-      "assets/footage/scene_038_d359d79af42f712519d6fd3c.mp4",
-      "assets/footage/scene_039_48a91534d02a8292c164d622.mp4",
-      "assets/footage/scene_040_e9f6bf2cee5834681c81e777.mp4",
-      "assets/footage/scene_041_4e69efd7fca92627577d929b.mp4",
-      "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4",
-      "assets/footage/scene_043_26abd499f5546a2815a3c8e0.mp4",
-      "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4",
-      "assets/footage/scene_045_947a36bacb11dca2cee4b989.mp4"
+      "assets/footage/scene_001_64f83425b7646e01b727c7ff.mp4",
+      "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4",
+      "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
+      "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4",
+      "assets/footage/scene_006_ec17c3027de8f7ed991e36d6.mp4",
+      "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
+      "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4",
+      "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
+      "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4",
+      "assets/footage/scene_017_8bd21a438123e76632597041.mp4",
+      "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4",
+      "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4",
+      "assets/footage/scene_020_4d10965a1f568d448e7000bc.mp4",
+      "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
+      "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
+      "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4",
+      "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4",
+      "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
+      "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4",
+      "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4",
+      "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4",
+      "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
+      "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4",
+      "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4",
+      "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4",
+      "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4",
+      "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4",
+      "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4",
+      "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
+      "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4",
+      "assets/footage/scene_045_014f7d61f9b25a0e5ed4711d.mp4"
     ]
   }
 }
