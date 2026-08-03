@@ -86,10 +86,15 @@ export function evaluateSemanticCandidate(value, item, searchQuery = "") {
   const groups = Array.isArray(constraints.required_any_groups)
     ? constraints.required_any_groups
     : [];
-  const minimumMetadataGroups = Math.max(
-    1,
-    Math.min(groups.length || 1, Number(constraints.min_metadata_required_groups || 1)),
-  );
+  // With no required groups authored there is no positive metadata
+  // requirement to meet -- only the forbidden terms above still apply.
+  // `groups.length || 1` used to turn an empty list into "match at least one
+  // of zero groups", which no candidate can ever satisfy, so a scene that
+  // carried editorial guidance but no `required_any_groups` rejected every
+  // clip the provider returned and burned its whole search budget doing it.
+  const minimumMetadataGroups = groups.length === 0
+    ? 0
+    : Math.max(1, Math.min(groups.length, Number(constraints.min_metadata_required_groups || 1)));
   let metadataMatchedGroups = 0;
   let queryMatchedGroups = 0;
   let score = 0;

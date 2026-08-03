@@ -12,7 +12,10 @@
     "unique_provider_asset_required": true,
     "contextual_footage_must_not_be_presented_as_factual_evidence": true,
     "maximum_output_clip_seconds": 18,
-    "incremental_reuse_existing_assets": false
+    "incremental_reuse_existing_assets": false,
+    "max_requests_per_run": 180,
+    "pages_per_query": 1,
+    "max_queries_per_scene": 3
   },
   "assets": [
     {
