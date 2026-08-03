@@ -1,1 +1,410 @@
-{"schema_version":"1.0","project_id":"004-the-ai-race-clean-rebuild","status":"ready_for_acquisition","policy":{"provider":"pexels","license_url":"https://www.pexels.com/license/","results_per_query":50,"minimum_resolution":"1280x720","preferred_resolution":"1920x1080_or_higher","orientation":"landscape","unique_provider_asset_required":true,"contextual_footage_must_not_be_presented_as_factual_evidence":true,"maximum_output_clip_seconds":18,"incremental_reuse_existing_assets":false},"assets":[{"scene_id":"scene_001","claim_id":"CLM_001_SAFETY_FRAMEWORKS","role":"human_context","queries":["AI research laboratory engineers working","data center operations team"],"fallback_queries":["technology research team meeting"],"min_duration_seconds":8,"editorial_note":"Real people building and operating frontier systems; no company identity implied.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Real people building and operating frontier systems; no company identity implied."},{"scene_id":"scene_002","claim_id":"CLM_002_COMPETITIVE_INCENTIVE","role":"context","queries":["data center servers tracking shot","high performance computing server room"],"fallback_queries":["cloud computing infrastructure"],"min_duration_seconds":8,"editorial_note":"Physical infrastructure and acceleration pressure.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Physical infrastructure and acceleration pressure."},{"scene_id":"scene_003","claim_id":"CLM_003_AGENTIC_MISALIGNMENT_TESTS","role":"context","queries":["office email computer screen close up","security analyst reviewing alerts"],"fallback_queries":["corporate computer workstation"],"min_duration_seconds":8,"editorial_note":"Controlled test environment context only; the actual evidence remains the official research figures.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Controlled test environment context only; the actual evidence remains the official research figures."},{"scene_id":"scene_004","claim_id":"CLM_004_TEST_NOT_DEPLOYMENT","role":"human_context","queries":["researcher testing computer simulation","software testing laboratory"],"fallback_queries":["scientist computer experiment"],"min_duration_seconds":8,"editorial_note":"Make the fire-drill-versus-fire distinction physical.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Make the fire-drill-versus-fire distinction physical."},{"scene_id":"scene_005","claim_id":"CLM_006_INVESTMENT_SCALE","role":"context","queries":["technology investment district city night","financial trading screens technology"],"fallback_queries":["business finance data screens"],"min_duration_seconds":8,"editorial_note":"Capital flowing toward frontier development without depicting a named transaction.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Capital flowing toward frontier development without depicting a named transaction."},{"scene_id":"scene_006","claim_id":"CLM_007_FRONTIER_GAP","role":"context","queries":["AI engineers competition hackathon","software teams working computers"],"fallback_queries":["technology teams office"],"min_duration_seconds":8,"editorial_note":"Competitive closeness and release pressure.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Competitive closeness and release pressure."},{"scene_id":"scene_007","claim_id":"CLM_008_CYBER_EXTORTION","role":"human_context","queries":["cybersecurity operations center analysts","security operations center team"],"fallback_queries":["network security analyst office"],"min_duration_seconds":8,"editorial_note":"Defensive operations context; no reenactment of a named victim.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Defensive operations context; no reenactment of a named victim."},{"scene_id":"scene_008","claim_id":"CLM_009_AGENTIC_ESPIONAGE","role":"context","queries":["network operations screens dark room","cybersecurity server monitoring"],"fallback_queries":["data center monitoring screens"],"min_duration_seconds":8,"editorial_note":"Agentic cyber-operation scale, with provider report carrying the factual burden.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Agentic cyber-operation scale, with provider report carrying the factual burden."},{"scene_id":"scene_009","claim_id":"CLM_010_BIO_ASL3","role":"human_context","queries":["biosafety laboratory scientist protective equipment","biotechnology laboratory researcher"],"fallback_queries":["laboratory scientist safety"],"min_duration_seconds":8,"editorial_note":"Responsible laboratory and safeguard context; no weapon imagery.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Responsible laboratory and safeguard context; no weapon imagery."},{"scene_id":"scene_010","claim_id":"CLM_011_SYNTHETIC_PERSUASION","role":"human_context","queries":["people scrolling social media phones","person watching online news phone"],"fallback_queries":["social media users public"],"min_duration_seconds":8,"editorial_note":"Human exposure to synthetic information without asserting changed beliefs.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Human exposure to synthetic information without asserting changed beliefs."},{"scene_id":"scene_011","claim_id":"CLM_012_LABOUR_EXPOSURE","role":"human_context","queries":["office workers using computers diverse","customer service office workers"],"fallback_queries":["administrative workers computer"],"min_duration_seconds":8,"editorial_note":"Occupational task transformation rather than unemployment imagery.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Occupational task transformation rather than unemployment imagery."},{"scene_id":"scene_012","claim_id":"CLM_013_MARKET_CONCENTRATION","role":"context","queries":["hyperscale data center exterior","cloud data center aerial"],"fallback_queries":["large technology campus"],"min_duration_seconds":8,"editorial_note":"Critical compute and infrastructure concentration.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Critical compute and infrastructure concentration."},{"scene_id":"scene_013","claim_id":"CLM_014_EU_LAYERED_OBLIGATIONS","role":"governance_context","queries":["European parliament building exterior","EU flags government building"],"fallback_queries":["European government institution"],"min_duration_seconds":8,"editorial_note":"Official governance setting; the regulation text remains primary evidence.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"conceptual","semantic_rationale":"Official governance setting; the regulation text remains primary evidence."},{"scene_id":"scene_014","claim_id":"CLM_016_COMPLIANCE_INCUMBENCY","role":"human_context","queries":["small technology startup team office","startup founders working computers"],"fallback_queries":["small software company team"],"min_duration_seconds":8,"editorial_note":"Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome."},{"scene_id":"scene_015","claim_id":"CLM_017_OPEN_WEIGHT_TRADEOFF","role":"human_context","queries":["open source developers collaboration","programmers community workshop"],"fallback_queries":["software developers collaboration"],"min_duration_seconds":8,"editorial_note":"Independent research and adaptation context.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Independent research and adaptation context."},{"scene_id":"scene_016","claim_id":"CLM_018_CLOSED_ACCESS_TRADEOFF","role":"context","queries":["secure data center access control","server room security door"],"fallback_queries":["cybersecurity access control"],"min_duration_seconds":8,"editorial_note":"Centralized monitoring and access control.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Centralized monitoring and access control."},{"scene_id":"scene_017","claim_id":"CLM_019_INDEPENDENT_EVALUATION","role":"human_context","queries":["software red team testing meeting","cybersecurity researchers testing"],"fallback_queries":["technology audit team"],"min_duration_seconds":8,"editorial_note":"Independent evaluation process and human judgment.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Independent evaluation process and human judgment."},{"scene_id":"scene_018","claim_id":"CLM_020_INCIDENT_REPORTING","role":"governance_context","queries":["government hearing technology committee","regulatory meeting documents"],"fallback_queries":["policy committee meeting"],"min_duration_seconds":8,"editorial_note":"Reporting and oversight context without inventing a named proceeding.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"conceptual","semantic_rationale":"Reporting and oversight context without inventing a named proceeding."},{"scene_id":"scene_019","claim_id":"CLM_021_FINAL_SYNTHESIS","role":"human_context","queries":["commuters city technology screens","people walking modern city night"],"fallback_queries":["people city digital screens"],"min_duration_seconds":8,"editorial_note":"Distributed social consequences and ordinary human scale.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Distributed social consequences and ordinary human scale."},{"scene_id":"scene_020","claim_id":"CLM_021_FINAL_SYNTHESIS","role":"context","queries":["data center corridor slow tracking","server racks lights cinematic"],"fallback_queries":["computer server room"],"min_duration_seconds":8,"editorial_note":"Return to the physical machine and concentrated infrastructure for the ending.","narration_anchor":"To be resolved from fixed voice_script.txt during alignment","semantic_link":"physical","semantic_rationale":"Return to the physical machine and concentrated infrastructure for the ending."}]}
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "status": "ready_for_acquisition",
+  "policy": {
+    "provider": "pexels",
+    "license_url": "https://www.pexels.com/license/",
+    "results_per_query": 50,
+    "minimum_resolution": "1280x720",
+    "preferred_resolution": "1920x1080_or_higher",
+    "orientation": "landscape",
+    "unique_provider_asset_required": true,
+    "contextual_footage_must_not_be_presented_as_factual_evidence": true,
+    "maximum_output_clip_seconds": 18,
+    "incremental_reuse_existing_assets": false
+  },
+  "assets": [
+    {
+      "scene_id": "scene_001",
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+      "role": "human_context",
+      "queries": [
+        "AI research laboratory engineers working",
+        "data center operations team"
+      ],
+      "fallback_queries": [
+        "technology research team meeting"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Real people building and operating frontier systems; no company identity implied.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Real people building and operating frontier systems; no company identity implied."
+    },
+    {
+      "scene_id": "scene_002",
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "role": "context",
+      "queries": [
+        "data center servers tracking shot",
+        "high performance computing server room"
+      ],
+      "fallback_queries": [
+        "cloud computing infrastructure"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Physical infrastructure and acceleration pressure.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Physical infrastructure and acceleration pressure."
+    },
+    {
+      "scene_id": "scene_003",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "role": "context",
+      "queries": [
+        "office email computer screen close up",
+        "security analyst reviewing alerts"
+      ],
+      "fallback_queries": [
+        "corporate computer workstation"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Controlled test environment context only; the actual evidence remains the official research figures.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Controlled test environment context only; the actual evidence remains the official research figures."
+    },
+    {
+      "scene_id": "scene_004",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "role": "human_context",
+      "queries": [
+        "researcher testing computer simulation",
+        "software testing laboratory"
+      ],
+      "fallback_queries": [
+        "scientist computer experiment"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Make the fire-drill-versus-fire distinction physical.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Make the fire-drill-versus-fire distinction physical."
+    },
+    {
+      "scene_id": "scene_005",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "role": "context",
+      "queries": [
+        "technology investment district city night",
+        "financial trading screens technology"
+      ],
+      "fallback_queries": [
+        "business finance data screens"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Capital flowing toward frontier development without depicting a named transaction.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Capital flowing toward frontier development without depicting a named transaction."
+    },
+    {
+      "scene_id": "scene_006",
+      "claim_id": "CLM_007_FRONTIER_GAP",
+      "role": "context",
+      "queries": [
+        "AI engineers competition hackathon",
+        "software teams working computers"
+      ],
+      "fallback_queries": [
+        "technology teams office"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Competitive closeness and release pressure.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Competitive closeness and release pressure."
+    },
+    {
+      "scene_id": "scene_007",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "role": "human_context",
+      "queries": [
+        "cybersecurity operations center analysts",
+        "security operations center team"
+      ],
+      "fallback_queries": [
+        "network security analyst office"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Defensive operations context; no reenactment of a named victim.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Defensive operations context; no reenactment of a named victim."
+    },
+    {
+      "scene_id": "scene_008",
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "role": "context",
+      "queries": [
+        "network operations screens dark room",
+        "cybersecurity server monitoring"
+      ],
+      "fallback_queries": [
+        "data center monitoring screens"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Agentic cyber-operation scale, with provider report carrying the factual burden.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Agentic cyber-operation scale, with provider report carrying the factual burden."
+    },
+    {
+      "scene_id": "scene_009",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "role": "human_context",
+      "queries": [
+        "biosafety laboratory scientist protective equipment",
+        "biotechnology laboratory researcher"
+      ],
+      "fallback_queries": [
+        "laboratory scientist safety"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Responsible laboratory and safeguard context; no weapon imagery.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Responsible laboratory and safeguard context; no weapon imagery."
+    },
+    {
+      "scene_id": "scene_010",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "role": "human_context",
+      "queries": [
+        "people scrolling social media phones",
+        "person watching online news phone"
+      ],
+      "fallback_queries": [
+        "social media users public"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Human exposure to synthetic information without asserting changed beliefs.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Human exposure to synthetic information without asserting changed beliefs."
+    },
+    {
+      "scene_id": "scene_011",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "role": "human_context",
+      "queries": [
+        "office workers using computers diverse",
+        "customer service office workers"
+      ],
+      "fallback_queries": [
+        "administrative workers computer"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Occupational task transformation rather than unemployment imagery.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Occupational task transformation rather than unemployment imagery."
+    },
+    {
+      "scene_id": "scene_012",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "role": "context",
+      "queries": [
+        "hyperscale data center exterior",
+        "cloud data center aerial"
+      ],
+      "fallback_queries": [
+        "large technology campus"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Critical compute and infrastructure concentration.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Critical compute and infrastructure concentration."
+    },
+    {
+      "scene_id": "scene_013",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "role": "governance_context",
+      "queries": [
+        "European parliament building exterior",
+        "EU flags government building"
+      ],
+      "fallback_queries": [
+        "European government institution"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Official governance setting; the regulation text remains primary evidence.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Official governance setting; the regulation text remains primary evidence."
+    },
+    {
+      "scene_id": "scene_014",
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "role": "human_context",
+      "queries": [
+        "small technology startup team office",
+        "startup founders working computers"
+      ],
+      "fallback_queries": [
+        "small software company team"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome."
+    },
+    {
+      "scene_id": "scene_015",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "role": "human_context",
+      "queries": [
+        "open source developers collaboration",
+        "programmers community workshop"
+      ],
+      "fallback_queries": [
+        "software developers collaboration"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Independent research and adaptation context.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Independent research and adaptation context."
+    },
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "role": "context",
+      "queries": [
+        "secure data center access control",
+        "server room security door"
+      ],
+      "fallback_queries": [
+        "cybersecurity access control"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Centralized monitoring and access control.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Centralized monitoring and access control."
+    },
+    {
+      "scene_id": "scene_017",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "role": "human_context",
+      "queries": [
+        "software red team testing meeting",
+        "cybersecurity researchers testing"
+      ],
+      "fallback_queries": [
+        "technology audit team"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Independent evaluation process and human judgment.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Independent evaluation process and human judgment."
+    },
+    {
+      "scene_id": "scene_018",
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "role": "governance_context",
+      "queries": [
+        "government hearing technology committee",
+        "regulatory meeting documents"
+      ],
+      "fallback_queries": [
+        "policy committee meeting"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Reporting and oversight context without inventing a named proceeding.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Reporting and oversight context without inventing a named proceeding."
+    },
+    {
+      "scene_id": "scene_019",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "human_context",
+      "queries": [
+        "commuters city technology screens",
+        "people walking modern city night"
+      ],
+      "fallback_queries": [
+        "people city digital screens"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Distributed social consequences and ordinary human scale.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Distributed social consequences and ordinary human scale."
+    },
+    {
+      "scene_id": "scene_020",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "context",
+      "queries": [
+        "data center corridor slow tracking",
+        "server racks lights cinematic"
+      ],
+      "fallback_queries": [
+        "computer server room"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Return to the physical machine and concentrated infrastructure for the ending."
+    },
+    {
+      "scene_id": "scene_042",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "role": "governance_context",
+      "queries": [
+        "European parliament building exterior",
+        "EU flags government building"
+      ],
+      "fallback_queries": [
+        "European government institution"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Official governance setting; the regulation text remains primary evidence.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Official governance setting; the regulation text remains primary evidence."
+    },
+    {
+      "scene_id": "scene_043",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "human_context",
+      "queries": [
+        "commuters city technology screens",
+        "people walking modern city night"
+      ],
+      "fallback_queries": [
+        "people city digital screens"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Distributed social consequences and ordinary human scale.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Distributed social consequences and ordinary human scale."
+    },
+    {
+      "scene_id": "scene_044",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "context",
+      "queries": [
+        "data center corridor slow tracking",
+        "server racks lights cinematic"
+      ],
+      "fallback_queries": [
+        "computer server room"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Return to the physical machine and concentrated infrastructure for the ending."
+    }
+  ]
+}

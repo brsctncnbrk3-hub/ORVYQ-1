@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "request_revision": 2,
+  "request_revision": 3,
   "policy": {
     "automatic_backfill_forbidden": true,
     "decorative_document_recreation_forbidden": true,
@@ -976,6 +976,66 @@
         "contact_sheet_sha256": "7be251c69d4e8b01962f508afb0c29502a63de818a4d7d6c8cf7f9dc84e12273",
         "reviewed_at": "2026-08-02T19:47:18.720Z"
       }
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_042",
+      "type": "contextual_footage",
+      "status": "pending_acquisition",
+      "claim_ids": [
+        "CLM_014_EU_LAYERED_OBLIGATIONS"
+      ],
+      "scene_ids": [
+        "scene_042"
+      ],
+      "required_source": "licensed stock footage acquired and frame-reviewed for this claim",
+      "required_content": "Official governance setting; the regulation text remains primary evidence.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_043",
+      "type": "contextual_footage",
+      "status": "pending_acquisition",
+      "claim_ids": [
+        "CLM_021_FINAL_SYNTHESIS"
+      ],
+      "scene_ids": [
+        "scene_043"
+      ],
+      "required_source": "licensed stock footage acquired and frame-reviewed for this claim",
+      "required_content": "Distributed social consequences and ordinary human scale.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_044",
+      "type": "contextual_footage",
+      "status": "pending_acquisition",
+      "claim_ids": [
+        "CLM_021_FINAL_SYNTHESIS"
+      ],
+      "scene_ids": [
+        "scene_044"
+      ],
+      "required_source": "licensed stock footage acquired and frame-reviewed for this claim",
+      "required_content": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ]
     }
   ]
 }

@@ -1,1 +1,289 @@
-{"schema_version":"1.0","project_id":"004-the-ai-race-clean-rebuild","request_revision":1,"policy":{"exact_claim_binding_required":true,"metadata_only_approval_forbidden":true,"contact_sheet_sha256_required":true,"rejected_asset_global_reentry_forbidden":true},"scenes":{"scene_001":{"claim_id":"CLM_001_SAFETY_FRAMEWORKS","required_visible_content":"Real people building and operating frontier systems; no company identity implied.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_002":{"claim_id":"CLM_002_COMPETITIVE_INCENTIVE","required_visible_content":"Physical infrastructure and acceleration pressure.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_003":{"claim_id":"CLM_003_AGENTIC_MISALIGNMENT_TESTS","required_visible_content":"Controlled test environment context only; the actual evidence remains the official research figures.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_004":{"claim_id":"CLM_004_TEST_NOT_DEPLOYMENT","required_visible_content":"Make the fire-drill-versus-fire distinction physical.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_005":{"claim_id":"CLM_006_INVESTMENT_SCALE","required_visible_content":"Capital flowing toward frontier development without depicting a named transaction.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_006":{"claim_id":"CLM_007_FRONTIER_GAP","required_visible_content":"Competitive closeness and release pressure.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_007":{"claim_id":"CLM_008_CYBER_EXTORTION","required_visible_content":"Defensive operations context; no reenactment of a named victim.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_008":{"claim_id":"CLM_009_AGENTIC_ESPIONAGE","required_visible_content":"Agentic cyber-operation scale, with provider report carrying the factual burden.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_009":{"claim_id":"CLM_010_BIO_ASL3","required_visible_content":"Responsible laboratory and safeguard context; no weapon imagery.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_010":{"claim_id":"CLM_011_SYNTHETIC_PERSUASION","required_visible_content":"Human exposure to synthetic information without asserting changed beliefs.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_011":{"claim_id":"CLM_012_LABOUR_EXPOSURE","required_visible_content":"Occupational task transformation rather than unemployment imagery.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_012":{"claim_id":"CLM_013_MARKET_CONCENTRATION","required_visible_content":"Critical compute and infrastructure concentration.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_013":{"claim_id":"CLM_014_EU_LAYERED_OBLIGATIONS","required_visible_content":"Official governance setting; the regulation text remains primary evidence.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"conceptual"},"scene_014":{"claim_id":"CLM_016_COMPLIANCE_INCUMBENCY","required_visible_content":"Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_015":{"claim_id":"CLM_017_OPEN_WEIGHT_TRADEOFF","required_visible_content":"Independent research and adaptation context.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_016":{"claim_id":"CLM_018_CLOSED_ACCESS_TRADEOFF","required_visible_content":"Centralized monitoring and access control.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_017":{"claim_id":"CLM_019_INDEPENDENT_EVALUATION","required_visible_content":"Independent evaluation process and human judgment.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_018":{"claim_id":"CLM_020_INCIDENT_REPORTING","required_visible_content":"Reporting and oversight context without inventing a named proceeding.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"conceptual"},"scene_019":{"claim_id":"CLM_021_FINAL_SYNTHESIS","required_visible_content":"Distributed social consequences and ordinary human scale.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"},"scene_020":{"claim_id":"CLM_021_FINAL_SYNTHESIS","required_visible_content":"Return to the physical machine and concentrated infrastructure for the ending.","forbidden_content":["logos presented as factual endorsement","unrelated robots or humanoids","generic binary-code overlays","Project 001 footage"],"narration_anchor":"To be resolved from fixed narration alignment","semantic_link":"physical"}}}
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "request_revision": 2,
+  "policy": {
+    "exact_claim_binding_required": true,
+    "metadata_only_approval_forbidden": true,
+    "contact_sheet_sha256_required": true,
+    "rejected_asset_global_reentry_forbidden": true
+  },
+  "scenes": {
+    "scene_001": {
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+      "required_visible_content": "Real people building and operating frontier systems; no company identity implied.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_002": {
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "required_visible_content": "Physical infrastructure and acceleration pressure.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_003": {
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "required_visible_content": "Controlled test environment context only; the actual evidence remains the official research figures.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_004": {
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "required_visible_content": "Make the fire-drill-versus-fire distinction physical.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_005": {
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "required_visible_content": "Capital flowing toward frontier development without depicting a named transaction.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_006": {
+      "claim_id": "CLM_007_FRONTIER_GAP",
+      "required_visible_content": "Competitive closeness and release pressure.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_007": {
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "required_visible_content": "Defensive operations context; no reenactment of a named victim.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_008": {
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "required_visible_content": "Agentic cyber-operation scale, with provider report carrying the factual burden.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_009": {
+      "claim_id": "CLM_010_BIO_ASL3",
+      "required_visible_content": "Responsible laboratory and safeguard context; no weapon imagery.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_010": {
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "required_visible_content": "Human exposure to synthetic information without asserting changed beliefs.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_011": {
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "required_visible_content": "Occupational task transformation rather than unemployment imagery.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_012": {
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "required_visible_content": "Critical compute and infrastructure concentration.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_013": {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "Official governance setting; the regulation text remains primary evidence.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_014": {
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "required_visible_content": "Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_015": {
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "required_visible_content": "Independent research and adaptation context.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_016": {
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "required_visible_content": "Centralized monitoring and access control.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_017": {
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "Independent evaluation process and human judgment.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_018": {
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "required_visible_content": "Reporting and oversight context without inventing a named proceeding.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_019": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Distributed social consequences and ordinary human scale.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_020": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_042": {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "Official governance setting; the regulation text remains primary evidence.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_043": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Distributed social consequences and ordinary human scale.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_044": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "Project 001 footage"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    }
+  }
+}
