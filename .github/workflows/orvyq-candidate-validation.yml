@@ -148,8 +148,12 @@ jobs:
       # written to research/footage_use_contracts.json -- the canonical source
       # the reconciler below derives the editorial plan from. Authoring into a
       # derived file instead is what makes the two disagree.
+      # --seed-from-acquisition only fires for a project that has never
+      # completed a review round, where the contract carries no pool to author
+      # from yet. Once one approval exists it is inert, and the distribution is
+      # authored from byte-bound approvals exactly as before.
       - name: Author the claim-bound contextual-footage distribution
-        run: node scripts/orvyq_author_footage_distribution.mjs --project-id="$PROJECT_ID"
+        run: node scripts/orvyq_author_footage_distribution.mjs --project-id="$PROJECT_ID" --seed-from-acquisition
 
       - name: Reconcile claim-bound footage contracts after shot generation
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"

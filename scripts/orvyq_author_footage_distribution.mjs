@@ -7,6 +7,10 @@
 // (which derives the editorial asset plan and the blueprint shots from the
 // contract). Authoring into any derived file instead makes the contract and
 // the plan disagree, and the reconciler then refuses the unaccounted targets.
+//
+// `--seed-from-acquisition` covers the one state the pool cannot be read out
+// of the contract in: a project that has never completed a review round. See
+// collectAcquiredClaimPools() for why that state would otherwise deadlock.
 import path from "node:path";
 import {
   projectDir,
@@ -28,6 +32,39 @@ import {
   planCoverageAcquisition,
   applyCoverageAcquisition,
 } from "./lib/orvyq-footage-coverage-requests.mjs";
+
+/**
+ * The claim-bound pool a project starts from before any contact sheet has been
+ * judged: the scenes acquisition actually materialized, each carrying the
+ * claim its own acquisition plan entry was written against.
+ *
+ * This exists because the pool below is read out of the contract, and a fresh
+ * project's contract is empty -- so without it, a rebuild can never produce
+ * the blueprint footage shots the review queue derives its exact claim-bound
+ * uses from, and therefore can never approve the first clip either. Nothing
+ * here approves anything: the distribution it seeds only makes the shots
+ * reviewable. `orvyq_apply_footage_visual_decisions.mjs` still refuses to
+ * materialize until every scene carries a real byte-bound approval.
+ */
+export function collectAcquiredClaimPools(acquisitionPlan, runtime) {
+  const acquiredSceneIds = new Set((runtime?.records || []).map((record) => String(record.scene_id)));
+  const assignments = [];
+  for (const asset of acquisitionPlan?.assets || []) {
+    const sceneId = String(asset?.scene_id || "").trim();
+    const claimId = String(asset?.claim_id || "").trim();
+    // A scene with no acquired bytes, or no claim of its own, is a gap to
+    // report rather than a slot to invent a binding for.
+    if (!sceneId || !claimId || !acquiredSceneIds.has(sceneId)) continue;
+    assignments.push({
+      scene_id: sceneId,
+      claim_id: claimId,
+      role: asset.role || "context",
+      semantic_link: asset.semantic_link || "physical",
+      semantic_rationale: String(asset.semantic_rationale || asset.editorial_note || "").trim(),
+    });
+  }
+  return assignments;
+}
 
 /**
  * The approved, claim-bound pool: the reviewed scenes the contract already
@@ -174,7 +211,7 @@ async function recordCoverageRequests(dir, projectId, details) {
   };
 }
 
-export async function authorFootageDistribution(projectId) {
+export async function authorFootageDistribution(projectId, { seedFromAcquisition = false } = {}) {
   const dir = projectDir(projectId);
   const files = {
     contracts: path.join(dir, "research", "footage_use_contracts.json"),
@@ -183,6 +220,8 @@ export async function authorFootageDistribution(projectId) {
     profile: path.join(dir, "config", "production_profile.json"),
     editorial: path.join(dir, "config", "editorial_asset_plan.json"),
     coverageGaps: path.join(dir, "qa", "full_production_coverage_gaps.json"),
+    acquisitionPlan: path.join(dir, "research", "footage_acquisition_plan.json"),
+    runtime: path.join(dir, "assets", "footage_acquisition.runtime.json"),
   };
 
   const [contracts, blueprint, reviews, profile, editorial, coverageGaps] = await Promise.all([
@@ -208,12 +247,40 @@ export async function authorFootageDistribution(projectId) {
   const approvedSceneIds = reviews
     ? new Set((reviews.approved_assets || []).map((asset) => String(asset.scene_id || "").trim()).filter(Boolean))
     : null;
-  if (approvedSceneIds && !approvedSceneIds.size) {
+  // A project that has never been through a review round has nothing in the
+  // contract to pool from, so the only distribution it can author is the
+  // provisional one that makes its own acquired scenes reviewable at all.
+  const seeding = Boolean(
+    seedFromAcquisition
+    && !(contracts.assignments || []).length
+    && approvedSceneIds
+    && !approvedSceneIds.size,
+  );
+  if (approvedSceneIds && !approvedSceneIds.size && !seeding) {
     throw new Error("visual_asset_reviews.json lists no approved assets; footage review must complete first");
   }
 
+  let seededSceneCount = 0;
+  let poolSource = contracts;
+  let poolSceneFilter = approvedSceneIds;
+  if (seeding) {
+    const [acquisitionPlan, runtime] = await Promise.all([
+      readJson(files.acquisitionPlan),
+      readJson(files.runtime),
+    ]);
+    const seeded = collectAcquiredClaimPools(acquisitionPlan, runtime);
+    if (!seeded.length) {
+      throw new Error(
+        "no acquired scene carries a claim in research/footage_acquisition_plan.json; there is nothing to seed a distribution from",
+      );
+    }
+    seededSceneCount = new Set(seeded.map((entry) => entry.scene_id)).size;
+    poolSource = { assignments: seeded };
+    poolSceneFilter = null;
+  }
+
   const claimSlices = collectClaimSliceTopology(shots);
-  const claimPools = collectApprovedClaimPools(contracts, approvedSceneIds);
+  const claimPools = collectApprovedClaimPools(poolSource, poolSceneFilter);
   const hook = collectHookFootageUsage(shots);
   const totalRuntimeSeconds = shots.reduce((sum, shot) => sum + Number(shot.duration || 0), 0);
 
@@ -278,10 +345,15 @@ export async function authorFootageDistribution(projectId) {
       schema_version: "1.0",
       generated_at: nowIso(),
       source: "direction/editorial_blueprint.json full_production shots",
-      policy:
-        "Slices are chosen from the project's own live claim/slice topology, bound only to already-approved "
-        + "claim-bound scenes, spread through each claim so contextual footage interleaves with primary evidence, "
-        + "and capped by the blueprint's per-source use budget. No unreviewed footage and no automatic backfill.",
+      basis: seeding ? "acquisition_seed_pending_visual_review" : "byte_bound_visual_approvals",
+      policy: seeding
+        ? "Provisional: bound to the acquired scenes their own acquisition plan entries claim, only so the shots "
+          + "they produce can be inspected. No scene here is approved, and the visual-decision step still refuses "
+          + "to materialize until every one carries a byte-bound approval."
+        : "Slices are chosen from the project's own live claim/slice topology, bound only to already-approved "
+          + "claim-bound scenes, spread through each claim so contextual footage interleaves with primary evidence, "
+          + "and capped by the blueprint's per-source use budget. No unreviewed footage and no automatic backfill.",
+      ...(seeding ? { seeded_scene_count: seededSceneCount } : {}),
       ...summary,
       ...(shortfall ? { blocked_on_acquisition: shortfall.details } : {}),
     },
@@ -299,7 +371,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const args = parseArgs(process.argv.slice(2));
   const projectId = args["project-id"] || args.project;
   if (!projectId) throw new Error("--project-id is required");
-  authorFootageDistribution(projectId)
+  authorFootageDistribution(projectId, {
+    seedFromAcquisition: args["seed-from-acquisition"] === true || args["seed-from-acquisition"] === "true",
+  })
     .then((result) => printJson({ ok: true, ...result }))
     .catch((error) => {
       console.error(JSON.stringify({
