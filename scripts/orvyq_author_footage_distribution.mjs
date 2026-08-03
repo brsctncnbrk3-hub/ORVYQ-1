@@ -24,6 +24,10 @@ import {
   collectHookFootageUsage,
   planFootageDistribution,
 } from "./lib/orvyq-footage-distribution.mjs";
+import {
+  planCoverageAcquisition,
+  applyCoverageAcquisition,
+} from "./lib/orvyq-footage-coverage-requests.mjs";
 
 /**
  * The approved, claim-bound pool: the reviewed scenes the contract already
@@ -62,6 +66,51 @@ export function collectApprovedClaimPools(contracts, approvedSceneIds = null) {
     }
   }
   return Object.fromEntries([...pools.entries()].sort(([a], [b]) => a.localeCompare(b)));
+}
+
+async function recordCoverageRequests(dir, projectId, details) {
+  const files = {
+    requests: path.join(dir, "research", "visual_asset_requests.json"),
+    constraints: path.join(dir, "research", "footage_semantic_constraints.json"),
+    acquisition: path.join(dir, "research", "footage_acquisition_plan.json"),
+  };
+  const [requests, semanticConstraints, acquisitionPlan, runtime] = await Promise.all([
+    readJsonSafe(files.requests, null),
+    readJsonSafe(files.constraints, null),
+    readJsonSafe(files.acquisition, null),
+    readJsonSafe(path.join(dir, "assets", "footage_acquisition.runtime.json"), null),
+  ]);
+  if (!requests || !semanticConstraints || !acquisitionPlan) return null;
+
+  // Every place a scene id can already be spoken for. The constraints file
+  // alone lags behind the acquired pool, and allocating against it hands out
+  // ids that are already carrying approved footage.
+  const existingSceneIds = [
+    ...Object.keys(semanticConstraints.scenes || {}),
+    ...(acquisitionPlan.assets || []).map((asset) => asset.scene_id),
+    ...(requests.requests || []).flatMap((request) => request.scene_ids || []),
+    ...(runtime?.records || []).map((record) => record.scene_id),
+  ].filter(Boolean);
+
+  const { scenes } = planCoverageAcquisition({
+    requiredAdditionalScenes: details.required_additional_scenes,
+    semanticConstraints,
+    acquisitionPlan,
+    existingSceneIds,
+    shortfallSummary: details,
+  });
+  const applied = applyCoverageAcquisition({ scenes, requests, semanticConstraints, acquisitionPlan });
+  if (!applied.added.length) return { added: [], note: "coverage requests were already open" };
+
+  await Promise.all([
+    writeJsonAtomic(files.requests, applied.requests),
+    writeJsonAtomic(files.constraints, applied.semanticConstraints),
+    writeJsonAtomic(files.acquisition, applied.acquisitionPlan),
+  ]);
+  return {
+    project_id: projectId,
+    added: applied.added.map((scene) => ({ scene_id: scene.scene_id, claim_id: scene.claim_id, modelled_on: scene.modelled_on_scene_id })),
+  };
 }
 
 export async function authorFootageDistribution(projectId) {
@@ -110,16 +159,27 @@ export async function authorFootageDistribution(projectId) {
     ...(blueprint.global_rules || {}),
   });
 
-  const { assignments, summary } = planFootageDistribution({
-    claimSlices,
-    claimPools,
-    totalRuntimeSeconds,
-    hookFootageSeconds: hook.seconds,
-    hookUsesByScene: hook.usesByScene,
-    maxUsesPerSource: Number(blueprint.global_rules?.max_uses_per_source),
-    footageFractionMin: thresholds.contextual_footage_fraction_min,
-    footageFractionMax: thresholds.contextual_footage_fraction_max,
-  });
+  let plan;
+  try {
+    plan = planFootageDistribution({
+      claimSlices,
+      claimPools,
+      totalRuntimeSeconds,
+      hookFootageSeconds: hook.seconds,
+      hookUsesByScene: hook.usesByScene,
+      maxUsesPerSource: Number(blueprint.global_rules?.max_uses_per_source),
+      footageFractionMin: thresholds.contextual_footage_fraction_min,
+      footageFractionMax: thresholds.contextual_footage_fraction_max,
+    });
+  } catch (error) {
+    if (error.code !== "FOOTAGE_COVERAGE_INFEASIBLE" || !error.details?.required_additional_scenes?.length) throw error;
+    // Record the blocked acquisition rather than leaving a percentage for
+    // someone to translate by hand, then still fail closed: the footage has
+    // to be acquired and frame-reviewed before a distribution can exist.
+    error.recorded_requests = await recordCoverageRequests(dir, projectId, error.details);
+    throw error;
+  }
+  const { assignments, summary } = plan;
 
   const next = {
     ...contracts,
@@ -150,7 +210,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   authorFootageDistribution(projectId)
     .then((result) => printJson({ ok: true, ...result }))
     .catch((error) => {
-      console.error(JSON.stringify({ ok: false, error: error.message, ...(error.details ? { details: error.details } : {}) }, null, 2));
+      console.error(JSON.stringify({
+        ok: false,
+        error: error.message,
+        ...(error.details ? { details: error.details } : {}),
+        ...(error.recorded_requests ? { recorded_requests: error.recorded_requests } : {}),
+      }, null, 2));
       process.exitCode = 1;
     });
 }
