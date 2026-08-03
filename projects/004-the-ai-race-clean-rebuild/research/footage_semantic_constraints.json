@@ -287,7 +287,7 @@
     },
     "scene_024": {
       "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
-      "required_visible_content": "European legislative building seen as an institution",
+      "required_visible_content": "EU flag seen as an unambiguous institutional marker",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
@@ -371,7 +371,7 @@
     },
     "scene_031": {
       "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
-      "required_visible_content": "University laboratory adapting shared technical work",
+      "required_visible_content": "Two researchers reviewing shared laboratory work together",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
@@ -419,7 +419,7 @@
     },
     "scene_035": {
       "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-      "required_visible_content": "A technical evaluator methodically testing a system",
+      "required_visible_content": "An unbranded scientist methodically inspecting a test sample",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",

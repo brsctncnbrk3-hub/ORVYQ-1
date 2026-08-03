@@ -420,10 +420,10 @@
         "government institution building europe"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "European legislative building seen as an institution",
+      "editorial_note": "EU flag seen as an unambiguous institutional marker",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
-      "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
       "provider_asset_ids": [
         "34430011"
       ],
@@ -550,10 +550,10 @@
         "students working laboratory computers"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "University laboratory adapting shared technical work",
+      "editorial_note": "Two researchers reviewing shared laboratory work together",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
       "provider_asset_ids": [
         "8534546"
       ],
@@ -628,10 +628,10 @@
         "quality control testing technician"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "A technical evaluator methodically testing a system",
+      "editorial_note": "An unbranded scientist methodically inspecting a test sample",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
       "provider_asset_ids": [
         "8381452"
       ],
