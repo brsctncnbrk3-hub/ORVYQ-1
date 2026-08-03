@@ -840,7 +840,7 @@
   },
   "notes": "Authored against the exact 127-shot coverage diagnostic: 68 contextual-footage slices target 60.87% footage, keep evidence above 20%, keep graphics below 15%, cap uninterrupted evidence at 14.74 seconds, and land every editorial pause on footage.",
   "last_footage_use_contract_application": {
-    "generated_at": "2026-08-03T22:58:13.618Z",
+    "generated_at": "2026-08-03T23:28:26.720Z",
     "managed_scene_count": 45,
     "pruned_scene_count": 0,
     "assignment_count": 76,
@@ -870,7 +870,47 @@
     ],
     "source_duration_fit": {
       "shifted_contiguous_runs": [],
-      "slowed_contiguous_runs": []
+      "slowed_contiguous_runs": [
+        {
+          "asset": "assets/footage/scene_010_9099198b8c8f8be1a29c4412.mp4",
+          "start_index": 38,
+          "end_index": 39,
+          "original_trim_in_sec": 0.323,
+          "original_trim_out_sec": 9.7,
+          "fitted_trim_in_sec": 0,
+          "fitted_trim_out_sec": 8,
+          "source_duration_seconds": 8,
+          "playback_rate": 0.854093,
+          "minimum_playback_rate": 0.75,
+          "reason": "The same approved source was played slightly slower to preserve the authored timeline after a downstream extension; looping and synthetic frames remain forbidden."
+        },
+        {
+          "asset": "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
+          "start_index": 73,
+          "end_index": 74,
+          "original_trim_in_sec": 0.881,
+          "original_trim_out_sec": 13.527,
+          "fitted_trim_in_sec": 0,
+          "fitted_trim_out_sec": 11.011,
+          "source_duration_seconds": 11.011,
+          "playback_rate": 0.871583,
+          "minimum_playback_rate": 0.75,
+          "reason": "The same approved source was played slightly slower to preserve the authored timeline after a downstream extension; looping and synthetic frames remain forbidden."
+        },
+        {
+          "asset": "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4",
+          "start_index": 129,
+          "end_index": 130,
+          "original_trim_in_sec": 3.691,
+          "original_trim_out_sec": 17.378,
+          "fitted_trim_in_sec": 0,
+          "fitted_trim_out_sec": 11.678333,
+          "source_duration_seconds": 11.678333,
+          "playback_rate": 0.852433,
+          "minimum_playback_rate": 0.75,
+          "reason": "The same approved source was played slightly slower to preserve the authored timeline after a downstream extension; looping and synthetic frames remain forbidden."
+        }
+      ]
     },
     "footage_use_budget": {
       "max_uses_per_source": 2,
@@ -937,7 +977,7 @@
     "retired_paths": []
   },
   "last_footage_use_contract_staging": {
-    "generated_at": "2026-08-03T22:58:12.915Z",
+    "generated_at": "2026-08-03T23:28:21.181Z",
     "reason": "Stage contract-derived editorial assignments before rebuilding the full-production topology.",
     "assignment_count": 76,
     "managed_scene_count": 45,

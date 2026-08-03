@@ -822,23 +822,23 @@
   ],
   "authored_distribution": {
     "schema_version": "1.0",
-    "generated_at": "2026-08-03T21:52:31.083Z",
+    "generated_at": "2026-08-03T23:28:16.542Z",
     "source": "direction/editorial_blueprint.json full_production shots",
-    "basis": "byte_bound_approvals_plus_acquisition_seed_pending_visual_review",
-    "policy": "Provisional review authoring: existing assignments remain eligible only when their current bytes are approved, while explicitly pending acquired scenes are bound to the claims in their own acquisition plan entries only so their exact uses can be inspected. No pending scene is approved here, and the visual-decision step still refuses to materialize one until it carries a byte-bound approval.",
-    "seeded_scene_count": 11,
+    "basis": "byte_bound_visual_approvals",
+    "policy": "Slices are chosen from the project's own live claim/slice topology, bound only to already-approved claim-bound scenes, spread through each claim so contextual footage interleaves with primary evidence, and capped by the blueprint's per-source use budget. No unreviewed footage and no automatic backfill.",
+    "preserved_approved_exact_uses": true,
     "claim_count": 21,
     "claims_without_approved_pool": [],
     "assignment_count": 76,
-    "total_runtime_seconds": 844.2,
+    "total_runtime_seconds": 844.133,
     "hook_footage_seconds": 11,
-    "body_footage_seconds": 575.636,
-    "contextual_footage_fraction": 0.695,
+    "body_footage_seconds": 574.802,
+    "contextual_footage_fraction": 0.694,
     "coverage_status": "within_band",
     "contextual_footage_fraction_min": 0.6,
     "contextual_footage_fraction_max": 0.7,
     "max_uses_per_source": 2,
     "maximum_uses_reached": 2,
-    "reachable_body_seconds": 575.636
+    "reachable_body_seconds": 574.802
   }
 }

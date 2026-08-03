@@ -38,12 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10557931",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
+  "approved_for_final_edit": true,
   "downloaded_at": "2026-08-03T18:28:52.195Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "105bda13d395c585672379de4335ede9e1b48d19c77f604988cdfc55428c11c1",
   "reviewed_contact_sheet_sha256": "4e3dc70389a2c63f4517e4d0b4c46a65e994fdda009677efafa5120e2abe81ce",
-  "visual_qa_reason": "Hands working through a thick paper stack beside ring binders, with no document type legible. Record-keeping in motion, which is what the reporting beat needs.",
-  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
+  "visual_qa_reason": "Hands working through a thick paper stack beside ring binders, with no document type legible. Record-keeping in motion, which is what the reporting beat needs."
 }

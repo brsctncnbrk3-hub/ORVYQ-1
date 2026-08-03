@@ -38,12 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "12966052",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
+  "approved_for_final_edit": true,
   "downloaded_at": "2026-08-03T18:27:00.225Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "08c180d74a9bfa63f0d4a29ea76a10b39de78584d3d91cac8014e78ebac2d665",
   "reviewed_contact_sheet_sha256": "8a006c8820700cca26fb27f625c62f461ef15ab51ea4ce7349d08b969d693325",
-  "visual_qa_reason": "Power switchgear and insulators, unmistakably electrical distribution infrastructure, which is the dependency the scene names. Source is monochrome and will need grading to sit with the rest.",
-  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
+  "visual_qa_reason": "Power switchgear and insulators, unmistakably electrical distribution infrastructure, which is the dependency the scene names. Source is monochrome and will need grading to sit with the rest."
 }

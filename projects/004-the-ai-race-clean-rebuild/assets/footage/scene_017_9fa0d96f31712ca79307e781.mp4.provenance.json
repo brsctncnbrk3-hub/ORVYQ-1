@@ -38,12 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "7343628",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
+  "approved_for_final_edit": true,
   "downloaded_at": "2026-08-03T18:26:17.231Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "a6fe97bed99c3b76fea7c8fae452b6879c3b157d24eb21c67f1c79d44c1c9685",
   "reviewed_contact_sheet_sha256": "551ab6351233badfd3d867e1e5283a7c91ccc827734c10473e873161ea0a8f72",
-  "visual_qa_reason": "One person at home absorbed in a handset in ordinary low light. No event, no performance; the ordinariness is what the persuasion beat needs.",
-  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
+  "visual_qa_reason": "One person at home absorbed in a handset in ordinary low light. No event, no performance; the ordinariness is what the persuasion beat needs."
 }

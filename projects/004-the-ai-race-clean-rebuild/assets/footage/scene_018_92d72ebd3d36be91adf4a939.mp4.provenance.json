@@ -38,12 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9310324",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
+  "approved_for_final_edit": true,
   "downloaded_at": "2026-08-03T18:26:28.751Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "9ae55ee3f360a957a956b82dbd1bec1877943120d40aa194c12c8bae391c7b0b",
   "reviewed_contact_sheet_sha256": "8c88b16ed326f0c8a1ff04d189c61cf35d8c7d9a18b9716889fe24a7210d1529",
-  "visual_qa_reason": "A row of people standing together, each looking down at their own handset. Many people each attending to their own screen, exactly as the brief asks, with no content shown.",
-  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
+  "visual_qa_reason": "A row of people standing together, each looking down at their own handset. Many people each attending to their own screen, exactly as the brief asks, with no content shown."
 }
