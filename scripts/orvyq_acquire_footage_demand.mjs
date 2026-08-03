@@ -349,7 +349,7 @@ export async function preflightPexelsSelections(
       for (const query of queries) {
         const videosById = new Map();
         for (let page = 1; page <= pagesPerQuery; page += 1) {
-          const cacheKey = `${query} ${perPage} ${page}`;
+          const cacheKey = `${query}\u0000${perPage}\u0000${page}`;
           let result = searchCache.get(cacheKey);
           if (!result) {
             if (requestCount >= maxRequestsPerRun) {

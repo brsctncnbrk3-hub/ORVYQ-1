@@ -112,22 +112,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Make byte-bound human approval authoritative for reuse
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          source = Path("scripts/orvyq_acquire_footage_demand.mjs")
-          text = source.read_text()
-          old = '  if (!matchesSemanticText(`${provenance.source_page_url || ""} ${provenance.creator || ""}`, item)) return null;'
-          new = '  if (!reviewApproved && !matchesSemanticText(`${provenance.source_page_url || ""} ${provenance.creator || ""}`, item)) return null;'
-          if old in text:
-              source.write_text(text.replace(old, new))
-          elif new not in text:
-              raise SystemExit("Could not find the reusable semantic guard")
-          PY
-
       - name: Apply claim-bound footage use contracts
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
 
