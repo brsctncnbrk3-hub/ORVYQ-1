@@ -35,7 +35,7 @@ jobs:
           node --input-type=module -e "
             import tls from 'node:tls';
             await new Promise((resolve) => {
-              const socket = tls.connect(443, 'www.ntia.gov', { servername: 'www.ntia.gov' }, () => {
+              const socket = tls.connect(443, 'www.ntia.gov', { servername: 'www.ntia.gov', rejectUnauthorized: false }, () => {
                 console.log('authorized:', socket.authorized);
                 console.log('authorizationError:', socket.authorizationError);
                 let cert = socket.getPeerCertificate(true);
@@ -46,6 +46,7 @@ jobs:
                   console.log('issuer:', JSON.stringify(cert.issuer));
                   console.log('valid_to:', cert.valid_to);
                   console.log('infoAccess:', JSON.stringify(cert.infoAccess || null));
+                  console.log('fingerprint256:', cert.fingerprint256);
                   if (cert.issuerCertificate && cert.issuerCertificate !== cert) {
                     cert = cert.issuerCertificate;
                   } else {
