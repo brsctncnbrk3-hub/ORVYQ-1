@@ -42,7 +42,12 @@ async function loadDecisionRounds(dir, projectId) {
   const names = (await fs.readdir(researchDir))
     .filter((name) => /^footage_visual_decisions(?:_[a-z0-9-]+)?\.json$/.test(name))
     .sort((a, b) => decisionRoundOrder(a) - decisionRoundOrder(b) || a.localeCompare(b));
-  if (!names.length) throw new Error(`No footage_visual_decisions*.json files exist for ${projectId}`);
+  // A project that has not been through a visual-decision round yet -- a fresh
+  // project, or one whose pool was just retired for a rebuild -- genuinely has
+  // none. Applying zero decisions approves nothing and rejects nothing, so it
+  // is a legitimate no-op rather than a failure. Treating it as an error is
+  // what stops footage acquisition from ever bootstrapping such a project.
+  if (!names.length) return null;
   const byScene = new Map();
   const bases = [];
   for (const name of names) {
@@ -299,6 +304,15 @@ export async function applyProjectFootageVisualDecisions(projectId) {
     readJson(files.blueprint),
     readJson(files.motionHook),
   ]);
+
+  if (decisions === null) {
+    return {
+      project_id: projectId,
+      decision_rounds: 0,
+      applied_decisions: 0,
+      note: "No footage visual decision round exists yet; nothing was approved, rejected or rewritten.",
+    };
+  }
 
   const result = applyFootageVisualDecisions({ queue, decisions, reviews, runtime, requests });
   const queueByScene = new Map((queue.entries || []).map((entry) => [entry.scene_id, entry]));
