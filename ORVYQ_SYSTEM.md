@@ -5,6 +5,8 @@
 > This file defines the current ORVYQ production system. Every agent, script, workflow and project must follow it. If another README, migration document, historical plan, workflow name or code comment conflicts with this file, **this file wins**.
 >
 > This document must be updated whenever system behaviour changes or Project 002 reveals a new failure. Historical documents explain repository history only; they do not define the active workflow.
+>
+> **Every fix is a system fix, not a project fix.** Any correction, bug repair, workflow change or quality-gate adjustment made while working on any project — `002-the-new-war-beneath-the-ocean`, `004-the-ai-race-clean-rebuild`, or any future `projects/<project-id>/` — is a change to this reusable production system. It must land in shared scripts, schemas, workflows or this contract so every current and future project benefits, not only the project or video that happened to surface the failure. Editing only one project's own directory does not close a reusable defect; see section 12.
 
 ## 1. Validation vehicle
 
@@ -241,7 +243,7 @@ Technical validity alone is not sufficient.
 
 ## 12. Continuous correction rule
 
-Every Project 002 failure must be classified as:
+Every failure on any project — Project 002, Project 004, or any later project — must be classified as:
 
 - project-data defect
 - reusable-system defect
@@ -249,9 +251,9 @@ Every Project 002 failure must be classified as:
 - external dependency
 - creative-quality defect
 
-Reusable defects must be fixed in shared code or workflows, not patched only inside Project 002.
+Reusable defects must be fixed in shared code, schemas or workflows, not patched only inside the one project directory that happened to surface them. A fix scoped to a single project's own files, when the underlying cause lives in shared logic, is not a completed correction under this contract.
 
-After every meaningful discovery, update the live acceptance record and change log below.
+After every meaningful discovery, update the live acceptance record and change log below for the project it concerns, and update the shared sections above if the fix changes system-wide behaviour.
 
 ## 13. Definition of done
 
