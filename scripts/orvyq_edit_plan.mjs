@@ -117,6 +117,13 @@ export function resolveRegisterFrames(spec, label) {
   return { heldFrame, evidenceFrame };
 }
 
+export function imageEvidenceUseKey(evidence) {
+  if (!evidence || !IMAGE_KINDS.has(evidence.kind)) return null;
+  const images = evidence.image_assets || [];
+  if (!images.length) return null;
+  return JSON.stringify(images);
+}
+
 // ---- mode: "full" -- reads direction/editorial_blueprint.json's full_production.shots ----
 
 async function fullEvidenceAssetManifest(dir) {
@@ -148,10 +155,13 @@ async function buildFullPlan(dir, projectId, blueprint) {
   // shot isn't footage, since "contiguous" requires adjacency, not just a
   // coincidentally matching trim value.
   let previousFootage = null;
+  let previousImageEvidence = null;
 
   for (let index = 0; index < full.shots.length; index += 1) {
     const spec = full.shots[index];
     if (spec.asset_type !== "footage") previousFootage = null;
+    const currentImageEvidenceKey = spec.asset_type === "evidence" ? imageEvidenceUseKey(spec.evidence) : null;
+    if (!currentImageEvidenceKey) previousImageEvidence = null;
     const duration = Number(spec.duration);
     if (!Number.isFinite(duration) || duration <= 0 || duration > blueprint.global_rules.max_shot_seconds)
       throw new Error(`full_production.shots[${index}] has invalid duration ${spec.duration}`);
@@ -241,6 +251,7 @@ async function buildFullPlan(dir, projectId, blueprint) {
         const images = evidence.image_assets || [];
         const ids = evidence.evidence_asset_ids || [];
         if (!images.length || images.length !== ids.length) throw new Error(`${common.shot_id} image evidence must pair every image with an evidence_asset_id`);
+        const continuesPreviousImageEvidence = previousImageEvidence === currentImageEvidenceKey;
         for (let assetIndex = 0; assetIndex < ids.length; assetIndex += 1) {
           const id = ids[assetIndex];
           const declared = evidenceAssetsById.get(id);
@@ -248,9 +259,12 @@ async function buildFullPlan(dir, projectId, blueprint) {
           if (declared.status !== "ready") throw new Error(`${common.shot_id} evidence asset ${id} is not ready (status=${declared.status}); automatic asset fallback is forbidden`);
           const image = images[assetIndex];
           if (!(await pathExists(path.join(dir, image)))) throw new Error(`${common.shot_id} evidence asset file is missing: ${image}`);
-          sourceUsage.set(image, (sourceUsage.get(image) || 0) + 1);
-          if (sourceUsage.get(image) > blueprint.global_rules.max_uses_per_source) throw new Error(`${image} exceeds the ${blueprint.global_rules.max_uses_per_source}-use limit`);
+          if (!continuesPreviousImageEvidence) {
+            sourceUsage.set(image, (sourceUsage.get(image) || 0) + 1);
+            if (sourceUsage.get(image) > blueprint.global_rules.max_uses_per_source) throw new Error(`${image} exceeds the ${blueprint.global_rules.max_uses_per_source}-use limit`);
+          }
         }
+        previousImageEvidence = currentImageEvidenceKey;
       } else if (evidence.image_assets?.length || evidence.evidence_asset_ids?.length) {
         throw new Error(`${common.shot_id} native source-derived graphic cannot smuggle image assets`);
       }

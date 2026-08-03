@@ -7,7 +7,8 @@
       "hai-production.s3.amazonaws.com",
       "assets.publishing.service.gov.uk",
       "internationalaisafetyreport.org",
-      "eur-lex.europa.eu"
+      "eur-lex.europa.eu",
+      "www.ntia.gov"
     ],
     "required_provenance_mode": "official_primary_capture",
     "runtime_manifest": "assets/evidence/primary_evidence.runtime.json",
@@ -17,7 +18,9 @@
   "assets": [
     {
       "evidence_asset_id": "EVID_ASL3_COVER",
-      "source_ids": ["SRC_ANTHROPIC_ASL3_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_ASL3_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf",
       "source_institution": "Anthropic",
       "source_title": "Claude 4 System Card — ASL-3 Deployment and Safeguards",
@@ -35,7 +38,9 @@
     },
     {
       "evidence_asset_id": "EVID_ASL3_ABSTRACT",
-      "source_ids": ["SRC_ANTHROPIC_ASL3_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_ASL3_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf",
       "source_institution": "Anthropic",
       "source_title": "Claude 4 System Card — ASL-3 Deployment and Safeguards",
@@ -53,7 +58,9 @@
     },
     {
       "evidence_asset_id": "EVID_ASL3_CBRN_EVALUATION",
-      "source_ids": ["SRC_ANTHROPIC_ASL3_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_ASL3_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf",
       "source_institution": "Anthropic",
       "source_title": "Claude 4 System Card — ASL-3 Deployment and Safeguards",
@@ -71,7 +78,9 @@
     },
     {
       "evidence_asset_id": "EVID_AGENTIC_FIGURE_01",
-      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/246a928da96d21474848647bc4b0938d182aeb8b-4096x1746.png",
       "source_institution": "Anthropic Research",
       "source_title": "Agentic Misalignment: How LLMs could be insider threats",
@@ -88,7 +97,9 @@
     },
     {
       "evidence_asset_id": "EVID_AGENTIC_FIGURE_02",
-      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/f8ade2db0fefac490af1e2a991b0d4ce3f0b238c-3840x2160.png",
       "source_institution": "Anthropic Research",
       "source_title": "Agentic Misalignment: How LLMs could be insider threats",
@@ -105,7 +116,9 @@
     },
     {
       "evidence_asset_id": "EVID_AGENTIC_FIGURE_03",
-      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/f16473f9893693a59cb4794883ed0dce965ce93e-2514x1414.png",
       "source_institution": "Anthropic Research",
       "source_title": "Agentic Misalignment: How LLMs could be insider threats",
@@ -122,7 +135,9 @@
     },
     {
       "evidence_asset_id": "EVID_AGENTIC_FIGURE_04",
-      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d8889f94ef801509c36d02fabe7e61bd468ca6f6-3840x2160.png",
       "source_institution": "Anthropic Research",
       "source_title": "Agentic Misalignment: How LLMs could be insider threats",
@@ -139,7 +154,9 @@
     },
     {
       "evidence_asset_id": "EVID_AGENTIC_FIGURE_05",
-      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d4ecf930303d3c5b9bdb6d953fd845eac92ffb48-3840x2160.png",
       "source_institution": "Anthropic Research",
       "source_title": "Agentic Misalignment: How LLMs could be insider threats",
@@ -156,7 +173,9 @@
     },
     {
       "evidence_asset_id": "EVID_AGENTIC_FIGURE_07",
-      "source_ids": ["SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"],
+      "source_ids": [
+        "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
+      ],
       "source_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/a7c09ecd57c986788a20b71daaa533bc691830b3-4096x2304.png",
       "source_institution": "Anthropic Research",
       "source_title": "Agentic Misalignment: How LLMs could be insider threats",
@@ -173,7 +192,9 @@
     },
     {
       "evidence_asset_id": "EVID_STANFORD_INVESTMENT_2024",
-      "source_ids": ["SRC_STANFORD_AI_INDEX_2025"],
+      "source_ids": [
+        "SRC_STANFORD_AI_INDEX_2025"
+      ],
       "source_url": "https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf",
       "source_institution": "Stanford Institute for Human-Centered AI",
       "source_title": "The 2025 AI Index Report",
@@ -191,7 +212,9 @@
     },
     {
       "evidence_asset_id": "EVID_STANFORD_FRONTIER_GAP",
-      "source_ids": ["SRC_STANFORD_AI_INDEX_2025"],
+      "source_ids": [
+        "SRC_STANFORD_AI_INDEX_2025"
+      ],
       "source_url": "https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf",
       "source_institution": "Stanford Institute for Human-Centered AI",
       "source_title": "The 2025 AI Index Report",
@@ -209,7 +232,9 @@
     },
     {
       "evidence_asset_id": "EVID_CMA_COMPETITION_RISKS",
-      "source_ids": ["SRC_CMA_FOUNDATION_MODELS_2024"],
+      "source_ids": [
+        "SRC_CMA_FOUNDATION_MODELS_2024"
+      ],
       "source_url": "https://assets.publishing.service.gov.uk/media/661941a6c1d297c6ad1dfeed/Update_Paper__1_.pdf",
       "source_institution": "UK Competition and Markets Authority",
       "source_title": "AI Foundation Models: Update paper",
@@ -227,7 +252,9 @@
     },
     {
       "evidence_asset_id": "EVID_CMA_CRITICAL_INPUTS",
-      "source_ids": ["SRC_CMA_FOUNDATION_MODELS_2024"],
+      "source_ids": [
+        "SRC_CMA_FOUNDATION_MODELS_2024"
+      ],
       "source_url": "https://assets.publishing.service.gov.uk/media/661941a6c1d297c6ad1dfeed/Update_Paper__1_.pdf",
       "source_institution": "UK Competition and Markets Authority",
       "source_title": "AI Foundation Models: Update paper",
@@ -245,7 +272,9 @@
     },
     {
       "evidence_asset_id": "EVID_IASR_PERSUASION",
-      "source_ids": ["SRC_IASR_2025"],
+      "source_ids": [
+        "SRC_IASR_2025"
+      ],
       "source_url": "https://internationalaisafetyreport.org/sites/default/files/2025-10/international_ai_safety_report_2025_english.pdf",
       "source_institution": "International AI Safety Report",
       "source_title": "International AI Safety Report 2025",
@@ -263,7 +292,9 @@
     },
     {
       "evidence_asset_id": "EVID_EU_SYSTEMIC_CLASSIFICATION",
-      "source_ids": ["SRC_EU_AI_ACT_2024"],
+      "source_ids": [
+        "SRC_EU_AI_ACT_2024"
+      ],
       "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401689",
       "source_institution": "European Union",
       "source_title": "Regulation (EU) 2024/1689 — Artificial Intelligence Act",
@@ -281,7 +312,9 @@
     },
     {
       "evidence_asset_id": "EVID_EU_SYSTEMIC_DUTIES",
-      "source_ids": ["SRC_EU_AI_ACT_2024"],
+      "source_ids": [
+        "SRC_EU_AI_ACT_2024"
+      ],
       "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401689",
       "source_institution": "European Union",
       "source_title": "Regulation (EU) 2024/1689 — Artificial Intelligence Act",
@@ -299,7 +332,9 @@
     },
     {
       "evidence_asset_id": "EVID_EU_INCIDENT_REPORTING",
-      "source_ids": ["SRC_EU_AI_ACT_2024"],
+      "source_ids": [
+        "SRC_EU_AI_ACT_2024"
+      ],
       "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401689",
       "source_institution": "European Union",
       "source_title": "Regulation (EU) 2024/1689 — Artificial Intelligence Act",
@@ -314,6 +349,90 @@
       "provenance_mode": "official_primary_capture",
       "required_for_full": true,
       "caption": "EU AI Act — Article 73 reporting of serious incidents"
+    },
+    {
+      "evidence_asset_id": "EVID_ANTHROPIC_CYBER_EXTORTION_SUMMARY",
+      "source_ids": [
+        "SRC_ANTHROPIC_CYBER_MISUSE_2025"
+      ],
+      "source_url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
+      "source_institution": "Anthropic",
+      "source_title": "Detecting and countering misuse of AI: August 2025",
+      "source_date": "2025-08-27",
+      "content_identity": "SRC_ANTHROPIC_CYBER_MISUSE_2025:official-pdf:page-4:scaled-data-extortion-summary",
+      "download_asset": "assets/evidence/downloads/anthropic_cyber_misuse_2025.pdf",
+      "local_asset": "assets/evidence/anthropic_cyber_extortion_summary_page4.png",
+      "mime": "application/pdf",
+      "page_number": 4,
+      "min_bytes": 100000,
+      "local_min_bytes": 30000,
+      "provenance_mode": "official_primary_capture",
+      "required_for_full": true,
+      "caption": "Anthropic — disrupted AI-assisted data-extortion operation and key findings",
+      "limitation": "Developer-authored threat-intelligence report about one disrupted campaign; it does not establish the prevalence of this behavior across all cybercrime."
+    },
+    {
+      "evidence_asset_id": "EVID_ANTHROPIC_ESPIONAGE_SUMMARY",
+      "source_ids": [
+        "SRC_ANTHROPIC_ESPIONAGE_2025"
+      ],
+      "source_url": "https://www-cdn.anthropic.com/d7dd50dd1185f59be051b307150d877f2b82bd2c.pdf",
+      "source_institution": "Anthropic",
+      "source_title": "Disrupting the first reported AI-orchestrated cyber espionage campaign",
+      "source_date": "2025-11-13",
+      "content_identity": "SRC_ANTHROPIC_ESPIONAGE_2025:official-pdf:page-3:executive-summary-and-autonomy",
+      "download_asset": "assets/evidence/downloads/anthropic_espionage_2025.pdf",
+      "local_asset": "assets/evidence/anthropic_espionage_summary_page3.png",
+      "mime": "application/pdf",
+      "page_number": 3,
+      "min_bytes": 100000,
+      "local_min_bytes": 30000,
+      "provenance_mode": "official_primary_capture",
+      "required_for_full": true,
+      "caption": "Anthropic — executive summary of a disrupted AI-orchestrated espionage campaign",
+      "limitation": "Anthropic's attribution and autonomy estimates are a developer-authored assessment of one investigated campaign and retain the report's stated uncertainty."
+    },
+    {
+      "evidence_asset_id": "EVID_NTIA_OPEN_WEIGHTS_SUMMARY",
+      "source_ids": [
+        "SRC_NTIA_OPEN_WEIGHTS_2024"
+      ],
+      "source_url": "https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf",
+      "source_institution": "National Telecommunications and Information Administration",
+      "source_title": "Dual-Use Foundation Models with Widely Available Model Weights",
+      "source_date": "2024-07-30",
+      "content_identity": "SRC_NTIA_OPEN_WEIGHTS_2024:official-pdf:page-4:benefit-risk-overview",
+      "download_asset": "assets/evidence/downloads/ntia_open_weights_2024.pdf",
+      "local_asset": "assets/evidence/ntia_open_weights_summary_page4.png",
+      "mime": "application/pdf",
+      "page_number": 4,
+      "min_bytes": 100000,
+      "local_min_bytes": 30000,
+      "provenance_mode": "official_primary_capture",
+      "required_for_full": true,
+      "caption": "NTIA — overview of benefits and attendant risks from widely available model weights",
+      "limitation": "The overview presents a policy assessment of both benefits and risks; it is not evidence that either side of the tradeoff always dominates."
+    },
+    {
+      "evidence_asset_id": "EVID_NTIA_OPEN_WEIGHTS_RESEARCH",
+      "source_ids": [
+        "SRC_NTIA_OPEN_WEIGHTS_2024"
+      ],
+      "source_url": "https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf",
+      "source_institution": "National Telecommunications and Information Administration",
+      "source_title": "Dual-Use Foundation Models with Widely Available Model Weights",
+      "source_date": "2024-07-30",
+      "content_identity": "SRC_NTIA_OPEN_WEIGHTS_2024:official-pdf:page-34:independent-research-access",
+      "download_asset": "assets/evidence/downloads/ntia_open_weights_2024.pdf",
+      "local_asset": "assets/evidence/ntia_open_weights_research_page34.png",
+      "mime": "application/pdf",
+      "page_number": 34,
+      "min_bytes": 100000,
+      "local_min_bytes": 30000,
+      "provenance_mode": "official_primary_capture",
+      "required_for_full": true,
+      "caption": "NTIA — independent research, validation and access considerations for open model weights",
+      "limitation": "The page describes research-access benefits alongside costs and limitations; preserve that qualified policy framing."
     }
   ]
 }

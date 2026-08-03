@@ -34,11 +34,25 @@ test("Candidate Validation authors, reconciles and only then judges the footage 
 
 test("only the two topology-building passes defer the creative-coverage gate", () => {
   const planRuns = [...workflow.matchAll(/node scripts\/orvyq_full_production_plan\.mjs[^\n]*/g)].map((match) => match[0]);
-  assert.equal(planRuns.length, 3, `expected exactly three full-production passes, found ${planRuns.length}`);
+  assert.equal(planRuns.length, 4, `expected exactly four full-production passes, found ${planRuns.length}`);
   assert.equal(planRuns.filter((run) => run.includes("--defer-coverage-gate")).length, 2);
   assert.ok(planRuns[0].includes("--defer-coverage-gate"), "the first pass is the deferred topology pass");
   assert.ok(planRuns[1].includes("--defer-coverage-gate"), "the second pass refreshes topology from staged assignments");
   assert.ok(!planRuns[2].includes("--defer-coverage-gate"), "the third pass must enforce the gate");
+  assert.ok(!planRuns[3].includes("--defer-coverage-gate"), "the post-evidence rebuild must enforce the gate");
+});
+
+test("verified evidence materializes and rebuilds the blueprint before edit-plan validation", () => {
+  const promoteIndex = workflow.indexOf("Promote verified evidence assets to ready");
+  const materializeIndex = workflow.indexOf("Materialize the verified visual rebalance");
+  const rebuildIndex = workflow.indexOf("Rebuild the canonical shot list with verified evidence");
+  const auditIndex = workflow.indexOf("Audit the measured materialized visual balance");
+  const editIndex = workflow.indexOf("Build the canonical candidate edit plan");
+
+  assert.ok(materializeIndex > promoteIndex, "rebalance cannot materialize before evidence promotion");
+  assert.ok(rebuildIndex > materializeIndex, "the canonical blueprint must be rebuilt from the materialized plan");
+  assert.ok(auditIndex > rebuildIndex, "the measured plan must audit the rebuilt blueprint");
+  assert.ok(editIndex > auditIndex, "edit-plan validation must consume the audited materialized blueprint");
 });
 
 test("the authoring and reconciliation steps run against the selected project", () => {

@@ -1,8 +1,9 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "planned_pending_primary_evidence",
-  "projection_basis": "Pre-materialization editorial target only. Candidate Validation must replace this projection with measured shot-level ratios and all post-plan audits must pass before review render authorization.",
+  "status": "blocked_pending_assets",
+  "purpose": "Materialize a measured evidence-led visual mix while preserving claim provenance, approved footage semantics and section-level pacing.",
+  "projection_basis": "Shot-level projection computed from the current canonical 132-shot baseline and the explicit actions below; Candidate Validation must replace it with measured post-materialization values.",
   "thresholds": {
     "contextual_footage_fraction_min": 0.6,
     "contextual_footage_fraction_max": 0.7,
@@ -13,10 +14,10 @@
     "section_graphic_card_fraction_max": 0.25
   },
   "projected": {
-    "contextual_footage_fraction": 0.65,
-    "primary_evidence_fraction": 0.22,
-    "graphic_card_fraction": 0.13,
-    "full_screen_text_card_fraction": 0.02,
+    "contextual_footage_fraction": 0.6592165534670669,
+    "primary_evidence_fraction": 0.26259674616964146,
+    "graphic_card_fraction": 0.07818670036329174,
+    "full_screen_text_card_fraction": 0,
     "maximum_consecutive_graphic_card_shots": 1
   },
   "target_balance": {
@@ -31,22 +32,665 @@
     "section_graphic_card_fraction_max": 0.25,
     "old_project_asset_reuse_forbidden": true
   },
-  "actions": [],
+  "actions": [
+    {
+      "baseline_shot_index": 4,
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+      "duration_seconds": 2.6666666666666665,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ASL3_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_asl3_abstract.png",
+          "evidence_asset_id": "EVID_ASL3_ABSTRACT",
+          "source_region": "Official PDF page 2"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 5,
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+      "duration_seconds": 2,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ASL3_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_asl3_cover.png",
+          "evidence_asset_id": "EVID_ASL3_COVER",
+          "source_region": "Official PDF page 1"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 6,
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "duration_seconds": 6.233333333333333,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_STANFORD_AI_INDEX_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/stanford_ai_index_frontier_gap_page99.png",
+          "evidence_asset_id": "EVID_STANFORD_FRONTIER_GAP",
+          "source_region": "Official PDF page 99"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 8,
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "duration_seconds": 2.5,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_agentic_figure_02.png",
+          "evidence_asset_id": "EVID_AGENTIC_FIGURE_02",
+          "source_region": "Official published figure"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 17,
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "duration_seconds": 4,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_004",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_004_64f83425b7646e01b727c7ff.mp4",
+          "trim_in_sec": 8,
+          "trim_out_sec": 12
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 18,
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "duration_seconds": 6.9,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_agentic_figure_03.png",
+          "evidence_asset_id": "EVID_AGENTIC_FIGURE_03",
+          "source_region": "Official published figure"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 21,
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "duration_seconds": 6.9,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_agentic_figure_04.png",
+          "evidence_asset_id": "EVID_AGENTIC_FIGURE_04",
+          "source_region": "Official published figure"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 24,
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "duration_seconds": 6.9,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_agentic_figure_05.png",
+          "evidence_asset_id": "EVID_AGENTIC_FIGURE_05",
+          "source_region": "Official published figure"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 27,
+      "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+      "duration_seconds": 2,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_007",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_007_dbd3f40142582e1219009df4.mp4",
+          "trim_in_sec": 9.8,
+          "trim_out_sec": 11.8
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 28,
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "duration_seconds": 2.5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_source_matrix",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 36,
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "duration_seconds": 2.5,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_comparison_split",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 37,
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "duration_seconds": 7.366666666666666,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_cyber_extortion_summary_page4.png",
+          "evidence_asset_id": "EVID_ANTHROPIC_CYBER_EXTORTION_SUMMARY",
+          "source_region": "Official PDF page 4"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 39,
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "duration_seconds": 2,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_010",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_010_9099198b8c8f8be1a29c4412.mp4",
+          "trim_in_sec": 6,
+          "trim_out_sec": 8
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 40,
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "duration_seconds": 7.2,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_cyber_extortion_summary_page4.png",
+          "evidence_asset_id": "EVID_ANTHROPIC_CYBER_EXTORTION_SUMMARY",
+          "source_region": "Official PDF page 4"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 41,
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "duration_seconds": 7.566666666666666,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_claim_focus",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 43,
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "duration_seconds": 7.433333333333334,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_process_map",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 45,
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "duration_seconds": 6.966666666666667,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_timeline",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 47,
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "duration_seconds": 5.733333333333333,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_espionage_summary_page3.png",
+          "evidence_asset_id": "EVID_ANTHROPIC_ESPIONAGE_SUMMARY",
+          "source_region": "Official PDF page 3"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 48,
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "duration_seconds": 5.133333333333334,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_espionage_summary_page3.png",
+          "evidence_asset_id": "EVID_ANTHROPIC_ESPIONAGE_SUMMARY",
+          "source_region": "Official PDF page 3"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 52,
+      "claim_id": "CLM_010_BIO_ASL3",
+      "duration_seconds": 7.933333333333334,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ASL3_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_asl3_cbrn_evaluation.png",
+          "evidence_asset_id": "EVID_ASL3_CBRN_EVALUATION",
+          "source_region": "Official PDF page 5"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 53,
+      "claim_id": "CLM_010_BIO_ASL3",
+      "duration_seconds": 2,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_014",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_014_f8f51ed9fdd05b81d657beb1.mp4",
+          "trim_in_sec": 9.64,
+          "trim_out_sec": 11.64
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 54,
+      "claim_id": "CLM_010_BIO_ASL3",
+      "duration_seconds": 7.933333333333334,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EÁè-¢Gß≤⁄Óù∆≠y—im-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 62,
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "duration_seconds": 7.4,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_020",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_020_d60466fe10702bd1f4459bab.mp4",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.36
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 63,
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "duration_seconds": 7.3,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_system_map",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 65,
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "duration_seconds": 7.033333333333333,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_question_frame",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 68,
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "duration_seconds": 7.266666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/cma_competition_risks_page12.png",
+          "evidence_asset_id": "EVID_CMA_COMPETITION_RISKS",
+          "source_region": "Official PDF page 12"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 72,
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "duration_seconds": 2.5,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_EU_AI_ACT_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/eu_ai_act_article51_page83.png",
+          "evidence_asset_id": "EVID_EU_SYSTEMIC_CLASSIFICATION",
+          "source_region": "Official PDF page 83"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 74,
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "duration_seconds": 5,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
+          "trim_in_sec": 6.011,
+          "trim_out_sec": 11.011
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 85,
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "duration_seconds": 2.5,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/ntia_open_weights_summary_page4.png",
+          "evidence_asset_id": "EVID_NTIA_OPEN_WEIGHTS_SUMMARY",
+          "source_region": "Official PDF page 4"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 90,
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "duration_seconds": 2,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_030",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4",
+          "trim_in_sec": 10,
+          "trim_out_sec": 12
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 91,
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "duration_seconds": 7.266666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/ntia_open_weights_summary_page4.png",
+          "evidence_asset_id": "EVID_NTIA_OPEN_WEIGHTS_SUMMARY",
+          "source_region": "Official PDF page 4"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 93,
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "duration_seconds": 7.166666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/ntia_open_weights_research_page34.png",
+          "evidence_asset_id": "EVID_NTIA_OPEN_WEIGHTS_RESEARCH",
+          "source_region": "Official PDF page 34"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 95,
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "duration_seconds": 6.233333333333333,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_source_matrix",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 96,
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "duration_seconds": 6.1,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/ntia_open_weights_research_page34.png",
+          "evidence_asset_id": "EVID_NTIA_OPEN_WEIGHTS_RESEARCH",
+          "source_region": "Official PDF page 34"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 98,
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "duration_seconds": 7.2,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_comparison_split",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 99,
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "duration_seconds": 2.5,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_034",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_034_a355ee12b856c4f93970a938.mp4",
+          "trim_in_sec": 0,
+          "trim_out_sec": 2.5
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 100,
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "duration_seconds": 7.233333333333333,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_034",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_034_a355ee12b856c4f93970a938.mp4",
+          "trim_in_sec": 2.5,
+          "trim_out_sec": 9.733333
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 106,
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "duration_seconds": 2,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_035",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_035_61249c23acf3b765104d567e.mp4",
+          "trim_in_sec": 9.633,
+          "trim_out_sec": 11.633
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 108,
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "duration_seconds": 7.266666666666667,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_claim_focus",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    },
+    {
+      "baseline_shot_index": 112,
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "duration_seconds": 2.5,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/cma_competition_risks_page12.png",
+          "evidence_asset_id": "EVID_CMA_COMPETITION_RISKS",
+          "source_region": "Official PDF page 12"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 114,
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "duration_seconds": 7.5,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/cma_critical_inputs_page14.png",
+          "evidence_asset_id": "EVID_CMA_CRITICAL_INPUTS",
+          "source_region": "Official PDF page 14"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 116,
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "duration_seconds": 7.166666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_STANFORD_AI_INDEX_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/stanford_ai_index_frontier_gap_page99.png",
+          "evidence_asset_id": "EVID_STANFORD_FRONTIER_GAP",
+          "source_region": "Official PDF page 99"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 120,
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "duration_seconds": 7.033333333333333,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/cma_critical_inputs_page14.png",
+          "evidence_asset_id": "EVID_CMA_CRITICAL_INPUTS",
+          "source_region": "Official PDF page 14"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 130,
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "duration_seconds": 6,
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_SCENE_045",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4",
+          "trim_in_sec": 5.678333,
+          "trim_out_sec": 11.678333
+        }
+      ],
+      "rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit."
+    },
+    {
+      "baseline_shot_index": 131,
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "duration_seconds": 4,
+      "decision": "redesign",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_cinematic_process_map",
+      "rationale": "Retain this necessary synthesis beat as a restrained cinematic graphic with minimal copy, clear hierarchy and no fabricated document treatment."
+    }
+  ],
   "blocked_asset_request_ids": [
-    "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
-    "REQ_EVD_ANTHROPIC_AGENTIC_UPDATE_2026",
     "REQ_EVD_ANTHROPIC_ASL3_2025",
+    "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
+    "REQ_EVD_STANFORD_AI_INDEX_2025",
+    "REQ_EVD_IASR_2025",
+    "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+    "REQ_EVD_EU_AI_ACT_2024",
     "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
     "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
-    "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
-    "REQ_EVD_EC_GPAI_GUIDANCE_2025",
-    "REQ_EVD_EU_AI_ACT_2024",
-    "REQ_EVD_IASR_2025",
-    "REQ_EVD_ILO_JOBS_2025",
-    "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
-    "REQ_EVD_STANFORD_AI_INDEX_2025",
-    "REQ_EVD_UK_AISI_EVALUATIONS_2024"
+    "REQ_EVD_NTIA_OPEN_WEIGHTS_2024"
   ],
-  "materialization_note": "Acquisition and byte-bound semantic approval must complete before the editorial blueprint can be materialized.",
+  "materialization_note": "Only Candidate Validation may promote the declared official assets after download, page rendering, file verification and SHA-256 binding.",
   "visual_review_completed_at": "2026-08-03T22:21:03.871Z"
 }

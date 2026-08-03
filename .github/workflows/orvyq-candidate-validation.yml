@@ -198,6 +198,18 @@ jobs:
       - name: Promote verified evidence assets to ready
         run: node scripts/orvyq_promote_evidence_assets.mjs --project-id="$PROJECT_ID"
 
+      - name: Materialize the verified visual rebalance
+        run: node scripts/orvyq_finalize_visual_rebalance.mjs --project-id="$PROJECT_ID" | tee visual-rebalance-finalize.log
+
+      # The pre-fetch pass deliberately published a blocked baseline. Rebuild
+      # from the same canonical inputs only after every action-bound evidence
+      # byte has been verified and the measured plan has become materialized.
+      - name: Rebuild the canonical shot list with verified evidence
+        run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID" | tee -a full-production-plan.log
+
+      - name: Audit the measured materialized visual balance
+        run: node scripts/orvyq_visual_rebalance_audit.mjs --project-id="$PROJECT_ID" | tee visual-rebalance-audit.log
+
       - name: Report real footage clip durations
         if: always()
         run: node scripts/orvyq_footage_duration_report.mjs --project-id="$PROJECT_ID" | tee "projects/$PROJECT_ID/qa/footage_duration_report.json"
@@ -309,6 +321,8 @@ jobs:
             full-production-plan.status
             primary-evidence-fetch.log
             primary-evidence-fetch.status
+            visual-rebalance-finalize.log
+            visual-rebalance-audit.log
             edit-plan.log
             edit-plan.status
             narration-qa.log

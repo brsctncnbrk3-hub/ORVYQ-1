@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { resolveRegisterFrames } from "./orvyq_edit_plan.mjs";
+import { imageEvidenceUseKey, resolveRegisterFrames } from "./orvyq_edit_plan.mjs";
 
 // Registers B and C exist in Scene.tsx/Video.tsx but were never carried onto a
 // built shot, so a blueprint could author either one and the plan would drop
@@ -87,4 +87,24 @@ test("the failure names the shot it came from", () => {
     () => resolveRegisterFrames({ ...heldSpec, asset_type: "graphic" }, "full_production.shots[41]"),
     /full_production\.shots\[41\]/,
   );
+});
+
+test("an image-evidence use key is stable only for the same ordered visual set", () => {
+  const evidence = {
+    kind: "official_figure",
+    image_assets: ["assets/evidence/figure-a.png", "assets/evidence/figure-b.png"],
+  };
+  assert.equal(
+    imageEvidenceUseKey(evidence),
+    JSON.stringify(["assets/evidence/figure-a.png", "assets/evidence/figure-b.png"]),
+  );
+  assert.notEqual(
+    imageEvidenceUseKey({ ...evidence, image_assets: [...evidence.image_assets].reverse() }),
+    imageEvidenceUseKey(evidence),
+  );
+});
+
+test("native evidence cards have no physical image-use continuation key", () => {
+  assert.equal(imageEvidenceUseKey({ kind: "boundary", image_assets: [] }), null);
+  assert.equal(imageEvidenceUseKey(null), null);
 });
