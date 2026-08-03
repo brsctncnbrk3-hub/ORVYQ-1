@@ -1,4 +1,140 @@
 {
   "schema_version": 1,
-  "assets": []
+  "assets": [
+    {
+      "path": "assets/footage/scene_001_16283a73e6b73cfe4876cc12.mp4"
+    },
+    {
+      "path": "assets/footage/scene_002_26abd499f5546a2815a3c8e0.mp4"
+    },
+    {
+      "path": "assets/footage/scene_003_4136cd8ba18b4e8cbb8058dd.mp4"
+    },
+    {
+      "path": "assets/footage/scene_004_29d8f37795126027ff32a0e4.mp4"
+    },
+    {
+      "path": "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4"
+    },
+    {
+      "path": "assets/footage/scene_006_463958245578652d5f51c663.mp4"
+    },
+    {
+      "path": "assets/footage/scene_007_cf48c42b15be10e701c2fc28.mp4"
+    },
+    {
+      "path": "assets/footage/scene_008_4cd3bd367d7b854e8636620e.mp4"
+    },
+    {
+      "path": "assets/footage/scene_009_062d23b640ce65c20f6a74d4.mp4"
+    },
+    {
+      "path": "assets/footage/scene_010_ef60832c64c0f0d47331d560.mp4"
+    },
+    {
+      "path": "assets/footage/scene_011_4c25b967c73eefe8d69b27ce.mp4"
+    },
+    {
+      "path": "assets/footage/scene_012_3f392beefa3e0d96797e36f3.mp4"
+    },
+    {
+      "path": "assets/footage/scene_013_e64f26b1fb6bb3dad40cd569.mp4"
+    },
+    {
+      "path": "assets/footage/scene_014_9ae5f540abcbca00c744ac91.mp4"
+    },
+    {
+      "path": "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4"
+    },
+    {
+      "path": "assets/footage/scene_016_e2bbded2e002e1990237057a.mp4"
+    },
+    {
+      "path": "assets/footage/scene_017_27b45d44d44c4ba992c14c2f.mp4"
+    },
+    {
+      "path": "assets/footage/scene_018_5b32703be82ceacecffbe103.mp4"
+    },
+    {
+      "path": "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4"
+    },
+    {
+      "path": "assets/footage/scene_020_2fb03ac5424462a495e99b73.mp4"
+    },
+    {
+      "path": "assets/footage/scene_021_b2340aa82c1c31f7cefe3e76.mp4"
+    },
+    {
+      "path": "assets/footage/scene_022_058143f2db75fdc79dd81efe.mp4"
+    },
+    {
+      "path": "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4"
+    },
+    {
+      "path": "assets/footage/scene_024_7a94a6191932d27f7d7d26b0.mp4"
+    },
+    {
+      "path": "assets/footage/scene_025_6e6e89b434c3ad4d8dc163d9.mp4"
+    },
+    {
+      "path": "assets/footage/scene_026_15afed2a31245f611f5007dc.mp4"
+    },
+    {
+      "path": "assets/footage/scene_027_503e34655ec8329333fa764f.mp4"
+    },
+    {
+      "path": "assets/footage/scene_028_810ba7d032cf9ab656dff27b.mp4"
+    },
+    {
+      "path": "assets/footage/scene_029_a355ee12b856c4f93970a938.mp4"
+    },
+    {
+      "path": "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4"
+    },
+    {
+      "path": "assets/footage/scene_031_b8a4cbbdf375fe24d25d3835.mp4"
+    },
+    {
+      "path": "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4"
+    },
+    {
+      "path": "assets/footage/scene_033_ab8dc749b65e4b88f5f7a632.mp4"
+    },
+    {
+      "path": "assets/footage/scene_034_69cfac90d1544c4e335846f5.mp4"
+    },
+    {
+      "path": "assets/footage/scene_035_61249c23acf3b765104d567e.mp4"
+    },
+    {
+      "path": "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4"
+    },
+    {
+      "path": "assets/footage/scene_037_053530ea53841f005188bfe5.mp4"
+    },
+    {
+      "path": "assets/footage/scene_038_d359d79af42f712519d6fd3c.mp4"
+    },
+    {
+      "path": "assets/footage/scene_039_48a91534d02a8292c164d622.mp4"
+    },
+    {
+      "path": "assets/footage/scene_040_e9f6bf2cee5834681c81e777.mp4"
+    },
+    {
+      "path": "assets/footage/scene_041_4e69efd7fca92627577d929b.mp4"
+    },
+    {
+      "path": "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4"
+    },
+    {
+      "path": "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4"
+    },
+    {
+      "path": "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4"
+    },
+    {
+      "path": "assets/footage/scene_045_947a36bacb11dca2cee4b989.mp4"
+    }
+  ]
 }
