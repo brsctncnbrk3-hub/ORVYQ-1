@@ -4,6 +4,7 @@
   "policy": "Every scene is claim-bound. Generic footage cannot migrate to another claim, and no Project 001 asset may be reused.",
   "managed_scene_ids": [
     "scene_001",
+    "scene_002",
     "scene_003",
     "scene_004",
     "scene_005",
@@ -11,20 +12,30 @@
     "scene_007",
     "scene_008",
     "scene_009",
+    "scene_010",
+    "scene_011",
+    "scene_012",
+    "scene_013",
     "scene_014",
     "scene_015",
+    "scene_016",
     "scene_017",
     "scene_018",
     "scene_019",
     "scene_020",
+    "scene_021",
+    "scene_022",
     "scene_023",
     "scene_024",
     "scene_025",
+    "scene_026",
     "scene_027",
+    "scene_028",
     "scene_029",
     "scene_030",
     "scene_031",
     "scene_032",
+    "scene_033",
     "scene_034",
     "scene_035",
     "scene_036",
@@ -49,6 +60,16 @@
       "role": "human_context",
       "semantic_link": "physical",
       "semantic_rationale": "Engineers jointly reviewing frontier software on a shared screen; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_002",
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Connected network cabling carries the physical scale of the competitive build-out without pretending to identify a particular facility; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 1,
+      "trim_in_ratio": 0.32,
+      "motion": "pull"
     },
     {
       "scene_id": "scene_003",
@@ -153,7 +174,7 @@
     {
       "scene_id": "scene_008",
       "claim_id": "CLM_006_INVESTMENT_SCALE",
-      "slice_index": 4,
+      "slice_index": 2,
       "trim_in_ratio": 0.32,
       "motion": "push",
       "role": "context",
@@ -181,6 +202,46 @@
       "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
+      "scene_id": "scene_010",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A real multi-screen control room provides an honest operational analogy for coordinated incident response without presenting itself as the cited cyber incident; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 1,
+      "trim_in_ratio": 0.08,
+      "motion": "push"
+    },
+    {
+      "scene_id": "scene_011",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "role": "human_context",
+      "semantic_link": "physical",
+      "semantic_rationale": "An operator reading live displays supplies the human monitoring beat without claiming those screens show the cited network traffic; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 4,
+      "trim_in_ratio": 0.08,
+      "motion": "hold"
+    },
+    {
+      "scene_id": "scene_012",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Rack-mounted server and storage units show the physical infrastructure being defended without identifying it as any institution in the story; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 6,
+      "trim_in_ratio": 0.08,
+      "motion": "pull"
+    },
+    {
+      "scene_id": "scene_013",
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Operators following a large live system visualise the scale and coordination of monitoring without claiming to depict the cited espionage network; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 0,
+      "trim_in_ratio": 0.08,
+      "motion": "hold"
+    },
+    {
       "scene_id": "scene_014",
       "claim_id": "CLM_010_BIO_ASL3",
       "slice_index": 0,
@@ -189,6 +250,16 @@
       "role": "human_context",
       "semantic_link": "physical",
       "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "Visible card-controlled turnstile entry supplies the physical access-control beat without identifying the location as a laboratory; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 1,
+      "trim_in_ratio": 0.08,
+      "motion": "push"
     },
     {
       "scene_id": "scene_015",
@@ -301,6 +372,26 @@
       "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
+      "scene_id": "scene_021",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A large industrial facility provides honest scale context without being labelled as a data centre or named company; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 2,
+      "trim_in_ratio": 0.08,
+      "motion": "pull"
+    },
+    {
+      "scene_id": "scene_022",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A hard disk visibly operating provides a concrete component-level view of the storage behind concentrated compute infrastructure; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 3,
+      "trim_in_ratio": 0.08,
+      "motion": "drift_left"
+    },
+    {
       "scene_id": "scene_023",
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
       "slice_index": 4,
@@ -319,6 +410,16 @@
       "role": "context",
       "semantic_link": "conceptual",
       "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_026",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A recognisably European formal chamber or institutional meeting setting; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "slice_index": 1,
+      "trim_in_ratio": 0.08,
+      "motion": "push"
     },
     {
       "scene_id": "scene_025",
@@ -369,6 +470,16 @@
       "role": "context",
       "semantic_link": "physical",
       "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_028",
+      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+      "role": "context",
+      "semantic_link": "physical",
+      "semantic_rationale": "A technician physically checking connected hardware makes compute capacity tangible without turning the stock image into measurement evidence; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 0,
+      "trim_in_ratio": 0.08,
+      "motion": "hold"
     },
     {
       "scene_id": "scene_029",
@@ -449,6 +560,16 @@
       "role": "human_context",
       "semantic_link": "physical",
       "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_033",
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "role": "context",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A central room consolidating many live feeds visualises concentrated monitoring power without claiming to depict the cited access policy; the claim's factual burden stays with the primary evidence.",
+      "slice_index": 2,
+      "trim_in_ratio": 0.08,
+      "motion": "pull"
     },
     {
       "scene_id": "scene_034",
@@ -691,32 +812,33 @@
       "semantic_rationale": "One person, one screen, the closing intimacy; the claim's factual burden stays with the primary evidence, not with this stock footage."
     }
   ],
-  "retired_targets": [],
+  "retired_targets": [
+    {
+      "scene_id": "scene_008",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "slice_index": 4,
+      "reason": "Re-authored from the project's current shot list: this narration target is no longer contextual footage, so the slice returns to primary evidence within the profile's visual-medium band."
+    }
+  ],
   "authored_distribution": {
     "schema_version": "1.0",
-    "generated_at": "2026-08-03T18:14:35.353Z",
+    "generated_at": "2026-08-03T21:52:31.083Z",
     "source": "direction/editorial_blueprint.json full_production shots",
-    "basis": "acquisition_seed_pending_visual_review",
-    "policy": "Provisional: bound to the acquired scenes their own acquisition plan entries claim, only so the shots they produce can be inspected. No scene here is approved, and the visual-decision step still refuses to materialize until every one carries a byte-bound approval.",
-    "seeded_scene_count": 34,
-    "claim_count": 16,
-    "claims_without_approved_pool": [
-      "CLM_002_COMPETITIVE_INCENTIVE",
-      "CLM_008_CYBER_EXTORTION",
-      "CLM_009_AGENTIC_ESPIONAGE",
-      "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
-      "CLM_018_CLOSED_ACCESS_TRADEOFF"
-    ],
-    "assignment_count": 65,
-    "total_runtime_seconds": 844.267,
+    "basis": "byte_bound_approvals_plus_acquisition_seed_pending_visual_review",
+    "policy": "Provisional review authoring: existing assignments remain eligible only when their current bytes are approved, while explicitly pending acquired scenes are bound to the claims in their own acquisition plan entries only so their exact uses can be inspected. No pending scene is approved here, and the visual-decision step still refuses to materialize one until it carries a byte-bound approval.",
+    "seeded_scene_count": 11,
+    "claim_count": 21,
+    "claims_without_approved_pool": [],
+    "assignment_count": 76,
+    "total_runtime_seconds": 844.2,
     "hook_footage_seconds": 11,
-    "body_footage_seconds": 499.235,
-    "contextual_footage_fraction": 0.604,
+    "body_footage_seconds": 575.636,
+    "contextual_footage_fraction": 0.695,
     "coverage_status": "within_band",
     "contextual_footage_fraction_min": 0.6,
     "contextual_footage_fraction_max": 0.7,
     "max_uses_per_source": 2,
     "maximum_uses_reached": 2,
-    "reachable_body_seconds": 502.172
+    "reachable_body_seconds": 575.636
   }
 }

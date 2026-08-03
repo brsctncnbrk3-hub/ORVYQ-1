@@ -72,6 +72,12 @@ export function requiresClaimBoundReview({ currentUses, approval, assetSha256 })
   ));
 }
 
+export function requiresPendingManifestEntry({ currentUses, approval, assetSha256 }) {
+  if (!approval) return true;
+  if (String(approval.asset_sha256 || "").toLowerCase() !== String(assetSha256 || "").toLowerCase()) return true;
+  return requiresClaimBoundReview({ currentUses, approval, assetSha256 });
+}
+
 async function buildCurrentReviewEntry(dir, record, existingEntry = {}) {
   const assetFile = path.join(dir, record.path);
   const provenanceFile = `${assetFile}.provenance.json`;
@@ -195,10 +201,25 @@ export async function prepareFootageReviewQueue(projectId) {
     }
   }
 
-  const entryByScene = new Map((manifest.entries || []).map((entry) => [entry.scene_id, entry]));
   const approvalsByProviderId = new Map(
     (reviews.approved_assets || []).map((approval) => [String(approval.provider_asset_id), approval]),
   );
+  // A manifest is the previous queue's byte-bound inspection inventory, not a
+  // permanent pending list. Drop an entry once its current bytes are approved
+  // for every current exact use; otherwise the prepare/apply/prepare workflow
+  // can never converge even though visual_asset_reviews.json is complete.
+  const entryByScene = new Map();
+  for (const entry of manifest.entries || []) {
+    const currentUses = [...(usesByPath.get(entry.asset_path)?.values() || [])];
+    const approval = approvalsByProviderId.get(String(entry.provider_asset_id));
+    if (requiresPendingManifestEntry({
+      currentUses,
+      approval,
+      assetSha256: entry.asset_sha256,
+    })) {
+      entryByScene.set(entry.scene_id, entry);
+    }
+  }
 
   for (const record of runtime.records || []) {
     const currentUses = [...(usesByPath.get(record.path)?.values() || [])];

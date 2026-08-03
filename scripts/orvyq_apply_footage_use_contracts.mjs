@@ -137,7 +137,7 @@ export function synchronizeVisualRebalanceShots({ shots, rebalancePlan, assetReq
   });
 }
 
-export async function applyFootageUseContracts(projectId) {
+export async function applyFootageUseContracts(projectId, { editorialOnly = false } = {}) {
   const dir = projectDir(projectId);
   const files = {
     contracts: path.join(dir, "research", "footage_use_contracts.json"),
@@ -278,6 +278,42 @@ export async function applyFootageUseContracts(projectId) {
   editorial.generation_policy =
     "claim-bound footage use contracts plus explicit validated overrides; editorial role aliases are normalized to canonical render roles; one scene may appear only at listed claim/slice targets; no automatic backfill, silent retirement or scene-id-wide reassignment";
 
+  // A changed distribution cannot be safely materialized into a blueprint
+  // that was generated from the previous editorial assignments: removed
+  // targets would still carry their old footage until the next full-plan
+  // build, temporarily inflating source-use counts and leaving stale shots.
+  // Stage the canonical editorial plan first, let the caller rebuild the
+  // topology from it, then run this reconciler normally against that fresh
+  // blueprint. This mode never edits the blueprint or marks visual approval.
+  if (editorialOnly) {
+    const originalPlanCount = (plan.assets || []).length;
+    plan.assets = (plan.assets || []).filter((item) => !prunedScenes.has(item.scene_id));
+    plan.planned_asset_count = plan.assets.length;
+    plan.use_contract = "research/footage_use_contracts.json";
+    plan.use_contract_overrides = overrides ? "research/footage_use_contract_overrides.json" : null;
+    editorial.last_footage_use_contract_staging = {
+      generated_at: new Date().toISOString(),
+      reason: "Stage contract-derived editorial assignments before rebuilding the full-production topology.",
+      assignment_count: assignments.length,
+      managed_scene_count: managedScenes.size,
+      pruned_scene_count: prunedScenes.size,
+    };
+    await Promise.all([
+      writeJsonAtomic(files.contracts, contracts),
+      writeJsonAtomic(files.editorial, editorial),
+      writeJsonAtomic(files.plan, plan),
+    ]);
+    return {
+      project_id: projectId,
+      editorial_only: true,
+      assignment_count: assignments.length,
+      removed_previous_assignments: removedAssignments,
+      override_applied: Boolean(overrides),
+      pruned_plan_assets: originalPlanCount - plan.assets.length,
+      active_plan_assets: plan.assets.length,
+    };
+  }
+
   const nextShots = clone(shots);
   const nextShotsByTarget = new Map();
   for (const shot of nextShots) {
@@ -404,7 +440,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const args = parseArgs(process.argv.slice(2));
   const projectId = args["project-id"] || args.project;
   if (!projectId) throw new Error("--project-id is required");
-  applyFootageUseContracts(projectId)
+  applyFootageUseContracts(projectId, {
+    editorialOnly: args["editorial-only"] === true || args["editorial-only"] === "true",
+  })
     .then((result) => printJson({ ok: true, ...result }))
     .catch((error) => {
       console.error(JSON.stringify({ ok: false, error: error.message }));

@@ -3,6 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   requiresClaimBoundReview,
+  requiresPendingManifestEntry,
   resolveContactSheetIdentity,
 } from "./orvyq_prepare_footage_review_queue.mjs";
 
@@ -55,6 +56,22 @@ test("an unused asset is not queued solely because approval is absent", () => {
     approval: null,
     assetSha256: "a".repeat(64),
   }), false);
+});
+
+test("a previous pending manifest entry is pruned after exact byte-bound approval", () => {
+  assert.equal(requiresPendingManifestEntry({
+    currentUses: [currentUse],
+    approval: exactApproval,
+    assetSha256: "a".repeat(64),
+  }), false);
+});
+
+test("a previous pending manifest entry stays open until its bytes receive approval", () => {
+  assert.equal(requiresPendingManifestEntry({
+    currentUses: [],
+    approval: null,
+    assetSha256: "a".repeat(64),
+  }), true);
 });
 
 test("Git LFS contact-sheet pointers resolve to the visual object SHA", () => {

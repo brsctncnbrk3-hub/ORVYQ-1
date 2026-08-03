@@ -127,6 +127,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Stage contract-derived editorial footage assignments
+        run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID" --editorial-only
+
+      - name: Resolve the canonical editorial pause plan
+        run: node scripts/orvyq_resolve_pauses.mjs --project-id="$PROJECT_ID"
+
+      - name: Refresh the claim/slice topology from staged assignments
+        run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID" --defer-coverage-gate
+
       - name: Apply claim-bound footage use contracts
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
 

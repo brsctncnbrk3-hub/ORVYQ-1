@@ -155,7 +155,17 @@ jobs:
       - name: Author the claim-bound contextual-footage distribution
         run: node scripts/orvyq_author_footage_distribution.mjs --project-id="$PROJECT_ID" --seed-from-acquisition
 
-      - name: Reconcile claim-bound footage contracts after shot generation
+      - name: Stage contract-derived editorial footage assignments
+        run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID" --editorial-only
+
+      # Rebuild once from the staged editorial plan so targets retired by a
+      # changed distribution return to evidence before the source-use budget
+      # is measured. Materializing directly into the previous blueprint would
+      # temporarily count both the old and new target for the same clip.
+      - name: Refresh the claim/slice topology from staged assignments
+        run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID" --defer-coverage-gate
+
+      - name: Reconcile claim-bound footage contracts after topology refresh
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
 
       # Pass 2: the editorial plan is now derived from the contract, so the

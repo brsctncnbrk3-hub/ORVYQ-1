@@ -1,12 +1,25 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
+  assembleReviewablePoolSource,
   collectAcquiredClaimPools,
+  collectCoverageTargetRequirements,
+  extendAssignmentsForPendingReview,
   mergeCoverageGapClaims,
   retireSupersededTargets,
 } from "./orvyq_author_footage_distribution.mjs";
 
 const POOLS = { CLM_A: [{ scene_id: "scene_001" }], CLM_B: [{ scene_id: "scene_002" }], CLM_C: [] };
+
+function evenClaim(claimId, sliceCount, durationSeconds) {
+  return {
+    claim_id: claimId,
+    slices: Array.from({ length: sliceCount }, (_, sliceIndex) => ({
+      slice_index: sliceIndex,
+      duration_seconds: durationSeconds,
+    })),
+  };
+}
 
 test("a claim the plan could not cover is added to the acquisition list", () => {
   const merged = mergeCoverageGapClaims([{ claim_id: "CLM_A", additional_approved_scenes: 2 }], ["CLM_B"], POOLS);
@@ -123,4 +136,84 @@ test("an acquired scene with no claim of its own is a gap, not an invented bindi
 
 test("nothing is seeded when acquisition produced no records at all", () => {
   assert.deepEqual(collectAcquiredClaimPools(ACQUISITION_PLAN, { records: [] }), []);
+});
+
+test("an explicit pending filter seeds only the acquired scenes in the open review round", () => {
+  const seeded = collectAcquiredClaimPools(ACQUISITION_PLAN, RUNTIME, new Set(["scene_002", "scene_003"]));
+  assert.deepEqual(seeded.map((entry) => entry.scene_id), ["scene_002"]);
+});
+
+test("a replacement review keeps approved contract entries and provisionally adds only pending acquisitions", () => {
+  const assembled = assembleReviewablePoolSource({
+    contracts: {
+      assignments: [
+        { scene_id: "scene_001", claim_id: "CLM_A", semantic_rationale: "Approved current bytes with an existing exact use." },
+        { scene_id: "scene_002", claim_id: "CLM_B", semantic_rationale: "Stale assignment from bytes that are no longer approved." },
+      ],
+    },
+    approvedSceneIds: new Set(["scene_001"]),
+    pendingSceneIds: new Set(["scene_002"]),
+    acquisitionPlan: ACQUISITION_PLAN,
+    runtime: RUNTIME,
+  });
+
+  assert.equal(assembled.provisional_scene_count, 1);
+  assert.deepEqual(assembled.assignments.map((entry) => entry.scene_id), ["scene_001", "scene_002"]);
+  assert.match(assembled.assignments[1].semantic_rationale, /instrumented bench/);
+});
+
+test("a replacement review preserves approved exact uses and adds a balanced pending target", () => {
+  const result = extendAssignmentsForPendingReview({
+    approvedAssignments: [
+      { scene_id: "scene_001", claim_id: "CLM_A", slice_index: 0, semantic_rationale: "Approved opening use stays exact." },
+      { scene_id: "scene_001", claim_id: "CLM_A", slice_index: 4, semantic_rationale: "Approved closing use stays exact." },
+    ],
+    provisionalAssignments: [
+      { scene_id: "scene_002", claim_id: "CLM_A", role: "context", semantic_link: "physical", semantic_rationale: "Pending replacement is bound only for review." },
+    ],
+    claimSlices: [evenClaim("CLM_A", 5, 10)],
+    maxUsesPerSource: 2,
+    totalRuntimeSeconds: 50,
+    hookFootageSeconds: 0,
+    footageFractionMin: 0.5,
+    footageFractionMax: 0.8,
+  });
+
+  assert.deepEqual(result.assignments.filter((item) => item.scene_id === "scene_001").map((item) => item.slice_index), [0, 4]);
+  assert.equal(result.assignments.find((item) => item.scene_id === "scene_002").slice_index, 2);
+  assert.equal(result.summary.contextual_footage_fraction, 0.6);
+});
+
+test("an exact coverage target minimally moves one approved use within its own claim", () => {
+  const result = extendAssignmentsForPendingReview({
+    approvedAssignments: [
+      { scene_id: "scene_001", claim_id: "CLM_A", slice_index: 0, semantic_rationale: "Approved opening use." },
+      { scene_id: "scene_001", claim_id: "CLM_A", slice_index: 4, semantic_rationale: "Approved far-edge use." },
+    ],
+    provisionalAssignments: [],
+    claimSlices: [evenClaim("CLM_A", 5, 10)],
+    requiredCoverageTargets: [{ claim_id: "CLM_A", slice_index: 2, reason: "break_uninterrupted_evidence_run" }],
+    maxUsesPerSource: 2,
+    totalRuntimeSeconds: 50,
+    hookFootageSeconds: 0,
+    footageFractionMin: 0.3,
+    footageFractionMax: 0.6,
+  });
+
+  assert.deepEqual(result.assignments.map((item) => item.slice_index), [0, 2]);
+});
+
+test("coverage requirements choose exact pause targets and split overlong evidence runs", () => {
+  const requirements = collectCoverageTargetRequirements([
+    { claim_id: "CLM_A", source_slice_index: 0, asset_type: "evidence", duration: 7 },
+    { claim_id: "CLM_A", source_slice_index: 1, asset_type: "evidence", duration: 7, emphasis_card: { title: "Hold" } },
+    { claim_id: "CLM_A", source_slice_index: 2, asset_type: "evidence", duration: 7 },
+    { claim_id: "CLM_A", source_slice_index: 3, asset_type: "evidence", duration: 7 },
+    { claim_id: "CLM_A", source_slice_index: 4, asset_type: "evidence", duration: 7 },
+  ], 15);
+
+  assert.deepEqual(requirements, [
+    { claim_id: "CLM_A", slice_index: 1, reason: "editorial_pause_requires_footage" },
+    { claim_id: "CLM_A", slice_index: 3, reason: "break_uninterrupted_evidence_run" },
+  ]);
 });

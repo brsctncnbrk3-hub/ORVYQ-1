@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Twelve-frame contact-sheet inspection of every clip reopened by the canonical claim-bound distribution, judged against all current exact narration uses, byte hashes and semantic rationales after the replacement footage was acquired.",
+  "decisions": [
+    {
+      "scene_id": "scene_001",
+      "provider_asset_id": "4630103",
+      "asset_sha256": "1784d3f78e4dc78d22b3aa98eeb6a3bc7f79584a5cbf56cae52427e83f392b4d",
+      "contact_sheet_sha256": "e6777679bf804311cc54ce48d50964f945cd9df743d015360a95fa97523373a7",
+      "decision": "approve",
+      "reason": "All twelve frames show two colleagues jointly reviewing work on one desktop display. The stable collaborative setting supports the safety-framework context without identifying a lab or carrying any factual claim itself."
+    },
+    {
+      "scene_id": "scene_002",
+      "provider_asset_id": "1085656",
+      "asset_sha256": "a627863318862371049e3e36835fe83b50d890e5bbd59cae171932d898a1a1b9",
+      "contact_sheet_sha256": "ca5468a577c7db7bd74dafe03d0150b9e5fbdafffdfbaad1a93df6219a32267b",
+      "decision": "approve",
+      "reason": "Across all twelve frames, a populated network switch, connected Ethernet cables and activity lights remain clearly visible. The clip supplies concrete infrastructure context without identifying a facility or proving the competitive claim."
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "6248596",
+      "asset_sha256": "0eef6f6a5542d6d4f6f38f5e20ed9dd982610457eb2bb712a86cfb63e38e12f7",
+      "contact_sheet_sha256": "a9e7a9594c45bb73656b651fe680c35a4c3c83e01a6045339648e25577f9a15d",
+      "decision": "approve",
+      "reason": "All twelve frames show two researchers discussing several instrumented charts and readouts. The screens remain generic and the clip reads as monitored evaluation, not as evidence of a specific model result or company."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "33656654",
+      "asset_sha256": "93fc6af839009609a74c4150b2dec6a3e1e72764206096419b7ce4d669a4822e",
+      "contact_sheet_sha256": "38fcb19a047e673abf1f8dc08afc3d1578d47de5eb22976bf563951e2acf2350",
+      "decision": "approve",
+      "reason": "Across the sheet, one engineer deliberately reviews code and terminal output in a controlled workstation setting. No legible result or incident is presented as proof, so the footage remains bounded physical context for the exact evaluation uses."
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "17969418",
+      "asset_sha256": "e4174bebb42d18f2719912d7eeb8a12fb5027d3dace9b09839eb4f0c9877ceed",
+      "contact_sheet_sha256": "9a19eaf8c8300075171985cd69a87d0c7be0e7c200384c96008f78fb26ebdaa5",
+      "decision": "approve",
+      "reason": "All frames show fire crews, vehicles and water streams in an organized outdoor exercise with no visible casualty or uncontrolled blaze. It reads as a rehearsed drill and does not imply that the narrated AI tests occurred in the wild."
+    },
+    {
+      "scene_id": "scene_006",
+      "provider_asset_id": "8381406",
+      "asset_sha256": "8d69253af67089cc4f25bc44e6c797693b53c77ed8cc9a74a880ea6347a982b6",
+      "contact_sheet_sha256": "80dce681b57b8fc4e970e293837906fd1bd8f6259a36f18b7a81a0bffa6511fa",
+      "decision": "approve",
+      "reason": "The twelve frames consistently show numbered sample tubes rotating in an unbranded bench instrument. The clip functions only as controlled-test context; it asserts neither a medical result nor that this apparatus performed the narrated AI evaluations."
+    },
+    {
+      "scene_id": "scene_008",
+      "provider_asset_id": "29575342",
+      "asset_sha256": "e8788504051868eaa17ed64a875891f5245651e0095ac3769af497eb18a0a0f1",
+      "contact_sheet_sha256": "16f707a255980396a29f05ed4e83a6ab2df0bd264e89f366a58c191cd7e3b907",
+      "decision": "approve",
+      "reason": "All twelve frames maintain an upward view among several anonymous high-rise buildings. No company, transaction or financial figure is identified; the shot supplies neutral capital-and-scale context while primary evidence carries the investment claim."
+    },
+    {
+      "scene_id": "scene_010",
+      "provider_asset_id": "38779107",
+      "asset_sha256": "268e2e4af00499f2c3e36a6a8d8e1b9f268379514d27347a86c4fe11f65e3208",
+      "contact_sheet_sha256": "9f5d3780d2e17d704811bd7aadf074b733b5f49e3cd81cc911a93a5733751ad7",
+      "decision": "approve",
+      "reason": "Across all frames, an operator works at a multi-monitor operations console in a credible control room. The displays provide generic defensive monitoring context and do not purport to show a real extortion event or named organization."
+    },
+    {
+      "scene_id": "scene_011",
+      "provider_asset_id": "38779098",
+      "asset_sha256": "aede8f18bcf49cb6d8f98124d004d1d3b34940ae8455f07ea6c40f1fb81bf0de",
+      "contact_sheet_sha256": "a3799b400942a5f88700525e9a218f516a7229d1bfd2b7a74e4bef722b754e1f",
+      "decision": "approve",
+      "reason": "The twelve frames consistently show one operator reading a wall of live traffic and surveillance feeds. It is credible monitoring context, with no visible attack, victim or interface being offered as evidence of the narrated cyber-extortion claim."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "7140939",
+      "asset_sha256": "13bbabe72718e257fb897306ba49e01a6a3aaefa735f086f8c0d2192d96ed989",
+      "contact_sheet_sha256": "7f6dead87470c76782313339e11e0717dd13ee5707fb0ba6976fef786d2ed66e",
+      "decision": "approve",
+      "reason": "All twelve frames show rack-mounted server and storage bays with active status lights. The infrastructure is generic and unnamed, so it can ground the cyber section physically without claiming that the rack belongs to an attacker or victim."
+    },
+    {
+      "scene_id": "scene_013",
+      "provider_asset_id": "38779110",
+      "asset_sha256": "8331b6fa2690c5e5aa8117f75218f728b123207f740c1f1d7095b0823549284c",
+      "contact_sheet_sha256": "c2cbe409582650fe79bc1d95b4ef827b8576a34610f2ca6b11864fc8f7ecbe77",
+      "decision": "approve",
+      "reason": "Across the contact sheet, several operators coordinate beneath a wall of surveillance and traffic views. The scene remains generic monitoring context and does not identify a government, espionage operation or real target."
+    },
+    {
+      "scene_id": "scene_016",
+      "provider_asset_id": "9910318",
+      "asset_sha256": "f6be6f82819bf5a2f032c2192d7f28d1a4c0bda3c1839fdef554d48a847e5fcf",
+      "contact_sheet_sha256": "e739f47090a5b5b37c07bc788884650c0272cf8feccc3530e2f82a324c4d5790",
+      "decision": "approve",
+      "reason": "The twelve-frame sequence clearly shows a card presented to a metro turnstile, read by the gate and followed by access opening. It provides unbranded access-control context without presenting a laboratory, biosafety facility or actual ASL-3 control."
+    },
+    {
+      "scene_id": "scene_019",
+      "provider_asset_id": "8632783",
+      "asset_sha256": "b64e043b601dd4cda53597ebd24607657d471b4bb19236988c8d5f542a28caa3",
+      "contact_sheet_sha256": "fb66bb805d0bcbd9d1818eaddeec9cb68d81ccb1cae83dc2e5d6dabba8089fba",
+      "decision": "approve",
+      "reason": "All frames show ordinary hands typing and reviewing text on a generic laptop in a neutral workspace. No employer, occupation or output is identified, making it suitable human-scale software-work context rather than evidence of a labour outcome."
+    },
+    {
+      "scene_id": "scene_021",
+      "provider_asset_id": "29959327",
+      "asset_sha256": "12984106f7db81eb7688a2b6951bafe839fd56bc0286d00660fffa6d4553d56b",
+      "contact_sheet_sha256": "85c012f2763456c51da53d0356512bb7865e2b313fa0b3baf412c0814cd90ab3",
+      "decision": "approve",
+      "reason": "Across all twelve frames, an aerial camera passes one large anonymous industrial warehouse and its surrounding site. The shot conveys physical scale only and does not identify the building as a data center or prove market concentration."
+    },
+    {
+      "scene_id": "scene_022",
+      "provider_asset_id": "19285752",
+      "asset_sha256": "9f933b09422b5a0f7afeb2bd271da6998a92d644990df87a864edc70c145d13f",
+      "contact_sheet_sha256": "1297af943ad170834561e7c6b2790e00eb76547facb45221ed71410f690c99bc",
+      "decision": "approve",
+      "reason": "The exposed hard-drive platter remains visibly spinning throughout the twelve sampled frames. It is an unbranded physical storage detail that supports infrastructure context without representing a specific company, dataset or concentration finding."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "30740060",
+      "asset_sha256": "4e8508ac967027b2f1e3997193ee6f53887d880fa429f0469ad2ae340730e333",
+      "contact_sheet_sha256": "baa60730358b4d722e3339fe0274f6d281ee1d2b88ada290caea4f1b7f72f5bc",
+      "decision": "approve",
+      "reason": "All twelve frames show only the EU flag and a neutral cloudy sky. No national building, national flag, person, product or commercial mark can misidentify the institution; the legal detail remains on primary evidence."
+    },
+    {
+      "scene_id": "scene_026",
+      "provider_asset_id": "6952138",
+      "asset_sha256": "2145cd9c52ebb99beca94980ba6b4f0259633e14dee3ffe8c5aa6e27a4f0e755",
+      "contact_sheet_sha256": "b2627e6676015e8b5b4b92f68fd18d49585a23b4df867d126d8e11b295419c90",
+      "decision": "approve",
+      "reason": "Throughout the sheet, a formal podium and panel appear beside a clearly visible EU flag. The staging supplies generic governance context only; no speaker identity, decision or legal event is asserted by the footage."
+    },
+    {
+      "scene_id": "scene_028",
+      "provider_asset_id": "6804656",
+      "asset_sha256": "c07a08f61142d4229acf2319f18827296f2aa065fd31e20764ccf4bfb62462cc",
+      "contact_sheet_sha256": "8c5d8e18aab2f3c96e06af57ba672369dcba4a502c107451b41ba06b4a871c13",
+      "decision": "approve",
+      "reason": "All twelve frames show a technician actively checking dense connected cabling in an equipment rack. The work reads as technical inspection and maintenance, with no visible product claim or suggestion that it proves a particular evaluation result."
+    },
+    {
+      "scene_id": "scene_033",
+      "provider_asset_id": "38779095",
+      "asset_sha256": "9502928f886eb7f2da644366ee7e66d08f50733243b4cbae3e33a02b38e3b6d8",
+      "contact_sheet_sha256": "00816caa01c29d641b97425084f569eb0d24a25023da0bccac0bd13ab6d1dbd1",
+      "decision": "approve",
+      "reason": "The twelve frames maintain a wide view of a central monitoring room with operators and a multi-feed wall. The generic oversight setting supports controlled-access context but identifies no institution and proves no claim about closed models."
+    },
+    {
+      "scene_id": "scene_045",
+      "provider_asset_id": "5281602",
+      "asset_sha256": "45bc7b6a4df39a564ca239f1eeb9c1bd4769a920fbf3940751251f6f9fb77f24",
+      "contact_sheet_sha256": "b2d4a12a31346f5fcadd376427b314015a1a7f50ee84e2e4bae3b48e109cea8b",
+      "decision": "approve",
+      "reason": "Across all frames, one person remains lit by a nearby screen while speaking on a phone. The stable, intimate human-scale image supports the closing synthesis without depicting a specific decision, incident or institution."
+    }
+  ]
+}
