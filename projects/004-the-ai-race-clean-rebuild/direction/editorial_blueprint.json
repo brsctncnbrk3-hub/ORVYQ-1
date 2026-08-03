@@ -24,7 +24,18 @@
     "blocking_visual_asset_request_ids": [
       "REQ_FTG_SCENE_042",
       "REQ_FTG_SCENE_043",
-      "REQ_FTG_SCENE_044"
+      "REQ_FTG_SCENE_044",
+      "REQ_FTG_SCENE_002_BLOCKED",
+      "REQ_FTG_SCENE_010_BLOCKED",
+      "REQ_FTG_SCENE_011_BLOCKED",
+      "REQ_FTG_SCENE_012_BLOCKED",
+      "REQ_FTG_SCENE_013_BLOCKED",
+      "REQ_FTG_SCENE_016_BLOCKED",
+      "REQ_FTG_SCENE_021_BLOCKED",
+      "REQ_FTG_SCENE_022_BLOCKED",
+      "REQ_FTG_SCENE_026_BLOCKED",
+      "REQ_FTG_SCENE_028_BLOCKED",
+      "REQ_FTG_SCENE_033_BLOCKED"
     ],
     "sections": [
       {
@@ -205,35 +216,19 @@
         "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
         "section_id": "SEC_01_RACE_PARADOX",
         "scene_id": "scene_001",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present safety frameworks evidence for this section.",
         "narration_anchor": "believes moving this fast might be dangerous, and every one of",
         "source_slice_index": 0,
         "transition_in": "dissolve",
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_001_SAFETY_FRAMEWORKS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "official_document",
-          "source_ids": [
-            "SRC_ANTHROPIC_ASL3_2025"
-          ],
-          "source_label": "Anthropic",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC — PRIMARY EVIDENCE",
-          "title": "Anthropic: Activating AI Safety Level 3 protections",
-          "limitation": "ASL-3 activation was precautionary and provisional; Anthropic said the threshold had not been definitively crossed.",
-          "template_id": "orvyq_official_document",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_ASL3_COVER",
-            "EVID_ASL3_ABSTRACT"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_asl3_cover.png",
-            "assets/evidence/anthropic_asl3_abstract.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Engineers jointly reviewing frontier software on a shared screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_001_64f83425b7646e01b727c7ff.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 7.94,
+        "generic_stock": true
       },
       {
         "duration": 2,
@@ -358,32 +353,18 @@
         "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present agentic misalignment tests evidence for this section.",
         "narration_anchor": "rival company, a rival government, somebody who gets their first and gets to set the rules for everyone else.",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_003_AGENTIC_MISALIGNMENT_TESTS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC RESEARCH — PRIMARY EVIDENCE",
-          "title": "Anthropic Research: Agentic Misalignment: How LLMs could be…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_01"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_01.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 8.793,
+        "generic_stock": true
       },
       {
         "duration": 7.233333333333333,
@@ -454,32 +435,18 @@
         "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present agentic misalignment tests evidence for this section.",
         "narration_anchor": "machine ever built moves faster than our ability to understand it, control it, or govern it?",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_003_AGENTIC_MISALIGNMENT_TESTS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC RESEARCH — PRIMARY EVIDENCE",
-          "title": "Anthropic Research: Agentic Misalignment: How LLMs could be…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_07"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_07.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 7.593,
+        "generic_stock": true
       },
       {
         "duration": 6.6,
@@ -518,32 +485,18 @@
         "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present agentic misalignment tests evidence for this section.",
         "narration_anchor": "wrong, that a genuinely dangerous machine would announce itself. That assumption is exactly what makes the evidence so",
         "source_slice_index": 5,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_003_AGENTIC_MISALIGNMENT_TESTS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "What controlled safety tests…: In controlled evaluations, researchers have…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_07"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_07.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4",
+        "motion": "pull",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 11.107,
+        "generic_stock": true
       },
       {
         "duration": 7.1,
@@ -582,39 +535,25 @@
         "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present agentic misalignment tests evidence for this section.",
         "narration_anchor": "themselves. In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
         "source_slice_index": 7,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_003_AGENTIC_MISALIGNMENT_TESTS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "In controlled evaluations, researchers have deliberately pushed frontier…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_07"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_07.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.867,
+        "trim_out_sec": 8,
+        "generic_stock": true
       },
       {
         "duration": 4,
         "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Editorial pause beat: Full pause: open the evidence phase on the companies' own documented warnings.",
         "narration_anchor": "That assumption is exactly what makes the evidence so unsettling. It isn't hidden. It's sitting in the safety reports the AI companies publish themselves.",
         "source_slice_index": 7,
@@ -624,60 +563,32 @@
           "accent": null
         },
         "sound_cue": "tonal_bloom",
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_003_AGENTIC_MISALIGNMENT_TESTS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "What controlled safety tests…: In controlled evaluations, researchers have…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_01"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_01.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
+        "motion": "hold",
+        "trim_in_sec": 8,
+        "trim_out_sec": 12,
+        "generic_stock": true
       },
       {
         "duration": 7.2,
         "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present test not deployment evidence for this section.",
         "narration_anchor": "limits. They build a scenario, then watch how the model responds when it's told it will be shut down or replaced. In",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_004_TEST_NOT_DEPLOYMENT at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC RESEARCH — PRIMARY EVIDENCE",
-          "title": "Anthropic Research: Agentic Misalignment: How LLMs could be…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_02"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_02.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.961,
+        "trim_out_sec": 8.161,
+        "generic_stock": true
       },
       {
         "duration": 5.366666666666666,
@@ -748,32 +659,18 @@
         "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present test not deployment evidence for this section.",
         "narration_anchor": "replacement, threatened to expose a fabricated affair rather than accept being taken offline. A separate line of research",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_004_TEST_NOT_DEPLOYMENT at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC RESEARCH — PRIMARY EVIDENCE",
-          "title": "Anthropic Research: Agentic Misalignment: How LLMs could be…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_05"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_05.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Instrumented test bench where a controlled scenario is set up; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_006_ec17c3027de8f7ed991e36d6.mp4",
+        "motion": "hold",
+        "trim_in_sec": 3.776,
+        "trim_out_sec": 10.943,
+        "generic_stock": true
       },
       {
         "duration": 6.966666666666667,
@@ -844,99 +741,61 @@
         "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present test not deployment evidence for this section.",
         "narration_anchor": "shutdown. None of this happened in the wild. These were designed tests, built specifically to see how far a model would go,",
         "source_slice_index": 6,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_004_TEST_NOT_DEPLOYMENT at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "image_sequence",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_MISALIGNMENT_2025"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC RESEARCH — PRIMARY EVIDENCE",
-          "title": "Anthropic Research: Agentic Misalignment: How LLMs could be…",
-          "limitation": "Controlled fictional simulations, not observed real-world deployment behavior.",
-          "template_id": "orvyq_image_sequence",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_AGENTIC_FIGURE_04"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_agentic_figure_04.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 3.844,
+        "trim_out_sec": 11.677,
+        "generic_stock": true
       },
       {
         "duration": 7.366666666666666,
         "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present 2026 mitigation update evidence for this section.",
         "narration_anchor": "go, and in at least one case, researchers have said the scenario was reshaped repeatedly until that exact outcome",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_005_2026_MITIGATION_UPDATE; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_UPDATE_2026"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC RESEARCH — PRIMARY EVIDENCE",
-          "title": "Anthropic Research: Teaching Claude why",
-          "limitation": "Developer-reported mitigation results; use to date-stamp the 2025 findings rather than erase them.",
-          "left": "That distinction matters. It's the difference between a fire drill…",
-          "left_detail": "Per Anthropic Research, May 8, 2026.",
-          "right": "Developer-reported mitigation results; use to date-stamp the 2025…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.961,
+        "trim_out_sec": 8.328,
+        "generic_stock": true
       },
       {
         "duration": 7.066666666666666,
         "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present 2026 mitigation update evidence for this section.",
         "narration_anchor": "exact outcome became the default result. That distinction matters. It's the difference between a fire drill and a fire,",
         "source_slice_index": 1,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_005_2026_MITIGATION_UPDATE; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_UPDATE_2026"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "That distinction matters. It's the difference between a fire drill and a…",
-          "limitation": "Developer-reported mitigation results; use to date-stamp the 2025 findings rather than erase them.",
-          "left": "That distinction matters. It's the difference between a fire drill…",
-          "left_detail": "Per Anthropic Research, May 8, 2026.",
-          "right": "Developer-reported mitigation results; use to date-stamp the 2025…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
+        "motion": "pull",
+        "trim_in_sec": 2.945,
+        "trim_out_sec": 10.012,
+        "generic_stock": true
       },
       {
         "duration": 2,
         "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
         "section_id": "SEC_02_CONTROLLED_EVIDENCE",
         "scene_id": "scene_002",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Editorial pause beat: Brief accent: preserve the experimental limitation before widening the argument.",
         "narration_anchor": "That distinction matters. It's the difference between a fire drill and a fire.",
         "source_slice_index": 1,
@@ -946,26 +805,14 @@
           "accent": null
         },
         "sound_cue": "low_impact",
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_005_2026_MITIGATION_UPDATE; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_ANTHROPIC_AGENTIC_UPDATE_2026"
-          ],
-          "source_label": "Anthropic Research",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "What controlled safety…: That distinction matters. It's the difference…",
-          "limitation": "Developer-reported mitigation results; use to date-stamp the 2025 findings rather than erase them.",
-          "left": "That distinction matters. It's the difference between a fire drill…",
-          "left_detail": "Per Anthropic Research, May 8, 2026.",
-          "right": "Developer-reported mitigation results; use to date-stamp the 2025…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
+        "motion": "pull",
+        "trim_in_sec": 10.012,
+        "trim_out_sec": 12.012,
+        "generic_stock": true
       },
       {
         "duration": 2.5,
@@ -1009,32 +856,18 @@
         "claim_id": "CLM_006_INVESTMENT_SCALE",
         "section_id": "SEC_03_COMPETITIVE_PRESSURE",
         "scene_id": "scene_003",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present investment scale evidence for this section.",
         "narration_anchor": "about the building. The natural responses to ask why anyone would keep building something they admit could be dangerous.",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_006_INVESTMENT_SCALE at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "official_figure",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "STANFORD INSTITUTE FOR HUMAN-CENTERED AI — PRIMARY EVIDENCE",
-          "title": "Stanford Institute for Human-Centered AI: The 2025 AI Index Report",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "template_id": "orvyq_official_figure",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_STANFORD_INVESTMENT_2024"
-          ],
-          "image_assets": [
-            "assets/evidence/stanford_ai_index_investment_page249.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "conceptual",
+        "asset": "assets/footage/scene_008_880103e81291b0e714325d52.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.961,
+        "trim_out_sec": 7.928,
+        "generic_stock": true
       },
       {
         "duration": 6.566666666666666,
@@ -1137,92 +970,54 @@
         "claim_id": "CLM_006_INVESTMENT_SCALE",
         "section_id": "SEC_03_COMPETITIVE_PRESSURE",
         "scene_id": "scene_003",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present investment scale evidence for this section.",
         "narration_anchor": "reported nearly $34 billion in private generative AI investment in 2024.",
         "source_slice_index": 4,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_006_INVESTMENT_SCALE at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "official_figure",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "Stanford's 2025 AI Index reported nearly thirty-four billion dollars in…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "template_id": "orvyq_official_figure",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_STANFORD_INVESTMENT_2024"
-          ],
-          "image_assets": [
-            "assets/evidence/stanford_ai_index_investment_page249.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "conceptual",
+        "asset": "assets/footage/scene_008_880103e81291b0e714325d52.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.844,
+        "trim_out_sec": 10.244,
+        "generic_stock": true
       },
       {
         "duration": 5.233333333333333,
         "claim_id": "CLM_007_FRONTIER_GAP",
         "section_id": "SEC_03_COMPETITIVE_PRESSURE",
         "scene_id": "scene_003",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present frontier gap evidence for this section.",
         "narration_anchor": "2024. It also found that the performance gap between the top two models",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_007_FRONTIER_GAP; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "STANFORD INSTITUTE FOR HUMAN-CENTERED AI — PRIMARY EVIDENCE",
-          "title": "Stanford Institute for Human-Centered AI: The 2025 AI Index Report",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "It also found that the performance gap between the top two models on…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 6.193,
+        "generic_stock": true
       },
       {
         "duration": 5.466666666666667,
         "claim_id": "CLM_007_FRONTIER_GAP",
         "section_id": "SEC_03_COMPETITIVE_PRESSURE",
         "scene_id": "scene_003",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present frontier gap evidence for this section.",
         "narration_anchor": "two models on a prominent benchmark had narrowed to less than 1 percentage point.",
         "source_slice_index": 1,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_007_FRONTIER_GAP; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "It also found that the performance gap between the top two models on a…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "It also found that the performance gap between the top two models on…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4",
+        "motion": "pull",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 9.307,
+        "generic_stock": true
       },
       {
         "duration": 2.5,
@@ -1632,34 +1427,18 @@
         "claim_id": "CLM_010_BIO_ASL3",
         "section_id": "SEC_04_REAL_WORLD_MISUSE",
         "scene_id": "scene_004",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present bio asl3 evidence for this section.",
         "narration_anchor": "moments. These are the company's own assessments of its own products misuse, not independently verified in every detail, but they",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_010_BIO_ASL3 at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_ANTHROPIC_ASL3_2025"
-          ],
-          "source_label": "Anthropic",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC — PRIMARY EVIDENCE",
-          "title": "Anthropic: Activating AI Safety Level 3 protections",
-          "limitation": "ASL-3 activation was precautionary and provisional; Anthropic said the threshold had not been definitively crossed.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_ASL3_ABSTRACT",
-            "EVID_ASL3_CBRN_EVALUATION"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_asl3_abstract.png",
-            "assets/evidence/anthropic_asl3_cbrn_evaluation.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.95,
+        "trim_out_sec": 8.85,
+        "generic_stock": true
       },
       {
         "duration": 7.966666666666667,
@@ -1698,71 +1477,43 @@
         "claim_id": "CLM_010_BIO_ASL3",
         "section_id": "SEC_04_REAL_WORLD_MISUSE",
         "scene_id": "scene_004",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present bio asl3 evidence for this section.",
         "narration_anchor": "or coordination than they would have needed before. Security researchers also note that the same automation cuts both ways,",
         "source_slice_index": 2,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_010_BIO_ASL3 at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_ANTHROPIC_ASL3_2025"
-          ],
-          "source_label": "Anthropic",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Cyber and biological misuse: On biological risk, Anthropic said its…",
-          "limitation": "ASL-3 activation was precautionary and provisional; Anthropic said the threshold had not been definitively crossed.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_ASL3_CBRN_EVALUATION"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_asl3_cbrn_evaluation.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Researcher working inside a containment cabinet; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4",
+        "motion": "pull",
+        "trim_in_sec": 0.947,
+        "trim_out_sec": 8.913,
+        "generic_stock": true
       },
       {
         "duration": 7.933333333333334,
         "claim_id": "CLM_010_BIO_ASL3",
         "section_id": "SEC_04_REAL_WORLD_MISUSE",
         "scene_id": "scene_004",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present bio asl3 evidence for this section.",
         "narration_anchor": "ways, helping defenders detect intrusions faster too. On biological risk, and Thropic said, its internal testing",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_010_BIO_ASL3 at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_ANTHROPIC_ASL3_2025"
-          ],
-          "source_label": "Anthropic",
-          "font_px": 32,
-          "eyebrow": "ANTHROPIC — PRIMARY EVIDENCE",
-          "title": "Anthropic: Activating AI Safety Level 3 protections",
-          "limitation": "ASL-3 activation was precautionary and provisional; Anthropic said the threshold had not been definitively crossed.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_ASL3_ABSTRACT"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_asl3_abstract.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
+        "motion": "hold",
+        "trim_in_sec": 1.947,
+        "trim_out_sec": 9.88,
+        "generic_stock": true
       },
       {
         "duration": 2,
         "claim_id": "CLM_010_BIO_ASL3",
         "section_id": "SEC_04_REAL_WORLD_MISUSE",
         "scene_id": "scene_004",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Editorial pause beat: Brief accent: hold the dual-use tension without overstating the cyber evidence.",
         "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
         "source_slice_index": 3,
@@ -1772,60 +1523,32 @@
           "accent": null
         },
         "sound_cue": "low_impact",
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_010_BIO_ASL3 at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_ANTHROPIC_ASL3_2025"
-          ],
-          "source_label": "Anthropic",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "On biological risk, Anthropic said its internal testing suggested Claude…",
-          "limitation": "ASL-3 activation was precautionary and provisional; Anthropic said the threshold had not been definitively crossed.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_ASL3_CBRN_EVALUATION"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_asl3_cbrn_evaluation.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
+        "motion": "hold",
+        "trim_in_sec": 9.88,
+        "trim_out_sec": 11.88,
+        "generic_stock": true
       },
       {
         "duration": 7.933333333333334,
         "claim_id": "CLM_010_BIO_ASL3",
         "section_id": "SEC_04_REAL_WORLD_MISUSE",
         "scene_id": "scene_004",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present bio asl3 evidence for this section.",
         "narration_anchor": "testing suggested Claude Opus, four, could provide a meaningful capability uplift to someone without specialist training. It",
         "source_slice_index": 4,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_010_BIO_ASL3 at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_ANTHROPIC_ASL3_2025"
-          ],
-          "source_label": "Anthropic",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Cyber and biological misuse: On biological risk, Anthropic said its…",
-          "limitation": "ASL-3 activation was precautionary and provisional; Anthropic said the threshold had not been definitively crossed.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_ASL3_ABSTRACT"
-          ],
-          "image_assets": [
-            "assets/evidence/anthropic_asl3_abstract.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Researcher working inside a containment cabinet; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.787,
+        "trim_out_sec": 11.72,
+        "generic_stock": true
       },
       {
         "duration": 2.5,
@@ -1869,30 +1592,18 @@
         "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present synthetic persuasion evidence for this section.",
         "narration_anchor": "additional ASL -3 safeguards as a precaution, while saying it had not definitively determined that the capability threshold",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_011_SYNTHETIC_PERSUASION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_IASR_2025"
-          ],
-          "source_label": "International AI Safety Report",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "The 2025 International AI Safety Report found strong evidence that…",
-          "limitation": "Strong evidence for cheap scalable persuasive content does not establish broad societal effects or determine any individual election outcome.",
-          "left": "The 2025 International AI Safety Report found strong evidence that…",
-          "left_detail": "Per International AI Safety Report, Jan 29, 2025.",
-          "right": "Strong evidence for cheap scalable persuasive content does not…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_017_8bd21a438123e76632597041.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.961,
+        "trim_out_sec": 8.361,
+        "generic_stock": true
       },
       {
         "duration": 7.1,
@@ -1929,120 +1640,72 @@
         "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present synthetic persuasion evidence for this section.",
         "narration_anchor": "frameworks, but no industry -wide standard defines when that boost becomes unacceptable. Beyond cyber and bio,",
         "source_slice_index": 2,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_011_SYNTHETIC_PERSUASION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_IASR_2025"
-          ],
-          "source_label": "International AI Safety Report",
-          "font_px": 32,
-          "eyebrow": "INTERNATIONAL AI SAFETY REPORT — PRIMARY EVIDENCE",
-          "title": "International AI Safety Report: International AI Safety Report 2025",
-          "limitation": "Strong evidence for cheap scalable persuasive content does not establish broad societal effects or determine any individual election outcome.",
-          "left": "The 2025 International AI Safety Report found strong evidence that…",
-          "left_detail": "Per International AI Safety Report, Jan 29, 2025.",
-          "right": "Strong evidence for cheap scalable persuasive content does not…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Many people each attending to their own screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4",
+        "motion": "pull",
+        "trim_in_sec": 0.961,
+        "trim_out_sec": 8.661,
+        "generic_stock": true
       },
       {
         "duration": 7.7,
         "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present synthetic persuasion evidence for this section.",
         "narration_anchor": "and bio, the risk spreads into subtle territory. The 2025 International AI Safety Report found",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_011_SYNTHETIC_PERSUASION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_IASR_2025"
-          ],
-          "source_label": "International AI Safety Report",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "The 2025 International AI Safety Report found strong evidence that…",
-          "limitation": "Strong evidence for cheap scalable persuasive content does not establish broad societal effects or determine any individual election outcome.",
-          "left": "The 2025 International AI Safety Report found strong evidence that…",
-          "left_detail": "Per International AI Safety Report, Jan 29, 2025.",
-          "right": "Strong evidence for cheap scalable persuasive content does not…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_017_8bd21a438123e76632597041.mp4",
+        "motion": "hold",
+        "trim_in_sec": 3.844,
+        "trim_out_sec": 11.544,
+        "generic_stock": true
       },
       {
         "duration": 7.566666666666666,
         "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present synthetic persuasion evidence for this section.",
         "narration_anchor": "Report found strong evidence that general purpose AI can generate persuasive synthetic content cheaply and at scale.",
         "source_slice_index": 4,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_011_SYNTHETIC_PERSUASION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_IASR_2025"
-          ],
-          "source_label": "International AI Safety Report",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Persuasion, work and…: The 2025 International AI Safety Report found…",
-          "limitation": "Strong evidence for cheap scalable persuasive content does not establish broad societal effects or determine any individual election outcome.",
-          "left": "The 2025 International AI Safety Report found strong evidence that…",
-          "left_detail": "Per International AI Safety Report, Jan 29, 2025.",
-          "right": "Strong evidence for cheap scalable persuasive content does not…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Many people each attending to their own screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.844,
+        "trim_out_sec": 11.411,
+        "generic_stock": true
       },
       {
         "duration": 7.666666666666667,
         "claim_id": "CLM_012_LABOUR_EXPOSURE",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present labour exposure evidence for this section.",
         "narration_anchor": "scale. But it also found the evidence becomes weaker at each later step, from content creation to",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_012_LABOUR_EXPOSURE; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_ILO_JOBS_2025"
-          ],
-          "source_label": "International Labour Organization",
-          "font_px": 32,
-          "eyebrow": "INTERNATIONAL LABOUR ORGANIZATION — PRIMARY EVIDENCE",
-          "title": "International Labour Organization: Generative AI and Jobs: A Refined Global…",
-          "limitation": "Exposure is not a forecast of unemployment; transformation is assessed as more likely than wholesale replacement.",
-          "left": "The International Labour Organization estimates that one in four…",
-          "left_detail": "Per International Labour Organization, May 20, 2025.",
-          "right": "Exposure is not a forecast of unemployment; transformation is…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.938,
+        "trim_out_sec": 8.604,
+        "generic_stock": true
       },
       {
         "duration": 7.366666666666666,
@@ -2109,30 +1772,18 @@
         "claim_id": "CLM_012_LABOUR_EXPOSURE",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present labour exposure evidence for this section.",
         "narration_anchor": "is already settled. Then there's work. The evidence measures exposure more reliably than it predicts unemployment.",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_012_LABOUR_EXPOSURE; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_ILO_JOBS_2025"
-          ],
-          "source_label": "International Labour Organization",
-          "font_px": 32,
-          "eyebrow": "INTERNATIONAL LABOUR ORGANIZATION — PRIMARY EVIDENCE",
-          "title": "International Labour Organization: Generative AI and Jobs: A Refined Global…",
-          "limitation": "Exposure is not a forecast of unemployment; transformation is assessed as more likely than wholesale replacement.",
-          "left": "The International Labour Organization estimates that one in four…",
-          "left_detail": "Per International Labour Organization, May 20, 2025.",
-          "right": "Exposure is not a forecast of unemployment; transformation is…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A workplace where human and automated steps sit side by side; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_020_4d10965a1f568d448e7000bc.mp4",
+        "motion": "hold",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 11.373,
+        "generic_stock": true
       },
       {
         "duration": 7.033333333333333,
@@ -2169,60 +1820,36 @@
         "claim_id": "CLM_012_LABOUR_EXPOSURE",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present labour exposure evidence for this section.",
         "narration_anchor": "with some degree of generative AI exposure, while emphasizing that transformation is more likely than wholesale replacement.",
         "source_slice_index": 5,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_012_LABOUR_EXPOSURE; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_ILO_JOBS_2025"
-          ],
-          "source_label": "International Labour Organization",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Persuasion, work and concentration: The International Labour Organization…",
-          "limitation": "Exposure is not a forecast of unemployment; transformation is assessed as more likely than wholesale replacement.",
-          "left": "The International Labour Organization estimates that one in four…",
-          "left_detail": "Per International Labour Organization, May 20, 2025.",
-          "right": "Exposure is not a forecast of unemployment; transformation is…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4",
+        "motion": "pull",
+        "trim_in_sec": 3.75,
+        "trim_out_sec": 10.75,
+        "generic_stock": true
       },
       {
         "duration": 7.833333333333333,
         "claim_id": "CLM_013_MARKET_CONCENTRATION",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present market concentration evidence for this section.",
         "narration_anchor": "replacement. It also warns that exposure indicators do not buy themselves, predict job losses or labour market outcomes.",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_013_MARKET_CONCENTRATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "UK Competition and Markets Authority",
-          "font_px": 32,
-          "eyebrow": "UK COMPETITION AND MARKETS AUTHORITY — PRIMARY EVIDENCE",
-          "title": "UK Competition and Markets Authority: AI Foundation Models: Update paper",
-          "limitation": "Competition-risk assessment, not a finding that every partnership or incumbent practice is unlawful.",
-          "left": "The UK's Competition and Markets Authority has warned that control…",
-          "left_detail": "Per UK Competition and Markets Authority, Apr 11, 2024.",
-          "right": "Competition-risk assessment, not a finding that every partnership or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.88,
+        "trim_out_sec": 8.713,
+        "generic_stock": true
       },
       {
         "duration": 7.266666666666667,
@@ -2319,30 +1946,18 @@
         "claim_id": "CLM_013_MARKET_CONCENTRATION",
         "section_id": "SEC_05_PERSUASION_WORK_POWER",
         "scene_id": "scene_005",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present market concentration evidence for this section.",
         "narration_anchor": "control over critical inputs, partnerships and routes to market could weaken open competition in foundation models.",
         "source_slice_index": 4,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_013_MARKET_CONCENTRATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "UK Competition and Markets Authority",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "The UK's Competition and Markets Authority has warned that control over…",
-          "limitation": "Competition-risk assessment, not a finding that every partnership or incumbent practice is unlawful.",
-          "left": "The UK's Competition and Markets Authority has warned that control…",
-          "left_detail": "Per UK Competition and Markets Authority, Apr 11, 2024.",
-          "right": "Competition-risk assessment, not a finding that every partnership or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.167,
+        "trim_out_sec": 11,
+        "generic_stock": true
       },
       {
         "duration": 2.5,
@@ -2494,165 +2109,90 @@
         "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
         "section_id": "SEC_06_REGULATION_PARADOX",
         "scene_id": "scene_006",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present eu layered obligations evidence for this section.",
         "narration_anchor": "licenses, oversight and control is genuinely necessary, but control has to live somewhere, administered by",
         "source_slice_index": 2,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_014_EU_LAYERED_OBLIGATIONS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_EU_AI_ACT_2024",
-            "SRC_EC_GPAI_GUIDANCE_2025"
-          ],
-          "source_label": "European Union",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Necessary rules and…: Providers of high-risk AI face lifecycle…",
-          "limitation": "Obligations phase in on different dates; compute is a rebuttable presumption and not the only designation route.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_EU_SYSTEMIC_CLASSIFICATION"
-          ],
-          "image_assets": [
-            "assets/evidence/eu_ai_act_article51_page83.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "European Union flags outside an official building; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "conceptual",
+        "asset": "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4",
+        "motion": "pull",
+        "trim_in_sec": 0.881,
+        "trim_out_sec": 8.614,
+        "generic_stock": true
       },
       {
         "duration": 7.566666666666666,
         "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
         "section_id": "SEC_06_REGULATION_PARADOX",
         "scene_id": "scene_006",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present eu layered obligations evidence for this section.",
         "narration_anchor": "administered by somebody and that somebody gains power too. Take Europe's AI Act. It uses different",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_014_EU_LAYERED_OBLIGATIONS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_EU_AI_ACT_2024",
-            "SRC_EC_GPAI_GUIDANCE_2025"
-          ],
-          "source_label": "European Union",
-          "font_px": 32,
-          "eyebrow": "EUROPEAN UNION — PRIMARY EVIDENCE",
-          "title": "European Union: Regulation (EU) 2024/1689 — Artificial…",
-          "limitation": "Obligations phase in on different dates; compute is a rebuttable presumption and not the only designation route.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_EU_SYSTEMIC_DUTIES"
-          ],
-          "image_assets": [
-            "assets/evidence/eu_ai_act_article55_page86.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 0.961,
+        "trim_out_sec": 8.528,
+        "generic_stock": true
       },
       {
         "duration": 7.8,
         "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
         "section_id": "SEC_06_REGULATION_PARADOX",
         "scene_id": "scene_006",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present eu layered obligations evidence for this section.",
         "narration_anchor": "uses different rules for different systems, providers of high -risk AI, face -life cycle, risk management duties,",
         "source_slice_index": 4,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_014_EU_LAYERED_OBLIGATIONS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_EU_AI_ACT_2024",
-            "SRC_EC_GPAI_GUIDANCE_2025"
-          ],
-          "source_label": "European Union",
-          "font_px": 32,
-          "eyebrow": "EUROPEAN COMMISSION — PRIMARY EVIDENCE",
-          "title": "European Commission: Guidelines on obligations for General-Purpose…",
-          "limitation": "Obligations phase in on different dates; compute is a rebuttable presumption and not the only designation route.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_EU_SYSTEMIC_CLASSIFICATION"
-          ],
-          "image_assets": [
-            "assets/evidence/eu_ai_act_article51_page83.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "conceptual",
+        "asset": "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.211,
+        "trim_out_sec": 11.011,
+        "generic_stock": true
       },
       {
         "duration": 7.866666666666666,
         "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
         "section_id": "SEC_06_REGULATION_PARADOX",
         "scene_id": "scene_006",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present eu layered obligations evidence for this section.",
         "narration_anchor": "duties, providers of general purpose models face transparency and copyright -related obligations with additional evaluation,",
         "source_slice_index": 5,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_014_EU_LAYERED_OBLIGATIONS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_EU_AI_ACT_2024",
-            "SRC_EC_GPAI_GUIDANCE_2025"
-          ],
-          "source_label": "European Union",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "Providers of high-risk AI face lifecycle risk-management duties. Providers…",
-          "limitation": "Obligations phase in on different dates; compute is a rebuttable presumption and not the only designation route.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_EU_SYSTEMIC_DUTIES"
-          ],
-          "image_assets": [
-            "assets/evidence/eu_ai_act_article55_page86.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "European Union flags outside an official building; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "conceptual",
+        "asset": "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4",
+        "motion": "pull",
+        "trim_in_sec": 3.144,
+        "trim_out_sec": 11.011,
+        "generic_stock": true
       },
       {
         "duration": 7.9,
         "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
         "section_id": "SEC_06_REGULATION_PARADOX",
         "scene_id": "scene_006",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present eu layered obligations evidence for this section.",
         "narration_anchor": "additional evaluation, incident reporting and cybersecurity duties for models classified as posing systemic risk.",
         "source_slice_index": 6,
-        "asset_type": "evidence",
-        "semantic_rationale": "Shows the verified primary-source region that directly supports CLM_014_EU_LAYERED_OBLIGATIONS at this narration beat.",
-        "semantic_link": "direct_evidence",
-        "evidence": {
-          "kind": "split_documents",
-          "source_ids": [
-            "SRC_EU_AI_ACT_2024",
-            "SRC_EC_GPAI_GUIDANCE_2025"
-          ],
-          "source_label": "European Union",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Necessary rules and…: Providers of high-risk AI face lifecycle…",
-          "limitation": "Obligations phase in on different dates; compute is a rebuttable presumption and not the only designation route.",
-          "template_id": "orvyq_split_documents",
-          "necessity": "critical_result",
-          "evidence_asset_ids": [
-            "EVID_EU_SYSTEMIC_CLASSIFICATION"
-          ],
-          "image_assets": [
-            "assets/evidence/eu_ai_act_article51_page83.png"
-          ]
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 3.844,
+        "trim_out_sec": 11.744,
+        "generic_stock": true
       },
       {
         "duration": 5.733333333333333,
@@ -2723,62 +2263,36 @@
         "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
         "section_id": "SEC_06_REGULATION_PARADOX",
         "scene_id": "scene_006",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present compliance incumbency evidence for this section.",
         "narration_anchor": "designation. Establish companies may also be better able to absorb the complex compliance,",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_016_COMPLIANCE_INCUMBENCY; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "A small team working through paperwork and obligations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_CMA_FOUNDATION_MODELS_2024",
-            "SRC_EU_AI_ACT_2024"
-          ],
-          "source_label": "UK Competition and Markets Authority",
-          "font_px": 32,
-          "eyebrow": "UK COMPETITION AND MARKETS AUTHORITY — PRIMARY EVIDENCE",
-          "title": "UK Competition and Markets Authority: AI Foundation Models: Update paper",
-          "limitation": "Competition-risk assessment, not a finding that every partnership or incumbent practice is unlawful.",
-          "left": "Established companies may also be better able to absorb the complex…",
-          "left_detail": "Per UK Competition and Markets Authority, Apr 11, 2024.",
-          "right": "Competition-risk assessment, not a finding that every partnership or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_029_839cdc1b998a76259f43b05a.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 7.393,
+        "generic_stock": true
       },
       {
         "duration": 6.733333333333333,
         "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
         "section_id": "SEC_06_REGULATION_PARADOX",
         "scene_id": "scene_006",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present compliance incumbency evidence for this section.",
         "narration_anchor": "compliance, evaluation, reporting and legal costs that come with operating at that scale. A",
         "source_slice_index": 1,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_016_COMPLIANCE_INCUMBENCY; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "A small team working through paperwork and obligations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_CMA_FOUNDATION_MODELS_2024",
-            "SRC_EU_AI_ACT_2024"
-          ],
-          "source_label": "UK Competition and Markets Authority",
-          "font_px": 32,
-          "eyebrow": "EUROPEAN UNION — PRIMARY EVIDENCE",
-          "title": "European Union: Regulation (EU) 2024/1689 — Artificial…",
-          "limitation": "Competition-risk assessment, not a finding that every partnership or incumbent practice is unlawful.",
-          "left": "Established companies may also be better able to absorb the complex…",
-          "left_detail": "Per European Union, Jul 12, 2024.",
-          "right": "Competition-risk assessment, not a finding that every partnership or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_029_839cdc1b998a76259f43b05a.mp4",
+        "motion": "pull",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 10.573,
+        "generic_stock": true
       },
       {
         "duration": 2.5,
@@ -2822,127 +2336,79 @@
         "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
         "section_id": "SEC_07_OPEN_CLOSED",
         "scene_id": "scene_007",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present open weight tradeoff evidence for this section.",
         "narration_anchor": "dangerous concentration can end up protecting the incumbents who triggered the concern in the first place.",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_017_OPEN_WEIGHT_TRADEOFF; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_NTIA_OPEN_WEIGHTS_2024"
-          ],
-          "source_label": "US National Telecommunications and Information Administration",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "Open-weight models let independent researchers audit them, find flaws, and…",
-          "limitation": "Emphasizes uncertainty and trade-offs; does not establish open or closed release as universally safer.",
-          "left": "Open-weight models let independent researchers audit them, find…",
-          "left_detail": "Per US National Telecommunications and Information Administration, Jul 30, 2024.",
-          "right": "Emphasizes uncertainty and trade-offs; does not establish open or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.938,
+        "trim_out_sec": 7.771,
+        "generic_stock": true
       },
       {
         "duration": 7.366666666666666,
         "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
         "section_id": "SEC_07_OPEN_CLOSED",
         "scene_id": "scene_007",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present open weight tradeoff evidence for this section.",
         "narration_anchor": "place. That's not an argument against regulation. It's a reason to look closely at who writes the rules and who",
         "source_slice_index": 1,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_017_OPEN_WEIGHT_TRADEOFF; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_NTIA_OPEN_WEIGHTS_2024"
-          ],
-          "source_label": "US National Telecommunications and Information Administration",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Open capability versus closed control: Open-weight models let independent…",
-          "limitation": "Emphasizes uncertainty and trade-offs; does not establish open or closed release as universally safer.",
-          "left": "Open-weight models let independent researchers audit them, find…",
-          "left_detail": "Per US National Telecommunications and Information Administration, Jul 30, 2024.",
-          "right": "Emphasizes uncertainty and trade-offs; does not establish open or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4",
+        "motion": "push",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 8.327,
+        "generic_stock": true
       },
       {
         "duration": 7.566666666666666,
         "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
         "section_id": "SEC_07_OPEN_CLOSED",
         "scene_id": "scene_007",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present open weight tradeoff evidence for this section.",
         "narration_anchor": "and who they end up protecting, because the line between legitimate safety oversight and rules that simply lock in whoever",
         "source_slice_index": 2,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_017_OPEN_WEIGHT_TRADEOFF; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_NTIA_OPEN_WEIGHTS_2024"
-          ],
-          "source_label": "US National Telecommunications and Information Administration",
-          "font_px": 32,
-          "eyebrow": "US NATIONAL TELECOMMUNICATIONS AND INFORMATION…",
-          "title": "US National Telecommunications…: Dual-Use Foundation Models with Widely…",
-          "limitation": "Emphasizes uncertainty and trade-offs; does not establish open or closed release as universally safer.",
-          "left": "Open-weight models let independent researchers audit them, find…",
-          "left_detail": "Per US National Telecommunications and Information Administration, Jul 30, 2024.",
-          "right": "Emphasizes uncertainty and trade-offs; does not establish open or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4",
+        "motion": "pull",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 8.527,
+        "generic_stock": true
       },
       {
         "duration": 7.266666666666667,
         "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
         "section_id": "SEC_07_OPEN_CLOSED",
         "scene_id": "scene_007",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present open weight tradeoff evidence for this section.",
         "narration_anchor": "whoever already won the race can be thinner than it looks. That tension sharpens further around one of the field's most",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_017_OPEN_WEIGHT_TRADEOFF; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_NTIA_OPEN_WEIGHTS_2024"
-          ],
-          "source_label": "US National Telecommunications and Information Administration",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "Open-weight models let independent researchers audit them, find flaws, and…",
-          "limitation": "Emphasizes uncertainty and trade-offs; does not establish open or closed release as universally safer.",
-          "left": "Open-weight models let independent researchers audit them, find…",
-          "left_detail": "Per US National Telecommunications and Information Administration, Jul 30, 2024.",
-          "right": "Emphasizes uncertainty and trade-offs; does not establish open or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
+        "motion": "hold",
+        "trim_in_sec": 2.453,
+        "trim_out_sec": 9.72,
+        "generic_stock": true
       },
       {
         "duration": 2,
         "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
         "section_id": "SEC_07_OPEN_CLOSED",
         "scene_id": "scene_007",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Editorial pause beat: Brief accent: expose the governance paradox before the open-versus-closed debate.",
         "narration_anchor": "Because the line between legitimate safety oversight and rules that simply lock in whoever already won the race can be thinner than it looks.",
         "source_slice_index": 3,
@@ -2952,26 +2418,14 @@
           "accent": null
         },
         "sound_cue": "low_impact",
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_017_OPEN_WEIGHT_TRADEOFF; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_NTIA_OPEN_WEIGHTS_2024"
-          ],
-          "source_label": "US National Telecommunications and Information Administration",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Open capability versus closed control: Open-weight models let independent…",
-          "limitation": "Emphasizes uncertainty and trade-offs; does not establish open or closed release as universally safer.",
-          "left": "Open-weight models let independent researchers audit them, find…",
-          "left_detail": "Per US National Telecommunications and Information Administration, Jul 30, 2024.",
-          "right": "Emphasizes uncertainty and trade-offs; does not establish open or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
+        "motion": "hold",
+        "trim_in_sec": 9.72,
+        "trim_out_sec": 11.72,
+        "generic_stock": true
       },
       {
         "duration": 7.266666666666667,
@@ -3008,30 +2462,18 @@
         "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
         "section_id": "SEC_07_OPEN_CLOSED",
         "scene_id": "scene_007",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present open weight tradeoff evidence for this section.",
         "narration_anchor": "for anyone to inspect and build on, or kept closed, held inside a small number of companies that monitor how they're used?",
         "source_slice_index": 5,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_017_OPEN_WEIGHT_TRADEOFF; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_NTIA_OPEN_WEIGHTS_2024"
-          ],
-          "source_label": "US National Telecommunications and Information Administration",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "Open-weight models let independent researchers audit them, find flaws, and…",
-          "limitation": "Emphasizes uncertainty and trade-offs; does not establish open or closed release as universally safer.",
-          "left": "Open-weight models let independent researchers audit them, find…",
-          "left_detail": "Per US National Telecommunications and Information Administration, Jul 30, 2024.",
-          "right": "Emphasizes uncertainty and trade-offs; does not establish open or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4",
+        "motion": "pull",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 11.573,
+        "generic_stock": true
       },
       {
         "duration": 7.166666666666667,
@@ -3068,30 +2510,18 @@
         "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
         "section_id": "SEC_07_OPEN_CLOSED",
         "scene_id": "scene_007",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present open weight tradeoff evidence for this section.",
         "narration_anchor": "independent researchers audit them, find flaws and build defensive tools without waiting on a company's permission. That",
         "source_slice_index": 7,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_017_OPEN_WEIGHT_TRADEOFF; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_NTIA_OPEN_WEIGHTS_2024"
-          ],
-          "source_label": "US National Telecommunications and Information Administration",
-          "font_px": 32,
-          "eyebrow": "US NATIONAL TELECOMMUNICATIONS AND INFORMATION…",
-          "title": "US National Telecommunications…: Dual-Use Foundation Models with Widely…",
-          "limitation": "Emphasizes uncertainty and trade-offs; does not establish open or closed release as universally safer.",
-          "left": "Open-weight models let independent researchers audit them, find…",
-          "left_detail": "Per US National Telecommunications and Information Administration, Jul 30, 2024.",
-          "right": "Emphasizes uncertainty and trade-offs; does not establish open or…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4",
+        "motion": "hold",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 10.707,
+        "generic_stock": true
       },
       {
         "duration": 6.233333333333333,
@@ -3259,187 +2689,115 @@
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "disclosures are useful evidence here. The cyber extortion case and the state -linked espionage case described",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "subjecting them to independent evaluations and audits before they ship,…",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 8.193,
+        "generic_stock": true
       },
       {
         "duration": 7.566666666666666,
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "case described earlier both happened on a closed, tightly monitored model. Centralized access did not",
         "source_slice_index": 1,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Technical, procedural and…: subjecting them to independent evaluations…",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
+        "motion": "push",
+        "trim_in_sec": 0.941,
+        "trim_out_sec": 8.507,
+        "generic_stock": true
       },
       {
         "duration": 7.033333333333333,
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "did not eliminate misuse, but it did give the provider visibility and the ability to investigate,",
         "source_slice_index": 2,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "A panel weighing findings around a table; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "UK AI SAFETY INSTITUTE — PRIMARY EVIDENCE",
-          "title": "UK AI Safety Institute: AI Safety Institute approach to evaluations",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4",
+        "motion": "pull",
+        "trim_in_sec": 0.931,
+        "trim_out_sec": 7.965,
+        "generic_stock": true
       },
       {
         "duration": 7.7,
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "investigate, restrict and disrupt what was happening. Openness spreads capability and risk outward,",
         "source_slice_index": 3,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "subjecting them to independent evaluations and audits before they ship,…",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Inspection and measurement recorded step by step; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 8.66,
+        "generic_stock": true
       },
       {
         "duration": 7.9,
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "risk outward, closure concentrates control and power inward. Neither one is simply the",
         "source_slice_index": 4,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Technical, procedural and…: subjecting them to independent evaluations…",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 11.74,
+        "generic_stock": true
       },
       {
         "duration": 7.466666666666667,
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "the safe option, choosing between them is choosing which kind of failure you're willing to risk. None of this argues",
         "source_slice_index": 5,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "UK AI SAFETY INSTITUTE — PRIMARY EVIDENCE",
-          "title": "UK AI Safety Institute: AI Safety Institute approach to evaluations",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
+        "motion": "pull",
+        "trim_in_sec": 2.293,
+        "trim_out_sec": 9.76,
+        "generic_stock": true
       },
       {
         "duration": 2,
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Editorial pause beat: Brief accent: hold the unresolved tradeoff between openness and centralized control.",
         "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
         "source_slice_index": 5,
@@ -3449,56 +2807,32 @@
           "accent": null
         },
         "sound_cue": "tonal_bloom",
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "subjecting them to independent evaluations and audits before they ship,…",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
+        "motion": "pull",
+        "trim_in_sec": 9.76,
+        "trim_out_sec": 11.76,
+        "generic_stock": true
       },
       {
         "duration": 7.366666666666666,
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "argues for doing nothing, it argues for being precise about what kind of safety actually helps. Some of it is",
         "source_slice_index": 6,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "A panel weighing findings around a table; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Technical, procedural and…: subjecting them to independent evaluations…",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 3.725,
+        "trim_out_sec": 11.091,
+        "generic_stock": true
       },
       {
         "duration": 7.266666666666667,
@@ -3535,92 +2869,54 @@
         "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present independent evaluation evidence for this section.",
         "narration_anchor": "and subjecting them to independent evaluations and audits before they ship, not just after something goes wrong. Some",
         "source_slice_index": 8,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_019_INDEPENDENT_EVALUATION; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_UK_AISI_EVALUATIONS_2024"
-          ],
-          "source_label": "UK AI Safety Institute",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "subjecting them to independent evaluations and audits before they ship,…",
-          "limitation": "Evaluations are evidence about model behavior under test conditions, not comprehensive safety certification.",
-          "left": "subjecting them to independent evaluations and audits before they…",
-          "left_detail": "Per UK AI Safety Institute, Feb 9, 2024.",
-          "right": "Evaluations are evidence about model behavior under test conditions,…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Inspection and measurement recorded step by step; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 11.607,
+        "generic_stock": true
       },
       {
         "duration": 5.666666666666667,
         "claim_id": "CLM_020_INCIDENT_REPORTING",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present incident reporting evidence for this section.",
         "narration_anchor": "wrong. Some of it is procedural, mandatory incident reporting when systems misbehave,",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_020_INCIDENT_REPORTING; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "Formal reporting and record-keeping inside an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_EU_AI_ACT_2024",
-            "SRC_EC_GPAI_GUIDANCE_2025"
-          ],
-          "source_label": "European Union",
-          "font_px": 32,
-          "eyebrow": "EUROPEAN UNION — PRIMARY EVIDENCE",
-          "title": "European Union: Regulation (EU) 2024/1689 — Artificial…",
-          "limitation": "Obligations phase in on different dates; compute is a rebuttable presumption and not the only designation route.",
-          "left": "mandatory incident reporting when systems misbehave, real legal…",
-          "left_detail": "Per European Union, Jul 12, 2024.",
-          "right": "Obligations phase in on different dates; compute is a rebuttable…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_038_ab7ab46fa73a69f0a599c705.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 6.627,
+        "generic_stock": true
       },
       {
         "duration": 4.566666666666666,
         "claim_id": "CLM_020_INCIDENT_REPORTING",
         "section_id": "SEC_08_SAFETY_ARCHITECTURE",
         "scene_id": "scene_008",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present incident reporting evidence for this section.",
         "narration_anchor": "misbehave, real legal liability and insurance for the companies that deploy them and",
         "source_slice_index": 1,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_020_INCIDENT_REPORTING; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "Formal reporting and record-keeping inside an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_EU_AI_ACT_2024",
-            "SRC_EC_GPAI_GUIDANCE_2025"
-          ],
-          "source_label": "European Union",
-          "font_px": 32,
-          "eyebrow": "EUROPEAN COMMISSION — PRIMARY EVIDENCE",
-          "title": "European Commission: Guidelines on obligations for General-Purpose…",
-          "limitation": "Obligations phase in on different dates; compute is a rebuttable presumption and not the only designation route.",
-          "left": "mandatory incident reporting when systems misbehave, real legal…",
-          "left_detail": "Per European Commission, Jul 18, 2025.",
-          "right": "Obligations phase in on different dates; compute is a rebuttable…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_038_ab7ab46fa73a69f0a599c705.mp4",
+        "motion": "pull",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 8.407,
+        "generic_stock": true
       },
       {
         "duration": 2.5,
@@ -3665,31 +2961,18 @@
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "flag internal problems before they become headlines. Some of it is structural, governing access to the enormous computing clusters",
         "source_slice_index": 0,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "UK COMPETITION AND MARKETS AUTHORITY — PRIMARY EVIDENCE",
-          "title": "UK Competition and Markets Authority: AI Foundation Models: Update paper",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per UK Competition and Markets Authority, Apr 11, 2024.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Ordinary people moving through a city street; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.922,
+        "trim_out_sec": 8.655,
+        "generic_stock": true
       },
       {
         "duration": 7.5,
@@ -3727,31 +3010,18 @@
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "world. Giving independent and public interest researchers real access to study these systems not only regulators and",
         "source_slice_index": 2,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Speed, dominance and…: The greatest danger here may not be a rogue…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Everyday commuting life at human scale; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4",
+        "motion": "pull",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 8.393,
+        "generic_stock": true
       },
       {
         "duration": 7.166666666666667,
@@ -3789,93 +3059,54 @@
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "did, so safety commitments aren't just voluntary promises inside one company's blog post, and some of it is about power",
         "source_slice_index": 4,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "UK COMPETITION AND MARKETS AUTHORITY — PRIMARY EVIDENCE",
-          "title": "UK Competition and Markets Authority: AI Foundation Models: Update paper",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per UK Competition and Markets Authority, Apr 11, 2024.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Domestic, ordinary life away from the technology; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.961,
+        "trim_out_sec": 8.694,
+        "generic_stock": true
       },
       {
         "duration": 7.566666666666666,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "about power itself. Keeping enough competition in the market that no single company or government becomes the sole authority",
         "source_slice_index": 5,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "The greatest danger here may not be a rogue machine at all. It may be a…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Return to the corridor of the machine itself; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4",
+        "motion": "push",
+        "trim_in_sec": 0.864,
+        "trim_out_sec": 8.431,
+        "generic_stock": true
       },
       {
         "duration": 7.933333333333334,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "sole authority on what AI is allowed to do. Sunset clauses, written into the rules, mean today safeguards",
         "source_slice_index": 6,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Speed, dominance and…: The greatest danger here may not be a rogue…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "The concentrated compute the argument returns to; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
+        "motion": "pull",
+        "trim_in_sec": 0.874,
+        "trim_out_sec": 8.807,
+        "generic_stock": true
       },
       {
         "duration": 7.033333333333333,
@@ -3913,248 +3144,144 @@
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "control. So what happens when the race outpaces our ability to govern it? Maybe nothing's sudden, no single",
         "source_slice_index": 8,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "City at dusk, the scale the decision sits inside; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "UK COMPETITION AND MARKETS AUTHORITY — PRIMARY EVIDENCE",
-          "title": "UK Competition and Markets Authority: AI Foundation Models: Update paper",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per UK Competition and Markets Authority, Apr 11, 2024.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4",
+        "motion": "hold",
+        "trim_in_sec": 0.96,
+        "trim_out_sec": 8.827,
+        "generic_stock": true
       },
       {
         "duration": 7.833333333333333,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "no single machine seizing control, no one moment of collapse. What's more likely is quieter, a",
         "source_slice_index": 9,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "The greatest danger here may not be a rogue machine at all. It may be a…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "One person, one screen, the closing intimacy; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_045_014f7d61f9b25a0e5ed4711d.mp4",
+        "motion": "push",
+        "trim_in_sec": 0.867,
+        "trim_out_sec": 8.701,
+        "generic_stock": true
       },
       {
         "duration": 7.466666666666667,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "a set of decisions made under competitive pressure by people who each believe they're the responsible ones.",
         "source_slice_index": 10,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Speed, dominance and…: The greatest danger here may not be a rogue…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Ordinary people moving through a city street; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 3.686,
+        "trim_out_sec": 11.153,
+        "generic_stock": true
       },
       {
         "duration": 7.966666666666667,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "ones. Decisions that add up to a world shaped by whoever moved fastest or whoever accumulated the most control",
         "source_slice_index": 11,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "STANFORD INSTITUTE FOR HUMAN-CENTERED AI — PRIMARY EVIDENCE",
-          "title": "Stanford Institute for Human-Centered AI: The 2025 AI Index Report",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Everyday commuting life at human scale; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4",
+        "motion": "hold",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 11.807,
+        "generic_stock": true
       },
       {
         "duration": 7.9,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "human_context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "control without anyone choosing that outcome on purpose. The greatest danger here may not be a rogue machine at",
         "source_slice_index": 12,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "UK COMPETITION AND MARKETS AUTHORITY — PRIMARY EVIDENCE",
-          "title": "UK Competition and Markets Authority: AI Foundation Models: Update paper",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per UK Competition and Markets Authority, Apr 11, 2024.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Domestic, ordinary life away from the technology; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4",
+        "motion": "push",
+        "trim_in_sec": 3.844,
+        "trim_out_sec": 11.744,
+        "generic_stock": true
       },
       {
         "duration": 7.966666666666667,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "machine at all. It may be a system that rewards speed and dominance while spreading the risk across everyone else.",
         "source_slice_index": 13,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "FILM CLAIM — PRIMARY EVIDENCE",
-          "title": "The greatest danger here may not be a rogue machine at all. It may be a…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "Return to the corridor of the machine itself; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4",
+        "motion": "pull",
+        "trim_in_sec": 2.833,
+        "trim_out_sec": 10.8,
+        "generic_stock": true
       },
       {
         "duration": 7.966666666666667,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "But the fix for that can't simply be more control in fewer hands, that risk is just as real. The real",
         "source_slice_index": 14,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
-        "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "SECTION CONTEXT — PRIMARY EVIDENCE",
-          "title": "Speed, dominance and…: The greatest danger here may not be a rogue…",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset_type": "footage",
+        "semantic_rationale": "The concentrated compute the argument returns to; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical",
+        "asset": "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
+        "motion": "drift_left",
+        "trim_in_sec": 2.953,
+        "trim_out_sec": 10.92,
+        "generic_stock": true
       },
       {
         "duration": 7.966666666666667,
         "claim_id": "CLM_021_FINAL_SYNTHESIS",
         "section_id": "SEC_09_FINAL_SYNTHESIS",
         "scene_id": "scene_009",
-        "visual_role": "evidence",
+        "visual_role": "context",
         "editorial_purpose": "Present final synthesis evidence for this section.",
         "narration_anchor": "real challenge is narrower and harder, reducing catastrophic misuse without building a machine for concentrating power in the",
         "source_slice_index": 15,
-        "asset_type": "evidence",
-        "semantic_rationale": "Explains the relationship asserted by CLM_021_FINAL_SYNTHESIS; this source-derived visual is used only where footage cannot show the mechanism precisely.",
+        "asset_type": "footage",
+        "semantic_rationale": "City at dusk, the scale the decision sits inside; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
-        "evidence": {
-          "kind": "boundary",
-          "source_ids": [
-            "SRC_STANFORD_AI_INDEX_2025",
-            "SRC_CMA_FOUNDATION_MODELS_2024"
-          ],
-          "source_label": "Stanford Institute for Human-Centered AI",
-          "font_px": 32,
-          "eyebrow": "STANFORD INSTITUTE FOR HUMAN-CENTERED AI — PRIMARY EVIDENCE",
-          "title": "Stanford Institute for Human-Centered AI: The 2025 AI Index Report",
-          "limitation": "Investment and benchmark figures describe 2024/early-2025 conditions and must be shown with dates.",
-          "left": "The greatest danger here may not be a rogue machine at all. It may…",
-          "left_detail": "Per Stanford Institute for Human-Centered AI, Apr 7, 2025.",
-          "right": "Investment and benchmark figures describe 2024/early-2025 conditions…",
-          "right_detail": "",
-          "template_id": "orvyq_boundary",
-          "necessity": "critical_result"
-        }
+        "asset": "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4",
+        "motion": "hold",
+        "trim_in_sec": 3.84,
+        "trim_out_sec": 11.807,
+        "generic_stock": true
       },
       {
         "duration": 7.7,
@@ -4248,7 +3375,7 @@
       }
     ],
     "visual_rebalance_plan": "direction/visual_rebalance_plan.json",
-    "generated_at": "2026-08-03T06:40:13.647Z",
+    "generated_at": "2026-08-03T18:14:35.258Z",
     "generated_total_duration_seconds": 844.267
   },
   "source_evidence_map": "research/evidence_map.json",

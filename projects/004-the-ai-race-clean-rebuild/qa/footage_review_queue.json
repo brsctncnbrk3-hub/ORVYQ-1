@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-03T13:26:14.115Z",
+  "generated_at": "2026-08-03T18:14:55.155Z",
   "pending_review_count": 34,
-  "entries_with_exact_uses": 3,
+  "entries_with_exact_uses": 34,
   "entries": [
     {
       "scene_id": "scene_001",
@@ -30,6 +30,13 @@
           "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
           "trim_in_sec": 0.5,
           "trim_out_sec": 3.5
+        },
+        {
+          "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+          "narration_anchor": "believes moving this fast might be dangerous, and every one of",
+          "semantic_rationale": "Engineers jointly reviewing frontier software on a shared screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 7.94
         }
       ],
       "review_blockers": []
@@ -52,10 +59,23 @@
       "semantic_rationale": "Researchers observing a controlled model evaluation on monitors",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "rival company, a rival government, somebody who gets their first and gets to set the rules for everyone else.",
+          "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.793
+        },
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "wrong, that a genuinely dangerous machine would announce itself. That assumption is exactly what makes the evidence so",
+          "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.107
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_004",
@@ -75,10 +95,30 @@
       "semantic_rationale": "Terminal output scrolling under deliberate observation",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "machine ever built moves faster than our ability to understand it, control it, or govern it?",
+          "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 7.593
+        },
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "themselves. In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+          "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.867,
+          "trim_out_sec": 8
+        },
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "That assumption is exactly what makes the evidence so unsettling. It isn't hidden. It's sitting in the safety reports the AI companies publish themselves.",
+          "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 8,
+          "trim_out_sec": 12
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_005",
@@ -98,10 +138,23 @@
       "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "limits. They build a scenario, then watch how the model responds when it's told it will be shut down or replaced. In",
+          "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 8.161
+        },
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "shutdown. None of this happened in the wild. These were designed tests, built specifically to see how far a model would go,",
+          "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 11.677
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_006",
@@ -128,6 +181,13 @@
           "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
           "trim_in_sec": 1,
           "trim_out_sec": 3.5
+        },
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "replacement, threatened to expose a fabricated affair rather than accept being taken offline. A separate line of research",
+          "semantic_rationale": "Instrumented test bench where a controlled scenario is set up; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.776,
+          "trim_out_sec": 10.943
         }
       ],
       "review_blockers": []
@@ -150,10 +210,30 @@
       "semantic_rationale": "Researchers reworking a scenario on a board across iterations",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "go, and in at least one case, researchers have said the scenario was reshaped repeatedly until that exact outcome",
+          "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 8.328
+        },
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "exact outcome became the default result. That distinction matters. It's the difference between a fire drill and a fire,",
+          "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.945,
+          "trim_out_sec": 10.012
+        },
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "That distinction matters. It's the difference between a fire drill and a fire.",
+          "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 10.012,
+          "trim_out_sec": 12.012
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_008",
@@ -173,10 +253,23 @@
       "semantic_rationale": "Capital and market activity at scale without a named transaction",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "about the building. The natural responses to ask why anyone would keep building something they admit could be dangerous.",
+          "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 7.928
+        },
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "reported nearly $34 billion in private generative AI investment in 2024.",
+          "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 10.244
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_009",
@@ -196,10 +289,23 @@
       "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_007_FRONTIER_GAP",
+          "narration_anchor": "2024. It also found that the performance gap between the top two models",
+          "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 6.193
+        },
+        {
+          "claim_id": "CLM_007_FRONTIER_GAP",
+          "narration_anchor": "two models on a prominent benchmark had narrowed to less than 1 percentage point.",
+          "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 9.307
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_014",
@@ -219,10 +325,30 @@
       "semantic_rationale": "Biosafety laboratory work under protective equipment",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "moments. These are the company's own assessments of its own products misuse, not independently verified in every detail, but they",
+          "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.95,
+          "trim_out_sec": 8.85
+        },
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "ways, helping defenders detect intrusions faster too. On biological risk, and Thropic said, its internal testing",
+          "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 1.947,
+          "trim_out_sec": 9.88
+        },
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
+          "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 9.88,
+          "trim_out_sec": 11.88
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_015",
@@ -242,10 +368,23 @@
       "semantic_rationale": "Researcher working inside a containment cabinet",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "or coordination than they would have needed before. Security researchers also note that the same automation cuts both ways,",
+          "semantic_rationale": "Researcher working inside a containment cabinet; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.947,
+          "trim_out_sec": 8.913
+        },
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "testing suggested Claude Opus, four, could provide a meaningful capability uplift to someone without specialist training. It",
+          "semantic_rationale": "Researcher working inside a containment cabinet; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.787,
+          "trim_out_sec": 11.72
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_017",
@@ -265,10 +404,23 @@
       "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "additional ASL -3 safeguards as a precaution, while saying it had not definitively determined that the capability threshold",
+          "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 8.361
+        },
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "and bio, the risk spreads into subtle territory. The 2025 International AI Safety Report found",
+          "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 11.544
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_018",
@@ -288,10 +440,23 @@
       "semantic_rationale": "Many people each attending to their own screen",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "frameworks, but no industry -wide standard defines when that boost becomes unacceptable. Beyond cyber and bio,",
+          "semantic_rationale": "Many people each attending to their own screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 8.661
+        },
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "Report found strong evidence that general purpose AI can generate persuasive synthetic content cheaply and at scale.",
+          "semantic_rationale": "Many people each attending to their own screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 11.411
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_019",
@@ -311,10 +476,23 @@
       "semantic_rationale": "Office work being carried out through software",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "scale. But it also found the evidence becomes weaker at each later step, from content creation to",
+          "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.938,
+          "trim_out_sec": 8.604
+        },
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "with some degree of generative AI exposure, while emphasizing that transformation is more likely than wholesale replacement.",
+          "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.75,
+          "trim_out_sec": 10.75
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_020",
@@ -341,6 +519,13 @@
           "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
           "trim_in_sec": 0.5,
           "trim_out_sec": 3.5
+        },
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "is already settled. Then there's work. The evidence measures exposure more reliably than it predicts unemployment.",
+          "semantic_rationale": "A workplace where human and automated steps sit side by side; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.373
         }
       ],
       "review_blockers": []
@@ -363,10 +548,23 @@
       "semantic_rationale": "Power and cooling plant that the compute depends on",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_013_MARKET_CONCENTRATION",
+          "narration_anchor": "replacement. It also warns that exposure indicators do not buy themselves, predict job losses or labour market outcomes.",
+          "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.88,
+          "trim_out_sec": 8.713
+        },
+        {
+          "claim_id": "CLM_013_MARKET_CONCENTRATION",
+          "narration_anchor": "control over critical inputs, partnerships and routes to market could weaken open competition in foundation models.",
+          "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.167,
+          "trim_out_sec": 11
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_024",
@@ -386,10 +584,16 @@
       "semantic_rationale": "European legislative building seen as an institution",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "uses different rules for different systems, providers of high -risk AI, face -life cycle, risk management duties,",
+          "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.211,
+          "trim_out_sec": 11.011
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_025",
@@ -409,10 +613,23 @@
       "semantic_rationale": "European Union flags outside an official building",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "licenses, oversight and control is genuinely necessary, but control has to live somewhere, administered by",
+          "semantic_rationale": "European Union flags outside an official building; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.881,
+          "trim_out_sec": 8.614
+        },
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "duties, providers of general purpose models face transparency and copyright -related obligations with additional evaluation,",
+          "semantic_rationale": "European Union flags outside an official building; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.144,
+          "trim_out_sec": 11.011
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_027",
@@ -432,10 +649,23 @@
       "semantic_rationale": "Officials moving through an institutional corridor",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "administered by somebody and that somebody gains power too. Take Europe's AI Act. It uses different",
+          "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 8.528
+        },
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "additional evaluation, incident reporting and cybersecurity duties for models classified as posing systemic risk.",
+          "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 11.744
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_029",
@@ -455,10 +685,23 @@
       "semantic_rationale": "A small team working through paperwork and obligations",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+          "narration_anchor": "designation. Establish companies may also be better able to absorb the complex compliance,",
+          "semantic_rationale": "A small team working through paperwork and obligations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 7.393
+        },
+        {
+          "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+          "narration_anchor": "compliance, evaluation, reporting and legal costs that come with operating at that scale. A",
+          "semantic_rationale": "A small team working through paperwork and obligations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 10.573
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_030",
@@ -478,10 +721,30 @@
       "semantic_rationale": "Independent researchers working openly together",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "dangerous concentration can end up protecting the incumbents who triggered the concern in the first place.",
+          "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.938,
+          "trim_out_sec": 7.771
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "whoever already won the race can be thinner than it looks. That tension sharpens further around one of the field's most",
+          "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.453,
+          "trim_out_sec": 9.72
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "Because the line between legitimate safety oversight and rules that simply lock in whoever already won the race can be thinner than it looks.",
+          "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 9.72,
+          "trim_out_sec": 11.72
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_031",
@@ -501,10 +764,23 @@
       "semantic_rationale": "University laboratory adapting shared technical work",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "place. That's not an argument against regulation. It's a reason to look closely at who writes the rules and who",
+          "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.327
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "for anyone to inspect and build on, or kept closed, held inside a small number of companies that monitor how they're used?",
+          "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.573
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_032",
@@ -524,10 +800,23 @@
       "semantic_rationale": "A developer adapting software on their own machine",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "and who they end up protecting, because the line between legitimate safety oversight and rules that simply lock in whoever",
+          "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.527
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "independent researchers audit them, find flaws and build defensive tools without waiting on a company's permission. That",
+          "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 10.707
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_034",
@@ -547,10 +836,23 @@
       "semantic_rationale": "Independent reviewers going through documentation together",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "disclosures are useful evidence here. The cyber extortion case and the state -linked espionage case described",
+          "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.193
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "risk outward, closure concentrates control and power inward. Neither one is simply the",
+          "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.74
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_035",
@@ -570,10 +872,30 @@
       "semantic_rationale": "A technical evaluator methodically testing a system",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "case described earlier both happened on a closed, tightly monitored model. Centralized access did not",
+          "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.941,
+          "trim_out_sec": 8.507
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "the safe option, choosing between them is choosing which kind of failure you're willing to risk. None of this argues",
+          "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.293,
+          "trim_out_sec": 9.76
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
+          "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 9.76,
+          "trim_out_sec": 11.76
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_036",
@@ -593,10 +915,23 @@
       "semantic_rationale": "A panel weighing findings around a table",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "did not eliminate misuse, but it did give the provider visibility and the ability to investigate,",
+          "semantic_rationale": "A panel weighing findings around a table; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.931,
+          "trim_out_sec": 7.965
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "argues for doing nothing, it argues for being precise about what kind of safety actually helps. Some of it is",
+          "semantic_rationale": "A panel weighing findings around a table; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.725,
+          "trim_out_sec": 11.091
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_037",
@@ -616,10 +951,23 @@
       "semantic_rationale": "Inspection and measurement recorded step by step",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "investigate, restrict and disrupt what was happening. Openness spreads capability and risk outward,",
+          "semantic_rationale": "Inspection and measurement recorded step by step; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.66
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "and subjecting them to independent evaluations and audits before they ship, not just after something goes wrong. Some",
+          "semantic_rationale": "Inspection and measurement recorded step by step; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.607
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_038",
@@ -639,10 +987,23 @@
       "semantic_rationale": "Formal reporting and record-keeping inside an institution",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_020_INCIDENT_REPORTING",
+          "narration_anchor": "wrong. Some of it is procedural, mandatory incident reporting when systems misbehave,",
+          "semantic_rationale": "Formal reporting and record-keeping inside an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 6.627
+        },
+        {
+          "claim_id": "CLM_020_INCIDENT_REPORTING",
+          "narration_anchor": "misbehave, real legal liability and insurance for the companies that deploy them and",
+          "semantic_rationale": "Formal reporting and record-keeping inside an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 8.407
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_039",
@@ -662,10 +1023,23 @@
       "semantic_rationale": "Ordinary people moving through a city street",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "flag internal problems before they become headlines. Some of it is structural, governing access to the enormous computing clusters",
+          "semantic_rationale": "Ordinary people moving through a city street; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.922,
+          "trim_out_sec": 8.655
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "a set of decisions made under competitive pressure by people who each believe they're the responsible ones.",
+          "semantic_rationale": "Ordinary people moving through a city street; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.686,
+          "trim_out_sec": 11.153
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_040",
@@ -685,10 +1059,23 @@
       "semantic_rationale": "Everyday commuting life at human scale",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "world. Giving independent and public interest researchers real access to study these systems not only regulators and",
+          "semantic_rationale": "Everyday commuting life at human scale; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.393
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "ones. Decisions that add up to a world shaped by whoever moved fastest or whoever accumulated the most control",
+          "semantic_rationale": "Everyday commuting life at human scale; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.807
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_041",
@@ -708,10 +1095,23 @@
       "semantic_rationale": "Domestic, ordinary life away from the technology",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "did, so safety commitments aren't just voluntary promises inside one company's blog post, and some of it is about power",
+          "semantic_rationale": "Domestic, ordinary life away from the technology; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 8.694
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "control without anyone choosing that outcome on purpose. The greatest danger here may not be a rogue machine at",
+          "semantic_rationale": "Domestic, ordinary life away from the technology; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 11.744
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_042",
@@ -731,10 +1131,23 @@
       "semantic_rationale": "Return to the corridor of the machine itself",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "about power itself. Keeping enough competition in the market that no single company or government becomes the sole authority",
+          "semantic_rationale": "Return to the corridor of the machine itself; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.864,
+          "trim_out_sec": 8.431
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "machine at all. It may be a system that rewards speed and dominance while spreading the risk across everyone else.",
+          "semantic_rationale": "Return to the corridor of the machine itself; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.833,
+          "trim_out_sec": 10.8
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_043",
@@ -754,10 +1167,23 @@
       "semantic_rationale": "The concentrated compute the argument returns to",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "sole authority on what AI is allowed to do. Sunset clauses, written into the rules, mean today safeguards",
+          "semantic_rationale": "The concentrated compute the argument returns to; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.874,
+          "trim_out_sec": 8.807
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "But the fix for that can't simply be more control in fewer hands, that risk is just as real. The real",
+          "semantic_rationale": "The concentrated compute the argument returns to; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.953,
+          "trim_out_sec": 10.92
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_044",
@@ -777,10 +1203,23 @@
       "semantic_rationale": "City at dusk, the scale the decision sits inside",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "control. So what happens when the race outpaces our ability to govern it? Maybe nothing's sudden, no single",
+          "semantic_rationale": "City at dusk, the scale the decision sits inside; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.827
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "real challenge is narrower and harder, reducing catastrophic misuse without building a machine for concentrating power in the",
+          "semantic_rationale": "City at dusk, the scale the decision sits inside; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.807
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_045",
@@ -800,10 +1239,16 @@
       "semantic_rationale": "One person, one screen, the closing intimacy",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "no single machine seizing control, no one moment of collapse. What's more likely is quieter, a",
+          "semantic_rationale": "One person, one screen, the closing intimacy; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.867,
+          "trim_out_sec": 8.701
+        }
+      ],
+      "review_blockers": []
     }
   ]
 }
