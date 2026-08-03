@@ -5,6 +5,7 @@ import {
   buildShortlistDocument,
   describeCandidate,
   activeRejectedPlanScenes,
+  activeFootageCandidateGaps,
   resolveCandidateStage,
   resolveCandidateSelection,
   unselectedCandidateIds,
@@ -277,4 +278,86 @@ test("an inspected non-rejected replacement can be applied", () => {
   });
   assert.equal(stage.stage, "apply");
   assert.equal(stage.reason, "replacement_selection_inspected");
+});
+
+test("an unacquired uninspected plan scene requires a candidate board", () => {
+  const plan = {
+    project_id: "007-a-film",
+    assets: [{
+      scene_id: "scene_007",
+      claim_id: "CLM_GAP",
+      role: "context",
+      queries: ["server room racks"],
+      fallback_queries: ["data centre aisle"],
+      min_duration_seconds: 8,
+      editorial_note: "A real server aisle with visible racks.",
+      semantic_link: "physical",
+    }],
+  };
+  const gaps = activeFootageCandidateGaps({
+    plan,
+    runtime: { records: [] },
+    rejectedProviderAssetIds: new Set(),
+  });
+  assert.equal(gaps.length, 1);
+  assert.equal(gaps[0].scene_id, "scene_007");
+  assert.match(gaps[0].request_signature, /^[a-f0-9]{64}$/);
+
+  const stage = resolveCandidateStage({
+    plan,
+    runtime: { records: [] },
+    shortlist: null,
+    selection: { project_id: "007-a-film", selections: [] },
+    rejectedProviderAssetIds: new Set(),
+  });
+  assert.equal(stage.stage, "shortlist");
+  assert.equal(stage.replacement_only, true);
+});
+
+test("a requeued scene preserves its own rejected provider history", () => {
+  const plan = {
+    project_id: "007-a-film",
+    assets: [{
+      scene_id: "scene_007",
+      claim_id: "CLM_GAP",
+      role: "context",
+      queries: ["server room racks"],
+      fallback_queries: ["data centre aisle"],
+      min_duration_seconds: 8,
+      editorial_note: "A real server aisle with visible racks.",
+      semantic_link: "physical",
+      rejected_provider_asset_ids: ["old-2", "old-1"],
+    }],
+  };
+  const gaps = activeFootageCandidateGaps({
+    plan,
+    runtime: { records: [] },
+    rejectedProviderAssetIds: new Set(["globally-barred"]),
+  });
+  assert.deepEqual(gaps[0].rejected_provider_asset_ids, ["old-1", "old-2"]);
+});
+
+test("rejected history alone does not reopen an acquired inspected scene", () => {
+  const plan = {
+    project_id: "007-a-film",
+    assets: [{
+      scene_id: "scene_007",
+      claim_id: "CLM_GAP",
+      role: "context",
+      queries: ["server room racks"],
+      fallback_queries: ["data centre aisle"],
+      min_duration_seconds: 8,
+      editorial_note: "A real server aisle with visible racks.",
+      semantic_link: "physical",
+      provider_asset_ids: ["new-choice"],
+      inspected_selection: { provider_asset_id: "new-choice" },
+      rejected_provider_asset_ids: ["old-choice"],
+    }],
+  };
+  const gaps = activeFootageCandidateGaps({
+    plan,
+    runtime: { records: [{ scene_id: "scene_007", provider_asset_id: "new-choice" }] },
+    rejectedProviderAssetIds: new Set(),
+  });
+  assert.deepEqual(gaps, []);
 });

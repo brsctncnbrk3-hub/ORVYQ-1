@@ -16,6 +16,70 @@ function normalizeApprovedUse(use) {
   };
 }
 
+function canonicalRequestId(sceneId) {
+  return `REQ_FTG_${String(sceneId).toUpperCase()}`;
+}
+
+/**
+ * Rebuild contextual-footage requests from the active plan, not from stale
+ * paths or scene/claim pairings left by an earlier acquisition plan. A scene
+ * explicitly blocked after candidate inspection remains one canonical
+ * pending request; the old `_BLOCKED` duplicate is folded into that request.
+ */
+export function reconcileContextualFootageRequests({ requests, plan, runtime }) {
+  const next = clone(requests);
+  if (!plan) return next;
+
+  const recordsByScene = new Map((runtime.records || []).map((record) => [record.scene_id, record]));
+  const contextual = (next.requests || []).filter((request) => request.type === "contextual_footage");
+  const nonContextual = (next.requests || []).filter((request) => request.type !== "contextual_footage");
+  const blockedByScene = new Map();
+  const canonicalByScene = new Map();
+
+  for (const request of contextual) {
+    for (const sceneId of request.scene_ids || []) {
+      if (String(request.asset_request_id).endsWith("_BLOCKED")) blockedByScene.set(sceneId, request);
+      else if (!canonicalByScene.has(sceneId)) canonicalByScene.set(sceneId, request);
+    }
+  }
+
+  const activeByScene = new Map((plan.assets || []).map((item) => [item.scene_id, item]));
+  const sceneIds = new Set([...activeByScene.keys(), ...blockedByScene.keys()]);
+  const reconciled = [];
+
+  for (const sceneId of [...sceneIds].sort()) {
+    const item = activeByScene.get(sceneId);
+    if (item) {
+      const existing = canonicalByScene.get(sceneId);
+      const sameClaim = existing?.claim_ids?.length === 1 && existing.claim_ids[0] === item.claim_id;
+      const record = recordsByScene.get(sceneId);
+      reconciled.push({
+        asset_request_id: canonicalRequestId(sceneId),
+        type: "contextual_footage",
+        status: record ? "pending_frame_review" : "pending_acquisition",
+        claim_ids: [item.claim_id],
+        scene_ids: [sceneId],
+        required_source: sameClaim && existing.required_source
+          ? existing.required_source
+          : "licensed claim-bound footage from the active acquisition plan",
+        ...(record ? { resolved_asset_paths: [record.path] } : {}),
+      });
+      continue;
+    }
+
+    const blocked = blockedByScene.get(sceneId);
+    const pending = clone(blocked);
+    pending.asset_request_id = canonicalRequestId(sceneId);
+    pending.status = "pending_acquisition";
+    delete pending.resolved_asset_paths;
+    delete pending.visual_review_binding;
+    reconciled.push(pending);
+  }
+
+  next.requests = [...nonContextual, ...reconciled];
+  return next;
+}
+
 export function matchesContactSheetDecision(entry, decisionSha256) {
   const decisionHash = String(decisionSha256 || "").toLowerCase();
   if (!decisionHash) return false;
@@ -34,7 +98,7 @@ function isMatchingDecision(entry, decision) {
   );
 }
 
-export function applyFootageVisualDecisions({ queue, decisions, reviews, runtime, requests }) {
+export function applyFootageVisualDecisions({ queue, decisions, reviews, runtime, requests, plan = null }) {
   const projectId = runtime.project_id || queue.project_id;
   for (const [label, value] of Object.entries({ queue, decisions, reviews, requests })) {
     if (value.project_id !== projectId) throw new Error(`${label} project_id does not match ${projectId}`);
@@ -117,7 +181,7 @@ export function applyFootageVisualDecisions({ queue, decisions, reviews, runtime
     else pendingSceneIds.push(record.scene_id);
   }
 
-  const nextRequests = clone(requests);
+  const nextRequests = reconcileContextualFootageRequests({ requests, plan, runtime });
   for (const request of nextRequests.requests || []) {
     if (request.type !== "contextual_footage") continue;
     const paths = request.resolved_asset_paths || [];

@@ -26,7 +26,7 @@ import {
   collectRejectedProviderAssetIds,
 } from "./orvyq_acquire_footage_demand.mjs";
 import {
-  activeRejectedPlanScenes,
+  activeFootageCandidateGaps,
   buildSceneShortlist,
   buildShortlistDocument,
 } from "./lib/orvyq-footage-candidates.mjs";
@@ -103,13 +103,14 @@ export async function shortlistFootageCandidates(
 
   const dir = projectDir(projectId);
   const plan = await readJson(path.join(dir, "research", "footage_acquisition_plan.json"));
+  const runtime = await readJsonSafe(path.join(dir, "assets", "footage_acquisition.runtime.json"), { records: [] });
   const semantic = await readJsonSafe(path.join(dir, "research", "footage_semantic_constraints.json"), { scenes: {} });
   const reviews = await readJsonSafe(path.join(dir, "research", "visual_asset_reviews.json"), { rejected_assets: [] });
   if (plan.project_id !== projectId) throw new Error(`footage_acquisition_plan project_id does not match ${projectId}`);
 
   const barred = collectRejectedProviderAssetIds(semantic, reviews);
-  const activeRejections = activeRejectedPlanScenes({ plan, rejectedProviderAssetIds: barred });
-  const replacementSceneIds = new Set(activeRejections.map((item) => item.scene_id));
+  const activeGaps = activeFootageCandidateGaps({ plan, runtime, rejectedProviderAssetIds: barred });
+  const replacementSceneIds = new Set(activeGaps.map((item) => item.scene_id));
   const plannedAssets = replacementOnly
     ? (plan.assets || []).filter((item) => replacementSceneIds.has(item.scene_id))
     : (plan.assets || []);
@@ -139,7 +140,13 @@ export async function shortlistFootageCandidates(
     const ranked = shortlistCandidates(
       [...videosById.values()],
       new Set(),
-      { ...item, rejected_provider_asset_ids: [...barred] },
+      {
+        ...item,
+        rejected_provider_asset_ids: [...new Set([
+          ...barred,
+          ...((item.rejected_provider_asset_ids || []).map(String)),
+        ])],
+      },
       queries.join(" "),
       candidatesPerScene,
     );
@@ -173,7 +180,7 @@ export async function shortlistFootageCandidates(
     scenes,
     limit: candidatesPerScene,
     generatedAt: nowIso(),
-    selectionScope: replacementOnly ? { mode: "active_rejections", replacements: activeRejections } : { mode: "full_plan" },
+    selectionScope: replacementOnly ? { mode: "active_gaps", gaps: activeGaps } : { mode: "full_plan" },
   });
   await writeJsonAtomic(path.join(dir, "research", "footage_candidate_shortlist.json"), document);
   await writeJsonAtomic(path.join(dir, "research", "footage_candidate_selection.json"), {

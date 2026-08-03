@@ -87,9 +87,8 @@ export async function applyFootageCandidateSelection(projectId, { requireComplet
     const nextRequests = structuredClone(requests);
     const existing = new Set((nextRequests.requests || []).map((request) => request.asset_request_id));
     for (const block of resolved.blocked) {
-      const requestId = `REQ_FTG_${block.scene_id.toUpperCase()}_BLOCKED`;
-      if (existing.has(requestId)) continue;
-      nextRequests.requests.push({
+      const requestId = `REQ_FTG_${block.scene_id.toUpperCase()}`;
+      const request = {
         asset_request_id: requestId,
         type: "contextual_footage",
         status: "pending_direct_asset",
@@ -101,7 +100,13 @@ export async function applyFootageCandidateSelection(projectId, { requireComplet
           "Approved only after four-position contact-sheet inspection confirms the visible content matches this "
           + "claim's narration beat; provider metadata alone is not sufficient.",
         forbidden_substitutes: ["an approximate clip chosen to fill the slot"],
-      });
+      };
+      const existingIndex = nextRequests.requests.findIndex((item) =>
+        item.asset_request_id === requestId ||
+        (item.type === "contextual_footage" && (item.scene_ids || []).includes(block.scene_id)));
+      if (existingIndex >= 0) nextRequests.requests.splice(existingIndex, 1, request);
+      else nextRequests.requests.push(request);
+      existing.add(requestId);
       recordedBlocks += 1;
     }
     if (recordedBlocks) {

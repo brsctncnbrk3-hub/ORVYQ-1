@@ -14,6 +14,8 @@
 // that possible -- inspect the candidates, then choose -- and the selection
 // contract that records the choice.
 
+import { createHash } from "node:crypto";
+
 const SCENE_PATTERN = /^scene_\d{3}$/;
 
 function assertScene(sceneId, label) {
@@ -90,13 +92,65 @@ export function activeRejectedPlanScenes({ plan, rejectedProviderAssetIds }) {
   });
 }
 
-function isCurrentReplacementShortlist(shortlist, activeRejections) {
-  if (shortlist?.selection_scope?.mode !== "active_rejections") return false;
-  const declared = shortlist.selection_scope.replacements || [];
-  if (!sameStrings(declared.map((item) => item.scene_id), activeRejections.map((item) => item.scene_id))) return false;
-  const declaredByScene = new Map(declared.map((item) => [item.scene_id, item.rejected_provider_asset_ids || []]));
-  return activeRejections.every((item) =>
-    sameStrings(declaredByScene.get(item.scene_id) || [], item.rejected_provider_asset_ids));
+function gapSignature(item, rejectedProviderAssetIds) {
+  const contract = {
+    scene_id: item.scene_id,
+    claim_id: item.claim_id,
+    role: item.role,
+    queries: item.queries || [],
+    fallback_queries: item.fallback_queries || [],
+    min_duration_seconds: item.min_duration_seconds,
+    editorial_note: item.editorial_note,
+    semantic_link: item.semantic_link,
+    rejected_provider_asset_ids: rejectedProviderAssetIds,
+  };
+  return createHash("sha256").update(JSON.stringify(contract)).digest("hex");
+}
+
+/** Active gaps that require a fresh visual choice, not an automatic search. */
+export function activeFootageCandidateGaps({ plan, runtime = null, rejectedProviderAssetIds }) {
+  const rejected = activeRejectedPlanScenes({ plan, rejectedProviderAssetIds });
+  const rejectedByScene = new Map(rejected.map((item) => [item.scene_id, item.rejected_provider_asset_ids]));
+  const acquiredScenes = runtime
+    ? new Set((runtime.records || []).map((record) => record.scene_id))
+    : null;
+
+  return (plan.assets || []).flatMap((item) => {
+    const rejectedPinnedIds = rejectedByScene.get(item.scene_id) || [];
+    const rejectedIds = [...new Set([
+      ...rejectedPinnedIds,
+      ...((item.rejected_provider_asset_ids || []).map(String)),
+    ])].sort();
+    const missingUninspected = Boolean(
+      acquiredScenes &&
+      !acquiredScenes.has(item.scene_id) &&
+      !item.inspected_selection &&
+      !(item.provider_asset_ids || []).length,
+    );
+    if (!rejectedPinnedIds.length && !missingUninspected) return [];
+    return [{
+      scene_id: item.scene_id,
+      rejected_provider_asset_ids: rejectedIds,
+      request_signature: gapSignature(item, rejectedIds),
+    }];
+  });
+}
+
+function isCurrentGapShortlist(shortlist, activeGaps) {
+  const legacy = shortlist?.selection_scope?.mode === "active_rejections";
+  const current = shortlist?.selection_scope?.mode === "active_gaps";
+  if (!legacy && !current) return false;
+  const declared = legacy
+    ? (shortlist.selection_scope.replacements || [])
+    : (shortlist.selection_scope.gaps || []);
+  if (!sameStrings(declared.map((item) => item.scene_id), activeGaps.map((item) => item.scene_id))) return false;
+  const declaredByScene = new Map(declared.map((item) => [item.scene_id, item]));
+  return activeGaps.every((item) => {
+    const value = declaredByScene.get(item.scene_id) || {};
+    const sameRejected = sameStrings(value.rejected_provider_asset_ids || [], item.rejected_provider_asset_ids);
+    const sameSignature = legacy || value.request_signature === item.request_signature;
+    return sameRejected && sameSignature;
+  });
 }
 
 /**
@@ -105,13 +159,14 @@ function isCurrentReplacementShortlist(shortlist, activeRejections) {
  * rejected pinned asset from being re-applied forever without allowing an
  * uninspected automatic substitute.
  */
-export function resolveCandidateStage({ plan, shortlist, selection, rejectedProviderAssetIds }) {
-  const activeRejections = activeRejectedPlanScenes({ plan, rejectedProviderAssetIds });
-  const replacementOnly = activeRejections.length > 0;
+export function resolveCandidateStage({ plan, runtime = null, shortlist, selection, rejectedProviderAssetIds }) {
+  const activeGaps = activeFootageCandidateGaps({ plan, runtime, rejectedProviderAssetIds });
+  const replacementOnly = activeGaps.length > 0;
   const result = {
     stage: "shortlist",
     replacement_only: replacementOnly,
-    active_rejections: activeRejections,
+    active_gaps: activeGaps,
+    active_rejections: activeGaps.filter((item) => item.rejected_provider_asset_ids.length),
     reason: selection ? "selection_not_applicable" : "selection_missing",
   };
 
@@ -123,7 +178,7 @@ export function resolveCandidateStage({ plan, shortlist, selection, rejectedProv
     return { ...result, stage: "apply", replacement_only: false, reason: "selection_available" };
   }
 
-  const currentReplacementShortlist = isCurrentReplacementShortlist(shortlist, activeRejections);
+  const currentReplacementShortlist = isCurrentGapShortlist(shortlist, activeGaps);
   if (!currentReplacementShortlist) {
     return { ...result, reason: "replacement_shortlist_missing_or_stale" };
   }

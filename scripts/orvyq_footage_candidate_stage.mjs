@@ -6,8 +6,9 @@ import { resolveCandidateStage } from "./lib/orvyq-footage-candidates.mjs";
 
 export async function footageCandidateStage(projectId) {
   const dir = projectDir(projectId);
-  const [plan, semantic, reviews, shortlist, selection] = await Promise.all([
+  const [plan, runtime, semantic, reviews, shortlist, selection] = await Promise.all([
     readJson(path.join(dir, "research", "footage_acquisition_plan.json")),
+    readJsonSafe(path.join(dir, "assets", "footage_acquisition.runtime.json"), { records: [] }),
     readJsonSafe(path.join(dir, "research", "footage_semantic_constraints.json"), { scenes: {} }),
     readJsonSafe(path.join(dir, "research", "visual_asset_reviews.json"), { rejected_assets: [] }),
     readJsonSafe(path.join(dir, "research", "footage_candidate_shortlist.json"), null),
@@ -15,7 +16,7 @@ export async function footageCandidateStage(projectId) {
   ]);
   if (plan.project_id !== projectId) throw new Error(`footage_acquisition_plan project_id does not match ${projectId}`);
   const rejectedProviderAssetIds = collectRejectedProviderAssetIds(semantic, reviews);
-  return { project_id: projectId, ...resolveCandidateStage({ plan, shortlist, selection, rejectedProviderAssetIds }) };
+  return { project_id: projectId, ...resolveCandidateStage({ plan, runtime, shortlist, selection, rejectedProviderAssetIds }) };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

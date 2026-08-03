@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   applyFootageVisualDecisions,
   matchesContactSheetDecision,
+  reconcileContextualFootageRequests,
 } from "./orvyq-footage-visual-decisions.mjs";
 
 const project_id = "002-example-project";
@@ -174,4 +175,63 @@ test("accepts legacy LFS pointer decisions and persists canonical contact-sheet 
   assert.equal(result.stale_decisions, 0);
   assert.equal(result.ready_for_materialization, true);
   assert.equal(result.reviews.approved_assets[0].contact_sheet_sha256, canonicalSheetSha);
+});
+
+test("reconciles stale scene claims and paths while folding blocked duplicates", () => {
+  const requests = {
+    schema_version: "1.0",
+    project_id,
+    policy: {},
+    requests: [
+      {
+        asset_request_id: "REQ_FTG_SCENE_010",
+        type: "contextual_footage",
+        status: "pending_acquisition",
+        claim_ids: ["CLM_OLD"],
+        scene_ids: ["scene_010"],
+        required_source: "old plan footage",
+        resolved_asset_paths: ["assets/footage/retired.mp4"],
+      },
+      {
+        asset_request_id: "REQ_FTG_SCENE_011",
+        type: "contextual_footage",
+        status: "pending_acquisition",
+        claim_ids: ["CLM_OLDER"],
+        scene_ids: ["scene_011"],
+        required_source: "old plan footage",
+      },
+      {
+        asset_request_id: "REQ_FTG_SCENE_011_BLOCKED",
+        type: "contextual_footage",
+        status: "pending_acquisition",
+        claim_ids: ["CLM_BLOCKED"],
+        scene_ids: ["scene_011"],
+        required_source: "a licensed direct replacement",
+        required_content: "A real control room that does not substitute a decorative hacker screen.",
+      },
+    ],
+  };
+  const plan = {
+    project_id,
+    assets: [{ scene_id: "scene_010", claim_id: "CLM_CURRENT" }],
+  };
+  const runtime = {
+    project_id,
+    records: [{ scene_id: "scene_010", path: "assets/footage/current.mp4", provider_asset_id: "p10" }],
+  };
+
+  const result = reconcileContextualFootageRequests({ requests, plan, runtime });
+  assert.equal(result.requests.length, 2);
+  assert.deepEqual(result.requests[0], {
+    asset_request_id: "REQ_FTG_SCENE_010",
+    type: "contextual_footage",
+    status: "pending_frame_review",
+    claim_ids: ["CLM_CURRENT"],
+    scene_ids: ["scene_010"],
+    required_source: "licensed claim-bound footage from the active acquisition plan",
+    resolved_asset_paths: ["assets/footage/current.mp4"],
+  });
+  assert.equal(result.requests[1].asset_request_id, "REQ_FTG_SCENE_011");
+  assert.deepEqual(result.requests[1].claim_ids, ["CLM_BLOCKED"]);
+  assert.match(result.requests[1].required_content, /real control room/);
 });

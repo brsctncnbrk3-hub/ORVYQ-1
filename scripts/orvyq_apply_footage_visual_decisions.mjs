@@ -4,6 +4,7 @@ import { promises as fs } from "node:fs";
 import {
   projectDir,
   readJson,
+  readJsonSafe,
   writeJsonAtomic,
   pathExists,
   parseArgs,
@@ -289,12 +290,14 @@ export async function applyProjectFootageVisualDecisions(projectId) {
     rebalance: path.join(dir, "direction", "visual_rebalance_plan.json"),
     blueprint: path.join(dir, "direction", "editorial_blueprint.json"),
     motionHook: path.join(dir, "direction", "motion_hook.json"),
+    plan: path.join(dir, "research", "footage_acquisition_plan.json"),
   };
   for (const [label, file] of Object.entries(files)) {
+    if (label === "plan") continue;
     if (!(await pathExists(file))) throw new Error(`${label} file is missing: ${file}`);
   }
 
-  const [queue, decisions, reviews, runtime, requests, rebalance, blueprint, motionHook] = await Promise.all([
+  const [queue, decisions, reviews, runtime, requests, rebalance, blueprint, motionHook, plan] = await Promise.all([
     readJson(files.queue),
     loadDecisionRounds(dir, projectId),
     readJson(files.reviews),
@@ -303,6 +306,7 @@ export async function applyProjectFootageVisualDecisions(projectId) {
     readJson(files.rebalance),
     readJson(files.blueprint),
     readJson(files.motionHook),
+    readJsonSafe(files.plan, null),
   ]);
 
   if (decisions === null) {
@@ -313,8 +317,9 @@ export async function applyProjectFootageVisualDecisions(projectId) {
       note: "No footage visual decision round exists yet; nothing was approved, rejected or rewritten.",
     };
   }
+  if (!plan) throw new Error(`plan file is missing: ${files.plan}`);
 
-  const result = applyFootageVisualDecisions({ queue, decisions, reviews, runtime, requests });
+  const result = applyFootageVisualDecisions({ queue, decisions, reviews, runtime, requests, plan });
   const queueByScene = new Map((queue.entries || []).map((entry) => [entry.scene_id, entry]));
 
   for (const decision of decisions.decisions || []) {
