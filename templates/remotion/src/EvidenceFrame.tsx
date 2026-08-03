@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Img, interpolate } from "remotion";
+import { AbsoluteFill, Img, interpolate, staticFile } from "remotion";
 import { ORVYQ_DESIGN } from "./designSystem";
 import { useReveal } from "./useReveal";
 
@@ -9,9 +9,15 @@ export type EvidenceFrameSpec = {
   /** Never optional. An evidence frame without a source is just a caption. */
   source: string;
   /**
-   * The real page. Required by type on purpose: a claim that cannot be
-   * filmed is answered with the document, and if the document is missing the
-   * build must fail rather than draw something that looks like one.
+   * The real page, as a path relative to the public dir (the repository
+   * root) -- the same shape the edit plan stores for every other asset, and
+   * resolved here through `staticFile()` like its siblings resolve theirs.
+   * It used to be rendered raw, which meant a plan-supplied path 404'd at
+   * render time and only an already-resolved URL worked.
+   *
+   * Required by type on purpose: a claim that cannot be filmed is answered
+   * with the document, and if the document is missing the build must fail
+   * rather than draw something that looks like one.
    */
   document_asset: string;
   /** Band to mark, as a fraction of document height. */
@@ -73,7 +79,7 @@ export const EvidenceFrame: React.FC<{
           }}
         >
           <Img
-            src={spec.document_asset}
+            src={staticFile(spec.document_asset)}
             style={{
               width: "100%",
               height: "100%",

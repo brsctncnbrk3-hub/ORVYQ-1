@@ -34,6 +34,8 @@ const Plate: React.FC<{ img: string; children: React.ReactNode }> = ({
   </AbsoluteFill>
 );
 
+const DOC = "templates/remotion/public/_preview/drill.jpg";
+
 /* Copy is drawn from the film's own narration and cited sources
    (voice/voice_script.txt, research/evidence_asset_manifest.json) so the
    harness is judged on real line lengths. The film is in English; nothing
@@ -72,14 +74,12 @@ const PreviewC: React.FC = () => (
       kicker: "Primary evidence",
       title: "The lab's own safety framework",
       source: "Anthropic · Claude 4 System Card · ASL-3 deployment · May 2025",
-      document_asset: staticFile("templates/remotion/public/_preview/drill.jpg"),
+      document_asset: DOC,
       highlight: { top: 0.42, height: 0.06 },
     }}
     durationInFrames={200}
   />
 );
-
-const DOC = "templates/remotion/public/_preview/drill.jpg";
 
 /* The evidence-visual subsystem, in the same harness. Register C's page
    shape has to hold whether what it cites is a scan or a figure, so both are
