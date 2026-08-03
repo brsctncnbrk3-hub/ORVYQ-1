@@ -44,3 +44,17 @@ test("an absent overrides file cannot fail the commit step", async () => {
   const bareAdd = new RegExp(String.raw`git add(?![^\n]*\$\{present\[@\]\})[^\n]*footage_use_contract_overrides\.json`);
   assert.ok(!bareAdd.test(commit), "the overrides file must never be handed to git add unguarded");
 });
+
+test("derived diagnostics cannot block the footage bot rebase", async () => {
+  const workflow = await readFile(workflowPath, "utf8");
+  const commit = workflow.slice(
+    workflow.indexOf("Commit footage state and review queue"),
+    workflow.indexOf("Upload acquisition and review diagnostics"),
+  );
+
+  assert.match(
+    commit,
+    /git pull --rebase --autostash origin "\$TARGET_BRANCH"/,
+    "the scoped footage commit must preserve unstaged derived diagnostics across its rebase",
+  );
+});

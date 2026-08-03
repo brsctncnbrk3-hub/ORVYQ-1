@@ -362,7 +362,11 @@ jobs:
           else
             git commit -m "Reconcile claim-bound footage review for $PROJECT_ID"
           fi
-          git pull --rebase origin "$TARGET_BRANCH"
+          # Topology and pause-resolution passes also refresh derived tracked
+          # diagnostics that do not belong in this narrowly scoped footage
+          # commit. Preserve them across the concurrency rebase instead of
+          # letting an otherwise valid 45/45 review fail at the final push.
+          git pull --rebase --autostash origin "$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
           echo "pushed=true" >> "$GITHUB_OUTPUT"
 
