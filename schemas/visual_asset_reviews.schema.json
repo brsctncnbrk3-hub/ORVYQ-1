@@ -15,6 +15,7 @@
       "properties": {
         "default_status_for_unlisted_assets": { "const": "pending_frame_review" },
         "rejected_asset_global_reentry_forbidden": { "const": true },
+        "superseded_asset_reentry_forbidden": { "const": true },
         "automatic_backfill_forbidden": { "const": true },
         "approval_requires_contact_sheet_sha256": { "const": true },
         "approval_requires_claim_id_narration_anchor_and_semantic_rationale": { "const": true },
@@ -47,6 +48,24 @@
           "asset_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
           "reason": { "type": "string", "minLength": 24 },
           "rejected_at": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "superseded_assets": {
+      "description": "Assets this project acquired and used on an earlier build and has since retired. A rebuild must not re-acquire them, exactly as a rejected asset may never re-enter.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "provider_asset_id", "reason"],
+        "properties": {
+          "scene_id": { "type": "string", "pattern": "^scene_[0-9]{3}$" },
+          "provider_asset_id": { "type": "string", "minLength": 1 },
+          "asset_path": { "type": "string", "minLength": 8 },
+          "asset_sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "claim_id": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" },
+          "reason": { "type": "string", "minLength": 24 },
+          "superseded_at": { "type": "string", "format": "date-time" }
         },
         "additionalProperties": false
       }

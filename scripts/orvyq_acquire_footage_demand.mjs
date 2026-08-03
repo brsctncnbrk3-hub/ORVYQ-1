@@ -140,11 +140,18 @@ export function validateAssignment(item) {
   return { claimId, sliceIndex };
 }
 
+/**
+ * Provider assets acquisition may never return. Two ways in: an asset a
+ * reviewer rejected, and an asset this project used on an earlier build and
+ * has since retired. A rebuild that wants fresh visuals must not be handed
+ * back the clips it just retired, so both bar re-entry the same way.
+ */
 export function collectRejectedProviderAssetIds(semantic, reviews = {}) {
   return new Set([
     ...Object.values(semantic.scenes || {}).flatMap((scene) => scene.rejected_provider_asset_ids || []),
     ...(reviews.rejected_assets || []).map((asset) => asset.provider_asset_id),
-  ].map(String));
+    ...(reviews.superseded_assets || []).map((asset) => asset.provider_asset_id),
+  ].filter(Boolean).map(String));
 }
 
 export function validateCapacityTarget(plan) {
