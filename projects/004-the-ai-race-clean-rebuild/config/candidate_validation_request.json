@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "status": "requested",
-  "request_revision": 11,
-  "reason": "Run the complete render-free Candidate Validation chain for the authored 47-action evidence-led rebalance. Fetch and byte-verify all 21 official primary-evidence assets, materialize the plan only after SHA-256-bound promotion, rebuild the canonical 132-shot blueprint, and enforce the measured 60-70% contextual-footage, 20% minimum primary-evidence, 15% maximum graphic-card, section-level card, consecutive-card, source-use, narration, audio, caption, render-ready package, frozen-candidate and pre-render QA gates. No video render or Full-Length Review is permitted.",
+  "request_revision": 12,
+  "reason": "Run the complete render-free Candidate Validation chain for the authored 47-action evidence-led rebalance after repairing the branch payload integrity. Fetch and byte-verify all 21 official primary-evidence assets, materialize the plan only after SHA-256-bound promotion, rebuild the canonical 132-shot blueprint, and enforce the measured 60-70% contextual-footage, 20% minimum primary-evidence, 15% maximum graphic-card, section-level card, consecutive-card, source-use, narration, audio, caption, render-ready package, frozen-candidate and pre-render QA gates. No video render or Full-Length Review is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-08-03T22:45:00Z"
+  "requested_at": "2026-08-03T22:50:00Z"
 }

@@ -345,7 +345,47 @@
       "duration_seconds": 7.933333333333334,
       "decision": "replace_primary_evidence",
       "projected_medium": "primary_evidence",
-      "asset_request_id": "REQ_EÁè-¢Gß≤⁄Óù∆≠y—im-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ASL3_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/anthropic_asl3_cbrn_evaluation.png",
+          "evidence_asset_id": "EVID_ASL3_CBRN_EVALUATION",
+          "source_region": "Official PDF page 5"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 55,
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "duration_seconds": 2.5,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IASR_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iasr_persuasion_page67.png",
+          "evidence_asset_id": "EVID_IASR_PERSUASION",
+          "source_region": "Official PDF page 67"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
+    },
+    {
+      "baseline_shot_index": 57,
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "duration_seconds": 7.1,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_IASR_2025",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/iasr_persuasion_page67.png",
+          "evidence_asset_id": "EVID_IASR_PERSUASION",
+          "source_region": "Official PDF page 67"
+        }
+      ],
+      "rationale": "Replace this beat with claim-matched official primary evidence so the audience can inspect the dated source instead of another abstract card."
     },
     {
       "baseline_shot_index": 62,
