@@ -917,6 +917,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "Connected network cabling carries the physical scale of the competitive build-out without pretending to identify a particular facility; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "1085656"
+      ],
       "rejected_provider_asset_ids": [
         "15517230",
         "4761950",
@@ -947,6 +950,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "A real multi-screen control room provides an honest operational analogy for coordinated incident response without presenting itself as the cited cyber incident; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "38779107"
+      ],
       "rejected_provider_asset_ids": [
         "8347252",
         "38512646",
@@ -977,6 +983,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "An operator reading live displays supplies the human monitoring beat without claiming those screens show the cited network traffic; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "38779098"
+      ],
       "rejected_provider_asset_ids": [
         "6266246",
         "33656654",
@@ -1007,6 +1016,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "A real server room shows the infrastructure being defended without identifying it as any institution in the story; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "5028622"
+      ],
       "rejected_provider_asset_ids": [
         "7141174",
         "8756633",
@@ -1037,6 +1049,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
       "semantic_rationale": "Operators following a large live system visualise the scale and coordination of monitoring without claiming to depict the cited espionage network; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "38779110"
+      ],
       "rejected_provider_asset_ids": [
         "38512646",
         "38557069",
@@ -1067,6 +1082,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "Visible pass-card entry supplies the physical access-control beat without identifying the location as a laboratory; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "7952194"
+      ],
       "rejected_provider_asset_ids": [
         "7251756",
         "13008924",
@@ -1097,6 +1115,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "A large industrial facility provides honest scale context without being labelled as a data centre or named company; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "29959327"
+      ],
       "rejected_provider_asset_ids": [
         "2254305",
         "33499539",
@@ -1127,6 +1148,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "Installed storage hardware provides a concrete component-level view of concentrated compute infrastructure; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "38496312"
+      ],
       "rejected_provider_asset_ids": [
         "38496192",
         "18526833",
@@ -1157,6 +1181,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
       "semantic_rationale": "A recognisably European formal chamber or institutional meeting setting; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "curated_provider_asset_ids": [
+        "6952138"
+      ],
       "rejected_provider_asset_ids": [
         "30801301",
         "32537398",
@@ -1186,6 +1213,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
       "semantic_rationale": "A technician physically checking connected hardware makes compute capacity tangible without turning the stock image into measurement evidence; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "6804656"
+      ],
       "rejected_provider_asset_ids": [
         "7141174",
         "15517230",
@@ -1216,6 +1246,9 @@
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
       "semantic_rationale": "A central room consolidating many live feeds visualises concentrated monitoring power without claiming to depict the cited access policy; the claim's factual burden stays with the primary evidence.",
+      "curated_provider_asset_ids": [
+        "38779095"
+      ],
       "rejected_provider_asset_ids": [
         "8346903",
         "8347251",

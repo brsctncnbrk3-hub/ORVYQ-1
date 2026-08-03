@@ -22,6 +22,7 @@ import {
 } from "./lib/fs-utils.mjs";
 import {
   searchPexels,
+  fetchPexelsVideo,
   shortlistCandidates,
   collectRejectedProviderAssetIds,
 } from "./orvyq_acquire_footage_demand.mjs";
@@ -29,6 +30,7 @@ import {
   activeFootageCandidateGaps,
   buildSceneShortlist,
   buildShortlistDocument,
+  prioritizeCuratedCandidates,
 } from "./lib/orvyq-footage-candidates.mjs";
 
 const DEFAULT_CANDIDATES_PER_SCENE = 6;
@@ -132,12 +134,26 @@ export async function shortlistFootageCandidates(
     const constraint = semantic.scenes?.[item.scene_id] || {};
     const queries = [...new Set([...(item.queries || []), ...(item.fallback_queries || [])])];
     const videosById = new Map();
+    const curatedProviderAssetIds = [...new Set(
+      (item.curated_provider_asset_ids || []).map(String).map((id) => id.trim()).filter(Boolean),
+    )];
+    for (const providerAssetId of curatedProviderAssetIds) {
+      let result;
+      try {
+        result = await fetchPexelsVideo(providerAssetId, key);
+      } catch (error) {
+        throw new Error(
+          `${item.scene_id}: curated Pexels video ${providerAssetId} is unavailable: ${error.message}`,
+        );
+      }
+      videosById.set(String(result.video.id), result.video);
+    }
     for (const query of queries) {
       const result = await searchPexels(query, key, perPage, 1, {});
       for (const video of result?.videos || []) videosById.set(String(video.id), video);
     }
 
-    const ranked = shortlistCandidates(
+    const eligible = shortlistCandidates(
       [...videosById.values()],
       new Set(),
       {
@@ -148,8 +164,8 @@ export async function shortlistFootageCandidates(
         ])],
       },
       queries.join(" "),
-      candidatesPerScene,
     );
+    const ranked = prioritizeCuratedCandidates(eligible, curatedProviderAssetIds, candidatesPerScene);
 
     const scene = buildSceneShortlist({
       sceneId: item.scene_id,

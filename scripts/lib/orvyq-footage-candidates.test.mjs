@@ -6,6 +6,7 @@ import {
   describeCandidate,
   activeRejectedPlanScenes,
   activeFootageCandidateGaps,
+  prioritizeCuratedCandidates,
   resolveCandidateStage,
   resolveCandidateSelection,
   unselectedCandidateIds,
@@ -360,4 +361,39 @@ test("rejected history alone does not reopen an acquired inspected scene", () =>
     rejectedProviderAssetIds: new Set(),
   });
   assert.deepEqual(gaps, []);
+});
+
+test("human-researched provider details lead the inspectable board without becoming a selection", () => {
+  const candidates = [
+    { video: { id: "search-1" } },
+    { video: { id: "curated-2" } },
+    { video: { id: "curated-1" } },
+    { video: { id: "search-2" } },
+  ];
+  const ranked = prioritizeCuratedCandidates(candidates, ["curated-1", "curated-2"], 3);
+  assert.deepEqual(ranked.map((candidate) => candidate.video.id), ["curated-1", "curated-2", "search-1"]);
+});
+
+test("changing curated provider details invalidates an old active-gap board", () => {
+  const base = {
+    scene_id: "scene_007",
+    claim_id: "CLM_GAP",
+    role: "context",
+    queries: ["server room racks"],
+    fallback_queries: [],
+    min_duration_seconds: 8,
+    editorial_note: "A real server aisle.",
+    semantic_link: "physical",
+  };
+  const first = activeFootageCandidateGaps({
+    plan: { assets: [{ ...base, curated_provider_asset_ids: ["one"] }] },
+    runtime: { records: [] },
+    rejectedProviderAssetIds: new Set(),
+  });
+  const second = activeFootageCandidateGaps({
+    plan: { assets: [{ ...base, curated_provider_asset_ids: ["two"] }] },
+    runtime: { records: [] },
+    rejectedProviderAssetIds: new Set(),
+  });
+  assert.notEqual(first[0].request_signature, second[0].request_signature);
 });

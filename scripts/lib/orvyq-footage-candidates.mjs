@@ -99,12 +99,26 @@ function gapSignature(item, rejectedProviderAssetIds) {
     role: item.role,
     queries: item.queries || [],
     fallback_queries: item.fallback_queries || [],
+    curated_provider_asset_ids: item.curated_provider_asset_ids || [],
     min_duration_seconds: item.min_duration_seconds,
     editorial_note: item.editorial_note,
     semantic_link: item.semantic_link,
     rejected_provider_asset_ids: rejectedProviderAssetIds,
   };
   return createHash("sha256").update(JSON.stringify(contract)).digest("hex");
+}
+
+/** Keep human-researched provider details visible at the front of the board. */
+export function prioritizeCuratedCandidates(candidates, curatedProviderAssetIds, limit = Number.POSITIVE_INFINITY) {
+  const priority = new Map(
+    (curatedProviderAssetIds || []).map(String).map((id, index) => [id, index]),
+  );
+  const ranked = [...candidates].sort((left, right) => {
+    const leftRank = priority.get(String(left?.video?.id)) ?? Number.MAX_SAFE_INTEGER;
+    const rightRank = priority.get(String(right?.video?.id)) ?? Number.MAX_SAFE_INTEGER;
+    return leftRank - rightRank;
+  });
+  return Number.isFinite(limit) ? ranked.slice(0, Math.max(0, limit)) : ranked;
 }
 
 /** Active gaps that require a fresh visual choice, not an automatic search. */
