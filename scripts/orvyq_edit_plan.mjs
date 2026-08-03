@@ -83,6 +83,40 @@ export function resolveProofBoundaryFrame(shots, anchorText) {
   return match.end_frame;
 }
 
+// ---- registers B and C ----
+//
+// Register B slows the shot and holds it under a section line, so it only
+// means anything over footage: Scene.tsx draws HeldFrame for assetType
+// "footage" and nothing else, and a held frame with no shot under it is just
+// the full-screen card the on-screen language removed. Register C replaces
+// the picture with the document behind the claim, which is why the document
+// is mandatory rather than optional -- a claim that cannot be filmed is
+// answered with the page, and if the page is missing the build has to fail
+// instead of falling back to a card asserting the claim in large type.
+//
+// Pure and exported so the rule is testable without standing up a whole
+// fixture project; the on-disk checks the caller adds (does the document
+// exist, has this document been spent already) need the project dir.
+
+export function resolveRegisterFrames(spec, label) {
+  const heldFrame = spec.held_frame || null;
+  const evidenceFrame = spec.evidence_frame || null;
+  if (heldFrame && evidenceFrame)
+    throw new Error(`${label} cannot hold the shot and replace it with a document at once`);
+  if (heldFrame) {
+    if (spec.asset_type !== "footage")
+      throw new Error(`${label} held_frame requires footage; a held frame with no shot under it is a full-screen card`);
+    if (!heldFrame.title) throw new Error(`${label} held_frame requires a title`);
+  }
+  if (evidenceFrame) {
+    if (!evidenceFrame.title || !evidenceFrame.source)
+      throw new Error(`${label} evidence_frame requires a title and a visible source`);
+    if (!evidenceFrame.document_asset)
+      throw new Error(`${label} evidence_frame requires document_asset; synthesising the document is forbidden`);
+  }
+  return { heldFrame, evidenceFrame };
+}
+
 // ---- mode: "full" -- reads direction/editorial_blueprint.json's full_production.shots ----
 
 async function fullEvidenceAssetManifest(dir) {
@@ -137,6 +171,15 @@ async function buildFullPlan(dir, projectId, blueprint) {
     if (!ALLOWED_TRANSITIONS.has(transitionIn) || !ALLOWED_TRANSITIONS.has(transitionOut))
       throw new Error(`full_production.shots[${index}] has an invalid transition`);
 
+    const { heldFrame, evidenceFrame } = resolveRegisterFrames(spec, `full_production.shots[${index}]`);
+    if (evidenceFrame) {
+      if (!(await pathExists(path.join(dir, evidenceFrame.document_asset))))
+        throw new Error(`full_production.shots[${index}] evidence_frame document is missing on disk: ${evidenceFrame.document_asset}`);
+      sourceUsage.set(evidenceFrame.document_asset, (sourceUsage.get(evidenceFrame.document_asset) || 0) + 1);
+      if (sourceUsage.get(evidenceFrame.document_asset) > blueprint.global_rules.max_uses_per_source)
+        throw new Error(`${evidenceFrame.document_asset} exceeds the ${blueprint.global_rules.max_uses_per_source}-use limit`);
+    }
+
     const common = {
       shot_id: `shot_${String(index + 1).padStart(3, "0")}`,
       scene_id: spec.scene_id,
@@ -167,7 +210,14 @@ async function buildFullPlan(dir, projectId, blueprint) {
       // Full mode has its own real editorial pauses now (8, vs proof's 4)
       // and needs the same emphasis-card overlay buildProofPlan already
       // carries through for them.
-      emphasis_card: spec.emphasis_card || null
+      emphasis_card: spec.emphasis_card || null,
+      // Registers B and C. Both are rendered by Scene.tsx and typed in
+      // Video.tsx, but until now neither was carried onto a built shot, so a
+      // blueprint could author them and the plan would silently drop them --
+      // which left the full-screen graphic card as the only answer for a
+      // section turn or an unfilmable claim.
+      held_frame: heldFrame,
+      evidence_frame: evidenceFrame
     };
 
     if (spec.asset_type === "graphic") {

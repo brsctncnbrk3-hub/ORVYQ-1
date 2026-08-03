@@ -119,11 +119,34 @@ export function statusInk(
   return color.inkQuiet;
 }
 
-/** Title sizes step down by length so a long line never wraps to three. */
-export function titleSize(text: string, register: "inFrame" | "held") {
+/**
+ * Title sizes step down by length so a long line never wraps to three.
+ *
+ * The size alone was not enough to keep that promise: it was paired with a
+ * fixed measure at each call site, so a title of about forty-five characters
+ * -- ordinary for this film's narration -- still broke into three lines of
+ * display type, which is a wall rather than a line. The measure now widens
+ * with the title for exactly that reason, and stops at a width the safe area
+ * can actually hold.
+ */
+export function titleBlock(text: string, register: "inFrame" | "held") {
   const n = text.length;
-  if (register === "held") return n > 52 ? 92 : n > 34 ? 108 : 122;
-  return n > 76 ? 74 : n > 52 ? 84 : 96;
+  const fontSize =
+    register === "held"
+      ? n > 52
+        ? 92
+        : n > 34
+          ? 108
+          : 122
+      : n > 76
+        ? 74
+        : n > 52
+          ? 84
+          : 96;
+  const narrowest = register === "held" ? 15 : 19;
+  const widest = register === "held" ? 30 : 40;
+  const measure = Math.min(widest, Math.max(narrowest, Math.ceil(n / 2) + 2));
+  return { fontSize, maxWidth: `${measure}ch` };
 }
 
 export const ORVYQ_CARD_LIMITS = {

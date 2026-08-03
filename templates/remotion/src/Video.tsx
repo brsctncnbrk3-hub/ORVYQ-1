@@ -80,8 +80,12 @@ export const FactForgeVideo: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: "#05070C" }}>
       <Audio src={staticFile(audioSrc)} />
       {plan.shots.map((shot) => {
+        // A register-C frame replaces the picture, so it takes the same
+        // pre-roll overlap as a shot whose asset type is evidence -- the cut
+        // lands on the document, not eight frames of the footage it hides.
         const overlapFrames =
-          shot.start_frame > 0 && ["evidence", "graphic"].includes(shot.asset_type)
+          shot.start_frame > 0 &&
+          (["evidence", "graphic"].includes(shot.asset_type) || shot.evidence_frame)
             ? 8
             : 0;
         const sequenceFrom = Math.max(0, shot.start_frame - overlapFrames);
@@ -94,11 +98,20 @@ export const FactForgeVideo: React.FC = () => {
             from={sequenceFrom}
             durationInFrames={durationInFrames}
           >
+            {/*
+              evidence_frame (register C) is passed on every branch, not just
+              footage. Scene renders it ahead of whatever the shot's asset
+              type would otherwise draw, which is the point: it is how a
+              graphic card stops being the answer for a claim with no
+              filmable referent. Passing it only to footage meant a plan could
+              carry one and the renderer would silently ignore it.
+            */}
             {shot.asset_type === "graphic" ? (
               <Scene
                 assetType="graphic"
                 graphic={shot.graphic}
                 editorialOverlay={shot.editorial_overlay || null}
+                evidenceFrame={shot.evidence_frame || null}
                 durationInFrames={durationInFrames}
                 textOverlay={shot.text_overlay || null}
                 transitionIn={transitionIn}
@@ -108,6 +121,7 @@ export const FactForgeVideo: React.FC = () => {
               <Scene
                 assetType="evidence"
                 evidence={shot.evidence}
+                evidenceFrame={shot.evidence_frame || null}
                 durationInFrames={durationInFrames}
                 textOverlay={null}
                 transitionIn={transitionIn}

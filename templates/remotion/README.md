@@ -107,16 +107,20 @@ sitting behind the evidence image, borders and hundred-pixel shadows on every
 plate, the red-tinted limitation bar, and hardcoded Arial over the system
 face.
 
-### Open editorial points
+### Language
 
-- The provenance line under a source (`Primary source capture` /
-  `Source-derived figure`), the comparison column marks (`Supports` / `Does
-  not establish`) and the recreation stamp (`SYNTHETIC CORPORATE EMAIL` /
-  `RECREATION`) are hardcoded English in a Turkish-language film. They were
-  English before this pass too. Translating them is a copy decision, not a
-  design one, so they are left as they are.
-- `presentation: "cinematic_split"` is still accepted by `PrimaryEvidenceSpec`
-  but no longer drawn — `ItemsStage` has one layout. Same for
-  `EditorialOverlaySpec`'s implicit source-context fallback, which used to
-  print `PRIMARY SOURCE CONTEXT` under any overlay carrying source ids and now
-  renders only an authored `recreation_label`.
+Everything on screen is English, because the film is
+(`voice/voice_script.txt`). That covers the renderer's own fixed strings —
+the provenance line under a source (`Primary source capture` /
+`Source-derived figure`), the comparison column marks (`Supports` / `Does
+not establish`), the recreation stamp (`SYNTHETIC CORPORATE EMAIL` /
+`RECREATION`) — and the sample copy in `DesignPreview.tsx`, which is drawn
+from the film's own narration and cited sources so line lengths are real. A
+preview written in another language is not a preview of this film.
+
+### Accepted but no longer drawn
+
+`presentation: "cinematic_split"` is still accepted by `PrimaryEvidenceSpec`
+— `ItemsStage` has one layout now. `EditorialOverlaySpec`'s implicit
+source-context fallback used to print `PRIMARY SOURCE CONTEXT` under any
+overlay carrying source ids; only an authored `recreation_label` renders.

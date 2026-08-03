@@ -34,14 +34,19 @@ const Plate: React.FC<{ img: string; children: React.ReactNode }> = ({
   </AbsoluteFill>
 );
 
+/* Copy is drawn from the film's own narration and cited sources
+   (voice/voice_script.txt, research/evidence_asset_manifest.json) so the
+   harness is judged on real line lengths. The film is in English; nothing
+   on screen is ever set in another language. */
+
 const PreviewA: React.FC = () => (
   <Plate img="templates/remotion/public/_preview/pods.jpg">
     <EmphasisCard
       spec={{
         eyebrow: "ORVYQ PERSPECTIVE",
-        title: "İki laboratuvar, aynı anda, aynı sınırda",
+        title: "Every lab sees the risk. Every lab keeps moving.",
         anchor_text:
-          "Aynı hafta, aynı eşik, birbirini bekleyen iki ekip.",
+          "Not because they don't see it — because they see a bigger one.",
       }}
       durationInFrames={200}
     />
@@ -52,9 +57,9 @@ const PreviewB: React.FC = () => (
   <Plate img="templates/remotion/public/_preview/dusk.jpg">
     <HeldFrame
       spec={{
-        kicker: "Bölüm 04",
-        title: "Kararın içinde durduğu ölçek",
-        footnote: "Bölüm 04 — Yoğunlaşma",
+        kicker: "Section 04",
+        title: "The scale the decision sits inside",
+        footnote: "Section 04 — Concentration",
       }}
       durationInFrames={200}
     />
@@ -64,9 +69,9 @@ const PreviewB: React.FC = () => (
 const PreviewC: React.FC = () => (
   <EvidenceFrame
     spec={{
-      kicker: "Birincil kanıt",
-      title: "Laboratuvarın kendi güvenlik çerçevesi",
-      source: "Anthropic · Responsible Scaling Policy · s.14",
+      kicker: "Primary evidence",
+      title: "The lab's own safety framework",
+      source: "Anthropic · Claude 4 System Card · ASL-3 deployment · May 2025",
       document_asset: staticFile("templates/remotion/public/_preview/drill.jpg"),
       highlight: { top: 0.42, height: 0.06 },
     }}
@@ -85,12 +90,12 @@ const PreviewTimeline: React.FC = () => (
     <EditorialOverlay
       spec={{
         type: "timeline",
-        eyebrow: "Sıralama",
-        title: "Eşik kaç kez değişti",
+        eyebrow: "Sequence",
+        title: "How often the threshold moved",
         points: [
-          { value_label: "2023", label: "İlk çerçeve yayımlandı", detail: "Eşik dahili olarak tanımlandı.", status: "strong" },
-          { value_label: "2024", label: "Eşik yukarı çekildi", detail: "Gerekçe yayımlanmadı.", status: "uncertain" },
-          { value_label: "2025", label: "Dış denetim eklendi", detail: "Kapsam sınırlı.", status: "limited" },
+          { value_label: "2023", label: "First framework published", detail: "Threshold defined internally.", status: "strong" },
+          { value_label: "2024", label: "Threshold revised upward", detail: "No rationale published.", status: "uncertain" },
+          { value_label: "2025", label: "External evaluation added", detail: "Scope limited.", status: "limited" },
         ],
         source_ids: ["src_01"],
       }}
@@ -104,13 +109,13 @@ const PreviewMatrix: React.FC = () => (
     <EditorialOverlay
       spec={{
         type: "matrix",
-        eyebrow: "Karşılaştırma",
-        title: "Üç kurum, aynı üç soru",
-        columns: ["Eşik yayımlı", "Dış denetim", "Sonuç yayımlı"],
+        eyebrow: "Comparison",
+        title: "Three labs, the same three questions",
+        columns: ["Threshold published", "External evaluation", "Results published"],
         rows: [
-          { label: "Anthropic", values: ["Evet", "Kısmi", "Hayır"] },
-          { label: "OpenAI", values: ["Evet", "Hayır", "Hayır"] },
-          { label: "Google DeepMind", values: ["Kısmi", "Hayır", "Hayır"] },
+          { label: "Anthropic", values: ["Yes", "Partial", "No"] },
+          { label: "OpenAI", values: ["Yes", "No", "No"] },
+          { label: "Google DeepMind", values: ["Partial", "No", "No"] },
         ],
         source_ids: ["src_01"],
       }}
@@ -124,14 +129,14 @@ const PreviewNodeMap: React.FC = () => (
     <EditorialOverlay
       spec={{
         type: "node_map",
-        eyebrow: "Bağlantı",
-        title: "Kararın etrafındaki taraflar",
-        center_label: "Eşik kararı",
+        eyebrow: "Who decides",
+        title: "The parties around the threshold",
+        center_label: "Threshold call",
         nodes: [
-          { id: "a", label: "Güvenlik ekibi", detail: "Ölçümü yapıyor." },
-          { id: "b", label: "Yönetim", detail: "Onaylıyor." },
-          { id: "c", label: "Düzenleyici", detail: "Bilgilendirilmiyor." },
-          { id: "d", label: "Kamuoyu", detail: "Sonradan öğreniyor." },
+          { id: "a", label: "Safety team", detail: "Runs the evaluation." },
+          { id: "b", label: "Leadership", detail: "Signs it off." },
+          { id: "c", label: "Regulator", detail: "Not notified." },
+          { id: "d", label: "The public", detail: "Learns afterwards." },
         ],
         source_ids: ["src_01"],
       }}
@@ -145,13 +150,13 @@ const PreviewChain: React.FC = () => (
     <EditorialOverlay
       spec={{
         type: "evidence_chain",
-        eyebrow: "Kanıt zinciri",
-        title: "İddia hangi adımlara dayanıyor",
+        eyebrow: "Evidence chain",
+        title: "What the claim actually rests on",
         points: [
-          { label: "Belge var", detail: "Kurum kendi metnini yayımladı.", status: "strong" },
-          { label: "Eşik tanımlı", detail: "Metin bir eşik tarif ediyor.", status: "strong" },
-          { label: "Ölçüm yapıldı", detail: "Yalnızca beyan.", status: "limited" },
-          { label: "Dağıtım durdu", detail: "Kayıt yok.", status: "uncertain" },
+          { label: "Document exists", detail: "The lab published its own text.", status: "strong" },
+          { label: "Threshold defined", detail: "The text describes one.", status: "strong" },
+          { label: "Evaluation run", detail: "Self-reported only.", status: "limited" },
+          { label: "Deployment halted", detail: "No record either way.", status: "uncertain" },
         ],
         source_ids: ["src_01"],
       }}
@@ -165,15 +170,15 @@ const PreviewFigure: React.FC = () => (
     <EditorialOverlay
       spec={{
         type: "bar_evidence",
-        eyebrow: "Kaynak verisi",
-        title: "Eşiği geçtiğini bildiren laboratuvar sayısı",
+        eyebrow: "Source data",
+        title: "What frontier labs actually disclose",
         unit: "%",
         points: [
-          { label: "Kendi çerçevesini yayımlayan", value: 72, value_label: "%72", status: "strong" },
-          { label: "Dış denetime açan", value: 34, value_label: "%34", status: "limited" },
-          { label: "Sonuçları tam yayımlayan", value: 11, value_label: "%11", status: "uncertain" },
+          { label: "Publish their own safety framework", value: 72, value_label: "72%", status: "strong" },
+          { label: "Open evaluations to outside reviewers", value: 34, value_label: "34%", status: "limited" },
+          { label: "Publish the evaluation results in full", value: 11, value_label: "11%", status: "uncertain" },
         ],
-        limitation: "Oranlar yalnızca kendi beyanına göre; bağımsız doğrulama yok.",
+        limitation: "Self-reported disclosure only; none of it independently verified.",
         source_ids: ["src_01"],
       }}
       durationInFrames={200}
@@ -186,15 +191,15 @@ const PreviewProcess: React.FC = () => (
     <EditorialOverlay
       spec={{
         type: "process",
-        eyebrow: "Nasıl işliyor",
-        title: "Bir eşik aşıldığında ne oluyor",
+        eyebrow: "How it works",
+        title: "What happens when a threshold is crossed",
         steps: [
-          "Model dahili değerlendirmeden geçiyor",
-          "Sonuç güvenlik ekibine gidiyor",
-          "Eşik aşıldıysa dağıtım duruyor",
-          "Karar dışarıya bildirilmiyor",
+          "The model goes through internal evaluation",
+          "The result reaches the safety team",
+          "If the threshold is crossed, deployment stops",
+          "The decision is not disclosed outside",
         ],
-        recreation_label: "KURUM BELGELERİNDEN DERLENDİ",
+        recreation_label: "COMPILED FROM PUBLISHED COMPANY DOCUMENTS",
       }}
       durationInFrames={200}
     />
@@ -205,12 +210,12 @@ const PreviewEvidenceDocument: React.FC = () => (
   <PrimaryEvidenceV2
     spec={{
       kind: "official_document",
-      eyebrow: "Birincil kanıt",
-      title: "Laboratuvarın kendi güvenlik çerçevesi",
-      subtitle: "Eşiği kimin belirlediği, belgenin kendi metninde yazılı.",
-      callout: "Karar mercii yine laboratuvarın kendisi.",
-      limitation: "Belge yalnızca yayımlandığı tarihteki sürümü yansıtıyor.",
-      source_label: "Anthropic · Responsible Scaling Policy · s.14",
+      eyebrow: "Primary evidence",
+      title: "The lab's own safety framework",
+      subtitle: "Who sets the threshold is stated in the document's own text.",
+      callout: "The body that decides is the lab itself.",
+      limitation: "The cover establishes the document and its date, nothing about a specific capability result.",
+      source_label: "Anthropic · Claude 4 System Card · ASL-3 deployment · May 2025",
       source_ids: ["src_01"],
       image_assets: [DOC],
       focus: { scale: 1.12, x: 0, y: -2 },
@@ -223,13 +228,13 @@ const PreviewEvidenceComparison: React.FC = () => (
   <PrimaryEvidenceV2
     spec={{
       kind: "comparison",
-      eyebrow: "Kanıt sınırı",
-      title: "Belge neyi kuruyor, neyi kurmuyor",
-      left: "Eşik var",
-      left_detail: "Laboratuvar kendi eşiğini tanımladığını ve ölçtüğünü yazıyor.",
-      right: "Durduğu kanıtlanmıyor",
-      right_detail: "Eşiğin aşıldığı bir vakada dağıtımın durduğuna dair kayıt yok.",
-      source_label: "Anthropic · Responsible Scaling Policy · s.14",
+      eyebrow: "Limits of the evidence",
+      title: "What the document establishes, and what it does not",
+      left: "A threshold exists",
+      left_detail: "The lab states that it defines a threshold and evaluates against it.",
+      right: "Nothing shows it stops anything",
+      right_detail: "No record of a case where a crossed threshold actually halted deployment.",
+      source_label: "Anthropic · Claude 4 System Card · ASL-3 deployment · May 2025",
       source_ids: ["src_01"],
     }}
     durationInFrames={200}
@@ -240,12 +245,12 @@ const PreviewDocumentSequence: React.FC = () => (
   <DocumentEvidenceSequence
     spec={{
       kind: "image_sequence",
-      eyebrow: "Yayımlanmış kanıt",
-      title: "Aynı eşik, üç ayrı kurumun metninde",
-      source_label: "Anthropic · Responsible Scaling Policy · s.14",
+      eyebrow: "Published evidence",
+      title: "The same threshold, in three separate documents",
+      source_label: "Anthropic · Claude 4 System Card · ASL-3 deployment · May 2025",
       source_labels: [
-        "Anthropic · Responsible Scaling Policy · s.14",
-        "OpenAI · Preparedness Framework · s.9",
+        "Anthropic · Claude 4 System Card · ASL-3 deployment · May 2025",
+        "Stanford HAI · AI Index Report 2025 · Chapter 3",
       ],
       source_ids: ["src_01", "src_02"],
       image_assets: [DOC, "templates/remotion/public/_preview/pods.jpg"],

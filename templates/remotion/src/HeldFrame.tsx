@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate } from "remotion";
-import { ORVYQ_DESIGN, titleSize } from "./designSystem";
+import { ORVYQ_DESIGN, titleBlock } from "./designSystem";
 import { useReveal } from "./useReveal";
 
 export type HeldFrameSpec = {
@@ -28,7 +28,7 @@ export const HeldFrame: React.FC<{
 }> = ({ spec, durationInFrames }) => {
   const { color, type, safe, scrim } = ORVYQ_DESIGN;
   const { opacity, enter, translateY, frame } = useReveal(durationInFrames);
-  const size = titleSize(spec.title, "held");
+  const title = titleBlock(spec.title, "held");
 
   // The scrim arrives a little behind the type so the shot is seen clean
   // first and only then settles.
@@ -75,9 +75,9 @@ export const HeldFrame: React.FC<{
           ) : null}
           <div
             style={{
-              maxWidth: "15ch",
+              maxWidth: title.maxWidth,
               fontFamily: type.displayFamily,
-              fontSize: size,
+              fontSize: title.fontSize,
               fontWeight: type.displayWeight,
               letterSpacing: type.trackingDisplay,
               lineHeight: 1.02,

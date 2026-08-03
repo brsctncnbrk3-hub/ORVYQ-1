@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { ORVYQ_CARD_LIMITS, ORVYQ_DESIGN, titleSize } from "./designSystem";
+import { ORVYQ_CARD_LIMITS, ORVYQ_DESIGN, titleBlock } from "./designSystem";
 import { useReveal } from "./useReveal";
 
 export type OrvyqGraphicSpec = {
@@ -81,9 +81,9 @@ export const OrvyqGraphic: React.FC<{
 
           <div
             style={{
-              maxWidth: "18ch",
+              maxWidth: titleBlock(spec.title, "inFrame").maxWidth,
               fontFamily: type.displayFamily,
-              fontSize: titleSize(spec.title, "inFrame"),
+              fontSize: titleBlock(spec.title, "inFrame").fontSize,
               fontWeight: type.displayWeight,
               letterSpacing: type.trackingDisplay,
               lineHeight: 1.04,

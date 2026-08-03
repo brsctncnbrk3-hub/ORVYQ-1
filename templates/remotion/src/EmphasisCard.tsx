@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { ORVYQ_DESIGN, titleSize } from "./designSystem";
+import { ORVYQ_DESIGN, titleBlock } from "./designSystem";
 import { useReveal } from "./useReveal";
 
 export type EmphasisCardSpec = {
@@ -30,7 +30,7 @@ export const EmphasisCard: React.FC<{
   const brief = durationInFrames <= 90;
   const { opacity, enter, translateY } = useReveal(durationInFrames, brief);
   const accent = spec.accent || color.signal;
-  const size = titleSize(spec.title, "inFrame");
+  const title = titleBlock(spec.title, "inFrame");
 
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
@@ -63,9 +63,9 @@ export const EmphasisCard: React.FC<{
           />
           <div
             style={{
-              maxWidth: "19ch",
+              maxWidth: title.maxWidth,
               fontFamily: type.displayFamily,
-              fontSize: size,
+              fontSize: title.fontSize,
               fontWeight: type.displayWeight,
               letterSpacing: type.trackingDisplay,
               lineHeight: 1.04,
