@@ -25,44 +25,23 @@ jobs:
         run: npm ci
 
       # Temporary diagnostic for the UNABLE_TO_GET_ISSUER_CERT_LOCALLY
-      # failure primary-evidence fetch hit against www.ntia.gov. Node's
-      # bundled Mozilla root store cannot resolve this host's chain, and
-      # this step captures the real certificate chain the server presents
-      # so the fix (a pinned intermediate, or an allowlisted mirror host)
-      # can be verified instead of guessed. Remove once the real fix lands.
-      - name: Diagnose ntia.gov TLS chain
+      # failure primary-evidence fetch hit against www.ntia.gov. The real
+      # chain (captured on a prior run of this step) is www.ntia.gov ->
+      # Cloudflare TLS Issuing ECC CA 1 -> SSL.com TLS Transit ECC CA R2 ->
+      # "AAA Certificate Services" (Comodo), and the server never sends
+      # that last root -- Node's bundled minimal CA store doesn't have it,
+      # even though it's a long-standing, widely trusted root. Testing
+      # whether the OS's own (broader) OpenSSL trust store already has it,
+      # via --use-openssl-ca, so the fix can be verified instead of
+      # guessing a pinned certificate. Remove once the real fix lands.
+      - name: Diagnose ntia.gov TLS trust (OS store vs Node's bundled store)
         run: |
-          node --input-type=module -e "
-            import tls from 'node:tls';
-            await new Promise((resolve) => {
-              const socket = tls.connect(443, 'www.ntia.gov', { servername: 'www.ntia.gov', rejectUnauthorized: false }, () => {
-                console.log('authorized:', socket.authorized);
-                console.log('authorizationError:', socket.authorizationError);
-                let cert = socket.getPeerCertificate(true);
-                let depth = 0;
-                while (cert && Object.keys(cert).length && depth < 10) {
-                  console.log('---depth', depth, '---');
-                  console.log('subject:', JSON.stringify(cert.subject));
-                  console.log('issuer:', JSON.stringify(cert.issuer));
-                  console.log('valid_to:', cert.valid_to);
-                  console.log('infoAccess:', JSON.stringify(cert.infoAccess || null));
-                  console.log('fingerprint256:', cert.fingerprint256);
-                  if (cert.issuerCertificate && cert.issuerCertificate !== cert) {
-                    cert = cert.issuerCertificate;
-                  } else {
-                    cert = null;
-                  }
-                  depth += 1;
-                }
-                socket.end();
-                resolve();
-              });
-              socket.on('error', (error) => {
-                console.log('socket error:', error.message);
-                resolve();
-              });
-            });
-          "
+          echo "--- openssl s_client using the OS trust store ---"
+          echo | openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov -verify_return_error 2>&1 | grep -E "Verify return code|depth|error" || true
+          echo "--- node fetch with Node's default bundled CA store (expected to fail) ---"
+          node -e "fetch('https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf').then(r => console.log('status', r.status)).catch(e => console.log('ERR', e.message, e.cause && e.cause.code))"
+          echo "--- node fetch with NODE_OPTIONS=--use-openssl-ca (OS trust store) ---"
+          NODE_OPTIONS=--use-openssl-ca node -e "fetch('https://www.ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf').then(r => console.log('status', r.status)).catch(e => console.log('ERR', e.message, e.cause && e.cause.code))"
 
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
