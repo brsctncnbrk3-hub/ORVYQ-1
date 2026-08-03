@@ -28,6 +28,8 @@
     "orvyq:full-production-plan": "node scripts/orvyq_full_production_plan.mjs",
     "orvyq:author-footage-distribution": "node scripts/orvyq_author_footage_distribution.mjs",
     "orvyq:retire-project-assets": "node scripts/orvyq_retire_project_assets.mjs",
+    "orvyq:shortlist-footage": "node scripts/orvyq_shortlist_footage_candidates.mjs",
+    "orvyq:apply-footage-selection": "node scripts/orvyq_apply_footage_candidate_selection.mjs",
     "orvyq:system-independence": "node scripts/orvyq_system_independence_audit.mjs",
     "orvyq:music-intake": "node scripts/orvyq_music_intake.mjs",
     "orvyq:music-resolve": "node scripts/orvyq_music_resolve.mjs",

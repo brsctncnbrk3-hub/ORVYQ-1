@@ -161,6 +161,20 @@ jobs:
           set -euo pipefail
           test -n "$PEXELS_API_KEY" || { echo "::error::Repository secret PEXELS_API_KEY is missing."; exit 1; }
 
+      # Look before choosing. Without an inspected selection there is nothing
+      # to acquire yet: build the candidate boards, publish them, and stop.
+      # With one, the plan is pinned to the exact assets that were inspected
+      # and acquisition downloads those rather than searching again.
+      - name: Decide whether candidates still need inspecting
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f "projects/$PROJECT_ID/research/footage_candidate_selection.json" ]; then
+            echo "CANDIDATE_STAGE=apply" >> "$GITHUB_ENV"
+          else
+            echo "CANDIDATE_STAGE=shortlist" >> "$GITHUB_ENV"
+          fi
+
       - name: Install media probe
         if: env.NEEDS_ACQUISITION == 'true'
         run: |
@@ -168,8 +182,22 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ffmpeg
 
+      - name: Build candidate boards for inspection
+        if: env.NEEDS_ACQUISITION == 'true' && env.CANDIDATE_STAGE == 'shortlist'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/orvyq_shortlist_footage_candidates.mjs --project-id="$PROJECT_ID" 2>&1 | tee footage-shortlist.log
+
+      - name: Pin the plan to the inspected selection
+        if: env.NEEDS_ACQUISITION == 'true' && env.CANDIDATE_STAGE == 'apply'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/orvyq_apply_footage_candidate_selection.mjs --project-id="$PROJECT_ID" 2>&1 | tee footage-selection.log
+
       - name: Reacquire rejected licensed contextual footage
-        if: env.NEEDS_ACQUISITION == 'true'
+        if: env.NEEDS_ACQUISITION == 'true' && env.CANDIDATE_STAGE == 'apply'
         shell: bash
         run: |
           set -euo pipefail
@@ -269,6 +297,8 @@ jobs:
             "$ROOT/research/footage_use_contract_overrides.json" \
             "$ROOT/research/visual_asset_requests.json" \
             "$ROOT/research/visual_asset_reviews.json" \
+            "$ROOT/research/footage_candidate_shortlist.json" \
+            "$ROOT/research/footage_candidate_selection.json" \
             "$ROOT/config/editorial_asset_plan.json" \
             "$ROOT/direction/motion_hook.json" \
             "$ROOT/direction/visual_rebalance_plan.json" \
@@ -281,6 +311,7 @@ jobs:
             "$ROOT/assets/footage_acquisition.runtime.json" \
             "$ROOT/qa/local_assets.provenance.json" \
             "$ROOT/qa/footage-contact-sheets" \
+            "$ROOT/qa/footage-candidate-boards" \
             "$ROOT/qa/footage_contact_sheets.json" \
             "$ROOT/qa/footage_review_queue.json" \
             "$ROOT/qa/footage_semantic_review_audit.json"
@@ -291,7 +322,9 @@ jobs:
             echo "Footage state and review queue unchanged; nothing to commit."
             exit 0
           fi
-          if [ "$NEEDS_ACQUISITION" = "true" ]; then
+          if [ "$NEEDS_ACQUISITION" = "true" ] && [ "$CANDIDATE_STAGE" = "shortlist" ]; then
+            git commit -m "Publish footage candidate boards for $PROJECT_ID"
+          elif [ "$NEEDS_ACQUISITION" = "true" ]; then
             git commit -m "Reacquire claim-bound footage for $PROJECT_ID"
           else
             git commit -m "Reconcile claim-bound footage review for $PROJECT_ID"
@@ -307,6 +340,10 @@ jobs:
           retention-days: 30
           path: |
             footage-acquisition.log
+            footage-shortlist.log
+            footage-selection.log
+            projects/${{ steps.project.outputs.project_id }}/research/footage_candidate_shortlist.json
+            projects/${{ steps.project.outputs.project_id }}/qa/footage-candidate-boards/*.jpg
             footage-decisions.log
             footage-review-state.log
             projects/${{ steps.project.outputs.project_id }}/research/footage_acquisition_plan.json

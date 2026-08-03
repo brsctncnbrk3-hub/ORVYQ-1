@@ -88,7 +88,16 @@ export function retireVisualAssets(reviews, { runtimeRecords = [], reason = DEFA
   return { reviews: next, retired };
 }
 
-export async function retireProjectAssets(projectId, { reason = DEFAULT_REASON, deleteMedia = true } = {}) {
+/**
+ * Clearing the pool and barring its assets are different acts.
+ *
+ * A rebuild retires footage that was *used*, and that must not come back.
+ * Discarding a batch that was picked blind and never inspected is not a
+ * judgement on the clips -- barring them would shrink the candidate pool on
+ * the strength of a decision nobody ever looked at. `bar: false` clears the
+ * pool and leaves those assets available to be offered again.
+ */
+export async function retireProjectAssets(projectId, { reason = DEFAULT_REASON, deleteMedia = true, bar = true } = {}) {
   const dir = projectDir(projectId);
   const files = {
     reviews: path.join(dir, "research", "visual_asset_reviews.json"),
@@ -105,10 +114,13 @@ export async function retireProjectAssets(projectId, { reason = DEFAULT_REASON, 
   ]);
   if (reviews.project_id !== projectId) throw new Error(`visual_asset_reviews project_id does not match ${projectId}`);
 
-  const { reviews: nextReviews, retired } = retireVisualAssets(reviews, {
+  const { reviews: barredReviews, retired } = retireVisualAssets(reviews, {
     runtimeRecords: runtime?.records || [],
     reason,
   });
+  const nextReviews = bar
+    ? barredReviews
+    : { ...barredReviews, superseded_assets: reviews.superseded_assets || [] };
 
   const removedMedia = [];
   if (deleteMedia) {
@@ -161,8 +173,9 @@ export async function retireProjectAssets(projectId, { reason = DEFAULT_REASON, 
   await Promise.all(writes);
   return {
     project_id: projectId,
-    retired_provider_asset_count: retired.length,
-    retired_provider_asset_ids: retired.map((asset) => asset.provider_asset_id),
+    cleared_provider_asset_count: retired.length,
+    barred: bar,
+    ...(bar ? { retired_provider_asset_ids: retired.map((asset) => asset.provider_asset_id) } : {}),
     removed_media_file_count: removedMedia.length,
     total_barred_provider_asset_ids:
       (nextReviews.superseded_assets || []).length + (nextReviews.rejected_assets || []).length,
@@ -176,6 +189,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   retireProjectAssets(projectId, {
     ...(typeof args.reason === "string" ? { reason: args.reason } : {}),
     deleteMedia: args["keep-media"] !== true,
+    // --keep-available clears the pool without barring re-entry, for a batch
+    // that was never inspected on its merits.
+    bar: args["keep-available"] !== true,
   })
     .then((result) => printJson({ ok: true, ...result }))
     .catch((error) => {

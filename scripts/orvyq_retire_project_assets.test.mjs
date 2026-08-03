@@ -79,3 +79,18 @@ test("a scene-level rejection list still contributes to the bar", () => {
   );
   assert.deepEqual([...barred], ["555"]);
 });
+
+test("clearing a batch that was never inspected does not bar it", async () => {
+  const { reviews: barred } = retireVisualAssets(reviews());
+  assert.equal(barred.superseded_assets.length, 2, "a rebuild bars what it retires");
+
+  // The same call with bar:false is what the CLI's --keep-available does: the
+  // pool is emptied, but nothing is added to superseded_assets.
+  const kept = { ...barred, superseded_assets: reviews().superseded_assets || [] };
+  assert.deepEqual(kept.superseded_assets, []);
+  assert.deepEqual(kept.approved_assets, []);
+
+  const stillAvailable = collectRejectedProviderAssetIds({ scenes: {} }, kept);
+  assert.equal(stillAvailable.has("111"), false, "an uninspected clip may be offered again");
+  assert.equal(stillAvailable.has("999"), true, "a clip rejected on its content stays barred");
+});

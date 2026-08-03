@@ -287,7 +287,18 @@ export async function searchPexels(
   throw lastError;
 }
 
-export function pick(videos, usedIds, item, searchQuery = "") {
+/**
+ * Every candidate the provider returned that is licensable, long enough, big
+ * enough and not barred -- ranked best-first.
+ *
+ * The ranking is a text score against provider metadata, which is a weak
+ * proxy for what is actually on screen: an uploader writes a title for
+ * discoverability, so "european parliament" legitimately matches Hungary's
+ * parliament and "EU flags" matches a shot the Swiss flag dominates. Treat
+ * this as an ordering to inspect, never as a decision. Choosing from it
+ * unseen is what ORVYQ_SYSTEM.md forbids as blind visual assignment.
+ */
+export function shortlistCandidates(videos, usedIds, item, searchQuery = "", limit = Number.POSITIVE_INFINITY) {
   const min = Number(item.min_duration_seconds || 8);
   const max = Number(item.max_duration_seconds || 120);
   const candidates = [];
@@ -322,7 +333,11 @@ export function pick(videos, usedIds, item, searchQuery = "") {
     b.semanticScore - a.semanticScore ||
     Math.abs(a.video.duration - (min + 4)) - Math.abs(b.video.duration - (min + 4))
   );
-  return candidates[0] || null;
+  return Number.isFinite(limit) ? candidates.slice(0, Math.max(0, limit)) : candidates;
+}
+
+export function pick(videos, usedIds, item, searchQuery = "") {
+  return shortlistCandidates(videos, usedIds, item, searchQuery)[0] || null;
 }
 
 export async function preflightPexelsSelections(
