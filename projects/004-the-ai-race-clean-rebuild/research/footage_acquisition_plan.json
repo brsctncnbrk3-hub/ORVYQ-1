@@ -1006,10 +1006,10 @@
       "claim_id": "CLM_008_CYBER_EXTORTION",
       "role": "context",
       "queries": [
-        "close up of a CPU"
+        "close up shot of a electronic device"
       ],
       "fallback_queries": [
-        "rack mounted server units status lights"
+        "PowerEdge server illuminated rack"
       ],
       "min_duration_seconds": 8,
       "editorial_note": "Rack-mounted server and storage units with active status lights",
@@ -1017,7 +1017,7 @@
       "semantic_link": "physical",
       "semantic_rationale": "Rack-mounted server and storage units show the physical infrastructure being defended without identifying it as any institution in the story; the claim's factual burden stays with the primary evidence.",
       "curated_provider_asset_ids": [
-        "7140928"
+        "7140931"
       ],
       "rejected_provider_asset_ids": [
         "7141174",
