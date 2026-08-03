@@ -11,7 +11,39 @@ import {
   printJson,
 } from "./lib/fs-utils.mjs";
 import { applyFootageVisualDecisions } from "./lib/orvyq-footage-visual-decisions.mjs";
-import { materializeVisualRebalancePlan } from "./lib/orvyq-visual-rebalance.mjs";
+
+function isCompleteMaterializedRebalancePlan(plan) {
+  return Boolean(
+    plan?.status === "materialized" &&
+    plan.baseline &&
+    typeof plan.baseline === "object" &&
+    typeof plan.purpose === "string" &&
+    plan.purpose.trim().length >= 24 &&
+    Array.isArray(plan.actions) &&
+    plan.actions.length > 0
+  );
+}
+
+export function resolvePostFootageVisualState({ rebalance, footageReady, pendingRequestIds = [] }) {
+  const primaryEvidenceBlockers = (rebalance?.blocked_asset_request_ids || [])
+    .filter((id) => !String(id).startsWith("REQ_FTG_"));
+  const activeBlockers = [...new Set([...primaryEvidenceBlockers, ...pendingRequestIds])].sort();
+  const rebalanceMaterialized = Boolean(
+    footageReady &&
+    activeBlockers.length === 0 &&
+    isCompleteMaterializedRebalancePlan(rebalance)
+  );
+
+  return {
+    rebalance_status: rebalanceMaterialized
+      ? "materialized"
+      : footageReady
+        ? "planned_pending_primary_evidence"
+        : "blocked_pending_assets",
+    rebalance_materialized: rebalanceMaterialized,
+    blocked_asset_request_ids: rebalanceMaterialized ? [] : activeBlockers,
+  };
+}
 
 function matches(entry, decision) {
   return Boolean(
@@ -351,22 +383,20 @@ export async function applyProjectFootageVisualDecisions(projectId) {
 
   const officialFallbacksApplied = await applyOfficialSourceOverrides(dir, projectId);
   const localOfficialReusesApplied = await applyLocalOfficialReuse(dir, projectId, runtime, result);
-  const wasMaterialized = rebalance.status === "materialized";
-  rebalance.status = result.ready_for_materialization ? "materialized" : "blocked_pending_assets";
   const pendingRequestIds = (result.requests.requests || [])
     .filter((request) => request.status !== "ready")
     .map((request) => request.asset_request_id);
+  const visualState = resolvePostFootageVisualState({
+    rebalance,
+    footageReady: result.ready_for_materialization,
+    pendingRequestIds,
+  });
+  rebalance.status = visualState.rebalance_status;
+  rebalance.blocked_asset_request_ids = visualState.blocked_asset_request_ids;
+  if (result.ready_for_materialization) rebalance.visual_review_completed_at = new Date().toISOString();
 
-  if (result.ready_for_materialization) {
-    let shots = blueprint.full_production?.shots || [];
-    if (!wasMaterialized) {
-      shots = materializeVisualRebalancePlan({
-        shots,
-        plan: rebalance,
-        assetRequests: result.requests.requests || [],
-      });
-    }
-    blueprint.full_production.shots = materializeOpeningHook(shots, motionHook);
+  if (visualState.rebalance_materialized) {
+    blueprint.full_production.shots = materializeOpeningHook(blueprint.full_production?.shots || [], motionHook);
     blueprint.full_production.status = "ready";
     blueprint.full_production.blocking_claim_ids = [];
     blueprint.full_production.blocking_visual_asset_request_ids = [];
@@ -374,7 +404,7 @@ export async function applyProjectFootageVisualDecisions(projectId) {
   } else {
     blueprint.full_production.status = "blocked_pending_visual_assets";
     blueprint.full_production.blocking_claim_ids = [];
-    blueprint.full_production.blocking_visual_asset_request_ids = pendingRequestIds;
+    blueprint.full_production.blocking_visual_asset_request_ids = visualState.blocked_asset_request_ids;
   }
 
   await Promise.all([
@@ -389,6 +419,9 @@ export async function applyProjectFootageVisualDecisions(projectId) {
     project_id: projectId,
     decision_rounds: decisions.round_files,
     ready_for_materialization: result.ready_for_materialization,
+    footage_ready: result.ready_for_materialization,
+    rebalance_status: visualState.rebalance_status,
+    rebalance_materialized: visualState.rebalance_materialized,
     official_fallbacks_applied: officialFallbacksApplied,
     local_official_reuses_applied: localOfficialReusesApplied,
     applied_approvals: result.applied_approvals,

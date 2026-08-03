@@ -3,7 +3,10 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import os from "node:os";
 import { promises as fs } from "node:fs";
-import { applyProjectFootageVisualDecisions } from "./orvyq_apply_footage_visual_decisions.mjs";
+import {
+  applyProjectFootageVisualDecisions,
+  resolvePostFootageVisualState,
+} from "./orvyq_apply_footage_visual_decisions.mjs";
 import { PROJECTS_DIR } from "./lib/fs-utils.mjs";
 
 // The script resolves paths through projectDir(), so the fixture has to live
@@ -83,4 +86,39 @@ test("a missing required input is still a hard failure", async (t) => {
   }
 
   await assert.rejects(() => applyProjectFootageVisualDecisions(PROJECT_ID), /reviews file is missing/);
+});
+
+test("completed footage preserves primary-evidence blockers instead of materializing an empty rebalance plan", () => {
+  const state = resolvePostFootageVisualState({
+    footageReady: true,
+    pendingRequestIds: [],
+    rebalance: {
+      status: "blocked_pending_assets",
+      blocked_asset_request_ids: ["REQ_FTG_SCENE_001", "REQ_EVD_CLAIM_A"],
+      projected: {},
+      actions: [],
+    },
+  });
+
+  assert.equal(state.rebalance_status, "planned_pending_primary_evidence");
+  assert.equal(state.rebalance_materialized, false);
+  assert.deepEqual(state.blocked_asset_request_ids, ["REQ_EVD_CLAIM_A"]);
+});
+
+test("completed footage keeps only an already complete, unblocked rebalance plan materialized", () => {
+  const state = resolvePostFootageVisualState({
+    footageReady: true,
+    pendingRequestIds: [],
+    rebalance: {
+      status: "materialized",
+      purpose: "Keep the measured visual mix within every editorial threshold.",
+      baseline: { duration_seconds: 1 },
+      actions: [{ decision: "keep" }],
+      blocked_asset_request_ids: [],
+    },
+  });
+
+  assert.equal(state.rebalance_status, "materialized");
+  assert.equal(state.rebalance_materialized, true);
+  assert.deepEqual(state.blocked_asset_request_ids, []);
 });
