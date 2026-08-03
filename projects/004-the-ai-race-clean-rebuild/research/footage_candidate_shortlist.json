@@ -1,0 +1,3925 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "generated_at": "2026-08-03T09:05:41.574Z",
+  "candidates_per_scene": 6,
+  "policy": "Ranked by provider metadata only. Ranking is an order to inspect, never a decision -- a clip is chosen from its poster frames against the scene's required visible content, and a scene with no fitting candidate is blocked rather than filled with an approximate one.",
+  "scene_count": 45,
+  "scenes": [
+    {
+      "scene_id": "scene_001",
+      "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+      "required_visible_content": "Engineers jointly reviewing frontier software on a shared screen",
+      "queries": [
+        "software engineers reviewing code together",
+        "AI research team at workstation",
+        "technology team collaborating office"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "34279733",
+          "source_page_url": "https://www.pexels.com/video/modern-programmer-s-workspace-with-code-display-34279733/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34279733/ambient-code-coding-colorful-34279733.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33187808",
+          "source_page_url": "https://www.pexels.com/video/dynamic-code-display-on-computer-screen-33187808/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33187808/background-binary-code-coding-33187808.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "4630103",
+          "source_page_url": "https://www.pexels.com/video/video-of-women-working-together-4630103/",
+          "creator": "Ketut Subiyanto",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4630103/pexels-photo-4630103.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "6248596",
+          "source_page_url": "https://www.pexels.com/video/people-in-a-meeting-6248596/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6248596/pexels-photo-6248596.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "4630792",
+          "source_page_url": "https://www.pexels.com/video/video-of-people-talking-to-each-other-4630792/",
+          "creator": "Ketut Subiyanto",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4630792/pexels-photo-4630792.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_001.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_002",
+      "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+      "required_visible_content": "Moving view through live server infrastructure carrying the scale of the race",
+      "queries": [
+        "data center server aisle tracking shot",
+        "server room moving camera",
+        "network infrastructure racks"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "15517230",
+          "source_page_url": "https://www.pexels.com/video/a-computer-screen-showing-a-video-editing-screen-15517230/",
+          "creator": "Ludovic Delot",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/15517230/animation-audio-audio-mixing-color-correction-15517230.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "4761950",
+          "source_page_url": "https://www.pexels.com/video/a-couple-walking-in-the-underpass-hallways-4761950/",
+          "creator": "cottonbro studio",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4761950/anonymouse-couple-electric-fluorescent-light-4761950.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33519703",
+          "source_page_url": "https://www.pexels.com/video/industrial-metal-crafting-process-in-workshop-33519703/",
+          "creator": "Ivan Montes de Oca",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33519703/automotive-design-automotives-33519703.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "38496192",
+          "source_page_url": "https://www.pexels.com/video/inserting-hard-drive-into-storage-device-38496192/",
+          "creator": "Media Hopper Studio",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38496192/computer-data-device-digital-38496192.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "32386531",
+          "source_page_url": "https://www.pexels.com/video/industrial-conveyor-system-with-red-lights-32386531/",
+          "creator": "Usman AbdulrasheedGambo",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/32386531/pexels-photo-32386531.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7644222",
+          "source_page_url": "https://www.pexels.com/video/an-exit-signage-at-the-building-7644222/",
+          "creator": "Yaroslav Shuraev",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7644222/abandoned-abstract-achievement-airplane-7644222.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_002.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_003",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "required_visible_content": "Researchers observing a controlled model evaluation on monitors",
+      "queries": [
+        "researchers monitoring computer screens laboratory",
+        "engineers watching test results monitors",
+        "technical team observing data screens"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "9573569",
+          "source_page_url": "https://www.pexels.com/video/chemists-working-inside-a-laboratory-9573569/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/9573569/pexels-photo-9573569.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8534544",
+          "source_page_url": "https://www.pexels.com/video/a-person-working-on-a-laptop-8534544/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534544/4k-analyzing-biotechnology-chemical-8534544.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "34279733",
+          "source_page_url": "https://www.pexels.com/video/modern-programmer-s-workspace-with-code-display-34279733/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34279733/ambient-code-coding-colorful-34279733.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "6248596",
+          "source_page_url": "https://www.pexels.com/video/people-in-a-meeting-6248596/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6248596/pexels-photo-6248596.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "14939589",
+          "source_page_url": "https://www.pexels.com/video/ecg-result-14939589/",
+          "creator": "utopia 36",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/14939589/pexels-photo-14939589.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_003.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_004",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "required_visible_content": "Terminal output scrolling under deliberate observation",
+      "queries": [
+        "computer terminal code scrolling screen",
+        "console log output monitor",
+        "programming screen close up"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "33187808",
+          "source_page_url": "https://www.pexels.com/video/dynamic-code-display-on-computer-screen-33187808/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33187808/background-binary-code-coding-33187808.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "34279733",
+          "source_page_url": "https://www.pexels.com/video/modern-programmer-s-workspace-with-code-display-34279733/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34279733/ambient-code-coding-colorful-34279733.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "13522087",
+          "source_page_url": "https://www.pexels.com/video/programming-on-laptop-13522087/",
+          "creator": "Raddy",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/13522087/code-coder-computer-programming-javascript-13522087.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "4985377",
+          "source_page_url": "https://www.pexels.com/video/a-man-sitting-inside-the-recording-studio-4985377/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4985377/pexels-photo-4985377.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "38512646",
+          "source_page_url": "https://www.pexels.com/video/crypto-market-analysis-on-dual-screens-38512646/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38512646/4k-analysis-binance-bitcoin-38512646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_004.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_005",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "required_visible_content": "A rehearsed, controlled drill rather than a real emergency",
+      "queries": [
+        "safety drill training exercise facility",
+        "emergency rehearsal training staff",
+        "training exercise team facility"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "17969418",
+          "source_page_url": "https://www.pexels.com/video/fire-department-training-17969418/",
+          "creator": "Dan Yonan",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/17969418/fire-department-training-fire-engine-fire-streams-firefighter-17969418.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "35241565",
+          "source_page_url": "https://www.pexels.com/video/fire-station-interior-with-equipment-and-trucks-35241565/",
+          "creator": "Chris D",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/35241565/fire-safety-fire-station-firefighter-firefighting-35241565.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33880866",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-urban-playground-and-sports-area-33880866/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33880866/aerial-chattanooga-drone-33880866.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "6520274",
+          "source_page_url": "https://www.pexels.com/video/paramedic-writing-6520274/",
+          "creator": "RDNE Stock project",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6520274/ambulance-clinic-corona-coronavirus-6520274.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "38493701",
+          "source_page_url": "https://www.pexels.com/video/professional-meeting-in-modern-office-setting-38493701/",
+          "creator": "Media Hopper Studio",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38493701/academic-attention-business-campus-38493701.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "6520438",
+          "source_page_url": "https://www.pexels.com/video/man-sitting-on-an-ambulance-6520438/",
+          "creator": "RDNE Stock project",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6520438/ambulance-clinic-corona-coronavirus-6520438.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_005.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_006",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "required_visible_content": "Instrumented test bench where a controlled scenario is set up",
+      "queries": [
+        "laboratory test bench instruments",
+        "controlled experiment setup laboratory",
+        "research equipment measurement"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8381327",
+          "source_page_url": "https://www.pexels.com/video/automated-analysers-in-a-laboratory-8381327/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381327/pexels-photo-8381327.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "4121125",
+          "source_page_url": "https://www.pexels.com/video/close-up-of-laboratory-glass-containers-4121125/",
+          "creator": "Edward Jenner",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4121125/covid-19-lab-laboratory-medical-4121125.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8534602",
+          "source_page_url": "https://www.pexels.com/video/a-person-sitting-at-the-table-8534602/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534602/4k-analyzing-biotechnology-chemical-8534602.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8381254",
+          "source_page_url": "https://www.pexels.com/video/test-tubes-with-chemicals-in-a-science-laboratory-8381254/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381254/pexels-photo-8381254.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8381315",
+          "source_page_url": "https://www.pexels.com/video/close-up-of-an-automated-analyser-8381315/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381315/pexels-photo-8381315.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "8381406",
+          "source_page_url": "https://www.pexels.com/video/samples-in-a-test-tube-rotator-8381406/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381406/pexels-photo-8381406.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_006.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_007",
+      "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+      "required_visible_content": "Researchers reworking a scenario on a board across iterations",
+      "queries": [
+        "researchers whiteboard planning discussion",
+        "scientists writing whiteboard diagram",
+        "team brainstorming whiteboard office"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8170487",
+          "source_page_url": "https://www.pexels.com/video/woman-presenting-documents-and-percentage-in-a-meeting-8170487/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8170487/pexels-photo-8170487.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "7935037",
+          "source_page_url": "https://www.pexels.com/video/women-making-a-diagram-on-a-white-board-7935037/",
+          "creator": "ArtHouse Studio",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7935037/adult-art-bedroom-child-7935037.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "5439023",
+          "source_page_url": "https://www.pexels.com/video/woman-writing-on-a-whiteboard-5439023/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5439023/pexels-photo-5439023.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8478958",
+          "source_page_url": "https://www.pexels.com/video/people-talking-together-while-using-digital-table-8478958/",
+          "creator": "ArtHouse Studio",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8478958/pexels-photo-8478958.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8632201",
+          "source_page_url": "https://www.pexels.com/video/women-planning-together-while-writing-on-whiteboard-8632201/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8632201/pexels-photo-8632201.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "4629795",
+          "source_page_url": "https://www.pexels.com/video/man-discussing-project-proposals-in-a-meeting-4629795/",
+          "creator": "Ketut Subiyanto",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4629795/pexels-photo-4629795.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_007.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_008",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "required_visible_content": "Capital and market activity at scale without a named transaction",
+      "queries": [
+        "financial district skyscrapers business",
+        "stock market data screens trading",
+        "business district aerial city"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "6950323",
+          "source_page_url": "https://www.pexels.com/video/reflective-buildings-in-a-city-6950323/",
+          "creator": "Gustavo Fring",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6950323/pexels-photo-6950323.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "29575342",
+          "source_page_url": "https://www.pexels.com/video/modern-skyscrapers-in-urban-tokyo-29575342/",
+          "creator": "Simo Herold",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/29575342/buildings-city-skyscraper-modern-architecture-office-29575342.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "38557069",
+          "source_page_url": "https://www.pexels.com/video/dynamic-stock-market-display-analysis-38557069/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38557069/analysis-candles-computer-data-38557069.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "38512646",
+          "source_page_url": "https://www.pexels.com/video/crypto-market-analysis-on-dual-screens-38512646/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38512646/4k-analysis-binance-bitcoin-38512646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "33811931",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-panama-city-skyline-at-dusk-33811931/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33811931/aerial-drone-panama-panama-city-33811931.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "37165250",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-nashville-skyline-with-capitol-37165250/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/37165250/aerials-drone-nashville-tennessee-37165250.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_008.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_009",
+      "claim_id": "CLM_007_FRONTIER_GAP",
+      "required_visible_content": "Two teams working in parallel, closeness of the frontier made human",
+      "queries": [
+        "two teams working parallel offices",
+        "competing teams working late office",
+        "office teams working side by side"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "6194056",
+          "source_page_url": "https://www.pexels.com/video/colleagues-greeting-each-other-at-the-office-6194056/",
+          "creator": "Diva Plavalaguna",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6194056/african-african-american-business-chatting-6194056.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8643481",
+          "source_page_url": "https://www.pexels.com/video/businesspeople-at-the-office-8643481/",
+          "creator": "Edmond Dantès",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8643481/adult-business-businessman-businesswoman-8643481.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8033299",
+          "source_page_url": "https://www.pexels.com/video/colleagues-having-a-meeting-8033299/",
+          "creator": "Edmond Dantès",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8033299/business-colleagues-conference-corporate-8033299.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "5939456",
+          "source_page_url": "https://www.pexels.com/video/people-talking-to-each-other-5939456/",
+          "creator": "Theo  Decker",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5939456/pexels-photo-5939456.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "5977461",
+          "source_page_url": "https://www.pexels.com/video/a-man-and-a-woman-working-on-portable-cubicles-5977461/",
+          "creator": "Jack Sparrow",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5977461/armchair-business-businessman-businesswoman-5977461.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "8461065",
+          "source_page_url": "https://www.pexels.com/video/people-working-together-8461065/",
+          "creator": "Kampus Production",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8461065/pexels-photo-8461065.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_009.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_010",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "required_visible_content": "Security operations centre monitoring an active threat picture",
+      "queries": [
+        "security operations center monitors",
+        "cyber security control room screens",
+        "network monitoring center"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8347252",
+          "source_page_url": "https://www.pexels.com/video/man-talking-on-the-phone-8347252/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8347252/pexels-photo-8347252.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "38512646",
+          "source_page_url": "https://www.pexels.com/video/crypto-market-analysis-on-dual-screens-38512646/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38512646/4k-analysis-binance-bitcoin-38512646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "5377919",
+          "source_page_url": "https://www.pexels.com/video/person-having-a-video-call-on-the-computer-5377919/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5377919/pexels-photo-5377919.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8348720",
+          "source_page_url": "https://www.pexels.com/video/businesspeople-in-a-meeting-8348720/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8348720/pexels-photo-8348720.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "33230270",
+          "source_page_url": "https://www.pexels.com/video/dynamic-coding-environment-with-glowing-code-33230270/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33230270/abstract-analyzing-code-coding-33230270.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_010.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_011",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "required_visible_content": "Analyst reading network traffic during an incident",
+      "queries": [
+        "cyber security analyst working screens",
+        "IT security professional monitoring",
+        "analyst reviewing data screens"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "6266246",
+          "source_page_url": "https://www.pexels.com/video/a-man-typing-in-the-computer-while-holding-a-bank-card-6266246/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6266246/pexels-photo-6266246.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8347252",
+          "source_page_url": "https://www.pexels.com/video/man-talking-on-the-phone-8347252/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8347252/pexels-photo-8347252.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "7578643",
+          "source_page_url": "https://www.pexels.com/video/man-working-as-a-stock-market-7578643/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7578643/pexels-photo-7578643.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8348729",
+          "source_page_url": "https://www.pexels.com/video/man-looking-at-camera-8348729/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8348729/pexels-photo-8348729.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "30445104",
+          "source_page_url": "https://www.pexels.com/video/man-analyzing-cryptocurrency-on-laptops-30445104/",
+          "creator": "Artem Shutkin",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30445104/bitcoin-business-candlestick-graph-crypto-30445104.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_011.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_012",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "required_visible_content": "Server hall at night, the infrastructure under defence",
+      "queries": [
+        "server room night blue lights",
+        "data center dark server lights",
+        "network server racks lights"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "7141174",
+          "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-electronic-processor-7141174/",
+          "creator": "MrColo",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7141174/pexels-photo-7141174.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8756633",
+          "source_page_url": "https://www.pexels.com/video/people-dancing-on-top-of-a-table-8756633/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 11,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8756633/pexels-photo-8756633.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "32386531",
+          "source_page_url": "https://www.pexels.com/video/industrial-conveyor-system-with-red-lights-32386531/",
+          "creator": "Usman AbdulrasheedGambo",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/32386531/pexels-photo-32386531.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "34268782",
+          "source_page_url": "https://www.pexels.com/video/modern-programmer-working-on-multiscreen-setup-34268782/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34268782/business-code-coding-computer-34268782.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "38496192",
+          "source_page_url": "https://www.pexels.com/video/inserting-hard-drive-into-storage-device-38496192/",
+          "creator": "Media Hopper Studio",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38496192/computer-data-device-digital-38496192.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "38557067",
+          "source_page_url": "https://www.pexels.com/video/dynamic-cryptocurrency-market-analysis-setup-38557067/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38557067/4k-analysis-binance-bitcoin-38557067.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_012.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_013",
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "required_visible_content": "Large-scale network activity visualised on operator displays",
+      "queries": [
+        "network visualization data screens",
+        "global network map monitoring screen",
+        "digital network connections display"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "38512646",
+          "source_page_url": "https://www.pexels.com/video/crypto-market-analysis-on-dual-screens-38512646/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38512646/4k-analysis-binance-bitcoin-38512646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "38557069",
+          "source_page_url": "https://www.pexels.com/video/dynamic-stock-market-display-analysis-38557069/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38557069/analysis-candles-computer-data-38557069.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "34279733",
+          "source_page_url": "https://www.pexels.com/video/modern-programmer-s-workspace-with-code-display-34279733/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34279733/ambient-code-coding-colorful-34279733.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "30767274",
+          "source_page_url": "https://www.pexels.com/video/dynamic-rotating-digital-geometric-shape-30767274/",
+          "creator": "Rostislav Uzunov",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30767274/holographic-glitch-abstract-3d-figure-animation-30767274.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8348320",
+          "source_page_url": "https://www.pexels.com/video/man-using-tablet-at-the-office-8348320/",
+          "creator": "Kampus Production",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8348320/pexels-photo-8348320.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "38557067",
+          "source_page_url": "https://www.pexels.com/video/dynamic-cryptocurrency-market-analysis-setup-38557067/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38557067/4k-analysis-binance-bitcoin-38557067.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_013.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_014",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "required_visible_content": "Biosafety laboratory work under protective equipment",
+      "queries": [
+        "scientist laboratory protective equipment",
+        "biosafety laboratory researcher working",
+        "medical research laboratory scientist"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8534740",
+          "source_page_url": "https://www.pexels.com/video/chemists-doing-experiment-inside-the-laboratory-8534740/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534740/4k-analyzing-biotechnology-blue-8534740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "4121126",
+          "source_page_url": "https://www.pexels.com/video/lab-laboratory-medical-medicine-4121126/",
+          "creator": "Edward Jenner",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4121126/pexels-photo-4121126.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8534747",
+          "source_page_url": "https://www.pexels.com/video/a-women-experimenting-in-the-laboratory-8534747/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534747/4k-analyzing-biotechnology-chemical-8534747.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8381452",
+          "source_page_url": "https://www.pexels.com/video/a-scientist-working-inside-a-laboratory-8381452/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381452/pexels-photo-8381452.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8381324",
+          "source_page_url": "https://www.pexels.com/video/a-man-wearing-goggles-8381324/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381324/pexels-photo-8381324.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "4121058",
+          "source_page_url": "https://www.pexels.com/video/a-woman-looking-through-a-microscope-while-typing-on-her-laptop-4121058/",
+          "creator": "Edward Jenner",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4121058/pexels-photo-4121058.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_014.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_015",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "required_visible_content": "Researcher working inside a containment cabinet",
+      "queries": [
+        "laboratory fume hood scientist working",
+        "biosafety cabinet laboratory work",
+        "scientist laboratory sterile work"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8534740",
+          "source_page_url": "https://www.pexels.com/video/chemists-doing-experiment-inside-the-laboratory-8534740/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534740/4k-analyzing-biotechnology-blue-8534740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8940768",
+          "source_page_url": "https://www.pexels.com/video/a-lab-technician-working-with-samples-8940768/",
+          "creator": "Thirdman",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8940768/biochemistry-biology-blood-chemistry-8940768.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8534602",
+          "source_page_url": "https://www.pexels.com/video/a-person-sitting-at-the-table-8534602/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534602/4k-analyzing-biotechnology-chemical-8534602.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8940762",
+          "source_page_url": "https://www.pexels.com/video/a-person-checking-the-specimens-in-laboratory-8940762/",
+          "creator": "Thirdman",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8940762/pexels-photo-8940762.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8534747",
+          "source_page_url": "https://www.pexels.com/video/a-women-experimenting-in-the-laboratory-8534747/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534747/4k-analyzing-biotechnology-chemical-8534747.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "8381452",
+          "source_page_url": "https://www.pexels.com/video/a-scientist-working-inside-a-laboratory-8381452/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381452/pexels-photo-8381452.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_015.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_016",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "required_visible_content": "Controlled access into a secured research facility",
+      "queries": [
+        "secure door access control facility",
+        "laboratory restricted access entrance",
+        "security access card door"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "7251756",
+          "source_page_url": "https://www.pexels.com/video/a-person-entering-a-train-station-7251756/",
+          "creator": "MART  PRODUCTION",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7251756/pexels-photo-7251756.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "13008924",
+          "source_page_url": "https://www.pexels.com/video/women-hitting-with-shoulders-13008924/",
+          "creator": "Gabe H",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/13008924/pexels-photo-13008924.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "9574129",
+          "source_page_url": "https://www.pexels.com/video/view-of-a-empty-hallway-9574129/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/9574129/pexels-photo-9574129.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8381327",
+          "source_page_url": "https://www.pexels.com/video/automated-analysers-in-a-laboratory-8381327/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381327/pexels-photo-8381327.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8381315",
+          "source_page_url": "https://www.pexels.com/video/close-up-of-an-automated-analyser-8381315/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381315/pexels-photo-8381315.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "13008918",
+          "source_page_url": "https://www.pexels.com/video/woman-wearing-cap-entering-building-13008918/",
+          "creator": "Gabe H",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/13008918/pexels-photo-13008918.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_016.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_017",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "required_visible_content": "A person absorbed in a scrolling feed in ordinary surroundings",
+      "queries": [
+        "person scrolling phone social media",
+        "woman looking at smartphone street",
+        "people using phones public"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "6963822",
+          "source_page_url": "https://www.pexels.com/video/close-up-video-of-a-woman-using-a-cellphone-6963822/",
+          "creator": "cottonbro studio",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6963822/pexels-photo-6963822.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "5045514",
+          "source_page_url": "https://www.pexels.com/video/browsing-through-pictures-in-a-mobile-phone-5045514/",
+          "creator": "Ketut Subiyanto",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5045514/pexels-photo-5045514.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "17586685",
+          "source_page_url": "https://www.pexels.com/video/girl-using-phone-device-at-home-17586685/",
+          "creator": "Nathan J Hilton",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/17586685/bokeh-browse-cell-phone-communication-17586685.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "6413979",
+          "source_page_url": "https://www.pexels.com/video/a-woman-on-a-video-call-6413979/",
+          "creator": "RDNE Stock project",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6413979/pexels-photo-6413979.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "13805048",
+          "source_page_url": "https://www.pexels.com/video/a-woman-taking-photos-of-a-building-with-her-phone-13805048/",
+          "creator": "utopia 36",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/13805048/pexels-photo-13805048.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "5045928",
+          "source_page_url": "https://www.pexels.com/video/women-chatting-while-checking-the-mobile-phone-5045928/",
+          "creator": "Ketut Subiyanto",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5045928/pexels-photo-5045928.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_017.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_018",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "required_visible_content": "Many people each attending to their own screen",
+      "queries": [
+        "crowd people looking at phones",
+        "commuters using smartphones train",
+        "people smartphones public transport"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "38471370",
+          "source_page_url": "https://www.pexels.com/video/nighttime-celebration-with-crowd-of-people-38471370/",
+          "creator": "Ludovic Delot",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38471370/pexels-photo-38471370.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "38471421",
+          "source_page_url": "https://www.pexels.com/video/energetic-night-celebration-with-youthful-crowd-38471421/",
+          "creator": "Ludovic Delot",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38471421/pexels-photo-38471421.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8632188",
+          "source_page_url": "https://www.pexels.com/video/people-busy-talking-8632188/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8632188/pexels-photo-8632188.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "3252019",
+          "source_page_url": "https://www.pexels.com/video/a-group-of-people-standing-side-by-side-with-one-another-are-busy-using-their-cellular-phones-3252019/",
+          "creator": "fauxels",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/3252019/free-video-3252019.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "3248177",
+          "source_page_url": "https://www.pexels.com/video/people-busy-with-their-gadgets-3248177/",
+          "creator": "fauxels",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/3248177/free-video-3248177.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "3252992",
+          "source_page_url": "https://www.pexels.com/video/group-of-people-using-gadgets-at-the-same-time-3252992/",
+          "creator": "fauxels",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/3252992/free-video-3252992.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_018.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_019",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "required_visible_content": "Office work being carried out through software",
+      "queries": [
+        "office worker using computer software",
+        "professional working laptop office",
+        "employee working computer desk"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8632783",
+          "source_page_url": "https://www.pexels.com/video/person-drinking-coffee-while-using-a-laptop-8632783/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8632783/pexels-photo-8632783.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "12283404",
+          "source_page_url": "https://www.pexels.com/video/close-up-of-people-working-with-computers-in-an-office-12283404/",
+          "creator": "utopia 36",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/12283404/business-ideas-it-office-job-office-meeting-12283404.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "3255225",
+          "source_page_url": "https://www.pexels.com/video/a-woman-busy-typing-on-a-computer-keyboard-3255225/",
+          "creator": "fauxels",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/3255225/free-video-3255225.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "3252423",
+          "source_page_url": "https://www.pexels.com/video/two-people-working-with-a-laptop-3252423/",
+          "creator": "fauxels",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/3252423/free-video-3252423.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7651614",
+          "source_page_url": "https://www.pexels.com/video/male-employee-working-on-his-laptop-7651614/",
+          "creator": "Kindel Media",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7651614/access-achievement-adult-analysis-7651614.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_019.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_020",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "required_visible_content": "A workplace where human and automated steps sit side by side",
+      "queries": [
+        "automated warehouse workers technology",
+        "factory workers automation machinery",
+        "modern workplace automation"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "4280746",
+          "source_page_url": "https://www.pexels.com/video/men-talking-while-walking-in-the-warehouse-4280746/",
+          "creator": "Tiger Lily",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4280746/pexels-photo-4280746.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "32243654",
+          "source_page_url": "https://www.pexels.com/video/warehouse-operations-with-forklift-and-workers-32243654/",
+          "creator": "Usman AbdulrasheedGambo",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/32243654/pexels-photo-32243654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "4284181",
+          "source_page_url": "https://www.pexels.com/video/people-talking-in-the-warehouse-4284181/",
+          "creator": "Tiger Lily",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4284181/construction-materials-from-above-hardware-store-logistic-4284181.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "31370992",
+          "source_page_url": "https://www.pexels.com/video/textile-factory-workers-operating-machinery-31370992/",
+          "creator": "EqualStock IN",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/31370992/blue-collar-workers-blue-collar-workers-factory-worker-indian-blue-collar-workers-31370992.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "31006321",
+          "source_page_url": "https://www.pexels.com/video/textile-workers-operating-machines-in-factory-31006321/",
+          "creator": "EqualStock IN",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/31006321/blue-collar-workers-cotton-factory-worker-textile-31006321.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "31006555",
+          "source_page_url": "https://www.pexels.com/video/textile-worker-operating-machinery-in-factory-31006555/",
+          "creator": "EqualStock IN",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/31006555/blue-collar-workers-cotton-factory-worker-textile-31006555.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_020.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_021",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "required_visible_content": "Hyperscale data centre seen from outside",
+      "queries": [
+        "data center building exterior aerial",
+        "large data center facility outside",
+        "industrial technology facility aerial"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "2254305",
+          "source_page_url": "https://www.pexels.com/video/brown-building-with-glass-windows-2254305/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/2254305/free-video-2254305.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "33499539",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-modern-office-building-33499539/",
+          "creator": "David Pickup |  Advertising & Marketing  🇬🇧",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33499539/pexels-photo-33499539.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33601045",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-industrial-warehouse-roofs-with-solar-panels-33601045/",
+          "creator": "Altaf Shah",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33601045/pexels-photo-33601045.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "7403336",
+          "source_page_url": "https://www.pexels.com/video/drone-video-of-a-hot-air-balloon-flying-over-an-industrial-park-7403336/",
+          "creator": "Jozef Papp",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7403336/4-k-video-aerial-air-balloon-7403336.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "32425275",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-industrial-area-and-parking-lot-32425275/",
+          "creator": "Altaf Shah",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/32425275/pexels-photo-32425275.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "4404666",
+          "source_page_url": "https://www.pexels.com/video/a-building-exterior-made-of-glass-panel-windows-4404666/",
+          "creator": "K",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4404666/pexels-photo-4404666.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_021.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_022",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "required_visible_content": "Dense compute racks concentrated in one hall",
+      "queries": [
+        "server racks data center rows",
+        "computer servers dense racks",
+        "data center hardware rows"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "38496192",
+          "source_page_url": "https://www.pexels.com/video/inserting-hard-drive-into-storage-device-38496192/",
+          "creator": "Media Hopper Studio",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38496192/computer-data-device-digital-38496192.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "18526833",
+          "source_page_url": "https://www.pexels.com/video/a-red-glowing-light-in-the-dark-18526833/",
+          "creator": "Pachon in Motion",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/18526833/3d-arcadian-cgi-digital-18526833.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "4292300",
+          "source_page_url": "https://www.pexels.com/video/a-man-scanning-stocks-in-the-warehouse-4292300/",
+          "creator": "Tiger Lily",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4292300/construction-materials-hardware-store-loading-men-4292300.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "18602155",
+          "source_page_url": "https://www.pexels.com/video/a-computer-screen-with-lines-and-dots-18602155/",
+          "creator": "Pachon in Motion",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/18602155/3d-club-digital-disco-18602155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "32386531",
+          "source_page_url": "https://www.pexels.com/video/industrial-conveyor-system-with-red-lights-32386531/",
+          "creator": "Usman AbdulrasheedGambo",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/32386531/pexels-photo-32386531.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "34645205",
+          "source_page_url": "https://www.pexels.com/video/futuristic-white-hexagonal-circuit-board-close-up-34645205/",
+          "creator": "Chandresh Uike",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34645205/3d-illustration-ai-application-artificial-34645205.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_022.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_023",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "required_visible_content": "Power and cooling plant that the compute depends on",
+      "queries": [
+        "data center cooling infrastructure",
+        "industrial cooling pipes facility",
+        "power infrastructure industrial plant"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "7141174",
+          "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-electronic-processor-7141174/",
+          "creator": "MrColo",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7141174/pexels-photo-7141174.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "35571994",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-construction-site-in-jaipur-35571994/",
+          "creator": "Nitin Khajotia",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/35571994/doctors-drone-footage-of-gims-jaipur-drone-shot-jaipur-35571994.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "20538709",
+          "source_page_url": "https://www.pexels.com/video/a-view-of-the-city-from-a-rooftop-20538709/",
+          "creator": "LayG Traveller",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/20538709/aerial-aerial-footage-apartments-asia-20538709.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "30243443",
+          "source_page_url": "https://www.pexels.com/video/industrial-power-plant-machinery-operations-30243443/",
+          "creator": "Sergei Starostin",
+          "duration_seconds": 11,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30243443/pexels-photo-30243443.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "31025202",
+          "source_page_url": "https://www.pexels.com/video/aerial-shot-of-industrial-facility-with-equipment-31025202/",
+          "creator": "K",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/31025202/pexels-photo-31025202.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7644222",
+          "source_page_url": "https://www.pexels.com/video/an-exit-signage-at-the-building-7644222/",
+          "creator": "Yaroslav Shuraev",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7644222/abandoned-abstract-achievement-airplane-7644222.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_023.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_024",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "European legislative building seen as an institution",
+      "queries": [
+        "european parliament building exterior",
+        "european union building brussels",
+        "government institution building europe"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "30746963",
+          "source_page_url": "https://www.pexels.com/video/modern-skyscrapers-and-pedestrians-in-rotterdam-30746963/",
+          "creator": "Tamas Babai",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30746963/center-hollandia-netherlands-rotterdam-30746963.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "26892466",
+          "source_page_url": "https://www.pexels.com/video/a-view-of-a-city-with-tall-buildings-and-a-river-26892466/",
+          "creator": "Florian Delée",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/26892466/2024-buttes-chaumont-drone-video-eiffel-tower-26892466.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "34430011",
+          "source_page_url": "https://www.pexels.com/video/drone-view-of-budapest-parliament-building-34430011/",
+          "creator": "K",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34430011/aerial-budapest-city-drone-34430011.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "30740060",
+          "source_page_url": "https://www.pexels.com/video/european-union-flag-waving-in-the-sky-30740060/",
+          "creator": "Samar Layek",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30740060/4k-4k-resolution-4k-video-aqua-blue-30740060.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "19580344",
+          "source_page_url": "https://www.pexels.com/video/bucharesht-parlament-19580344/",
+          "creator": "Arnold Hazisllari",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/19580344/architectural-building-big-bulding-bucharesht-building-19580344.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "30579904",
+          "source_page_url": "https://www.pexels.com/video/french-flag-waving-against-blue-sky-30579904/",
+          "creator": "Samar Layek",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30579904/4k-4k-resolution-4k-video-blue-30579904.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_024.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_025",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "European Union flags outside an official building",
+      "queries": [
+        "european union flags building",
+        "EU flags waving institution",
+        "european flags government"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "31452793",
+          "source_page_url": "https://www.pexels.com/video/italian-flags-waving-at-milan-train-station-31452793/",
+          "creator": "Earth Photart",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/31452793/4-k-video-4k-4k-video-beauty-31452793.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "33780453",
+          "source_page_url": "https://www.pexels.com/video/swiss-and-eu-flags-at-bundesplatz-bern-33780453/",
+          "creator": "Christian Wasserfallen",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33780453/bern-bundesplatz-eidgenossen-eu-33780453.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "30579899",
+          "source_page_url": "https://www.pexels.com/video/french-flag-waving-under-blue-sky-30579899/",
+          "creator": "Samar Layek",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30579899/4k-4k-resolution-4k-video-blue-30579899.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "10956356",
+          "source_page_url": "https://www.pexels.com/video/the-european-union-flag-waving-on-a-pole-10956356/",
+          "creator": "Samar Layek",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/10956356/country-flag-eu-europe-european-10956356.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "30156205",
+          "source_page_url": "https://www.pexels.com/video/european-union-flag-waving-against-blue-sky-30156205/",
+          "creator": "Tamas Babai",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30156205/europe-european-union-flag-flag-union-30156205.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "30740060",
+          "source_page_url": "https://www.pexels.com/video/european-union-flag-waving-in-the-sky-30740060/",
+          "creator": "Samar Layek",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30740060/4k-4k-resolution-4k-video-aqua-blue-30740060.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_025.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_026",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "Formal chamber where obligations are debated",
+      "queries": [
+        "parliament chamber session seats",
+        "legislative assembly hall interior",
+        "conference hall government meeting"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "30801301",
+          "source_page_url": "https://www.pexels.com/video/ornate-ballroom-ceiling-with-chandelier-in-view-30801301/",
+          "creator": "David Pickup |  Advertising & Marketing  🇬🇧",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30801301/pexels-photo-30801301.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "32537398",
+          "source_page_url": "https://www.pexels.com/video/exploring-the-grand-architectural-museum-interior-32537398/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/32537398/pexels-photo-32537398.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "34668548",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-utah-state-capitol-building-34668548/",
+          "creator": "Michael",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34668548/pexels-photo-34668548.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "5823863",
+          "source_page_url": "https://www.pexels.com/video/main-hallway-of-a-museum-5823863/",
+          "creator": "Charlotte May",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5823863/pexels-photo-5823863.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "6952047",
+          "source_page_url": "https://www.pexels.com/video/people-talking-in-the-conference-room-6952047/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6952047/conference-room-conversation-daylight-diverse-6952047.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "6952224",
+          "source_page_url": "https://www.pexels.com/video/a-woman-speaking-on-a-podium-with-men-by-her-side-while-wearing-face-masks-6952224/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6952224/candidate-conference-room-covid-19-diverse-6952224.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_026.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_027",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "Officials moving through an institutional corridor",
+      "queries": [
+        "officials walking government corridor",
+        "business people walking institution hallway",
+        "people walking office corridor formal"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "38822906",
+          "source_page_url": "https://www.pexels.com/video/walkthrough-of-historic-shamian-island-guangzhou-38822906/",
+          "creator": "LayG Traveller",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38822906/asia-travel-china-tourism-china-travel-china-travel-vlog-38822906.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "31256901",
+          "source_page_url": "https://www.pexels.com/video/busy-walkway-in-modern-uk-airport-terminal-31256901/",
+          "creator": "Maurice Supple",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/31256901/4k-airport-footage-air-travel-uk-airplane-taxiing-airport-arrivals-31256901.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "4105022",
+          "source_page_url": "https://www.pexels.com/video/a-woman-raising-her-arms-in-success-while-talking-on-her-cellphone-4105022/",
+          "creator": "Gustavo Fring",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4105022/pexels-photo-4105022.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "6036724",
+          "source_page_url": "https://www.pexels.com/video/a-elderly-man-walking-while-pulling-his-luggage-in-the-hallway-of-an-airport-6036724/",
+          "creator": "Gustavo Fring",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6036724/pexels-photo-6036724.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "6952088",
+          "source_page_url": "https://www.pexels.com/video/people-conversing-while-waiting-in-the-hallway-6952088/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6952088/business-conversation-diverse-emotional-6952088.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "3747853",
+          "source_page_url": "https://www.pexels.com/video/people-using-the-escalator-and-stairs-on-an-airport-3747853/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/3747853/pexels-photo-3747853.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_027.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_028",
+      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+      "required_visible_content": "Compute capacity being measured and monitored",
+      "queries": [
+        "computer processor server monitoring",
+        "GPU hardware close up technology",
+        "computer hardware components"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "7141174",
+          "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-electronic-processor-7141174/",
+          "creator": "MrColo",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7141174/pexels-photo-7141174.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "15517230",
+          "source_page_url": "https://www.pexels.com/video/a-computer-screen-showing-a-video-editing-screen-15517230/",
+          "creator": "Ludovic Delot",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/15517230/animation-audio-audio-mixing-color-correction-15517230.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "38512646",
+          "source_page_url": "https://www.pexels.com/video/crypto-market-analysis-on-dual-screens-38512646/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38512646/4k-analysis-binance-bitcoin-38512646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "34279733",
+          "source_page_url": "https://www.pexels.com/video/modern-programmer-s-workspace-with-code-display-34279733/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34279733/ambient-code-coding-colorful-34279733.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "17992331",
+          "source_page_url": "https://www.pexels.com/video/colored-pc-keyboard-4k-17992331/",
+          "creator": "Yonathan Polo",
+          "duration_seconds": 12,
+          "width": 3840,
+          "height": 2160,
+          "poster_url": "https://images.pexels.com/videos/17992331/computer-keyboard-keyboard-17992331.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_028.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_029",
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "required_visible_content": "A small team working through paperwork and obligations",
+      "queries": [
+        "small business team paperwork documents",
+        "small team office reviewing documents",
+        "startup team working documents"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8512981",
+          "source_page_url": "https://www.pexels.com/video/women-looking-at-documents-together-in-an-office-8512981/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8512981/adolescent-aid-beautiful-blond-8512981.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8134447",
+          "source_page_url": "https://www.pexels.com/video/people-arguing-while-looking-at-documents-8134447/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8134447/adult-affection-book-series-business-8134447.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "7687792",
+          "source_page_url": "https://www.pexels.com/video/group-of-people-having-a-meeting-7687792/",
+          "creator": "Kindel Media",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7687792/adolescent-adult-analysis-asian-7687792.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8061443",
+          "source_page_url": "https://www.pexels.com/video/man-signing-on-a-paper-8061443/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8061443/bureaucracy-client-client-reception-contract-8061443.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "7660354",
+          "source_page_url": "https://www.pexels.com/video/assistant-showing-a-document-to-her-boss-7660354/",
+          "creator": "Alena Darmel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7660354/pexels-photo-7660354.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7687794",
+          "source_page_url": "https://www.pexels.com/video/man-listening-to-business-idea-7687794/",
+          "creator": "Kindel Media",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7687794/adolescent-adult-affection-analysis-7687794.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_029.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_030",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "required_visible_content": "Independent researchers working openly together",
+      "queries": [
+        "researchers collaborating open workspace",
+        "scientists discussing research together",
+        "academic team collaboration"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "5940061",
+          "source_page_url": "https://www.pexels.com/video/women-using-laptop-in-a-library-5940061/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5940061/pexels-photo-5940061.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "4630103",
+          "source_page_url": "https://www.pexels.com/video/video-of-women-working-together-4630103/",
+          "creator": "Ketut Subiyanto",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4630103/pexels-photo-4630103.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "5940166",
+          "source_page_url": "https://www.pexels.com/video/teacher-and-students-in-a-library-5940166/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5940166/pexels-photo-5940166.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "7687705",
+          "source_page_url": "https://www.pexels.com/video/a-woman-talking-about-a-chart-7687705/",
+          "creator": "Kindel Media",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7687705/analysis-asian-asian-man-asian-woman-7687705.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8534001",
+          "source_page_url": "https://www.pexels.com/video/man-and-woman-talking-while-in-the-laboratory-8534001/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534001/pexels-photo-8534001.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "8534747",
+          "source_page_url": "https://www.pexels.com/video/a-women-experimenting-in-the-laboratory-8534747/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534747/4k-analyzing-biotechnology-chemical-8534747.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_030.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_031",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "required_visible_content": "University laboratory adapting shared technical work",
+      "queries": [
+        "university laboratory students research",
+        "academic computer lab students",
+        "students working laboratory computers"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8534546",
+          "source_page_url": "https://www.pexels.com/video/man-and-woman-having-a-conversation-8534546/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534546/4k-analyzing-biotechnology-chemical-8534546.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8534740",
+          "source_page_url": "https://www.pexels.com/video/chemists-doing-experiment-inside-the-laboratory-8534740/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534740/4k-analyzing-biotechnology-blue-8534740.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8514321",
+          "source_page_url": "https://www.pexels.com/video/three-women-wearing-gloves-8514321/",
+          "creator": "Yaroslav Shuraev",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8514321/pexels-photo-8514321.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8534001",
+          "source_page_url": "https://www.pexels.com/video/man-and-woman-talking-while-in-the-laboratory-8534001/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534001/pexels-photo-8534001.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "5752546",
+          "source_page_url": "https://www.pexels.com/video/man-and-woman-doing-an-experiment-5752546/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5752546/adult-analysis-analyzing-biochemistry-5752546.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "5939927",
+          "source_page_url": "https://www.pexels.com/video/man-using-a-laptop-in-a-library-5939927/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5939927/pexels-photo-5939927.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_031.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_032",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "required_visible_content": "A developer adapting software on their own machine",
+      "queries": [
+        "developer coding laptop closeup",
+        "programmer working laptop code",
+        "person typing laptop code"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "13522087",
+          "source_page_url": "https://www.pexels.com/video/programming-on-laptop-13522087/",
+          "creator": "Raddy",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/13522087/code-coder-computer-programming-javascript-13522087.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "12283404",
+          "source_page_url": "https://www.pexels.com/video/close-up-of-people-working-with-computers-in-an-office-12283404/",
+          "creator": "utopia 36",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/12283404/business-ideas-it-office-job-office-meeting-12283404.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "34704445",
+          "source_page_url": "https://www.pexels.com/video/coding-and-technical-education-in-bangladesh-34704445/",
+          "creator": "Progga Media",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34704445/bangladesh-view-village-video-bangladesh-village-bangladesh-village-area-view-bangladesh-village-34704445.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "4351798",
+          "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-person-typing-on-laptop-keyboard-4351798/",
+          "creator": "Darlene Alderson",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4351798/pexels-photo-4351798.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8632783",
+          "source_page_url": "https://www.pexels.com/video/person-drinking-coffee-while-using-a-laptop-8632783/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8632783/pexels-photo-8632783.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "34771081",
+          "source_page_url": "https://www.pexels.com/video/typing-at-a-laptop-in-a-dimly-lit-room-34771081/",
+          "creator": "Anh Nguyen",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34771081/vietnamese-house-vietnamese-interior-34771081.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_032.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_033",
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "required_visible_content": "Centralised permission and monitoring over access",
+      "queries": [
+        "security control room monitoring cameras",
+        "surveillance monitoring center screens",
+        "control room operators screens"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8346903",
+          "source_page_url": "https://www.pexels.com/video/computer-monitors-on-the-table-8346903/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8346903/pexels-photo-8346903.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8347251",
+          "source_page_url": "https://www.pexels.com/video/man-wearing-corporate-attire-talking-on-the-phone-8347251/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8347251/pexels-photo-8347251.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "5377919",
+          "source_page_url": "https://www.pexels.com/video/person-having-a-video-call-on-the-computer-5377919/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5377919/pexels-photo-5377919.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "38512646",
+          "source_page_url": "https://www.pexels.com/video/crypto-market-analysis-on-dual-screens-38512646/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38512646/4k-analysis-binance-bitcoin-38512646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "38498182",
+          "source_page_url": "https://www.pexels.com/video/dynamic-cryptocurrency-data-on-dual-monitors-38498182/",
+          "creator": "Rafael Minguet Delgado",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38498182/4k-analysis-binance-bitcoin-38498182.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "27562410",
+          "source_page_url": "https://www.pexels.com/video/cai-d-t-may-nh-27562410/",
+          "creator": "Phi Long",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/27562410/camera-filming-masa-a-w-may-nh-27562410.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_033.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_034",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "Independent reviewers going through documentation together",
+      "queries": [
+        "auditors reviewing documents together",
+        "professionals examining paperwork meeting",
+        "team reviewing documents table"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8512981",
+          "source_page_url": "https://www.pexels.com/video/women-looking-at-documents-together-in-an-office-8512981/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8512981/adolescent-aid-beautiful-blond-8512981.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8134447",
+          "source_page_url": "https://www.pexels.com/video/people-arguing-while-looking-at-documents-8134447/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8134447/adult-affection-book-series-business-8134447.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "6774059",
+          "source_page_url": "https://www.pexels.com/video/business-analytics-presentation-in-a-business-meeting-6774059/",
+          "creator": "Kindel Media",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6774059/brainstorming-business-business-people-businessmen-6774059.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8061443",
+          "source_page_url": "https://www.pexels.com/video/man-signing-on-a-paper-8061443/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8061443/bureaucracy-client-client-reception-contract-8061443.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8425702",
+          "source_page_url": "https://www.pexels.com/video/businessperson-reviewing-documents-8425702/",
+          "creator": "Kampus Production",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8425702/pexels-photo-8425702.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7646442",
+          "source_page_url": "https://www.pexels.com/video/a-man-looking-at-the-documents-7646442/",
+          "creator": "Alena Darmel",
+          "duration_seconds": 13,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7646442/achievement-adolescent-adult-bald-7646442.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_034.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_035",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "A technical evaluator methodically testing a system",
+      "queries": [
+        "engineer testing equipment laboratory",
+        "technician measuring electronics test",
+        "quality control testing technician"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8327148",
+          "source_page_url": "https://www.pexels.com/video/a-scientist-mixing-an-experiment-8327148/",
+          "creator": "Kindel Media",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8327148/adult-aid-analysis-analyzing-8327148.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8381327",
+          "source_page_url": "https://www.pexels.com/video/automated-analysers-in-a-laboratory-8381327/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381327/pexels-photo-8381327.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "8540175",
+          "source_page_url": "https://www.pexels.com/video/a-person-putting-a-colored-liquid-to-a-test-tube-8540175/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8540175/analysis-biochemistry-biology-biotechnology-8540175.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8381452",
+          "source_page_url": "https://www.pexels.com/video/a-scientist-working-inside-a-laboratory-8381452/",
+          "creator": "Pavel Danilyuk",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8381452/pexels-photo-8381452.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8534602",
+          "source_page_url": "https://www.pexels.com/video/a-person-sitting-at-the-table-8534602/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534602/4k-analyzing-biotechnology-chemical-8534602.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7314035",
+          "source_page_url": "https://www.pexels.com/video/video-of-a-person-using-soldering-iron-7314035/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7314035/arts-and-crafts-blur-business-connection-7314035.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_035.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_036",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "A panel weighing findings around a table",
+      "queries": [
+        "panel discussion meeting room professionals",
+        "committee meeting table discussion",
+        "board meeting professionals table"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "6951445",
+          "source_page_url": "https://www.pexels.com/video/man-and-woman-on-a-meeting-6951445/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6951445/business-conference-room-daylight-discussion-6951445.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "7644023",
+          "source_page_url": "https://www.pexels.com/video/colleagues-having-a-meeting-at-the-conference-room-7644023/",
+          "creator": "MART  PRODUCTION",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7644023/pexels-photo-7644023.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "6951715",
+          "source_page_url": "https://www.pexels.com/video/a-woman-talking-on-a-microphone-while-wearing-a-face-mask-6951715/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6951715/business-conference-room-covid-19-diverse-6951715.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "6951400",
+          "source_page_url": "https://www.pexels.com/video/business-people-talking-in-the-conference-room-6951400/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6951400/business-conference-room-conversation-daylight-6951400.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "6952206",
+          "source_page_url": "https://www.pexels.com/video/elderly-man-talking-at-the-podium-6952206/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6952206/candidate-conference-room-diverse-man-6952206.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "6952138",
+          "source_page_url": "https://www.pexels.com/video/a-woman-in-a-podium-giving-a-speech-6952138/",
+          "creator": "Werner Pfennig",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6952138/conference-diverse-european-union-people-6952138.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_036.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_037",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "Inspection and measurement recorded step by step",
+      "queries": [
+        "inspection checklist clipboard laboratory",
+        "quality inspection measurement recording",
+        "technician checklist inspection"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "6520274",
+          "source_page_url": "https://www.pexels.com/video/paramedic-writing-6520274/",
+          "creator": "RDNE Stock project",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6520274/ambulance-clinic-corona-coronavirus-6520274.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "35606160",
+          "source_page_url": "https://www.pexels.com/video/efficient-checklist-management-for-productivity-35606160/",
+          "creator": "Jakub Zerdzicki",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/35606160/business-checkbox-checklist-clipboard-35606160.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "4121059",
+          "source_page_url": "https://www.pexels.com/video/a-man-looking-through-a-microscope-4121059/",
+          "creator": "Edward Jenner",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4121059/pexels-photo-4121059.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "8534001",
+          "source_page_url": "https://www.pexels.com/video/man-and-woman-talking-while-in-the-laboratory-8534001/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8534001/pexels-photo-8534001.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "8944540",
+          "source_page_url": "https://www.pexels.com/video/a-person-writing-a-signature-on-a-form-8944540/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8944540/pexels-photo-8944540.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "4267253",
+          "source_page_url": "https://www.pexels.com/video/person-in-a-hazmat-suit-with-a-blood-sample-4267253/",
+          "creator": "Gustavo Fring",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4267253/pexels-photo-4267253.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_037.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_038",
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "required_visible_content": "Formal reporting and record-keeping inside an institution",
+      "queries": [
+        "official documents filing office government",
+        "person filing report documents office",
+        "office paperwork records formal"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "4477807",
+          "source_page_url": "https://www.pexels.com/video/man-and-woman-talking-4477807/",
+          "creator": "August de Richelieu",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4477807/advocacy-jurist-law-lawyer-4477807.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8135578",
+          "source_page_url": "https://www.pexels.com/video/person-reading-a-divorce-decree-8135578/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8135578/pexels-photo-8135578.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "7710340",
+          "source_page_url": "https://www.pexels.com/video/documents-on-the-table-7710340/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 13,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7710340/book-book-bindings-business-computer-7710340.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "7710454",
+          "source_page_url": "https://www.pexels.com/video/close-up-view-of-a-person-looking-at-documents-7710454/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 13,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7710454/adult-blur-book-book-bindings-7710454.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "7710597",
+          "source_page_url": "https://www.pexels.com/video/people-looking-at-work-documents-7710597/",
+          "creator": "https://kaboompics.com/",
+          "duration_seconds": 13,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7710597/achievement-banking-business-coffee-7710597.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "4475908",
+          "source_page_url": "https://www.pexels.com/video/secretary-showing-a-paper-to-a-lawyer-4475908/",
+          "creator": "August de Richelieu",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4475908/pexels-photo-4475908.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_038.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_039",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Ordinary people moving through a city street",
+      "queries": [
+        "people walking city street crowd",
+        "pedestrians crossing street city",
+        "city street people walking"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "29152589",
+          "source_page_url": "https://www.pexels.com/video/istanbul-urban-transit-busy-day-on-metrobus-lane-29152589/",
+          "creator": "Sururi Ballıdağ Director",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/29152589/2024-istanbul-29152589.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "6229552",
+          "source_page_url": "https://www.pexels.com/video/video-of-a-crowded-street-6229552/",
+          "creator": "Bonus Studio",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6229552/pexels-photo-6229552.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "19912796",
+          "source_page_url": "https://www.pexels.com/video/street-in-toronto-19912796/",
+          "creator": "WeStarMoney  Rec",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/19912796/trafic-19912796.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "2881980",
+          "source_page_url": "https://www.pexels.com/video/people-waiting-to-cross-a-street-on-the-pedestrian-lane-2881980/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/2881980/free-video-2881980.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "11780982",
+          "source_page_url": "https://www.pexels.com/video/time-lapse-of-cars-on-the-road-11780982/",
+          "creator": "Sergei Skrynnik",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/11780982/pexels-photo-11780982.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "34762053",
+          "source_page_url": "https://www.pexels.com/video/bustling-city-street-in-urban-turkey-34762053/",
+          "creator": "Talha Uğuz",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34762053/bustling-streets-city-life-city-tour-cityscape-34762053.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_039.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_040",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Everyday commuting life at human scale",
+      "queries": [
+        "commuters train station morning",
+        "people commuting public transport",
+        "passengers station commute"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "5678013",
+          "source_page_url": "https://www.pexels.com/video/a-train-passing-by-5678013/",
+          "creator": "ROMAN ODINTSOV",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5678013/pexels-photo-5678013.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "35778931",
+          "source_page_url": "https://www.pexels.com/video/modern-subway-station-with-commuters-35778931/",
+          "creator": "Sururi Ballıdağ Director",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/35778931/2026-35778931.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "30070218",
+          "source_page_url": "https://www.pexels.com/video/fast-paced-london-underground-train-ride-30070218/",
+          "creator": "john smith",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30070218/subway-30070218.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "30364860",
+          "source_page_url": "https://www.pexels.com/video/tokyo-subway-train-arrival-at-platform-30364860/",
+          "creator": "Bobby Brown",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/30364860/dji-30364860.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "29152589",
+          "source_page_url": "https://www.pexels.com/video/istanbul-urban-transit-busy-day-on-metrobus-lane-29152589/",
+          "creator": "Sururi Ballıdağ Director",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/29152589/2024-istanbul-29152589.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "27689869",
+          "source_page_url": "https://www.pexels.com/video/people-are-walking-down-an-escalator-in-a-subway-27689869/",
+          "creator": "Martyn Day",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/27689869/mode-of-transportation-passengers-underground-station-27689869.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_040.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_041",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Domestic, ordinary life away from the technology",
+      "queries": [
+        "family home living room evening",
+        "people at home ordinary life",
+        "home interior family evening"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "7924408",
+          "source_page_url": "https://www.pexels.com/video/brother-and-sister-using-laptop-together-7924408/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7924408/pexels-photo-7924408.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "36778205",
+          "source_page_url": "https://www.pexels.com/video/modern-cozy-living-room-interior-design-36778205/",
+          "creator": "Curtis Adams",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/36778205/pexels-photo-36778205.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "5998161",
+          "source_page_url": "https://www.pexels.com/video/woman-using-laptop-while-sitting-on-sofa-5998161/",
+          "creator": "cottonbro studio",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5998161/pexels-photo-5998161.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "7924413",
+          "source_page_url": "https://www.pexels.com/video/elderly-man-reading-book-to-a-girl-7924413/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7924413/pexels-photo-7924413.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "6808072",
+          "source_page_url": "https://www.pexels.com/video/a-woman-preparing-healthy-foods-6808072/",
+          "creator": "Michelle Leman",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6808072/pexels-photo-6808072.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7394103",
+          "source_page_url": "https://www.pexels.com/video/mother-and-child-talking-7394103/",
+          "creator": "Max Vakhtbovych",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7394103/apartment-child-comfort-couple-7394103.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_041.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_042",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Return to the corridor of the machine itself",
+      "queries": [
+        "data center corridor servers walking",
+        "server room aisle perspective",
+        "data center hallway servers"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "9574129",
+          "source_page_url": "https://www.pexels.com/video/view-of-a-empty-hallway-9574129/",
+          "creator": "Tima Miroshnichenko",
+          "duration_seconds": 12,
+          "width": 2048,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/9574129/pexels-photo-9574129.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "38822906",
+          "source_page_url": "https://www.pexels.com/video/walkthrough-of-historic-shamian-island-guangzhou-38822906/",
+          "creator": "LayG Traveller",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38822906/asia-travel-china-tourism-china-travel-china-travel-vlog-38822906.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "34322136",
+          "source_page_url": "https://www.pexels.com/video/bustling-indoor-market-walkthrough-scene-34322136/",
+          "creator": "Özgür Sürmeli",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34322136/people-shopping-at-a-local-street-market-34322136.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "5354531",
+          "source_page_url": "https://www.pexels.com/video/spin-shot-inside-the-footbridge-5354531/",
+          "creator": "Roberto Hund",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5354531/pexels-photo-5354531.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "4761950",
+          "source_page_url": "https://www.pexels.com/video/a-couple-walking-in-the-underpass-hallways-4761950/",
+          "creator": "cottonbro studio",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4761950/anonymouse-couple-electric-fluorescent-light-4761950.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "7651615",
+          "source_page_url": "https://www.pexels.com/video/a-man-is-walking-bringing-document-7651615/",
+          "creator": "Kindel Media",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7651615/achievement-adult-airport-analysis-7651615.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_042.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_043",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "The concentrated compute the argument returns to",
+      "queries": [
+        "server racks wide shot data center",
+        "computer servers room wide",
+        "data center servers wide"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "8346903",
+          "source_page_url": "https://www.pexels.com/video/computer-monitors-on-the-table-8346903/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8346903/pexels-photo-8346903.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "8347237",
+          "source_page_url": "https://www.pexels.com/video/an-empty-office-8347237/",
+          "creator": "Kampus Production",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/8347237/pexels-photo-8347237.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "7141174",
+          "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-electronic-processor-7141174/",
+          "creator": "MrColo",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/7141174/pexels-photo-7141174.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "38496192",
+          "source_page_url": "https://www.pexels.com/video/inserting-hard-drive-into-storage-device-38496192/",
+          "creator": "Media Hopper Studio",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/38496192/computer-data-device-digital-38496192.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "4294436",
+          "source_page_url": "https://www.pexels.com/video/a-footage-inside-the-warehouse-4294436/",
+          "creator": "Tiger Lily",
+          "duration_seconds": 11,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4294436/pexels-photo-4294436.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_043.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_044",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "City at dusk, the scale the decision sits inside",
+      "queries": [
+        "city skyline dusk aerial",
+        "urban skyline evening lights",
+        "city aerial evening skyline"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "11690475",
+          "source_page_url": "https://www.pexels.com/video/birds-eye-view-of-mexico-city-downtown-11690475/",
+          "creator": "Davis Arenas",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/11690475/arquitectura-ciudad-building-city-drone-11690475.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "4375935",
+          "source_page_url": "https://www.pexels.com/video/drone-shot-of-the-city-during-sunset-4375935/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/4375935/pexels-photo-4375935.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "18065155",
+          "source_page_url": "https://www.pexels.com/video/las-vegas-casino-drone-shot-18065155/",
+          "creator": "Scott Unfried",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/18065155/casino-casinos-lasvegas-18065155.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "33811931",
+          "source_page_url": "https://www.pexels.com/video/aerial-view-of-panama-city-skyline-at-dusk-33811931/",
+          "creator": "K",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33811931/aerial-drone-panama-panama-city-33811931.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "35227180",
+          "source_page_url": "https://www.pexels.com/video/black-and-white-city-nightscape-aerial-view-35227180/",
+          "creator": "Altaf Shah",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/35227180/pexels-photo-35227180.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "32986328",
+          "source_page_url": "https://www.pexels.com/video/stunning-night-aerial-view-of-city-lights-32986328/",
+          "creator": "PUWOOK Kwak",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/32986328/4k-4k-aerial-4k-aerial-footage-4k-background-32986328.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_044.jpg",
+      "inspectable_candidate_count": 6
+    },
+    {
+      "scene_id": "scene_045",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "One person, one screen, the closing intimacy",
+      "queries": [
+        "person looking at computer screen alone",
+        "man working late computer screen",
+        "person alone screen night"
+      ],
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "rank": 1,
+          "provider_asset_id": "34771081",
+          "source_page_url": "https://www.pexels.com/video/typing-at-a-laptop-in-a-dimly-lit-room-34771081/",
+          "creator": "Anh Nguyen",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/34771081/vietnamese-house-vietnamese-interior-34771081.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 2,
+          "provider_asset_id": "33656654",
+          "source_page_url": "https://www.pexels.com/video/overworked-programmer-in-dimly-lit-room-33656654/",
+          "creator": "Attila Pergel",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33656654/computer-dystopia-multiple-monitors-program-code-33656654.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 3,
+          "provider_asset_id": "33812579",
+          "source_page_url": "https://www.pexels.com/video/creative-videographer-editing-in-neon-studio-33812579/",
+          "creator": "Alex Moliski",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33812579/art-studio-back-to-school-content-content-creation-33812579.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 4,
+          "provider_asset_id": "5281602",
+          "source_page_url": "https://www.pexels.com/video/man-talking-on-the-phone-and-using-his-computer-in-the-dark-5281602/",
+          "creator": "faizan amjed",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/5281602/adult-darkness-mobile-phone-5281602.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 5,
+          "provider_asset_id": "33812576",
+          "source_page_url": "https://www.pexels.com/video/creative-content-creation-in-neon-lit-studio-33812576/",
+          "creator": "Alex Moliski",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/33812576/art-studio-back-to-school-content-content-creation-33812576.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        },
+        {
+          "rank": 6,
+          "provider_asset_id": "6586284",
+          "source_page_url": "https://www.pexels.com/video/a-woman-looking-at-her-laptop-6586284/",
+          "creator": "Artem Podrez",
+          "duration_seconds": 12,
+          "width": 1920,
+          "height": 1080,
+          "poster_url": "https://images.pexels.com/videos/6586284/4k-4k-video-adult-alcohol-6586284.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200",
+          "metadata_score": 0,
+          "metadata_fully_matched": true
+        }
+      ],
+      "candidate_board": "qa/footage-candidate-boards/scene_045.jpg",
+      "inspectable_candidate_count": 6
+    }
+  ]
+}

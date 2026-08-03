@@ -9,7 +9,7 @@
   "slice_count_overrides": {},
   "source_plan": "research/footage_use_contracts.json",
   "old_project_asset_reuse_forbidden": true,
-  "generation_policy": "rebuild in progress: no footage is assigned until a fresh pool is acquired and frame-reviewed, then authored into research/footage_use_contracts.json",
+  "generation_policy": "claim-bound footage use contracts plus explicit validated overrides; editorial role aliases are normalized to canonical render roles; one scene may appear only at listed claim/slice targets; no automatic backfill, silent retirement or scene-id-wide reassignment",
   "review_completed_at": "2026-08-02T19:47:18.720Z",
   "authored_distribution": {
     "schema_version": "1.0",
@@ -36,7 +36,7 @@
   },
   "notes": "Authored against the exact 127-shot coverage diagnostic: 68 contextual-footage slices target 60.87% footage, keep evidence above 20%, keep graphics below 15%, cap uninterrupted evidence at 14.74 seconds, and land every editorial pause on footage.",
   "last_footage_use_contract_application": {
-    "generated_at": "2026-08-03T07:45:05.058Z",
+    "generated_at": "2026-08-03T09:05:41.656Z",
     "managed_scene_count": 0,
     "pruned_scene_count": 0,
     "assignment_count": 0,
