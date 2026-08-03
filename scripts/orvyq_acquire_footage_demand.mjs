@@ -977,6 +977,14 @@ export async function acquireDemandFootage(projectId) {
       reusableByScene.set(id, old);
     } else if (!item.direct_source) {
       pendingPexels.push(item);
+      // A clip this run is about to replace must stop reserving its provider
+      // id, or a pool that drifted onto the wrong assets keeps blocking the
+      // very selections it drifted away from -- project 004's scene_004 is
+      // pinned to the exact asset its scene_001 wrongly holds.
+      const replaced = String(previousByScene.get(id)?.provider_asset_id || "");
+      if (replaced && !(item.rejected_provider_asset_ids || []).map(String).includes(replaced)) {
+        usedIds.delete(replaced);
+      }
     }
   }
   const policy = plan.acquisition_policy || plan.policy || {};
