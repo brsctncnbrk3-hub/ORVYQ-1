@@ -23,18 +23,14 @@
     "blocking_claim_ids": [],
     "blocking_visual_asset_request_ids": [
       "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
-      "REQ_EVD_ANTHROPIC_AGENTIC_UPDATE_2026",
       "REQ_EVD_ANTHROPIC_ASL3_2025",
       "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
       "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
       "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
-      "REQ_EVD_EC_GPAI_GUIDANCE_2025",
       "REQ_EVD_EU_AI_ACT_2024",
       "REQ_EVD_IASR_2025",
-      "REQ_EVD_ILO_JOBS_2025",
       "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
-      "REQ_EVD_STANFORD_AI_INDEX_2025",
-      "REQ_EVD_UK_AISI_EVALUATIONS_2024"
+      "REQ_EVD_STANFORD_AI_INDEX_2025"
     ],
     "sections": [
       {
@@ -3369,7 +3365,7 @@
       }
     ],
     "visual_rebalance_plan": "direction/visual_rebalance_plan.json",
-    "generated_at": "2026-08-03T22:21:02.685Z",
+    "generated_at": "2026-08-03T22:58:13.104Z",
     "generated_total_duration_seconds": 844.133
   },
   "source_evidence_map": "research/evidence_map.json",

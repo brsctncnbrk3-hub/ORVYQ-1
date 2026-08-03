@@ -38,12 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "13253009",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
+  "approved_for_final_edit": true,
   "downloaded_at": "2026-08-03T18:26:50.241Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "e7fbd869e53457844ac7f32ebfbf4c0589860ead95ffd474a541f82c5d7871ef",
   "reviewed_contact_sheet_sha256": "5697d6bff49b6a0fff1947a786ee0fe22d4575f7003acb8776cdc6ec4c01262f",
-  "visual_qa_reason": "A textile worker handling output beside a running machine line with its own control panel. Human step and automated step adjacent in one frame, and no labour statistic is implied.",
-  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
+  "visual_qa_reason": "A textile worker handling output beside a running machine line with its own control panel. Human step and automated step adjacent in one frame, and no labour statistic is implied."
 }

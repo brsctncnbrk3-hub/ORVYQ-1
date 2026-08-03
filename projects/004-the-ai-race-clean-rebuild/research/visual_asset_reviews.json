@@ -535,7 +535,14 @@
           "narration_anchor": "is already settled. Then there's work. The evidence measures exposure more reliably than it predicts unemployment.",
           "semantic_rationale": "A workplace where human and automated steps sit side by side; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 3.84,
-          "trim_out_sec": 11.373
+          "trim_out_sec": 11.84
+        },
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "creation to distribution to change beliefs to broad societal effects. That is a real",
+          "semantic_rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.36
         }
       ]
     },
@@ -837,6 +844,20 @@
           "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 3.7,
           "trim_out_sec": 11.6
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "time. But that same company's own disclosures",
+          "semantic_rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 2.5
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "disclosures are useful evidence here. The cyber extortion case and the state -linked espionage case described",
+          "semantic_rationale": "Let the already approved claim-bound footage carry this brief pause without a dominant card overlay, preserving continuity and semantic fit.",
+          "trim_in_sec": 2.5,
+          "trim_out_sec": 9.733333
         }
       ]
     },

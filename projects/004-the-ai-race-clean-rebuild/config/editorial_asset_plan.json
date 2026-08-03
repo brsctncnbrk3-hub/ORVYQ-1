@@ -840,7 +840,7 @@
   },
   "notes": "Authored against the exact 127-shot coverage diagnostic: 68 contextual-footage slices target 60.87% footage, keep evidence above 20%, keep graphics below 15%, cap uninterrupted evidence at 14.74 seconds, and land every editorial pause on footage.",
   "last_footage_use_contract_application": {
-    "generated_at": "2026-08-03T22:21:03.419Z",
+    "generated_at": "2026-08-03T22:58:13.618Z",
     "managed_scene_count": 45,
     "pruned_scene_count": 0,
     "assignment_count": 76,
@@ -937,7 +937,7 @@
     "retired_paths": []
   },
   "last_footage_use_contract_staging": {
-    "generated_at": "2026-08-03T22:21:02.515Z",
+    "generated_at": "2026-08-03T22:58:12.915Z",
     "reason": "Stage contract-derived editorial assignments before rebuilding the full-production topology.",
     "assignment_count": 76,
     "managed_scene_count": 45,

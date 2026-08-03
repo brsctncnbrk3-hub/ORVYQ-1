@@ -721,15 +721,15 @@
     }
   ],
   "blocked_asset_request_ids": [
-    "REQ_EVD_ANTHROPIC_ASL3_2025",
     "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
-    "REQ_EVD_STANFORD_AI_INDEX_2025",
-    "REQ_EVD_IASR_2025",
-    "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
-    "REQ_EVD_EU_AI_ACT_2024",
+    "REQ_EVD_ANTHROPIC_ASL3_2025",
     "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
     "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
-    "REQ_EVD_NTIA_OPEN_WEIGHTS_2024"
+    "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+    "REQ_EVD_EU_AI_ACT_2024",
+    "REQ_EVD_IASR_2025",
+    "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
+    "REQ_EVD_STANFORD_AI_INDEX_2025"
   ],
   "materialization_note": "Only Candidate Validation may promote the declared official assets after download, page rendering, file verification and SHA-256 binding.",
   "visual_review_completed_at": "2026-08-03T22:21:03.871Z"

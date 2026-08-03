@@ -11,6 +11,246 @@
   },
   "requests": [
     {
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ASL3_2025",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_001_SAFETY_FRAMEWORKS",
+        "CLM_010_BIO_ASL3"
+      ],
+      "required_source": "Anthropic Claude 4 system-card PDF pages",
+      "required_content": "Official cover, precautionary deployment summary and CBRN evaluation page with the developer-authored caveats visible.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/anthropic_asl3_cover.png",
+        "assets/evidence/anthropic_asl3_abstract.png",
+        "assets/evidence/anthropic_asl3_cbrn_evaluation.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_ASL3_COVER",
+        "EVID_ASL3_ABSTRACT",
+        "EVID_ASL3_CBRN_EVALUATION"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+        "CLM_004_TEST_NOT_DEPLOYMENT"
+      ],
+      "required_source": "Anthropic Research official article figures",
+      "required_content": "Official controlled-simulation figures that visibly retain the fictional evaluation context and limitations.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/anthropic_agentic_figure_01.png",
+        "assets/evidence/anthropic_agentic_figure_02.png",
+        "assets/evidence/anthropic_agentic_figure_03.png",
+        "assets/evidence/anthropic_agentic_figure_04.png",
+        "assets/evidence/anthropic_agentic_figure_05.png",
+        "assets/evidence/anthropic_agentic_figure_07.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_AGENTIC_FIGURE_01",
+        "EVID_AGENTIC_FIGURE_02",
+        "EVID_AGENTIC_FIGURE_03",
+        "EVID_AGENTIC_FIGURE_04",
+        "EVID_AGENTIC_FIGURE_05",
+        "EVID_AGENTIC_FIGURE_07"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_STANFORD_AI_INDEX_2025",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_002_COMPETITIVE_INCENTIVE",
+        "CLM_006_INVESTMENT_SCALE",
+        "CLM_007_FRONTIER_GAP",
+        "CLM_021_FINAL_SYNTHESIS"
+      ],
+      "required_source": "Stanford HAI 2025 AI Index PDF pages",
+      "required_content": "Official investment and frontier-gap figures with dates, benchmark scope and visible chart context preserved.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/stanford_ai_index_investment_page249.png",
+        "assets/evidence/stanford_ai_index_frontier_gap_page99.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_STANFORD_INVESTMENT_2024",
+        "EVID_STANFORD_FRONTIER_GAP"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_IASR_2025",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_011_SYNTHETIC_PERSUASION"
+      ],
+      "required_source": "International AI Safety Report official PDF page",
+      "required_content": "Official report page showing scalable persuasive content and the limits of downstream societal evidence.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/iasr_persuasion_page67.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_IASR_PERSUASION"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_013_MARKET_CONCENTRATION",
+        "CLM_021_FINAL_SYNTHESIS"
+      ],
+      "required_source": "UK CMA foundation-model update paper pages",
+      "required_content": "Official CMA pages showing assessed competition risks and critical-input access without implying unlawful conduct.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/cma_competition_risks_page12.png",
+        "assets/evidence/cma_critical_inputs_page14.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_CMA_COMPETITION_RISKS",
+        "EVID_CMA_CRITICAL_INPUTS"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_EU_AI_ACT_2024",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_014_EU_LAYERED_OBLIGATIONS",
+        "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+        "CLM_020_INCIDENT_REPORTING"
+      ],
+      "required_source": "Official EUR-Lex AI Act PDF pages",
+      "required_content": "Official Articles 51, 55 and 73 pages with their classifications, duties and reporting scope visible.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/eu_ai_act_article51_page83.png",
+        "assets/evidence/eu_ai_act_article55_page86.png",
+        "assets/evidence/eu_ai_act_article73_page101.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_EU_SYSTEMIC_CLASSIFICATION",
+        "EVID_EU_SYSTEMIC_DUTIES",
+        "EVID_EU_INCIDENT_REPORTING"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_008_CYBER_EXTORTION"
+      ],
+      "required_source": "Anthropic official cyber-misuse report PDF",
+      "required_content": "Official report page showing the disrupted campaign scale, sectors and extortion findings with date and attribution visible.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/anthropic_cyber_extortion_summary_page4.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_ANTHROPIC_CYBER_EXTORTION_SUMMARY"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_009_AGENTIC_ESPIONAGE"
+      ],
+      "required_source": "Anthropic official cyber-espionage report PDF",
+      "required_content": "Official executive-summary page showing the campaign, target count and reported 80–90% tactical autonomy estimate.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/anthropic_espionage_summary_page3.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_ANTHROPIC_ESPIONAGE_SUMMARY"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
+      "type": "primary_evidence",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_017_OPEN_WEIGHT_TRADEOFF",
+        "CLM_018_CLOSED_ACCESS_TRADEOFF"
+      ],
+      "required_source": "NTIA official open model weights report PDF",
+      "required_content": "Official overview and research-access pages that visibly preserve both benefits, risks and stated limitations.",
+      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
+      "forbidden_substitutes": [
+        "recreated document",
+        "decorative facsimile",
+        "secondary-source screenshot",
+        "asset from an earlier project"
+      ],
+      "resolved_asset_paths": [
+        "assets/evidence/ntia_open_weights_summary_page4.png",
+        "assets/evidence/ntia_open_weights_research_page34.png"
+      ],
+      "resolved_evidence_asset_ids": [
+        "EVID_NTIA_OPEN_WEIGHTS_SUMMARY",
+        "EVID_NTIA_OPEN_WEIGHTS_RESEARCH"
+      ]
+    },
+    {
       "asset_request_id": "REQ_FTG_SCENE_001",
       "type": "contextual_footage",
       "status": "ready",
@@ -683,246 +923,6 @@
       "required_source": "licensed claim-bound footage from the active acquisition plan",
       "resolved_asset_paths": [
         "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_ANTHROPIC_ASL3_2025",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_001_SAFETY_FRAMEWORKS",
-        "CLM_010_BIO_ASL3"
-      ],
-      "required_source": "Anthropic Claude 4 system-card PDF pages",
-      "required_content": "Official cover, precautionary deployment summary and CBRN evaluation page with the developer-authored caveats visible.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/anthropic_asl3_cover.png",
-        "assets/evidence/anthropic_asl3_abstract.png",
-        "assets/evidence/anthropic_asl3_cbrn_evaluation.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_ASL3_COVER",
-        "EVID_ASL3_ABSTRACT",
-        "EVID_ASL3_CBRN_EVALUATION"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
-        "CLM_004_TEST_NOT_DEPLOYMENT"
-      ],
-      "required_source": "Anthropic Research official article figures",
-      "required_content": "Official controlled-simulation figures that visibly retain the fictional evaluation context and limitations.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/anthropic_agentic_figure_01.png",
-        "assets/evidence/anthropic_agentic_figure_02.png",
-        "assets/evidence/anthropic_agentic_figure_03.png",
-        "assets/evidence/anthropic_agentic_figure_04.png",
-        "assets/evidence/anthropic_agentic_figure_05.png",
-        "assets/evidence/anthropic_agentic_figure_07.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_AGENTIC_FIGURE_01",
-        "EVID_AGENTIC_FIGURE_02",
-        "EVID_AGENTIC_FIGURE_03",
-        "EVID_AGENTIC_FIGURE_04",
-        "EVID_AGENTIC_FIGURE_05",
-        "EVID_AGENTIC_FIGURE_07"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_STANFORD_AI_INDEX_2025",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_002_COMPETITIVE_INCENTIVE",
-        "CLM_006_INVESTMENT_SCALE",
-        "CLM_007_FRONTIER_GAP",
-        "CLM_021_FINAL_SYNTHESIS"
-      ],
-      "required_source": "Stanford HAI 2025 AI Index PDF pages",
-      "required_content": "Official investment and frontier-gap figures with dates, benchmark scope and visible chart context preserved.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/stanford_ai_index_investment_page249.png",
-        "assets/evidence/stanford_ai_index_frontier_gap_page99.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_STANFORD_INVESTMENT_2024",
-        "EVID_STANFORD_FRONTIER_GAP"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_IASR_2025",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_011_SYNTHETIC_PERSUASION"
-      ],
-      "required_source": "International AI Safety Report official PDF page",
-      "required_content": "Official report page showing scalable persuasive content and the limits of downstream societal evidence.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/iasr_persuasion_page67.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_IASR_PERSUASION"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_013_MARKET_CONCENTRATION",
-        "CLM_021_FINAL_SYNTHESIS"
-      ],
-      "required_source": "UK CMA foundation-model update paper pages",
-      "required_content": "Official CMA pages showing assessed competition risks and critical-input access without implying unlawful conduct.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/cma_competition_risks_page12.png",
-        "assets/evidence/cma_critical_inputs_page14.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_CMA_COMPETITION_RISKS",
-        "EVID_CMA_CRITICAL_INPUTS"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_EU_AI_ACT_2024",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_014_EU_LAYERED_OBLIGATIONS",
-        "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
-        "CLM_020_INCIDENT_REPORTING"
-      ],
-      "required_source": "Official EUR-Lex AI Act PDF pages",
-      "required_content": "Official Articles 51, 55 and 73 pages with their classifications, duties and reporting scope visible.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/eu_ai_act_article51_page83.png",
-        "assets/evidence/eu_ai_act_article55_page86.png",
-        "assets/evidence/eu_ai_act_article73_page101.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_EU_SYSTEMIC_CLASSIFICATION",
-        "EVID_EU_SYSTEMIC_DUTIES",
-        "EVID_EU_INCIDENT_REPORTING"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_008_CYBER_EXTORTION"
-      ],
-      "required_source": "Anthropic official cyber-misuse report PDF",
-      "required_content": "Official report page showing the disrupted campaign scale, sectors and extortion findings with date and attribution visible.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/anthropic_cyber_extortion_summary_page4.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_ANTHROPIC_CYBER_EXTORTION_SUMMARY"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_009_AGENTIC_ESPIONAGE"
-      ],
-      "required_source": "Anthropic official cyber-espionage report PDF",
-      "required_content": "Official executive-summary page showing the campaign, target count and reported 80–90% tactical autonomy estimate.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/anthropic_espionage_summary_page3.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_ANTHROPIC_ESPIONAGE_SUMMARY"
-      ]
-    },
-    {
-      "asset_request_id": "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
-      "type": "primary_evidence",
-      "status": "pending_direct_asset",
-      "claim_ids": [
-        "CLM_017_OPEN_WEIGHT_TRADEOFF",
-        "CLM_018_CLOSED_ACCESS_TRADEOFF"
-      ],
-      "required_source": "NTIA official open model weights report PDF",
-      "required_content": "Official overview and research-access pages that visibly preserve both benefits, risks and stated limitations.",
-      "acceptance": "Candidate Validation must download the official bytes, render any declared PDF page, verify magic bytes and SHA-256, and resolve every listed canonical asset path.",
-      "forbidden_substitutes": [
-        "recreated document",
-        "decorative facsimile",
-        "secondary-source screenshot",
-        "asset from an earlier project"
-      ],
-      "resolved_asset_paths": [
-        "assets/evidence/ntia_open_weights_summary_page4.png",
-        "assets/evidence/ntia_open_weights_research_page34.png"
-      ],
-      "resolved_evidence_asset_ids": [
-        "EVID_NTIA_OPEN_WEIGHTS_SUMMARY",
-        "EVID_NTIA_OPEN_WEIGHTS_RESEARCH"
       ]
     }
   ]
