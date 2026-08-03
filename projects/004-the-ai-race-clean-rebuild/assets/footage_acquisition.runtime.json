@@ -1,7 +1,7 @@
 {
   "schema_version": "1.3-incremental-demand-led-semantic-metadata",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-03T11:35:52.661Z",
+  "generated_at": "2026-08-03T13:25:40.377Z",
   "source": "pexels",
   "license_url": "https://www.pexels.com/license/",
   "planned_asset_count": 34,
@@ -14,207 +14,207 @@
   "provider_unavailable": false,
   "records": [
     {
-      "path": "assets/footage/scene_001_16283a73e6b73cfe4876cc12.mp4",
+      "path": "assets/footage/scene_001_64f83425b7646e01b727c7ff.mp4",
       "scene_id": "scene_001",
-      "provider_asset_id": "34279733",
+      "provider_asset_id": "33656654",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_003_4136cd8ba18b4e8cbb8058dd.mp4",
+      "path": "assets/footage/scene_003_54195e8155b97ce97edd777c.mp4",
       "scene_id": "scene_003",
-      "provider_asset_id": "9573569",
+      "provider_asset_id": "8534544",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_004_29d8f37795126027ff32a0e4.mp4",
+      "path": "assets/footage/scene_004_9d2e82da9eced78df2dc7def.mp4",
       "scene_id": "scene_004",
-      "provider_asset_id": "33187808",
+      "provider_asset_id": "33230270",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4",
+      "path": "assets/footage/scene_005_53e0261d9fb3238211c71244.mp4",
       "scene_id": "scene_005",
-      "provider_asset_id": "17969418",
+      "provider_asset_id": "35241565",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_006_463958245578652d5f51c663.mp4",
+      "path": "assets/footage/scene_006_ec17c3027de8f7ed991e36d6.mp4",
       "scene_id": "scene_006",
-      "provider_asset_id": "8381327",
+      "provider_asset_id": "4121125",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_007_cf48c42b15be10e701c2fc28.mp4",
+      "path": "assets/footage/scene_007_7dcec4bc7d37a5e6ac68ef3d.mp4",
       "scene_id": "scene_007",
-      "provider_asset_id": "8170487",
+      "provider_asset_id": "7935037",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_008_4cd3bd367d7b854e8636620e.mp4",
+      "path": "assets/footage/scene_008_880103e81291b0e714325d52.mp4",
       "scene_id": "scene_008",
-      "provider_asset_id": "6950323",
+      "provider_asset_id": "29575342",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_009_062d23b640ce65c20f6a74d4.mp4",
+      "path": "assets/footage/scene_009_d4a85dad3d901f3ef7cfd5dd.mp4",
       "scene_id": "scene_009",
-      "provider_asset_id": "6194056",
+      "provider_asset_id": "8643481",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_014_9ae5f540abcbca00c744ac91.mp4",
+      "path": "assets/footage/scene_014_28b5d814ad4d0990009c5c54.mp4",
       "scene_id": "scene_014",
-      "provider_asset_id": "8534740",
+      "provider_asset_id": "8381452",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4",
+      "path": "assets/footage/scene_015_e5fe5ac3d48d4b1bf6f9865b.mp4",
       "scene_id": "scene_015",
-      "provider_asset_id": "8940768",
+      "provider_asset_id": "8534602",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_017_27b45d44d44c4ba992c14c2f.mp4",
+      "path": "assets/footage/scene_017_8bd21a438123e76632597041.mp4",
       "scene_id": "scene_017",
-      "provider_asset_id": "6963822",
+      "provider_asset_id": "5045514",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_018_5b32703be82ceacecffbe103.mp4",
+      "path": "assets/footage/scene_018_99e3c5fcd62589751a219fa8.mp4",
       "scene_id": "scene_018",
-      "provider_asset_id": "38471370",
+      "provider_asset_id": "38471421",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4",
+      "path": "assets/footage/scene_019_df7e04249b00aade32a4728a.mp4",
       "scene_id": "scene_019",
-      "provider_asset_id": "8632783",
+      "provider_asset_id": "12283404",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_020_2fb03ac5424462a495e99b73.mp4",
+      "path": "assets/footage/scene_020_4d10965a1f568d448e7000bc.mp4",
       "scene_id": "scene_020",
-      "provider_asset_id": "4280746",
+      "provider_asset_id": "32243654",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_023_3f392beefa3e0d96797e36f3.mp4",
+      "path": "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
       "scene_id": "scene_023",
-      "provider_asset_id": "7141174",
+      "provider_asset_id": "35571994",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_024_7a94a6191932d27f7d7d26b0.mp4",
+      "path": "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4",
       "scene_id": "scene_024",
-      "provider_asset_id": "34430011",
+      "provider_asset_id": "30740060",
       "role": "governance_context"
     },
     {
-      "path": "assets/footage/scene_025_6e6e89b434c3ad4d8dc163d9.mp4",
+      "path": "assets/footage/scene_025_60be956c393595fc3e0321aa.mp4",
       "scene_id": "scene_025",
-      "provider_asset_id": "33780453",
+      "provider_asset_id": "30579899",
       "role": "governance_context"
     },
     {
-      "path": "assets/footage/scene_027_503e34655ec8329333fa764f.mp4",
+      "path": "assets/footage/scene_027_77c40754d3fbf57cd7233cf5.mp4",
       "scene_id": "scene_027",
-      "provider_asset_id": "38822906",
+      "provider_asset_id": "31256901",
       "role": "governance_context"
     },
     {
-      "path": "assets/footage/scene_029_a355ee12b856c4f93970a938.mp4",
+      "path": "assets/footage/scene_029_839cdc1b998a76259f43b05a.mp4",
       "scene_id": "scene_029",
-      "provider_asset_id": "8512981",
+      "provider_asset_id": "8134447",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4",
+      "path": "assets/footage/scene_030_e2204b131ea4cba28c67330e.mp4",
       "scene_id": "scene_030",
-      "provider_asset_id": "5940061",
+      "provider_asset_id": "4630103",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_031_b8a4cbbdf375fe24d25d3835.mp4",
+      "path": "assets/footage/scene_031_d656afacb9002e1602fc7ee8.mp4",
       "scene_id": "scene_031",
-      "provider_asset_id": "8534546",
+      "provider_asset_id": "8514321",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4",
+      "path": "assets/footage/scene_032_1094b9f62e57bb495cd5d156.mp4",
       "scene_id": "scene_032",
-      "provider_asset_id": "13522087",
+      "provider_asset_id": "34704445",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_034_69cfac90d1544c4e335846f5.mp4",
+      "path": "assets/footage/scene_034_23e9876fb2899a486c7f5eb7.mp4",
       "scene_id": "scene_034",
-      "provider_asset_id": "8425702",
+      "provider_asset_id": "7646442",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_035_61249c23acf3b765104d567e.mp4",
+      "path": "assets/footage/scene_035_e9d6ef8d006b75fea5505bf0.mp4",
       "scene_id": "scene_035",
-      "provider_asset_id": "8327148",
+      "provider_asset_id": "8540175",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4",
+      "path": "assets/footage/scene_036_29356bd966ac20ea3006fa79.mp4",
       "scene_id": "scene_036",
-      "provider_asset_id": "6951445",
+      "provider_asset_id": "7644023",
       "role": "governance_context"
     },
     {
-      "path": "assets/footage/scene_037_053530ea53841f005188bfe5.mp4",
+      "path": "assets/footage/scene_037_17a4f587d8bdb9f7c87409ea.mp4",
       "scene_id": "scene_037",
-      "provider_asset_id": "6520274",
+      "provider_asset_id": "35606160",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_038_d359d79af42f712519d6fd3c.mp4",
+      "path": "assets/footage/scene_038_ab7ab46fa73a69f0a599c705.mp4",
       "scene_id": "scene_038",
-      "provider_asset_id": "7710340",
+      "provider_asset_id": "7710454",
       "role": "governance_context"
     },
     {
-      "path": "assets/footage/scene_039_48a91534d02a8292c164d622.mp4",
+      "path": "assets/footage/scene_039_fddc7eb398a2917e28a5773e.mp4",
       "scene_id": "scene_039",
-      "provider_asset_id": "29152589",
+      "provider_asset_id": "6229552",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_040_e9f6bf2cee5834681c81e777.mp4",
+      "path": "assets/footage/scene_040_f9a4dc36cebdaeaa3e773570.mp4",
       "scene_id": "scene_040",
-      "provider_asset_id": "34423563",
+      "provider_asset_id": "30837748",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_041_4e69efd7fca92627577d929b.mp4",
+      "path": "assets/footage/scene_041_1217e1e81b2eb411262730b2.mp4",
       "scene_id": "scene_041",
-      "provider_asset_id": "7924408",
+      "provider_asset_id": "36778205",
       "role": "human_context"
     },
     {
-      "path": "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4",
+      "path": "assets/footage/scene_042_028f0b344f5d4562dd9280c4.mp4",
       "scene_id": "scene_042",
-      "provider_asset_id": "9574129",
+      "provider_asset_id": "7651615",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_043_26abd499f5546a2815a3c8e0.mp4",
+      "path": "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
       "scene_id": "scene_043",
-      "provider_asset_id": "38496192",
+      "provider_asset_id": "4294436",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4",
+      "path": "assets/footage/scene_044_e28e449f5e6b9052b3cf6234.mp4",
       "scene_id": "scene_044",
-      "provider_asset_id": "11690475",
+      "provider_asset_id": "4375935",
       "role": "context"
     },
     {
-      "path": "assets/footage/scene_045_947a36bacb11dca2cee4b989.mp4",
+      "path": "assets/footage/scene_045_014f7d61f9b25a0e5ed4711d.mp4",
       "scene_id": "scene_045",
-      "provider_asset_id": "34771081",
+      "provider_asset_id": "6258096",
       "role": "human_context"
     }
   ],
