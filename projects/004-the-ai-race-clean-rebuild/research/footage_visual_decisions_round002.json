@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Twelve-frame contact-sheet inspection of the three replacement clips, judged against every exact claim-bound narration use and the visible-content contract authored from the inspected candidate boards.",
+  "decisions": [
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "30740060",
+      "asset_sha256": "4e8508ac967027b2f1e3997193ee6f53887d880fa429f0469ad2ae340730e333",
+      "contact_sheet_sha256": "baa60730358b4d722e3339fe0274f6d281ee1d2b88ada290caea4f1b7f72f5bc",
+      "decision": "approve",
+      "reason": "All twelve frames show only the EU flag and a neutral cloudy sky. No national building, national flag, person, product or commercial mark can misidentify the institution; the legal detail remains on primary evidence."
+    },
+    {
+      "scene_id": "scene_031",
+      "provider_asset_id": "8534001",
+      "asset_sha256": "505bb5eb989e106c297a59d083a1f8d1c6603fb35b3bee3aa932e8224eb3167a",
+      "contact_sheet_sha256": "24facef334fae32e5ba07801e601a23e34586495afbf7a869d6fa4f7d7f7810b",
+      "decision": "approve",
+      "reason": "All twelve frames show two lab-coated researchers jointly reviewing written notes beside a microscope. Their shared inspection remains clear throughout; no visible brand or unrelated interface carries a factual claim."
+    },
+    {
+      "scene_id": "scene_035",
+      "provider_asset_id": "8327148",
+      "asset_sha256": "817e1a4b5adddcc0e5edf0923e394a5ac8b5d69307cdeabdbfb075c059f512d5",
+      "contact_sheet_sha256": "f796c7ba0de994e6eadb87a9cc2b70a0e34d9d71e341f21446299e1d580316de",
+      "decision": "approve",
+      "reason": "Across all twelve frames, an unbranded scientist repeatedly lifts and visually checks one sample tube in a neutral laboratory. The clip reads as methodical inspection, not assembly, repair or endorsement, and asserts no specific test result."
+    }
+  ]
+}

@@ -318,7 +318,7 @@
       "motion": "hold",
       "role": "context",
       "semantic_link": "conceptual",
-      "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage."
+      "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_025",
@@ -348,7 +348,7 @@
       "motion": "push",
       "role": "context",
       "semantic_link": "conceptual",
-      "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage."
+      "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_025",
@@ -408,7 +408,7 @@
       "motion": "push",
       "role": "human_context",
       "semantic_link": "physical",
-      "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage."
+      "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_032",
@@ -438,7 +438,7 @@
       "motion": "pull",
       "role": "human_context",
       "semantic_link": "physical",
-      "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage."
+      "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_032",
@@ -468,7 +468,7 @@
       "motion": "push",
       "role": "human_context",
       "semantic_link": "physical",
-      "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage."
+      "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_036",
@@ -508,7 +508,7 @@
       "motion": "pull",
       "role": "human_context",
       "semantic_link": "physical",
-      "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage."
+      "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_036",
