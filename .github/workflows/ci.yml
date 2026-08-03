@@ -24,6 +24,45 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
+      # Temporary diagnostic for the UNABLE_TO_GET_ISSUER_CERT_LOCALLY
+      # failure primary-evidence fetch hit against www.ntia.gov. Node's
+      # bundled Mozilla root store cannot resolve this host's chain, and
+      # this step captures the real certificate chain the server presents
+      # so the fix (a pinned intermediate, or an allowlisted mirror host)
+      # can be verified instead of guessed. Remove once the real fix lands.
+      - name: Diagnose ntia.gov TLS chain
+        run: |
+          node --input-type=module -e "
+            import tls from 'node:tls';
+            await new Promise((resolve) => {
+              const socket = tls.connect(443, 'www.ntia.gov', { servername: 'www.ntia.gov' }, () => {
+                console.log('authorized:', socket.authorized);
+                console.log('authorizationError:', socket.authorizationError);
+                let cert = socket.getPeerCertificate(true);
+                let depth = 0;
+                while (cert && Object.keys(cert).length && depth < 10) {
+                  console.log('---depth', depth, '---');
+                  console.log('subject:', JSON.stringify(cert.subject));
+                  console.log('issuer:', JSON.stringify(cert.issuer));
+                  console.log('valid_to:', cert.valid_to);
+                  console.log('infoAccess:', JSON.stringify(cert.infoAccess || null));
+                  if (cert.issuerCertificate && cert.issuerCertificate !== cert) {
+                    cert = cert.issuerCertificate;
+                  } else {
+                    cert = null;
+                  }
+                  depth += 1;
+                }
+                socket.end();
+                resolve();
+              });
+              socket.on('error', (error) => {
+                console.log('socket error:', error.message);
+                resolve();
+              });
+            });
+          "
+
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
       # was written is covered without editing a token list here.
