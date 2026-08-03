@@ -37,6 +37,7 @@
     "orvyq:review-final-parity": "node scripts/orvyq_review_final_parity.mjs",
     "orvyq:verify-approval": "node scripts/orvyq_verify_approval.mjs",
     "orvyq:build-render-project": "node scripts/orvyq_pipeline_cli.mjs build-render-project",
+    "orvyq:pinned-selection-drift": "node scripts/orvyq_pinned_selection_drift.mjs",
     "orvyq:duplicate-footage-audit": "node scripts/orvyq_duplicate_footage_audit.mjs",
     "orvyq:footage-semantic-review-audit": "node scripts/orvyq_footage_semantic_review_audit.mjs",
     "orvyq:visual-rebalance-audit": "node scripts/orvyq_visual_rebalance_audit.mjs",

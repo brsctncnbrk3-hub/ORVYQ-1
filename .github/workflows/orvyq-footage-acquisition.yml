@@ -145,9 +145,13 @@ jobs:
           PLANNED="$(jq '.assets | length' "$ROOT/research/footage_acquisition_plan.json")"
           ACTUAL="$(jq '.records | length' "$ROOT/assets/footage_acquisition.runtime.json")"
           REJECTED="$(jq '.summary.rejected_from_metadata // 0' "$ROOT/research/visual_asset_reviews.json")"
-          if [ "$ACTUAL" -ne "$PLANNED" ] || [ "$REJECTED" -gt 0 ]; then
+          # A scene whose acquired clip is not the one its inspection round
+          # pinned counts as missing, not as filled. The count matching is
+          # exactly how project 004 held 34 clips nobody had ever inspected.
+          DRIFTED="$(node scripts/orvyq_pinned_selection_drift.mjs --project-id="$PROJECT_ID" | jq '.drifted_scene_ids | length')"
+          if [ "$ACTUAL" -ne "$PLANNED" ] || [ "$REJECTED" -gt 0 ] || [ "$DRIFTED" -gt 0 ]; then
             echo "NEEDS_ACQUISITION=true" >> "$GITHUB_ENV"
-            echo "Reacquisition required: planned=$PLANNED actual=$ACTUAL rejected=$REJECTED"
+            echo "Reacquisition required: planned=$PLANNED actual=$ACTUAL rejected=$REJECTED drifted=$DRIFTED"
           else
             echo "NEEDS_ACQUISITION=false" >> "$GITHUB_ENV"
             echo "No reacquisition required; review reconciliation only."
