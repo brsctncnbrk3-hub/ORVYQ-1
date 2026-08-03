@@ -309,3 +309,89 @@ test("materializeAssignments retires every use of a reacquired scene, not only i
     await fs.rm(dir, { recursive: true, force: true });
   }
 });
+
+function pexelsVideo(id, overrides = {}) {
+  return {
+    id,
+    duration: 12,
+    url: `https://www.pexels.com/video/engineers-reviewing-code-${id}/`,
+    user: { name: "Source Creator" },
+    video_files: [{
+      id: id + 1000,
+      file_type: "video/mp4",
+      width: 1920,
+      height: 1080,
+      link: `https://videos.pexels.com/video-files/${id}/${id}-hd_1920_1080_30fps.mp4`,
+    }],
+    ...overrides,
+  };
+}
+
+const PINNED_ITEM = {
+  scene_id: "scene_001",
+  queries: ["engineers reviewing code"],
+  min_duration_seconds: 8,
+  provider_asset_ids: ["4630103"],
+  semantic_title_constraints: {
+    required_any_groups: [["engineers"], ["code"]],
+    forbidden_terms: [],
+  },
+};
+
+test("a pinned scene downloads the inspected clip instead of re-ranking a search", async () => {
+  const searched = [];
+  const result = await preflightPexelsSelections(
+    [PINNED_ITEM],
+    "test-key",
+    new Set(),
+    {},
+    async (query) => { searched.push(query); return [pexelsVideo(33656654)]; },
+    async (providerAssetId) => ({ video: pexelsVideo(Number(providerAssetId)), rate_limit: {} }),
+  );
+  assert.deepEqual(result.failures, []);
+  assert.equal(result.selectedByScene.get("scene_001").selected.video.id, 4630103);
+  assert.equal(result.selectedByScene.get("scene_001").selectedQuery, "inspected_selection");
+  // The whole point: no search ran, so no better-scoring stranger can win.
+  assert.deepEqual(searched, []);
+});
+
+test("a pinned clip the provider cannot serve is unresolved, never substituted", async () => {
+  const result = await preflightPexelsSelections(
+    [PINNED_ITEM],
+    "test-key",
+    new Set(),
+    {},
+    async () => [pexelsVideo(33656654)],
+    async () => { const error = new Error("Pexels video 404"); error.status = 404; throw error; },
+  );
+  assert.deepEqual(result.failures, ["scene_001"]);
+  assert.equal(result.selectedByScene.has("scene_001"), false);
+  assert.equal(result.providerIssues[0].type, "pinned_selection_unavailable");
+});
+
+test("a pinned clip that fails licence or duration checks is reported, not downloaded", async () => {
+  const result = await preflightPexelsSelections(
+    [PINNED_ITEM],
+    "test-key",
+    new Set(),
+    {},
+    async () => [pexelsVideo(33656654)],
+    async (providerAssetId) => ({ video: pexelsVideo(Number(providerAssetId), { duration: 2 }), rate_limit: {} }),
+  );
+  assert.deepEqual(result.failures, ["scene_001"]);
+  assert.equal(result.providerIssues[0].type, "pinned_selection_unusable");
+});
+
+test("an unpinned scene still resolves through the ordinary search path", async () => {
+  const { provider_asset_ids, ...unpinned } = PINNED_ITEM;
+  const result = await preflightPexelsSelections(
+    [unpinned],
+    "test-key",
+    new Set(),
+    {},
+    async () => [pexelsVideo(33656654)],
+    async () => { throw new Error("the video endpoint must not be reached for an unpinned scene"); },
+  );
+  assert.deepEqual(result.failures, []);
+  assert.equal(result.selectedByScene.get("scene_001").selected.video.id, 33656654);
+});

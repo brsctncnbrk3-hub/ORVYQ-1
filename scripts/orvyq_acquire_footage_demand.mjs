@@ -8,6 +8,7 @@ import { projectDir, readJson, writeJsonAtomic, parseArgs, printJson } from "./l
 
 const execFileAsync = promisify(execFile);
 const PEXELS_API = "https://api.pexels.com/videos/search";
+const PEXELS_VIDEO_API = "https://api.pexels.com/videos/videos";
 const PEXELS_LICENSE = "https://www.pexels.com/license/";
 const MAX_WIDTH = 1920;
 const DIRECT_FOOTAGE_HOSTS = new Set(["oceanexplorer.noaa.gov"]);
@@ -340,12 +341,73 @@ export function pick(videos, usedIds, item, searchQuery = "") {
   return shortlistCandidates(videos, usedIds, item, searchQuery)[0] || null;
 }
 
+/**
+ * The exact provider assets an inspection round pinned to this scene, in the
+ * order it pinned them.
+ *
+ * `orvyq_apply_footage_candidate_selection.mjs` writes `provider_asset_ids`
+ * precisely so acquisition downloads the clip a human-legible inspection note
+ * was written about. Searching again and re-ranking would hand back a
+ * different clip that merely scores well on uploader metadata -- which
+ * shortlistCandidates() documents as "an ordering to inspect, never as a
+ * decision".
+ */
+export function pinnedProviderAssetIds(item) {
+  return [...new Set((item?.provider_asset_ids || []).map(String).map((id) => id.trim()).filter(Boolean))];
+}
+
+export async function fetchPexelsVideo(
+  providerAssetId,
+  key,
+  { fetchFn = fetch, sleepFn = wait, maxRetries = 1, maxRetryDelayMs = 3000 } = {},
+) {
+  const url = new URL(`${PEXELS_VIDEO_API}/${encodeURIComponent(String(providerAssetId))}`);
+  let lastError;
+  for (let attempt = 0; attempt <= maxRetries; attempt += 1) {
+    try {
+      const response = await fetchFn(url, {
+        headers: { Authorization: key, "user-agent": "ORVYQ-demand-footage/1.2" },
+        signal: AbortSignal.timeout(60000),
+      });
+      if (response.ok) {
+        return {
+          video: await response.json(),
+          rate_limit: {
+            limit: numericHeader(response.headers, "x-ratelimit-limit"),
+            remaining: numericHeader(response.headers, "x-ratelimit-remaining"),
+            reset_epoch_seconds: numericHeader(response.headers, "x-ratelimit-reset"),
+          },
+        };
+      }
+      const error = new Error(`Pexels video ${response.status}: ${providerAssetId}`);
+      error.status = response.status;
+      error.provider = "pexels";
+      lastError = error;
+      const retryable = response.status === 429 || response.status >= 500;
+      if (!retryable || attempt >= maxRetries) throw error;
+      const retryAfterSeconds = numericHeader(response.headers, "retry-after");
+      await sleepFn(Math.max(0, Math.min(
+        maxRetryDelayMs,
+        retryAfterSeconds !== null ? retryAfterSeconds * 1000 : 500 * (2 ** attempt),
+      )));
+    } catch (error) {
+      lastError = error;
+      const status = Number(error?.status || 0);
+      const retryable = status === 429 || status >= 500 || status === 0;
+      if (!retryable || attempt >= maxRetries) throw error;
+      await sleepFn(Math.min(maxRetryDelayMs, 500 * (2 ** attempt)));
+    }
+  }
+  throw lastError;
+}
+
 export async function preflightPexelsSelections(
   items,
   key,
   usedIds,
   policy,
   searchFn = searchPexels,
+  videoFn = fetchPexelsVideo,
 ) {
   const selectedByScene = new Map();
   const failures = [];
@@ -372,7 +434,76 @@ export async function preflightPexelsSelections(
     let selectedQuery;
     let strongMetadataMatch = false;
 
-    if (!providerUnavailable) {
+    // A pinned scene is not searched for. The inspection round already chose
+    // its clip by looking at it; re-ranking search results here is what let
+    // 31 of project 004's 34 acquired clips end up being assets nobody had
+    // ever inspected.
+    const pinnedIds = pinnedProviderAssetIds(item);
+    if (pinnedIds.length && !providerUnavailable) {
+      for (const providerAssetId of pinnedIds) {
+        if (usedIds.has(String(providerAssetId))) continue;
+        if (requestCount >= maxRequestsPerRun) {
+          providerIssues.push({
+            scene_id: id,
+            provider_asset_id: providerAssetId,
+            type: "request_budget_exhausted",
+            max_requests_per_run: maxRequestsPerRun,
+          });
+          providerUnavailable = true;
+          break;
+        }
+        const elapsed = Date.now() - lastRequestAt;
+        if (lastRequestAt && elapsed < requestDelayMs) await wait(requestDelayMs - elapsed);
+        let result;
+        try {
+          result = await videoFn(providerAssetId, key, {
+            maxRetries: Number(policy.max_search_retries || 1),
+            maxRetryDelayMs: Number(policy.max_retry_delay_ms || 3000),
+          });
+          requestCount += 1;
+          lastRequestAt = Date.now();
+        } catch (error) {
+          requestCount += 1;
+          lastRequestAt = Date.now();
+          providerIssues.push({
+            scene_id: id,
+            provider_asset_id: providerAssetId,
+            type: Number(error?.status) === 429 ? "rate_limited" : "pinned_selection_unavailable",
+            status: Number(error?.status || 0) || null,
+            message: error.message,
+          });
+          if (Number(error?.status) === 429) providerUnavailable = true;
+          continue;
+        }
+        // The pinned clip still has to clear licence, orientation and
+        // duration; it is skipped with a reason rather than downloaded unfit.
+        const candidate = shortlistCandidates(
+          [result.video],
+          usedIds,
+          { ...item, rejected_provider_asset_ids: item.rejected_provider_asset_ids || [] },
+          queries.join(" "),
+        )[0];
+        if (!candidate) {
+          providerIssues.push({
+            scene_id: id,
+            provider_asset_id: providerAssetId,
+            type: "pinned_selection_unusable",
+          });
+          continue;
+        }
+        selected = candidate;
+        selectedQuery = "inspected_selection";
+        break;
+      }
+      // A pinned scene that could not be honoured is an unresolved scene, not
+      // an invitation to substitute whatever the search ranks first.
+      if (!selected) {
+        failures.push(id);
+        continue;
+      }
+    }
+
+    if (!selected && !providerUnavailable) {
       for (const query of queries) {
         const videosById = new Map();
         for (let page = 1; page <= pagesPerQuery; page += 1) {
