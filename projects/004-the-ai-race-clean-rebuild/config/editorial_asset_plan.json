@@ -285,7 +285,7 @@
         "motion": "hold",
         "role": "context",
         "semantic_anchor": "isn't only about what the machine can do, it's about who gets to decide, which brings us to the paradox at the centre of this whole",
-        "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual"
       },
       "2": {
@@ -312,7 +312,7 @@
         "motion": "push",
         "role": "context",
         "semantic_anchor": "uses different rules for different systems, providers of high -risk AI, face -life cycle, risk management duties,",
-        "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
         "reuse_reason": "A deliberate claim-bound reuse of scene_024 at a distinct narration target and trim window."
       },
@@ -374,7 +374,7 @@
         "motion": "push",
         "role": "human_context",
         "semantic_anchor": "place. That's not an argument against regulation. It's a reason to look closely at who writes the rules and who",
-        "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
       "2": {
@@ -402,7 +402,7 @@
         "motion": "pull",
         "role": "human_context",
         "semantic_anchor": "for anyone to inspect and build on, or kept closed, held inside a small number of companies that monitor how they're used?",
-        "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical",
         "reuse_reason": "A deliberate claim-bound reuse of scene_031 at a distinct narration target and trim window."
       },
@@ -433,7 +433,7 @@
         "motion": "push",
         "role": "human_context",
         "semantic_anchor": "case described earlier both happened on a closed, tightly monitored model. Centralized access did not",
-        "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
       "2": {
@@ -470,7 +470,7 @@
         "motion": "pull",
         "role": "human_context",
         "semantic_anchor": "the safe option, choosing between them is choosing which kind of failure you're willing to risk. None of this argues",
-        "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical",
         "reuse_reason": "A deliberate claim-bound reuse of scene_035 at a distinct narration target and trim window."
       },
@@ -720,7 +720,7 @@
   },
   "notes": "Authored against the exact 127-shot coverage diagnostic: 68 contextual-footage slices target 60.87% footage, keep evidence above 20%, keep graphics below 15%, cap uninterrupted evidence at 14.74 seconds, and land every editorial pause on footage.",
   "last_footage_use_contract_application": {
-    "generated_at": "2026-08-03T20:11:17.558Z",
+    "generated_at": "2026-08-03T20:16:23.251Z",
     "managed_scene_count": 34,
     "pruned_scene_count": 0,
     "assignment_count": 65,

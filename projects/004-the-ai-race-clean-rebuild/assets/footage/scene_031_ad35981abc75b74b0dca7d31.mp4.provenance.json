@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10884098",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T20:11:01.973Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T20:11:01.973Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "505bb5eb989e106c297a59d083a1f8d1c6603fb35b3bee3aa932e8224eb3167a",
+  "reviewed_contact_sheet_sha256": "24facef334fae32e5ba07801e601a23e34586495afbf7a869d6fa4f7d7f7810b",
+  "visual_qa_reason": "All twelve frames show two lab-coated researchers jointly reviewing written notes beside a microscope. Their shared inspection remains clear throughout; no visible brand or unrelated interface carries a factual claim."
 }

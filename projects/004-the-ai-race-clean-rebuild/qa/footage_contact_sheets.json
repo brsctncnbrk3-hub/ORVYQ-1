@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-03T20:11:17.783Z",
+  "generated_at": "2026-08-03T20:16:23.499Z",
   "frame_count_per_sheet": 12,
   "pending_review_count": 3,
   "entries": [
@@ -27,7 +27,7 @@
         {
           "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
           "narration_anchor": "uses different rules for different systems, providers of high -risk AI, face -life cycle, risk management duties,",
-          "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 3.211,
           "trim_out_sec": 11.011
         }
@@ -56,14 +56,14 @@
         {
           "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
           "narration_anchor": "place. That's not an argument against regulation. It's a reason to look closely at who writes the rules and who",
-          "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 0.952,
           "trim_out_sec": 8.319
         },
         {
           "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
           "narration_anchor": "for anyone to inspect and build on, or kept closed, held inside a small number of companies that monitor how they're used?",
-          "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 3.808,
           "trim_out_sec": 11.541
         }
@@ -92,21 +92,21 @@
         {
           "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
           "narration_anchor": "case described earlier both happened on a closed, tightly monitored model. Centralized access did not",
-          "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 0.931,
           "trim_out_sec": 8.497
         },
         {
           "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
           "narration_anchor": "the safe option, choosing between them is choosing which kind of failure you're willing to risk. None of this argues",
-          "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 2.167,
           "trim_out_sec": 9.633
         },
         {
           "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
           "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
-          "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 9.633,
           "trim_out_sec": 11.633
         }

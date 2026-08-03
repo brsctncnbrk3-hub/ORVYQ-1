@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10776431",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T20:11:14.820Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T20:11:14.820Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "817e1a4b5adddcc0e5edf0923e394a5ac8b5d69307cdeabdbfb075c059f512d5",
+  "reviewed_contact_sheet_sha256": "f796c7ba0de994e6eadb87a9cc2b70a0e34d9d71e341f21446299e1d580316de",
+  "visual_qa_reason": "Across all twelve frames, an unbranded scientist repeatedly lifts and visually checks one sample tube in a neutral laboratory. The clip reads as methodical inspection, not assembly, repair or endorsement, and asserts no specific test result."
 }

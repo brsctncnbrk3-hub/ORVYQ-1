@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "review_basis": "footage_visual_decisions_round001.json [system_visual_qa]: Twelve-frame contact-sheet inspection of every acquired clip in the pool, judged against the claim and narration anchor each one is bound to and against the inspection note its selection was pinned on.",
+  "review_basis": "footage_visual_decisions_round001.json [system_visual_qa]: Twelve-frame contact-sheet inspection of every acquired clip in the pool, judged against the claim and narration anchor each one is bound to and against the inspection note its selection was pinned on. | footage_visual_decisions_round002.json [system_visual_qa]: Twelve-frame contact-sheet inspection of the three replacement clips, judged against every exact claim-bound narration use and the visible-content contract authored from the inspected candidate boards.",
   "policy": {
     "default_status_for_unlisted_assets": "pending_frame_review",
     "rejected_asset_global_reentry_forbidden": true,
@@ -13,14 +13,10 @@
   "summary": {
     "pool_assets": 34,
     "rejected_from_metadata": 0,
-    "pending_frame_review": 3,
-    "approved": 31
+    "pending_frame_review": 0,
+    "approved": 34
   },
-  "pending_frame_review_scene_ids": [
-    "scene_024",
-    "scene_031",
-    "scene_035"
-  ],
+  "pending_frame_review_scene_ids": [],
   "rejected_assets": [
     {
       "scene_id": "scene_008",
@@ -457,6 +453,22 @@
       ]
     },
     {
+      "scene_id": "scene_024",
+      "provider_asset_id": "30740060",
+      "asset_sha256": "4e8508ac967027b2f1e3997193ee6f53887d880fa429f0469ad2ae340730e333",
+      "contact_sheet_sha256": "baa60730358b4d722e3339fe0274f6d281ee1d2b88ada290caea4f1b7f72f5bc",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "uses different rules for different systems, providers of high -risk AI, face -life cycle, risk management duties,",
+          "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.211,
+          "trim_out_sec": 11.011
+        }
+      ]
+    },
+    {
       "scene_id": "scene_025",
       "provider_asset_id": "10956356",
       "asset_sha256": "2e4607ec2506e51b7aefb2f5c9f219f1ddc7e579a6a04091859156739bf2b9e8",
@@ -556,6 +568,29 @@
       ]
     },
     {
+      "scene_id": "scene_031",
+      "provider_asset_id": "8534001",
+      "asset_sha256": "505bb5eb989e106c297a59d083a1f8d1c6603fb35b3bee3aa932e8224eb3167a",
+      "contact_sheet_sha256": "24facef334fae32e5ba07801e601a23e34586495afbf7a869d6fa4f7d7f7810b",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "place. That's not an argument against regulation. It's a reason to look closely at who writes the rules and who",
+          "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.952,
+          "trim_out_sec": 8.319
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "for anyone to inspect and build on, or kept closed, held inside a small number of companies that monitor how they're used?",
+          "semantic_rationale": "Two researchers reviewing shared laboratory work together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.808,
+          "trim_out_sec": 11.541
+        }
+      ]
+    },
+    {
       "scene_id": "scene_032",
       "provider_asset_id": "13522087",
       "asset_sha256": "f599ee8b527370dd76cb21b417606fd0cb731434ad2a2af4aaecef28c0defa2d",
@@ -598,6 +633,36 @@
           "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
           "trim_in_sec": 3.7,
           "trim_out_sec": 11.6
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_035",
+      "provider_asset_id": "8327148",
+      "asset_sha256": "817e1a4b5adddcc0e5edf0923e394a5ac8b5d69307cdeabdbfb075c059f512d5",
+      "contact_sheet_sha256": "f796c7ba0de994e6eadb87a9cc2b70a0e34d9d71e341f21446299e1d580316de",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "case described earlier both happened on a closed, tightly monitored model. Centralized access did not",
+          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.931,
+          "trim_out_sec": 8.497
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "the safe option, choosing between them is choosing which kind of failure you're willing to risk. None of this argues",
+          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.167,
+          "trim_out_sec": 9.633
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "Neither one is simply the safe option. Choosing between them is choosing which kind of failure you're willing to risk.",
+          "semantic_rationale": "An unbranded scientist methodically inspecting a test sample; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 9.633,
+          "trim_out_sec": 11.633
         }
       ]
     },
