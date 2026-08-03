@@ -143,7 +143,7 @@
     },
     "scene_012": {
       "claim_id": "CLM_008_CYBER_EXTORTION",
-      "required_visible_content": "A real server room with installed networking and storage equipment",
+      "required_visible_content": "Rack-mounted server and storage units with active status lights",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
@@ -191,7 +191,7 @@
     },
     "scene_016": {
       "claim_id": "CLM_010_BIO_ASL3",
-      "required_visible_content": "People swiping access cards before entering a controlled area",
+      "required_visible_content": "A person presenting a card while entering through a controlled turnstile",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
@@ -263,7 +263,7 @@
     },
     "scene_022": {
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
-      "required_visible_content": "Installed storage hardware being physically operated at close range",
+      "required_visible_content": "Exposed mechanical data-storage hardware visibly operating at close range",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",

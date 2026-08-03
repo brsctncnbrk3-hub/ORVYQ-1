@@ -1006,18 +1006,18 @@
       "claim_id": "CLM_008_CYBER_EXTORTION",
       "role": "context",
       "queries": [
-        "database storage of a server"
+        "close up of a CPU"
       ],
       "fallback_queries": [
-        "modern server room networking equipment"
+        "rack mounted server units status lights"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "A real server room filled with installed networking and storage equipment",
+      "editorial_note": "Rack-mounted server and storage units with active status lights",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "A real server room shows the infrastructure being defended without identifying it as any institution in the story; the claim's factual burden stays with the primary evidence.",
+      "semantic_rationale": "Rack-mounted server and storage units show the physical infrastructure being defended without identifying it as any institution in the story; the claim's factual burden stays with the primary evidence.",
       "curated_provider_asset_ids": [
-        "5028622"
+        "7140928"
       ],
       "rejected_provider_asset_ids": [
         "7141174",
@@ -1072,18 +1072,18 @@
       "claim_id": "CLM_010_BIO_ASL3",
       "role": "context",
       "queries": [
-        "people swiping their pass cards before entering"
+        "a person tapping its card on a machine"
       ],
       "fallback_queries": [
-        "pass card controlled entrance"
+        "passengers accessing subway turnstiles"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "People visibly swiping access cards before entering a controlled area",
+      "editorial_note": "A person presenting a card while entering through a controlled turnstile",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Visible pass-card entry supplies the physical access-control beat without identifying the location as a laboratory; the claim's factual burden stays with the primary evidence.",
+      "semantic_rationale": "Visible card-controlled turnstile entry supplies the physical access-control beat without identifying the location as a laboratory; the claim's factual burden stays with the primary evidence.",
       "curated_provider_asset_ids": [
-        "7952194"
+        "9910318"
       ],
       "rejected_provider_asset_ids": [
         "7251756",
@@ -1138,18 +1138,18 @@
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
       "role": "context",
       "queries": [
-        "hands operating dual disk drives in low light"
+        "hard disk drive"
       ],
       "fallback_queries": [
-        "installed storage hardware close up"
+        "spinning hard disk drive close up"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Installed storage hardware being physically operated at close range",
+      "editorial_note": "Exposed mechanical data-storage hardware operating at close range",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Installed storage hardware provides a concrete component-level view of concentrated compute infrastructure; the claim's factual burden stays with the primary evidence.",
+      "semantic_rationale": "A hard disk visibly operating provides a concrete component-level view of the storage behind concentrated compute infrastructure; the claim's factual burden stays with the primary evidence.",
       "curated_provider_asset_ids": [
-        "38496312"
+        "19285752"
       ],
       "rejected_provider_asset_ids": [
         "38496192",
