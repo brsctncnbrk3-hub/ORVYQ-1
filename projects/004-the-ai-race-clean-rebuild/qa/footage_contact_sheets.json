@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-02T02:24:03.567Z",
+  "generated_at": "2026-08-03T06:42:50.735Z",
   "records": [
     {
       "scene_id": "scene_001",
@@ -108,5 +108,6 @@
       "contact_sheet": null,
       "review_status": "contact_frame_missing"
     }
-  ]
+  ],
+  "entries": []
 }

@@ -20,391 +20,769 @@
       "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
       "role": "human_context",
       "queries": [
-        "AI research laboratory engineers working",
-        "data center operations team"
+        "software engineers reviewing code together",
+        "AI research team at workstation"
       ],
       "fallback_queries": [
-        "technology research team meeting"
+        "technology team collaborating office"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Real people building and operating frontier systems; no company identity implied.",
+      "editorial_note": "Engineers jointly reviewing frontier software on a shared screen",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Real people building and operating frontier systems; no company identity implied."
+      "semantic_rationale": "Engineers jointly reviewing frontier software on a shared screen; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_002",
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
       "role": "context",
       "queries": [
-        "data center servers tracking shot",
-        "high performance computing server room"
+        "data center server aisle tracking shot",
+        "server room moving camera"
       ],
       "fallback_queries": [
-        "cloud computing infrastructure"
+        "network infrastructure racks"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Physical infrastructure and acceleration pressure.",
+      "editorial_note": "Moving view through live server infrastructure carrying the scale of the race",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Physical infrastructure and acceleration pressure."
+      "semantic_rationale": "Moving view through live server infrastructure carrying the scale of the race; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_003",
       "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
-      "role": "context",
+      "role": "human_context",
       "queries": [
-        "office email computer screen close up",
-        "security analyst reviewing alerts"
+        "researchers monitoring computer screens laboratory",
+        "engineers watching test results monitors"
       ],
       "fallback_queries": [
-        "corporate computer workstation"
+        "technical team observing data screens"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Controlled test environment context only; the actual evidence remains the official research figures.",
+      "editorial_note": "Researchers observing a controlled model evaluation on monitors",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Controlled test environment context only; the actual evidence remains the official research figures."
+      "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_004",
-      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
-      "role": "human_context",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "role": "context",
       "queries": [
-        "researcher testing computer simulation",
-        "software testing laboratory"
+        "computer terminal code scrolling screen",
+        "console log output monitor"
       ],
       "fallback_queries": [
-        "scientist computer experiment"
+        "programming screen close up"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Make the fire-drill-versus-fire distinction physical.",
+      "editorial_note": "Terminal output scrolling under deliberate observation",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Make the fire-drill-versus-fire distinction physical."
+      "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_005",
-      "claim_id": "CLM_006_INVESTMENT_SCALE",
-      "role": "context",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "role": "human_context",
       "queries": [
-        "technology investment district city night",
-        "financial trading screens technology"
+        "safety drill training exercise facility",
+        "emergency rehearsal training staff"
       ],
       "fallback_queries": [
-        "business finance data screens"
+        "training exercise team facility"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Capital flowing toward frontier development without depicting a named transaction.",
+      "editorial_note": "A rehearsed, controlled drill rather than a real emergency",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Capital flowing toward frontier development without depicting a named transaction."
+      "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_006",
-      "claim_id": "CLM_007_FRONTIER_GAP",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
       "role": "context",
       "queries": [
-        "AI engineers competition hackathon",
-        "software teams working computers"
+        "laboratory test bench instruments",
+        "controlled experiment setup laboratory"
       ],
       "fallback_queries": [
-        "technology teams office"
+        "research equipment measurement"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Competitive closeness and release pressure.",
+      "editorial_note": "Instrumented test bench where a controlled scenario is set up",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Competitive closeness and release pressure."
+      "semantic_rationale": "Instrumented test bench where a controlled scenario is set up; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_007",
-      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
       "role": "human_context",
       "queries": [
-        "cybersecurity operations center analysts",
-        "security operations center team"
+        "researchers whiteboard planning discussion",
+        "scientists writing whiteboard diagram"
       ],
       "fallback_queries": [
-        "network security analyst office"
+        "team brainstorming whiteboard office"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Defensive operations context; no reenactment of a named victim.",
+      "editorial_note": "Researchers reworking a scenario on a board across iterations",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
-      "semantic_link": "physical",
-      "semantic_rationale": "Defensive operations context; no reenactment of a named victim."
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_008",
-      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
       "role": "context",
       "queries": [
-        "network operations screens dark room",
-        "cybersecurity server monitoring"
+        "financial district skyscrapers business",
+        "stock market data screens trading"
       ],
       "fallback_queries": [
-        "data center monitoring screens"
+        "business district aerial city"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Agentic cyber-operation scale, with provider report carrying the factual burden.",
+      "editorial_note": "Capital and market activity at scale without a named transaction",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
-      "semantic_link": "physical",
-      "semantic_rationale": "Agentic cyber-operation scale, with provider report carrying the factual burden."
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_009",
-      "claim_id": "CLM_010_BIO_ASL3",
+      "claim_id": "CLM_007_FRONTIER_GAP",
       "role": "human_context",
       "queries": [
-        "biosafety laboratory scientist protective equipment",
-        "biotechnology laboratory researcher"
+        "two teams working parallel offices",
+        "competing teams working late office"
       ],
       "fallback_queries": [
-        "laboratory scientist safety"
+        "office teams working side by side"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Responsible laboratory and safeguard context; no weapon imagery.",
+      "editorial_note": "Two teams working in parallel, closeness of the frontier made human",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
-      "semantic_link": "physical",
-      "semantic_rationale": "Responsible laboratory and safeguard context; no weapon imagery."
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_010",
-      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
-      "role": "human_context",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "role": "context",
       "queries": [
-        "people scrolling social media phones",
-        "person watching online news phone"
+        "security operations center monitors",
+        "cyber security control room screens"
       ],
       "fallback_queries": [
-        "social media users public"
+        "network monitoring center"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Human exposure to synthetic information without asserting changed beliefs.",
+      "editorial_note": "Security operations centre monitoring an active threat picture",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Human exposure to synthetic information without asserting changed beliefs."
+      "semantic_rationale": "Security operations centre monitoring an active threat picture; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_011",
-      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
       "role": "human_context",
       "queries": [
-        "office workers using computers diverse",
-        "customer service office workers"
+        "cyber security analyst working screens",
+        "IT security professional monitoring"
       ],
       "fallback_queries": [
-        "administrative workers computer"
+        "analyst reviewing data screens"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Occupational task transformation rather than unemployment imagery.",
+      "editorial_note": "Analyst reading network traffic during an incident",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Occupational task transformation rather than unemployment imagery."
+      "semantic_rationale": "Analyst reading network traffic during an incident; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_012",
-      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
       "role": "context",
       "queries": [
-        "hyperscale data center exterior",
-        "cloud data center aerial"
+        "server room night blue lights",
+        "data center dark server lights"
       ],
       "fallback_queries": [
-        "large technology campus"
+        "network server racks lights"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Critical compute and infrastructure concentration.",
+      "editorial_note": "Server hall at night, the infrastructure under defence",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Critical compute and infrastructure concentration."
+      "semantic_rationale": "Server hall at night, the infrastructure under defence; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_013",
-      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
-      "role": "governance_context",
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "role": "context",
       "queries": [
-        "European parliament building exterior",
-        "EU flags government building"
+        "network visualization data screens",
+        "global network map monitoring screen"
       ],
       "fallback_queries": [
-        "European government institution"
+        "digital network connections display"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Official governance setting; the regulation text remains primary evidence.",
+      "editorial_note": "Large-scale network activity visualised on operator displays",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
-      "semantic_rationale": "Official governance setting; the regulation text remains primary evidence."
+      "semantic_rationale": "Large-scale network activity visualised on operator displays; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_014",
-      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "claim_id": "CLM_010_BIO_ASL3",
       "role": "human_context",
       "queries": [
-        "small technology startup team office",
-        "startup founders working computers"
+        "scientist laboratory protective equipment",
+        "biosafety laboratory researcher working"
       ],
       "fallback_queries": [
-        "small software company team"
+        "medical research laboratory scientist"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome.",
+      "editorial_note": "Biosafety laboratory work under protective equipment",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome."
+      "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_015",
-      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "claim_id": "CLM_010_BIO_ASL3",
       "role": "human_context",
       "queries": [
-        "open source developers collaboration",
-        "programmers community workshop"
+        "laboratory fume hood scientist working",
+        "biosafety cabinet laboratory work"
       ],
       "fallback_queries": [
-        "software developers collaboration"
+        "scientist laboratory sterile work"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Independent research and adaptation context.",
+      "editorial_note": "Researcher working inside a containment cabinet",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Independent research and adaptation context."
+      "semantic_rationale": "Researcher working inside a containment cabinet; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_016",
-      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "claim_id": "CLM_010_BIO_ASL3",
       "role": "context",
       "queries": [
-        "secure data center access control",
-        "server room security door"
+        "secure door access control facility",
+        "laboratory restricted access entrance"
       ],
       "fallback_queries": [
-        "cybersecurity access control"
+        "security access card door"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Centralized monitoring and access control.",
+      "editorial_note": "Controlled access into a secured research facility",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Centralized monitoring and access control."
+      "semantic_rationale": "Controlled access into a secured research facility; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_017",
-      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
       "role": "human_context",
       "queries": [
-        "software red team testing meeting",
-        "cybersecurity researchers testing"
+        "person scrolling phone social media",
+        "woman looking at smartphone street"
       ],
       "fallback_queries": [
-        "technology audit team"
+        "people using phones public"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Independent evaluation process and human judgment.",
+      "editorial_note": "A person absorbed in a scrolling feed in ordinary surroundings",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Independent evaluation process and human judgment."
+      "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_018",
-      "claim_id": "CLM_020_INCIDENT_REPORTING",
-      "role": "governance_context",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "role": "human_context",
       "queries": [
-        "government hearing technology committee",
-        "regulatory meeting documents"
+        "crowd people looking at phones",
+        "commuters using smartphones train"
       ],
       "fallback_queries": [
-        "policy committee meeting"
+        "people smartphones public transport"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Reporting and oversight context without inventing a named proceeding.",
+      "editorial_note": "Many people each attending to their own screen",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
-      "semantic_link": "conceptual",
-      "semantic_rationale": "Reporting and oversight context without inventing a named proceeding."
+      "semantic_link": "physical",
+      "semantic_rationale": "Many people each attending to their own screen; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_019",
-      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
       "role": "human_context",
       "queries": [
-        "commuters city technology screens",
-        "people walking modern city night"
+        "office worker using computer software",
+        "professional working laptop office"
       ],
       "fallback_queries": [
-        "people city digital screens"
+        "employee working computer desk"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Distributed social consequences and ordinary human scale.",
+      "editorial_note": "Office work being carried out through software",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Distributed social consequences and ordinary human scale."
+      "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_020",
-      "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "role": "context",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "role": "human_context",
       "queries": [
-        "data center corridor slow tracking",
-        "server racks lights cinematic"
+        "automated warehouse workers technology",
+        "factory workers automation machinery"
       ],
       "fallback_queries": [
-        "computer server room"
+        "modern workplace automation"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "editorial_note": "A workplace where human and automated steps sit side by side",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Return to the physical machine and concentrated infrastructure for the ending."
+      "semantic_rationale": "A workplace where human and automated steps sit side by side; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
-      "scene_id": "scene_042",
+      "scene_id": "scene_021",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "role": "context",
+      "queries": [
+        "data center building exterior aerial",
+        "large data center facility outside"
+      ],
+      "fallback_queries": [
+        "industrial technology facility aerial"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Hyperscale data centre seen from outside",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Hyperscale data centre seen from outside; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_022",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "role": "context",
+      "queries": [
+        "server racks data center rows",
+        "computer servers dense racks"
+      ],
+      "fallback_queries": [
+        "data center hardware rows"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Dense compute racks concentrated in one hall",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Dense compute racks concentrated in one hall; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_023",
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "role": "context",
+      "queries": [
+        "data center cooling infrastructure",
+        "industrial cooling pipes facility"
+      ],
+      "fallback_queries": [
+        "power infrastructure industrial plant"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Power and cooling plant that the compute depends on",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_024",
       "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
       "role": "governance_context",
       "queries": [
-        "European parliament building exterior",
-        "EU flags government building"
+        "european parliament building exterior",
+        "european union building brussels"
       ],
       "fallback_queries": [
-        "European government institution"
+        "government institution building europe"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Official governance setting; the regulation text remains primary evidence.",
+      "editorial_note": "European legislative building seen as an institution",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
-      "semantic_rationale": "Official governance setting; the regulation text remains primary evidence."
+      "semantic_rationale": "European legislative building seen as an institution; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_025",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "role": "governance_context",
+      "queries": [
+        "european union flags building",
+        "EU flags waving institution"
+      ],
+      "fallback_queries": [
+        "european flags government"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "European Union flags outside an official building",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "European Union flags outside an official building; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_026",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "role": "governance_context",
+      "queries": [
+        "parliament chamber session seats",
+        "legislative assembly hall interior"
+      ],
+      "fallback_queries": [
+        "conference hall government meeting"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Formal chamber where obligations are debated",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Formal chamber where obligations are debated; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_027",
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "role": "governance_context",
+      "queries": [
+        "officials walking government corridor",
+        "business people walking institution hallway"
+      ],
+      "fallback_queries": [
+        "people walking office corridor formal"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Officials moving through an institutional corridor",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_028",
+      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+      "role": "context",
+      "queries": [
+        "computer processor server monitoring",
+        "GPU hardware close up technology"
+      ],
+      "fallback_queries": [
+        "computer hardware components"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Compute capacity being measured and monitored",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Compute capacity being measured and monitored; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_029",
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "role": "human_context",
+      "queries": [
+        "small business team paperwork documents",
+        "small team office reviewing documents"
+      ],
+      "fallback_queries": [
+        "startup team working documents"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "A small team working through paperwork and obligations",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A small team working through paperwork and obligations; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_030",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "role": "human_context",
+      "queries": [
+        "researchers collaborating open workspace",
+        "scientists discussing research together"
+      ],
+      "fallback_queries": [
+        "academic team collaboration"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Independent researchers working openly together",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_031",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "role": "human_context",
+      "queries": [
+        "university laboratory students research",
+        "academic computer lab students"
+      ],
+      "fallback_queries": [
+        "students working laboratory computers"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "University laboratory adapting shared technical work",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "University laboratory adapting shared technical work; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_032",
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "role": "human_context",
+      "queries": [
+        "developer coding laptop closeup",
+        "programmer working laptop code"
+      ],
+      "fallback_queries": [
+        "person typing laptop code"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "A developer adapting software on their own machine",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_033",
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "role": "governance_context",
+      "queries": [
+        "security control room monitoring cameras",
+        "surveillance monitoring center screens"
+      ],
+      "fallback_queries": [
+        "control room operators screens"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Centralised permission and monitoring over access",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Centralised permission and monitoring over access; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_034",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "role": "human_context",
+      "queries": [
+        "auditors reviewing documents together",
+        "professionals examining paperwork meeting"
+      ],
+      "fallback_queries": [
+        "team reviewing documents table"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Independent reviewers going through documentation together",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_035",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "role": "human_context",
+      "queries": [
+        "engineer testing equipment laboratory",
+        "technician measuring electronics test"
+      ],
+      "fallback_queries": [
+        "quality control testing technician"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "A technical evaluator methodically testing a system",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "A technical evaluator methodically testing a system; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_036",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "role": "governance_context",
+      "queries": [
+        "panel discussion meeting room professionals",
+        "committee meeting table discussion"
+      ],
+      "fallback_queries": [
+        "board meeting professionals table"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "A panel weighing findings around a table",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "A panel weighing findings around a table; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_037",
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "role": "context",
+      "queries": [
+        "inspection checklist clipboard laboratory",
+        "quality inspection measurement recording"
+      ],
+      "fallback_queries": [
+        "technician checklist inspection"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Inspection and measurement recorded step by step",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Inspection and measurement recorded step by step; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_038",
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "role": "governance_context",
+      "queries": [
+        "official documents filing office government",
+        "person filing report documents office"
+      ],
+      "fallback_queries": [
+        "office paperwork records formal"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Formal reporting and record-keeping inside an institution",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "Formal reporting and record-keeping inside an institution; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_039",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "human_context",
+      "queries": [
+        "people walking city street crowd",
+        "pedestrians crossing street city"
+      ],
+      "fallback_queries": [
+        "city street people walking"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Ordinary people moving through a city street",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Ordinary people moving through a city street; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_040",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "human_context",
+      "queries": [
+        "commuters train station morning",
+        "people commuting public transport"
+      ],
+      "fallback_queries": [
+        "passengers station commute"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Everyday commuting life at human scale",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Everyday commuting life at human scale; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_041",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "human_context",
+      "queries": [
+        "family home living room evening",
+        "people at home ordinary life"
+      ],
+      "fallback_queries": [
+        "home interior family evening"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Domestic, ordinary life away from the technology",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Domestic, ordinary life away from the technology; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_042",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "context",
+      "queries": [
+        "data center corridor servers walking",
+        "server room aisle perspective"
+      ],
+      "fallback_queries": [
+        "data center hallway servers"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "Return to the corridor of the machine itself",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "physical",
+      "semantic_rationale": "Return to the corridor of the machine itself; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_043",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "role": "human_context",
+      "role": "context",
       "queries": [
-        "commuters city technology screens",
-        "people walking modern city night"
+        "server racks wide shot data center",
+        "computer servers room wide"
       ],
       "fallback_queries": [
-        "people city digital screens"
+        "data center servers wide"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Distributed social consequences and ordinary human scale.",
+      "editorial_note": "The concentrated compute the argument returns to",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Distributed social consequences and ordinary human scale."
+      "semantic_rationale": "The concentrated compute the argument returns to; the claim's factual burden stays with the primary evidence, not with this stock footage."
     },
     {
       "scene_id": "scene_044",
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
       "role": "context",
       "queries": [
-        "data center corridor slow tracking",
-        "server racks lights cinematic"
+        "city skyline dusk aerial",
+        "urban skyline evening lights"
       ],
       "fallback_queries": [
-        "computer server room"
+        "city aerial evening skyline"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "editorial_note": "City at dusk, the scale the decision sits inside",
+      "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
+      "semantic_link": "conceptual",
+      "semantic_rationale": "City at dusk, the scale the decision sits inside; the claim's factual burden stays with the primary evidence, not with this stock footage."
+    },
+    {
+      "scene_id": "scene_045",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "role": "human_context",
+      "queries": [
+        "person looking at computer screen alone",
+        "man working late computer screen"
+      ],
+      "fallback_queries": [
+        "person alone screen night"
+      ],
+      "min_duration_seconds": 8,
+      "editorial_note": "One person, one screen, the closing intimacy",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Return to the physical machine and concentrated infrastructure for the ending."
+      "semantic_rationale": "One person, one screen, the closing intimacy; the claim's factual burden stays with the primary evidence, not with this stock footage."
     }
-  ]
+  ],
+  "planned_asset_count": 45,
+  "rebuild_note": "Authored for the rebuild: the previous pool is retired and barred by provider asset id, so every clip here must be newly acquired and frame-reviewed.",
+  "use_contract": "research/footage_use_contracts.json",
+  "use_contract_overrides": null
 }

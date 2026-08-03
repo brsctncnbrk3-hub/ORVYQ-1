@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "request_revision": 2,
+  "request_revision": 3,
   "policy": {
     "exact_claim_binding_required": true,
     "metadata_only_approval_forbidden": true,
@@ -11,276 +11,540 @@
   "scenes": {
     "scene_001": {
       "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
-      "required_visible_content": "Real people building and operating frontier systems; no company identity implied.",
+      "required_visible_content": "Engineers jointly reviewing frontier software on a shared screen",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_002": {
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
-      "required_visible_content": "Physical infrastructure and acceleration pressure.",
+      "required_visible_content": "Moving view through live server infrastructure carrying the scale of the race",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_003": {
       "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
-      "required_visible_content": "Controlled test environment context only; the actual evidence remains the official research figures.",
+      "required_visible_content": "Researchers observing a controlled model evaluation on monitors",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_004": {
-      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
-      "required_visible_content": "Make the fire-drill-versus-fire distinction physical.",
+      "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+      "required_visible_content": "Terminal output scrolling under deliberate observation",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_005": {
-      "claim_id": "CLM_006_INVESTMENT_SCALE",
-      "required_visible_content": "Capital flowing toward frontier development without depicting a named transaction.",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "required_visible_content": "A rehearsed, controlled drill rather than a real emergency",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_006": {
-      "claim_id": "CLM_007_FRONTIER_GAP",
-      "required_visible_content": "Competitive closeness and release pressure.",
+      "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+      "required_visible_content": "Instrumented test bench where a controlled scenario is set up",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_007": {
-      "claim_id": "CLM_008_CYBER_EXTORTION",
-      "required_visible_content": "Defensive operations context; no reenactment of a named victim.",
+      "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+      "required_visible_content": "Researchers reworking a scenario on a board across iterations",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
-      "semantic_link": "physical"
+      "semantic_link": "conceptual"
     },
     "scene_008": {
-      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
-      "required_visible_content": "Agentic cyber-operation scale, with provider report carrying the factual burden.",
+      "claim_id": "CLM_006_INVESTMENT_SCALE",
+      "required_visible_content": "Capital and market activity at scale without a named transaction",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
-      "semantic_link": "physical"
+      "semantic_link": "conceptual"
     },
     "scene_009": {
-      "claim_id": "CLM_010_BIO_ASL3",
-      "required_visible_content": "Responsible laboratory and safeguard context; no weapon imagery.",
+      "claim_id": "CLM_007_FRONTIER_GAP",
+      "required_visible_content": "Two teams working in parallel, closeness of the frontier made human",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
-      "semantic_link": "physical"
+      "semantic_link": "conceptual"
     },
     "scene_010": {
-      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
-      "required_visible_content": "Human exposure to synthetic information without asserting changed beliefs.",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "required_visible_content": "Security operations centre monitoring an active threat picture",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_011": {
-      "claim_id": "CLM_012_LABOUR_EXPOSURE",
-      "required_visible_content": "Occupational task transformation rather than unemployment imagery.",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "required_visible_content": "Analyst reading network traffic during an incident",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_012": {
-      "claim_id": "CLM_013_MARKET_CONCENTRATION",
-      "required_visible_content": "Critical compute and infrastructure concentration.",
+      "claim_id": "CLM_008_CYBER_EXTORTION",
+      "required_visible_content": "Server hall at night, the infrastructure under defence",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_013": {
-      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
-      "required_visible_content": "Official governance setting; the regulation text remains primary evidence.",
+      "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
+      "required_visible_content": "Large-scale network activity visualised on operator displays",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "conceptual"
     },
     "scene_014": {
-      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
-      "required_visible_content": "Smaller firms facing fixed compliance burdens; presented as analysis, not measured outcome.",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "required_visible_content": "Biosafety laboratory work under protective equipment",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_015": {
-      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
-      "required_visible_content": "Independent research and adaptation context.",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "required_visible_content": "Researcher working inside a containment cabinet",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_016": {
-      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
-      "required_visible_content": "Centralized monitoring and access control.",
+      "claim_id": "CLM_010_BIO_ASL3",
+      "required_visible_content": "Controlled access into a secured research facility",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_017": {
-      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
-      "required_visible_content": "Independent evaluation process and human judgment.",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "required_visible_content": "A person absorbed in a scrolling feed in ordinary surroundings",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_018": {
-      "claim_id": "CLM_020_INCIDENT_REPORTING",
-      "required_visible_content": "Reporting and oversight context without inventing a named proceeding.",
+      "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+      "required_visible_content": "Many people each attending to their own screen",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
-      "semantic_link": "conceptual"
+      "semantic_link": "physical"
     },
     "scene_019": {
-      "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "required_visible_content": "Distributed social consequences and ordinary human scale.",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "required_visible_content": "Office work being carried out through software",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_020": {
-      "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "required_visible_content": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "claim_id": "CLM_012_LABOUR_EXPOSURE",
+      "required_visible_content": "A workplace where human and automated steps sit side by side",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_021": {
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "required_visible_content": "Hyperscale data centre seen from outside",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_022": {
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "required_visible_content": "Dense compute racks concentrated in one hall",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_023": {
+      "claim_id": "CLM_013_MARKET_CONCENTRATION",
+      "required_visible_content": "Power and cooling plant that the compute depends on",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_024": {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "European legislative building seen as an institution",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_025": {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "European Union flags outside an official building",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_026": {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "Formal chamber where obligations are debated",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_027": {
+      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+      "required_visible_content": "Officials moving through an institutional corridor",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_028": {
+      "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
+      "required_visible_content": "Compute capacity being measured and monitored",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_029": {
+      "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+      "required_visible_content": "A small team working through paperwork and obligations",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_030": {
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "required_visible_content": "Independent researchers working openly together",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_031": {
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "required_visible_content": "University laboratory adapting shared technical work",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_032": {
+      "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+      "required_visible_content": "A developer adapting software on their own machine",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_033": {
+      "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
+      "required_visible_content": "Centralised permission and monitoring over access",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_034": {
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "Independent reviewers going through documentation together",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_035": {
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "A technical evaluator methodically testing a system",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_036": {
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "A panel weighing findings around a table",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_037": {
+      "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+      "required_visible_content": "Inspection and measurement recorded step by step",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_038": {
+      "claim_id": "CLM_020_INCIDENT_REPORTING",
+      "required_visible_content": "Formal reporting and record-keeping inside an institution",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_039": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Ordinary people moving through a city street",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_040": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Everyday commuting life at human scale",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "physical"
+    },
+    "scene_041": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Domestic, ordinary life away from the technology",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_042": {
-      "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
-      "required_visible_content": "Official governance setting; the regulation text remains primary evidence.",
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "Return to the corridor of the machine itself",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
-      "semantic_link": "conceptual"
+      "semantic_link": "physical"
     },
     "scene_043": {
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "required_visible_content": "Distributed social consequences and ordinary human scale.",
+      "required_visible_content": "The concentrated compute the argument returns to",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
     },
     "scene_044": {
       "claim_id": "CLM_021_FINAL_SYNTHESIS",
-      "required_visible_content": "Return to the physical machine and concentrated infrastructure for the ending.",
+      "required_visible_content": "City at dusk, the scale the decision sits inside",
       "forbidden_content": [
         "logos presented as factual endorsement",
         "unrelated robots or humanoids",
         "generic binary-code overlays",
-        "Project 001 footage"
+        "footage acquired for another ORVYQ project"
+      ],
+      "narration_anchor": "To be resolved from fixed narration alignment",
+      "semantic_link": "conceptual"
+    },
+    "scene_045": {
+      "claim_id": "CLM_021_FINAL_SYNTHESIS",
+      "required_visible_content": "One person, one screen, the closing intimacy",
+      "forbidden_content": [
+        "logos presented as factual endorsement",
+        "unrelated robots or humanoids",
+        "generic binary-code overlays",
+        "footage acquired for another ORVYQ project"
       ],
       "narration_anchor": "To be resolved from fixed narration alignment",
       "semantic_link": "physical"
