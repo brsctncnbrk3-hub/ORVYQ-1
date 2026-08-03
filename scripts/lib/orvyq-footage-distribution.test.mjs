@@ -180,3 +180,36 @@ test("the same inputs always author the same distribution", () => {
   };
   assert.deepEqual(planFootageDistribution(input).assignments, planFootageDistribution(input).assignments);
 });
+
+test("a project waiting on acquisition can still author a coherent below-floor contract", () => {
+  const input = {
+    claimSlices: [evenClaim("CLM_A", 5), evenClaim("CLM_B", 5)],
+    claimPools: { CLM_A: pool(["scene_001"]), CLM_B: pool(["scene_002"]) },
+    totalRuntimeSeconds: 80,
+    maxUsesPerSource: 2,
+    footageFractionMin: 0.6,
+    footageFractionMax: 0.7,
+  };
+  assert.throws(() => planFootageDistribution(input), /Acquire and review more claim-bound footage/);
+
+  const result = planFootageDistribution({ ...input, allowBelowFloor: true });
+  assert.equal(result.summary.coverage_status, "below_floor_pending_acquisition");
+  assert.ok(result.summary.contextual_footage_fraction < 0.6);
+  assert.equal(result.assignments.length, 4, "still fills every use the approved pool allows");
+  const uses = new Map();
+  for (const item of result.assignments) uses.set(item.scene_id, (uses.get(item.scene_id) || 0) + 1);
+  assert.equal(Math.max(...uses.values()), 2, "and still respects the per-source budget");
+});
+
+test("a distribution inside the band is never marked as waiting on acquisition", () => {
+  const result = planFootageDistribution({
+    claimSlices: [evenClaim("CLM_A", 6), evenClaim("CLM_B", 6)],
+    claimPools: { CLM_A: pool(["scene_001", "scene_002"]), CLM_B: pool(["scene_003", "scene_004"]) },
+    totalRuntimeSeconds: 100,
+    maxUsesPerSource: 2,
+    footageFractionMin: 0.6,
+    footageFractionMax: 0.7,
+    allowBelowFloor: true,
+  });
+  assert.equal(result.summary.coverage_status, "within_band");
+});

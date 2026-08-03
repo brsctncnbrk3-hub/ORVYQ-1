@@ -68,6 +68,67 @@ export function collectApprovedClaimPools(contracts, approvedSceneIds = null) {
   return Object.fromEntries([...pools.entries()].sort(([a], [b]) => a.localeCompare(b)));
 }
 
+/**
+ * Folds the claims the shot plan could not cover into the acquisition list
+ * the fraction shortfall produced, so one request covers both reasons a claim
+ * can be short of footage. A claim already asking for more is left alone.
+ */
+export function mergeCoverageGapClaims(requiredAdditionalScenes, coverageGapClaimIds, claimPools) {
+  const merged = [...requiredAdditionalScenes];
+  const known = new Set(merged.map((entry) => entry.claim_id));
+  for (const claimId of coverageGapClaimIds) {
+    if (known.has(claimId)) continue;
+    // Only claims that already hold reviewed footage can be topped up; a claim
+    // with no approved pool at all is a different, louder problem.
+    if (!(claimPools[claimId] || []).length) continue;
+    merged.push({ claim_id: claimId, additional_approved_scenes: 1 });
+    known.add(claimId);
+  }
+  return merged.sort((a, b) => a.claim_id.localeCompare(b.claim_id));
+}
+
+/** `assets/footage/scene_007_<provider-id>.mp4` -> `scene_007`. */
+function sceneIdFromAsset(assetPath) {
+  const match = String(assetPath || "").match(/(?:^|\/)scene_(\d{3})(?:_|\.)/);
+  return match ? `scene_${match[1]}` : null;
+}
+
+/**
+ * Re-authoring the distribution supersedes whatever the previous editorial
+ * plan carried. The reconciler refuses to drop a managed assignment that the
+ * contract does not account for -- correctly, because a silent drop and a
+ * deliberate one look identical from there. So say which ones were deliberate,
+ * in the contract's own vocabulary, with the reason each was let go.
+ */
+export function retireSupersededTargets({ editorialAssignments, assignments, managedSceneIds, existingRetirements = [] }) {
+  const managed = new Set(managedSceneIds);
+  const finalByTarget = new Map(assignments.map((item) => [`${item.claim_id}:${item.slice_index}`, item.scene_id]));
+  const seen = new Set(existingRetirements.map((item) => `${item.scene_id}:${item.claim_id}:${item.slice_index}`));
+  const retirements = [...existingRetirements];
+
+  for (const [claimId, claimAssignments] of Object.entries(editorialAssignments || {})) {
+    for (const [sliceIndex, assignment] of Object.entries(claimAssignments || {})) {
+      const sceneId = sceneIdFromAsset(assignment?.asset);
+      if (!sceneId || !managed.has(sceneId)) continue;
+      const target = `${claimId}:${Number(sliceIndex)}`;
+      const replacement = finalByTarget.get(target);
+      if (replacement === sceneId) continue;
+      const key = `${sceneId}:${claimId}:${Number(sliceIndex)}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      retirements.push({
+        scene_id: sceneId,
+        claim_id: claimId,
+        slice_index: Number(sliceIndex),
+        reason: replacement
+          ? `Re-authored from the project's current shot list: this narration target now carries ${replacement}, which spreads the claim's approved pool more evenly across its slices.`
+          : "Re-authored from the project's current shot list: this narration target is no longer contextual footage, so the slice returns to primary evidence within the profile's visual-medium band.",
+      });
+    }
+  }
+  return retirements;
+}
+
 async function recordCoverageRequests(dir, projectId, details) {
   const files = {
     requests: path.join(dir, "research", "visual_asset_requests.json"),
@@ -120,13 +181,17 @@ export async function authorFootageDistribution(projectId) {
     blueprint: path.join(dir, "direction", "editorial_blueprint.json"),
     reviews: path.join(dir, "research", "visual_asset_reviews.json"),
     profile: path.join(dir, "config", "production_profile.json"),
+    editorial: path.join(dir, "config", "editorial_asset_plan.json"),
+    coverageGaps: path.join(dir, "qa", "full_production_coverage_gaps.json"),
   };
 
-  const [contracts, blueprint, reviews, profile] = await Promise.all([
+  const [contracts, blueprint, reviews, profile, editorial, coverageGaps] = await Promise.all([
     readJson(files.contracts),
     readJson(files.blueprint),
     readJsonSafe(files.reviews, null),
     readJsonSafe(files.profile, null),
+    readJsonSafe(files.editorial, null),
+    readJsonSafe(files.coverageGaps, null),
   ]);
 
   for (const [label, value] of Object.entries({ contracts, blueprint, ...(reviews ? { reviews } : {}) })) {
@@ -159,34 +224,56 @@ export async function authorFootageDistribution(projectId) {
     ...(blueprint.global_rules || {}),
   });
 
+  const planInput = {
+    claimSlices,
+    claimPools,
+    totalRuntimeSeconds,
+    hookFootageSeconds: hook.seconds,
+    hookUsesByScene: hook.usesByScene,
+    maxUsesPerSource: Number(blueprint.global_rules?.max_uses_per_source),
+    footageFractionMin: thresholds.contextual_footage_fraction_min,
+    footageFractionMax: thresholds.contextual_footage_fraction_max,
+  };
+
   let plan;
+  let shortfall = null;
   try {
-    plan = planFootageDistribution({
-      claimSlices,
-      claimPools,
-      totalRuntimeSeconds,
-      hookFootageSeconds: hook.seconds,
-      hookUsesByScene: hook.usesByScene,
-      maxUsesPerSource: Number(blueprint.global_rules?.max_uses_per_source),
-      footageFractionMin: thresholds.contextual_footage_fraction_min,
-      footageFractionMax: thresholds.contextual_footage_fraction_max,
-    });
+    plan = planFootageDistribution(planInput);
   } catch (error) {
     if (error.code !== "FOOTAGE_COVERAGE_INFEASIBLE" || !error.details?.required_additional_scenes?.length) throw error;
     // Record the blocked acquisition rather than leaving a percentage for
-    // someone to translate by hand, then still fail closed: the footage has
-    // to be acquired and frame-reviewed before a distribution can exist.
+    // someone to translate by hand. Claims the plan could not cover -- an
+    // evidence run it could not break, a pause it could not land on footage --
+    // need a clip too, and they fail those rules long before they move the
+    // aggregate fraction, so fold them into the same request.
+    error.details.required_additional_scenes = mergeCoverageGapClaims(
+      error.details.required_additional_scenes,
+      coverageGaps?.claim_ids || [],
+      claimPools,
+    );
     error.recorded_requests = await recordCoverageRequests(dir, projectId, error.details);
-    throw error;
+    // Still author the best reachable distribution, because the reconciler
+    // that derives the editorial plan runs ahead of acquisition and cannot
+    // reconcile against a contract that was never written. The gate below
+    // keeps the project out of validation until the footage exists.
+    plan = planFootageDistribution({ ...planInput, allowBelowFloor: true });
+    shortfall = error;
   }
   const { assignments, summary } = plan;
+  const managedSceneIds = [...new Set(assignments.map((item) => item.scene_id))].sort();
+  const retiredTargets = retireSupersededTargets({
+    editorialAssignments: editorial?.footage_assignments,
+    assignments,
+    managedSceneIds,
+    existingRetirements: contracts.retired_targets || [],
+  });
 
   const next = {
     ...contracts,
-    managed_scene_ids: [...new Set(assignments.map((item) => item.scene_id))].sort(),
+    managed_scene_ids: managedSceneIds,
     pruned_scene_ids: contracts.pruned_scene_ids || [],
     assignments,
-    retired_targets: contracts.retired_targets || [],
+    retired_targets: retiredTargets,
     authored_distribution: {
       schema_version: "1.0",
       generated_at: nowIso(),
@@ -196,10 +283,15 @@ export async function authorFootageDistribution(projectId) {
         + "claim-bound scenes, spread through each claim so contextual footage interleaves with primary evidence, "
         + "and capped by the blueprint's per-source use budget. No unreviewed footage and no automatic backfill.",
       ...summary,
+      ...(shortfall ? { blocked_on_acquisition: shortfall.details } : {}),
     },
   };
 
   await writeJsonAtomic(files.contracts, next);
+  if (shortfall) {
+    shortfall.authored_below_floor = { project_id: projectId, ...summary };
+    throw shortfall;
+  }
   return { project_id: projectId, ...summary };
 }
 
@@ -215,6 +307,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
         error: error.message,
         ...(error.details ? { details: error.details } : {}),
         ...(error.recorded_requests ? { recorded_requests: error.recorded_requests } : {}),
+        ...(error.authored_below_floor ? { authored_below_floor: error.authored_below_floor } : {}),
       }, null, 2));
       process.exitCode = 1;
     });

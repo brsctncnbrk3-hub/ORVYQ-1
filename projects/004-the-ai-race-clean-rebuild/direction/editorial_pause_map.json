@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "duration_policy": {
-    "minimum_final_duration_seconds": 844.362,
+    "minimum_final_duration_seconds": 844.29,
     "maximum_final_duration_seconds": null,
     "rule": "Fresh clean-rebuild baseline derived from the locked 804.362-second narration, the project-authored 11-second motion hook, 25 seconds of newly authored full-film editorial pauses, and the canonical 4-second end card. The full-production planner remains the final source of truth and may reconcile this value only from current Project 004 inputs; no Project 001 proof or timeline timings may be reused."
   },

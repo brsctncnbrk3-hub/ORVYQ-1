@@ -1000,7 +1000,7 @@ export function quantizeShotsToFrames(shots, fps = FPS) {
   return shots;
 }
 
-export async function buildFullProductionPlan(projectId) {
+export async function buildFullProductionPlan(projectId, { deferCoverageGate = false } = {}) {
   await loadEditorialAssetPlan(projectId);
   const dir = projectDir(projectId);
   const [blueprint, resolvedPausePlan, alignment, evidenceMap, motionHook, sequencePlan] = await Promise.all([
@@ -1525,7 +1525,14 @@ export async function buildFullProductionPlan(projectId) {
     }
   }
 
-  if (missingCoverage.length) {
+  // The creative-coverage gate judges where contextual footage sits, but the
+  // footage distribution is authored *from* this shot list's claim/slice
+  // topology (orvyq_author_footage_distribution.mjs). That is a genuine cycle:
+  // the first pass exists only to publish the topology, so it defers the gate
+  // and records the gaps; the pass after the distribution is reconciled runs
+  // it for real. Deferring never hides anything -- the gaps are returned and
+  // written to qa/ either way.
+  if (missingCoverage.length && !deferCoverageGate) {
     throw new Error(`Full production plan has ${missingCoverage.length} unresolved creative-coverage gap(s):\n- ${missingCoverage.join("\n- ")}`);
   }
 
@@ -1597,15 +1604,16 @@ export async function buildFullProductionPlan(projectId) {
     shots: [...hookShots, ...shots, endCardShot],
     totalDuration: totalDuration + hookDuration + END_CARD_SECONDS,
     claimCount: usableClaims.length,
-    pauseCount: pauses.length
+    pauseCount: pauses.length,
+    missingCoverage
   };
 }
 
-export async function writeFullProductionPlan(projectId) {
+export async function writeFullProductionPlan(projectId, { deferCoverageGate = false } = {}) {
   const dir = projectDir(projectId);
   const blueprintPath = path.join(dir, "direction", "editorial_blueprint.json");
   const blueprint = await readJson(blueprintPath);
-  const { shots: baselineShots, totalDuration, claimCount, pauseCount } = await buildFullProductionPlan(projectId);
+  const { shots: baselineShots, totalDuration, claimCount, pauseCount, missingCoverage } = await buildFullProductionPlan(projectId, { deferCoverageGate });
   const durationSeconds = Math.round(totalDuration * 1000) / 1000;
   const [rebalancePlan, visualRequests] = await Promise.all([
     readJsonSafe(path.join(dir, "direction", "visual_rebalance_plan.json"), null),
@@ -1642,7 +1650,22 @@ export async function writeFullProductionPlan(projectId) {
   pauseMap.duration_policy.minimum_final_duration_seconds = durationSeconds;
   await writeJsonAtomic(pauseMapPath, pauseMap);
 
-  return { shot_count: shots.length, total_duration_seconds: totalDuration, claim_count: claimCount, pause_count: pauseCount };
+  // Published so the distribution authoring step can see which claims are
+  // short of *coverage* -- an evidence run it cannot break, a pause it cannot
+  // land on footage -- and not only which are short of the aggregate footage
+  // fraction. A claim holding one approved clip against seven narration
+  // slices fails these long before it moves the percentage.
+  await writeJsonAtomic(path.join(dir, "qa", "full_production_coverage_gaps.json"), {
+    schema_version: "1.0",
+    project_id: projectId,
+    generated_at: new Date().toISOString(),
+    coverage_gate: deferCoverageGate ? "deferred" : "enforced",
+    gap_count: missingCoverage.length,
+    gaps: missingCoverage,
+    claim_ids: [...new Set(missingCoverage.flatMap((gap) => gap.match(/CLM_[A-Z0-9_]+/g) || []))].sort(),
+  });
+
+  return { shot_count: shots.length, total_duration_seconds: totalDuration, claim_count: claimCount, pause_count: pauseCount, missingCoverage };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -1655,7 +1678,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exitCode = 1;
   }
   if (projectId) {
-    writeFullProductionPlan(projectId)
+    writeFullProductionPlan(projectId, { deferCoverageGate: args["defer-coverage-gate"] === true || args["defer-coverage-gate"] === "true" })
       .then((result) => printJson({ ok: true, ...result }))
       .catch((error) => {
         console.error(JSON.stringify({ ok: false, error: error.message }));

@@ -149,6 +149,12 @@ export function planFootageDistribution({
   maxUsesPerSource,
   footageFractionMin,
   footageFractionMax,
+  // A project waiting on acquisition still needs a coherent contract: the
+  // reconciler that derives the editorial plan runs before acquisition does,
+  // and it cannot reconcile against a contract that was never written. Set
+  // this to author the best reachable distribution instead of refusing, and
+  // let the caller keep failing the validation gate.
+  allowBelowFloor = false,
 }) {
   const runtime = assertPositive(totalRuntimeSeconds, "totalRuntimeSeconds");
   const limit = Number(maxUsesPerSource);
@@ -189,7 +195,8 @@ export function planFootageDistribution({
     0,
   );
 
-  if (achievableSeconds < minBodySeconds - 0.001) {
+  const belowFloor = achievableSeconds < minBodySeconds - 0.001;
+  if (belowFloor && !allowBelowFloor) {
     const shortfall = planCoverageShortfall({
       claims,
       requiredSeconds: targetBodySeconds,
@@ -278,7 +285,7 @@ export function planFootageDistribution({
     }
   }
 
-  if (bodySeconds < minBodySeconds - 0.001) {
+  if (bodySeconds < minBodySeconds - 0.001 && !allowBelowFloor) {
     const error = new Error(
       `Authored contextual footage reaches ${round3(bodySeconds + hookSeconds)}s of ${round3(runtime)}s `
         + `(${((bodySeconds + hookSeconds) / runtime * 100).toFixed(1)}%); the profile floor is `
@@ -344,6 +351,7 @@ export function planFootageDistribution({
       hook_footage_seconds: round3(hookSeconds),
       body_footage_seconds: round3(bodySeconds),
       contextual_footage_fraction: round3((bodySeconds + hookSeconds) / runtime),
+      coverage_status: bodySeconds < minBodySeconds - 0.001 ? "below_floor_pending_acquisition" : "within_band",
       contextual_footage_fraction_min: fractionMin,
       contextual_footage_fraction_max: fractionMax,
       max_uses_per_source: limit,

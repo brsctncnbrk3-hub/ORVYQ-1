@@ -137,16 +137,12 @@ jobs:
       - name: Resolve the canonical editorial pause plan
         run: node scripts/orvyq_resolve_pauses.mjs --project-id="$PROJECT_ID"
 
-      - name: Build the canonical full production shot list from real data
-        run: |
-          set +e
-          node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID" > full-production-plan.log 2>&1
-          echo $? > full-production-plan.status
-          cat full-production-plan.log
-          exit 0
-
-      - name: Stop when canonical full production plan failed
-        run: test "$(cat full-production-plan.status)" = "0"
+      # Pass 1 publishes the claim/slice topology the distribution is authored
+      # against. Its creative-coverage gate judges where footage sits, which is
+      # exactly what the next two steps decide, so it is deferred here and
+      # enforced for real in pass 2 below. The gaps are recorded either way.
+      - name: Publish the claim/slice topology for distribution authoring
+        run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID" --defer-coverage-gate
 
       # Authored against the shot list the previous step just produced, and
       # written to research/footage_use_contracts.json -- the canonical source
@@ -157,6 +153,19 @@ jobs:
 
       - name: Reconcile claim-bound footage contracts after shot generation
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
+
+      # Pass 2: the editorial plan is now derived from the contract, so the
+      # creative-coverage gate finally judges the distribution that will render.
+      - name: Build the canonical full production shot list from real data
+        run: |
+          set +e
+          node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID" > full-production-plan.log 2>&1
+          echo $? > full-production-plan.status
+          cat full-production-plan.log
+          exit 0
+
+      - name: Stop when canonical full production plan failed
+        run: test "$(cat full-production-plan.status)" = "0"
 
       - name: Validate canonical schemas and recovered project data
         run: npm run validate:canonical
