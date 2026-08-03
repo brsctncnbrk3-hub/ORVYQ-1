@@ -9,6 +9,7 @@ on:
       - "projects/*/config/narration_alignment_request.json"
 
 permissions:
+  actions: write
   contents: write
   issues: write
   pull-requests: write
@@ -87,6 +88,7 @@ jobs:
         run: node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
 
       - name: Commit narration alignment
+        id: commit
         shell: bash
         run: |
           set -euo pipefail
@@ -102,6 +104,13 @@ jobs:
           git commit -m "Record narration alignment for $PROJECT_ID"
           git pull --rebase origin "${{ github.ref_name }}"
           git push origin "HEAD:${{ github.ref_name }}"
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Validate automation-authored head commit
+        if: steps.commit.outputs.pushed == 'true'
+        uses: ./.github/actions/dispatch-required-checks
+        with:
+          branch: ${{ github.ref_name }}
 
       - name: Upload alignment diagnostics
         if: always()

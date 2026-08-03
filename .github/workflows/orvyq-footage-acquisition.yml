@@ -22,6 +22,7 @@ on:
       - "scripts/lib/orvyq-footage-visual-decisions.test.mjs"
       - "scripts/lib/orvyq-footage-candidates.mjs"
       - "scripts/lib/orvyq-footage-candidates.test.mjs"
+      - "scripts/orvyq_footage_candidate_stage.mjs"
       - "scripts/orvyq_shortlist_footage_candidates.mjs"
       - "scripts/orvyq_apply_footage_candidate_selection.mjs"
       - "scripts/orvyq_apply_footage_candidate_overrides.mjs"
@@ -48,6 +49,7 @@ on:
       - "projects/*/research/visual_asset_reviews.json"
 
 permissions:
+  actions: write
   contents: write
   issues: write
   pull-requests: write
@@ -178,19 +180,19 @@ jobs:
           set -euo pipefail
           test -n "$PEXELS_API_KEY" || { echo "::error::Repository secret PEXELS_API_KEY is missing."; exit 1; }
 
-      # Look before choosing. Without an inspected selection there is nothing
-      # to acquire yet: build the candidate boards, publish them, and stop.
-      # With one, the plan is pinned to the exact assets that were inspected
-      # and acquisition downloads those rather than searching again.
+      # Look before choosing. A rejected pinned asset invalidates the old
+      # selection: publish boards only for the active rejections and wait for
+      # a new inspected choice. Never silently substitute a search result.
       - name: Decide whether candidates still need inspecting
         shell: bash
         run: |
           set -euo pipefail
-          if [ -f "projects/$PROJECT_ID/research/footage_candidate_selection.json" ]; then
-            echo "CANDIDATE_STAGE=apply" >> "$GITHUB_ENV"
-          else
-            echo "CANDIDATE_STAGE=shortlist" >> "$GITHUB_ENV"
-          fi
+          node scripts/orvyq_footage_candidate_stage.mjs --project-id="$PROJECT_ID" | tee footage-candidate-stage.json
+          STAGE="$(jq -r '.stage' footage-candidate-stage.json)"
+          REPLACEMENT_ONLY="$(jq -r '.replacement_only' footage-candidate-stage.json)"
+          echo "CANDIDATE_STAGE=$STAGE" >> "$GITHUB_ENV"
+          echo "CANDIDATE_REPLACEMENT_ONLY=$REPLACEMENT_ONLY" >> "$GITHUB_ENV"
+          echo "Candidate stage: $STAGE (replacement_only=$REPLACEMENT_ONLY)"
 
       - name: Install media probe
         if: env.NEEDS_ACQUISITION == 'true'
@@ -204,7 +206,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          node scripts/orvyq_shortlist_footage_candidates.mjs --project-id="$PROJECT_ID" 2>&1 | tee footage-shortlist.log
+          EXTRA_ARGS=()
+          if [ "$CANDIDATE_REPLACEMENT_ONLY" = "true" ]; then
+            EXTRA_ARGS+=(--replacement-only)
+          fi
+          node scripts/orvyq_shortlist_footage_candidates.mjs --project-id="$PROJECT_ID" "${EXTRA_ARGS[@]}" 2>&1 | tee footage-shortlist.log
 
       - name: Pin the plan to the inspected selection
         if: env.NEEDS_ACQUISITION == 'true' && env.CANDIDATE_STAGE == 'apply'
@@ -279,6 +285,7 @@ jobs:
           done < <(find "projects/$PROJECT_ID/assets/footage" -maxdepth 1 -type f -name '*.mp4' -print0)
 
       - name: Commit footage state and review queue
+        id: commit
         shell: bash
         run: |
           set -euo pipefail
@@ -348,6 +355,13 @@ jobs:
           fi
           git pull --rebase origin "$TARGET_BRANCH"
           git push origin "HEAD:$TARGET_BRANCH"
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Validate automation-authored head commit
+        if: steps.commit.outputs.pushed == 'true'
+        uses: ./.github/actions/dispatch-required-checks
+        with:
+          branch: ${{ env.TARGET_BRANCH }}
 
       - name: Upload acquisition and review diagnostics
         if: always()
@@ -359,6 +373,7 @@ jobs:
             footage-acquisition.log
             footage-shortlist.log
             footage-selection.log
+            footage-candidate-stage.json
             projects/${{ steps.project.outputs.project_id }}/research/footage_candidate_shortlist.json
             projects/${{ steps.project.outputs.project_id }}/qa/footage-candidate-boards/*.jpg
             footage-decisions.log

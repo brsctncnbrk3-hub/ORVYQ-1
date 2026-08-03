@@ -4,20 +4,22 @@
 >
 > This file defines the current ORVYQ production system. Every agent, script, workflow and project must follow it. If another README, migration document, historical plan, workflow name or code comment conflicts with this file, **this file wins**.
 >
-> This document must be updated whenever system behaviour changes or Project 002 reveals a new failure. Historical documents explain repository history only; they do not define the active workflow.
+> This document must be updated whenever system behaviour changes or any project reveals a new failure. Historical documents explain repository history only; they do not define the active workflow.
+>
+> **Every fix is a system fix, not a project fix.** Any correction, bug repair, workflow change or quality-gate adjustment made while working on any project — `002-the-new-war-beneath-the-ocean`, `004-the-ai-race-clean-rebuild`, or any future `projects/<project-id>/` — is a change to this reusable production system. It must land in shared scripts, schemas, workflows or this contract so every current and future project benefits, not only the project or video that happened to surface the failure. Editing only one project's own directory does not close a reusable defect; see section 12.
 
-## 1. Validation vehicle
+## 1. Active validation vehicle
 
-`002-the-new-war-beneath-the-ocean` is both a real ORVYQ documentary and the acceptance test for the reusable production system.
+`004-the-ai-race-clean-rebuild` is the current live acceptance test for the reusable production system. `002-the-new-war-beneath-the-ocean` remains historical acceptance evidence, not the active work record.
 
 The system is not finished because scripts compile or CI passes. It is finished only when:
 
-- Project 002 completes the full production chain,
+- the active validation project completes the full production chain,
 - the user reviews the complete candidate,
 - all blocking feedback is corrected,
 - the user explicitly approves it,
 - the final encode succeeds,
-- and a fresh isolated project can enter the same workflow without Project 002 data leakage.
+- and a fresh isolated project can enter the same workflow without another project's data leakage.
 
 Until then, every ambiguity, wrong assumption, missing automation, infrastructure failure and creative defect must be corrected in the reusable system and recorded here.
 
@@ -241,7 +243,7 @@ Technical validity alone is not sufficient.
 
 ## 12. Continuous correction rule
 
-Every Project 002 failure must be classified as:
+Every failure on any project — Project 002, Project 004, or any later project — must be classified as:
 
 - project-data defect
 - reusable-system defect
@@ -249,9 +251,9 @@ Every Project 002 failure must be classified as:
 - external dependency
 - creative-quality defect
 
-Reusable defects must be fixed in shared code or workflows, not patched only inside Project 002.
+Reusable defects must be fixed in shared code, schemas or workflows, not patched only inside the one project directory that happened to surface them. A fix scoped to a single project's own files, when the underlying cause lives in shared logic, is not a completed correction under this contract.
 
-After every meaningful discovery, update the live acceptance record and change log below.
+After every meaningful discovery, update the live acceptance record and change log below for the project it concerns, and update the shared sections above if the fix changes system-wide behaviour.
 
 ## 13. Definition of done
 
@@ -271,7 +273,43 @@ After every meaningful discovery, update the live acceptance record and change l
 - [ ] The 1080p Final Encode succeeds
 - [x] A fresh blank project proves scaffold isolation and deterministic repeatability
 
-## 14. Live acceptance record — Project 002
+## 14. Live acceptance record
+
+### Active — Project 004
+
+Project: `004-the-ai-race-clean-rebuild`
+
+Branch: `claude/durum-review-engelleri-v2hq49`, stacked above PR #6 and draft PR #5
+
+Current status (last verified 2026-08-03):
+
+- Ordinary CI run `30842404929` passed all 431 tests, canonical validation,
+  renderer type-check and composition resolution on the current branch line.
+- Candidate Validation has no successful run for this project or branch yet.
+  Full-Length Review has never been dispatched and remains forbidden until a
+  successful Candidate Validation run ID exists and the user separately
+  approves review dispatch.
+- The footage pool contains 34 claim-bound clips. Thirty-one have current
+  byte-bound approval; `scene_024`, `scene_031` and `scene_035` are rejected
+  against their narrated claims. Their inspected provider selections are now
+  treated as stale: the reusable acquisition workflow publishes replacement
+  boards only for active rejections, waits for a new visual inspection, then
+  acquires the exact newly selected assets rather than silently substituting.
+- Seventeen primary-evidence assets remain `spec_ready_asset_pending`. The
+  workstation can currently reach the declared official hosts and has
+  `pdftoppm`, but evidence acquisition must still prove the same access and
+  PDF rendering inside the GitHub Actions runner before the block is closed.
+- `editorial_blueprint.json` was generated before the latest footage review
+  and still references rejected footage. It must be regenerated from the
+  reconciled asset state; `full_production.status` correctly remains
+  `blocked_pending_visual_assets` until footage and evidence are materialized,
+  provenance-verified and semantically approved.
+- Repository automation commits made with `GITHUB_TOKEN` have produced
+  zero-job `action_required` runs for the required repository-discipline
+  context. The active correction must ensure every automation-authored head
+  commit receives real CI and single-active-PR validation before merge.
+
+### Previous record — Project 002
 
 Project: `002-the-new-war-beneath-the-ocean`
 

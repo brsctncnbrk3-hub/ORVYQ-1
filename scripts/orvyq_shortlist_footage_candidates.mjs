@@ -25,7 +25,11 @@ import {
   shortlistCandidates,
   collectRejectedProviderAssetIds,
 } from "./orvyq_acquire_footage_demand.mjs";
-import { buildSceneShortlist, buildShortlistDocument } from "./lib/orvyq-footage-candidates.mjs";
+import {
+  activeRejectedPlanScenes,
+  buildSceneShortlist,
+  buildShortlistDocument,
+} from "./lib/orvyq-footage-candidates.mjs";
 
 const DEFAULT_CANDIDATES_PER_SCENE = 6;
 
@@ -90,7 +94,10 @@ async function buildBoard({ sceneId, candidates, workDir, boardPath }) {
   return { built: true, inspectable: posters.length };
 }
 
-export async function shortlistFootageCandidates(projectId, { candidatesPerScene = DEFAULT_CANDIDATES_PER_SCENE } = {}) {
+export async function shortlistFootageCandidates(
+  projectId,
+  { candidatesPerScene = DEFAULT_CANDIDATES_PER_SCENE, replacementOnly = false } = {},
+) {
   const key = process.env.PEXELS_API_KEY;
   if (!key) throw new Error("PEXELS_API_KEY is required to search for candidates");
 
@@ -101,8 +108,17 @@ export async function shortlistFootageCandidates(projectId, { candidatesPerScene
   if (plan.project_id !== projectId) throw new Error(`footage_acquisition_plan project_id does not match ${projectId}`);
 
   const barred = collectRejectedProviderAssetIds(semantic, reviews);
+  const activeRejections = activeRejectedPlanScenes({ plan, rejectedProviderAssetIds: barred });
+  const replacementSceneIds = new Set(activeRejections.map((item) => item.scene_id));
+  const plannedAssets = replacementOnly
+    ? (plan.assets || []).filter((item) => replacementSceneIds.has(item.scene_id))
+    : (plan.assets || []);
+  if (replacementOnly && !plannedAssets.length) {
+    throw new Error("--replacement-only requested, but no currently pinned provider asset is rejected");
+  }
   const boardsDir = path.join(dir, "qa", "footage-candidate-boards");
   const workDir = path.join(dir, "qa", ".candidate-posters");
+  await fs.rm(boardsDir, { recursive: true, force: true });
   await fs.mkdir(boardsDir, { recursive: true });
   await fs.mkdir(workDir, { recursive: true });
 
@@ -111,7 +127,7 @@ export async function shortlistFootageCandidates(projectId, { candidatesPerScene
   const scenes = [];
   const withoutCandidates = [];
 
-  for (const item of plan.assets || []) {
+  for (const item of plannedAssets) {
     const constraint = semantic.scenes?.[item.scene_id] || {};
     const queries = [...new Set([...(item.queries || []), ...(item.fallback_queries || [])])];
     const videosById = new Map();
@@ -157,8 +173,16 @@ export async function shortlistFootageCandidates(projectId, { candidatesPerScene
     scenes,
     limit: candidatesPerScene,
     generatedAt: nowIso(),
+    selectionScope: replacementOnly ? { mode: "active_rejections", replacements: activeRejections } : { mode: "full_plan" },
   });
   await writeJsonAtomic(path.join(dir, "research", "footage_candidate_shortlist.json"), document);
+  await writeJsonAtomic(path.join(dir, "research", "footage_candidate_selection.json"), {
+    schema_version: "1.0",
+    project_id: projectId,
+    shortlist_generated_at: document.generated_at,
+    selection_status: "inspection_required",
+    selections: [],
+  });
 
   return {
     project_id: projectId,
@@ -166,6 +190,7 @@ export async function shortlistFootageCandidates(projectId, { candidatesPerScene
     candidates_per_scene: candidatesPerScene,
     total_candidates: scenes.reduce((sum, scene) => sum + scene.candidate_count, 0),
     scenes_without_inspectable_candidates: withoutCandidates,
+    selection_scope: document.selection_scope,
   };
 }
 
@@ -175,6 +200,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (!projectId) throw new Error("--project-id is required");
   shortlistFootageCandidates(projectId, {
     candidatesPerScene: Number(args["candidates-per-scene"] || DEFAULT_CANDIDATES_PER_SCENE),
+    replacementOnly: args["replacement-only"] === true,
   })
     .then((result) => printJson({ ok: true, ...result }))
     .catch((error) => {

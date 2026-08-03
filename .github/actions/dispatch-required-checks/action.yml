@@ -1,0 +1,24 @@
+name: Dispatch required checks for an automation commit
+description: Run the required CI and repository-discipline checks on a head commit pushed with GITHUB_TOKEN.
+
+inputs:
+  branch:
+    description: Branch whose current head must be validated
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Dispatch checks on the automation-authored head
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+        TARGET_BRANCH: ${{ inputs.branch }}
+      run: |
+        set -euo pipefail
+        gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$TARGET_BRANCH"
+        gh workflow run repository-discipline.yml \
+          --repo "$GITHUB_REPOSITORY" \
+          --ref "$TARGET_BRANCH" \
+          -f head_branch="$TARGET_BRANCH"
+        echo "Dispatched required checks for $TARGET_BRANCH at $(git rev-parse HEAD)."

@@ -54,8 +54,8 @@ export function buildSceneShortlist({ sceneId, claimId, requiredVisibleContent, 
   };
 }
 
-export function buildShortlistDocument({ projectId, scenes, limit, generatedAt }) {
-  return {
+export function buildShortlistDocument({ projectId, scenes, limit, generatedAt, selectionScope = null }) {
+  const document = {
     schema_version: "1.0",
     project_id: projectId,
     generated_at: generatedAt,
@@ -67,6 +67,87 @@ export function buildShortlistDocument({ projectId, scenes, limit, generatedAt }
     scene_count: scenes.length,
     scenes,
   };
+  if (selectionScope) document.selection_scope = selectionScope;
+  return document;
+}
+
+function sameStrings(left, right) {
+  return [...new Set(left.map(String))].sort().join("\0") === [...new Set(right.map(String))].sort().join("\0");
+}
+
+/**
+ * A rejection is active only while the rejected provider asset is still
+ * pinned in the current plan. Rejection history is permanent, but old
+ * rejections must not keep a successfully replaced scene in a retry loop.
+ */
+export function activeRejectedPlanScenes({ plan, rejectedProviderAssetIds }) {
+  const barred = rejectedProviderAssetIds instanceof Set
+    ? rejectedProviderAssetIds
+    : new Set((rejectedProviderAssetIds || []).map(String));
+  return (plan.assets || []).flatMap((item) => {
+    const rejected = (item.provider_asset_ids || []).map(String).filter((id) => barred.has(id));
+    return rejected.length ? [{ scene_id: item.scene_id, rejected_provider_asset_ids: rejected.sort() }] : [];
+  });
+}
+
+function isCurrentReplacementShortlist(shortlist, activeRejections) {
+  if (shortlist?.selection_scope?.mode !== "active_rejections") return false;
+  const declared = shortlist.selection_scope.replacements || [];
+  if (!sameStrings(declared.map((item) => item.scene_id), activeRejections.map((item) => item.scene_id))) return false;
+  const declaredByScene = new Map(declared.map((item) => [item.scene_id, item.rejected_provider_asset_ids || []]));
+  return activeRejections.every((item) =>
+    sameStrings(declaredByScene.get(item.scene_id) || [], item.rejected_provider_asset_ids));
+}
+
+/**
+ * Decide whether the workflow can apply an inspected selection, must publish
+ * a replacement board, or is correctly waiting for inspection. This keeps a
+ * rejected pinned asset from being re-applied forever without allowing an
+ * uninspected automatic substitute.
+ */
+export function resolveCandidateStage({ plan, shortlist, selection, rejectedProviderAssetIds }) {
+  const activeRejections = activeRejectedPlanScenes({ plan, rejectedProviderAssetIds });
+  const replacementOnly = activeRejections.length > 0;
+  const result = {
+    stage: "shortlist",
+    replacement_only: replacementOnly,
+    active_rejections: activeRejections,
+    reason: selection ? "selection_not_applicable" : "selection_missing",
+  };
+
+  if (!selection) {
+    return result;
+  }
+
+  if (!replacementOnly) {
+    return { ...result, stage: "apply", replacement_only: false, reason: "selection_available" };
+  }
+
+  const currentReplacementShortlist = isCurrentReplacementShortlist(shortlist, activeRejections);
+  if (!currentReplacementShortlist) {
+    return { ...result, reason: "replacement_shortlist_missing_or_stale" };
+  }
+
+  let resolved;
+  try {
+    resolved = resolveCandidateSelection({ shortlist, selection });
+  } catch (error) {
+    return { ...result, reason: `selection_invalid: ${error.message}` };
+  }
+
+  if (!resolved.complete) {
+    return { ...result, stage: "waiting", reason: "replacement_inspection_required" };
+  }
+
+  const barred = rejectedProviderAssetIds instanceof Set
+    ? rejectedProviderAssetIds
+    : new Set((rejectedProviderAssetIds || []).map(String));
+  const selectedRejected = resolved.chosen.filter((item) => barred.has(String(item.provider_asset_id)));
+  if (selectedRejected.length) {
+    return { ...result, reason: "selection_reuses_rejected_asset" };
+  }
+
+  return { ...result, stage: "apply", reason: "replacement_selection_inspected" };
 }
 
 /**

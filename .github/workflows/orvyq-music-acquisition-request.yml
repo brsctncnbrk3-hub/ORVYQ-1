@@ -9,6 +9,7 @@ on:
       - "projects/*/config/music_acquisition_request.json"
 
 permissions:
+  actions: write
   contents: write
   issues: write
   pull-requests: write
@@ -132,6 +133,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Commit verified music package on latest branch head
+        id: commit
         shell: bash
         run: |
           set -euo pipefail
@@ -166,12 +168,19 @@ jobs:
             fi
             git commit -m "Vendor fresh Resonance music for $PROJECT_ID" 2>&1 | tee -a music-commit.log
             if git push origin "HEAD:$TARGET_BRANCH" 2>&1 | tee -a music-commit.log; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             echo "Push raced with another branch update; rebuilding commit from latest head" | tee -a music-commit.log
           done
           echo "::error::Could not publish the verified music package after three attempts"
           exit 1
+
+      - name: Validate automation-authored head commit
+        if: steps.commit.outputs.pushed == 'true'
+        uses: ./.github/actions/dispatch-required-checks
+        with:
+          branch: ${{ github.ref_name }}
 
       - name: Upload commit diagnostics
         if: always()

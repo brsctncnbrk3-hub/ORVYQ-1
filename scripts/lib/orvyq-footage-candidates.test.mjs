@@ -4,6 +4,8 @@ import {
   buildSceneShortlist,
   buildShortlistDocument,
   describeCandidate,
+  activeRejectedPlanScenes,
+  resolveCandidateStage,
   resolveCandidateSelection,
   unselectedCandidateIds,
 } from "./orvyq-footage-candidates.mjs";
@@ -200,4 +202,79 @@ test("a still cannot be chosen without first inspecting clips and finding none f
     }),
     /not chosen directly/,
   );
+});
+
+const replacementPlan = {
+  project_id: "007-a-film",
+  assets: [
+    { scene_id: "scene_001", provider_asset_ids: ["10"] },
+    { scene_id: "scene_002", provider_asset_ids: ["20"] },
+  ],
+};
+
+function replacementShortlist() {
+  return buildShortlistDocument({
+    projectId: "007-a-film",
+    generatedAt: "2026-08-03T00:00:00.000Z",
+    limit: 6,
+    selectionScope: {
+      mode: "active_rejections",
+      replacements: [{ scene_id: "scene_001", rejected_provider_asset_ids: ["10"] }],
+    },
+    scenes: [
+      buildSceneShortlist({
+        sceneId: "scene_001",
+        claimId: "CLM_A",
+        requiredVisibleContent: "An official governance setting with the institution visible.",
+        queries: ["parliament exterior"],
+        candidates: [candidate(11), candidate(12)],
+        limit: 6,
+      }),
+    ],
+  });
+}
+
+test("only rejected assets still pinned in the plan are active rejections", () => {
+  assert.deepEqual(
+    activeRejectedPlanScenes({ plan: replacementPlan, rejectedProviderAssetIds: new Set(["10", "99"]) }),
+    [{ scene_id: "scene_001", rejected_provider_asset_ids: ["10"] }],
+  );
+});
+
+test("a rejected pinned selection requests a replacement shortlist", () => {
+  const stage = resolveCandidateStage({
+    plan: replacementPlan,
+    shortlist: shortlist([candidate(10), candidate(11)]),
+    selection: {
+      project_id: "007-a-film",
+      selections: [{ scene_id: "scene_001", decision: "selected", provider_asset_id: "10", inspection_note: NOTE }],
+    },
+    rejectedProviderAssetIds: new Set(["10"]),
+  });
+  assert.equal(stage.stage, "shortlist");
+  assert.equal(stage.replacement_only, true);
+});
+
+test("a current replacement board waits instead of repeatedly rebuilding", () => {
+  const stage = resolveCandidateStage({
+    plan: replacementPlan,
+    shortlist: replacementShortlist(),
+    selection: { project_id: "007-a-film", selection_status: "inspection_required", selections: [] },
+    rejectedProviderAssetIds: new Set(["10"]),
+  });
+  assert.equal(stage.stage, "waiting");
+});
+
+test("an inspected non-rejected replacement can be applied", () => {
+  const stage = resolveCandidateStage({
+    plan: replacementPlan,
+    shortlist: replacementShortlist(),
+    selection: {
+      project_id: "007-a-film",
+      selections: [{ scene_id: "scene_001", decision: "selected", provider_asset_id: "11", inspection_note: NOTE }],
+    },
+    rejectedProviderAssetIds: new Set(["10"]),
+  });
+  assert.equal(stage.stage, "apply");
+  assert.equal(stage.reason, "replacement_selection_inspected");
 });

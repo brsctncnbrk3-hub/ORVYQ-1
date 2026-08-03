@@ -72,8 +72,8 @@ on:
         default: ""
 
 permissions:
+  actions: write
   contents: write
-  actions: read
 
 concurrency:
   group: orvyq-music-intake-${{ inputs.track_id }}
@@ -175,6 +175,7 @@ jobs:
           npm test
 
       - name: Commit shared music registry changes
+        id: commit
         run: |
           set -euo pipefail
           git config user.name "orvyq-music-intake-bot"
@@ -187,3 +188,10 @@ jobs:
           git commit -m "Music intake: vendor ${{ inputs.track_id }}"
           git pull --rebase origin "${{ github.ref_name }}"
           git push origin "HEAD:${{ github.ref_name }}"
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Validate automation-authored head commit
+        if: steps.commit.outputs.pushed == 'true'
+        uses: ./.github/actions/dispatch-required-checks
+        with:
+          branch: ${{ github.ref_name }}

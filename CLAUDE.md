@@ -27,15 +27,10 @@ a card in another language is not a preview of this film.
 
 ## Tests
 
-`npm test` has **12 pre-existing failures** that are not code errors and not
-caused by whatever you just changed:
-
-- `scripts/orvyq_footage_visual_decisions.schema.test.mjs` — fails on a clean
-  baseline too.
-- 11 music/audio tests — need `ffmpeg`, which is not installed in the web
-  container.
-
-Compare against that baseline before assuming a regression.
+The current branch baseline is green: CI run `30842404929` passed all 431
+tests, canonical validation, renderer type-check and composition resolution.
+Treat any new failure as a regression or an environment prerequisite to
+resolve; do not carry the retired 12-failure baseline forward.
 
 ## Branching
 
@@ -44,11 +39,15 @@ PR is open against `main`. Its job only runs for `pull_request` events with
 `base: main`, so stacked work should branch from — and target — the currently
 active branch rather than opening a second PR to `main`.
 
-## Network egress (web sessions)
+Automation-authored commits are a special case: a push made with
+`GITHUB_TOKEN` does not start ordinary push workflows and the resulting PR
+event requires approval. Every workflow that pushes a commit must therefore
+use `.github/actions/dispatch-required-checks` so the new head receives real
+`validate` and `Enforce one active PR` checks.
 
-The evidence and footage pipelines fetch from an allowlist that this
-environment's egress policy currently refuses, so `orvyq:fetch-evidence` and
-`orvyq:acquire-footage` cannot run here:
+## Network egress
+
+The evidence and footage pipelines fetch from this declared host set:
 
 ```
 www-cdn.anthropic.com · hai-production.s3.amazonaws.com
@@ -56,11 +55,12 @@ assets.publishing.service.gov.uk · internationalaisafetyreport.org
 eur-lex.europa.eu · api.pexels.com
 ```
 
-`pdftoppm` (poppler-utils) is also absent and is needed to rasterize fetched
-PDFs. Without those, `orvyq:edit-plan` stops at
-`full_production.status=blocked_pending_visual_assets` and
-`orvyq:review-readiness` stops at "Not every queue entry has exact editorial
-uses" — both downstream of the same block, not separate bugs.
+The current Codex workstation can reach these hosts and has both `ffmpeg` and
+`pdftoppm`. Do not assume that proves GitHub Actions egress: evidence
+acquisition must exercise the official hosts and PDF rasterization on its own
+runner. Until materialization succeeds,
+`full_production.status=blocked_pending_visual_assets` and review-readiness
+remain downstream symptoms of the same asset block.
 
 ## Choosing footage
 

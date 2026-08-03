@@ -59,3 +59,9 @@ test("the workflow targets any project rather than a pinned one", () => {
     "no concrete project directory may be pinned in the acquisition workflow",
   );
 });
+
+test("the workflow detects rejected selections before deciding to apply them", () => {
+  assert.match(workflow, /orvyq_footage_candidate_stage\.mjs/);
+  assert.match(workflow, /--replacement-only/);
+  assert.doesNotMatch(workflow, /if \[ -f .*footage_candidate_selection\.json/);
+});

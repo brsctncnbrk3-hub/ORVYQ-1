@@ -16,6 +16,7 @@ on:
         default: false
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -102,6 +103,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Commit verified music package when explicitly requested
+        id: commit
         if: ${{ inputs.commit_package == true }}
         run: |
           set -euo pipefail
@@ -117,3 +119,10 @@ jobs:
           git commit -m "Vendor licensed music package for $PROJECT_ID"
           git pull --rebase origin "${{ github.ref_name }}"
           git push origin "HEAD:${{ github.ref_name }}"
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Validate automation-authored head commit
+        if: steps.commit.outputs.pushed == 'true'
+        uses: ./.github/actions/dispatch-required-checks
+        with:
+          branch: ${{ github.ref_name }}
