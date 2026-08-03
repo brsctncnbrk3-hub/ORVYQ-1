@@ -9,8 +9,19 @@
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "human_context",
-        "semantic_anchor": "believes moving this fast might be dangerous, and every one of",
+        "semantic_anchor": "believes moving this fast might be dangerous,",
         "semantic_rationale": "Engineers jointly reviewing frontier software on a shared screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_002_COMPETITIVE_INCENTIVE": {
+      "1": {
+        "asset": "assets/footage/scene_002_fdb84df7db3545dc091ce5e2.mp4",
+        "trimInRatio": 0.32,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "risk, because they see a bigger one, that if they slow down, somebody else won't.",
+        "semantic_rationale": "Connected network cabling carries the physical scale of the competitive build-out without pretending to identify a particular facility; the claim's factual burden stays with the primary evidence.",
         "semantic_link": "physical"
       }
     },
@@ -20,7 +31,7 @@
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
-        "semantic_anchor": "rival company, a rival government, somebody who gets their first and gets to set the rules for everyone else.",
+        "semantic_anchor": "rival company, a rival government, somebody who gets their first and gets to set the rules for everyone",
         "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
@@ -29,7 +40,7 @@
         "trimInRatio": 0.08,
         "motion": "drift_left",
         "role": "context",
-        "semantic_anchor": "machine ever built moves faster than our ability to understand it, control it, or govern it?",
+        "semantic_anchor": "powerful machine ever built moves faster than our ability to understand it, control it, or govern it?",
         "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
@@ -60,7 +71,7 @@
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
-        "semantic_anchor": "limits. They build a scenario, then watch how the model responds when it's told it will be shut down or replaced. In",
+        "semantic_anchor": "limits. They build a scenario, then watch how the model responds when it's told it will be shut down or replaced.",
         "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
@@ -69,7 +80,7 @@
         "trimInRatio": 0.32,
         "motion": "hold",
         "role": "context",
-        "semantic_anchor": "replacement, threatened to expose a fabricated affair rather than accept being taken offline. A separate line of research",
+        "semantic_anchor": "to expose a fabricated affair rather than accept being taken offline. A separate line of research found",
         "semantic_rationale": "Instrumented test bench where a controlled scenario is set up; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
@@ -78,7 +89,7 @@
         "trimInRatio": 0.32,
         "motion": "drift_left",
         "role": "human_context",
-        "semantic_anchor": "shutdown. None of this happened in the wild. These were designed tests, built specifically to see how far a model would go,",
+        "semantic_anchor": "None of this happened in the wild. These were designed tests, built specifically to see how far a model would go,",
         "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical",
         "reuse_reason": "A deliberate claim-bound reuse of scene_005 at a distinct narration target and trim window."
@@ -115,12 +126,12 @@
         "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual"
       },
-      "4": {
+      "2": {
         "asset": "assets/footage/scene_008_880103e81291b0e714325d52.mp4",
         "trimInRatio": 0.32,
         "motion": "push",
         "role": "context",
-        "semantic_anchor": "reported nearly $34 billion in private generative AI investment in 2024.",
+        "semantic_anchor": "any one company or country on its own. It isn't. Competition is visible in the money and",
         "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual",
         "reuse_reason": "A deliberate claim-bound reuse of scene_008 at a distinct narration target and trim window."
@@ -147,6 +158,46 @@
         "reuse_reason": "A deliberate claim-bound reuse of scene_009 at a distinct narration target and trim window."
       }
     },
+    "CLM_008_CYBER_EXTORTION": {
+      "1": {
+        "asset": "assets/footage/scene_010_9099198b8c8f8be1a29c4412.mp4",
+        "trimInRatio": 0.08,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "do the same. And at the frontier, even a brief loss of momentum can redirect customers, talent,",
+        "semantic_rationale": "A real multi-screen control room provides an honest operational analogy for coordinated incident response without presenting itself as the cited cyber incident; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "physical"
+      },
+      "4": {
+        "asset": "assets/footage/scene_011_1b0b1d8b210caef20d443569.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "human_context",
+        "semantic_anchor": "pushing capability into the world faster than institutions can absorb it. And the risks aren't hypothetical anymore.",
+        "semantic_rationale": "An operator reading live displays supplies the human monitoring beat without claiming those screens show the cited network traffic; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "physical"
+      },
+      "6": {
+        "asset": "assets/footage/scene_012_d7c9b266260de54974b55c76.mp4",
+        "trimInRatio": 0.08,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "2025, one company disclosed that a criminal had used its coding model to automate reconnaissance, steal credentials,",
+        "semantic_rationale": "Rack-mounted server and storage units show the physical infrastructure being defended without identifying it as any institution in the story; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "physical"
+      }
+    },
+    "CLM_009_AGENTIC_ESPIONAGE": {
+      "0": {
+        "asset": "assets/footage/scene_013_6fd30e09c5428c1891b1343f.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "dollars. Months later, the same company said it had disrupted a state -linked espionage",
+        "semantic_rationale": "Operators following a large live system visualise the scale and coordination of monitoring without claiming to depict the cited espionage network; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "conceptual"
+      }
+    },
     "CLM_010_BIO_ASL3": {
       "0": {
         "asset": "assets/footage/scene_014_f8f51ed9fdd05b81d657beb1.mp4",
@@ -155,6 +206,15 @@
         "role": "human_context",
         "semantic_anchor": "moments. These are the company's own assessments of its own products misuse, not independently verified in every detail, but they",
         "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "physical"
+      },
+      "1": {
+        "asset": "assets/footage/scene_016_44e1d131b9450523e6c53952.mp4",
+        "trimInRatio": 0.08,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "but they point in a consistent direction. AI may allow smaller teams to attempt some operations with less time, expertise,",
+        "semantic_rationale": "Visible card-controlled turnstile entry supplies the physical access-control beat without identifying the location as a laboratory; the claim's factual burden stays with the primary evidence.",
         "semantic_link": "physical"
       },
       "2": {
@@ -233,7 +293,7 @@
         "trimInRatio": 0.08,
         "motion": "hold",
         "role": "human_context",
-        "semantic_anchor": "scale. But it also found the evidence becomes weaker at each later step, from content creation to",
+        "semantic_anchor": "scale. But it also found the evidence becomes weaker at each later step, from content creation",
         "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
@@ -267,6 +327,24 @@
         "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical"
       },
+      "2": {
+        "asset": "assets/footage/scene_021_62c828ecdd6fdb511a3ff22c.mp4",
+        "trimInRatio": 0.08,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "durable one, concentration. Frontier AI depends on costly computing power, cloud infrastructure,",
+        "semantic_rationale": "A large industrial facility provides honest scale context without being labelled as a data centre or named company; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "physical"
+      },
+      "3": {
+        "asset": "assets/footage/scene_022_e37dafefc958b7c1c615e4ae.mp4",
+        "trimInRatio": 0.08,
+        "motion": "drift_left",
+        "role": "context",
+        "semantic_anchor": "infrastructure, data and capital. The UK's competition and market's authority has warned that control over",
+        "semantic_rationale": "A hard disk visibly operating provides a concrete component-level view of the storage behind concentrated compute infrastructure; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "physical"
+      },
       "4": {
         "asset": "assets/footage/scene_023_26fce08fc02604907dff5200.mp4",
         "trimInRatio": 0.32,
@@ -286,6 +364,15 @@
         "role": "context",
         "semantic_anchor": "isn't only about what the machine can do, it's about who gets to decide, which brings us to the paradox at the centre of this whole",
         "semantic_rationale": "EU flag seen as an unambiguous institutional marker; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+        "semantic_link": "conceptual"
+      },
+      "1": {
+        "asset": "assets/footage/scene_026_6afdbda2f85e7b938b587af0.mp4",
+        "trimInRatio": 0.08,
+        "motion": "push",
+        "role": "context",
+        "semantic_anchor": "this whole debate. If competition is the problem, the obvious answer is control, rules, licenses,",
+        "semantic_rationale": "A recognisably European formal chamber or institutional meeting setting; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "conceptual"
       },
       "2": {
@@ -335,6 +422,17 @@
         "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical",
         "reuse_reason": "A deliberate claim-bound reuse of scene_027 at a distinct narration target and trim window."
+      }
+    },
+    "CLM_015_COMPUTE_NOT_ONLY_ROUTE": {
+      "0": {
+        "asset": "assets/footage/scene_028_9871e30c03cb8fb61d7eb05b.mp4",
+        "trimInRatio": 0.08,
+        "motion": "hold",
+        "role": "context",
+        "semantic_anchor": "systemic risk. One legal presumption uses a very high training compute threshold,",
+        "semantic_rationale": "A technician physically checking connected hardware makes compute capacity tangible without turning the stock image into measurement evidence; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "physical"
       }
     },
     "CLM_016_COMPLIANCE_INCUMBENCY": {
@@ -415,6 +513,17 @@
         "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage.",
         "semantic_link": "physical",
         "reuse_reason": "A deliberate claim-bound reuse of scene_032 at a distinct narration target and trim window."
+      }
+    },
+    "CLM_018_CLOSED_ACCESS_TRADEOFF": {
+      "2": {
+        "asset": "assets/footage/scene_033_b3ba8c075f16bc6e692fc3bc.mp4",
+        "trimInRatio": 0.08,
+        "motion": "pull",
+        "role": "context",
+        "semantic_anchor": "with no company watching and no way to revoke access after the fact.",
+        "semantic_rationale": "A central room consolidating many live feeds visualises concentrated monitoring power without claiming to depict the cited access policy; the claim's factual burden stays with the primary evidence.",
+        "semantic_link": "conceptual"
       }
     },
     "CLM_019_INDEPENDENT_EVALUATION": {
@@ -731,15 +840,21 @@
   },
   "notes": "Authored against the exact 127-shot coverage diagnostic: 68 contextual-footage slices target 60.87% footage, keep evidence above 20%, keep graphics below 15%, cap uninterrupted evidence at 14.74 seconds, and land every editorial pause on footage.",
   "last_footage_use_contract_application": {
-    "generated_at": "2026-08-03T21:33:57.604Z",
-    "managed_scene_count": 34,
+    "generated_at": "2026-08-03T22:21:03.419Z",
+    "managed_scene_count": 45,
     "pruned_scene_count": 0,
-    "assignment_count": 65,
-    "removed_previous_assignments": 65,
-    "explicit_retirement_count": 0,
+    "assignment_count": 76,
+    "removed_previous_assignments": 76,
+    "explicit_retirement_count": 1,
     "override_file": null,
     "visual_rebalance_resynchronized": false,
     "deferred_targets": [
+      {
+        "target": "CLM_008_CYBER_EXTORTION:1",
+        "scene_id": "scene_010",
+        "required_seconds": 9.366666666666667,
+        "available_seconds": 8
+      },
       {
         "target": "CLM_014_EU_LAYERED_OBLIGATIONS:0",
         "scene_id": "scene_024",
@@ -765,6 +880,7 @@
         "assets/footage/scene_001_7989689.mp4": 1,
         "assets/footage/scene_001_e2204b131ea4cba28c67330e.mp4": 1,
         "assets/footage/scene_002_5028622.mp4": 1,
+        "assets/footage/scene_002_fdb84df7db3545dc091ce5e2.mp4": 1,
         "assets/footage/scene_003_9f6ee5840658332c646b2341.mp4": 2,
         "assets/footage/scene_004_64f83425b7646e01b727c7ff.mp4": 2,
         "assets/footage/scene_005_45ff9b64c913a173efcafda9.mp4": 2,
@@ -773,21 +889,31 @@
         "assets/footage/scene_007_dbd3f40142582e1219009df4.mp4": 2,
         "assets/footage/scene_008_880103e81291b0e714325d52.mp4": 2,
         "assets/footage/scene_009_f7c2291cc8d710065492baf4.mp4": 2,
+        "assets/footage/scene_010_9099198b8c8f8be1a29c4412.mp4": 1,
+        "assets/footage/scene_011_1b0b1d8b210caef20d443569.mp4": 1,
+        "assets/footage/scene_012_d7c9b266260de54974b55c76.mp4": 1,
+        "assets/footage/scene_013_6fd30e09c5428c1891b1343f.mp4": 1,
         "assets/footage/scene_014_f8f51ed9fdd05b81d657beb1.mp4": 2,
         "assets/footage/scene_015_b5f179b784b54bb3e90096a7.mp4": 2,
+        "assets/footage/scene_016_44e1d131b9450523e6c53952.mp4": 1,
         "assets/footage/scene_017_9fa0d96f31712ca79307e781.mp4": 2,
         "assets/footage/scene_018_92d72ebd3d36be91adf4a939.mp4": 2,
         "assets/footage/scene_019_fd6c9958331a8e197231bd04.mp4": 2,
         "assets/footage/scene_020_7140928.mp4": 1,
         "assets/footage/scene_020_d60466fe10702bd1f4459bab.mp4": 1,
+        "assets/footage/scene_021_62c828ecdd6fdb511a3ff22c.mp4": 1,
+        "assets/footage/scene_022_e37dafefc958b7c1c615e4ae.mp4": 1,
         "assets/footage/scene_023_26fce08fc02604907dff5200.mp4": 2,
-        "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4": 1,
+        "assets/footage/scene_024_feaea0055b77d21f91c9a18b.mp4": 2,
         "assets/footage/scene_025_a66d0630ff34598619c0ecb4.mp4": 2,
+        "assets/footage/scene_026_6afdbda2f85e7b938b587af0.mp4": 1,
         "assets/footage/scene_027_21d51a5f8b6bb2def9e46308.mp4": 2,
+        "assets/footage/scene_028_9871e30c03cb8fb61d7eb05b.mp4": 1,
         "assets/footage/scene_029_839cdc1b998a76259f43b05a.mp4": 2,
         "assets/footage/scene_030_4a432c46920d1b46c6e5ad4d.mp4": 2,
         "assets/footage/scene_031_ad35981abc75b74b0dca7d31.mp4": 2,
         "assets/footage/scene_032_d034ae4f49c39470c99f3bf8.mp4": 2,
+        "assets/footage/scene_033_b3ba8c075f16bc6e692fc3bc.mp4": 1,
         "assets/footage/scene_034_a355ee12b856c4f93970a938.mp4": 2,
         "assets/footage/scene_035_61249c23acf3b765104d567e.mp4": 2,
         "assets/footage/scene_036_2ab3d0e505b2d85f4eee1b28.mp4": 2,
@@ -799,7 +925,7 @@
         "assets/footage/scene_042_4f0a544c0271495b1709d579.mp4": 2,
         "assets/footage/scene_043_3f392beefa3e0d96797e36f3.mp4": 2,
         "assets/footage/scene_044_a5615f8bac5088da440884e7.mp4": 2,
-        "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4": 1
+        "assets/footage/scene_045_fbe26881badfeaf6818d1a53.mp4": 2
       }
     }
   },
@@ -809,5 +935,12 @@
     "unresolved_scenes": [],
     "replaced_graphics": 0,
     "retired_paths": []
+  },
+  "last_footage_use_contract_staging": {
+    "generated_at": "2026-08-03T22:21:02.515Z",
+    "reason": "Stage contract-derived editorial assignments before rebuilding the full-production topology.",
+    "assignment_count": 76,
+    "managed_scene_count": 45,
+    "pruned_scene_count": 0
   }
 }

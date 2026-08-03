@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10185208",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:33:37.785Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:33:37.785Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "c07a08f61142d4229acf2319f18827296f2aa065fd31e20764ccf4bfb62462cc",
+  "reviewed_contact_sheet_sha256": "8c5d8e18aab2f3c96e06af57ba672369dcba4a502c107451b41ba06b4a871c13",
+  "visual_qa_reason": "All twelve frames show a technician actively checking dense connected cabling in an equipment rack. The work reads as technical inspection and maintenance, with no visible product claim or suggestion that it proves a particular evaluation result."
 }

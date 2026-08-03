@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "8350443",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:33:19.388Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:33:19.388Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "9f933b09422b5a0f7afeb2bd271da6998a92d644990df87a864edc70c145d13f",
+  "reviewed_contact_sheet_sha256": "1297af943ad170834561e7c6b2790e00eb76547facb45221ed71410f690c99bc",
+  "visual_qa_reason": "The exposed hard-drive platter remains visibly spinning throughout the twelve sampled frames. It is an unbranded physical storage detail that supports infrastructure context without representing a specific company, dataset or concentration finding."
 }

@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "16477690",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:32:02.449Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:32:02.449Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "268e2e4af00499f2c3e36a6a8d8e1b9f268379514d27347a86c4fe11f65e3208",
+  "reviewed_contact_sheet_sha256": "9f5d3780d2e17d704811bd7aadf074b733b5f49e3cd81cc911a93a5733751ad7",
+  "visual_qa_reason": "Across all frames, an operator works at a multi-monitor operations console in a credible control room. The displays provide generic defensive monitoring context and do not purport to show a real extortion event or named organization."
 }

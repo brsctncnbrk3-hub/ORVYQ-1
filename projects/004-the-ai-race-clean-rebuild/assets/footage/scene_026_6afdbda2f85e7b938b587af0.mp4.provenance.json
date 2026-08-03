@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10245232",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:33:25.972Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:33:25.972Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "2145cd9c52ebb99beca94980ba6b4f0259633e14dee3ffe8c5aa6e27a4f0e755",
+  "reviewed_contact_sheet_sha256": "b2627e6676015e8b5b4b92f68fd18d49585a23b4df867d126d8e11b295419c90",
+  "visual_qa_reason": "Throughout the sheet, a formal podium and panel appear beside a clearly visible EU flag. The staging supplies generic governance context only; no speaker identity, decision or legal event is asserted by the footage."
 }

@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9220281",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:31:55.234Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:31:55.234Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "a627863318862371049e3e36835fe83b50d890e5bbd59cae171932d898a1a1b9",
+  "reviewed_contact_sheet_sha256": "ca5468a577c7db7bd74dafe03d0150b9e5fbdafffdfbaad1a93df6219a32267b",
+  "visual_qa_reason": "Across all twelve frames, a populated network switch, connected Ethernet cables and activity lights remain clearly visible. The clip supplies concrete infrastructure context without identifying a facility or proving the competitive claim."
 }

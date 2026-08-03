@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "16477662",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:33:47.146Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:33:47.146Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "9502928f886eb7f2da644366ee7e66d08f50733243b4cbae3e33a02b38e3b6d8",
+  "reviewed_contact_sheet_sha256": "00816caa01c29d641b97425084f569eb0d24a25023da0bccac0bd13ab6d1dbd1",
+  "visual_qa_reason": "The twelve frames maintain a wide view of a central monitoring room with operators and a multi-feed wall. The generic oversight setting supports controlled-access context but identifies no institution and proves no claim about closed models."
 }

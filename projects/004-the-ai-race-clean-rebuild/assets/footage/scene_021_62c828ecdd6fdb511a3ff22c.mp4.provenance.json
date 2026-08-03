@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "12856529",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:33:12.836Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:33:12.836Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "12984106f7db81eb7688a2b6951bafe839fd56bc0286d00660fffa6d4553d56b",
+  "reviewed_contact_sheet_sha256": "85c012f2763456c51da53d0356512bb7865e2b313fa0b3baf412c0814cd90ab3",
+  "visual_qa_reason": "Across all twelve frames, an aerial camera passes one large anonymous industrial warehouse and its surrounding site. The shot conveys physical scale only and does not identify the building as a data center or prove market concentration."
 }

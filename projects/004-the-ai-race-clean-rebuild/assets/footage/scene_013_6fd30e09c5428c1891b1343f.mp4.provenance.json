@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "16477701",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:32:28.493Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:32:28.493Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "8331b6fa2690c5e5aa8117f75218f728b123207f740c1f1d7095b0823549284c",
+  "reviewed_contact_sheet_sha256": "c2cbe409582650fe79bc1d95b4ef827b8576a34610f2ca6b11864fc8f7ecbe77",
+  "visual_qa_reason": "Across the contact sheet, several operators coordinate beneath a wall of surveillance and traffic views. The scene remains generic monitoring context and does not identify a government, espionage operation or real target."
 }

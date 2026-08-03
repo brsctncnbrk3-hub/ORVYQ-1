@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "2800150",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:32:20.289Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:32:20.289Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "13bbabe72718e257fb897306ba49e01a6a3aaefa735f086f8c0d2192d96ed989",
+  "reviewed_contact_sheet_sha256": "7f6dead87470c76782313339e11e0717dd13ee5707fb0ba6976fef786d2ed66e",
+  "visual_qa_reason": "All twelve frames show rack-mounted server and storage bays with active status lights. The infrastructure is generic and unnamed, so it can ground the cyber section physically without claiming that the rack belongs to an attacker or victim."
 }

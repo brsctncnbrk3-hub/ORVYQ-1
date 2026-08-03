@@ -38,12 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "13149683",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
+  "approved_for_final_edit": true,
   "downloaded_at": "2026-08-03T20:10:56.273Z",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
   "reviewed_asset_sha256": "4e8508ac967027b2f1e3997193ee6f53887d880fa429f0469ad2ae340730e333",
   "reviewed_contact_sheet_sha256": "baa60730358b4d722e3339fe0274f6d281ee1d2b88ada290caea4f1b7f72f5bc",
-  "visual_qa_reason": "All twelve frames show only the EU flag and a neutral cloudy sky. No national building, national flag, person, product or commercial mark can misidentify the institution; the legal detail remains on primary evidence.",
-  "fail_closed_reason": "Byte-bound contact-sheet and claim-specific semantic review are required before final-edit approval."
+  "visual_qa_reason": "All twelve frames show only the EU flag and a neutral cloudy sky. No national building, national flag, person, product or commercial mark can misidentify the institution; the legal detail remains on primary evidence."
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "blocked_pending_assets",
+  "status": "planned_pending_primary_evidence",
   "projection_basis": "Pre-materialization editorial target only. Candidate Validation must replace this projection with measured shot-level ratios and all post-plan audits must pass before review render authorization.",
   "thresholds": {
     "contextual_footage_fraction_min": 0.6,
@@ -35,18 +35,18 @@
   "blocked_asset_request_ids": [
     "REQ_EVD_ANTHROPIC_AGENTIC_MISALIGNMENT_2025",
     "REQ_EVD_ANTHROPIC_AGENTIC_UPDATE_2026",
-    "REQ_EVD_STANFORD_AI_INDEX_2025",
+    "REQ_EVD_ANTHROPIC_ASL3_2025",
     "REQ_EVD_ANTHROPIC_CYBER_MISUSE_2025",
     "REQ_EVD_ANTHROPIC_ESPIONAGE_2025",
-    "REQ_EVD_ANTHROPIC_ASL3_2025",
+    "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
+    "REQ_EVD_EC_GPAI_GUIDANCE_2025",
+    "REQ_EVD_EU_AI_ACT_2024",
     "REQ_EVD_IASR_2025",
     "REQ_EVD_ILO_JOBS_2025",
-    "REQ_EVD_CMA_FOUNDATION_MODELS_2024",
-    "REQ_EVD_EU_AI_ACT_2024",
-    "REQ_EVD_EC_GPAI_GUIDANCE_2025",
     "REQ_EVD_NTIA_OPEN_WEIGHTS_2024",
+    "REQ_EVD_STANFORD_AI_INDEX_2025",
     "REQ_EVD_UK_AISI_EVALUATIONS_2024"
   ],
   "materialization_note": "Acquisition and byte-bound semantic approval must complete before the editorial blueprint can be materialized.",
-  "visual_review_completed_at": "2026-08-02T19:47:18.720Z"
+  "visual_review_completed_at": "2026-08-03T22:21:03.871Z"
 }

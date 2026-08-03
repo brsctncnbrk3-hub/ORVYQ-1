@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "11186680",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T21:32:45.018Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T21:32:45.018Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "f6be6f82819bf5a2f032c2192d7f28d1a4c0bda3c1839fdef554d48a847e5fcf",
+  "reviewed_contact_sheet_sha256": "e739f47090a5b5b37c07bc788884650c0272cf8feccc3530e2f82a324c4d5790",
+  "visual_qa_reason": "The twelve-frame sequence clearly shows a card presented to a metro turnstile, read by the gate and followed by access opening. It provides unbranded access-control context without presenting a laboratory, biosafety facility or actual ASL-3 control."
 }
