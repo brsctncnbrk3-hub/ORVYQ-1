@@ -6,7 +6,9 @@ import {
   auditSectionVisualBalance,
   auditVisualMediumBalance,
   classifyVisualMedium,
+  isStillDerivedFootage,
   resolveVisualBalanceThresholds,
+  summarizeExclusiveVisualMedia,
 } from "./orvyq-visual-balance.mjs";
 
 const footage = (start, end, extra = {}) => ({
@@ -166,4 +168,65 @@ test("graphic design gate requires concise copy, named templates, and factual ne
   const result = auditGraphicCardDesign([invalid]);
   assert.equal(result.pass, false);
   assert.ok(result.failures.length >= 3);
+});
+
+test("a moved still counts as contextual footage, never as primary evidence", () => {
+  const shots = [
+    { asset_type: "footage", asset: "assets/footage/scene_001_a.mp4", duration: 6 },
+    { asset_type: "footage", asset: "assets/stills/scene_002_a.jpg", still_image: true, duration: 4 },
+  ];
+  const summary = summarizeExclusiveVisualMedia(shots);
+  assert.equal(summary.primary_evidence_frames, 0, "a photograph is not source-backed evidence");
+  assert.equal(summary.contextual_footage_frames, 300);
+  assert.equal(summary.still_derived_frames, 120);
+  assert.equal(Math.round(summary.still_derived_share_of_contextual_footage * 100), 40);
+});
+
+test("a still is recognised from its extension even without the flag", () => {
+  assert.equal(isStillDerivedFootage({ asset_type: "footage", asset: "a/b/c.jpg" }), true);
+  assert.equal(isStillDerivedFootage({ asset_type: "footage", asset: "a/b/c.mp4" }), false);
+  assert.equal(isStillDerivedFootage({ asset_type: "evidence", asset: "a/b/c.jpg" }), false);
+});
+
+test("stills beyond their share of contextual footage fail", () => {
+  const shots = [
+    { asset_type: "footage", asset: "clip.mp4", duration: 10 },
+    { asset_type: "footage", asset: "still.jpg", duration: 4 },
+    { asset_type: "evidence", duration: 6, evidence: { kind: "official_document", image_assets: ["a.png"], evidence_asset_ids: ["EVID_A"] } },
+  ];
+  const report = auditVisualMediumBalance({ shots });
+  assert.ok(report.failures.some((failure) => /moved stills carry/.test(failure)));
+});
+
+test("consecutive stills fail even when the total share is small", () => {
+  const shots = [
+    ...Array.from({ length: 20 }, () => ({ asset_type: "footage", asset: "clip.mp4", duration: 6 })),
+    { asset_type: "footage", asset: "one.jpg", duration: 3 },
+    { asset_type: "footage", asset: "two.jpg", duration: 3 },
+  ];
+  const report = auditVisualMediumBalance({ shots });
+  assert.ok(report.failures.some((failure) => /still run reaches 2 consecutive/.test(failure)));
+});
+
+test("a still held too long fails", () => {
+  const shots = [
+    ...Array.from({ length: 30 }, () => ({ asset_type: "footage", asset: "clip.mp4", duration: 6 })),
+    { asset_type: "footage", asset: "long.jpg", duration: 9 },
+  ];
+  const report = auditVisualMediumBalance({ shots });
+  assert.ok(report.failures.some((failure) => /a still holds for 9\.00s/.test(failure)));
+});
+
+test("a project may tighten the still ceilings but not loosen them", () => {
+  const loosened = resolveVisualBalanceThresholds({
+    still_derived_contextual_fraction_max: 0.9,
+    maximum_consecutive_still_shots: 5,
+    maximum_still_shot_seconds: 20,
+  });
+  assert.equal(loosened.still_derived_contextual_fraction_max, 0.12);
+  assert.equal(loosened.maximum_consecutive_still_shots, 1);
+  assert.equal(loosened.maximum_still_shot_seconds, 5);
+
+  const tightened = resolveVisualBalanceThresholds({ still_derived_contextual_fraction_max: 0.05 });
+  assert.equal(tightened.still_derived_contextual_fraction_max, 0.05);
 });

@@ -104,8 +104,24 @@ export function resolveCandidateSelection({ shortlist, selection }) {
       if (String(decision.reason || "").trim().length < 24) {
         throw new Error(`${scene.scene_id}: a blocked scene must record why no candidate fits`);
       }
-      blocked.push({ scene_id: scene.scene_id, claim_id: scene.claim_id, reason: decision.reason });
+      blocked.push({
+        scene_id: scene.scene_id,
+        claim_id: scene.claim_id,
+        reason: decision.reason,
+        // A moved still is the last resort for a claim with no filmable
+        // referent. It is only reachable from here -- a scene whose clip
+        // candidates were inspected and found unfit -- so it can never be
+        // taken by skipping the looking.
+        still_fallback_eligible: true,
+      });
       continue;
+    }
+
+    if (decision.decision === "still_fallback") {
+      throw new Error(
+        `${scene.scene_id}: a still fallback is not chosen directly -- block the scene with the reason no clip fits, `
+          + "then author the still against its own candidate board",
+      );
     }
 
     if (decision.decision !== "selected") {

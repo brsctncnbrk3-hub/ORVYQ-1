@@ -164,3 +164,40 @@ test("a clip chosen for one scene is never counted as unselected elsewhere", () 
   const chosen = [{ scene_id: "scene_002", provider_asset_id: "2" }];
   assert.deepEqual(unselectedCandidateIds({ shortlist: doc, chosen }), ["1", "3"]);
 });
+
+test("a blocked scene becomes eligible for a still, and only a blocked scene does", () => {
+  const result = resolveCandidateSelection({
+    shortlist: shortlist(),
+    selection: {
+      project_id: "007-a-film",
+      selections: [{
+        scene_id: "scene_001",
+        decision: "blocked",
+        reason: "Every candidate showed a national parliament, which would misrepresent an EU institution.",
+      }],
+    },
+  });
+  assert.equal(result.blocked[0].still_fallback_eligible, true);
+
+  const selected = resolveCandidateSelection({
+    shortlist: shortlist(),
+    selection: {
+      project_id: "007-a-film",
+      selections: [{ scene_id: "scene_001", decision: "selected", provider_asset_id: "1", inspection_note: NOTE }],
+    },
+  });
+  assert.equal(selected.chosen[0].still_fallback_eligible, undefined, "a scene that found a clip is not still-eligible");
+});
+
+test("a still cannot be chosen without first inspecting clips and finding none fit", () => {
+  assert.throws(
+    () => resolveCandidateSelection({
+      shortlist: shortlist(),
+      selection: {
+        project_id: "007-a-film",
+        selections: [{ scene_id: "scene_001", decision: "still_fallback", provider_asset_id: "1", inspection_note: NOTE }],
+      },
+    }),
+    /not chosen directly/,
+  );
+});

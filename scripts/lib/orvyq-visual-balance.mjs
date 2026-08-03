@@ -34,7 +34,26 @@ export const DEFAULT_VISUAL_MEDIUM_BALANCE = Object.freeze({
   maximum_consecutive_graphic_card_shots: 1,
   maximum_graphic_template_uses: 3,
   maximum_full_screen_template_uses: 2,
+  // A moved still is contextual footage in another medium: legitimate when a
+  // claim has no filmable referent, a slideshow when it becomes the easy
+  // answer for every hard claim. It carries its own ceiling for that reason.
+  still_derived_contextual_fraction_max: 0.12,
+  maximum_consecutive_still_shots: 1,
+  maximum_still_shot_seconds: 5,
 });
+
+const STILL_IMAGE_PATTERN = /\.(?:png|jpe?g|webp)$/i;
+
+/**
+ * A contextual shot backed by a photograph rather than a clip. Marked
+ * explicitly by the edit plan, and inferred from the asset extension so a
+ * still cannot slip past the ceiling by omitting the flag.
+ */
+export function isStillDerivedFootage(shot) {
+  if (shot?.asset_type !== "footage") return false;
+  if (shot.still_image === true) return true;
+  return STILL_IMAGE_PATTERN.test(String(shot.asset || shot.video_asset || ""));
+}
 
 function finiteFraction(value) {
   const parsed = Number(value);
@@ -114,6 +133,20 @@ export function resolveVisualBalanceThresholds(rules = {}) {
       DEFAULT_VISUAL_MEDIUM_BALANCE.maximum_full_screen_template_uses,
       configured.templateMax ?? Number.POSITIVE_INFINITY,
     ),
+    still_derived_contextual_fraction_max: Math.min(
+      DEFAULT_VISUAL_MEDIUM_BALANCE.still_derived_contextual_fraction_max,
+      finiteFraction(rules.still_derived_contextual_fraction_max) ?? 1,
+    ),
+    maximum_consecutive_still_shots: Math.min(
+      DEFAULT_VISUAL_MEDIUM_BALANCE.maximum_consecutive_still_shots,
+      finiteInteger(rules.maximum_consecutive_still_shots) ?? Number.POSITIVE_INFINITY,
+    ),
+    maximum_still_shot_seconds: Math.min(
+      DEFAULT_VISUAL_MEDIUM_BALANCE.maximum_still_shot_seconds,
+      Number.isFinite(Number(rules.maximum_still_shot_seconds)) && Number(rules.maximum_still_shot_seconds) > 0
+        ? Number(rules.maximum_still_shot_seconds)
+        : Number.POSITIVE_INFINITY,
+    ),
   };
 }
 
@@ -186,12 +219,24 @@ export function summarizeExclusiveVisualMedia(shots, durationFrames = null) {
   const fullScreenTemplates = new Map();
   let currentCardRun = 0;
   let maximumCardRun = 0;
+  let currentStillRun = 0;
+  let maximumStillRun = 0;
+  let stillFrames = 0;
+  let longestStillFrames = 0;
 
   for (const shot of shots) {
     const frameCount = durationFramesOf(shot);
     const medium = classifyVisualMedium(shot);
     frames[medium] += frameCount;
     shotCounts[medium] += 1;
+    if (isStillDerivedFootage(shot)) {
+      stillFrames += frameCount;
+      longestStillFrames = Math.max(longestStillFrames, frameCount);
+      currentStillRun += 1;
+      maximumStillRun = Math.max(maximumStillRun, currentStillRun);
+    } else {
+      currentStillRun = 0;
+    }
     if (isFullScreenTextCard(shot)) frames.full_screen_text_card += frameCount;
     if (medium === "graphic_card") {
       currentCardRun += 1;
@@ -225,6 +270,14 @@ export function summarizeExclusiveVisualMedia(shots, durationFrames = null) {
     invalid_fraction: frames.invalid / safeDuration,
     full_screen_text_card_fraction: frames.full_screen_text_card / safeDuration,
     maximum_consecutive_graphic_card_shots: maximumCardRun,
+    still_derived_frames: stillFrames,
+    still_derived_fraction: stillFrames / safeDuration,
+    // Measured against contextual footage, not the whole film: the ceiling is
+    // about how much of the contextual medium is moved stills.
+    still_derived_share_of_contextual_footage:
+      frames.contextual_footage > 0 ? stillFrames / frames.contextual_footage : 0,
+    maximum_consecutive_still_shots: maximumStillRun,
+    longest_still_shot_frames: longestStillFrames,
     graphic_template_uses: Object.fromEntries(templates),
     full_screen_template_uses: Object.fromEntries(fullScreenTemplates),
     shot_counts: shotCounts,
@@ -291,6 +344,25 @@ export function auditVisualMediumBalance({ shots, durationFrames = null }, rules
         `graphic/card template ${template} is used ${count} times; maximum ${thresholds.maximum_graphic_template_uses}`,
       );
     }
+  }
+  if (values.still_derived_share_of_contextual_footage > thresholds.still_derived_contextual_fraction_max) {
+    failures.push(
+      `moved stills carry ${pct(values.still_derived_share_of_contextual_footage)} of contextual footage; `
+        + `maximum ${pct(thresholds.still_derived_contextual_fraction_max)} -- a still is the last resort for a claim `
+        + "with no filmable referent, not the answer to every hard claim",
+    );
+  }
+  if (values.maximum_consecutive_still_shots > thresholds.maximum_consecutive_still_shots) {
+    failures.push(
+      `still run reaches ${values.maximum_consecutive_still_shots} consecutive shots; `
+        + `maximum ${thresholds.maximum_consecutive_still_shots} -- consecutive stills read as a slideshow`,
+    );
+  }
+  const longestStillSeconds = values.longest_still_shot_frames / 30;
+  if (longestStillSeconds > thresholds.maximum_still_shot_seconds + 0.001) {
+    failures.push(
+      `a still holds for ${longestStillSeconds.toFixed(2)}s; maximum ${thresholds.maximum_still_shot_seconds}s`,
+    );
   }
 
   return { ...values, thresholds, failures, pass: failures.length === 0 };

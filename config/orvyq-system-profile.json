@@ -15,6 +15,9 @@
       "maximum_consecutive_graphic_card_shots": 1,
       "maximum_graphic_template_uses": 3,
       "maximum_full_screen_template_uses": 2,
+      "still_derived_contextual_fraction_max": 0.12,
+      "maximum_consecutive_still_shots": 1,
+      "maximum_still_shot_seconds": 5,
       "project_overrides_may_only_tighten": true
     },
     "hook": {

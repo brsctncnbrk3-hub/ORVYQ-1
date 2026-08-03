@@ -50,6 +50,13 @@ function num(
   const value = params[key];
   return typeof value === "number" ? value : fallback;
 }
+const STILL_FOOTAGE_PATTERN = /\.(?:png|jpe?g|webp)(?:\?.*)?$/i;
+
+/** A footage slot whose asset is a photograph, not a clip. */
+export function isStillFootage(src: string | undefined | null) {
+  return Boolean(src) && STILL_FOOTAGE_PATTERN.test(String(src));
+}
+
 function computeTransform(motion: CameraMotion, progress: number) {
   const params = motion.params || {};
   switch (motion.type) {
@@ -144,6 +151,24 @@ export const Scene: React.FC<SceneProps> = ({
               durationInFrames={durationInFrames}
             />
           )
+        ) : assetType === "footage" && isStillFootage(videoSrc) ? (
+          // A contextual shot backed by a photograph rather than a clip: the
+          // last resort for a claim with no filmable referent. It carries the
+          // same motion vocabulary as footage, because a still held perfectly
+          // static reads as a freeze or a playback fault.
+          <Img
+            src={videoSrc ?? ""}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: footageTransform(
+                motionVariant === "hold" ? "push" : motionVariant,
+                progress,
+              ),
+              filter: "contrast(1.055) saturate(.9) brightness(.94)",
+            }}
+          />
         ) : assetType === "footage" && videoSrc ? (
           <OffthreadVideo
             src={videoSrc}
