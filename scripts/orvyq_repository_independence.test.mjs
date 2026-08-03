@@ -3,15 +3,10 @@ import assert from "node:assert/strict";
 import { readFile, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import { REPO_ROOT } from "./lib/fs-utils.mjs";
+import { auditSystemIndependence, listProjectIds } from "./orvyq_system_independence_audit.mjs";
 
 const legacyRepositoryTokens = ["brsctncnbrk-ops", "YouTube_pepline"];
-const projectLeakageTokens = [
-  "001-the-ai-race-no-one-can-afford-to-win",
-  "scene_024_6e6f4af26cad60cc78930d6d.mp4",
-  "30200283806",
-];
 const repositoryRoots = [".github", "scripts", "projects", "templates", "package.json"];
-const systemRoots = [".github", "scripts", "templates", "config", "package.json"];
 const ignoredDirectories = new Set(["node_modules", ".git", "qa", "migration"]);
 
 async function filesUnder(absolutePath) {
@@ -46,6 +41,18 @@ test("runtime and production configuration contain no legacy repository dependen
   assert.deepEqual(await findViolations(repositoryRoots, legacyRepositoryTokens), []);
 });
 
-test("system runtime contains no project id, project asset, or review-run dependency", async () => {
-  assert.deepEqual(await findViolations(systemRoots, projectLeakageTokens), []);
+// Derived from what is actually in `projects/` rather than from a token list,
+// so a project created after this test was written is still covered.
+test("system runtime hard-codes no project id, project asset or working branch", async () => {
+  const report = await auditSystemIndependence();
+  assert.deepEqual(
+    report.violations.map((violation) => `${violation.file}: ${violation.message}`),
+    [],
+  );
+});
+
+test("the independence audit actually sees every project that exists", async () => {
+  const ids = await listProjectIds();
+  assert.ok(ids.length > 0, "expected at least one project to audit against");
+  assert.deepEqual((await auditSystemIndependence()).project_ids, ids);
 });

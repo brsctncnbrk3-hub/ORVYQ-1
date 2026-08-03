@@ -15,47 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Scan for project-specific data in system runtime
-        run: |
-          set -euo pipefail
-          PROJECT_TOKEN="001-"
-          PROJECT_TOKEN="${PROJECT_TOKEN}the-ai-race-no-one-can-afford-to-win"
-          ASSET_TOKEN="scene_024_"
-          ASSET_TOKEN="${ASSET_TOKEN}6e6f4af26cad60cc78930d6d.mp4"
-          RUN_TOKEN="3020"
-          RUN_TOKEN="${RUN_TOKEN}0283806"
-          : > system-independence-violations.txt
-          for TOKEN in "$PROJECT_TOKEN" "$ASSET_TOKEN" "$RUN_TOKEN"; do
-            MATCHES="$(grep -RIlF "$TOKEN" .github scripts templates config package.json \
-              --exclude=orvyq_repository_independence.test.mjs || true)"
-            if [ -n "$MATCHES" ]; then
-              {
-                echo "TOKEN: $TOKEN"
-                echo "$MATCHES"
-                echo
-              } >> system-independence-violations.txt
-            fi
-          done
-          if [ -s system-independence-violations.txt ]; then
-            echo "SYSTEM_INDEPENDENCE_STATUS=1" >> "$GITHUB_ENV"
-            cat system-independence-violations.txt
-          else
-            echo "SYSTEM_INDEPENDENCE_STATUS=0" >> "$GITHUB_ENV"
-            echo "No project-specific runtime leakage found."
-          fi
-
-      - name: Upload system-independence report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: orvyq-system-independence-${{ github.run_id }}
-          retention-days: 7
-          path: system-independence-violations.txt
-          if-no-files-found: error
-
-      - name: Stop when project data leaked into system runtime
-        run: test "$SYSTEM_INDEPENDENCE_STATUS" = "0"
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -64,6 +23,31 @@ jobs:
 
       - name: Install root dependencies
         run: npm ci
+
+      # Derived from the projects that actually exist plus the structural
+      # shapes of project-specific data, so a film created after this workflow
+      # was written is covered without editing a token list here.
+      - name: Scan for project-specific data in system runtime
+        run: |
+          set +e
+          node scripts/orvyq_system_independence_audit.mjs > system-independence-violations.json 2>&1
+          echo $? > system-independence.status
+          cat system-independence-violations.json
+          exit 0
+
+      - name: Upload system-independence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-system-independence-${{ github.run_id }}
+          retention-days: 7
+          path: |
+            system-independence-violations.json
+            system-independence.status
+          if-no-files-found: error
+
+      - name: Stop when project data leaked into system runtime
+        run: test "$(cat system-independence.status)" = "0"
 
       - name: Syntax-check every pipeline script
         run: |
