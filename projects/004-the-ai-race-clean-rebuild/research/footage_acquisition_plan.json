@@ -907,24 +907,29 @@
       "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
       "role": "context",
       "queries": [
-        "server administrator walking data center aisle",
-        "technician inside server room racks"
+        "blue colored cables"
       ],
       "fallback_queries": [
-        "network engineer server cabinet"
+        "network cables close up"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "A technician moving through a real aisle of live server racks",
+      "editorial_note": "A close moving detail of connected network cabling and active infrastructure",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "A technician moving through a real aisle of live server racks; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "Connected network cabling carries the physical scale of the competitive build-out without pretending to identify a particular facility; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "15517230",
         "4761950",
         "33519703",
         "38496192",
         "32386531",
-        "7644222"
+        "7644222",
+        "3209176",
+        "6520274",
+        "33656654",
+        "7141174",
+        "7651615",
+        "7651683"
       ]
     },
     {
@@ -932,24 +937,29 @@
       "claim_id": "CLM_008_CYBER_EXTORTION",
       "role": "context",
       "queries": [
-        "cybersecurity team control room monitors",
-        "IT operations team monitoring wall screens"
+        "high tech control room monitoring operations"
       ],
       "fallback_queries": [
-        "network operations center engineers"
+        "control room multiple monitoring screens"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "A real operations team sharing an active threat picture across multiple displays",
+      "editorial_note": "Operators coordinating around a live multi-screen control room",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "A real operations team sharing an active threat picture across multiple displays; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "A real multi-screen control room provides an honest operational analogy for coordinated incident response without presenting itself as the cited cyber incident; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "8347252",
         "38512646",
         "5377919",
         "33656654",
         "8348720",
-        "33230270"
+        "33230270",
+        "8348723",
+        "34279733",
+        "19197449",
+        "34160292",
+        "6266263",
+        "4389426"
       ]
     },
     {
@@ -957,24 +967,29 @@
       "claim_id": "CLM_008_CYBER_EXTORTION",
       "role": "human_context",
       "queries": [
-        "network engineer analyzing server dashboard",
-        "IT technician monitoring network office"
+        "high tech control room for traffic monitoring"
       ],
       "fallback_queries": [
-        "computer engineer multiple monitors"
+        "operator monitoring multiple live screens"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "An analyst reading real network traffic across an operational workstation",
+      "editorial_note": "An operator reading several live monitoring displays at one workstation",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "An analyst reading real network traffic across an operational workstation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "An operator reading live displays supplies the human monitoring beat without claiming those screens show the cited network traffic; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "6266246",
         "33656654",
         "8347252",
         "7578643",
         "8348729",
-        "30445104"
+        "30445104",
+        "8348904",
+        "6285688",
+        "34279733",
+        "32135470",
+        "33230270",
+        "34170258"
       ]
     },
     {
@@ -982,24 +997,29 @@
       "claim_id": "CLM_008_CYBER_EXTORTION",
       "role": "context",
       "queries": [
-        "technician walking between server racks",
-        "server room blue indicator lights aisle"
+        "database storage of a server"
       ],
       "fallback_queries": [
-        "network equipment room cabinets"
+        "modern server room networking equipment"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "A real server hall with live racks and visible operational context",
+      "editorial_note": "A real server room filled with installed networking and storage equipment",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "A real server hall with live racks and visible operational context; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "A real server room shows the infrastructure being defended without identifying it as any institution in the story; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "7141174",
         "8756633",
         "32386531",
         "34268782",
         "38496192",
-        "38557067"
+        "38557067",
+        "3209176",
+        "36906906",
+        "8053941",
+        "6520274",
+        "7171082",
+        "7651615"
       ]
     },
     {
@@ -1007,24 +1027,29 @@
       "claim_id": "CLM_009_AGENTIC_ESPIONAGE",
       "role": "context",
       "queries": [
-        "telecommunications network control center team",
-        "network operations wall map engineers"
+        "modern traffic management control room"
       ],
       "fallback_queries": [
-        "internet exchange technician monitoring"
+        "operators monitoring a live control system"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Large-scale network activity being monitored by real operators",
+      "editorial_note": "Several operators following a large live system across wall displays",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
-      "semantic_rationale": "Large-scale network activity being monitored by real operators; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "Operators following a large live system visualise the scale and coordination of monitoring without claiming to depict the cited espionage network; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "38512646",
         "38557069",
         "34279733",
         "30767274",
         "8348320",
-        "38557067"
+        "38557067",
+        "7706808",
+        "7578643",
+        "5452680",
+        "7706948",
+        "6062520",
+        "6248650"
       ]
     },
     {
@@ -1032,24 +1057,29 @@
       "claim_id": "CLM_010_BIO_ASL3",
       "role": "context",
       "queries": [
-        "person using key card secure door",
-        "employee badge access controlled door"
+        "people swiping their pass cards before entering"
       ],
       "fallback_queries": [
-        "keycard scanner door entry"
+        "pass card controlled entrance"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "A person visibly using controlled credentials to enter a secured facility",
+      "editorial_note": "People visibly swiping access cards before entering a controlled area",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "A person visibly using controlled credentials to enter a secured facility; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "Visible pass-card entry supplies the physical access-control beat without identifying the location as a laboratory; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "7251756",
         "13008924",
         "9574129",
         "8381327",
         "8381315",
-        "13008918"
+        "13008918",
+        "8550882",
+        "6667264",
+        "6667258",
+        "7986197",
+        "6994795",
+        "6682262"
       ]
     },
     {
@@ -1057,24 +1087,29 @@
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
       "role": "context",
       "queries": [
-        "data center cooling units exterior",
-        "server facility cooling infrastructure"
+        "aerial view of large industrial warehouse facility"
       ],
       "fallback_queries": [
-        "cloud data center building"
+        "large industrial technology facility aerial"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "The exterior infrastructure of a large operational data-centre facility",
+      "editorial_note": "A large industrial facility seen from above as concentrated physical capacity",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "The exterior infrastructure of a large operational data-centre facility; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "A large industrial facility provides honest scale context without being labelled as a data centre or named company; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "2254305",
         "33499539",
         "33601045",
         "7403336",
         "32425275",
-        "4404666"
+        "4404666",
+        "8996268",
+        "20654636",
+        "28112398",
+        "18484628",
+        "28672938",
+        "37367338"
       ]
     },
     {
@@ -1082,24 +1117,29 @@
       "claim_id": "CLM_013_MARKET_CONCENTRATION",
       "role": "context",
       "queries": [
-        "technician inside server rack data center",
-        "server room cabinets technician"
+        "hands operating dual disk drives in low light"
       ],
       "fallback_queries": [
-        "network switch racks close up"
+        "installed storage hardware close up"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Dense compute racks shown as installed, operational infrastructure",
+      "editorial_note": "Installed storage hardware being physically operated at close range",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Dense compute racks shown as installed, operational infrastructure; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "Installed storage hardware provides a concrete component-level view of concentrated compute infrastructure; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "38496192",
         "18526833",
         "4292300",
         "18602155",
         "32386531",
-        "34645205"
+        "34645205",
+        "7141174",
+        "6520274",
+        "33656654",
+        "8987274",
+        "7120148",
+        "8986493"
       ]
     },
     {
@@ -1107,11 +1147,10 @@
       "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
       "role": "governance_context",
       "queries": [
-        "European Union flags institutional meeting room",
-        "EU flag government conference podium"
+        "a woman in a podium giving a speech"
       ],
       "fallback_queries": [
-        "European Union formal conference"
+        "European Union flag formal conference"
       ],
       "min_duration_seconds": 8,
       "editorial_note": "A recognisably European formal chamber or institutional meeting setting",
@@ -1124,7 +1163,12 @@
         "34668548",
         "5823863",
         "6952047",
-        "6952224"
+        "6952224",
+        "6952206",
+        "31452793",
+        "11336628",
+        "6951445",
+        "6951400"
       ]
     },
     {
@@ -1132,24 +1176,29 @@
       "claim_id": "CLM_015_COMPUTE_NOT_ONLY_ROUTE",
       "role": "context",
       "queries": [
-        "data center technician checking tablet server racks",
-        "engineer inspecting computer hardware diagnostics"
+        "man checking the computer cables"
       ],
       "fallback_queries": [
-        "technician measuring electronic equipment"
+        "technician checking network cables"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Compute capacity being physically inspected, measured, or monitored",
+      "editorial_note": "A technician physically checking connected computer and network cables",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "physical",
-      "semantic_rationale": "Compute capacity being physically inspected, measured, or monitored; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "A technician physically checking connected hardware makes compute capacity tangible without turning the stock image into measurement evidence; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "7141174",
         "15517230",
         "38512646",
         "33656654",
         "34279733",
-        "17992331"
+        "17992331",
+        "32536795",
+        "9588290",
+        "31667546",
+        "7314035",
+        "6755161",
+        "7231314"
       ]
     },
     {
@@ -1157,24 +1206,29 @@
       "claim_id": "CLM_018_CLOSED_ACCESS_TRADEOFF",
       "role": "governance_context",
       "queries": [
-        "access control operator monitoring screens",
-        "data center security control room operators"
+        "high tech control room with multiple CCTV monitors"
       ],
       "fallback_queries": [
-        "security operations room team"
+        "central monitoring room multiple screens"
       ],
       "min_duration_seconds": 8,
-      "editorial_note": "Centralised access and monitoring visibly operated by a responsible team",
+      "editorial_note": "A central monitoring room consolidating many live feeds in one place",
       "narration_anchor": "To be resolved from fixed voice_script.txt during alignment",
       "semantic_link": "conceptual",
-      "semantic_rationale": "Centralised access and monitoring visibly operated by a responsible team; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+      "semantic_rationale": "A central room consolidating many live feeds visualises concentrated monitoring power without claiming to depict the cited access policy; the claim's factual burden stays with the primary evidence.",
       "rejected_provider_asset_ids": [
         "8346903",
         "8347251",
         "5377919",
         "38512646",
         "38498182",
-        "27562410"
+        "27562410",
+        "33656654",
+        "6266246",
+        "19463242",
+        "4349934",
+        "19197449",
+        "7578646"
       ]
     }
   ],
