@@ -5,17 +5,25 @@
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 
-# Project 002 acquisition produces compact review-ready clips (each well below
-# GitHub's 100 MB per-file limit). Store them as normal Git blobs so the
-# acquisition workflow does not depend on Git LFS quota or LFS upload auth.
-projects/002-the-new-war-beneath-the-ocean/assets/footage/*.mp4 -filter -diff -merge -text
+# Footage acquisition produces compact review-ready clips (each well below
+# GitHub's 100 MB per-file limit, and the acquisition workflow refuses any
+# above 95 MB). Store them as normal Git blobs so acquisition does not depend
+# on Git LFS quota or LFS upload auth. This is a property of how the system
+# acquires footage, not of any one film, so it applies to every project --
+# naming a single project here left every later project's clips routed
+# through LFS while the workflow demanded normal blobs.
+projects/*/assets/footage/*.mp4 -filter -diff -merge -text
 
-# Project 002 official evidence captures are compact, verified production
-# assets. Store rendered JPEG/PNG evidence as normal Git blobs so evidence
-# acquisition is reproducible without Git LFS quota or upload-auth dependency.
-projects/002-the-new-war-beneath-the-ocean/assets/evidence/*.png -filter -diff -merge -text
-projects/002-the-new-war-beneath-the-ocean/assets/evidence/*.jpg -filter -diff -merge -text
-projects/002-the-new-war-beneath-the-ocean/assets/evidence/*.jpeg -filter -diff -merge -text
+# Official evidence captures are compact, verified production assets. Store
+# rendered JPEG/PNG evidence as normal Git blobs so evidence acquisition is
+# reproducible without a Git LFS quota or upload-auth dependency.
+projects/*/assets/evidence/*.png -filter -diff -merge -text
+projects/*/assets/evidence/*.jpg -filter -diff -merge -text
+projects/*/assets/evidence/*.jpeg -filter -diff -merge -text
+
+# Contact sheets exist to be looked at during review, so they must be
+# fetchable without LFS for the same reason.
+projects/*/qa/footage-contact-sheets/*.jpg -filter -diff -merge -text
 
 # Committed as a plain blob (LFS push is blocked in the session that added
 # it -- see scripts/README.md / the commit that introduced this file), so the

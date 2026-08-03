@@ -923,7 +923,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const args = parseArgs(process.argv.slice(2));
   const projectId = args["project-id"] || process.env.ORVYQ_PROJECT_ID;
   acquireDemandFootage(projectId)
-    .then((result) => printJson({ ok: true, ...result }))
+    .then((result) => {
+      // A run that leaves scenes unresolved has not acquired the pool the
+      // plan asked for. Reporting success anyway is how a run that selected
+      // nothing at all still went green, committed an empty pool, and only
+      // showed up a full cycle later.
+      const ok = result.partial !== true && result.provider_unavailable !== true;
+      printJson({ ok, ...result });
+      if (!ok) process.exitCode = 1;
+    })
     .catch((error) => {
       console.error(JSON.stringify({ ok: false, error: error.message }));
       process.exitCode = 1;

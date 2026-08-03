@@ -16,7 +16,11 @@ import { readdir, readFile, stat } from "node:fs/promises";
 import { REPO_ROOT, parseArgs, printJson } from "./lib/fs-utils.mjs";
 
 // The reusable system: everything a fresh project would inherit unchanged.
-export const SYSTEM_ROOTS = Object.freeze([".github", "scripts", "templates", "config", "package.json"]);
+// `.gitattributes` decides how every project's media is stored, so a rule
+// written for one film silently changes nothing for the next one -- which is
+// how compact footage stayed routed through LFS for every project except the
+// one named there.
+export const SYSTEM_ROOTS = Object.freeze([".github", "scripts", "templates", "config", "package.json", ".gitattributes"]);
 
 const IGNORED_DIRECTORIES = new Set(["node_modules", ".git", "out", ".remotion", "qa", "migration"]);
 

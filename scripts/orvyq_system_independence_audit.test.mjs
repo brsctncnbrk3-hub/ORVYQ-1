@@ -89,6 +89,26 @@ test("tests may name the live acceptance project and fixture assets", async () =
   assert.equal((await auditSystemIndependence({ repoRoot: root })).pass, true);
 });
 
+test("a media rule pinned to one project is caught in .gitattributes", async () => {
+  const root = await makeRepo({
+    "projects/007-a-film/project.json": "{}",
+    "projects/008-another-film/project.json": "{}",
+    ".gitattributes": "*.mp4 filter=lfs diff=lfs merge=lfs -text\nprojects/007-a-film/assets/footage/*.mp4 -filter -diff -merge -text\n",
+  });
+  const report = await auditSystemIndependence({ repoRoot: root });
+  assert.equal(report.pass, false);
+  assert.equal(report.violations[0].file, ".gitattributes");
+  assert.equal(report.violations[0].detail, "007-a-film");
+});
+
+test("a media rule written for every project is not a leak", async () => {
+  const root = await makeRepo({
+    "projects/007-a-film/project.json": "{}",
+    ".gitattributes": "*.mp4 filter=lfs diff=lfs merge=lfs -text\nprojects/*/assets/footage/*.mp4 -filter -diff -merge -text\n",
+  });
+  assert.equal((await auditSystemIndependence({ repoRoot: root })).pass, true);
+});
+
 test("project directories are the sole source of the id list", async () => {
   const root = await makeRepo({
     "projects/009-c-film/project.json": "{}",
