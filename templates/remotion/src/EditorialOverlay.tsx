@@ -1,10 +1,30 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { EvidenceDataPoint, EvidenceMatrixRow, EvidenceNode, EvidenceVisual, EvidenceVisualSpec } from "./EvidenceVisual";
+import { AbsoluteFill } from "remotion";
+import {
+  EvidenceDataPoint,
+  EvidenceMatrixRow,
+  EvidenceNode,
+  EvidenceVisual,
+  EvidenceVisualSpec,
+} from "./EvidenceVisual";
 import { ORVYQ_DESIGN } from "./designSystem";
+import { useReveal } from "./useReveal";
 
 export type EditorialOverlaySpec = {
-  type: "source_mosaic" | "comparison" | "document" | "stat" | "process" | "email_recreation" | "quote" | "boundary" | "timeline" | "bar_evidence" | "matrix" | "evidence_chain" | "node_map";
+  type:
+    | "source_mosaic"
+    | "comparison"
+    | "document"
+    | "stat"
+    | "process"
+    | "email_recreation"
+    | "quote"
+    | "boundary"
+    | "timeline"
+    | "bar_evidence"
+    | "matrix"
+    | "evidence_chain"
+    | "node_map";
   eyebrow: string;
   title: string;
   body?: string;
@@ -25,174 +45,383 @@ export type EditorialOverlaySpec = {
   unit?: string;
 };
 
-const { color, type, safe, surface } = ORVYQ_DESIGN;
-const ink = color.ink;
-const muted = color.muted;
-const accent = color.signal;
-const blue = color.information;
-const clamp = { extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const };
-const EVIDENCE_TYPES = new Set(["timeline", "bar_evidence", "matrix", "evidence_chain", "node_map"]);
+/**
+ * Annotation on the frame.
+ *
+ * This used to be a panel: a blurred plate with a three-pixel rail down its
+ * left edge, a hairline box around it, a drop shadow and a corner mark in the
+ * top right. Every time it appeared the viewer had to find the picture again
+ * behind it, and the corner mark and rail said nothing at all.
+ *
+ * It is now the same treatment as the rest of the film -- type set directly
+ * on the shot -- with one concession the other registers do not need: this
+ * one starts at the top and grows downward, because a list or a data figure
+ * cannot be bottom-anchored. So legibility comes from a scrim that ramps out
+ * before the right edge rather than from a plate with a border.
+ */
 
-const SourceFooter: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => {
-  const label = spec.recreation_label || ((spec.source_ids || []).length ? "PRIMARY SOURCE CONTEXT" : null);
-  if (!label) return null;
+const { color, type, safe } = ORVYQ_DESIGN;
+
+/** Mono, tracked, quiet: labels, sources, counts, step numbers. */
+const label: React.CSSProperties = {
+  fontFamily: type.monoFamily,
+  fontWeight: type.labelWeight,
+  letterSpacing: type.trackingLabel,
+  textTransform: "uppercase",
+};
+
+const EVIDENCE_TYPES = new Set([
+  "timeline",
+  "bar_evidence",
+  "matrix",
+  "evidence_chain",
+  "node_map",
+]);
+
+/**
+ * Only what the edit plan actually authored. The fallback used to print
+ * "PRIMARY SOURCE CONTEXT" under any overlay that carried source ids, which
+ * named the overlay's own category and never the source.
+ */
+const SourceFooter: React.FC<{ spec: EditorialOverlaySpec; enter: number }> = ({
+  spec,
+  enter,
+}) => {
+  const text = spec.recreation_label;
+  if (!text) return null;
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 11, marginTop: 22, color: muted, fontSize: 15, letterSpacing: ".14em", fontWeight: type.labelWeight }}>
-      <span style={{ width: 22, height: 1, background: blue }} />
-      {label}
-    </div>
+    <>
+      <div
+        style={{
+          height: 1,
+          background: color.hairlineQuiet,
+          margin: "34px 0 20px",
+          transform: `scaleX(${enter})`,
+          transformOrigin: "left center",
+        }}
+      />
+      <div style={{ ...label, fontSize: 19, color: color.steel }}>{text}</div>
+    </>
   );
 };
 
-const Comparison: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 24 }}>
-    {[spec.left, spec.right].map((value, index) => {
-      const localColor = index ? accent : blue;
-      return (
+/**
+ * The caveat the film is obliged to carry. Sodium and a rule, because it is
+ * the one thing on screen the viewer must not read past -- not a tinted box,
+ * which is how it read before and which made it look like a warning dialog.
+ */
+const Limitation: React.FC<{ text?: string }> = ({ text }) =>
+  text ? (
+    <div
+      style={{
+        marginTop: 32,
+        paddingLeft: 22,
+        borderLeft: `2px solid ${color.signal}`,
+        color: color.inkSoft,
+        fontSize: 23,
+        lineHeight: 1.34,
+        fontWeight: type.textWeight,
+        maxWidth: "46ch",
+      }}
+    >
+      {text}
+    </div>
+  ) : null;
+
+const Comparison: React.FC<{ spec: EditorialOverlaySpec; enter: number }> = ({
+  spec,
+  enter,
+}) => (
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: 52,
+      marginTop: 38,
+    }}
+  >
+    {[spec.left, spec.right].map((value, index) => (
+      <div key={`${index}-${value}`}>
+        {/* Two rules, two colours: the whole of the distinction. The columns
+            used to be captioned "POSITION A" and "POSITION B", which named
+            the layout rather than the argument. */}
         <div
-          key={`${index}-${value}`}
           style={{
-            minHeight: 118,
-            padding: "18px 20px 20px",
-            background: "linear-gradient(145deg,rgba(18,28,39,.7),rgba(8,13,19,.86))",
-            borderTop: `2px solid ${localColor}`,
-            borderRight: `1px solid ${color.hairline}`,
-            borderBottom: `1px solid ${color.hairline}`,
-            borderLeft: `1px solid ${color.hairline}`,
+            height: 2,
+            background: index ? color.signal : color.steel,
+            marginBottom: 22,
+            transform: `scaleX(${enter})`,
+            transformOrigin: "left center",
+          }}
+        />
+        <div
+          style={{
+            color: color.ink,
+            fontFamily: type.displayFamily,
+            fontSize: 34,
+            lineHeight: 1.16,
+            fontWeight: type.labelWeight,
+            letterSpacing: "-.018em",
           }}
         >
-          <div style={{ color: localColor, fontSize: 13, fontWeight: type.labelWeight, letterSpacing: ".14em" }}>
-            {index === 0 ? "POSITION A" : "POSITION B"}
-          </div>
-          <div style={{ marginTop: 16, color: ink, fontSize: 27, lineHeight: 1.18, fontWeight: type.displayWeight }}>{value}</div>
+          {value}
         </div>
-      );
-    })}
-  </div>
-);
-
-const SourceMosaic: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ display: "grid", gap: 0, marginTop: 22 }}>
-    {(spec.items || []).map((item, index) => (
-      <div key={item} style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: 14, alignItems: "start", borderTop: `1px solid ${color.hairline}`, padding: "14px 0 13px" }}>
-        <span style={{ color: blue, fontSize: 14, fontWeight: 800, letterSpacing: ".08em" }}>{String(index + 1).padStart(2, "0")}</span>
-        <span style={{ color: ink, fontSize: 24, lineHeight: 1.22, fontWeight: 560 }}>{item}</span>
       </div>
     ))}
   </div>
 );
 
-const Process: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ display: "grid", gap: 0, marginTop: 22 }}>
-    {(spec.steps || []).map((step, index) => {
-      const isLast = index === (spec.steps || []).length - 1;
-      return (
-        <div key={step} style={{ display: "grid", gridTemplateColumns: "52px 1fr", gap: 14, minHeight: 62 }}>
-          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            {!isLast ? <span style={{ position: "absolute", top: 28, bottom: -5, width: 1, background: color.hairlineStrong }} /> : null}
-            <span style={{ position: "relative", width: 28, height: 28, display: "grid", placeItems: "center", background: isLast ? accent : color.canvasLift, border: `1px solid ${isLast ? accent : blue}`, color: isLast ? color.canvas : blue, fontSize: 12, fontWeight: 900 }}>{String(index + 1).padStart(2, "0")}</span>
+const SourceMosaic: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
+  <div style={{ marginTop: 34 }}>
+    {(spec.items || []).map((item, index) => (
+      <div
+        key={item}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "62px 1fr",
+          gap: 18,
+          alignItems: "baseline",
+          borderTop: `1px solid ${color.hairlineQuiet}`,
+          padding: "18px 0",
+        }}
+      >
+        <span style={{ ...label, fontSize: 20, color: color.steel }}>
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span
+          style={{
+            color: color.ink,
+            fontSize: 27,
+            lineHeight: 1.26,
+            fontWeight: type.textWeight,
+          }}
+        >
+          {item}
+        </span>
+      </div>
+    ))}
+  </div>
+);
+
+const Process: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => {
+  const steps = spec.steps || [];
+  return (
+    <div style={{ marginTop: 34 }}>
+      {steps.map((step, index) => {
+        const last = index === steps.length - 1;
+        return (
+          <div
+            key={step}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "62px 1fr",
+              gap: 18,
+              alignItems: "baseline",
+              borderTop: `1px solid ${color.hairlineQuiet}`,
+              padding: "18px 0",
+            }}
+          >
+            {/* The last step is where the process arrives, so it is the only
+                one that takes the accent. The numbered discs and the
+                connecting spine are gone: an ordered list is already ordered. */}
+            <span
+              style={{
+                ...label,
+                fontSize: 20,
+                color: last ? color.signal : color.steel,
+              }}
+            >
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span
+              style={{
+                color: color.ink,
+                fontSize: 27,
+                lineHeight: 1.26,
+                fontWeight: last ? type.labelWeight : type.textWeight,
+              }}
+            >
+              {step}
+            </span>
           </div>
-          <span style={{ color: ink, fontSize: 24, lineHeight: 1.2, fontWeight: 560, paddingBottom: 17, borderBottom: isLast ? "none" : `1px solid ${color.hairline}` }}>{step}</span>
-        </div>
-      );
-    })}
-  </div>
-);
+        );
+      })}
+    </div>
+  );
+};
 
+/**
+ * A reconstruction, printed on evidence stock and saying so. It is the one
+ * thing in the film allowed to imitate a document, so the admission that it
+ * is a reconstruction has to sit on the artefact itself.
+ */
 const EmailRecreation: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <div style={{ marginTop: 22, background: color.paper, color: color.paperInk, boxShadow: "0 28px 74px rgba(0,0,0,.38)", border: "1px solid rgba(255,255,255,.34)" }}>
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 17px", borderBottom: "1px solid rgba(23,28,34,.16)", fontSize: 13, letterSpacing: ".13em", fontWeight: 800, color: "#59636D" }}>
+  <div
+    style={{
+      marginTop: 34,
+      background: color.paper,
+      color: color.paperInk,
+      padding: "26px 30px 30px",
+    }}
+  >
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        gap: 24,
+        paddingBottom: 18,
+        borderBottom: `1px solid ${color.paperHairline}`,
+        ...label,
+        fontSize: 17,
+        color: color.paperQuiet,
+      }}
+    >
+      {/* `recreation_label` names the provenance and is set at the foot of
+          the overlay; this line names the artefact and what it is not. */}
       <span>SYNTHETIC CORPORATE EMAIL</span>
-      <span style={{ color: "#7B858E" }}>RECREATION</span>
+      <span>RECREATION</span>
     </div>
-    <div style={{ padding: "20px 22px 23px" }}>
-      <div style={{ fontFamily: type.displayFamily, fontSize: 28, lineHeight: 1.14, fontWeight: 720, letterSpacing: "-.02em" }}>{spec.title}</div>
-      {spec.body ? <div style={{ fontSize: 22, lineHeight: 1.38, marginTop: 14, color: "#303942" }}>{spec.body}</div> : null}
+    <div
+      style={{
+        fontFamily: type.displayFamily,
+        fontSize: 32,
+        lineHeight: 1.16,
+        fontWeight: type.displayWeight,
+        letterSpacing: "-.024em",
+        marginTop: 20,
+      }}
+    >
+      {spec.title}
     </div>
-  </div>
-);
-
-const DefaultBody: React.FC<{ spec: EditorialOverlaySpec }> = ({ spec }) => (
-  <>
-    {spec.type === "stat" ? (
-      <div style={{ display: "inline-block", color: ink, fontFamily: type.displayFamily, fontSize: 74, lineHeight: .95, fontWeight: 680, letterSpacing: "-.05em", marginTop: 22, paddingBottom: 12, borderBottom: `2px solid ${blue}` }}>{spec.title}</div>
-    ) : null}
     {spec.body ? (
       <div
         style={{
-          color: ink,
-          fontFamily: spec.type === "quote" ? type.editorialFamily : type.family,
-          fontSize: Math.max(28, spec.font_px || 30),
-          lineHeight: spec.type === "quote" ? 1.34 : 1.3,
-          fontWeight: spec.type === "quote" ? 500 : 520,
-          fontStyle: spec.type === "quote" ? "italic" : "normal",
-          marginTop: spec.type === "stat" ? 18 : 22,
+          fontSize: 24,
+          lineHeight: 1.42,
+          marginTop: 16,
+          color: color.paperQuiet,
         }}
       >
         {spec.body}
       </div>
     ) : null}
-  </>
+  </div>
 );
 
-export const EditorialOverlay: React.FC<{ spec: EditorialOverlaySpec; durationInFrames: number }> = ({ spec, durationInFrames }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const reveal = spring({ frame, fps, config: { damping: 24, stiffness: 96, mass: .9 }, durationInFrames: Math.min(34, durationInFrames) });
-  const fadeOut = interpolate(frame, [Math.max(1, durationInFrames - 13), durationInFrames], [1, 0], clamp);
-  const opacity = reveal * fadeOut;
-  const titleIsRepeatedInside = spec.type === "stat" || spec.type === "email_recreation";
-  const isEvidenceVisual = EVIDENCE_TYPES.has(spec.type);
-  const width = isEvidenceVisual ? 1020 : 790;
-  const railColor = spec.type === "boundary" || spec.type === "quote" ? accent : blue;
+const Statement: React.FC<{ spec: EditorialOverlaySpec; enter: number }> = ({
+  spec,
+  enter,
+}) => {
+  const quote = spec.type === "quote";
+  return (
+    <>
+      {spec.type === "stat" ? (
+        <div style={{ display: "inline-block", marginTop: 8 }}>
+          <div
+            style={{
+              color: color.ink,
+              fontFamily: type.displayFamily,
+              fontSize: 108,
+              lineHeight: 0.98,
+              fontWeight: type.displayWeight,
+              letterSpacing: "-.042em",
+            }}
+          >
+            {spec.title}
+          </div>
+          <div
+            style={{
+              height: 2,
+              background: color.signal,
+              marginTop: 20,
+              transform: `scaleX(${enter})`,
+              transformOrigin: "left center",
+            }}
+          />
+        </div>
+      ) : null}
+      {spec.body ? (
+        <div
+          style={{
+            color: quote ? color.ink : color.inkSoft,
+            fontFamily: quote ? type.editorialFamily : type.family,
+            fontSize: Math.max(28, spec.font_px || 30),
+            lineHeight: quote ? 1.38 : 1.36,
+            fontWeight: type.textWeight,
+            fontStyle: quote ? "italic" : "normal",
+            marginTop: 26,
+            maxWidth: quote ? "30ch" : "40ch",
+          }}
+        >
+          {spec.body}
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+export const EditorialOverlay: React.FC<{
+  spec: EditorialOverlaySpec;
+  durationInFrames: number;
+}> = ({ spec, durationInFrames }) => {
+  const { opacity, enter, translateY } = useReveal(durationInFrames);
+  const isFigure = EVIDENCE_TYPES.has(spec.type);
+  // The title is the artefact's own subject line in a recreation, and the
+  // number itself in a stat: setting it twice is the panel habit, not a
+  // heading.
+  const titleIsRepeatedInside =
+    spec.type === "stat" || spec.type === "email_recreation";
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        left: safe.dense,
-        top: safe.top,
-        width,
-        maxHeight: 800,
-        opacity,
-        transform: `translateY(${(1 - reveal) * 16}px)`,
-        fontFamily: type.family,
-        zIndex: 8,
-      }}
-    >
+    <AbsoluteFill style={{ pointerEvents: "none", zIndex: 8 }}>
+      <AbsoluteFill style={{ background: ORVYQ_DESIGN.scrim.side, opacity }} />
       <div
         style={{
-          position: "relative",
-          overflow: "hidden",
-          padding: "24px 28px 26px 34px",
-          background: "linear-gradient(135deg,rgba(10,16,23,.95),rgba(10,16,23,.84) 72%,rgba(10,16,23,.62))",
-          borderTop: `1px solid ${color.hairlineStrong}`,
-          borderRight: `1px solid ${color.hairline}`,
-          borderBottom: `1px solid ${color.hairline}`,
-          borderLeft: `3px solid ${railColor}`,
-          boxShadow: surface.shadow,
-          backdropFilter: `blur(${surface.blurPx}px)`,
+          position: "absolute",
+          left: safe.dense,
+          top: safe.top,
+          right: isFigure ? safe.dense : undefined,
+          maxWidth: isFigure ? 1180 : 880,
+          opacity,
+          transform: `translateY(${translateY}px)`,
+          fontFamily: type.family,
         }}
       >
-        <div style={{ position: "absolute", right: 18, top: 17, width: 24, height: 24, borderTop: `1px solid ${railColor}`, borderRight: `1px solid ${railColor}`, opacity: .68 }} />
-        <div style={{ display: "flex", alignItems: "center", gap: 12, color: railColor, fontSize: 15, lineHeight: 1.15, fontWeight: type.labelWeight, letterSpacing: type.trackingLabel, textTransform: "uppercase" }}>
-          <span style={{ width: 24, height: 1, background: railColor }} />
+        <div style={{ ...label, fontSize: 21, color: color.signal }}>
           {spec.eyebrow}
         </div>
         {!titleIsRepeatedInside ? (
-          <div style={{ maxWidth: isEvidenceVisual ? 900 : 710, color: ink, fontFamily: type.displayFamily, fontSize: Math.max(37, (spec.font_px || 30) + 7), lineHeight: 1.06, fontWeight: type.displayWeight, letterSpacing: "-.03em", marginTop: 15 }}>{spec.title}</div>
+          <div
+            style={{
+              color: color.ink,
+              fontFamily: type.displayFamily,
+              fontSize: Math.max(44, (spec.font_px || 30) + 12),
+              lineHeight: 1.08,
+              fontWeight: type.displayWeight,
+              letterSpacing: type.trackingDisplay,
+              marginTop: 24,
+              maxWidth: isFigure ? "26ch" : "20ch",
+            }}
+          >
+            {spec.title}
+          </div>
         ) : null}
         {spec.type === "source_mosaic" ? <SourceMosaic spec={spec} /> : null}
-        {spec.type === "comparison" ? <Comparison spec={spec} /> : null}
+        {spec.type === "comparison" ? <Comparison spec={spec} enter={enter} /> : null}
         {spec.type === "process" ? <Process spec={spec} /> : null}
         {spec.type === "email_recreation" ? <EmailRecreation spec={spec} /> : null}
-        {["document", "stat", "quote", "boundary"].includes(spec.type) ? <DefaultBody spec={spec} /> : null}
-        {isEvidenceVisual ? <EvidenceVisual spec={spec as EvidenceVisualSpec} durationInFrames={durationInFrames} /> : null}
-        {spec.limitation ? (
-          <div style={{ marginTop: 20, borderLeft: `2px solid ${accent}`, background: "rgba(201,107,95,.1)", color: ink, padding: "13px 16px", fontSize: 21, lineHeight: 1.28, fontWeight: 620 }}>{spec.limitation}</div>
+        {["document", "stat", "quote", "boundary"].includes(spec.type) ? (
+          <Statement spec={spec} enter={enter} />
         ) : null}
-        <SourceFooter spec={spec} />
+        {isFigure ? (
+          <EvidenceVisual
+            spec={spec as EvidenceVisualSpec}
+            durationInFrames={durationInFrames}
+          />
+        ) : null}
+        <Limitation text={spec.limitation} />
+        <SourceFooter spec={spec} enter={enter} />
       </div>
-    </div>
+    </AbsoluteFill>
   );
 };

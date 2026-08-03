@@ -1,25 +1,33 @@
 import React from "react";
-import {
-  AbsoluteFill,
-  Img,
-  interpolate,
-  staticFile,
-  useCurrentFrame,
-} from "remotion";
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
 import type { PrimaryEvidenceSpec } from "./types/evidence";
 import { ORVYQ_DESIGN } from "./designSystem";
+import { useReveal } from "./useReveal";
 
 const clamp = {
   extrapolateLeft: "clamp" as const,
   extrapolateRight: "clamp" as const,
 };
 
+/**
+ * Several published documents in a row, for a claim that rests on more than
+ * one of them.
+ *
+ * Register C's shape, extended in time: the page is held as an object on film
+ * black and the next one dissolves into its place. What is gone is the
+ * staging around it -- a blurred, darkened copy of the same document filling
+ * the frame behind itself, a rounded card with a border and a hundred-pixel
+ * shadow, a standing ORVYQ wordmark in the corner, and the source line
+ * printed twice with a "VERIFIED PRIMARY SOURCE" stamp beside it. A document
+ * does not need to be presented. It needs to be shown, and named.
+ */
 export const DocumentEvidenceSequence: React.FC<{
   spec: PrimaryEvidenceSpec;
   durationInFrames: number;
 }> = ({ spec, durationInFrames }) => {
   const frame = useCurrentFrame();
   const { color, type, safe } = ORVYQ_DESIGN;
+  const { opacity, enter, translateY } = useReveal(durationInFrames);
   const images = spec.image_assets || [];
   if (!images.length) return null;
 
@@ -28,173 +36,123 @@ export const DocumentEvidenceSequence: React.FC<{
     images.length - 1,
     Math.floor(frame / Math.max(1, framesPerDocument)),
   );
-  const localFrame = frame - activeIndex * framesPerDocument;
-  const localProgress = localFrame / Math.max(1, framesPerDocument);
+  const localProgress =
+    (frame - activeIndex * framesPerDocument) / Math.max(1, framesPerDocument);
+  // Each page is fully present for most of its slot and hands over at the
+  // edges, so two documents are never both half-legible for long.
   const documentOpacity =
-    interpolate(localProgress, [0, 0.1], [0, 1], clamp) *
-    interpolate(localProgress, [0.88, 1], [1, 0], clamp);
-  const scale = interpolate(localProgress, [0, 1], [1.015, 1.07], clamp);
+    interpolate(localProgress, [0, 0.12], [0, 1], clamp) *
+    interpolate(localProgress, [0.9, 1], [1, 0], clamp);
   const activeImage = images[activeIndex];
   const activeSourceName = spec.source_labels?.[activeIndex] || spec.source_label;
 
   return (
-    <AbsoluteFill
-      style={{
-        background: "#050A11",
-        overflow: "hidden",
-        fontFamily: type.family,
-      }}
-    >
-      <Img
-        src={staticFile(activeImage)}
-        style={{
-          position: "absolute",
-          inset: -80,
-          width: "calc(100% + 160px)",
-          height: "calc(100% + 160px)",
-          objectFit: "cover",
-          filter: "blur(34px) brightness(.23) saturate(.65)",
-          transform: `scale(${1.06 + localProgress * 0.03})`,
-        }}
-      />
+    <AbsoluteFill style={{ backgroundColor: color.canvas }}>
       <AbsoluteFill
         style={{
-          background:
-            "linear-gradient(90deg,rgba(3,7,12,.92) 0%,rgba(3,7,12,.58) 30%,rgba(3,7,12,.2) 68%,rgba(3,7,12,.5) 100%),linear-gradient(180deg,rgba(3,7,12,.14),rgba(3,7,12,.58))",
-        }}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          left: safe.dense,
-          top: safe.top,
-          zIndex: 12,
           display: "flex",
-          alignItems: "center",
-          gap: 12,
-          color: color.ink,
-          fontSize: 21,
-          fontWeight: type.labelWeight,
-          letterSpacing: ".23em",
-        }}
-      >
-        <span
-          style={{
-            width: 9,
-            height: 9,
-            borderRadius: 99,
-            background: color.signal,
-          }}
-        />
-        ORVYQ
-      </div>
-
-      <div
-        style={{
-          position: "absolute",
-          left: safe.dense,
-          top: 146,
-          width: 430,
-          zIndex: 12,
+          flexDirection: "row",
+          alignItems: "stretch",
+          padding: `${safe.top}px ${safe.x}px`,
+          gap: 96,
+          opacity,
         }}
       >
         <div
           style={{
-            color: color.information,
-            fontSize: 21,
-            fontWeight: type.labelWeight,
-            letterSpacing: ".16em",
-            lineHeight: 1.15,
-          }}
-        >
-          PUBLISHED EVIDENCE
-        </div>
-        <div
-          style={{
-            color: color.ink,
-            fontSize: 43,
-            fontWeight: type.displayWeight,
-            letterSpacing: "-.035em",
-            lineHeight: 1.03,
-            marginTop: 15,
-          }}
-        >
-          {spec.title}
-        </div>
-        <div
-          style={{
-            color: color.muted,
-            fontSize: 27,
-            fontWeight: 590,
-            lineHeight: 1.28,
-            marginTop: 20,
-          }}
-        >
-          {activeSourceName}
-        </div>
-        <div
-          style={{
-            color: color.signal,
-            fontSize: 22,
-            fontWeight: 850,
-            letterSpacing: ".12em",
-            marginTop: 30,
-          }}
-        >
-          DOCUMENT {String(activeIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
-        </div>
-      </div>
-
-      <div
-        style={{
-          position: "absolute",
-          left: 540,
-          right: 72,
-          top: 82,
-          bottom: 205,
-          zIndex: 8,
-          opacity: documentOpacity,
-          overflow: "hidden",
-          background: "#ECEAE4",
-          border: "1px solid rgba(246,242,233,.34)",
-          borderRadius: 7,
-          boxShadow: "0 36px 120px rgba(0,0,0,.65)",
-        }}
-      >
-        <Img
-          src={staticFile(activeImage)}
-          style={{
-            width: "100%",
+            flex: "0 0 40%",
             height: "100%",
-            objectFit: "contain",
-            objectPosition: "center top",
-            transform: `scale(${scale})`,
-            transformOrigin: "center top",
-            filter: "contrast(1.06) saturate(.96)",
+            alignSelf: "center",
+            backgroundColor: color.paper,
+            overflow: "hidden",
+            opacity: documentOpacity,
+            transform: `translateY(${translateY}px)`,
           }}
-        />
-      </div>
+        >
+          <Img
+            src={staticFile(activeImage)}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+        </div>
 
-      <div
-        style={{
-          position: "absolute",
-          left: safe.dense,
-          right: 72,
-          bottom: 155,
-          zIndex: 14,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          color: color.muted,
-          fontSize: 23,
-          fontWeight: 760,
-          letterSpacing: ".035em",
-        }}
-      >
-        <span>{activeSourceName}</span>
-        <span style={{ color: "rgba(246,242,233,.6)" }}>VERIFIED PRIMARY SOURCE</span>
-      </div>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            fontFamily: type.family,
+            color: color.ink,
+            transform: `translateY(${translateY}px)`,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: type.monoFamily,
+              fontSize: 30,
+              fontWeight: type.labelWeight,
+              letterSpacing: type.trackingLabel,
+              textTransform: "uppercase",
+              color: color.signal,
+              marginBottom: 28,
+            }}
+          >
+            {spec.eyebrow}
+          </div>
+          <div
+            style={{
+              maxWidth: "20ch",
+              fontFamily: type.displayFamily,
+              fontSize: spec.title.length > 48 ? 58 : 66,
+              fontWeight: type.displayWeight,
+              letterSpacing: type.trackingDisplay,
+              lineHeight: 1.08,
+            }}
+          >
+            {spec.title}
+          </div>
+          <div
+            style={{
+              height: 1,
+              background: color.hairlineQuiet,
+              margin: "38px 0 26px",
+              transform: `scaleX(${enter})`,
+              transformOrigin: "left center",
+            }}
+          />
+          {/* The source changes with the page; the count says where in the
+              run we are. Both are set in the edit-suite face, quietly. */}
+          <div
+            style={{
+              fontFamily: type.monoFamily,
+              fontSize: 25,
+              letterSpacing: ".04em",
+              lineHeight: 1.5,
+              color: color.steel,
+              maxWidth: "58ch",
+            }}
+          >
+            {activeSourceName}
+          </div>
+          <div
+            style={{
+              fontFamily: type.monoFamily,
+              fontSize: 22,
+              letterSpacing: ".14em",
+              color: color.inkQuiet,
+              marginTop: 18,
+            }}
+          >
+            {String(activeIndex + 1).padStart(2, "0")} /{" "}
+            {String(images.length).padStart(2, "0")}
+          </div>
+        </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };

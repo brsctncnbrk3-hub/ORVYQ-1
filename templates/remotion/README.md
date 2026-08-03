@@ -18,10 +18,10 @@ component: it was confirmed dead code in the golden repo (`Scene.tsx` renders
 which `Video.tsx`, `Scene.tsx`, and `PrimaryEvidenceV2.tsx` now import from instead. This is a
 pure dead-code removal with no behavioral change — see `docs/migration-plan.md` §3 (Phase 1).
 
-Everything else — including the `"16"` / `"leading models stress-tested"` hardcoded content
-literal inside `PrimaryEvidenceV2.tsx`'s `ArticleStage` and the ORVYQ-specific graphic-type
-whitelist inside `OrvyqGraphic.tsx` — is left exactly as in the golden source for this phase.
-Those are tracked as Phase 3 cleanups (after golden-proof parity is established), not fixed now.
+The ORVYQ-specific graphic-type whitelist inside `OrvyqGraphic.tsx` is left as in the golden
+source. `PrimaryEvidenceV2.tsx`'s `ArticleStage` — which carried the hardcoded `"16"` /
+`"leading models stress-tested"` content literal — no longer exists; the component was
+rewritten in the on-screen-language pass below and the literal went with it.
 
 ## Verified in this phase
 
@@ -73,15 +73,50 @@ FACTFORGE_REMOTION_BROWSER_EXECUTABLE=<chrome-headless-shell> \
 `DesignPreview.tsx` registers each register over a real frame from the film at
 delivery resolution, so type is judged at the size it will actually be seen.
 It is not part of `FactForgeVideo`. Compositions: `RegisterA-InFrame`,
-`RegisterB-Held`, `RegisterC-Evidence`.
+`RegisterB-Held`, `RegisterC-Evidence`, and for the evidence-visual
+subsystem `Evidence-Figure`, `Evidence-Timeline`, `Evidence-Matrix`,
+`Evidence-NodeMap`, `Evidence-Chain`, `Evidence-Process`, `Evidence-Document`,
+`Evidence-Comparison`, `Evidence-Sequence`.
 
-### Still outstanding
+## The evidence-visual subsystem
 
-The evidence-visual subsystem — `EditorialOverlay.tsx`, `PrimaryEvidenceV2.tsx`,
-`DocumentEvidenceSequence.tsx`, `EvidenceVisual.tsx` — has **not** been through
-this pass. It still draws bordered gradient panels, which is the same box
-language the three registers above removed. It now inherits the new palette
-through compatibility tokens in `designSystem.ts` (`color.muted`,
-`color.information`, `color.canvasLift`, `color.hairlineStrong`, `surface.*`)
-and uses `safe.dense` rather than the wider cinematic margin, but the panels
-themselves need their own redesign.
+`EditorialOverlay.tsx`, `EvidenceVisual.tsx`, `PrimaryEvidenceV2.tsx` and
+`DocumentEvidenceSequence.tsx` have now been through the same pass. They no
+longer draw panels, and the compatibility tokens they used to need
+(`color.muted`, `color.information`, `color.canvasLift`,
+`color.hairlineStrong`, `surface.*`) are gone from `designSystem.ts`.
+
+| Component | What it draws now |
+| --- | --- |
+| `EditorialOverlay.tsx` | Annotation on the frame: type at the top-left under `scrim.side`, which ramps out before the right edge instead of enclosing a plate. |
+| `EvidenceVisual.tsx` | The five data figures as ruled type. No filled cells, no bordered cards, no lit node. |
+| `PrimaryEvidenceV2.tsx` | Register C's page shape for every evidence kind: what is cited on one side, what it establishes on the other, source at the foot. |
+| `DocumentEvidenceSequence.tsx` | The same page shape, with the next document dissolving into the object's place. |
+
+Two tokens carry all of it. Sodium (`color.signal`) is spent only on what the
+film is obliged to flag — the accent, the last step of a process, an uncertain
+figure, the limitation rule. Steel (`color.steel`) is for sourcing and
+attribution and nothing else. `statusInk()` in `designSystem.ts` is the single
+place a claim's strength becomes a colour; adding a sixth status means editing
+that function, not inventing a hue at the call site.
+
+Removed here, and covered by the same rule as the three registers: the
+standing `ORVYQ` wordmark on every evidence frame, the ninety-six pixel
+background grid, the radial glow, the blurred copy of the evidence image
+sitting behind the evidence image, borders and hundred-pixel shadows on every
+plate, the red-tinted limitation bar, and hardcoded Arial over the system
+face.
+
+### Open editorial points
+
+- The provenance line under a source (`Primary source capture` /
+  `Source-derived figure`), the comparison column marks (`Supports` / `Does
+  not establish`) and the recreation stamp (`SYNTHETIC CORPORATE EMAIL` /
+  `RECREATION`) are hardcoded English in a Turkish-language film. They were
+  English before this pass too. Translating them is a copy decision, not a
+  design one, so they are left as they are.
+- `presentation: "cinematic_split"` is still accepted by `PrimaryEvidenceSpec`
+  but no longer drawn — `ItemsStage` has one layout. Same for
+  `EditorialOverlaySpec`'s implicit source-context fallback, which used to
+  print `PRIMARY SOURCE CONTEXT` under any overlay carrying source ids and now
+  renders only an authored `recreation_label`.

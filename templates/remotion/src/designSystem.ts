@@ -32,21 +32,12 @@ export const ORVYQ_DESIGN = {
     /** Evidence stock. A real page is never pure white. */
     paper: "#DEDAD2",
     paperInk: "#1A1E22",
+    /** Secondary ink on evidence stock, for a document's own body text. */
+    paperQuiet: "#55606A",
     hairline: "rgba(244,242,239,.26)",
     hairlineQuiet: "rgba(244,242,239,.14)",
-
-    /*
-     * Compatibility tokens for the evidence-visual subsystem
-     * (EditorialOverlay, PrimaryEvidenceV2, DocumentEvidenceSequence), which
-     * still draws bordered panels and has not been through this pass yet.
-     * Re-pointed at the new palette so it inherits the sodium accent rather
-     * than the old terracotta, but the panel language itself still needs its
-     * own redesign -- see README.
-     */
-    canvasLift: "#0C1116",
-    muted: "rgba(244,242,239,.68)",
-    information: "#7FA9C3",
-    hairlineStrong: "rgba(244,242,239,.3)",
+    /** Rules drawn on paper rather than on film black. */
+    paperHairline: "rgba(26,30,34,.2)",
   },
 
   type: {
@@ -102,15 +93,31 @@ export const ORVYQ_DESIGN = {
     inFrame:
       "linear-gradient(180deg,rgba(7,9,11,0) 42%,rgba(7,9,11,.32) 68%,rgba(7,9,11,.72) 100%)",
     held: "linear-gradient(180deg,rgba(7,9,11,0) 34%,rgba(7,9,11,.5) 66%,rgba(7,9,11,.88) 100%)",
-  },
-
-  /** Compatibility for the evidence subsystem's panels. Softened, not removed. */
-  surface: {
-    blurPx: 12,
-    radiusPx: 0,
-    shadow: "0 20px 64px rgba(0,0,0,.32)",
+    /*
+     * For annotation that has to start at the top of the frame and grow
+     * downward -- a list, a comparison, a data figure -- where a bottom ramp
+     * would leave the first line sitting on bare picture. Same principle as
+     * the other two: it ramps out before the far edge, so the shot is never
+     * boxed.
+     */
+    side: "linear-gradient(90deg,rgba(7,9,11,.92) 0%,rgba(7,9,11,.85) 40%,rgba(7,9,11,.6) 70%,rgba(7,9,11,0) 92%)",
   },
 } as const;
+
+/**
+ * Evidence carries a claim's strength, and the strength has to be visible
+ * without inventing a second palette. Sodium is spent only on what the film
+ * is obliged to flag; everything else is a step down the ink ramp.
+ */
+export function statusInk(
+  status?: "strong" | "limited" | "uncertain" | "neutral",
+) {
+  const { color } = ORVYQ_DESIGN;
+  if (status === "uncertain") return color.signal;
+  if (status === "strong") return color.ink;
+  if (status === "limited") return color.steel;
+  return color.inkQuiet;
+}
 
 /** Title sizes step down by length so a long line never wraps to three. */
 export function titleSize(text: string, register: "inFrame" | "held") {
