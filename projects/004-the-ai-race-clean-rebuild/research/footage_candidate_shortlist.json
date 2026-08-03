@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-03T09:05:41.574Z",
+  "generated_at": "2026-08-03T09:32:05.938Z",
   "candidates_per_scene": 6,
   "policy": "Ranked by provider metadata only. Ranking is an order to inspect, never a decision -- a clip is chosen from its poster frames against the scene's required visible content, and a scene with no fitting candidate is blocked rather than filled with an approximate one.",
   "scene_count": 45,
