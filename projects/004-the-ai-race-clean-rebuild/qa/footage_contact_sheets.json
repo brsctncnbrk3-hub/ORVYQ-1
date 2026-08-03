@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "generated_at": "2026-08-03T09:32:06.163Z",
+  "generated_at": "2026-08-03T11:36:23.709Z",
   "frame_count_per_sheet": 12,
-  "pending_review_count": 45,
+  "pending_review_count": 34,
   "entries": [
     {
       "scene_id": "scene_001",
@@ -23,33 +23,16 @@
       "semantic_rationale": "Engineers jointly reviewing frontier software on a shared screen",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_002",
-      "asset_path": "assets/footage/scene_002_26abd499f5546a2815a3c8e0.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "38496192",
-      "source_page_url": "https://www.pexels.com/video/inserting-hard-drive-into-storage-device-38496192/",
-      "creator": "Media Hopper Studio",
-      "asset_sha256": "6489bc886099d16263cf432cc2a3a6521a0fa313c8928b1d2f4b11268d39a308",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_002.jpg",
-      "contact_sheet_sha256": "94392f8e1bdfe00e7194cd1e02eb9642ba9ef24abc79d4de4821d0b775d13cd7",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 11,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Moving view through live server infrastructure carrying the scale of the race",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+          "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "trim_in_sec": 0.5,
+          "trim_out_sec": 3.5
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_003",
@@ -138,10 +121,16 @@
       "semantic_rationale": "Instrumented test bench where a controlled scenario is set up",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "trim_in_sec": 1,
+          "trim_out_sec": 3.5
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_007",
@@ -213,98 +202,6 @@
       ]
     },
     {
-      "scene_id": "scene_010",
-      "asset_path": "assets/footage/scene_010_ef60832c64c0f0d47331d560.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "8347252",
-      "source_page_url": "https://www.pexels.com/video/man-talking-on-the-phone-8347252/",
-      "creator": "Kampus Production",
-      "asset_sha256": "c3f3724e5aa55a3d634df679daeea7ddd2f5f6fa800246aa53350aa13c0fb8e8",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_010.jpg",
-      "contact_sheet_sha256": "621c731c225bf882ef12ea2bba47804ae9adb3e2634d025e085efb3de5f03d00",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Security operations centre monitoring an active threat picture",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_011",
-      "asset_path": "assets/footage/scene_011_4c25b967c73eefe8d69b27ce.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "6266246",
-      "source_page_url": "https://www.pexels.com/video/a-man-typing-in-the-computer-while-holding-a-bank-card-6266246/",
-      "creator": "Tima Miroshnichenko",
-      "asset_sha256": "451b22fba985a91787d9b0929baa11b222df374960a4258fee7c20f7722088a6",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_011.jpg",
-      "contact_sheet_sha256": "c19d9ba2298872c1695d6fab281c2f65bd7f208cbb9df24a89bdf9e799b625c0",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12,
-      "editorial_role": "human_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Analyst reading network traffic during an incident",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_012",
-      "asset_path": "assets/footage/scene_012_3f392beefa3e0d96797e36f3.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "7141174",
-      "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-electronic-processor-7141174/",
-      "creator": "MrColo",
-      "asset_sha256": "108f5abb525f61dc56922c60f4f8e4dc6cd987374560adf13ba5f9abf7c3df0f",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_012.jpg",
-      "contact_sheet_sha256": "a05ff7e9ded64647655da198e234cd8220b6e6714acb46ffea5c5a185c260519",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Server hall at night, the infrastructure under defence",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_013",
-      "asset_path": "assets/footage/scene_013_e64f26b1fb6bb3dad40cd569.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "38512646",
-      "source_page_url": "https://www.pexels.com/video/crypto-market-analysis-on-dual-screens-38512646/",
-      "creator": "Rafael Minguet Delgado",
-      "asset_sha256": "1851135bae0baf186f5974808127d5bde6f4550f644b8331d7b9aa89941d1c6c",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_013.jpg",
-      "contact_sheet_sha256": "d450f32869d23a7d43a7b26182b7007f04f341f842214a0324c42910d3af2600",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Large-scale network activity visualised on operator displays",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
       "scene_id": "scene_014",
       "asset_path": "assets/footage/scene_014_9ae5f540abcbca00c744ac91.mp4",
       "provider": "pexels",
@@ -343,29 +240,6 @@
       "narration_anchor": null,
       "claim_id": null,
       "semantic_rationale": "Researcher working inside a containment cabinet",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_016",
-      "asset_path": "assets/footage/scene_016_e2bbded2e002e1990237057a.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "7251756",
-      "source_page_url": "https://www.pexels.com/video/a-person-entering-a-train-station-7251756/",
-      "creator": "MART  PRODUCTION",
-      "asset_sha256": "707cf724f6692ca3c4127288f41b39a6b8f64d43fc8bf400ca75c643980bbfc8",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_016.jpg",
-      "contact_sheet_sha256": "63073768071265208e4785975d37a26743c06375f8eed6ccf12a02c7a75e2b9c",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Controlled access into a secured research facility",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
       "approved_uses_if_visually_valid": [],
@@ -460,69 +334,29 @@
       "semantic_rationale": "A workplace where human and automated steps sit side by side",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_021",
-      "asset_path": "assets/footage/scene_021_b2340aa82c1c31f7cefe3e76.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "2254305",
-      "source_page_url": "https://www.pexels.com/video/brown-building-with-glass-windows-2254305/",
-      "creator": "K",
-      "asset_sha256": "d9fa9b89af57fbaa1a6f03c21bb69dce1779e1b56f388ced4295e753ae78ada6",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_021.jpg",
-      "contact_sheet_sha256": "eaedf9795451c95a153d193ff6efd8dadfbafddd513c9fb1e3c69c56c749956a",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 11.845167,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Hyperscale data centre seen from outside",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_022",
-      "asset_path": "assets/footage/scene_022_058143f2db75fdc79dd81efe.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "18526833",
-      "source_page_url": "https://www.pexels.com/video/a-red-glowing-light-in-the-dark-18526833/",
-      "creator": "Pachon in Motion",
-      "asset_sha256": "8a77d2b64b0f83583a57b81123ec70d506499238e202eb51f8c3ccc4742a50d3",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_022.jpg",
-      "contact_sheet_sha256": "a4952f3e1d4de1e65cf602b5b0fc6f32185aa8a1d71c0a7eab72d020487c5b31",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12.012,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Dense compute racks concentrated in one hall",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "A rival company. A rival government.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "trim_in_sec": 0.5,
+          "trim_out_sec": 3.5
+        }
+      ],
+      "review_blockers": []
     },
     {
       "scene_id": "scene_023",
-      "asset_path": "assets/footage/scene_023_090d6d24faf26187f9a7966a.mp4",
+      "asset_path": "assets/footage/scene_023_3f392beefa3e0d96797e36f3.mp4",
       "provider": "pexels",
-      "provider_asset_id": "35571994",
-      "source_page_url": "https://www.pexels.com/video/aerial-view-of-construction-site-in-jaipur-35571994/",
-      "creator": "Nitin Khajotia",
-      "asset_sha256": "4817e6bd1a0a39819b955229975b040c019bd81dedaa19fa45e84081d49ff7a5",
+      "provider_asset_id": "7141174",
+      "source_page_url": "https://www.pexels.com/video/close-up-shot-of-a-electronic-processor-7141174/",
+      "creator": "MrColo",
+      "asset_sha256": "108f5abb525f61dc56922c60f4f8e4dc6cd987374560adf13ba5f9abf7c3df0f",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_023.jpg",
-      "contact_sheet_sha256": "c5174986a49983d69bce7874273236a442d82ee3ec5dbbaa3da7d36a45560605",
+      "contact_sheet_sha256": "a05ff7e9ded64647655da198e234cd8220b6e6714acb46ffea5c5a185c260519",
       "reviewed_frame_count": 12,
-      "duration_seconds": 11,
+      "duration_seconds": 12,
       "editorial_role": "context",
       "narration_anchor": null,
       "claim_id": null,
@@ -581,29 +415,6 @@
       ]
     },
     {
-      "scene_id": "scene_026",
-      "asset_path": "assets/footage/scene_026_15afed2a31245f611f5007dc.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "19580344",
-      "source_page_url": "https://www.pexels.com/video/bucharesht-parlament-19580344/",
-      "creator": "Arnold Hazisllari",
-      "asset_sha256": "30967df6cf2ce97c7e32a97996a4abc4c00575c70ed49f9d6504fe951a93b42d",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_026.jpg",
-      "contact_sheet_sha256": "ccda2df6d9cf35ef1713b918d42962464148ef233ef1cc92115ad12058ee47d3",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12,
-      "editorial_role": "governance_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Formal chamber where obligations are debated",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
       "scene_id": "scene_027",
       "asset_path": "assets/footage/scene_027_503e34655ec8329333fa764f.mp4",
       "provider": "pexels",
@@ -619,29 +430,6 @@
       "narration_anchor": null,
       "claim_id": null,
       "semantic_rationale": "Officials moving through an institutional corridor",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_028",
-      "asset_path": "assets/footage/scene_028_810ba7d032cf9ab656dff27b.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "15517230",
-      "source_page_url": "https://www.pexels.com/video/a-computer-screen-showing-a-video-editing-screen-15517230/",
-      "creator": "Ludovic Delot",
-      "asset_sha256": "81ed3a6772926c0629a1a397dd4bb8a93371dfd1412154300ec5cf923b6bcf20",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_028.jpg",
-      "contact_sheet_sha256": "825282bf94d17cf03ce829deabbbe385202b490c27080db3ea5353fc3be88371",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 12.012,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Compute capacity being measured and monitored",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
       "approved_uses_if_visually_valid": [],
@@ -734,29 +522,6 @@
       "narration_anchor": null,
       "claim_id": null,
       "semantic_rationale": "A developer adapting software on their own machine",
-      "status": "pending_visual_review",
-      "contact_sheet_is_lfs_pointer": false,
-      "approved_uses_if_visually_valid": [],
-      "review_blockers": [
-        "No exact claim-specific use could be resolved for this asset."
-      ]
-    },
-    {
-      "scene_id": "scene_033",
-      "asset_path": "assets/footage/scene_033_ab8dc749b65e4b88f5f7a632.mp4",
-      "provider": "pexels",
-      "provider_asset_id": "8346903",
-      "source_page_url": "https://www.pexels.com/video/computer-monitors-on-the-table-8346903/",
-      "creator": "Kampus Production",
-      "asset_sha256": "29ddb7758e7f88ff9cb26543994fc8813f4caf6aaa6dbf4d5b17ed112015dcec",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_033.jpg",
-      "contact_sheet_sha256": "ec6640c281717586363c17ca252d91d685439539837aeb3acf4fe2536921b022",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 11.68,
-      "editorial_role": "governance_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Centralised permission and monitoring over access",
       "status": "pending_visual_review",
       "contact_sheet_is_lfs_pointer": false,
       "approved_uses_if_visually_valid": [],
@@ -973,16 +738,16 @@
     },
     {
       "scene_id": "scene_043",
-      "asset_path": "assets/footage/scene_043_ec53afe1bea30c75f78e2922.mp4",
+      "asset_path": "assets/footage/scene_043_26abd499f5546a2815a3c8e0.mp4",
       "provider": "pexels",
-      "provider_asset_id": "4294436",
-      "source_page_url": "https://www.pexels.com/video/a-footage-inside-the-warehouse-4294436/",
-      "creator": "Tiger Lily",
-      "asset_sha256": "794f32932e221da737d315cf2862369f392b73eb176e6fe852b9c5fbe4b8c0dc",
+      "provider_asset_id": "38496192",
+      "source_page_url": "https://www.pexels.com/video/inserting-hard-drive-into-storage-device-38496192/",
+      "creator": "Media Hopper Studio",
+      "asset_sha256": "6489bc886099d16263cf432cc2a3a6521a0fa313c8928b1d2f4b11268d39a308",
       "contact_sheet_path": "qa/footage-contact-sheets/scene_043.jpg",
-      "contact_sheet_sha256": "9c87b92693e26363d384384fd8dddd477d6a6925daa6499dca10c18b78b02aab",
+      "contact_sheet_sha256": "94392f8e1bdfe00e7194cd1e02eb9642ba9ef24abc79d4de4821d0b775d13cd7",
       "reviewed_frame_count": 12,
-      "duration_seconds": 10.92,
+      "duration_seconds": 11,
       "editorial_role": "context",
       "narration_anchor": null,
       "claim_id": null,

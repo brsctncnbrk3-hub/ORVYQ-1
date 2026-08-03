@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "request_revision": 3,
+  "request_revision": 4,
   "policy": {
     "automatic_backfill_forbidden": true,
     "decorative_document_recreation_forbidden": true,
@@ -1035,6 +1035,193 @@
         "unrelated robots or humanoids",
         "generic binary-code overlays",
         "Project 001 footage"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_002_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_002_COMPETITIVE_INCENTIVE"
+      ],
+      "scene_ids": [
+        "scene_002"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No live server infrastructure exists in this candidate set. The frame that looked like a motion pass through racks is an industrial conveyor system with red lights (32386531); the only other hardware shot is a hard drive being inserted into a storage enclosure (38496192). The rest are a video-editing timeline, a pedestrian underpass and a metal workshop. Filling this would misrepresent a conveyor belt as compute.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_010_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_008_CYBER_EXTORTION"
+      ],
+      "scene_ids": [
+        "scene_010"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No security operations centre. The set is a man on a phone at a podium, crypto and stock dashboards, a lone programmer in a red-lit room, a business meeting, and a 'hacker' scene whose monitor shows a Guy Fawkes mask on a video call. The last would be actively damaging: it imports an internet-meme image of hacking into a claim about real cyber extortion.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_011_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_008_CYBER_EXTORTION"
+      ],
+      "scene_ids": [
+        "scene_011"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No network traffic analysis. Four of six are trading or crypto desks, one is a man on a phone, and the top-ranked frame is a man typing while holding a bank card, which would imply consumer payment fraud rather than incident response.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_012_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_008_CYBER_EXTORTION"
+      ],
+      "scene_ids": [
+        "scene_012"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No server hall. Same empty pool as scene_002 — conveyor, hard drive, processor close-up — plus a laundry room with people dancing on a table and a crypto trading setup. Nothing here can carry a night-time server hall under defence.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_013_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_009_AGENTIC_ESPIONAGE"
+      ],
+      "scene_ids": [
+        "scene_013"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No large-scale network activity. Three frames are crypto or stock dashboards, one is a code desk, one is a man reading a corporate KPI wall, and the remaining one is a rotating CGI geometric shape — a decorative graphic that visualises no real data. Using it would put a fabricated visualisation under an espionage claim.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_016_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_010_BIO_ASL3"
+      ],
+      "scene_ids": [
+        "scene_016"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No controlled access to a secured facility. Ranked candidates are a person entering a train station, women bumping shoulders near glass doors, an empty hallway, two lab-analyser shots, and a woman entering a building signed for University of the Arts London. Nothing shows access being granted or restricted.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_021_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_013_MARKET_CONCENTRATION"
+      ],
+      "scene_ids": [
+        "scene_021"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No data centre. Every candidate is an office block, a glass tower, or a logistics site: warehouse roofs with solar panels, an industrial park shot from a hot air balloon, an industrial area and car park. Presenting a distribution warehouse as a hyperscale data centre would be a factual misrepresentation of the shot.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_022_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_013_MARKET_CONCENTRATION"
+      ],
+      "scene_ids": [
+        "scene_022"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No compute racks. The set is the hard drive insertion, a red bokeh light, a man scanning stock in a pallet warehouse, the same industrial conveyor, and two CGI abstractions (a circuit-board cityscape and a hexagonal surface). No hall of racks exists to concentrate.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_026_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_014_EU_LAYERED_OBLIGATIONS"
+      ],
+      "scene_ids": [
+        "scene_026"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No European formal chamber. The set is an ornate ballroom ceiling, two museum interiors, an aerial of the Utah State Capitol, a generic conference room, and a masked press conference beside a US flag. The two that are genuinely legislative are American.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_028_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_015_COMPUTE_NOT_ONLY_ROUTE"
+      ],
+      "scene_ids": [
+        "scene_028"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "Nothing measured or monitored. The processor close-up shows compute but no measurement; the rest are a video-editing timeline, crypto dashboards, a code desk and a backlit keyboard. No utilisation, telemetry or capacity readout appears anywhere in the set.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
+      ]
+    },
+    {
+      "asset_request_id": "REQ_FTG_SCENE_033_BLOCKED",
+      "type": "contextual_footage",
+      "status": "pending_direct_asset",
+      "claim_ids": [
+        "CLM_018_CLOSED_ACCESS_TRADEOFF"
+      ],
+      "scene_ids": [
+        "scene_033"
+      ],
+      "required_source": "a licensed clip whose visible content matches this claim, sourced outside the current provider search",
+      "required_content": "No access control or centralised monitoring. The set is an empty office, a man on a phone, two crypto dashboards, a camera device screen, and the same masked video-call frame rejected at scene_010.",
+      "acceptance": "Approved only after four-position contact-sheet inspection confirms the visible content matches this claim's narration beat; provider metadata alone is not sufficient.",
+      "forbidden_substitutes": [
+        "an approximate clip chosen to fill the slot"
       ]
     }
   ]
