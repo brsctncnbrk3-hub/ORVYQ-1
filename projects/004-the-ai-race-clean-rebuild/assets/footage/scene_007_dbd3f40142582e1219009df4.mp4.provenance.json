@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10907970",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:25:10.678Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:25:10.678Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "0604354d1a2e52e4ece117c0e754095655cd3753ed0fcf5c25a80ddba2b899c2",
+  "reviewed_contact_sheet_sha256": "fff9709e435c15292e33a23b7686ac5059ab8bfdfd0b5be2728e1644000e2a51",
+  "visual_qa_reason": "Hands annotating a curve on a whiteboard with earlier working still visible and colleagues watching. Reads as a scenario being reworked, which is the beat about reshaping a test."
 }

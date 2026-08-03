@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9974680",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:24:25.128Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:24:25.128Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "0eef6f6a5542d6d4f6f38f5e20ed9dd982610457eb2bb712a86cfb63e38e12f7",
+  "reviewed_contact_sheet_sha256": "a9e7a9594c45bb73656b651fe680c35a4c3c83e01a6045339648e25577f9a15d",
+  "visual_qa_reason": "Two observers reading time-series and dashboard output on a monitor and a laptop, one pointing things out. Plural observers watching a run, with no on-screen content legible enough to claim anything."
 }

@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9486979",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:28:41.337Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:28:41.337Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "ac42c1b77997e16f09359366ad239c01d1c43165f5499d5e329c8dff97944d45",
+  "reviewed_contact_sheet_sha256": "40bd2c862cdab0595e0118c89a5fb1624b0026c42eb94994248176116274d112",
+  "visual_qa_reason": "One person at the microscope inspecting while a second records on a clipboard. Inspection, measurement and the recording of it are all present in a single frame."
 }

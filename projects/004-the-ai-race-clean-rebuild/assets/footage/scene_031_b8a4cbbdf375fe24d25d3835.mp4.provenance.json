@@ -39,6 +39,11 @@
   "selected_rendition_id": "10884566",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
   "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:28:00.020Z"
+  "downloaded_at": "2026-08-03T18:28:00.020Z",
+  "visual_qa_status": "REJECTED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "c8c15c7424d801981332df7a2dfe1e82a92015494cb5396f1ef2852fd933d83f",
+  "reviewed_contact_sheet_sha256": "9f42689c7cbe8b74bf8233c5841636dfa24c8b0f0d0491138dd0c38262ead29d",
+  "visual_qa_reason": "The frame is a studio-lit chemistry bench against a saturated blue gradient backdrop, with test-tube racks and microscopes. It is neither a credible university setting nor related to inspecting shared technical work.",
+  "fail_closed_reason": "The frame is a studio-lit chemistry bench against a saturated blue gradient backdrop, with test-tube racks and microscopes. It is neither a credible university setting nor related to inspecting shared technical work."
 }

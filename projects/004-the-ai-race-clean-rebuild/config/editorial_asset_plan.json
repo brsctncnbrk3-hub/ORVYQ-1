@@ -720,7 +720,7 @@
   },
   "notes": "Authored against the exact 127-shot coverage diagnostic: 68 contextual-footage slices target 60.87% footage, keep evidence above 20%, keep graphics below 15%, cap uninterrupted evidence at 14.74 seconds, and land every editorial pause on footage.",
   "last_footage_use_contract_application": {
-    "generated_at": "2026-08-03T18:30:55.093Z",
+    "generated_at": "2026-08-03T18:41:09.762Z",
     "managed_scene_count": 34,
     "pruned_scene_count": 0,
     "assignment_count": 65,

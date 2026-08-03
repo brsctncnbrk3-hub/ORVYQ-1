@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "11012135",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:26:08.493Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:26:08.493Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "ca75dd8783c7951289fb0d85935bc71ed22c6e0032324a34ce390086e3c6d7a8",
+  "reviewed_contact_sheet_sha256": "e444d739d26e7ad5dde8fe49e0a4d833c74d7afc96c81c158422e0d47ec6abaa",
+  "visual_qa_reason": "Gloved hands working culture plates inside a cabinet with the sash in frame. Genuine containment work rather than an open bench, and no result is legible."
 }

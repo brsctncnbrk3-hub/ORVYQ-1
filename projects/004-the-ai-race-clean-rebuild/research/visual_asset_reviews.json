@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "review_basis": "Rebuild in progress: the previous visual pool has been retired and no asset is approved until it passes a fresh four-position contact-sheet review.",
+  "review_basis": "footage_visual_decisions_round001.json [system_visual_qa]: Twelve-frame contact-sheet inspection of every acquired clip in the pool, judged against the claim and narration anchor each one is bound to and against the inspection note its selection was pinned on.",
   "policy": {
     "default_status_for_unlisted_assets": "pending_frame_review",
     "rejected_asset_global_reentry_forbidden": true,
@@ -11,10 +11,10 @@
     "superseded_asset_reentry_forbidden": true
   },
   "summary": {
-    "pool_assets": 0,
-    "rejected_from_metadata": 6,
+    "pool_assets": 34,
+    "rejected_from_metadata": 3,
     "pending_frame_review": 0,
-    "approved": 0
+    "approved": 31
   },
   "pending_frame_review_scene_ids": [],
   "rejected_assets": [
@@ -43,6 +43,12 @@
       "rejected_at": "2026-08-02T14:55:00Z"
     },
     {
+      "scene_id": "scene_024",
+      "provider_asset_id": "34430011",
+      "source_page_url": "https://www.pexels.com/video/drone-view-of-budapest-parliament-building-34430011/",
+      "reason": "The building is the Hungarian Parliament, identifiable from its dome, riverside frontage and the national flag on the facade. Running it under narration about the EU AI Act presents a national institution as an EU one."
+    },
+    {
       "scene_id": "scene_026",
       "provider_asset_id": "33780459",
       "asset_path": "assets/footage/scene_026_33780459.mp4",
@@ -59,15 +65,762 @@
       "rejected_at": "2026-08-02T14:55:00Z"
     },
     {
+      "scene_id": "scene_031",
+      "provider_asset_id": "8534546",
+      "source_page_url": "https://www.pexels.com/video/man-and-woman-having-a-conversation-8534546/",
+      "reason": "The frame is a studio-lit chemistry bench against a saturated blue gradient backdrop, with test-tube racks and microscopes. It is neither a credible university setting nor related to inspecting shared technical work."
+    },
+    {
       "scene_id": "scene_035",
       "provider_asset_id": "34838666",
       "asset_path": "assets/footage/scene_035_34838666.mp4",
       "asset_sha256": "0e40b95b70f375b64631cd95203f10fecf97c8bb660884f388dac175b4b806c6",
       "reason": "The classroom-style technology-business presentation lacked the authority and visual quality required for incident reporting and formal oversight.",
       "rejected_at": "2026-08-02T14:55:00Z"
+    },
+    {
+      "scene_id": "scene_035",
+      "provider_asset_id": "8381452",
+      "source_page_url": "https://www.pexels.com/video/a-scientist-working-inside-a-laboratory-8381452/",
+      "reason": "A clinical diagnostics lab where the analyser carries a legible ARCHITECT brand mark across several frames. A named commercial instrument standing in for independent evaluation of AI systems is both off-domain and a visible endorsement risk."
     }
   ],
-  "approved_assets": [],
+  "approved_assets": [
+    {
+      "scene_id": "scene_001",
+      "provider_asset_id": "4630103",
+      "asset_sha256": "1784d3f78e4dc78d22b3aa98eeb6a3bc7f79584a5cbf56cae52427e83f392b4d",
+      "contact_sheet_sha256": "e6777679bf804311cc54ce48d50964f945cd9df743d015360a95fa97523373a7",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+          "narration_anchor": "Every major AI lab on Earth believes moving this fast might be dangerous.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "trim_in_sec": 0.5,
+          "trim_out_sec": 3.5
+        },
+        {
+          "claim_id": "CLM_001_SAFETY_FRAMEWORKS",
+          "narration_anchor": "believes moving this fast might be dangerous, and every one of",
+          "semantic_rationale": "Engineers jointly reviewing frontier software on a shared screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.75,
+          "trim_out_sec": 7.85
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "6248596",
+      "asset_sha256": "0eef6f6a5542d6d4f6f38f5e20ed9dd982610457eb2bb712a86cfb63e38e12f7",
+      "contact_sheet_sha256": "a9e7a9594c45bb73656b651fe680c35a4c3c83e01a6045339648e25577f9a15d",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "rival company, a rival government, somebody who gets their first and gets to set the rules for everyone else.",
+          "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.793
+        },
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "wrong, that a genuinely dangerous machine would announce itself. That assumption is exactly what makes the evidence so",
+          "semantic_rationale": "Researchers observing a controlled model evaluation on monitors; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.107
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "33656654",
+      "asset_sha256": "93fc6af839009609a74c4150b2dec6a3e1e72764206096419b7ce4d669a4822e",
+      "contact_sheet_sha256": "38fcb19a047e673abf1f8dc08afc3d1578d47de5eb22976bf563951e2acf2350",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "machine ever built moves faster than our ability to understand it, control it, or govern it?",
+          "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 7.593
+        },
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "themselves. In controlled evaluations, researchers have deliberately pushed frontier models toward their limits.",
+          "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.867,
+          "trim_out_sec": 8
+        },
+        {
+          "claim_id": "CLM_003_AGENTIC_MISALIGNMENT_TESTS",
+          "narration_anchor": "That assumption is exactly what makes the evidence so unsettling. It isn't hidden. It's sitting in the safety reports the AI companies publish themselves.",
+          "semantic_rationale": "Terminal output scrolling under deliberate observation; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 8,
+          "trim_out_sec": 12
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "17969418",
+      "asset_sha256": "e4174bebb42d18f2719912d7eeb8a12fb5027d3dace9b09839eb4f0c9877ceed",
+      "contact_sheet_sha256": "9a19eaf8c8300075171985cd69a87d0c7be0e7c200384c96008f78fb26ebdaa5",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "limits. They build a scenario, then watch how the model responds when it's told it will be shut down or replaced. In",
+          "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.16
+        },
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "shutdown. None of this happened in the wild. These were designed tests, built specifically to see how far a model would go,",
+          "semantic_rationale": "A rehearsed, controlled drill rather than a real emergency; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.673
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_006",
+      "provider_asset_id": "8381406",
+      "asset_sha256": "8d69253af67089cc4f25bc44e6c797693b53c77ed8cc9a74a880ea6347a982b6",
+      "contact_sheet_sha256": "80dce681b57b8fc4e970e293837906fd1bd8f6259a36f18b7a81a0bffa6511fa",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "Because they see a bigger one: that if they slow down, somebody else won't.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "trim_in_sec": 1,
+          "trim_out_sec": 3.5
+        },
+        {
+          "claim_id": "CLM_004_TEST_NOT_DEPLOYMENT",
+          "narration_anchor": "replacement, threatened to expose a fabricated affair rather than accept being taken offline. A separate line of research",
+          "semantic_rationale": "Instrumented test bench where a controlled scenario is set up; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.699,
+          "trim_out_sec": 10.866
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_007",
+      "provider_asset_id": "8632201",
+      "asset_sha256": "0604354d1a2e52e4ece117c0e754095655cd3753ed0fcf5c25a80ddba2b899c2",
+      "contact_sheet_sha256": "fff9709e435c15292e33a23b7686ac5059ab8bfdfd0b5be2728e1644000e2a51",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "go, and in at least one case, researchers have said the scenario was reshaped repeatedly until that exact outcome",
+          "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.944,
+          "trim_out_sec": 8.311
+        },
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "exact outcome became the default result. That distinction matters. It's the difference between a fire drill and a fire,",
+          "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.733,
+          "trim_out_sec": 9.8
+        },
+        {
+          "claim_id": "CLM_005_2026_MITIGATION_UPDATE",
+          "narration_anchor": "That distinction matters. It's the difference between a fire drill and a fire.",
+          "semantic_rationale": "Researchers reworking a scenario on a board across iterations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 9.8,
+          "trim_out_sec": 11.8
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_008",
+      "provider_asset_id": "29575342",
+      "asset_sha256": "e8788504051868eaa17ed64a875891f5245651e0095ac3769af497eb18a0a0f1",
+      "contact_sheet_sha256": "16f707a255980396a29f05ed4e83a6ab2df0bd264e89f366a58c191cd7e3b907",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "about the building. The natural responses to ask why anyone would keep building something they admit could be dangerous.",
+          "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 7.928
+        },
+        {
+          "claim_id": "CLM_006_INVESTMENT_SCALE",
+          "narration_anchor": "reported nearly $34 billion in private generative AI investment in 2024.",
+          "semantic_rationale": "Capital and market activity at scale without a named transaction; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 10.244
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_009",
+      "provider_asset_id": "5977461",
+      "asset_sha256": "351aa4a7eed3b8689dda51848cb89190740234b257e8d89550db8715f4c8d8cf",
+      "contact_sheet_sha256": "310ab9cf7db59fe3213ef8486c77efe745ce0ae720935a9bfa7dfe2a7aab6034",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_007_FRONTIER_GAP",
+          "narration_anchor": "2024. It also found that the performance gap between the top two models",
+          "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.947,
+          "trim_out_sec": 6.181
+        },
+        {
+          "claim_id": "CLM_007_FRONTIER_GAP",
+          "narration_anchor": "two models on a prominent benchmark had narrowed to less than 1 percentage point.",
+          "semantic_rationale": "Two teams working in parallel, closeness of the frontier made human; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.789,
+          "trim_out_sec": 9.255
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_014",
+      "provider_asset_id": "4121126",
+      "asset_sha256": "5565a36b73f424325a8ca27f322ea3fbe539228cfca17f98bbfa727138a9d61a",
+      "contact_sheet_sha256": "b36789dd8d239e20b761ca7453bda4a5b45cb66e48b77ccc4ef53703faa7dafc",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "moments. These are the company's own assessments of its own products misuse, not independently verified in every detail, but they",
+          "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.931,
+          "trim_out_sec": 8.831
+        },
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "ways, helping defenders detect intrusions faster too. On biological risk, and Thropic said, its internal testing",
+          "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 1.707,
+          "trim_out_sec": 9.64
+        },
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "Security researchers also note that the same automation cuts both ways, helping defenders detect intrusions faster too.",
+          "semantic_rationale": "Biosafety laboratory work under protective equipment; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 9.64,
+          "trim_out_sec": 11.64
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_015",
+      "provider_asset_id": "8940768",
+      "asset_sha256": "ca75dd8783c7951289fb0d85935bc71ed22c6e0032324a34ce390086e3c6d7a8",
+      "contact_sheet_sha256": "e444d739d26e7ad5dde8fe49e0a4d833c74d7afc96c81c158422e0d47ec6abaa",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "or coordination than they would have needed before. Security researchers also note that the same automation cuts both ways,",
+          "semantic_rationale": "Researcher working inside a containment cabinet; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.925,
+          "trim_out_sec": 8.891
+        },
+        {
+          "claim_id": "CLM_010_BIO_ASL3",
+          "narration_anchor": "testing suggested Claude Opus, four, could provide a meaningful capability uplift to someone without specialist training. It",
+          "semantic_rationale": "Researcher working inside a containment cabinet; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.627,
+          "trim_out_sec": 11.56
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_017",
+      "provider_asset_id": "17586685",
+      "asset_sha256": "a6fe97bed99c3b76fea7c8fae452b6879c3b157d24eb21c67f1c79d44c1c9685",
+      "contact_sheet_sha256": "551ab6351233badfd3d867e1e5283a7c91ccc827734c10473e873161ea0a8f72",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "additional ASL -3 safeguards as a precaution, while saying it had not definitively determined that the capability threshold",
+          "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.36
+        },
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "and bio, the risk spreads into subtle territory. The 2025 International AI Safety Report found",
+          "semantic_rationale": "A person absorbed in a scrolling feed in ordinary surroundings; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.54
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_018",
+      "provider_asset_id": "3252019",
+      "asset_sha256": "9ae55ee3f360a957a956b82dbd1bec1877943120d40aa194c12c8bae391c7b0b",
+      "contact_sheet_sha256": "8c88b16ed326f0c8a1ff04d189c61cf35d8c7d9a18b9716889fe24a7210d1529",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "frameworks, but no industry -wide standard defines when that boost becomes unacceptable. Beyond cyber and bio,",
+          "semantic_rationale": "Many people each attending to their own screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.66
+        },
+        {
+          "claim_id": "CLM_011_SYNTHETIC_PERSUASION",
+          "narration_anchor": "Report found strong evidence that general purpose AI can generate persuasive synthetic content cheaply and at scale.",
+          "semantic_rationale": "Many people each attending to their own screen; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.407
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_019",
+      "provider_asset_id": "8632783",
+      "asset_sha256": "b64e043b601dd4cda53597ebd24607657d471b4bb19236988c8d5f542a28caa3",
+      "contact_sheet_sha256": "fb66bb805d0bcbd9d1818eaddeec9cb68d81ccb1cae83dc2e5d6dabba8089fba",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "scale. But it also found the evidence becomes weaker at each later step, from content creation to",
+          "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.957,
+          "trim_out_sec": 8.623
+        },
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "with some degree of generative AI exposure, while emphasizing that transformation is more likely than wholesale replacement.",
+          "semantic_rationale": "Office work being carried out through software; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.827,
+          "trim_out_sec": 10.827
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_020",
+      "provider_asset_id": "31006321",
+      "asset_sha256": "e7fbd869e53457844ac7f32ebfbf4c0589860ead95ffd474a541f82c5d7871ef",
+      "contact_sheet_sha256": "5697d6bff49b6a0fff1947a786ee0fe22d4575f7003acb8776cdc6ec4c01262f",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_002_COMPETITIVE_INCENTIVE",
+          "narration_anchor": "A rival company. A rival government.",
+          "semantic_rationale": "The approved footage gives the opening narration a concrete physical context while all factual burden remains with primary evidence.",
+          "trim_in_sec": 0.5,
+          "trim_out_sec": 3.5
+        },
+        {
+          "claim_id": "CLM_012_LABOUR_EXPOSURE",
+          "narration_anchor": "is already settled. Then there's work. The evidence measures exposure more reliably than it predicts unemployment.",
+          "semantic_rationale": "A workplace where human and automated steps sit side by side; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.373
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_023",
+      "provider_asset_id": "30243443",
+      "asset_sha256": "08c180d74a9bfa63f0d4a29ea76a10b39de78584d3d91cac8014e78ebac2d665",
+      "contact_sheet_sha256": "8a006c8820700cca26fb27f625c62f461ef15ab51ea4ce7349d08b969d693325",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_013_MARKET_CONCENTRATION",
+          "narration_anchor": "replacement. It also warns that exposure indicators do not buy themselves, predict job losses or labour market outcomes.",
+          "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.88,
+          "trim_out_sec": 8.713
+        },
+        {
+          "claim_id": "CLM_013_MARKET_CONCENTRATION",
+          "narration_anchor": "control over critical inputs, partnerships and routes to market could weaken open competition in foundation models.",
+          "semantic_rationale": "Power and cooling plant that the compute depends on; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.167,
+          "trim_out_sec": 11
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_025",
+      "provider_asset_id": "10956356",
+      "asset_sha256": "2e4607ec2506e51b7aefb2f5c9f219f1ddc7e579a6a04091859156739bf2b9e8",
+      "contact_sheet_sha256": "64f3ea082fc470f1dede71118f7411a53a3754324c0791281f5a498392e6457f",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "licenses, oversight and control is genuinely necessary, but control has to live somewhere, administered by",
+          "semantic_rationale": "European Union flags outside an official building; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.881,
+          "trim_out_sec": 8.614
+        },
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "duties, providers of general purpose models face transparency and copyright -related obligations with additional evaluation,",
+          "semantic_rationale": "European Union flags outside an official building; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.144,
+          "trim_out_sec": 11.011
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_027",
+      "provider_asset_id": "6952088",
+      "asset_sha256": "e0301144715ecd41d158a6568f68c4d00b2ab7389939855862e2148e6371fbdd",
+      "contact_sheet_sha256": "b82317407d15a6e1dc4753c8071fdfbac0569b8637f5ce0cf95b159b064388ac",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "administered by somebody and that somebody gains power too. Take Europe's AI Act. It uses different",
+          "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.527
+        },
+        {
+          "claim_id": "CLM_014_EU_LAYERED_OBLIGATIONS",
+          "narration_anchor": "additional evaluation, incident reporting and cybersecurity duties for models classified as posing systemic risk.",
+          "semantic_rationale": "Officials moving through an institutional corridor; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.74
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "8134447",
+      "asset_sha256": "490f765bbcba5eed0c6c6f85435b96dff0bdcbac63b652ce580ff4eab6cfce3f",
+      "contact_sheet_sha256": "ee03d1fe179f8d1f1cf87b336734a2c18660eb08f096fd3432a7aaee77918e64",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+          "narration_anchor": "designation. Establish companies may also be better able to absorb the complex compliance,",
+          "semantic_rationale": "A small team working through paperwork and obligations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 7.393
+        },
+        {
+          "claim_id": "CLM_016_COMPLIANCE_INCUMBENCY",
+          "narration_anchor": "compliance, evaluation, reporting and legal costs that come with operating at that scale. A",
+          "semantic_rationale": "A small team working through paperwork and obligations; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 10.573
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_030",
+      "provider_asset_id": "5940061",
+      "asset_sha256": "9047c9c3e49c858104ce19479d043a64f6de75ca3c8b7d12d754a253a5a68473",
+      "contact_sheet_sha256": "4e2b088f35bec272eda31db5573286d067d9347ef500a8f5ca4b3fa71c00eb70",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "dangerous concentration can end up protecting the incumbents who triggered the concern in the first place.",
+          "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 7.793
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "whoever already won the race can be thinner than it looks. That tension sharpens further around one of the field's most",
+          "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 2.733,
+          "trim_out_sec": 10
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "Because the line between legitimate safety oversight and rules that simply lock in whoever already won the race can be thinner than it looks.",
+          "semantic_rationale": "Independent researchers working openly together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 10,
+          "trim_out_sec": 12
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "13522087",
+      "asset_sha256": "f599ee8b527370dd76cb21b417606fd0cb731434ad2a2af4aaecef28c0defa2d",
+      "contact_sheet_sha256": "993cf768227969459e6eb7fb40853d8e2b22c0573fc9eba90cc1badea16173e6",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "and who they end up protecting, because the line between legitimate safety oversight and rules that simply lock in whoever",
+          "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.527
+        },
+        {
+          "claim_id": "CLM_017_OPEN_WEIGHT_TRADEOFF",
+          "narration_anchor": "independent researchers audit them, find flaws and build defensive tools without waiting on a company's permission. That",
+          "semantic_rationale": "A developer adapting software on their own machine; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 10.707
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_034",
+      "provider_asset_id": "8512981",
+      "asset_sha256": "cb427e177480fab1a9ba37e136a16a37ed2bc4776575f6295d675ce93a295ce4",
+      "contact_sheet_sha256": "71a46239e0106a27c00cceafcaeb172a357919336126d7851e5e319307cae983",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "disclosures are useful evidence here. The cyber extortion case and the state -linked espionage case described",
+          "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.928,
+          "trim_out_sec": 8.161
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "risk outward, closure concentrates control and power inward. Neither one is simply the",
+          "semantic_rationale": "Independent reviewers going through documentation together; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.7,
+          "trim_out_sec": 11.6
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_036",
+      "provider_asset_id": "6951445",
+      "asset_sha256": "cf72563b283a711aafce55f2dafbca11df4c508148b00d8d708fd215f29e56df",
+      "contact_sheet_sha256": "d06c70cf50ca5e671d4cb48fb121636b01fbec5562d7b2b1ac3c39568fd628bd",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "did not eliminate misuse, but it did give the provider visibility and the ability to investigate,",
+          "semantic_rationale": "A panel weighing findings around a table; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.925,
+          "trim_out_sec": 7.958
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "argues for doing nothing, it argues for being precise about what kind of safety actually helps. Some of it is",
+          "semantic_rationale": "A panel weighing findings around a table; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.699,
+          "trim_out_sec": 11.066
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_037",
+      "provider_asset_id": "4121059",
+      "asset_sha256": "ac42c1b77997e16f09359366ad239c01d1c43165f5499d5e329c8dff97944d45",
+      "contact_sheet_sha256": "40bd2c862cdab0595e0118c89a5fb1624b0026c42eb94994248176116274d112",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "investigate, restrict and disrupt what was happening. Openness spreads capability and risk outward,",
+          "semantic_rationale": "Inspection and measurement recorded step by step; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.95,
+          "trim_out_sec": 8.65
+        },
+        {
+          "claim_id": "CLM_019_INDEPENDENT_EVALUATION",
+          "narration_anchor": "and subjecting them to independent evaluations and audits before they ship, not just after something goes wrong. Some",
+          "semantic_rationale": "Inspection and measurement recorded step by step; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.802,
+          "trim_out_sec": 11.568
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_038",
+      "provider_asset_id": "7710454",
+      "asset_sha256": "105bda13d395c585672379de4335ede9e1b48d19c77f604988cdfc55428c11c1",
+      "contact_sheet_sha256": "4e3dc70389a2c63f4517e4d0b4c46a65e994fdda009677efafa5120e2abe81ce",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_020_INCIDENT_REPORTING",
+          "narration_anchor": "wrong. Some of it is procedural, mandatory incident reporting when systems misbehave,",
+          "semantic_rationale": "Formal reporting and record-keeping inside an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 6.627
+        },
+        {
+          "claim_id": "CLM_020_INCIDENT_REPORTING",
+          "narration_anchor": "misbehave, real legal liability and insurance for the companies that deploy them and",
+          "semantic_rationale": "Formal reporting and record-keeping inside an institution; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 8.407
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_039",
+      "provider_asset_id": "2881980",
+      "asset_sha256": "7b80e2414bbe71c917e0ffe1f81f3a35c07d974dbae340aaa6cb34e0e6a116ab",
+      "contact_sheet_sha256": "e948ddff52ee0127f9cd3da6e3ea8d651476fb5d58a2095579b6631dca710ac4",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "flag internal problems before they become headlines. Some of it is structural, governing access to the enormous computing clusters",
+          "semantic_rationale": "Ordinary people moving through a city street; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.693
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "a set of decisions made under competitive pressure by people who each believe they're the responsible ones.",
+          "semantic_rationale": "Ordinary people moving through a city street; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.307
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_040",
+      "provider_asset_id": "29152589",
+      "asset_sha256": "f5f5af7aa1f424624978ea77eb34a03e5ae1feb13aaf8c3a46777c6386e3ebc4",
+      "contact_sheet_sha256": "9ebfd0ed4dff642c8e0f3a57f03500355739def3cd8c813a5f6a8c9594610f9c",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "world. Giving independent and public interest researchers real access to study these systems not only regulators and",
+          "semantic_rationale": "Everyday commuting life at human scale; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.393
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "ones. Decisions that add up to a world shaped by whoever moved fastest or whoever accumulated the most control",
+          "semantic_rationale": "Everyday commuting life at human scale; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.807
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_041",
+      "provider_asset_id": "7394103",
+      "asset_sha256": "df5e346fb4c999877288eaf24e411869d80e27b27e2f4568349d53c8e4e3b1e7",
+      "contact_sheet_sha256": "c6d854c27147e66d0535b3f7895b53ee37d9609eb81f1b6266fd491bf8c6f018",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "did, so safety commitments aren't just voluntary promises inside one company's blog post, and some of it is about power",
+          "semantic_rationale": "Domestic, ordinary life away from the technology; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.942,
+          "trim_out_sec": 8.676
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "control without anyone choosing that outcome on purpose. The greatest danger here may not be a rogue machine at",
+          "semantic_rationale": "Domestic, ordinary life away from the technology; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.769,
+          "trim_out_sec": 11.669
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_042",
+      "provider_asset_id": "9574129",
+      "asset_sha256": "f350bb48031d81932eaf6c4474f45c191e3718edb32f8bf2e7a298fa19c06944",
+      "contact_sheet_sha256": "6d7bc3c15450e551646ca6512e073ef5856dee9d99358009cca1ba5906480fe7",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "about power itself. Keeping enough competition in the market that no single company or government becomes the sole authority",
+          "semantic_rationale": "Return to the corridor of the machine itself; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.527
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "machine at all. It may be a system that rewards speed and dominance while spreading the risk across everyone else.",
+          "semantic_rationale": "Return to the corridor of the machine itself; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.807
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_043",
+      "provider_asset_id": "7141174",
+      "asset_sha256": "108f5abb525f61dc56922c60f4f8e4dc6cd987374560adf13ba5f9abf7c3df0f",
+      "contact_sheet_sha256": "a05ff7e9ded64647655da198e234cd8220b6e6714acb46ffea5c5a185c260519",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "sole authority on what AI is allowed to do. Sunset clauses, written into the rules, mean today safeguards",
+          "semantic_rationale": "The concentrated compute the argument returns to; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.96,
+          "trim_out_sec": 8.893
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "But the fix for that can't simply be more control in fewer hands, that risk is just as real. The real",
+          "semantic_rationale": "The concentrated compute the argument returns to; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.84,
+          "trim_out_sec": 11.807
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_044",
+      "provider_asset_id": "11690475",
+      "asset_sha256": "cad02a1fb132f49c53ac757bcfb62e09c6ce4fd78dfe81a3ce3853ea620daf0b",
+      "contact_sheet_sha256": "15e0e22dcc1740f864d87048697f038e49e5afa2521332980a5d6431b365c662",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "control. So what happens when the race outpaces our ability to govern it? Maybe nothing's sudden, no single",
+          "semantic_rationale": "City at dusk, the scale the decision sits inside; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.961,
+          "trim_out_sec": 8.828
+        },
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "real challenge is narrower and harder, reducing catastrophic misuse without building a machine for concentrating power in the",
+          "semantic_rationale": "City at dusk, the scale the decision sits inside; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 3.844,
+          "trim_out_sec": 11.811
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_045",
+      "provider_asset_id": "5281602",
+      "asset_sha256": "45bc7b6a4df39a564ca239f1eeb9c1bd4769a920fbf3940751251f6f9fb77f24",
+      "contact_sheet_sha256": "b2d4a12a31346f5fcadd376427b314015a1a7f50ee84e2e4bae3b48e109cea8b",
+      "reviewed_frame_count": 12,
+      "approved_uses": [
+        {
+          "claim_id": "CLM_021_FINAL_SYNTHESIS",
+          "narration_anchor": "no single machine seizing control, no one moment of collapse. What's more likely is quieter, a",
+          "semantic_rationale": "One person, one screen, the closing intimacy; the claim's factual burden stays with the primary evidence, not with this stock footage.",
+          "trim_in_sec": 0.934,
+          "trim_out_sec": 8.768
+        }
+      ]
+    }
+  ],
   "superseded_assets": [
     {
       "scene_id": "scene_019",

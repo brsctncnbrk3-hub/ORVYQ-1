@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "status": "planned_pending_primary_evidence",
+  "status": "blocked_pending_assets",
   "projection_basis": "Pre-materialization editorial target only. Candidate Validation must replace this projection with measured shot-level ratios and all post-plan audits must pass before review render authorization.",
   "thresholds": {
     "contextual_footage_fraction_min": 0.6,

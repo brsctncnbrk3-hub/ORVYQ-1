@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0",
+  "project_id": "004-the-ai-race-clean-rebuild",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Twelve-frame contact-sheet inspection of every acquired clip in the pool, judged against the claim and narration anchor each one is bound to and against the inspection note its selection was pinned on.",
+  "decisions": [
+    {
+      "scene_id": "scene_001",
+      "provider_asset_id": "4630103",
+      "asset_sha256": "1784d3f78e4dc78d22b3aa98eeb6a3bc7f79584a5cbf56cae52427e83f392b4d",
+      "contact_sheet_sha256": "e6777679bf804311cc54ce48d50964f945cd9df743d015360a95fa97523373a7",
+      "decision": "approve",
+      "reason": "Twelve frames show two people at one shared display, one driving and one reviewing, in ordinary daylight. Neutral human context for the opening line; it asserts nothing about any lab."
+    },
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "6248596",
+      "asset_sha256": "0eef6f6a5542d6d4f6f38f5e20ed9dd982610457eb2bb712a86cfb63e38e12f7",
+      "contact_sheet_sha256": "a9e7a9594c45bb73656b651fe680c35a4c3c83e01a6045339648e25577f9a15d",
+      "decision": "approve",
+      "reason": "Two observers reading time-series and dashboard output on a monitor and a laptop, one pointing things out. Plural observers watching a run, with no on-screen content legible enough to claim anything."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "33656654",
+      "asset_sha256": "93fc6af839009609a74c4150b2dec6a3e1e72764206096419b7ce4d669a4822e",
+      "contact_sheet_sha256": "38fcb19a047e673abf1f8dc08afc3d1578d47de5eb22976bf563951e2acf2350",
+      "decision": "approve",
+      "reason": "One operator leaning into a multi-monitor setup with readable source code and green terminal output. Genuine terminal work under observation, not a decorative code overlay."
+    },
+    {
+      "scene_id": "scene_005",
+      "provider_asset_id": "17969418",
+      "asset_sha256": "e4174bebb42d18f2719912d7eeb8a12fb5027d3dace9b09839eb4f0c9877ceed",
+      "contact_sheet_sha256": "9a19eaf8c8300075171985cd69a87d0c7be0e7c200384c96008f78fb26ebdaa5",
+      "decision": "approve",
+      "reason": "A fire training ground: crews spraying into open air with no fire anywhere in frame. Unmistakably rehearsed, which is exactly the drill-not-fire distinction the narration draws."
+    },
+    {
+      "scene_id": "scene_006",
+      "provider_asset_id": "8381406",
+      "asset_sha256": "8d69253af67089cc4f25bc44e6c797693b53c77ed8cc9a74a880ea6347a982b6",
+      "contact_sheet_sha256": "80dce681b57b8fc4e970e293837906fd1bd8f6259a36f18b7a81a0bffa6511fa",
+      "decision": "approve",
+      "reason": "A sample rotator with tubes loaded and a run time set on its panel; a controlled run being configured rather than lab atmosphere. Carries no claim of its own about any biological result."
+    },
+    {
+      "scene_id": "scene_007",
+      "provider_asset_id": "8632201",
+      "asset_sha256": "0604354d1a2e52e4ece117c0e754095655cd3753ed0fcf5c25a80ddba2b899c2",
+      "contact_sheet_sha256": "fff9709e435c15292e33a23b7686ac5059ab8bfdfd0b5be2728e1644000e2a51",
+      "decision": "approve",
+      "reason": "Hands annotating a curve on a whiteboard with earlier working still visible and colleagues watching. Reads as a scenario being reworked, which is the beat about reshaping a test."
+    },
+    {
+      "scene_id": "scene_008",
+      "provider_asset_id": "29575342",
+      "asset_sha256": "e8788504051868eaa17ed64a875891f5245651e0095ac3769af497eb18a0a0f1",
+      "contact_sheet_sha256": "16f707a255980396a29f05ed4e83a6ab2df0bd264e89f366a58c191cd7e3b907",
+      "decision": "approve",
+      "reason": "Towers shot from below with no legible corporate mark and no named transaction. Capital at scale as setting; the investment figure stays with the primary evidence."
+    },
+    {
+      "scene_id": "scene_009",
+      "provider_asset_id": "5977461",
+      "asset_sha256": "351aa4a7eed3b8689dda51848cb89190740234b257e8d89550db8715f4c8d8cf",
+      "contact_sheet_sha256": "310ab9cf7db59fe3213ef8486c77efe745ce0ae720935a9bfa7dfe2a7aab6034",
+      "decision": "approve",
+      "reason": "Two identical booth workstations side by side, one person in each, working separately within arm's reach. The closeness of the frontier made physical without asserting a benchmark result."
+    },
+    {
+      "scene_id": "scene_014",
+      "provider_asset_id": "4121126",
+      "asset_sha256": "5565a36b73f424325a8ca27f322ea3fbe539228cfca17f98bbfa727138a9d61a",
+      "contact_sheet_sha256": "b36789dd8d239e20b761ca7453bda4a5b45cb66e48b77ccc4ef53703faa7dafc",
+      "decision": "approve",
+      "reason": "Mask, goggles and gloves at a microscope in natural lab light. Generic protective-equipment work; it illustrates the biological setting and claims no specific finding."
+    },
+    {
+      "scene_id": "scene_015",
+      "provider_asset_id": "8940768",
+      "asset_sha256": "ca75dd8783c7951289fb0d85935bc71ed22c6e0032324a34ce390086e3c6d7a8",
+      "contact_sheet_sha256": "e444d739d26e7ad5dde8fe49e0a4d833c74d7afc96c81c158422e0d47ec6abaa",
+      "decision": "approve",
+      "reason": "Gloved hands working culture plates inside a cabinet with the sash in frame. Genuine containment work rather than an open bench, and no result is legible."
+    },
+    {
+      "scene_id": "scene_017",
+      "provider_asset_id": "17586685",
+      "asset_sha256": "a6fe97bed99c3b76fea7c8fae452b6879c3b157d24eb21c67f1c79d44c1c9685",
+      "contact_sheet_sha256": "551ab6351233badfd3d867e1e5283a7c91ccc827734c10473e873161ea0a8f72",
+      "decision": "approve",
+      "reason": "One person at home absorbed in a handset in ordinary low light. No event, no performance; the ordinariness is what the persuasion beat needs."
+    },
+    {
+      "scene_id": "scene_018",
+      "provider_asset_id": "3252019",
+      "asset_sha256": "9ae55ee3f360a957a956b82dbd1bec1877943120d40aa194c12c8bae391c7b0b",
+      "contact_sheet_sha256": "8c88b16ed326f0c8a1ff04d189c61cf35d8c7d9a18b9716889fe24a7210d1529",
+      "decision": "approve",
+      "reason": "A row of people standing together, each looking down at their own handset. Many people each attending to their own screen, exactly as the brief asks, with no content shown."
+    },
+    {
+      "scene_id": "scene_019",
+      "provider_asset_id": "8632783",
+      "asset_sha256": "b64e043b601dd4cda53597ebd24607657d471b4bb19236988c8d5f542a28caa3",
+      "contact_sheet_sha256": "fb66bb805d0bcbd9d1818eaddeec9cb68d81ccb1cae83dc2e5d6dabba8089fba",
+      "decision": "approve",
+      "reason": "Hands typing a document on a laptop beside a coffee cup. Unglamorous office work carried out through software, with no code-editor styling to overstate it."
+    },
+    {
+      "scene_id": "scene_020",
+      "provider_asset_id": "31006321",
+      "asset_sha256": "e7fbd869e53457844ac7f32ebfbf4c0589860ead95ffd474a541f82c5d7871ef",
+      "contact_sheet_sha256": "5697d6bff49b6a0fff1947a786ee0fe22d4575f7003acb8776cdc6ec4c01262f",
+      "decision": "approve",
+      "reason": "A textile worker handling output beside a running machine line with its own control panel. Human step and automated step adjacent in one frame, and no labour statistic is implied."
+    },
+    {
+      "scene_id": "scene_023",
+      "provider_asset_id": "30243443",
+      "asset_sha256": "08c180d74a9bfa63f0d4a29ea76a10b39de78584d3d91cac8014e78ebac2d665",
+      "contact_sheet_sha256": "8a006c8820700cca26fb27f625c62f461ef15ab51ea4ce7349d08b969d693325",
+      "decision": "approve",
+      "reason": "Power switchgear and insulators, unmistakably electrical distribution infrastructure, which is the dependency the scene names. Source is monochrome and will need grading to sit with the rest."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "34430011",
+      "asset_sha256": "3b7ca4f59bc47aaaccde90f4a8362d20a8e6dcf6e8016d6194f286b835c76726",
+      "contact_sheet_sha256": "8770551db0e20f4a143c046d00b58d12a30614cea3cb2674eb98cd45f02b5a79",
+      "decision": "reject",
+      "reason": "The building is the Hungarian Parliament, identifiable from its dome, riverside frontage and the national flag on the facade. Running it under narration about the EU AI Act presents a national institution as an EU one."
+    },
+    {
+      "scene_id": "scene_025",
+      "provider_asset_id": "10956356",
+      "asset_sha256": "2e4607ec2506e51b7aefb2f5c9f219f1ddc7e579a6a04091859156739bf2b9e8",
+      "contact_sheet_sha256": "64f3ea082fc470f1dede71118f7411a53a3754324c0791281f5a498392e6457f",
+      "decision": "approve",
+      "reason": "A single EU flag with the stars fully legible against cloud. Delivers the EU accurately; the brief's official building is absent, which is a shortfall rather than a misstatement."
+    },
+    {
+      "scene_id": "scene_027",
+      "provider_asset_id": "6952088",
+      "asset_sha256": "e0301144715ecd41d158a6568f68c4d00b2ab7389939855862e2148e6371fbdd",
+      "contact_sheet_sha256": "b82317407d15a6e1dc4753c8071fdfbac0569b8637f5ce0cf95b159b064388ac",
+      "decision": "approve",
+      "reason": "Suited officials in conversation in a corridor with others in the background. Institutional in feel and identifies no specific body, so it cannot mislabel one."
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "8134447",
+      "asset_sha256": "490f765bbcba5eed0c6c6f85435b96dff0bdcbac63b652ce580ff4eab6cfce3f",
+      "contact_sheet_sha256": "ee03d1fe179f8d1f1cf87b336734a2c18660eb08f096fd3432a7aaee77918e64",
+      "decision": "approve",
+      "reason": "Three colleagues working through one document together and visibly disagreeing over it. The friction suits obligations and compliance cost better than a calm read-through."
+    },
+    {
+      "scene_id": "scene_030",
+      "provider_asset_id": "5940061",
+      "asset_sha256": "9047c9c3e49c858104ce19479d043a64f6de75ca3c8b7d12d754a253a5a68473",
+      "contact_sheet_sha256": "4e2b088f35bec272eda31db5573286d067d9347ef500a8f5ca4b3fa71c00eb70",
+      "decision": "approve",
+      "reason": "Colleagues collaborating over a laptop at a library desk among open stacks. Independent work done in the open, which is the open-weights side of the trade-off."
+    },
+    {
+      "scene_id": "scene_031",
+      "provider_asset_id": "8534546",
+      "asset_sha256": "c8c15c7424d801981332df7a2dfe1e82a92015494cb5396f1ef2852fd933d83f",
+      "contact_sheet_sha256": "9f42689c7cbe8b74bf8233c5841636dfa24c8b0f0d0491138dd0c38262ead29d",
+      "decision": "reject",
+      "reason": "The frame is a studio-lit chemistry bench against a saturated blue gradient backdrop, with test-tube racks and microscopes. It is neither a credible university setting nor related to inspecting shared technical work."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "13522087",
+      "asset_sha256": "f599ee8b527370dd76cb21b417606fd0cb731434ad2a2af4aaecef28c0defa2d",
+      "contact_sheet_sha256": "993cf768227969459e6eb7fb40853d8e2b22c0573fc9eba90cc1badea16173e6",
+      "decision": "approve",
+      "reason": "A code editor open on a personal laptop with hands on the keys, actually editing rather than browsing. One developer adapting software on their own machine."
+    },
+    {
+      "scene_id": "scene_034",
+      "provider_asset_id": "8512981",
+      "asset_sha256": "cb427e177480fab1a9ba37e136a16a37ed2bc4776575f6295d675ce93a295ce4",
+      "contact_sheet_sha256": "71a46239e0106a27c00cceafcaeb172a357919336126d7851e5e319307cae983",
+      "decision": "approve",
+      "reason": "Two people jointly reading through a document in a neutral room. A quiet two-hander read, held distinct from the three-person staging used elsewhere."
+    },
+    {
+      "scene_id": "scene_035",
+      "provider_asset_id": "8381452",
+      "asset_sha256": "ce43b7a296425378a0abe506a4720de45b92640e07c6803a951c5d8e9630bc83",
+      "contact_sheet_sha256": "a59455ce455c26e0e68af2535056df6fbc80a39203cb76f439076f3792182387",
+      "decision": "reject",
+      "reason": "A clinical diagnostics lab where the analyser carries a legible ARCHITECT brand mark across several frames. A named commercial instrument standing in for independent evaluation of AI systems is both off-domain and a visible endorsement risk."
+    },
+    {
+      "scene_id": "scene_036",
+      "provider_asset_id": "6951445",
+      "asset_sha256": "cf72563b283a711aafce55f2dafbca11df4c508148b00d8d708fd215f29e56df",
+      "contact_sheet_sha256": "d06c70cf50ca5e671d4cb48fb121636b01fbec5562d7b2b1ac3c39568fd628bd",
+      "decision": "approve",
+      "reason": "A panel table with desk microphones and members in discussion, carrying no flag or national marker. Reads as an evaluation panel rather than a specific institution."
+    },
+    {
+      "scene_id": "scene_037",
+      "provider_asset_id": "4121059",
+      "asset_sha256": "ac42c1b77997e16f09359366ad239c01d1c43165f5499d5e329c8dff97944d45",
+      "contact_sheet_sha256": "40bd2c862cdab0595e0118c89a5fb1624b0026c42eb94994248176116274d112",
+      "decision": "approve",
+      "reason": "One person at the microscope inspecting while a second records on a clipboard. Inspection, measurement and the recording of it are all present in a single frame."
+    },
+    {
+      "scene_id": "scene_038",
+      "provider_asset_id": "7710454",
+      "asset_sha256": "105bda13d395c585672379de4335ede9e1b48d19c77f604988cdfc55428c11c1",
+      "contact_sheet_sha256": "4e3dc70389a2c63f4517e4d0b4c46a65e994fdda009677efafa5120e2abe81ce",
+      "decision": "approve",
+      "reason": "Hands working through a thick paper stack beside ring binders, with no document type legible. Record-keeping in motion, which is what the reporting beat needs."
+    },
+    {
+      "scene_id": "scene_039",
+      "provider_asset_id": "2881980",
+      "asset_sha256": "7b80e2414bbe71c917e0ffe1f81f3a35c07d974dbae340aaa6cb34e0e6a116ab",
+      "contact_sheet_sha256": "e948ddff52ee0127f9cd3da6e3ea8d651476fb5d58a2095579b6631dca710ac4",
+      "decision": "approve",
+      "reason": "A full pedestrian crossing mid-flow with faces visible and no event to explain. A tour coach carrying an unrelated operator mark passes behind; it is incidental background, not presented as endorsing anything."
+    },
+    {
+      "scene_id": "scene_040",
+      "provider_asset_id": "29152589",
+      "asset_sha256": "f5f5af7aa1f424624978ea77eb34a03e5ae1feb13aaf8c3a46777c6386e3ebc4",
+      "contact_sheet_sha256": "9ebfd0ed4dff642c8e0f3a57f03500355739def3cd8c813a5f6a8c9594610f9c",
+      "decision": "approve",
+      "reason": "Commuters streaming out of a transit stop beside moving traffic, seen from above. Everyday transit at human scale with no station signage dominating."
+    },
+    {
+      "scene_id": "scene_041",
+      "provider_asset_id": "7394103",
+      "asset_sha256": "df5e346fb4c999877288eaf24e411869d80e27b27e2f4568349d53c8e4e3b1e7",
+      "contact_sheet_sha256": "c6d854c27147e66d0535b3f7895b53ee37d9609eb81f1b6266fd491bf8c6f018",
+      "decision": "approve",
+      "reason": "A parent and child resting together on a sofa with no device anywhere in frame. The away-from-the-technology condition is met literally."
+    },
+    {
+      "scene_id": "scene_042",
+      "provider_asset_id": "9574129",
+      "asset_sha256": "f350bb48031d81932eaf6c4474f45c191e3718edb32f8bf2e7a298fa19c06944",
+      "contact_sheet_sha256": "6d7bc3c15450e551646ca6512e073ef5856dee9d99358009cca1ba5906480fe7",
+      "decision": "approve",
+      "reason": "An empty white corridor receding to a vanishing point. Works as the machine's corridor by architecture and emptiness, and is plainly a metaphor rather than a real facility."
+    },
+    {
+      "scene_id": "scene_043",
+      "provider_asset_id": "7141174",
+      "asset_sha256": "108f5abb525f61dc56922c60f4f8e4dc6cd987374560adf13ba5f9abf7c3df0f",
+      "contact_sheet_sha256": "a05ff7e9ded64647655da198e234cd8220b6e6714acb46ffea5c5a185c260519",
+      "decision": "approve",
+      "reason": "Close-up of a board with memory slots, heatsink and air shroud under blue light. Concentrated compute in the most literal available sense, the silicon itself."
+    },
+    {
+      "scene_id": "scene_044",
+      "provider_asset_id": "11690475",
+      "asset_sha256": "cad02a1fb132f49c53ac757bcfb62e09c6ce4fd78dfe81a3ce3853ea620daf0b",
+      "contact_sheet_sha256": "15e0e22dcc1740f864d87048697f038e49e5afa2521332980a5d6431b365c662",
+      "decision": "approve",
+      "reason": "A city sprawling to the horizon in genuine dusk light with no legible signage. The scale the decision sits inside, and no specific place is named."
+    },
+    {
+      "scene_id": "scene_045",
+      "provider_asset_id": "5281602",
+      "asset_sha256": "45bc7b6a4df39a564ca239f1eeb9c1bd4769a920fbf3940751251f6f9fb77f24",
+      "contact_sheet_sha256": "b2d4a12a31346f5fcadd376427b314015a1a7f50ee84e2e4bae3b48e109cea8b",
+      "decision": "approve",
+      "reason": "A face lit only by its own screen in a dark room. One person, one display, closing intimacy; he is on a call, a minor distraction that does not change what the frame says."
+    }
+  ]
+}

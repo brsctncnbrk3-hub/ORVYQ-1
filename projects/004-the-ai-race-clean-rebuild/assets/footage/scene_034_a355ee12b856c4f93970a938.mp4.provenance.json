@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10868642",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:28:14.222Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:28:14.222Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "cb427e177480fab1a9ba37e136a16a37ed2bc4776575f6295d675ce93a295ce4",
+  "reviewed_contact_sheet_sha256": "71a46239e0106a27c00cceafcaeb172a357919336126d7851e5e319307cae983",
+  "visual_qa_reason": "Two people jointly reading through a document in a neutral room. A quiet two-hander read, held distinct from the three-person staging used elsewhere."
 }

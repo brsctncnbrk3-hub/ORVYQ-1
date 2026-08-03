@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9279581",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:29:05.659Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:29:05.659Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "7b80e2414bbe71c917e0ffe1f81f3a35c07d974dbae340aaa6cb34e0e6a116ab",
+  "reviewed_contact_sheet_sha256": "e948ddff52ee0127f9cd3da6e3ea8d651476fb5d58a2095579b6631dca710ac4",
+  "visual_qa_reason": "A full pedestrian crossing mid-flow with faces visible and no event to explain. A tour coach carrying an unrelated operator mark passes behind; it is incidental background, not presented as endorsing anything."
 }

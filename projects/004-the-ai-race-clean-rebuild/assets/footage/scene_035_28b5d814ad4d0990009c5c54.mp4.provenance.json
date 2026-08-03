@@ -39,6 +39,11 @@
   "selected_rendition_id": "10805962",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
   "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:28:25.973Z"
+  "downloaded_at": "2026-08-03T18:28:25.973Z",
+  "visual_qa_status": "REJECTED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "ce43b7a296425378a0abe506a4720de45b92640e07c6803a951c5d8e9630bc83",
+  "reviewed_contact_sheet_sha256": "a59455ce455c26e0e68af2535056df6fbc80a39203cb76f439076f3792182387",
+  "visual_qa_reason": "A clinical diagnostics lab where the analyser carries a legible ARCHITECT brand mark across several frames. A named commercial instrument standing in for independent evaluation of AI systems is both off-domain and a visible endorsement risk.",
+  "fail_closed_reason": "A clinical diagnostics lab where the analyser carries a legible ARCHITECT brand mark across several frames. A named commercial instrument standing in for independent evaluation of AI systems is both off-domain and a visible endorsement risk."
 }

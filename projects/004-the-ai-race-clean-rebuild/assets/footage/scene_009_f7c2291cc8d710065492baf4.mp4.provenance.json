@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "9879683",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:25:48.208Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:25:48.208Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "351aa4a7eed3b8689dda51848cb89190740234b257e8d89550db8715f4c8d8cf",
+  "reviewed_contact_sheet_sha256": "310ab9cf7db59fe3213ef8486c77efe745ce0ae720935a9bfa7dfe2a7aab6034",
+  "visual_qa_reason": "Two identical booth workstations side by side, one person in each, working separately within arm's reach. The closeness of the frontier made physical without asserting a benchmark result."
 }

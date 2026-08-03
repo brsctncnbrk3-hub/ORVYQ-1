@@ -13,7 +13,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_001",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_001_SAFETY_FRAMEWORKS"
       ],
@@ -33,7 +33,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_002",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_002_COMPETITIVE_INCENTIVE"
       ],
@@ -53,7 +53,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_003",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
       ],
@@ -73,7 +73,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_004",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_004_TEST_NOT_DEPLOYMENT"
       ],
@@ -93,7 +93,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_005",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_006_INVESTMENT_SCALE"
       ],
@@ -113,7 +113,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_006",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_007_FRONTIER_GAP"
       ],
@@ -133,7 +133,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_007",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
@@ -153,7 +153,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_008",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_009_AGENTIC_ESPIONAGE"
       ],
@@ -173,7 +173,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_009",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_010_BIO_ASL3"
       ],
@@ -193,7 +193,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_010",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_011_SYNTHETIC_PERSUASION"
       ],
@@ -213,7 +213,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_011",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_012_LABOUR_EXPOSURE"
       ],
@@ -233,7 +233,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_012",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_013_MARKET_CONCENTRATION"
       ],
@@ -253,7 +253,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_013",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_014_EU_LAYERED_OBLIGATIONS"
       ],
@@ -273,7 +273,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_014",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_016_COMPLIANCE_INCUMBENCY"
       ],
@@ -293,7 +293,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_015",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_017_OPEN_WEIGHT_TRADEOFF"
       ],
@@ -313,7 +313,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_016",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_018_CLOSED_ACCESS_TRADEOFF"
       ],
@@ -333,7 +333,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_017",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_019_INDEPENDENT_EVALUATION"
       ],
@@ -353,7 +353,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_018",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_020_INCIDENT_REPORTING"
       ],
@@ -373,7 +373,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_019",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_021_FINAL_SYNTHESIS"
       ],
@@ -393,7 +393,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_020",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_021_FINAL_SYNTHESIS"
       ],
@@ -413,7 +413,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_021",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
       ],
@@ -440,7 +440,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_022",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_003_AGENTIC_MISALIGNMENT_TESTS"
       ],
@@ -467,7 +467,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_023",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_005_2026_MITIGATION_UPDATE"
       ],
@@ -494,7 +494,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_024",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
@@ -521,7 +521,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_025",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_013_MARKET_CONCENTRATION"
       ],
@@ -548,7 +548,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_026",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_015_COMPUTE_NOT_ONLY_ROUTE"
       ],
@@ -575,7 +575,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_027",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_017_OPEN_WEIGHT_TRADEOFF"
       ],
@@ -602,7 +602,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_028",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_019_INDEPENDENT_EVALUATION"
       ],
@@ -629,7 +629,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_029",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_021_FINAL_SYNTHESIS"
       ],
@@ -656,7 +656,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_030",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_021_FINAL_SYNTHESIS"
       ],
@@ -683,7 +683,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_031",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_004_TEST_NOT_DEPLOYMENT"
       ],
@@ -710,7 +710,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_032",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_006_INVESTMENT_SCALE"
       ],
@@ -737,7 +737,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_033",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_016_COMPLIANCE_INCUMBENCY"
       ],
@@ -764,7 +764,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_034",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_018_CLOSED_ACCESS_TRADEOFF"
       ],
@@ -791,7 +791,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_035",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_020_INCIDENT_REPORTING"
       ],
@@ -818,7 +818,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_036",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_006_INVESTMENT_SCALE"
       ],
@@ -845,7 +845,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_037",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_006_INVESTMENT_SCALE"
       ],
@@ -872,7 +872,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_038",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_006_INVESTMENT_SCALE"
       ],
@@ -899,7 +899,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_039",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_010_BIO_ASL3"
       ],
@@ -926,7 +926,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_040",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_010_BIO_ASL3"
       ],
@@ -953,7 +953,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_041",
       "type": "contextual_footage",
-      "status": "ready",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_010_BIO_ASL3"
       ],
@@ -1040,7 +1040,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_002_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_002_COMPETITIVE_INCENTIVE"
       ],
@@ -1057,7 +1057,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_010_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
@@ -1074,7 +1074,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_011_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
@@ -1091,7 +1091,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_012_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_008_CYBER_EXTORTION"
       ],
@@ -1108,7 +1108,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_013_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_009_AGENTIC_ESPIONAGE"
       ],
@@ -1125,7 +1125,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_016_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_010_BIO_ASL3"
       ],
@@ -1142,7 +1142,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_021_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_013_MARKET_CONCENTRATION"
       ],
@@ -1159,7 +1159,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_022_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_013_MARKET_CONCENTRATION"
       ],
@@ -1176,7 +1176,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_026_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_014_EU_LAYERED_OBLIGATIONS"
       ],
@@ -1193,7 +1193,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_028_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_015_COMPUTE_NOT_ONLY_ROUTE"
       ],
@@ -1210,7 +1210,7 @@
     {
       "asset_request_id": "REQ_FTG_SCENE_033_BLOCKED",
       "type": "contextual_footage",
-      "status": "pending_direct_asset",
+      "status": "pending_acquisition",
       "claim_ids": [
         "CLM_018_CLOSED_ACCESS_TRADEOFF"
       ],

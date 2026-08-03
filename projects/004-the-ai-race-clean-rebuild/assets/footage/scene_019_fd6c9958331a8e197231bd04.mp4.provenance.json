@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "10909099",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:26:39.462Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:26:39.462Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "b64e043b601dd4cda53597ebd24607657d471b4bb19236988c8d5f542a28caa3",
+  "reviewed_contact_sheet_sha256": "fb66bb805d0bcbd9d1818eaddeec9cb68d81ccb1cae83dc2e5d6dabba8089fba",
+  "visual_qa_reason": "Hands typing a document on a laptop beside a coffee cup. Unglamorous office work carried out through software, with no code-editor styling to overstate it."
 }

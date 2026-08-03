@@ -39,6 +39,11 @@
   "selected_rendition_id": "14585947",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
   "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:27:10.879Z"
+  "downloaded_at": "2026-08-03T18:27:10.879Z",
+  "visual_qa_status": "REJECTED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "3b7ca4f59bc47aaaccde90f4a8362d20a8e6dcf6e8016d6194f286b835c76726",
+  "reviewed_contact_sheet_sha256": "8770551db0e20f4a143c046d00b58d12a30614cea3cb2674eb98cd45f02b5a79",
+  "visual_qa_reason": "The building is the Hungarian Parliament, identifiable from its dome, riverside frontage and the national flag on the facade. Running it under narration about the EU AI Act presents a national institution as an EU one.",
+  "fail_closed_reason": "The building is the Hungarian Parliament, identifiable from its dome, riverside frontage and the national flag on the facade. Running it under narration about the EU AI Act presents a national institution as an EU one."
 }

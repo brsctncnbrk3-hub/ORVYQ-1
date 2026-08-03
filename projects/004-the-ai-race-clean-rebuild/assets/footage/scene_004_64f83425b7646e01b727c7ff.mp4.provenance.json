@@ -38,7 +38,11 @@
   "transformed_for_edit": true,
   "selected_rendition_id": "14300929",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
-  "approved_for_final_edit": false,
-  "human_review_status": "PENDING_FRAME_REVIEW",
-  "downloaded_at": "2026-08-03T18:24:36.732Z"
+  "approved_for_final_edit": true,
+  "downloaded_at": "2026-08-03T18:24:36.732Z",
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "reviewed_asset_sha256": "93fc6af839009609a74c4150b2dec6a3e1e72764206096419b7ce4d669a4822e",
+  "reviewed_contact_sheet_sha256": "38fcb19a047e673abf1f8dc08afc3d1578d47de5eb22976bf563951e2acf2350",
+  "visual_qa_reason": "One operator leaning into a multi-monitor setup with readable source code and green terminal output. Genuine terminal work under observation, not a decorative code overlay."
 }
