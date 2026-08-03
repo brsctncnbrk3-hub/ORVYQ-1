@@ -148,6 +148,13 @@ jobs:
       - name: Stop when canonical full production plan failed
         run: test "$(cat full-production-plan.status)" = "0"
 
+      # Authored against the shot list the previous step just produced, and
+      # written to research/footage_use_contracts.json -- the canonical source
+      # the reconciler below derives the editorial plan from. Authoring into a
+      # derived file instead is what makes the two disagree.
+      - name: Author the claim-bound contextual-footage distribution
+        run: node scripts/orvyq_author_footage_distribution.mjs --project-id="$PROJECT_ID"
+
       - name: Reconcile claim-bound footage contracts after shot generation
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
 

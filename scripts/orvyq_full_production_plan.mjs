@@ -266,6 +266,13 @@ export function narrationForRange(tokens, start, end, fallback) {
   return anchor || String(fallback || "").trim();
 }
 
+/** `assets/footage/scene_007_<provider-id>.mp4` -> `scene_007`. */
+function sceneIdFromAsset(assetPath) {
+  const match = String(assetPath || "").match(/(?:^|\/)scene_(\d{3})(?:_|\.)/);
+  if (!match) throw new Error(`Cannot derive a scene id from footage asset ${assetPath || "<missing>"}`);
+  return `scene_${match[1]}`;
+}
+
 function semanticLinkForEvidenceKind(kind) {
   return new Set(["official_document", "official_figure", "official_screen", "split_documents", "image_sequence", "recap"]).has(kind)
     ? "direct_evidence"
@@ -1536,13 +1543,17 @@ export async function buildFullProductionPlan(projectId) {
     duration: hookShot.duration,
     claim_id: hookShot.claim_id,
     section_id: firstSectionId,
-    scene_id: "scene_001",
+    // Derived from the clip the hook shot actually plays. A fixed scene id
+    // here would mislabel every hook shot after the first and would make any
+    // scene-identity accounting -- most importantly the per-source use budget
+    // in orvyq-footage-use-budget.mjs -- charge the whole hook to one scene.
+    scene_id: sceneIdFromAsset(hookShot.video_asset),
     visual_role: hookShot.visual_role,
     editorial_purpose: hookShot.editorial_purpose,
     narration_anchor: hookShot.narration_anchor || "Opening visual premise before the first narrated sentence.",
     semantic_rationale:
       hookShot.semantic_rationale ||
-      "Establishes the literal ocean-research setting that the opening narration immediately identifies.",
+      "Establishes the physical setting that the opening narration immediately identifies.",
     semantic_link: hookShot.semantic_link || "physical",
     source_slice_index: null,
     asset_type: "footage",

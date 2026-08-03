@@ -26,6 +26,8 @@
     "orvyq:narration-alignment": "node scripts/orvyq_narration_alignment.mjs",
     "orvyq:resolve-pauses": "node scripts/orvyq_resolve_pauses.mjs",
     "orvyq:full-production-plan": "node scripts/orvyq_full_production_plan.mjs",
+    "orvyq:author-footage-distribution": "node scripts/orvyq_author_footage_distribution.mjs",
+    "orvyq:system-independence": "node scripts/orvyq_system_independence_audit.mjs",
     "orvyq:music-intake": "node scripts/orvyq_music_intake.mjs",
     "orvyq:music-resolve": "node scripts/orvyq_music_resolve.mjs",
     "orvyq:parity-check": "node scripts/orvyq_parity_check.mjs",
