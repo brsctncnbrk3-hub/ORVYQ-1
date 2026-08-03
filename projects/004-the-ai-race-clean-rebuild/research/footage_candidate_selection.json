@@ -1,33 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
-  "shortlist_generated_at": "2026-08-03T20:06:00.440Z",
-  "selection_status": "inspected",
-  "generated_at": "2026-08-03T20:08:09.411Z",
-  "selections": [
-    {
-      "scene_id": "scene_024",
-      "decision": "selected",
-      "provider_asset_id": "30740060",
-      "candidate_rank": 3,
-      "source_page_url": "https://www.pexels.com/video/european-union-flag-waving-in-the-sky-30740060/",
-      "inspection_note": "The candidate frame shows only a clean EU flag against the sky, with no national building, national flag or commercial logo that could misidentify the institution. It supplies unambiguous EU governance context while the legal claim remains on primary evidence."
-    },
-    {
-      "scene_id": "scene_031",
-      "decision": "selected",
-      "provider_asset_id": "8534001",
-      "candidate_rank": 3,
-      "source_page_url": "https://www.pexels.com/video/man-and-woman-talking-while-in-the-laboratory-8534001/",
-      "inspection_note": "The candidate frame shows two lab-coated researchers working together over a microscope and written notes in a shared laboratory setting; no visible brand or saturated studio backdrop dominates the frame."
-    },
-    {
-      "scene_id": "scene_035",
-      "decision": "selected",
-      "provider_asset_id": "8327148",
-      "candidate_rank": 1,
-      "source_page_url": "https://www.pexels.com/video/a-scientist-mixing-an-experiment-8327148/",
-      "inspection_note": "The candidate frame shows an unbranded scientist in a neutral laboratory lifting and visually inspecting a sample tube, a clear physical analogue for methodical independent testing rather than assembly, repair or product endorsement."
-    }
-  ]
+  "shortlist_generated_at": "2026-08-03T20:38:42.006Z",
+  "selection_status": "inspection_required",
+  "selections": []
 }
