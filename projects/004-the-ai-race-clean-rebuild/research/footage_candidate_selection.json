@@ -2,6 +2,96 @@
   "schema_version": "1.0",
   "project_id": "004-the-ai-race-clean-rebuild",
   "shortlist_generated_at": "2026-08-03T21:27:25.099Z",
-  "selection_status": "inspection_required",
-  "selections": []
+  "selection_status": "inspected",
+  "generated_at": "2026-08-03T21:29:02.028Z",
+  "selections": [
+    {
+      "scene_id": "scene_002",
+      "decision": "selected",
+      "provider_asset_id": "1085656",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/blue-colored-cables-1085656/",
+      "inspection_note": "The inspected poster shows a blue-lit network switch populated with connected Ethernet cables and visible activity LEDs. It is a concrete infrastructure detail and does not claim to identify a particular facility."
+    },
+    {
+      "scene_id": "scene_010",
+      "decision": "selected",
+      "provider_asset_id": "38779107",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/high-tech-control-room-monitoring-operations-38779107/",
+      "inspection_note": "The inspected poster shows operators working at a live multi-monitor control desk with operational displays visible around them. It reads as coordinated monitoring context, not as footage of the cited cyber incident."
+    },
+    {
+      "scene_id": "scene_011",
+      "decision": "selected",
+      "provider_asset_id": "38779098",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/high-tech-control-room-for-traffic-monitoring-38779098/",
+      "inspection_note": "The inspected poster shows one operator directly facing a wall of distinct live traffic and surveillance feeds. The human monitoring action is unambiguous while the displays remain generic operational context."
+    },
+    {
+      "scene_id": "scene_012",
+      "decision": "selected",
+      "provider_asset_id": "7140939",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/lights-blue-internet-date-7140939/",
+      "inspection_note": "The inspected poster clearly shows rack-mounted server storage bays, visible SAS drive labels and illuminated status indicators. It depicts real computing infrastructure without identifying any institution in the story."
+    },
+    {
+      "scene_id": "scene_013",
+      "decision": "selected",
+      "provider_asset_id": "38779110",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/modern-traffic-management-control-room-38779110/",
+      "inspection_note": "The inspected poster shows several operators in a wide control room following a large multi-feed wall display. It supplies an honest coordination-and-scale analogy rather than pretending to depict the cited espionage network."
+    },
+    {
+      "scene_id": "scene_016",
+      "decision": "selected",
+      "provider_asset_id": "9910318",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/a-person-tapping-it-s-card-on-a-machine-9910318/",
+      "inspection_note": "The inspected poster shows a person presenting a hand or card at an active reader while entering through illuminated controlled turnstiles. It provides visible access-control context without presenting the location as a laboratory."
+    },
+    {
+      "scene_id": "scene_021",
+      "decision": "selected",
+      "provider_asset_id": "29959327",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/aerial-view-of-large-industrial-warehouse-facility-29959327/",
+      "inspection_note": "The inspected poster is a clear aerial view of one large industrial warehouse and its surrounding access roads. It communicates concentrated physical scale while remaining explicitly generic industrial context, not a claimed data centre."
+    },
+    {
+      "scene_id": "scene_022",
+      "decision": "selected",
+      "provider_asset_id": "19285752",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/hard-disk-drive-19285752/",
+      "inspection_note": "The inspected poster clearly shows the exposed platter, actuator arm and head assembly of a mechanical hard disk in operation. It is an accurate component-level storage image and not a decorative device substitute."
+    },
+    {
+      "scene_id": "scene_026",
+      "decision": "selected",
+      "provider_asset_id": "6952138",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/a-woman-in-a-podium-giving-a-speech-6952138/",
+      "inspection_note": "The inspected poster shows a formal podium and panel setting with an unmistakable European Union flag. It is used only as generic governance context; legal obligations remain established by the primary evidence."
+    },
+    {
+      "scene_id": "scene_028",
+      "decision": "selected",
+      "provider_asset_id": "6804656",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/man-checking-the-computer-cables-6804656/",
+      "inspection_note": "The inspected poster shows a technician physically examining a dense set of connected computer and network cables at a workstation. The action makes hardware maintenance tangible without acting as measurement evidence."
+    },
+    {
+      "scene_id": "scene_033",
+      "decision": "selected",
+      "provider_asset_id": "38779095",
+      "candidate_rank": 1,
+      "source_page_url": "https://www.pexels.com/video/high-tech-control-room-with-multiple-cctv-monitors-38779095/",
+      "inspection_note": "The inspected poster shows a central monitoring room with a large wall consolidating many distinct CCTV feeds and operators below it. It is a clear visual analogy for concentrated monitoring power, not evidence of the cited access policy."
+    }
+  ]
 }
