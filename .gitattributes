@@ -30,6 +30,12 @@ projects/*/qa/**/*.jpg -filter -diff -merge -text
 projects/*/qa/**/*.jpeg -filter -diff -merge -text
 projects/*/qa/**/*.png -filter -diff -merge -text
 
+# Reference frames for the on-screen language preview. Same reasoning as the
+# qa/ rule above: a verification harness whose frames are LFS pointers cannot
+# render, so it cannot verify anything. These are small crops taken from the
+# candidate boards already committed under qa/.
+templates/remotion/public/_preview/*.jpg -filter -diff -merge -text
+
 # Committed as a plain blob (LFS push is blocked in the session that added
 # it -- see scripts/README.md / the commit that introduced this file), so the
 # general *.mp3 LFS rule above is explicitly unset for this one path. Without

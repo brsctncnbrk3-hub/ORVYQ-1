@@ -67,7 +67,7 @@ export const DocumentEvidenceSequence: React.FC<{
       <div
         style={{
           position: "absolute",
-          left: safe.x,
+          left: safe.dense,
           top: safe.top,
           zIndex: 12,
           display: "flex",
@@ -93,7 +93,7 @@ export const DocumentEvidenceSequence: React.FC<{
       <div
         style={{
           position: "absolute",
-          left: safe.x,
+          left: safe.dense,
           top: 146,
           width: 430,
           zIndex: 12,
@@ -179,7 +179,7 @@ export const DocumentEvidenceSequence: React.FC<{
       <div
         style={{
           position: "absolute",
-          left: safe.x,
+          left: safe.dense,
           right: 72,
           bottom: 155,
           zIndex: 14,

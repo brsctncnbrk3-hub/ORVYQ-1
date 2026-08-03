@@ -13,6 +13,9 @@ import { PrimaryEvidenceSpec } from "./types/evidence";
 import { PrimaryEvidenceV2 } from "./PrimaryEvidenceV2";
 import { DocumentEvidenceSequence } from "./DocumentEvidenceSequence";
 import { EmphasisCard, EmphasisCardSpec } from "./EmphasisCard";
+import { HELD_PLAYBACK_RATE, HeldFrame, HeldFrameSpec } from "./HeldFrame";
+import { EvidenceFrame, EvidenceFrameSpec } from "./EvidenceFrame";
+import { ORVYQ_DESIGN } from "./designSystem";
 
 export type CameraMotion = {
   type: string;
@@ -37,6 +40,10 @@ type SceneProps = {
   evidence?: PrimaryEvidenceSpec;
   editorialOverlay?: EditorialOverlaySpec | null;
   emphasisCard?: EmphasisCardSpec | null;
+  /** Register B. Slows the shot and holds it under a section line. */
+  heldFrame?: HeldFrameSpec | null;
+  /** Register C. Replaces the shot with the document behind the claim. */
+  evidenceFrame?: EvidenceFrameSpec | null;
   durationInFrames: number;
   textOverlay: string | null;
   transitionIn: string;
@@ -104,6 +111,8 @@ export const Scene: React.FC<SceneProps> = ({
   evidence,
   editorialOverlay = null,
   emphasisCard = null,
+  heldFrame = null,
+  evidenceFrame = null,
   durationInFrames,
   textOverlay,
   transitionIn,
@@ -134,10 +143,22 @@ export const Scene: React.FC<SceneProps> = ({
       ? "black"
       : "transparent";
 
+  // A held shot stops travelling and slows down. Both are required: drift
+  // under a large held line reads as the frame sliding out from under it.
+  const effectiveMotion: FootageMotion = heldFrame ? "hold" : motionVariant;
+  const effectiveRate = heldFrame
+    ? Math.min(playbackRate, HELD_PLAYBACK_RATE)
+    : playbackRate;
+
   return (
     <AbsoluteFill style={{ backgroundColor: shellBackground }}>
       <AbsoluteFill style={{ opacity }}>
-        {assetType === "graphic" && graphic ? (
+        {evidenceFrame ? (
+          <EvidenceFrame
+            spec={evidenceFrame}
+            durationInFrames={durationInFrames}
+          />
+        ) : assetType === "graphic" && graphic ? (
           <OrvyqGraphic spec={graphic} durationInFrames={durationInFrames} />
         ) : assetType === "evidence" && evidence ? (
           evidence.kind === "image_sequence" ? (
@@ -163,7 +184,9 @@ export const Scene: React.FC<SceneProps> = ({
               height: "100%",
               objectFit: "cover",
               transform: footageTransform(
-                motionVariant === "hold" ? "push" : motionVariant,
+                effectiveMotion === "hold" && !heldFrame
+                  ? "push"
+                  : effectiveMotion,
                 progress,
               ),
               filter: "contrast(1.055) saturate(.9) brightness(.94)",
@@ -178,12 +201,12 @@ export const Scene: React.FC<SceneProps> = ({
               (trimOutSec ??
                 (trimInSec ?? 0) + durationInFrames / fps) * fps,
             )}
-            playbackRate={playbackRate}
+            playbackRate={effectiveRate}
             style={{
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              transform: footageTransform(motionVariant, progress),
+              transform: footageTransform(effectiveMotion, progress),
               filter: "contrast(1.055) saturate(.9) brightness(.94)",
             }}
           />
@@ -203,26 +226,30 @@ export const Scene: React.FC<SceneProps> = ({
           />
         )}
       </AbsoluteFill>
-      {assetType === "footage" || editorialOverlay ? (
+      {/*
+        A single base grade on footage. Each register now carries its own
+        legibility scrim, so this no longer thickens when a line is present --
+        stacking the two was what made a card feel like a panel dropping in.
+      */}
+      {assetType === "footage" && !heldFrame ? (
         <AbsoluteFill
           style={{
             opacity,
             pointerEvents: "none",
-            background: emphasisCard
-              ? "linear-gradient(90deg,rgba(3,7,12,.54) 0%,rgba(3,7,12,.12) 58%,rgba(3,7,12,.24) 100%)"
-              : editorialOverlay
-                ? "linear-gradient(90deg,rgba(3,7,12,.42) 0%,rgba(3,7,12,.08) 52%,rgba(3,7,12,.2) 100%)"
-                : "linear-gradient(180deg,rgba(3,7,12,.08),rgba(3,7,12,.2))",
+            background: "linear-gradient(180deg,rgba(3,7,12,.06),rgba(3,7,12,.16))",
           }}
         />
       ) : null}
-      {assetType !== "graphic" && editorialOverlay ? (
+      {assetType !== "graphic" && !evidenceFrame && editorialOverlay ? (
         <EditorialOverlay
           spec={editorialOverlay}
           durationInFrames={durationInFrames}
         />
       ) : null}
-      {assetType === "footage" && emphasisCard ? (
+      {assetType === "footage" && heldFrame ? (
+        <HeldFrame spec={heldFrame} durationInFrames={durationInFrames} />
+      ) : null}
+      {assetType === "footage" && emphasisCard && !heldFrame ? (
         <EmphasisCard
           spec={emphasisCard}
           durationInFrames={durationInFrames}
@@ -231,31 +258,35 @@ export const Scene: React.FC<SceneProps> = ({
       {textOverlay &&
       !editorialOverlay &&
       !emphasisCard &&
+      !heldFrame &&
+      !evidenceFrame &&
       assetType !== "evidence" ? (
-        <div
+        /* Same line, same voice as every other register: set on the frame,
+           not inside a bordered panel with its own accent colour. */
+        <AbsoluteFill
           style={{
-            position: "absolute",
-            left: 68,
-            top: 70,
             opacity,
-            backgroundColor: "rgba(8,14,22,0.72)",
-            backdropFilter: "blur(12px)",
-            color: "#F5F0E7",
-            border: "1px solid rgba(245,240,231,0.18)",
-            borderLeft: "4px solid #86A9CC",
-            borderRadius: 4,
-            fontFamily: "Arial, Helvetica, sans-serif",
-            fontSize: 28,
-            fontWeight: 720,
-            letterSpacing: "0.08em",
-            lineHeight: 1.2,
-            padding: "14px 18px",
-            maxWidth: 920,
-            textShadow: "0 2px 12px rgba(0,0,0,0.7)",
+            pointerEvents: "none",
+            justifyContent: "flex-end",
+            alignItems: "flex-start",
+            padding: `0 ${ORVYQ_DESIGN.safe.x}px ${ORVYQ_DESIGN.safe.bottom}px`,
           }}
         >
-          {textOverlay}
-        </div>
+          <div
+            style={{
+              maxWidth: "24ch",
+              fontFamily: ORVYQ_DESIGN.type.displayFamily,
+              fontSize: 62,
+              fontWeight: ORVYQ_DESIGN.type.displayWeight,
+              letterSpacing: ORVYQ_DESIGN.type.trackingDisplay,
+              lineHeight: 1.08,
+              color: ORVYQ_DESIGN.color.ink,
+              textShadow: "0 2px 22px rgba(0,0,0,.55)",
+            }}
+          >
+            {textOverlay}
+          </div>
+        </AbsoluteFill>
       ) : null}
     </AbsoluteFill>
   );

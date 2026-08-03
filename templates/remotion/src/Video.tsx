@@ -6,6 +6,8 @@ import { OrvyqGraphicSpec } from "./OrvyqGraphic";
 import { PrimaryEvidenceSpec } from "./types/evidence";
 import { FootageMotion, Scene } from "./Scene";
 import { EmphasisCardSpec } from "./EmphasisCard";
+import { HeldFrameSpec } from "./HeldFrame";
+import { EvidenceFrameSpec } from "./EvidenceFrame";
 import { HookQuestion, HookQuestionSpec } from "./HookQuestion";
 import assetMap from "./data/asset_map.json";
 import captionsData from "./data/captions.json";
@@ -25,6 +27,8 @@ type BaseShot = {
   source_slice_index?: number | null;
   editorial_overlay?: EditorialOverlaySpec | null;
   emphasis_card?: EmphasisCardSpec | null;
+  held_frame?: HeldFrameSpec | null;
+  evidence_frame?: EvidenceFrameSpec | null;
   hook_question?: HookQuestionSpec | null;
   hook_footage?: boolean;
   text_overlay?: string | null;
@@ -119,6 +123,8 @@ export const FactForgeVideo: React.FC = () => {
                 motionVariant={shot.motion_variant || "hold"}
                 editorialOverlay={shot.editorial_overlay || null}
                 emphasisCard={shot.emphasis_card || null}
+                heldFrame={shot.held_frame || null}
+                evidenceFrame={shot.evidence_frame || null}
                 durationInFrames={durationInFrames}
                 textOverlay={shot.text_overlay || null}
                 transitionIn={transitionIn}

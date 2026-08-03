@@ -150,7 +150,7 @@ export const EditorialOverlay: React.FC<{ spec: EditorialOverlaySpec; durationIn
     <div
       style={{
         position: "absolute",
-        left: safe.x,
+        left: safe.dense,
         top: safe.top,
         width,
         maxHeight: 800,

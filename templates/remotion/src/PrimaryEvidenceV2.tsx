@@ -39,7 +39,7 @@ const FrameMark: React.FC = () => (
   <div
     style={{
       position: "absolute",
-      left: safe.x,
+      left: safe.dense,
       top: safe.top,
       zIndex: 20,
       display: "flex",
@@ -72,8 +72,8 @@ const Header: React.FC<{
   <div
     style={{
       position: "absolute",
-      left: safe.x,
-      right: safe.x,
+      left: safe.dense,
+      right: safe.dense,
       top: 104,
       zIndex: 12,
       fontFamily: type.family,
@@ -124,8 +124,8 @@ const SourceFooter: React.FC<{ spec: PrimaryEvidenceSpec }> = ({ spec }) => (
   <div
     style={{
       position: "absolute",
-      left: safe.x,
-      right: safe.x,
+      left: safe.dense,
+      right: safe.dense,
       bottom: safe.bottom,
       zIndex: 18,
       display: "flex",
