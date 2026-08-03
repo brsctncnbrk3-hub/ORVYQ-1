@@ -237,30 +237,54 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git add \
+          # An unmatched glob must vanish rather than reach git as a literal.
+          shopt -s nullglob
+          ROOT="projects/$PROJECT_ID"
+
+          # Several of these only exist once a project has been through the
+          # stage that writes them. A project being bootstrapped, or rebuilt
+          # after its pool was retired, legitimately has none of them yet --
+          # and `git add` on a path that does not exist fails the whole step.
+          add_existing() {
+            local force="$1"; shift
+            local present=()
+            local candidate
+            for candidate in "$@"; do
+              [ -e "$candidate" ] && present+=("$candidate")
+            done
+            [ "${#present[@]}" -eq 0 ] && return 0
+            if [ "$force" = "force" ]; then
+              git add -f -- "${present[@]}"
+            else
+              git add -- "${present[@]}"
+            fi
+          }
+
+          add_existing tracked \
             "scripts/orvyq_acquire_footage_demand.mjs" \
-            "projects/$PROJECT_ID/research/footage_acquisition_plan.json" \
-            "projects/$PROJECT_ID/research/footage_semantic_constraints.json" \
-            "projects/$PROJECT_ID/research/footage_constraint_overrides.json" \
-            "projects/$PROJECT_ID/research/footage_use_contracts.json" \
-            "projects/$PROJECT_ID/research/visual_asset_requests.json" \
-            "projects/$PROJECT_ID/research/visual_asset_reviews.json" \
-            "projects/$PROJECT_ID/config/editorial_asset_plan.json" \
-            "projects/$PROJECT_ID/direction/motion_hook.json" \
-            "projects/$PROJECT_ID/direction/visual_rebalance_plan.json" \
-            "projects/$PROJECT_ID/direction/editorial_blueprint.json"
-          test ! -f "projects/$PROJECT_ID/research/footage_use_contract_overrides.json" || \
-            git add "projects/$PROJECT_ID/research/footage_use_contract_overrides.json"
-          git add "projects/$PROJECT_ID/research"/footage_visual_decisions*.json
-          git add -f \
-            "projects/$PROJECT_ID/assets/footage" \
-            "projects/$PROJECT_ID/assets/local_assets.json" \
-            "projects/$PROJECT_ID/assets/footage_acquisition.runtime.json" \
-            "projects/$PROJECT_ID/qa/local_assets.provenance.json" \
-            "projects/$PROJECT_ID/qa/footage-contact-sheets" \
-            "projects/$PROJECT_ID/qa/footage_contact_sheets.json" \
-            "projects/$PROJECT_ID/qa/footage_review_queue.json"
-          test ! -f "projects/$PROJECT_ID/qa/footage_semantic_review_audit.json" || git add "projects/$PROJECT_ID/qa/footage_semantic_review_audit.json"
+            "$ROOT/research/footage_acquisition_plan.json" \
+            "$ROOT/research/footage_semantic_constraints.json" \
+            "$ROOT/research/footage_constraint_overrides.json" \
+            "$ROOT/research/footage_use_contracts.json" \
+            "$ROOT/research/footage_use_contract_overrides.json" \
+            "$ROOT/research/visual_asset_requests.json" \
+            "$ROOT/research/visual_asset_reviews.json" \
+            "$ROOT/config/editorial_asset_plan.json" \
+            "$ROOT/direction/motion_hook.json" \
+            "$ROOT/direction/visual_rebalance_plan.json" \
+            "$ROOT/direction/editorial_blueprint.json" \
+            "$ROOT/research"/footage_visual_decisions*.json
+
+          add_existing force \
+            "$ROOT/assets/footage" \
+            "$ROOT/assets/local_assets.json" \
+            "$ROOT/assets/footage_acquisition.runtime.json" \
+            "$ROOT/qa/local_assets.provenance.json" \
+            "$ROOT/qa/footage-contact-sheets" \
+            "$ROOT/qa/footage_contact_sheets.json" \
+            "$ROOT/qa/footage_review_queue.json" \
+            "$ROOT/qa/footage_semantic_review_audit.json"
+
           git config user.name "orvyq-footage-bot"
           git config user.email "orvyq-footage-bot@users.noreply.github.com"
           if git diff --cached --quiet; then
