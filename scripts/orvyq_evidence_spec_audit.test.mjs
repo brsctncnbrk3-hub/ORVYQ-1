@@ -132,3 +132,58 @@ test("evaluateEvidenceShot: does not flag a number that is genuinely present in 
   const failures = evaluateEvidenceShot({ shot, evidence, claim: c, sourceById, section: SECTION, previousEvidence: null });
   assert.ok(!failures.some((f) => f.includes("not traceable")));
 });
+
+test("evaluateEvidenceShot: does not flag a number that only appears in a materialized primary-evidence image's own source_regions", () => {
+  // scripts/lib/orvyq-visual-rebalance.mjs's resolvePrimaryEvidenceAttribution
+  // can legitimately title/caption an official_figure shot with real years or
+  // counts (e.g. "images of the 1979 tracks observed in 2023") that never
+  // appear in the claim's own narration_excerpt/evidence_requirements or the
+  // cited source's title/publisher/publication_date -- only in the
+  // shot's own source_regions, the authored description of exactly which
+  // real figure/region the attached image shows.
+  const shot = { shot_id: "shot_079", claim_id: "CLM_001_TEST" };
+  const evidence = baseEvidence({
+    kind: "official_figure",
+    items: undefined,
+    title: "Example Institute — images of the 1979 tracks observed in 2023",
+    source_regions: ["Figure 2 — track photographs observed in 2023 (1979 baseline)"],
+  });
+  const failures = evaluateEvidenceShot({ shot, evidence, claim: claim(), sourceById, section: SECTION, previousEvidence: null });
+  assert.ok(!failures.some((f) => f.includes("not traceable")), failures.join("; "));
+});
+
+test("evaluateEvidenceShot: still flags a number absent from source_regions on a shot with no real image attached", () => {
+  const shot = { shot_id: "shot_079", claim_id: "CLM_001_TEST" };
+  const evidence = baseEvidence({
+    kind: "official_figure",
+    items: undefined,
+    title: "Example Institute — images from 1979",
+    source_regions: ["Figure 2 — a different real region"],
+  });
+  const failures = evaluateEvidenceShot({ shot, evidence, claim: claim(), sourceById, section: SECTION, previousEvidence: null });
+  assert.ok(failures.some((f) => f.includes("not traceable") && f.includes("1979")));
+});
+
+test("evaluateEvidenceShot: does not flag a number that only appears in a real image-backed title/eyebrow, absent from source_regions", () => {
+  // The real regression (Candidate Validation run 30921180974, project 002,
+  // CLM_012_LONG_TERM_TRACK_PERSISTENCE shot_079): resolvePrimaryEvidenceAttribution
+  // built the shot's title from research/primary_evidence_manifest.json's
+  // caption "Nature — images of the 1979 OMCO mining tracks observed in
+  // 2023", a broader real description of the source than this one shot's
+  // own narrower source_region ("Figure 2 -- track photographs observed in
+  // 2023", which alone doesn't mention 1979). image_assets/evidence_asset_ids
+  // are only ever populated together for real materialized figures (see
+  // scripts/orvyq_edit_plan.mjs's IMAGE_KINDS branch), so their presence is
+  // the real signal that title/eyebrow came from verified manifest data.
+  const shot = { shot_id: "shot_079", claim_id: "CLM_001_TEST" };
+  const evidence = baseEvidence({
+    kind: "official_figure",
+    items: undefined,
+    title: "Example Institute — images of the 1979 tracks observed in 2023",
+    source_regions: ["Figure 2 — track photographs observed in 2023"],
+    image_assets: ["assets/evidence/example.png"],
+    evidence_asset_ids: ["EVID_EXAMPLE"],
+  });
+  const failures = evaluateEvidenceShot({ shot, evidence, claim: claim(), sourceById, section: SECTION, previousEvidence: null });
+  assert.ok(!failures.some((f) => f.includes("not traceable")), failures.join("; "));
+});
