@@ -245,6 +245,22 @@
       "rationale": "Show the official NOAA regulatory route/status page rather than a comparison template."
     },
     {
+      "baseline_shot_index": 51,
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "duration_seconds": 7.3,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_US_EO_NOAA",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/us_eo_14285_page1.png",
+          "evidence_asset_id": "EVID_US_EO14285_OFFICIAL_PAGE",
+          "source_region": "Federal Register page 17735 — policy and date"
+        }
+      ],
+      "rationale": "This default slice had no rebalance decision and was defaulting to a second comparison graphic card, pushing SEC_04_TWO_RULEBOOKS over the section graphics/cards ceiling. This claim is about the parallel EO/NOAA track together, and narration at this point is still on that same track, so returning to the Executive Order page (already shown once at shot 48, and shown here a second time -- the NOAA page already reaches its own two-claim usage ceiling via shot 58's CLM_009 use) keeps a real source on screen instead of adding an unnecessary third graphic card ahead of shot 53's deliberate two-route comparison."
+    },
+    {
       "baseline_shot_index": 53,
       "claim_id": "CLM_007_US_PARALLEL_ROUTE",
       "duration_seconds": 7.8,
