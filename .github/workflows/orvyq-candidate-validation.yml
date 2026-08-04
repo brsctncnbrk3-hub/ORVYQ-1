@@ -254,6 +254,17 @@ jobs:
             !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/out
             !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/.remotion
 
+      - name: Print real footage use counts (diagnostic)
+        if: always()
+        run: |
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises';
+            const raw = await readFile('projects/$PROJECT_ID/config/editorial_asset_plan.json', 'utf8');
+            const editorial = JSON.parse(raw);
+            const budget = editorial.last_footage_use_contract_application?.footage_use_budget;
+            console.log(JSON.stringify({ real_footage_use_counts: budget?.final_use_counts ?? null, removed_optional_hook_uses: budget?.removed_optional_hook_uses ?? null }, null, 2));
+          "
+
       - name: Run full pre-render QA chain
         run: |
           set +e
