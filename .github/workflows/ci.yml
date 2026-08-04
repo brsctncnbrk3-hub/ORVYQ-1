@@ -24,36 +24,6 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
-      # Temporary diagnostic for the UNABLE_TO_GET_ISSUER_CERT_LOCALLY
-      # failure primary-evidence fetch hit against www.ntia.gov. Confirmed
-      # so far: the server's chain is www.ntia.gov -> Cloudflare TLS
-      # Issuing ECC CA 1 -> SSL.com TLS Transit ECC CA R2 -> "AAA
-      # Certificate Services" (Comodo), the server never sends that last
-      # root, and NEITHER Node's bundled store NOR the runner's own
-      # OpenSSL/OS trust store (verified via `openssl s_client` directly,
-      # not just Node) currently trusts it -- so --use-openssl-ca does not
-      # help either. Ubuntu's ca-certificates package ships every
-      # Mozilla-recognized root as an individual file under
-      # /usr/share/ca-certificates/mozilla/ even when disabled by default
-      # policy, so check whether the actual AAA Certificate Services file
-      # is present on disk (no extra network fetch needed) and, if so,
-      # verify it actually closes this exact chain before trusting it.
-      # Remove this step once the real fix lands.
-      - name: Diagnose ntia.gov TLS trust (locate the missing root)
-        run: |
-          echo "--- searching the runner's own ca-certificates package for the missing root ---"
-          find /usr/share/ca-certificates -iname "*AAA*" 2>/dev/null || true
-          grep -i "aaa" /etc/ca-certificates.conf 2>/dev/null || true
-          CANDIDATE="$(find /usr/share/ca-certificates -iname "*AAA*Certificate*Services*" 2>/dev/null | head -1)"
-          echo "candidate file: ${CANDIDATE:-none}"
-          if [ -n "$CANDIDATE" ]; then
-            echo "--- subject/issuer of candidate file ---"
-            openssl x509 -in "$CANDIDATE" -noout -subject -issuer -fingerprint -sha256
-            echo "--- verifying it actually closes the real chain ---"
-            cat /etc/ssl/certs/ca-certificates.crt "$CANDIDATE" > /tmp/combined-ca.pem
-            echo | openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov -CAfile /tmp/combined-ca.pem -verify_return_error 2>&1 | grep -E "Verify return code|depth|error" || true
-          fi
-
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
       # was written is covered without editing a token list here.

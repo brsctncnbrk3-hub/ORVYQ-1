@@ -120,21 +120,33 @@ export async function fetchPrimaryEvidence(projectId = PROJECT_ID) {
   }
 
   const downloadRecords = new Map();
+  const downloadFailures = [];
   for (const [relativePath, asset] of downloadGroups.entries()) {
-    const target = path.join(dir, relativePath);
-    await fs.mkdir(path.dirname(target), { recursive: true });
-    const { buffer, final_url, content_type, attempts } = await fetchBuffer(asset.source_url, allowedHosts);
-    if (buffer.length < Number(asset.min_bytes || 1)) throw new Error(`${asset.evidence_asset_id} downloaded only ${buffer.length} bytes`);
-    assertMagic(buffer, asset.mime, asset.evidence_asset_id);
-    await fs.writeFile(target, buffer);
-    downloadRecords.set(relativePath, {
-      source_url: asset.source_url,
-      final_url,
-      content_type,
-      bytes: buffer.length,
-      sha256: sha256(buffer),
-      download_attempts: attempts,
-    });
+    try {
+      const target = path.join(dir, relativePath);
+      await fs.mkdir(path.dirname(target), { recursive: true });
+      const { buffer, final_url, content_type, attempts } = await fetchBuffer(asset.source_url, allowedHosts);
+      if (buffer.length < Number(asset.min_bytes || 1)) throw new Error(`${asset.evidence_asset_id} downloaded only ${buffer.length} bytes`);
+      assertMagic(buffer, asset.mime, asset.evidence_asset_id);
+      await fs.writeFile(target, buffer);
+      downloadRecords.set(relativePath, {
+        source_url: asset.source_url,
+        final_url,
+        content_type,
+        bytes: buffer.length,
+        sha256: sha256(buffer),
+        download_attempts: attempts,
+      });
+    } catch (error) {
+      // Every other asset still gets attempted so one host's outage or TLS
+      // misconfiguration doesn't hide whether the rest of the manifest is
+      // actually reachable. Still fails closed overall: nothing downstream
+      // of this loop runs unless every asset succeeded.
+      downloadFailures.push(`${asset.evidence_asset_id}: ${error.message}`);
+    }
+  }
+  if (downloadFailures.length) {
+    throw new Error(`Evidence download failed for ${downloadFailures.length} asset(s):\n${downloadFailures.join("\n")}`);
   }
 
   const runtimeAssets = [];
