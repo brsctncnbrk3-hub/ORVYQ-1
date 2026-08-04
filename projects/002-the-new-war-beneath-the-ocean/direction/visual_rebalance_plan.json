@@ -446,17 +446,17 @@
       "baseline_shot_index": 79,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 7.966666666666667,
-      "decision": "replace_primary_evidence",
-      "projected_medium": "primary_evidence",
-      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_DEEPSEA_TRACK_ROV",
       "replacement_assets": [
         {
-          "asset_path": "assets/evidence/nature_44_year_track_figure2.png",
-          "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_PHOTOS_FIGURE",
-          "source_region": "Figure 2 — track photographs observed in 2023"
+          "asset_path": "assets/footage/scene_051_direct.mp4",
+          "trim_in_sec": 8,
+          "trim_out_sec": 15.966666666666667
         }
       ],
-      "rationale": "The '44 years' claim belongs on the real figure annotation, not a text recap card."
+      "rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, an 15.93s uninterrupted evidence run over the 15s cap. Reuses the same already-verified ROV/track-observation footage (REQ_FTG_DEEPSEA_TRACK_ROV, already used to break the document sequence at shot 84 in this same claim) at a distinct trim window, instead of dropping to a text recap card."
     },
     {
       "baseline_shot_index": 81,
