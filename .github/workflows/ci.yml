@@ -24,6 +24,33 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
+      # Temporary: with the ntia.gov TLS fix landed, Candidate Validation
+      # run 30895095034 progressed to a new, different evidence-fetch
+      # failure -- EVID_EU_INCIDENT_REPORTING (eur-lex.europa.eu) downloaded
+      # 0 bytes, using the new nodeHttpsFetch implementation in
+      # scripts/orvyq_fetch_primary_evidence.mjs. This never failed before
+      # that rewrite, so it's most likely a real bug in the new fetch code
+      # (e.g. compression/redirect handling), not a new host-side problem.
+      # Compare curl (known-good baseline) against the actual nodeHttpsFetch
+      # code path against the real URL to isolate it. Remove once decided.
+      - name: Diagnose EVID_EU_INCIDENT_REPORTING 0-byte download
+        run: |
+          set +e
+          URL="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401689"
+          echo "--- curl baseline (follows redirects, default Accept-Encoding) ---"
+          curl -sSL -D - -o /tmp/curl-body.bin "$URL" | head -40
+          echo "curl body bytes: $(stat -c %s /tmp/curl-body.bin 2>/dev/null || echo 0)"
+          echo "--- nodeHttpsFetch (the actual production code path) ---"
+          node --input-type=module -e "
+            import { fetchBuffer } from './scripts/orvyq_fetch_primary_evidence.mjs';
+            try {
+              const result = await fetchBuffer('$URL', ['eur-lex.europa.eu'], { maxAttempts: 1 });
+              console.log('bytes:', result.buffer.length, 'content_type:', result.content_type, 'final_url:', result.final_url);
+            } catch (e) {
+              console.log('ERR', e.message, e.cause);
+            }
+          "
+
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
       # was written is covered without editing a token list here.
