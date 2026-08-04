@@ -134,6 +134,35 @@ and relevant region. Different crops of the same content identity count once.
 A designed frame around a real source does not turn it into a graphic, while a
 designed imitation of a document can never count as evidence.
 
+### Manual supply for unfetchable official sources
+
+Some official sources sit behind a bot/anti-automation challenge (a CDN's
+WAF issuing a client-side or JavaScript challenge, for example) that no
+legitimate, non-evasive HTTP client can pass. This is different from a
+technical defect: before concluding a source is unfetchable, root-cause it
+for real (does a plain baseline client, e.g. `curl` with its own default
+headers, get an identical result against the real URL? does the CA that
+issued the presented certificate chain also publish a still-valid
+cross-sign, checkable on https://crt.sh, if the failure is a TLS chain
+issue rather than a bot challenge?). Only once a real external cause is
+confirmed — not assumed — does this apply. Impersonating a browser or
+running one specifically to solve an anti-bot challenge is detection
+evasion and must not be attempted, regardless of how public or benign the
+underlying document is.
+
+For exactly that confirmed case, `scripts/orvyq_fetch_primary_evidence.mjs`
+supports a manual path: its download-failure message states the asset's
+exact `source_url` and the exact project-relative path expected for that
+asset's raw download. If a file already exists at that path on the next
+run — because the user fetched it themselves and committed it there — it
+is used instead of being fetched, verified with the identical magic-byte
+and minimum-size checks a real automated download gets (a wrong or corrupt
+file is rejected the same way a bad download would be; nothing is ever
+trusted blindly because a human supplied it), and recorded with an honest
+`acquisition_mode` of `user_supplied` rather than `automated_fetch` in the
+runtime manifest, so provenance never claims automation that did not
+happen.
+
 ### Storage rules
 
 - No normal-Git media blob may exceed GitHub’s per-file limit.
