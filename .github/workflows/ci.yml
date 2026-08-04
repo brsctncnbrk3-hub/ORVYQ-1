@@ -38,8 +38,15 @@ jobs:
       - name: Verify the SSL.com modern cross-sign actually closes the chain
         run: |
           set +e
+          echo "--- fetching crt.sh id 8505503577, retrying on transient errors ---"
+          for attempt in 1 2 3 4 5; do
+            STATUS="$(curl -sS -w "%{http_code}" "https://crt.sh/?d=8505503577" -o /tmp/ssl-com-transit-r2-modern.raw)"
+            SIZE="$(stat -c %s /tmp/ssl-com-transit-r2-modern.raw 2>/dev/null || echo 0)"
+            echo "attempt $attempt: http_status=$STATUS size=$SIZE"
+            if [ "$STATUS" = "200" ] && [ "$SIZE" -gt 100 ]; then break; fi
+            sleep 5
+          done
           echo "--- raw crt.sh response (first 300 bytes, hex) ---"
-          curl -sS -w "\nhttp_status=%{http_code} content_type=%{content_type} size=%{size_download}\n" "https://crt.sh/?d=8505503577" -o /tmp/ssl-com-transit-r2-modern.raw
           head -c 300 /tmp/ssl-com-transit-r2-modern.raw | xxd | head -5
           echo "--- try as DER ---"
           openssl x509 -inform DER -in /tmp/ssl-com-transit-r2-modern.raw -out /tmp/ssl-com-transit-r2-modern.pem 2>&1
