@@ -60,6 +60,8 @@ jobs:
           cat /etc/ssl/certs/ca-certificates.crt /tmp/ssl-com-transit-r2-modern.pem > /tmp/combined-ca.pem 2>/dev/null
           echo "--- verifying www.ntia.gov with system store + this one alternate intermediate ---"
           echo | openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov -CAfile /tmp/combined-ca.pem -verify_return_error 2>&1 | grep -E "Verify return code|depth|error"
+          echo "--- full verified PEM (to pin exactly, byte-for-byte) ---"
+          cat /tmp/ssl-com-transit-r2-modern.pem
           exit 0
 
       # Derived from the projects that actually exist plus the structural
