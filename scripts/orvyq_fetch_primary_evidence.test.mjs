@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { fetchBuffer } from "./orvyq_fetch_primary_evidence.mjs";
+import crypto from "node:crypto";
+import { fetchBuffer, TRUSTED_CA_EXTRAS } from "./orvyq_fetch_primary_evidence.mjs";
 
 function response({ status = 200, url = "https://official.example/document.pdf", body = "%PDF-test" } = {}) {
   return {
@@ -107,5 +108,24 @@ test("final network error includes URL, attempt count and root cause", async () 
       },
     ),
     /after 2 attempt\(s\).*official\.example.*ECONNRESET/,
+  );
+});
+
+test("TRUSTED_CA_EXTRAS entries are real, valid, currently-unexpired X.509 certificates", () => {
+  assert.ok(TRUSTED_CA_EXTRAS.length >= 1, "at least one pinned cross-sign is present");
+  for (const pem of TRUSTED_CA_EXTRAS) {
+    const cert = new crypto.X509Certificate(pem);
+    assert.ok(new Date(cert.validTo).getTime() > Date.now(), `${cert.subject} must not be expired`);
+    assert.notEqual(cert.subject, cert.issuer, `${cert.subject} must be an intermediate, not a self-signed root`);
+  }
+});
+
+test("the SSL.com TLS Transit ECC CA R2 cross-sign matches its verified fingerprint exactly", () => {
+  const cert = new crypto.X509Certificate(TRUSTED_CA_EXTRAS[0]);
+  assert.equal(cert.subject, "C=US\nO=SSL Corporation\nCN=SSL.com TLS Transit ECC CA R2");
+  assert.equal(cert.issuer, "C=US\nO=SSL Corporation\nCN=SSL.com TLS ECC Root CA 2022");
+  assert.equal(
+    cert.fingerprint256,
+    "5D:1B:C3:99:27:4E:64:9E:1C:72:69:7D:E9:1A:54:AD:72:50:88:C5:22:1C:B6:1E:17:EE:9C:29:0B:C4:2A:92",
   );
 });

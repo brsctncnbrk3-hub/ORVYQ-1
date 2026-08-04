@@ -24,46 +24,6 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
-      # Temporary: crt.sh (prior run of this step) confirmed SSL.com
-      # cross-signed the exact intermediate in www.ntia.gov's chain
-      # ("SSL.com TLS Transit ECC CA R2") under BOTH the withdrawn Comodo
-      # "AAA Certificate Services" root AND a modern one, "SSL.com TLS ECC
-      # Root CA 2022" (crt.sh id 8505503577, valid to 2037). The server only
-      # sends the old one. This step downloads that specific alternate
-      # intermediate from crt.sh, converts it to PEM, and tests whether
-      # supplying it (alongside the system's existing trusted roots) lets
-      # OpenSSL build the alternate, currently-trusted path -- verifying the
-      # real fix before it's pinned into production code. Remove once
-      # decided either way.
-      - name: Verify the SSL.com modern cross-sign actually closes the chain
-        run: |
-          set +e
-          echo "--- fetching crt.sh id 8505503577, retrying on transient errors ---"
-          for attempt in 1 2 3 4 5; do
-            STATUS="$(curl -sS -w "%{http_code}" "https://crt.sh/?d=8505503577" -o /tmp/ssl-com-transit-r2-modern.raw)"
-            SIZE="$(stat -c %s /tmp/ssl-com-transit-r2-modern.raw 2>/dev/null || echo 0)"
-            echo "attempt $attempt: http_status=$STATUS size=$SIZE"
-            if [ "$STATUS" = "200" ] && [ "$SIZE" -gt 100 ]; then break; fi
-            sleep 5
-          done
-          echo "--- raw crt.sh response (first 300 bytes, hex) ---"
-          head -c 300 /tmp/ssl-com-transit-r2-modern.raw | xxd | head -5
-          echo "--- try as DER ---"
-          openssl x509 -inform DER -in /tmp/ssl-com-transit-r2-modern.raw -out /tmp/ssl-com-transit-r2-modern.pem 2>&1
-          if [ ! -s /tmp/ssl-com-transit-r2-modern.pem ]; then
-            echo "--- DER parse failed, trying as PEM directly ---"
-            cp /tmp/ssl-com-transit-r2-modern.raw /tmp/ssl-com-transit-r2-modern.pem
-            openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -subject 2>&1
-          fi
-          echo "--- downloaded cert subject/issuer/fingerprint ---"
-          openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -subject -issuer -fingerprint -sha256 2>&1
-          cat /etc/ssl/certs/ca-certificates.crt /tmp/ssl-com-transit-r2-modern.pem > /tmp/combined-ca.pem 2>/dev/null
-          echo "--- verifying www.ntia.gov with system store + this one alternate intermediate ---"
-          echo | openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov -CAfile /tmp/combined-ca.pem -verify_return_error 2>&1 | grep -E "Verify return code|depth|error"
-          echo "--- full verified PEM (to pin exactly, byte-for-byte) ---"
-          cat /tmp/ssl-com-transit-r2-modern.pem
-          exit 0
-
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
       # was written is covered without editing a token list here.

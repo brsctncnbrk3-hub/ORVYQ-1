@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import path from "node:path";
 import crypto from "node:crypto";
-import { promises as fs } from "node:fs";
+import https from "node:https";
+import tls from "node:tls";
+import { promises as fs, readFileSync } from "node:fs";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { projectDir, readJson, writeJsonAtomic, pathExists, parseArgs } from "./lib/fs-utils.mjs";
@@ -11,6 +13,147 @@ const run = promisify(execFile);
 const PROJECT_ID = process.env.ORVYQ_PROJECT_ID || null;
 const sha256 = (buffer) => crypto.createHash("sha256").update(buffer).digest("hex");
 const defaultSleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+// Some official/government sites are served through a CDN whose configured
+// certificate chain terminates at a CA root that browsers still trust via
+// path-building but that plain TLS clients (Node, curl, openssl) reject,
+// because the server itself never sends that root and it has been dropped
+// from the OS/Node bundled trust stores. This is not a "the host is broken"
+// dead end: CAs commonly cross-sign the same intermediate under a second,
+// currently-trusted root for exactly this compatibility reason. Before
+// treating a `UNABLE_TO_GET_ISSUER_CERT_LOCALLY`-class failure as
+// unfixable, search https://crt.sh (the public Certificate Transparency
+// log) for the failing intermediate's common name and look for an entry
+// issued by something other than the withdrawn root; if one exists,
+// download that exact certificate, verify with `openssl s_client
+// -CAfile <system store + candidate> -verify_return_error` that it actually
+// closes the chain, and add it here -- extending Node's default trusted
+// roots, never replacing them, so no other host's verification is weakened.
+//
+// SSL.com TLS Transit ECC CA R2: the intermediate www.ntia.gov's Cloudflare
+// edge certificate chains through. The server only ever sends the chain
+// terminating at the withdrawn Comodo "AAA Certificate Services" root
+// (Debian/Ubuntu ca-certificates disables it: see
+// /etc/ca-certificates.conf's `!mozilla/Comodo_AAA_Services_root.crt`).
+// SSL.com also cross-signed this exact intermediate under their own
+// current root, "SSL.com TLS ECC Root CA 2022" (valid to 2037). Retrieved
+// from https://crt.sh/?d=8505503577 (crt.sh certificate id 8505503577) and
+// verified on 2026-08-04 against a real GitHub Actions runner:
+// `openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov
+// -CAfile <system-ca-bundle + this cert> -verify_return_error` returned
+// "Verify return code: 0 (ok)". SHA-256 fingerprint:
+// 5D:1B:C3:99:27:4E:64:9E:1C:72:69:7D:E9:1A:54:AD:72:50:88:C5:22:1C:B6:1E:17:EE:9C:29:0B:C4:2A:92
+export const TRUSTED_CA_EXTRAS = [
+  `-----BEGIN CERTIFICATE-----
+MIIDNDCCArmgAwIBAgIQYE2K+NALqHSLlVhTFyxfLjAKBggqhkjOPQQDAzBOMQsw
+CQYDVQQGEwJVUzEYMBYGA1UECgwPU1NMIENvcnBvcmF0aW9uMSUwIwYDVQQDDBxT
+U0wuY29tIFRMUyBFQ0MgUm9vdCBDQSAyMDIyMB4XDTIyMTAyMTE3MDIyM1oXDTM3
+MTAxNzE3MDIyMlowTzELMAkGA1UEBhMCVVMxGDAWBgNVBAoMD1NTTCBDb3Jwb3Jh
+dGlvbjEmMCQGA1UEAwwdU1NMLmNvbSBUTFMgVHJhbnNpdCBFQ0MgQ0EgUjIwdjAQ
+BgcqhkjOPQIBBgUrgQQAIgNiAARk532ZA1NckR7q+NgjraG/LOJjie8oaPbt1/Ds
+q2iudyvkdpcbUOvbWSgtb7g2uauNl8pMIp7uidkCP/16czqQjSvMLzo3g9oNtC1F
+G3NyCWVfeCE954tmP0f9CSnWFA+jggFZMIIBVTASBgNVHRMBAf8ECDAGAQH/AgEB
+MB8GA1UdIwQYMBaAFImPL6PoK6AUVHvzVrgmX2c4C5zQMEwGCCsGAQUFBwEBBEAw
+PjA8BggrBgEFBQcwAoYwaHR0cDovL2NlcnQuc3NsLmNvbS9TU0xjb20tVExTLVJv
+b3QtMjAyMi1FQ0MuY2VyMD8GA1UdIAQ4MDYwNAYEVR0gADAsMCoGCCsGAQUFBwIB
+Fh5odHRwczovL3d3dy5zc2wuY29tL3JlcG9zaXRvcnkwHQYDVR0lBBYwFAYIKwYB
+BQUHAwIGCCsGAQUFBwMBMEEGA1UdHwQ6MDgwNqA0oDKGMGh0dHA6Ly9jcmxzLnNz
+bC5jb20vU1NMY29tLVRMUy1Sb290LTIwMjItRUNDLmNybDAdBgNVHQ4EFgQUMqLH
+2FiL/3/APPJVaTPszswfvJcwDgYDVR0PAQH/BAQDAgGGMAoGCCqGSM49BAMDA2kA
+MGYCMQC4SkI+e2cts1nTN9MCRil97z624WxLAp94hT7tNZGPZLe9YiLIyzgKqW/b
+E0b2h9ACMQCvV5XMRcunAylQaCQc4J/GwR1p7yrPC0DRWWeyLAkQWi5Ylta9DxlX
+74QFFksFCP0=
+-----END CERTIFICATE-----`,
+];
+
+// Passing a custom `ca` to https.Agent REPLACES Node's effective default
+// trust store rather than extending it, so building it from
+// tls.rootCertificates alone (Node's static bundled list) would silently
+// drop any operator-configured NODE_EXTRA_CA_CERTS -- e.g. the CA an
+// intercepting proxy needs, in environments that require one for any
+// outbound HTTPS to work at all. Reconstruct the real effective default
+// (bundled roots + any NODE_EXTRA_CA_CERTS) before adding the verified
+// extras, so this never trusts less than Node would trust by default.
+function loadExtraCaFromEnv() {
+  const extraCaPath = process.env.NODE_EXTRA_CA_CERTS;
+  if (!extraCaPath) return [];
+  try {
+    return [readFileSync(extraCaPath, "utf8")];
+  } catch {
+    return [];
+  }
+}
+
+// The extended trust store (Node's real effective defaults plus the
+// verified extras above) built once and reused, rather than replacing
+// Node's default CA list per-request.
+const extendedCaAgent = new https.Agent({
+  ca: [...tls.rootCertificates, ...loadExtraCaFromEnv(), ...TRUSTED_CA_EXTRAS],
+});
+
+const MAX_REDIRECTS = 10;
+
+function nodeHttpsFetch(url, { redirect = "follow", headers = {}, signal } = {}, redirectsLeft = MAX_REDIRECTS) {
+  return new Promise((resolve, reject) => {
+    if (signal?.aborted) {
+      reject(signal.reason || new Error("The operation was aborted"));
+      return;
+    }
+    const target = url instanceof URL ? url : new URL(url);
+    const request = https.request(target, {
+      method: "GET",
+      agent: extendedCaAgent,
+      headers: { ...headers, "accept-encoding": "identity" },
+    });
+
+    const onAbort = () => request.destroy(signal?.reason || new Error("The operation was aborted"));
+    signal?.addEventListener("abort", onAbort, { once: true });
+    const cleanup = () => signal?.removeEventListener("abort", onAbort);
+
+    request.on("error", (error) => {
+      cleanup();
+      const wrapped = new TypeError("fetch failed");
+      wrapped.cause = error;
+      reject(wrapped);
+    });
+
+    request.on("response", (response) => {
+      const location = response.headers.location;
+      if (redirect === "follow" && response.statusCode >= 300 && response.statusCode < 400 && location) {
+        response.resume();
+        cleanup();
+        if (redirectsLeft <= 0) {
+          reject(new Error(`Too many redirects fetching ${url}`));
+          return;
+        }
+        resolve(nodeHttpsFetch(new URL(location, target), { redirect, headers, signal }, redirectsLeft - 1));
+        return;
+      }
+
+      const chunks = [];
+      response.on("data", (chunk) => chunks.push(chunk));
+      response.on("end", () => {
+        cleanup();
+        const buffer = Buffer.concat(chunks);
+        resolve({
+          ok: response.statusCode >= 200 && response.statusCode < 300,
+          status: response.statusCode,
+          url: target.toString(),
+          headers: { get: (name) => response.headers[String(name).toLowerCase()] ?? null },
+          arrayBuffer: async () => buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength),
+        });
+      });
+      response.on("error", (error) => {
+        cleanup();
+        const wrapped = new TypeError("fetch failed");
+        wrapped.cause = error;
+        reject(wrapped);
+      });
+    });
+
+    request.end();
+  });
+}
 
 function assertMagic(buffer, mime, assetId) {
   if (mime === "application/pdf" && buffer.subarray(0, 4).toString("ascii") !== "%PDF") throw new Error(`${assetId} did not download as a PDF`);
@@ -43,7 +186,7 @@ export async function fetchBuffer(
   url,
   allowedHosts,
   {
-    fetchImpl = globalThis.fetch,
+    fetchImpl = nodeHttpsFetch,
     maxAttempts = 4,
     timeoutMs = 90000,
     baseDelayMs = 750,
