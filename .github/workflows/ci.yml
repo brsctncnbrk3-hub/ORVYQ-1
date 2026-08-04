@@ -24,37 +24,28 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
-      # Temporary: this project will keep fetching official documents from
-      # third-party-operated .gov/institutional TLS endpoints, and www.ntia.gov's
-      # broken chain (server never sends its issuer, "AAA Certificate Services",
-      # which Debian/Ubuntu has withdrawn) is a known class of problem, not a
-      # one-off. Before accepting it as unfixable, check whether SSL.com (the
-      # actual issuing CA for the intermediate in that chain) has also
-      # cross-signed the same intermediate under a currently-trusted modern
-      # root -- CAs commonly do this for exactly this compatibility reason.
-      # crt.sh is the standard public Certificate Transparency log search used
-      # for exactly this kind of lookup. Remove once decided either way.
-      - name: Diagnose alternate cross-signs for the ntia.gov chain's intermediate
+      # Temporary: crt.sh (prior run of this step) confirmed SSL.com
+      # cross-signed the exact intermediate in www.ntia.gov's chain
+      # ("SSL.com TLS Transit ECC CA R2") under BOTH the withdrawn Comodo
+      # "AAA Certificate Services" root AND a modern one, "SSL.com TLS ECC
+      # Root CA 2022" (crt.sh id 8505503577, valid to 2037). The server only
+      # sends the old one. This step downloads that specific alternate
+      # intermediate from crt.sh, converts it to PEM, and tests whether
+      # supplying it (alongside the system's existing trusted roots) lets
+      # OpenSSL build the alternate, currently-trusted path -- verifying the
+      # real fix before it's pinned into production code. Remove once
+      # decided either way.
+      - name: Verify the SSL.com modern cross-sign actually closes the chain
         run: |
-          echo "--- querying crt.sh for SSL.com TLS Transit ECC CA R2 ---"
-          curl -sS "https://crt.sh/?q=SSL.com+TLS+Transit+ECC+CA+R2&output=json" | node -e "
-            let data = '';
-            process.stdin.on('data', (c) => data += c);
-            process.stdin.on('end', () => {
-              try {
-                const rows = JSON.parse(data);
-                const seen = new Set();
-                for (const row of rows) {
-                  const key = row.issuer_name + ' -> ' + row.common_name;
-                  if (seen.has(key)) continue;
-                  seen.add(key);
-                  console.log(row.id, '|', row.common_name, '| issuer:', row.issuer_name, '| not_after:', row.not_after);
-                }
-              } catch (e) {
-                console.log('parse error', e.message, data.slice(0, 500));
-              }
-            });
-          "
+          curl -sS "https://crt.sh/?d=8505503577" -o /tmp/ssl-com-transit-r2-modern.der
+          openssl x509 -inform DER -in /tmp/ssl-com-transit-r2-modern.der -out /tmp/ssl-com-transit-r2-modern.pem
+          echo "--- downloaded cert subject/issuer/fingerprint ---"
+          openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -subject -issuer -fingerprint -sha256
+          echo "--- does the system trust store already have the 2022 root? ---"
+          openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -issuer
+          cat /etc/ssl/certs/ca-certificates.crt /tmp/ssl-com-transit-r2-modern.pem > /tmp/combined-ca.pem
+          echo "--- verifying www.ntia.gov with system store + this one alternate intermediate ---"
+          echo | openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov -CAfile /tmp/combined-ca.pem -verify_return_error 2>&1 | grep -E "Verify return code|depth|error" || true
 
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
