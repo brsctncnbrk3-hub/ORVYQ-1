@@ -76,6 +76,7 @@ export async function runSemanticVisualAudit(projectId = PROJECT_ID) {
   const failures = [];
   const warnings = [];
   let footageFrames = 0, genericStockFrames = 0, contextualBodyFrames = 0, officialFrames = 0, derivedFrames = 0, pureGraphicFrames = 0, emphasisBeats = 0, currentEvidenceRunFrames = 0, maximumEvidenceRunFrames = 0;
+  let currentEvidenceRunShots = [], maximumEvidenceRunShots = [];
   const roleFrames = {};
   const repeatedPresentationMotifs = new Map();
   const imageUses = new Map();
@@ -115,9 +116,14 @@ export async function runSemanticVisualAudit(projectId = PROJECT_ID) {
       )
         failures.push(`${shot.shot_id} uses unapproved body footage`);
       currentEvidenceRunFrames = 0;
+      currentEvidenceRunShots = [];
     } else if (shot.asset_type === "evidence") {
       currentEvidenceRunFrames += frames;
-      maximumEvidenceRunFrames = Math.max(maximumEvidenceRunFrames, currentEvidenceRunFrames);
+      currentEvidenceRunShots.push({ shot_id: shot.shot_id, claim_id: shot.claim_id, kind: shot.evidence?.kind, seconds: Math.round((frames / plan.fps) * 1000) / 1000 });
+      if (currentEvidenceRunFrames > maximumEvidenceRunFrames) {
+        maximumEvidenceRunFrames = currentEvidenceRunFrames;
+        maximumEvidenceRunShots = [...currentEvidenceRunShots];
+      }
       const kind = shot.evidence?.kind;
       if (OFFICIAL.has(kind)) {
         officialFrames += frames;
@@ -130,6 +136,7 @@ export async function runSemanticVisualAudit(projectId = PROJECT_ID) {
     } else if (shot.asset_type === "graphic") {
       pureGraphicFrames += frames;
       currentEvidenceRunFrames = 0;
+      currentEvidenceRunShots = [];
     }
     if (classifyVisualMedium(shot) === "invalid") failures.push(`${shot.shot_id} cannot be assigned to one exclusive visual-medium category`);
     // A source title is not a visual identity. The same JAMSTEC page can
@@ -168,7 +175,7 @@ export async function runSemanticVisualAudit(projectId = PROJECT_ID) {
   }
   if (cinematicCandidate && emphasisBeats < 4) failures.push(`cinematic candidate contains ${emphasisBeats} emphasis beats; 4 required`);
   if (cinematicCandidate && maximumEvidenceRunFrames / plan.fps > Number(plan.quality_policy?.maximum_uninterrupted_evidence_seconds || 15) + 0.001)
-    failures.push(`uninterrupted evidence run ${(maximumEvidenceRunFrames / plan.fps).toFixed(2)}s exceeds 15s`);
+    failures.push(`uninterrupted evidence run ${(maximumEvidenceRunFrames / plan.fps).toFixed(2)}s exceeds 15s [DEBUG shots=${JSON.stringify(maximumEvidenceRunShots)}]`);
 
   for (const claim of evidenceMap.claims.filter((item) => item.importance >= CRITICAL && item.status !== "removed")) {
     const shots = plan.shots.filter((shot) => shot.claim_id === claim.claim_id);
