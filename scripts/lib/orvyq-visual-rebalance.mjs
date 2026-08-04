@@ -276,7 +276,10 @@ function applyFootageReplacement(shot, action, requests) {
   const trimOutLimit = Number(replacement.trim_out_sec);
   const shotDuration = Number(shot.duration);
   if (trimOutLimit - trimIn + 0.001 < shotDuration) {
-    throw new Error(`shot ${action.baseline_shot_index} footage replacement is shorter than the shot`);
+    throw new Error(
+      `shot ${action.baseline_shot_index} footage replacement is shorter than the shot ` +
+        `(trim window ${(trimOutLimit - trimIn).toFixed(6)}s from ${trimIn.toFixed(6)}s-${trimOutLimit.toFixed(6)}s, shot duration ${shotDuration.toFixed(6)}s)`,
+    );
   }
   const updated = clone(shot);
   updated.asset_type = "footage";
