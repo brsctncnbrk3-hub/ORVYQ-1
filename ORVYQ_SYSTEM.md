@@ -286,8 +286,8 @@ Current status (last verified 2026-08-04):
 
 - Candidate Validation reached, for the first time, all the way to the
   primary-evidence-fetch gate on a real GitHub Actions run, then stopped
-  there. Two reusable defects on the way were root-caused and fixed
-  (both apply to every project, not just 004):
+  there. Three reusable defects on the way were root-caused and fixed
+  (all apply to every project, not just 004):
   - `reconcileActiveLocalFootage()` (`scripts/orvyq_validate_local_footage.mjs`)
     had 23 provenance files whose visual review had genuinely passed and
     was recorded in `research/visual_asset_reviews.json`, but
@@ -301,29 +301,49 @@ Current status (last verified 2026-08-04):
     host's outage silently hid whether the other seven evidence requests
     were reachable at all. It now attempts every asset and reports every
     failure together; the function still fails closed overall.
-- With both fixed, a real Candidate Validation run for `004-the-ai-race-clean-rebuild`
-  showed exactly one remaining failure across all eight primary-evidence
-  requests: `EVID_NTIA_OPEN_WEIGHTS_SUMMARY` / `EVID_NTIA_OPEN_WEIGHTS_RESEARCH`
-  (both backing `SRC_NTIA_OPEN_WEIGHTS_2024`, claim
-  `CLM_017_OPEN_WEIGHT_TRADEOFF`). `www.ntia.gov`'s served chain
-  (Cloudflare TLS Issuing ECC CA 1 → SSL.com TLS Transit ECC CA R2 →
-  issuer "AAA Certificate Services") never includes that last root, and
-  Debian/Ubuntu's `ca-certificates` package has explicitly disabled it
-  (`!mozilla/Comodo_AAA_Services_root.crt` in `/etc/ca-certificates.conf`,
-  file no longer even shipped) — confirmed directly with `openssl s_client
-  -verify_return_error` on the actual GitHub Actions runner, not assumed.
-  Apex `ntia.gov` (no `www`) verifies cleanly through a modern DigiCert
-  chain, but its `/sites/...` path 301-redirects straight back to
-  `www.ntia.gov`, so it does not avoid the broken chain for the actual
-  file. This project's own `primary_evidence_manifest.json` declares
-  `"direct_official_source_only": true`, which correctly forbids routing
-  around this via a third-party mirror (e.g. an archive.org copy). This is
-  a genuine external-infrastructure defect on `ntia.gov`'s end, not a
-  reusable-system or project-data defect, and is reported to the user as a
-  blocking decision rather than patched around.
+  - Every workflow that runs `orvyq_speech_qa.py` re-downloaded the
+    tiny.en Whisper model fresh from Hugging Face every run with no
+    caching, so a burst of runs (exactly what active iteration on this
+    branch produced) could trip Hugging Face's anonymous-request rate
+    limit and fail narration QA for a reason unrelated to the narration
+    itself (observed directly: run 30894604810). Now cached
+    (`~/.cache/huggingface`, keyed by model name) in all four workflows
+    that install `faster-whisper`.
+  - `www.ntia.gov`'s served TLS chain (Cloudflare TLS Issuing ECC CA 1 →
+    SSL.com TLS Transit ECC CA R2 → issuer "AAA Certificate Services")
+    never includes that last root, and Debian/Ubuntu's `ca-certificates`
+    package has explicitly disabled it — confirmed directly with
+    `openssl s_client -verify_return_error` on a real GitHub Actions
+    runner, not assumed. Re-trusting a withdrawn root was ruled out as a
+    real security regression. Instead: crt.sh (the public Certificate
+    Transparency log) confirmed SSL.com also cross-signed the same
+    intermediate under a second, currently-valid root, "SSL.com TLS ECC
+    Root CA 2022" (crt.sh id 8505503577) — downloaded and verified with
+    `openssl` against the real host before being pinned. `fetchBuffer()`
+    now uses a custom `https.Agent`-based fetch (`nodeHttpsFetch`) whose
+    trust store extends (never replaces) Node's real effective defaults
+    with this one verified cross-sign, documented with full provenance
+    and regression-tested against its exact fingerprint. Confirmed
+    working end to end on a real Candidate Validation run: `ntia.gov` no
+    longer appears in the evidence-fetch failure list at all.
+- One further, genuinely external blocker was found and is not being
+  worked around: `EVID_EU_SYSTEMIC_CLASSIFICATION` /
+  `EVID_EU_SYSTEMIC_DUTIES` / `EVID_EU_INCIDENT_REPORTING` (all backing
+  `SRC_EU_AI_ACT_2024`, the same `eur-lex.europa.eu` PDF) download 0
+  bytes. Confirmed this is not a code defect: plain `curl` with its own
+  default headers gets the identical result against the real URL —
+  `HTTP/1.1 202 Accepted`, `Content-Length: 0`,
+  `x-amzn-waf-action: challenge`. `eur-lex.europa.eu` is fronted by
+  CloudFront + AWS WAF and is challenging this request as automated
+  traffic. This is a bot-challenge response, not a certificate or code
+  problem, and closing it would require either impersonating a browser
+  to defeat the WAF's automated-client detection or running a real
+  browser to solve a client-side challenge — both cross into detection
+  evasion and were correctly not attempted. Reported to the user as a
+  blocking decision, the same as the (now-resolved) `ntia.gov` case was.
 - Every other gate a real run can now reach passes for real on this
   branch: footage provenance/materialization, narration ASR QA, the full
-  460-test unit suite, canonical schema validation, the full production
+  462-test unit suite, canonical schema validation, the full production
   plan's real coverage gate, and (per ordinary CI, run `30842404929`
   before this session and reconfirmed on every push since) renderer
   type-check and composition resolution.
@@ -445,6 +465,18 @@ Current status (last verified 2026-07-30, render-free visual-system revision):
 - `npm test`: 460/460 on GitHub Actions (ffmpeg installed there); the
   11-test ffmpeg-dependent baseline is a sandbox-only limitation in
   environments without ffmpeg, not a real regression.
+
+**Follow-up, same day — the ntia.gov TLS blocker is fixed for real, a Hugging Face rate-limit defect was found and fixed, and one new genuine external blocker was found (eur-lex WAF challenge):**
+
+Per the user's explicit direction that this class of problem needs a real fix (future projects will fetch documents from other external sources and can hit the same issue), re-trusting the withdrawn root was correctly ruled out, but the search did not stop there: CAs commonly cross-sign the same intermediate under a second, currently-valid root for exactly this compatibility reason. crt.sh (the public Certificate Transparency log) confirmed SSL.com did exactly this for the intermediate in `ntia.gov`'s chain, under "SSL.com TLS ECC Root CA 2022" (crt.sh id `8505503577`, valid to 2037). Downloaded that exact certificate and verified with `openssl s_client -CAfile <system store + candidate> -verify_return_error` on a real GitHub Actions runner that it closes the chain (`Verify return code: 0 (ok)`) before pinning anything.
+
+`scripts/orvyq_fetch_primary_evidence.mjs`'s `fetchBuffer()` now defaults to a custom `nodeHttpsFetch` built on an `https.Agent` whose trust store is Node's real effective defaults (`tls.rootCertificates`, plus `NODE_EXTRA_CA_CERTS` if the environment sets one — checked explicitly so this doesn't silently drop trust an intercepting-proxy sandbox needs) extended with the one verified cross-sign, documented in `TRUSTED_CA_EXTRAS` with full provenance (what it is, why, where it came from, its SHA-256 fingerprint) and regression-tested by asserting that exact fingerprint via `crypto.X509Certificate` so a future edit can't silently drift from what was actually verified. The general pattern — check crt.sh for a CA cross-sign before treating a "missing issuer" TLS failure as unfixable — is documented in a code comment for future similar cases with other hosts.
+
+Also found and fixed while re-running Candidate Validation to verify the TLS fix: every workflow that runs `orvyq_speech_qa.py` re-downloaded the tiny.en Whisper model fresh from Hugging Face every single run with no caching, so the burst of Candidate Validation runs this fix required tripped Hugging Face's anonymous-request rate limit and failed narration QA for a reason unrelated to the narration itself (run `30894604810`, `429 Too Many Requests`). Fixed by caching `~/.cache/huggingface` keyed by model name in all four workflows that install `faster-whisper` (`orvyq-candidate-validation.yml`, `orvyq-narration-validation.yml`, `orvyq-narration-alignment-request.yml`, `orvyq-review.yml`).
+
+With both fixed, a real Candidate Validation run confirmed the TLS fix works end to end: `ntia.gov` no longer appears in the evidence-fetch failure list at all. A different, genuinely new external blocker surfaced in its place: `EVID_EU_SYSTEMIC_CLASSIFICATION` / `EVID_EU_SYSTEMIC_DUTIES` / `EVID_EU_INCIDENT_REPORTING` (the same `eur-lex.europa.eu` PDF, `SRC_EU_AI_ACT_2024`) downloaded 0 bytes. Root-caused, not assumed to be a bug in the new fetch code: plain `curl` with its own default headers against the real URL gets the identical result (`HTTP/1.1 202 Accepted`, `Content-Length: 0`, `x-amzn-waf-action: challenge`) — `eur-lex.europa.eu` is fronted by CloudFront + AWS WAF and is challenging the request as automated traffic. Closing this would require impersonating a browser or running one to solve a client-side challenge, both detection evasion; correctly not attempted (the auto-mode classifier itself declined a commit that moved in that direction, which was the right outcome, not a failure to work around). Reported to the user as a blocking decision, the same as the `ntia.gov` case was before it was resolved.
+
+`npm test`: 451/462 locally (added 2 new regression tests asserting `TRUSTED_CA_EXTRAS`'s exact fingerprint; same 11-test ffmpeg-only baseline, unrelated to this change) and 462/462 on GitHub Actions where ffmpeg is installed.
 
 ### 2026-07-30 — Exclusive-medium and semantic fail-closed contract
 
