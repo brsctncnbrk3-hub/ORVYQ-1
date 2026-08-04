@@ -446,17 +446,17 @@
       "baseline_shot_index": 79,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 7.966666666666667,
-      "decision": "replace_primary_evidence",
-      "projected_medium": "primary_evidence",
-      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_DEEPSEA_TRACK_ROV",
       "replacement_assets": [
         {
-          "asset_path": "assets/evidence/nature_44_year_track_figure2.png",
-          "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_PHOTOS_FIGURE",
-          "source_region": "Figure 2 — track photographs observed in 2023"
+          "asset_path": "assets/footage/scene_012_official_reuse.mp4",
+          "trim_in_sec": 8,
+          "trim_out_sec": 15.966666666666667
         }
       ],
-      "rationale": "The '44 years' claim belongs on the real figure annotation, not a text recap card."
+      "rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, a 15.93s uninterrupted evidence run over the 15s cap (confirmed via CI diagnostic, run 30934080098). Reuses scene_012_official_reuse.mp4 -- already used once for this exact claim at slice 0 ('A real dark seabed or benthic survey view introduces persistent physical disturbance'), and independently verified via the real footage-use-budget diagnostic (run 30954122832) to carry only that one real use, so a second use here stays within the 2-use cap. Its own provenance note ('Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim') satisfies REQ_FTG_DEEPSEA_TRACK_ROV's required_content as directly as scene_051 does; added to that request's resolved_asset_paths accordingly. Trim window (8s-15.97s) is a distinct segment from slice 0's own trim (which cannot exceed the project's 8s max_shot_seconds), so no overlap."
     },
     {
       "baseline_shot_index": 81,
