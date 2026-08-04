@@ -24,6 +24,38 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
+      # Temporary: this project will keep fetching official documents from
+      # third-party-operated .gov/institutional TLS endpoints, and www.ntia.gov's
+      # broken chain (server never sends its issuer, "AAA Certificate Services",
+      # which Debian/Ubuntu has withdrawn) is a known class of problem, not a
+      # one-off. Before accepting it as unfixable, check whether SSL.com (the
+      # actual issuing CA for the intermediate in that chain) has also
+      # cross-signed the same intermediate under a currently-trusted modern
+      # root -- CAs commonly do this for exactly this compatibility reason.
+      # crt.sh is the standard public Certificate Transparency log search used
+      # for exactly this kind of lookup. Remove once decided either way.
+      - name: Diagnose alternate cross-signs for the ntia.gov chain's intermediate
+        run: |
+          echo "--- querying crt.sh for SSL.com TLS Transit ECC CA R2 ---"
+          curl -sS "https://crt.sh/?q=SSL.com+TLS+Transit+ECC+CA+R2&output=json" | node -e "
+            let data = '';
+            process.stdin.on('data', (c) => data += c);
+            process.stdin.on('end', () => {
+              try {
+                const rows = JSON.parse(data);
+                const seen = new Set();
+                for (const row of rows) {
+                  const key = row.issuer_name + ' -> ' + row.common_name;
+                  if (seen.has(key)) continue;
+                  seen.add(key);
+                  console.log(row.id, '|', row.common_name, '| issuer:', row.issuer_name, '| not_after:', row.not_after);
+                }
+              } catch (e) {
+                console.log('parse error', e.message, data.slice(0, 500));
+              }
+            });
+          "
+
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
       # was written is covered without editing a token list here.
