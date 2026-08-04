@@ -107,6 +107,21 @@ jobs:
         with:
           python-version: "3.11"
 
+      # Every Candidate Validation run re-downloaded the tiny.en Whisper
+      # model fresh from Hugging Face with no caching, so a burst of runs
+      # (several in a short window, as during active iteration) can trip
+      # Hugging Face's anonymous-request rate limit and fail narration QA
+      # for a reason that has nothing to do with the actual audio or
+      # narration (run 30894604810: "429 Too Many Requests" from
+      # huggingface.co, not any content problem). Caching the model
+      # directory keyed by its name means only the first run after a cache
+      # miss ever hits Hugging Face at all.
+      - name: Cache Whisper ASR model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-tiny.en-${{ runner.os }}
+
       - name: Install media, PDF and speech tooling
         run: |
           set -euo pipefail
