@@ -45,7 +45,7 @@ test("concept_map and evidence_chain: steps are non-empty, meaningful strings", 
   const c = claim();
   for (const kind of ["concept_map", "evidence_chain"]) {
     const result = buildEvidenceContent({ claim: c, kind, role: "evidence", displaySources: [SOURCE_A], ownSources: [SOURCE_A], section: SECTION, occurrence: 0 });
-    assert.ok(result.steps.length >= 3 && result.steps.length <= 5, `${kind} needs 3-5 steps`);
+    assert.ok(result.steps.length >= 3 && result.steps.length <= 4, `${kind} needs 3-4 steps`);
     for (const step of result.steps) {
       assert.ok(step.trim().length > 0);
       assert.notEqual(step, "undefined: undefined");
@@ -74,7 +74,7 @@ test("eyebrow is uppercase, non-generic, and within 60 characters; title is mobi
   const result = buildEvidenceContent({ claim: c, kind: "concept_map", role: "evidence", displaySources: [SOURCE_A], ownSources: [SOURCE_A], section: SECTION, occurrence: 0 });
   assert.equal(result.eyebrow, result.eyebrow.toUpperCase());
   assert.ok(result.eyebrow.length <= 60);
-  assert.ok(result.title.length <= 76);
+  assert.ok(result.title.length <= 72);
   assert.notEqual(result.title, c.claim_id);
   assert.notEqual(result.title.toLowerCase(), "evidence");
 });

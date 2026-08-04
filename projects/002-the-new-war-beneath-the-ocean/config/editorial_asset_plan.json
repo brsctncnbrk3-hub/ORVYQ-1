@@ -758,7 +758,7 @@
       "2": {
         "mode": "illustrative",
         "title": "NEITHER LOCAL NOR OCEAN-WIDE",
-        "subtitle": "Disturbed sediment can travel kilometres, but concentration declines with distance, height and time.",
+        "subtitle": "Sediment can travel kilometres, but concentration declines with distance, height and time.",
         "labels": [
           "NEAR SEABED",
           "DECLINES WITH DISTANCE",
@@ -768,7 +768,7 @@
       "4": {
         "mode": "illustrative",
         "title": "A DECLINE CURVE, NOT A VERDICT",
-        "subtitle": "The plume data describes a measured decline with distance and time -- not a verdict on ocean-wide impact.",
+        "subtitle": "Plume data shows a measured decline with distance and time, not an ocean-wide verdict.",
         "labels": [
           "MEASURED DECLINE",
           "NOT A VERDICT"
