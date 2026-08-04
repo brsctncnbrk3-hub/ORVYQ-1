@@ -37,15 +37,23 @@ jobs:
       # decided either way.
       - name: Verify the SSL.com modern cross-sign actually closes the chain
         run: |
-          curl -sS "https://crt.sh/?d=8505503577" -o /tmp/ssl-com-transit-r2-modern.der
-          openssl x509 -inform DER -in /tmp/ssl-com-transit-r2-modern.der -out /tmp/ssl-com-transit-r2-modern.pem
+          set +e
+          echo "--- raw crt.sh response (first 300 bytes, hex) ---"
+          curl -sS -w "\nhttp_status=%{http_code} content_type=%{content_type} size=%{size_download}\n" "https://crt.sh/?d=8505503577" -o /tmp/ssl-com-transit-r2-modern.raw
+          head -c 300 /tmp/ssl-com-transit-r2-modern.raw | xxd | head -5
+          echo "--- try as DER ---"
+          openssl x509 -inform DER -in /tmp/ssl-com-transit-r2-modern.raw -out /tmp/ssl-com-transit-r2-modern.pem 2>&1
+          if [ ! -s /tmp/ssl-com-transit-r2-modern.pem ]; then
+            echo "--- DER parse failed, trying as PEM directly ---"
+            cp /tmp/ssl-com-transit-r2-modern.raw /tmp/ssl-com-transit-r2-modern.pem
+            openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -subject 2>&1
+          fi
           echo "--- downloaded cert subject/issuer/fingerprint ---"
-          openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -subject -issuer -fingerprint -sha256
-          echo "--- does the system trust store already have the 2022 root? ---"
-          openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -issuer
-          cat /etc/ssl/certs/ca-certificates.crt /tmp/ssl-com-transit-r2-modern.pem > /tmp/combined-ca.pem
+          openssl x509 -in /tmp/ssl-com-transit-r2-modern.pem -noout -subject -issuer -fingerprint -sha256 2>&1
+          cat /etc/ssl/certs/ca-certificates.crt /tmp/ssl-com-transit-r2-modern.pem > /tmp/combined-ca.pem 2>/dev/null
           echo "--- verifying www.ntia.gov with system store + this one alternate intermediate ---"
-          echo | openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov -CAfile /tmp/combined-ca.pem -verify_return_error 2>&1 | grep -E "Verify return code|depth|error" || true
+          echo | openssl s_client -connect www.ntia.gov:443 -servername www.ntia.gov -CAfile /tmp/combined-ca.pem -verify_return_error 2>&1 | grep -E "Verify return code|depth|error"
+          exit 0
 
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
