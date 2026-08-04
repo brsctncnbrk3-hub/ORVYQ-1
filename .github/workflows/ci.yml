@@ -24,20 +24,6 @@ jobs:
       - name: Install root dependencies
         run: npm ci
 
-      # Temporary: www.ntia.gov's Cloudflare/SSL.com chain terminates at a
-      # Comodo root Debian/Ubuntu has withdrawn (confirmed on this runner
-      # across three prior diagnostic rounds -- not fixable without
-      # re-trusting a distrusted root). Checking whether the apex domain
-      # (no "www") happens to terminate in TLS at a different edge/cert --
-      # still the same direct official ntia.gov source, not a third-party
-      # mirror, so still compliant with this project's
-      # direct_official_source_only policy if it works. Remove either way
-      # once decided.
-      - name: Diagnose apex ntia.gov (no www) TLS chain
-        run: |
-          echo | openssl s_client -connect ntia.gov:443 -servername ntia.gov -verify_return_error 2>&1 | grep -E "Verify return code|depth|error|subject=|issuer=" || true
-          curl -sS -o /dev/null -w "apex https status: %{http_code}, redirect target: %{redirect_url}\n" "https://ntia.gov/sites/default/files/publications/ntia-ai-open-model-report.pdf" || echo "apex curl failed"
-
       # Derived from the projects that actually exist plus the structural
       # shapes of project-specific data, so a film created after this workflow
       # was written is covered without editing a token list here.
