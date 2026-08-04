@@ -102,7 +102,7 @@ export function evaluateEvidenceShot({ shot, evidence, claim, sourceById, sectio
     const displaySources = sourceIds.map((id) => sourceById.get(id)).filter(Boolean);
     const allowed = allowedText(claim, [...new Set([...ownSources, ...displaySources])], section).toLowerCase();
     const unsupported = [...new Set(collectNumbers(bodyText(evidence)))].filter((number) => !allowed.includes(number.toLowerCase()));
-    if (unsupported.length) failures.push(`${shot.shot_id} body contains number(s) not traceable to ${claim.claim_id}'s own verified data: ${unsupported.join(", ")}`);
+    if (unsupported.length) failures.push(`${shot.shot_id} body contains number(s) not traceable to ${claim.claim_id}'s own verified data: ${unsupported.join(", ")} [DEBUG evidence.kind=${kind} evidence.source_ids=${JSON.stringify(sourceIds)} evidence.title=${JSON.stringify(evidence.title)} evidence.eyebrow=${JSON.stringify(evidence.eyebrow)} evidence.items=${JSON.stringify(evidence.items)} evidence.steps=${JSON.stringify(evidence.steps)} evidence.left=${JSON.stringify(evidence.left)} evidence.right=${JSON.stringify(evidence.right)} evidence.limitation=${JSON.stringify(evidence.limitation)}]`);
   }
 
   return failures;
