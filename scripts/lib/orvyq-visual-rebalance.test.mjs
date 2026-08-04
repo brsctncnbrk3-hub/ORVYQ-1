@@ -151,6 +151,53 @@ test("materialization replaces cards with exact evidence, attribution, and foota
   assert.equal(result[1].trim_out_sec - result[1].trim_in_sec, result[1].duration);
 });
 
+test("replacing a native-kind evidence shot's primary evidence drops its stale items/steps/left/right body", () => {
+  const shots = [
+    shot(8, "evidence", "SEC_01", {
+      evidence: {
+        kind: "evidence_chain",
+        source_ids: ["SRC_A", "SRC_B", "SRC_C"],
+        source_label: "Multiple verified sources (recap)",
+        eyebrow: "SRC A — PRIMARY EVIDENCE",
+        title: "Source A: some recap title",
+        steps: ["Source A (Jan 1, 2020): Title A", "Source B (Feb 2, 2021): Title B"],
+        limitation: "Attributed commentary, not a measured or universal industry finding.",
+      },
+    }),
+  ];
+  const requests = [{ asset_request_id: "REQ_EVD_DIRECT", status: "ready" }];
+  const plan = {
+    status: "materialized",
+    actions: [{
+      baseline_shot_index: 0,
+      claim_id: "CLM_001",
+      duration_seconds: 8,
+      decision: "replace_primary_evidence",
+      projected_medium: "primary_evidence",
+      asset_request_id: "REQ_EVD_DIRECT",
+      rationale: "Use the exact official source figure for the narrated claim.",
+      replacement_assets: [{
+        asset_path: "assets/evidence/official.png",
+        evidence_asset_id: "EVID_OFFICIAL",
+        source_region: "Figure 1",
+      }],
+    }],
+  };
+
+  const result = materializeVisualRebalancePlan({
+    shots,
+    plan,
+    assetRequests: requests,
+    primaryEvidenceAssets: [primaryEvidenceAsset()],
+  });
+  assert.equal(result[0].evidence.kind, "official_figure");
+  assert.deepEqual(result[0].evidence.source_ids, ["SRC_OFFICIAL"]);
+  assert.equal(result[0].evidence.steps, undefined);
+  assert.equal(result[0].evidence.items, undefined);
+  assert.equal(result[0].evidence.left, undefined);
+  assert.equal(result[0].evidence.right, undefined);
+});
+
 test("footage replacement fails closed when the available source window is shorter than the generated shot", () => {
   const shots = [shot(7, "graphic", "SEC_01", { graphic: { type: "claim_recap_card" } })];
   const plan = {

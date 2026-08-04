@@ -232,7 +232,21 @@ function applyPrimaryEvidenceReplacement(shot, action, requests, evidenceAssets)
   }
   const attribution = resolvePrimaryEvidenceAttribution(replacements, evidenceAssets, action);
   const updated = clone(shot);
-  const existingEvidence = updated.evidence || {};
+  // A shot arriving here may already be a NATIVE-kind evidence card
+  // (source_article/comparison/concept_map/evidence_chain/boundary, built by
+  // buildEvidenceContent against a wide recap source union -- see
+  // scripts/lib/orvyq-evidence-authoring.mjs) whose body carries
+  // items/steps/left/right/left_detail/right_detail text baked from that
+  // wider source set. Once converted to an IMAGE_KINDS "official_figure" /
+  // "image_sequence" card, none of those fields render (the card shows the
+  // attached image, not text items/steps) and source_ids narrows to just
+  // this replacement's real image sources -- so carrying that stale body
+  // text through the spread below would leave numbers (dates, counts) on
+  // the shot that its own new source_ids can no longer support. Drop them
+  // explicitly; only the display-preference fields below (font_px,
+  // eyebrow/title fallback, template_id, necessity, limitation) are safe to
+  // carry over kind changes.
+  const { items: _staleItems, steps: _staleSteps, left: _staleLeft, left_detail: _staleLeftDetail, right: _staleRight, right_detail: _staleRightDetail, ...existingEvidence } = updated.evidence || {};
   updated.asset_type = "evidence";
   updated.visual_role = "evidence";
   updated.editorial_purpose = action.rationale;
