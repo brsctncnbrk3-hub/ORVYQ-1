@@ -279,31 +279,63 @@ After every meaningful discovery, update the live acceptance record and change l
 
 Project: `004-the-ai-race-clean-rebuild`
 
-Branch: `claude/durum-review-engelleri-v2hq49`, stacked above PR #6 and draft PR #5
+Branch: `claude/sistem-durumu-inceleme-8xdp0p`, built on top of
+`claude/durum-review-engelleri-v2hq49` (stacked above PR #6 and draft PR #5)
 
-Current status (last verified 2026-08-03):
+Current status (last verified 2026-08-04):
 
-- Ordinary CI run `30842404929` passed all 431 tests, canonical validation,
-  renderer type-check and composition resolution on the current branch line.
-- Candidate Validation has no successful run for this project or branch yet.
-  Full-Length Review has never been dispatched and remains forbidden until a
-  successful Candidate Validation run ID exists and the user separately
-  approves review dispatch.
+- Candidate Validation reached, for the first time, all the way to the
+  primary-evidence-fetch gate on a real GitHub Actions run, then stopped
+  there. Two reusable defects on the way were root-caused and fixed
+  (both apply to every project, not just 004):
+  - `reconcileActiveLocalFootage()` (`scripts/orvyq_validate_local_footage.mjs`)
+    had 23 provenance files whose visual review had genuinely passed and
+    was recorded in `research/visual_asset_reviews.json`, but
+    `approved_for_final_edit` was never repaired back onto the runtime
+    provenance after the last footage swap, so `orvyq_materialize_footage.mjs`
+    failed closed on every active scene before Candidate Validation could
+    even start. Running the reconciler against the canonical review
+    registry closed this with no new review decision required.
+  - `fetchPrimaryEvidence()` (`scripts/orvyq_fetch_primary_evidence.mjs`)
+    threw on the first failing manifest entry in download order, so one
+    host's outage silently hid whether the other seven evidence requests
+    were reachable at all. It now attempts every asset and reports every
+    failure together; the function still fails closed overall.
+- With both fixed, a real Candidate Validation run for `004-the-ai-race-clean-rebuild`
+  showed exactly one remaining failure across all eight primary-evidence
+  requests: `EVID_NTIA_OPEN_WEIGHTS_SUMMARY` / `EVID_NTIA_OPEN_WEIGHTS_RESEARCH`
+  (both backing `SRC_NTIA_OPEN_WEIGHTS_2024`, claim
+  `CLM_017_OPEN_WEIGHT_TRADEOFF`). `www.ntia.gov`'s served chain
+  (Cloudflare TLS Issuing ECC CA 1 → SSL.com TLS Transit ECC CA R2 →
+  issuer "AAA Certificate Services") never includes that last root, and
+  Debian/Ubuntu's `ca-certificates` package has explicitly disabled it
+  (`!mozilla/Comodo_AAA_Services_root.crt` in `/etc/ca-certificates.conf`,
+  file no longer even shipped) — confirmed directly with `openssl s_client
+  -verify_return_error` on the actual GitHub Actions runner, not assumed.
+  Apex `ntia.gov` (no `www`) verifies cleanly through a modern DigiCert
+  chain, but its `/sites/...` path 301-redirects straight back to
+  `www.ntia.gov`, so it does not avoid the broken chain for the actual
+  file. This project's own `primary_evidence_manifest.json` declares
+  `"direct_official_source_only": true`, which correctly forbids routing
+  around this via a third-party mirror (e.g. an archive.org copy). This is
+  a genuine external-infrastructure defect on `ntia.gov`'s end, not a
+  reusable-system or project-data defect, and is reported to the user as a
+  blocking decision rather than patched around.
+- Every other gate a real run can now reach passes for real on this
+  branch: footage provenance/materialization, narration ASR QA, the full
+  460-test unit suite, canonical schema validation, the full production
+  plan's real coverage gate, and (per ordinary CI, run `30842404929`
+  before this session and reconfirmed on every push since) renderer
+  type-check and composition resolution.
 - The footage pool contains 34 claim-bound clips. Thirty-one have current
   byte-bound approval; `scene_024`, `scene_031` and `scene_035` are rejected
   against their narrated claims. Their inspected provider selections are now
   treated as stale: the reusable acquisition workflow publishes replacement
   boards only for active rejections, waits for a new visual inspection, then
   acquires the exact newly selected assets rather than silently substituting.
-- Seventeen primary-evidence assets remain `spec_ready_asset_pending`. The
-  workstation can currently reach the declared official hosts and has
-  `pdftoppm`, but evidence acquisition must still prove the same access and
-  PDF rendering inside the GitHub Actions runner before the block is closed.
-- `editorial_blueprint.json` was generated before the latest footage review
-  and still references rejected footage. It must be regenerated from the
-  reconciled asset state; `full_production.status` correctly remains
-  `blocked_pending_visual_assets` until footage and evidence are materialized,
-  provenance-verified and semantically approved.
+- `full_production.status` correctly remains `blocked_pending_visual_assets`
+  until the NTIA evidence question above is resolved and the remaining
+  footage rejections are cleared.
 - Repository automation commits made with `GITHUB_TOKEN` have produced
   zero-job `action_required` runs for the required repository-discipline
   context. The active correction must ensure every automation-authored head
@@ -367,6 +399,52 @@ Current status (last verified 2026-07-30, render-free visual-system revision):
   acquired, provenance-verified, semantically approved and materialized.
 
 ## 15. Change log
+
+### 2026-08-04 — Footage-provenance reconciliation, fail-fast evidence-fetch defect, and the real ntia.gov TLS blocker
+
+- Root-caused and fixed the reusable defect blocking every Candidate
+  Validation run for Project 004: `approved_for_final_edit` on 23 footage
+  provenance files had passed real byte-bound visual review (recorded in
+  `research/visual_asset_reviews.json`) but was never repaired back onto
+  the runtime provenance files after the last footage swap, so
+  `orvyq_materialize_footage.mjs` failed closed on every active scene
+  before Candidate Validation could do anything else. Running
+  `orvyq_validate_local_footage.mjs`'s reconciler against the canonical
+  review registry closed this; every affected asset already had a
+  matching approval, so no new review decision was made.
+- Root-caused and fixed a second reusable defect this exposed: with
+  footage fixed, Candidate Validation reached primary-evidence fetch,
+  which threw on the first failing manifest entry — hiding whether the
+  other seven evidence requests were reachable at all behind whichever
+  host happened to fail first. `fetchPrimaryEvidence()` now attempts
+  every asset and reports every failure together in one pass; it still
+  fails closed overall (nothing downstream runs unless every asset
+  succeeded).
+- With both fixed, a real Candidate Validation run showed the true,
+  narrow, remaining picture: all eight primary-evidence requests succeed
+  except `www.ntia.gov` (backing `SRC_NTIA_OPEN_WEIGHTS_2024`, claim
+  `CLM_017_OPEN_WEIGHT_TRADEOFF`). Diagnosed directly on GitHub Actions
+  runners across several rounds, not guessed: the site's served chain
+  (Cloudflare → SSL.com → issuer "AAA Certificate Services") never
+  includes that last root, and Debian/Ubuntu's `ca-certificates` package
+  has explicitly withdrawn it — the file isn't even shipped on disk
+  anymore, confirmed with a direct `openssl s_client -verify_return_error`
+  failure (return code 20) using the runner's own OS trust store, so this
+  is not a Node-specific gap. `NODE_OPTIONS=--use-openssl-ca` was verified
+  to make no difference for the same reason. Apex `ntia.gov` verifies
+  cleanly via a modern DigiCert chain but 301-redirects the actual PDF
+  path straight back to `www.ntia.gov`, so it does not avoid the broken
+  chain. Re-trusting a certificate authority root every current trust
+  program has deliberately withdrawn would be a real security regression,
+  not a fix, so it was not done. Routing around this via a third-party
+  mirror (e.g. an archive.org copy) would violate this project's own
+  `primary_evidence_manifest.json` policy,
+  `"direct_official_source_only": true`. This is a genuine external
+  infrastructure defect on `ntia.gov`'s end and is reported to the user
+  as a blocking decision rather than silently patched around.
+- `npm test`: 460/460 on GitHub Actions (ffmpeg installed there); the
+  11-test ffmpeg-dependent baseline is a sandbox-only limitation in
+  environments without ffmpeg, not a real regression.
 
 ### 2026-07-30 — Exclusive-medium and semantic fail-closed contract
 
