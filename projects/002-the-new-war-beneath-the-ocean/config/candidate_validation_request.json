@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "002-the-new-war-beneath-the-ocean",
   "status": "requested",
-  "request_revision": 32,
-  "reason": "Verify the exact final head after enforcing the system-wide claim-evidence floor and updating the generic reconciliation regression fixture. Rebalancing must preserve at least one source-backed visual for every claim that originally had evidence, while still allowing genuinely redundant evidence beats to become contextual footage. No project-specific substitution, QA bypass or video render is permitted.",
+  "request_revision": 33,
+  "reason": "Verify the exact stable-shot-identity correction: all rebalance actions and overrides must resolve by deterministic shot_key before and after optional hook removal, unresolved or duplicate targets must fail closed, the complete pre-render QA chain must pass before candidate freezing, and no video render is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-07-31T21:42:00Z"
+  "requested_at": "2026-08-05T12:33:59Z"
 }
