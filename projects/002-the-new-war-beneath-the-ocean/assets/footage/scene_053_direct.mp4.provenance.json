@@ -35,6 +35,6 @@
   "reviewed_asset_sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
   "reviewed_contact_sheet_sha256": "111999a43362b07ffb220ab99bb6f42e28ac59bd02f56c6edde6967ce12c9fd4",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
-  "visual_qa_origin": "legacy_system_visual_qa",
-  "visual_qa_reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "Re-verified against the live queue: official water-column footage directly grounds CLM_015's midwater discharge/food-web sentences; the cited experimental paper carries the effect and its limitation."
 }

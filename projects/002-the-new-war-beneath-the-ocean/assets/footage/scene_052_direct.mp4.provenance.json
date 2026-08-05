@@ -35,6 +35,6 @@
   "reviewed_asset_sha256": "ec47cb4db426066cc46db457bcae6242e1b59252dc24962de047cc456afad28d",
   "reviewed_contact_sheet_sha256": "a6c089f09e788331569e722ded808151114662229bd160cd101447d9c0fd24da",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
-  "visual_qa_origin": "legacy_system_visual_qa",
-  "visual_qa_reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "Re-verified against the live queue: official sediment-coring/monitoring footage shows the physical measurement act behind CLM_014's plume-scale sentences; the cited plume figures retain every numerical result."
 }

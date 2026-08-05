@@ -56,9 +56,10 @@
   "selected_rendition_id": "14101236",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
   "approved_for_final_edit": true,
-  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "downloaded_at": "2026-07-30T20:42:05.854Z",
   "reviewed_asset_sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
   "reviewed_contact_sheet_sha256": "13aac3475cd9338de5e877b4b9b54b3bb7531965a659474aeab00f5f9083200c",
-  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "Re-verified against the live queue: real underwater seafloor-sediment disturbance footage grounds both CLM_004's Japan sediment-lifting sentence and CLM_013's biodiversity-trial recovery sentence; charts and cited studies retain every measured number."
 }

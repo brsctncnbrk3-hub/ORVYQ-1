@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "project_id": "002-the-new-war-beneath-the-ocean",
-  "review_basis": "footage_visual_decisions.json [legacy_system_visual_qa]: Every decision is bound to the current media SHA-256 and twelve-frame contact-sheet SHA-256, then checked against the exact claim, narration anchor and contextual role. Generic footage is rejected whenever it merely illustrates a noun, impersonates a named source or fails to carry the sentence meaning. | footage_visual_decisions_round2.json [legacy_system_visual_qa]: Second byte-bound review of the twenty replacement clips retained by the claim-bound use contract. Decisions use the replacement media SHA-256, twelve-frame contact-sheet SHA-256 and only the narrowed claim/slice roles declared in footage_use_contracts.json. | footage_visual_decisions_round3.json [legacy_system_visual_qa]: Third byte-bound review of the eight replacement clips generated after the second review. Every decision is tied to the replacement media SHA-256, its twelve-frame contact-sheet SHA-256 and the narrowed claim/slice role in footage_use_contracts.json. | footage_visual_decisions_round4.json [system_visual_qa]: ORVYQ system-owned semantic visual QA inspected each twelve-frame contact sheet against the exact claim, narration anchor, use contract, prohibited lookalike substitutions and factual-burden boundary. The user is not an asset reviewer; only the complete Full-Length Review requires user approval. | footage_visual_decisions_round5.json [system_visual_qa]: Fifth ORVYQ system-owned byte-bound semantic visual-QA round. Each replacement contact sheet was inspected against all current claim-bound uses; any clip valid only as a loose metaphor but misleading for another assigned use was rejected rather than partially approved. | footage_visual_decisions_round6.json [system_visual_qa]: Seventh system-owned byte-bound semantic QA pass. The exact five current assets remain unsuitable for their claim-bound uses and are rejected so the verified official direct sources can replace them. The prior sixth-pass record remains preserved in Git history. | footage_visual_decisions_round7.json [system_visual_qa]: Seventh ORVYQ system-owned claim-specific visual-QA round. Each target asset is a repository-owned derivative whose video SHA-256 is identical to an already byte-bound and provenance-approved NOAA source clip. The target contact-sheet identity is bound to the exact current queue entry. Approval is limited to the stated contextual use; maps, source documents and primary evidence retain all location, quantitative, institutional and legal factual burdens. | footage_visual_decisions_round8.json [system_visual_qa]: Eighth ORVYQ system-owned byte-bound semantic review. The exact existing scene_050 video bytes and twelve-frame contact sheet were already approved as restrained regulatory-hearing context for CLM_007 and CLM_019. This round revalidates the same bytes after moving the CLM_007 use earlier within the same claim to interrupt an overlong evidence run; official NOAA and executive-order documents retain every legal, institutional, quantitative and permit-status claim. | footage_visual_decisions_round9.json [system_visual_qa]: Ninth ORVYQ system-owned byte-bound semantic review. The exact existing scene_029 and scene_054 video bytes and twelve-frame contact sheets were already approved for restrained human-governance and official expedition-field context. This revision is re-applied after footage-contract reconciliation was made responsible for immediately re-materializing the effective visual-rebalance plan into the canonical blueprint. Scene_054 physically represents the gap between a plan and an operating system without being presented as commercial mining, while scene_029 gives human institutional form to the one-ocean/two-rulebooks proposition. Primary legal and quantitative evidence retains every factual burden, Git LFS contact-sheet identity remains canonical, and no quality threshold is weakened.",
+  "review_basis": "footage_visual_decisions.json [legacy_system_visual_qa]: Every decision is bound to the current media SHA-256 and twelve-frame contact-sheet SHA-256, then checked against the exact claim, narration anchor and contextual role. Generic footage is rejected whenever it merely illustrates a noun, impersonates a named source or fails to carry the sentence meaning. | footage_visual_decisions_round2.json [legacy_system_visual_qa]: Second byte-bound review of the twenty replacement clips retained by the claim-bound use contract. Decisions use the replacement media SHA-256, twelve-frame contact-sheet SHA-256 and only the narrowed claim/slice roles declared in footage_use_contracts.json. | footage_visual_decisions_round3.json [legacy_system_visual_qa]: Third byte-bound review of the eight replacement clips generated after the second review. Every decision is tied to the replacement media SHA-256, its twelve-frame contact-sheet SHA-256 and the narrowed claim/slice role in footage_use_contracts.json. | footage_visual_decisions_round4.json [system_visual_qa]: ORVYQ system-owned semantic visual QA inspected each twelve-frame contact sheet against the exact claim, narration anchor, use contract, prohibited lookalike substitutions and factual-burden boundary. The user is not an asset reviewer; only the complete Full-Length Review requires user approval. | footage_visual_decisions_round5.json [system_visual_qa]: Fifth ORVYQ system-owned byte-bound semantic visual-QA round. Each replacement contact sheet was inspected against all current claim-bound uses; any clip valid only as a loose metaphor but misleading for another assigned use was rejected rather than partially approved. | footage_visual_decisions_round6.json [system_visual_qa]: Seventh system-owned byte-bound semantic QA pass. The exact five current assets remain unsuitable for their claim-bound uses and are rejected so the verified official direct sources can replace them. The prior sixth-pass record remains preserved in Git history. | footage_visual_decisions_round7.json [system_visual_qa]: Seventh ORVYQ system-owned claim-specific visual-QA round. Each target asset is a repository-owned derivative whose video SHA-256 is identical to an already byte-bound and provenance-approved NOAA source clip. The target contact-sheet identity is bound to the exact current queue entry. Approval is limited to the stated contextual use; maps, source documents and primary evidence retain all location, quantitative, institutional and legal factual burdens. | footage_visual_decisions_round8.json [system_visual_qa]: Eighth ORVYQ system-owned byte-bound semantic review. The exact existing scene_050 video bytes and twelve-frame contact sheet were already approved as restrained regulatory-hearing context for CLM_007 and CLM_019. This round revalidates the same bytes after moving the CLM_007 use earlier within the same claim to interrupt an overlong evidence run; official NOAA and executive-order documents retain every legal, institutional, quantitative and permit-status claim. | footage_visual_decisions_round9.json [system_visual_qa]: Ninth ORVYQ system-owned byte-bound semantic review. The exact existing scene_029 and scene_054 video bytes and twelve-frame contact sheets were already approved for restrained human-governance and official expedition-field context. This revision is re-applied after footage-contract reconciliation was made responsible for immediately re-materializing the effective visual-rebalance plan into the canonical blueprint. Scene_054 physically represents the gap between a plan and an operating system without being presented as commercial mining, while scene_029 gives human institutional form to the one-ocean/two-rulebooks proposition. Primary legal and quantitative evidence retains every factual burden, Git LFS contact-sheet identity remains canonical, and no quality threshold is weakened. | footage_visual_decisions_round10.json [system_visual_qa]: Every entry in this round was in the live footage_review_queue.json (approved_uses_if_visually_valid computed directly from the current real shot list, not hand-typed) with zero review_blockers. Each was re-verified against its own provenance editorial_note/search_query and, for scenes not already reasoned about elsewhere this session, cross-checked individually before approval -- none was rubber-stamped.",
   "policy": {
     "default_status_for_unlisted_assets": "pending_frame_review",
     "rejected_asset_global_reentry_forbidden": true,
@@ -287,6 +287,20 @@
           "semantic_rationale": "A real dark seabed or benthic survey view introduces persistent physical disturbance; tropical island imagery is forbidden for this claim.",
           "trim_in_sec": 0,
           "trim_out_sec": 7.967
+        },
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "value. A country may be willing to pay more for a difficult source if it reduces dependence during a crisis. That",
+          "semantic_rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, a 15.93s uninterrupted evidence run over the 15s cap (confirmed via CI diagnostic, run 30934080098). Reuses scene_012_official_reuse.mp4 -- already used once for this exact claim at slice 0 ('A real dark seabed or benthic survey view introduces persistent physical disturbance'), and independently verified via the real footage-use-budget diagnostic (run 30954122832) to carry only that one real use, so a second use here stays within the 2-use cap. Its own provenance note ('Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim') satisfies REQ_FTG_DEEPSEA_TRACK_ROV's required_content as directly as scene_051 does; added to that request's resolved_asset_paths accordingly. Trim window (8s-15.97s) is a distinct segment from slice 0's own trim (which cannot exceed the project's 8s max_shot_seconds), so no overlap.",
+          "trim_in_sec": 8,
+          "trim_out_sec": 15.966667
+        },
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "That is not ordinary mining economics. It is insurance and insurance is often purchased because of what might happen,",
+          "semantic_rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, a 15.93s uninterrupted evidence run over the 15s cap (confirmed via CI diagnostic, run 30934080098). Reuses scene_012_official_reuse.mp4 -- already used once for this exact claim at slice 0 ('A real dark seabed or benthic survey view introduces persistent physical disturbance'), and independently verified via the real footage-use-budget diagnostic (run 30954122832) to carry only that one real use, so a second use here stays within the 2-use cap. Its own provenance note ('Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim') satisfies REQ_FTG_DEEPSEA_TRACK_ROV's required_content as directly as scene_051 does; added to that request's resolved_asset_paths accordingly. Trim window (8s-15.97s) is a distinct segment from slice 0's own trim (which cannot exceed the project's 8s max_shot_seconds), so no overlap.",
+          "trim_in_sec": 8,
+          "trim_out_sec": 17.5
         }
       ]
     },
@@ -362,34 +376,24 @@
       "approved_uses": [
         {
           "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
-          "narration_anchor": "The deposit contains rare earth elements in fine sediment beneath the seabed.",
-          "semantic_rationale": "A verified dark seabed-sediment view will carry the physical location and material form named in the sentence; the specific Japanese deposit remains established by primary evidence."
-        },
-        {
-          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
-          "narration_anchor": "Discharge particles may alter the food available to midwater organisms.",
-          "semantic_rationale": "A previously established ecological-impact image returns to connect observed biological change with the broader discharge-risk mechanism."
+          "narration_anchor": "contains rare earth elements in fine sediment beneath the seabed. Japan is developing a closed loop lifting system intended to",
+          "semantic_rationale": "A verified dark seabed-sediment view carries the physical location and fine material form named in the sentence while primary evidence establishes the specific Japanese deposit.",
+          "trim_in_sec": 1.44,
+          "trim_out_sec": 9.407
         },
         {
           "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
           "narration_anchor": "Recovery was not zero. Recovery was not complete. And a small experimental",
-          "semantic_rationale": "This ecological-impact image is introduced with the measured biodiversity result and returns under midwater-discharge risk at a distinct trim window, carrying the film's evidence-led ecological consequence motif from seabed disturbance into the water column.",
+          "semantic_rationale": "A verified underwater seafloor-sediment view grounds the physical disturbance context while the cited Nature evidence carries the measured biodiversity result.",
           "trim_in_sec": 0,
           "trim_out_sec": 6.9
         },
         {
           "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
           "narration_anchor": "Recovery was not complete.",
-          "semantic_rationale": "This ecological-impact image is introduced with the measured biodiversity result and returns under midwater-discharge risk at a distinct trim window, carrying the film's evidence-led ecological consequence motif from seabed disturbance into the water column.",
-          "trim_in_sec": 6.913,
-          "trim_out_sec": 10.913
-        },
-        {
-          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
-          "narration_anchor": "travel kilometers. The highest concentrations often remain close to the seabed and decline with distance, height, and",
-          "semantic_rationale": "A previously established ecological-impact image returns to connect observed biological change with the broader discharge-risk mechanism.",
-          "trim_in_sec": 3.844,
-          "trim_out_sec": 11.177
+          "semantic_rationale": "Retain the pause conclusion over related research footage.",
+          "trim_in_sec": 6.9,
+          "trim_out_sec": 10.9
         }
       ]
     },
@@ -459,23 +463,30 @@
         {
           "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
           "narration_anchor": "microscopic layer. They contain manganese, nickel, copper and cobalt. Unlike Japan's rare earth mud, these nodules often lie",
-          "semantic_rationale": "The dark night ocean returns at a distinct trim window to carry the same restrained frontier mood from the common-heritage claim into the long-term persistence claim.",
+          "semantic_rationale": "A restrained night-ocean view carries the scale and remoteness of the shared frontier without replacing treaty text or asserting a named location.",
           "trim_in_sec": 0.28,
           "trim_out_sec": 7.98
         },
         {
-          "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
-          "narration_anchor": "has one ocean, two rule books and no commercial precedent. The first operation that crosses that line may do",
-          "semantic_rationale": "The dark night ocean returns at a distinct trim window to carry the same restrained frontier mood from the common-heritage claim into the long-term persistence claim.",
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "surface to the seabed. It is the distance between what humanity has learned how to extract and what it has agreed not to destroy.",
+          "semantic_rationale": "A distinct night-ocean trim closes on the distance between technical capability and agreed limits without impersonating a named site or adding a factual claim.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.467
+          "trim_out_sec": 6.193309
         },
         {
-          "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
-          "narration_anchor": "The world now has one ocean, two rule books and no commercial precedent.",
-          "semantic_rationale": "The dark night ocean returns at a distinct trim window to carry the same restrained frontier mood from the common-heritage claim into the long-term persistence claim.",
-          "trim_in_sec": 7.464,
-          "trim_out_sec": 12.464
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "agreed not to destroy.",
+          "semantic_rationale": "Keep the final narrated phrase as a restrained overlay on the closing footage.",
+          "trim_in_sec": 6.193309,
+          "trim_out_sec": 10.877323
+        },
+        {
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "The final narrated conclusion and its immediate closing hold.",
+          "semantic_rationale": "Remove the separate end card to avoid consecutive cards; let the final image and overlay breathe through the existing four seconds.",
+          "trim_in_sec": 10.877323,
+          "trim_out_sec": 14
         }
       ]
     },
@@ -813,30 +824,9 @@
         {
           "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
           "narration_anchor": "The deep ocean is not empty. It is dark, slow and poorly understood. Many organisms live on inside or",
-          "semantic_rationale": "A restrained descent through real dark water or over the deep seabed carries physical depth and persistence; science-fiction city imagery is forbidden.",
+          "semantic_rationale": "Official NOAA water-column footage supplies real depth and darkness for the persistence beat while the cited long-term track evidence carries every measured conclusion.",
           "trim_in_sec": 0,
           "trim_out_sec": 8
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "surface to the seabed. It is the distance between what humanity has learned how to extract and what it has agreed not to destroy.",
-          "semantic_rationale": "A long dark-ocean descent closes on the distance between technical capability and agreed limits without introducing a new factual claim.",
-          "trim_in_sec": 4.222,
-          "trim_out_sec": 12.155
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "agreed not to destroy.",
-          "semantic_rationale": "Keep the final narrated phrase as a restrained overlay on the closing footage.",
-          "trim_in_sec": 12.155,
-          "trim_out_sec": 18.155
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "The final narrated conclusion and its immediate closing hold.",
-          "semantic_rationale": "Remove the separate end card to avoid consecutive cards; let the final image and overlay breathe through the existing four seconds.",
-          "trim_in_sec": 18.155,
-          "trim_out_sec": 22.155
         }
       ]
     },
@@ -849,21 +839,6 @@
       "approved_uses": [
         {
           "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
-          "narration_anchor": "Many midwater organisms normally consume naturally sinking particles.",
-          "semantic_rationale": "Real midwater life grounds the food-web mechanism without claiming that the jellyfish came from a cited trial."
-        },
-        {
-          "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
-          "narration_anchor": "The studies identify a plausible mechanism of harm, not proof of commercial-scale ecosystem collapse.",
-          "semantic_rationale": "Verified midwater organisms will keep the qualified ecological mechanism visible while the cited study figures carry the measured scientific claim."
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "Future generations may inherit both the legal precedent and the environmental consequences.",
-          "semantic_rationale": "A distinct view of real midwater life makes the ecological inheritance behind precedent visible without assigning a measured effect to the generic animal footage."
-        },
-        {
-          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
           "narration_anchor": "will poison an entire ocean. The unresolved issue is accumulation. One test lasts days.",
           "semantic_rationale": "Real midwater life grounds the food-web mechanism without claiming that the jellyfish came from a cited trial.",
           "trim_in_sec": 0,
@@ -872,16 +847,16 @@
         {
           "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
           "narration_anchor": "The unresolved issue is accumulation.",
-          "semantic_rationale": "Real midwater life grounds the food-web mechanism without claiming that the jellyfish came from a cited trial.",
-          "trim_in_sec": 7.609,
-          "trim_out_sec": 9.609
+          "semantic_rationale": "Keep the accumulation pause over scientifically related footage.",
+          "trim_in_sec": 7.6,
+          "trim_out_sec": 9.6
         },
         {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "nodules are still there. The law is still unfinished. The deepest part of this story is not the distance from the surface to",
-          "semantic_rationale": "A distinct view of real midwater life makes the ecological inheritance behind precedent visible without assigning a measured effect to the generic animal footage.",
-          "trim_in_sec": 7.776,
-          "trim_out_sec": 15.709
+          "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
+          "narration_anchor": "consume. That identifies a plausible mechanism of harm. It does not prove that a commercial operation would collapse an ecosystem.",
+          "semantic_rationale": "Verified midwater organisms keep the qualified ecological mechanism visible while the cited study figures carry the measured scientific claim.",
+          "trim_in_sec": 5.213,
+          "trim_out_sec": 13.013
         }
       ]
     },
@@ -895,14 +870,16 @@
         {
           "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
           "narration_anchor": "where the commercial decision may arrive before the final answer. The race is real, but it is not only a race for minerals.",
-          "semantic_rationale": "Scientists discussing evidence embody unresolved knowledge before a commercial decision without implying that they advise a named government."
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "where the commercial decision may arrive before the final answer. The race is real, but it is not only a race for minerals.",
           "semantic_rationale": "Scientists discussing evidence embody unresolved knowledge before a commercial decision without implying that they advise a named government.",
           "trim_in_sec": 1.795,
           "trim_out_sec": 8.829
+        },
+        {
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "nodules are still there. The law is still unfinished. The deepest part of this story is not the distance from the surface to",
+          "semantic_rationale": "A distinct scientific-review trim gives the closing sentence a human decision context: future generations inherit both the precedent and the consequences, while the narration and cited sources retain every legal and environmental claim.",
+          "trim_in_sec": 5.984,
+          "trim_out_sec": 13.917
         }
       ]
     },
@@ -995,20 +972,10 @@
       "approved_uses": [
         {
           "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-          "narration_anchor": "international law says belongs to humanity as a whole. And who has the authority to say no? While those negotiations",
-          "semantic_rationale": "A real formal meeting provides human governance context for competing legal routes while primary documents retain the factual burden."
-        },
-        {
-          "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
-          "narration_anchor": "lost after industrial activity begins. The decision is not between progress and preservation. It",
-          "semantic_rationale": "A distinct meeting trim represents unfinished international rules and institutional choice without naming the generic participants."
-        },
-        {
-          "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-          "narration_anchor": "international law says belongs to humanity as a whole. And who has the authority to say no? While those negotiations",
+          "narration_anchor": "says belongs to humanity as a whole. And who has the authority to say no? While those negotiations continue,",
           "semantic_rationale": "A real formal meeting provides human governance context for competing legal routes while primary documents retain the factual burden.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.8
+          "trim_out_sec": 7.333
         },
         {
           "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
@@ -1254,17 +1221,10 @@
       "approved_uses": [
         {
           "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-          "narration_anchor": "fails. This is not a minor delay in paperwork. These rules are supposed to answer questions humanity has never answered at industrial",
+          "narration_anchor": "fails. This is not a minor delay in paperwork. These rules are supposed to answer questions humanity has never answered",
           "semantic_rationale": "A real regulatory hearing interrupts the dense legal-evidence sequence while the narration explains why unresolved rules matter at industrial scale; official documents retain every legal and factual claim.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.5
-        },
-        {
-          "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-          "narration_anchor": "centuries. Who pays if a company collapses after disturbing thousands of square kilometers? How a benefit shared from a place international law",
-          "semantic_rationale": "A regulatory hearing breaks up the dense document sequence in the United States route while NOAA and executive-order captures retain the factual burden.",
-          "trim_in_sec": 0,
-          "trim_out_sec": 7.633
+          "trim_out_sec": 6.967
         },
         {
           "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
@@ -1285,6 +1245,20 @@
         {
           "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
           "narration_anchor": "inside or around the sediment. Some attached to nodules that took millions of years to form. Remove the nodules and the hard",
+          "semantic_rationale": "Break the document sequence with scientifically relevant ROV/track observation footage, never a recreational dive.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 8
+        },
+        {
+          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+          "narration_anchor": "travel kilometers. The highest concentrations often remain close to the seabed and decline with distance, height, and",
+          "semantic_rationale": "Official NOAA ROV research footage supplies real deep-ocean scientific-observation context while the cited experiment and primary evidence retain the specific midwater food-web mechanism and its limitations.",
+          "trim_in_sec": 9.078,
+          "trim_out_sec": 16.411
+        },
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "hard surface they provide does not return on a human time scale. A study published in 2025 revisited tracks",
           "semantic_rationale": "Break the document sequence with scientifically relevant ROV/track observation footage, never a recreational dive.",
           "trim_in_sec": 0,
           "trim_out_sec": 8
@@ -1311,6 +1285,13 @@
           "semantic_rationale": "Remove the redundant slogan card and show actual sampling/monitoring context tied to plume measurement.",
           "trim_in_sec": 0,
           "trim_out_sec": 7
+        },
+        {
+          "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+          "narration_anchor": "machine physically crossed the seabed. Plume effects were subtler, but not absent. And two months cannot tell us",
+          "semantic_rationale": "Remove the redundant slogan card and show actual sampling/monitoring context tied to plume measurement.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 7
         }
       ]
     },
@@ -1326,7 +1307,7 @@
           "narration_anchor": "uncertainty. Material brought to the surface must be separated from seawater and sediment. If waste particles are discharged back",
           "semantic_rationale": "Remove the biodiversity-number card because those values belong to CLM_013, not this midwater claim.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.833333333333333
+          "trim_out_sec": 7.833333
         },
         {
           "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
@@ -1334,6 +1315,13 @@
           "semantic_rationale": "Official water-column footage directly grounds the midwater food-web mechanism while the cited paper carries the experiment and effect.",
           "trim_in_sec": 0.908,
           "trim_out_sec": 8.608
+        },
+        {
+          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+          "narration_anchor": "discharged back into the ocean, they may enter food webs built around the slow fall of natural organic matter. Research suggests",
+          "semantic_rationale": "Remove the biodiversity-number card because those values belong to CLM_013, not this midwater claim.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 9.5
         }
       ]
     },
@@ -1353,17 +1341,10 @@
         },
         {
           "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
-          "narration_anchor": "consume. That identifies a plausible mechanism of harm. It does not prove that a commercial operation would collapse an ecosystem.",
-          "semantic_rationale": "Verified NOAA expedition assessment footage supports scientific judgment under uncertainty; the cited study remains responsible for the mechanism and limitation claim.",
-          "trim_in_sec": 8,
-          "trim_out_sec": 15.8
-        },
-        {
-          "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
-          "narration_anchor": "consequence. It is that science does not. The strongest case for moving ahead is not that the damage will be harmless. It",
+          "narration_anchor": "harmless. It is that the alternatives also carry damage and that mineral dependence can become a national security risk.",
           "semantic_rationale": "Replace the generic JAMSTEC comparison with a directly related scientific decision/field-assessment moment.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.033333333333333
+          "trim_out_sec": 8
         }
       ]
     }

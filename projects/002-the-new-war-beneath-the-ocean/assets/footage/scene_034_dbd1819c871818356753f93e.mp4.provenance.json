@@ -48,9 +48,10 @@
   "selected_rendition_id": "9294095",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
   "approved_for_final_edit": true,
-  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "downloaded_at": "2026-07-30T22:55:43.239Z",
   "reviewed_asset_sha256": "ef0dcf0c89d76d63b84285c9dec76947e3c7183a01f46aa7d70410236b7f5e10",
   "reviewed_contact_sheet_sha256": "eb8994731f649fc4e237a41f605678fc3c8086a218b13eb9bb62a1e0c0bfdab9",
-  "human_review_reason": "Scientists discussing at a microscope provide credible unresolved-knowledge context at the single contracted precedent target without naming an institution."
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "Re-verified against the live queue: a real scientists-reviewing-data setting embodies CLM_020's 'commercial decision may arrive before the final answer' sentence without implying the people shown advise a named government."
 }

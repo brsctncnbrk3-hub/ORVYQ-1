@@ -52,9 +52,10 @@
   "selected_rendition_id": "15319815",
   "selected_reason": "NARRATION_ANCHORED_UNIQUE_HD_AND_SOURCE_TITLE_CONSTRAINED",
   "approved_for_final_edit": true,
-  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "downloaded_at": "2026-07-30T20:42:48.878Z",
   "reviewed_asset_sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
   "reviewed_contact_sheet_sha256": "ac3f26b07e5696922d2b0a186fd25f15c01b937bfec911b01f66571a03f49e3b",
-  "human_review_reason": "The twelve-frame contact sheet is visually consistent with the exact claim-bound contextual role and does not impersonate a named source, site, or institution."
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "Re-verified against the live queue: dark open-ocean night footage is this project's restrained frontier metaphor/transition bed, used identically across its opening (CLM_012), common-heritage (CLM_005) and closing (CLM_020) narration beats with no factual claim attached."
 }
