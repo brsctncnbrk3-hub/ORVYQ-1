@@ -25,14 +25,20 @@ test("footage preparation resolves pauses and rebuilds the canonical shot baseli
     path.join(REPO_ROOT, ".github", "workflows", "orvyq-footage-acquisition.yml"),
     "utf8",
   );
+  const speechQaIndex = workflow.indexOf("Run full-duration narration QA for canonical alignment");
+  const alignmentIndex = workflow.indexOf("Build canonical narration alignment before pause resolution");
   const pauseIndex = workflow.indexOf("Resolve the canonical editorial pause plan before shot generation");
   const buildIndex = workflow.indexOf("Rebuild the canonical shot baseline before footage reconciliation");
   const reconcileIndex = workflow.indexOf("Apply claim-bound footage use contracts");
 
+  assert.ok(speechQaIndex >= 0, "full-duration narration QA step is missing");
+  assert.ok(alignmentIndex > speechQaIndex, "canonical alignment must use the validated narration result");
+  assert.ok(pauseIndex > alignmentIndex, "pause resolution must use the fresh canonical narration alignment");
   assert.ok(pauseIndex >= 0, "canonical pause-resolution step is missing");
   assert.ok(buildIndex > pauseIndex, "shot generation must use the resolved canonical pause plan");
   assert.ok(buildIndex >= 0, "canonical full-production rebuild step is missing");
   assert.ok(reconcileIndex > buildIndex, "footage contracts must not materialize against a stale committed blueprint");
+  assert.match(workflow, /node scripts\/orvyq_narration_alignment\.mjs --project-id="\$PROJECT_ID"/);
   assert.match(workflow, /node scripts\/orvyq_resolve_pauses\.mjs --project-id="\$PROJECT_ID"/);
   assert.match(workflow, /node scripts\/orvyq_full_production_plan\.mjs --project-id="\$PROJECT_ID"/);
 });

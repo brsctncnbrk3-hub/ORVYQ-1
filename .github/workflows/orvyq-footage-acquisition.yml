@@ -122,6 +122,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify canonical narration exists
+        run: test -s "projects/$PROJECT_ID/assets/audio/final_voice.mp3"
+
+      - name: Set up Python for canonical narration alignment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install media and speech tooling for canonical alignment
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          python -m pip install --disable-pip-version-check faster-whisper==1.2.0 requests==2.32.5
+
+      - name: Run full-duration narration QA for canonical alignment
+        run: |
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" \
+            --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" \
+            --output-name full_narration_speech_qa.json \
+            --model tiny.en
+
+      - name: Build canonical narration alignment before pause resolution
+        run: node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
+
       - name: Make byte-bound human approval authoritative for reuse
         shell: bash
         run: |
@@ -195,10 +220,7 @@ jobs:
 
       - name: Install media probe
         if: env.NEEDS_ACQUISITION == 'true'
-        run: |
-          set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg
+        run: ffprobe -version
 
       - name: Reacquire rejected licensed contextual footage
         if: env.NEEDS_ACQUISITION == 'true'

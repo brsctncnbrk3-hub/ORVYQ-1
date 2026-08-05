@@ -386,6 +386,13 @@ Candidate Validation):
   select exactly one `status: requested` Candidate project first, falling back
   to the existing exactly-one-needs-footage scan only when no unique active
   request exists. Ambiguous multi-project state still fails closed.
+- With project selection fixed, run `31013175161` reached pause resolution and
+  exposed the remaining generated prerequisite: `narration_alignment.json` is
+  intentionally not committed. Footage preparation now validates the canonical
+  `final_voice.mp3`, runs the same full-duration speech QA and alignment builder
+  used by Candidate Validation, and only then resolves pauses and regenerates
+  the shot baseline. This removes any dependency on stale generated files while
+  keeping the workflow render-free.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 
