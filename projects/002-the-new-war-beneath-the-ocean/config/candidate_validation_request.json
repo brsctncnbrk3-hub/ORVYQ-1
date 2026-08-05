@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "002-the-new-war-beneath-the-ocean",
   "status": "requested",
-  "request_revision": 36,
-  "reason": "Verify the exact stable-shot-identity correction and the fail-closed repairs surfaced by Candidate Validation runs 31006212191, 31007786095 and 31009178282: the CLM_009 bridge must remain readable and claim-bound, and explicit second-use reasons from footage contracts and rebalance replacements must survive materialization into the canonical edit plan. The complete pre-render QA chain must pass before candidate freezing. No video render is permitted.",
+  "request_revision": 37,
+  "reason": "Verify the exact stable-shot-identity correction and the fail-closed repairs surfaced through Candidate Validation run 31011055735: the CLM_009 bridge must remain readable and claim-bound, all six transformation-time second footage uses must retain their explicit callback reasons, and the complete pre-render QA chain must pass before candidate freezing. No video render is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-08-05T13:33:51Z"
+  "requested_at": "2026-08-05T13:54:35Z"
 }

@@ -76,7 +76,7 @@ test("contract reuse reasons preserve explicit intent and never invent a first-u
   assert.match(resolveContractReuseReason({ scene_id: "scene_020" }, 2), /explicit footage contract/);
 });
 
-test("Project 002 records explicit callback reasons for all five repetitions exposed by run 31009178282", () => {
+test("Project 002 records explicit callback reasons for all six transformation-time repetitions exposed by real Candidate runs", () => {
   const projectRoot = new URL("../projects/002-the-new-war-beneath-the-ocean/", import.meta.url);
   const overrides = JSON.parse(readFileSync(new URL("research/footage_use_contract_overrides.json", projectRoot), "utf8"));
   const rebalance = JSON.parse(readFileSync(new URL("direction/visual_rebalance_plan.json", projectRoot), "utf8"));
@@ -93,7 +93,7 @@ test("Project 002 records explicit callback reasons for all five repetitions exp
     ),
   );
 
-  for (const sceneId of ["scene_016", "scene_033", "scene_053"]) {
+  for (const sceneId of ["scene_016", "scene_033", "scene_051", "scene_053"]) {
     assert.ok(String(contractReasons.get(sceneId) || "").length >= 24, `${sceneId} contract callback reason is missing`);
   }
   for (const assetPath of ["assets/footage/scene_012_official_reuse.mp4", "assets/footage/scene_052_direct.mp4"]) {

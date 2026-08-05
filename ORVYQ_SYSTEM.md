@@ -362,6 +362,18 @@ Candidate Validation):
   leave unexplained transformation-time repetitions to fail closed. Project
   002 records the five claim-specific callback reasons;
   the failed run again produced diagnostics only and started no render.
+- The same contract edit exposed a separate footage-preparation ordering bug:
+  that workflow applied the current rebalance plan to an old committed,
+  already-materialized blueprint and failed on a formerly graphic CLM_016
+  target. Footage preparation now rebuilds the canonical full-production shot
+  baseline before contract reconciliation, matching Candidate Validation's
+  structural ordering instead of mutating stale generated state.
+- Candidate Validation run `31011055735` confirmed that the first five
+  callback reasons now survive materialization and exposed one final
+  action-plus-contract reuse of `scene_051`: its early CLM_012 ROV-observation
+  beat returns later under CLM_015 at a non-overlapping trim. That sixth
+  explicit reason is now recorded and covered by the same project regression;
+  the failed run produced diagnostics only and started no render.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 

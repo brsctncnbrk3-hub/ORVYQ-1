@@ -205,7 +205,8 @@
       "motion": "pull",
       "role": "context",
       "semantic_link": "physical",
-      "semantic_rationale": "Official NOAA ROV research footage supplies real deep-ocean scientific-observation context while the cited experiment and primary evidence retain the specific midwater food-web mechanism and its limitations."
+      "semantic_rationale": "Official NOAA ROV research footage supplies real deep-ocean scientific-observation context while the cited experiment and primary evidence retain the specific midwater food-web mechanism and its limitations.",
+      "reuse_reason": "Official ROV footage first grounds long-term track observation in CLM_012 and returns at a separate, non-overlapping trim under CLM_015 to show scientific-observation context while cited evidence retains the measured claim."
     },
     {
       "scene_id": "scene_053",

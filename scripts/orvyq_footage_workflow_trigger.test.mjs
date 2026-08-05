@@ -19,3 +19,16 @@ test("footage use-contract overrides trigger, resolve, persist and upload throug
   assert.match(workflow, /footage_use_contracts\|footage_use_contract_overrides\|footage_visual_decisions/);
   assert.match(workflow, /test ! -f .*footage_use_contract_overrides\.json/);
 });
+
+test("footage preparation rebuilds the canonical shot baseline before applying contracts", async () => {
+  const workflow = await readFile(
+    path.join(REPO_ROOT, ".github", "workflows", "orvyq-footage-acquisition.yml"),
+    "utf8",
+  );
+  const buildIndex = workflow.indexOf("Rebuild the canonical shot baseline before footage reconciliation");
+  const reconcileIndex = workflow.indexOf("Apply claim-bound footage use contracts");
+
+  assert.ok(buildIndex >= 0, "canonical full-production rebuild step is missing");
+  assert.ok(reconcileIndex > buildIndex, "footage contracts must not materialize against a stale committed blueprint");
+  assert.match(workflow, /node scripts\/orvyq_full_production_plan\.mjs --project-id="\$PROJECT_ID"/);
+});

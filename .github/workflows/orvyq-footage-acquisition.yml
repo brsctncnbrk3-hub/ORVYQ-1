@@ -128,6 +128,9 @@ jobs:
               raise SystemExit("Could not find the reusable semantic guard")
           PY
 
+      - name: Rebuild the canonical shot baseline before footage reconciliation
+        run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID"
+
       - name: Apply claim-bound footage use contracts
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
 
