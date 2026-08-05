@@ -285,6 +285,32 @@ jobs:
             console.log(JSON.stringify({ pending_review_count: queue.pending_review_count, entries_with_exact_uses: queue.entries_with_exact_uses, entries: compact }, null, 2));
           " || cat footage-review-queue.log
 
+      - name: Print real full-production shot list (diagnostic)
+        if: always()
+        run: |
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises';
+            const raw = await readFile('projects/$PROJECT_ID/direction/editorial_blueprint.json', 'utf8');
+            const blueprint = JSON.parse(raw);
+            const shots = blueprint.full_production?.shots || [];
+            const compact = shots.map((shot, index) => {
+              const frames = Number.isFinite(shot.start_frame) && Number.isFinite(shot.end_frame)
+                ? shot.end_frame - shot.start_frame
+                : Math.round(Number(shot.duration) * 30);
+              return {
+                index,
+                shot_id: shot.shot_id,
+                claim_id: shot.claim_id,
+                section_id: shot.section_id,
+                asset_type: shot.asset_type,
+                kind: shot.evidence?.kind || shot.graphic?.type || null,
+                frames,
+                asset_request_id: shot.asset_request_id || null,
+              };
+            });
+            console.log(JSON.stringify({ shot_count: compact.length, shots: compact }, null, 2));
+          "
+
       - name: Run full pre-render QA chain
         run: |
           set +e
