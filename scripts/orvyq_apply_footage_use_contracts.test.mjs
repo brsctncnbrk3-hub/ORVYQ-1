@@ -1,8 +1,10 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   mergeFootageUseContractOverrides,
   assertNoSilentManagedAssignmentRemoval,
+  resolveContractReuseReason,
   synchronizeVisualRebalanceShots,
 } from "./orvyq_apply_footage_use_contracts.mjs";
 
@@ -65,6 +67,38 @@ test("a reusable override can move one managed scene while preserving its other 
   assert.deepEqual(merged.managed_scene_ids, ["scene_010", "scene_020"]);
   assert.equal(merged.assignments.length, 3);
   assert.equal(merged.retired_targets.length, 1);
+});
+
+test("contract reuse reasons preserve explicit intent and never invent a first-use callback", () => {
+  const explicit = "The second use returns to the reviewed setting at a separate narration target for a deliberate callback.";
+  assert.equal(resolveContractReuseReason({ scene_id: "scene_020", reuse_reason: explicit }, 1), explicit);
+  assert.equal(resolveContractReuseReason({ scene_id: "scene_020" }, 1), null);
+  assert.match(resolveContractReuseReason({ scene_id: "scene_020" }, 2), /explicit footage contract/);
+});
+
+test("Project 002 records explicit callback reasons for all five repetitions exposed by run 31009178282", () => {
+  const projectRoot = new URL("../projects/002-the-new-war-beneath-the-ocean/", import.meta.url);
+  const overrides = JSON.parse(readFileSync(new URL("research/footage_use_contract_overrides.json", projectRoot), "utf8"));
+  const rebalance = JSON.parse(readFileSync(new URL("direction/visual_rebalance_plan.json", projectRoot), "utf8"));
+  const contractReasons = new Map(
+    overrides.assignments
+      .filter((entry) => entry.reuse_reason)
+      .map((entry) => [entry.scene_id, entry.reuse_reason]),
+  );
+  const replacementReasons = new Map(
+    rebalance.actions.flatMap((action) =>
+      (action.replacement_assets || [])
+        .filter((entry) => entry.reuse_reason)
+        .map((entry) => [entry.asset_path, entry.reuse_reason]),
+    ),
+  );
+
+  for (const sceneId of ["scene_016", "scene_033", "scene_053"]) {
+    assert.ok(String(contractReasons.get(sceneId) || "").length >= 24, `${sceneId} contract callback reason is missing`);
+  }
+  for (const assetPath of ["assets/footage/scene_012_official_reuse.mp4", "assets/footage/scene_052_direct.mp4"]) {
+    assert.ok(String(replacementReasons.get(assetPath) || "").length >= 24, `${assetPath} replacement callback reason is missing`);
+  }
 });
 
 test("silent removal of a managed editorial assignment fails closed", () => {

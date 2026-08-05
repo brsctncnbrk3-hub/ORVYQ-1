@@ -130,6 +130,7 @@ test("materialization replaces cards with exact evidence, attribution, and foota
           asset_path: "assets/footage/direct.mp4",
           trim_in_sec: 2,
           trim_out_sec: 10,
+          reuse_reason: "A deliberate second use returns to the same physical process at a separate narration target.",
         }],
       },
     ],
@@ -152,6 +153,41 @@ test("materialization replaces cards with exact evidence, attribution, and foota
   assert.equal(result[1].trim_in_sec, 2);
   assert.equal(result[1].trim_out_sec, 9);
   assert.equal(result[1].trim_out_sec - result[1].trim_in_sec, result[1].duration);
+  assert.match(result[1].reuse_reason, /deliberate second use/);
+});
+
+test("footage replacement cannot inherit a stale reuse reason from the replaced asset", () => {
+  const shots = [shot(7, "footage", "SEC_01", {
+    asset: "assets/footage/old.mp4",
+    trim_in_sec: 0,
+    trim_out_sec: 7,
+    reuse_reason: "This reason belongs only to the old footage asset and must not cross replacement.",
+  })];
+  const plan = {
+    status: "materialized",
+    actions: [{
+      baseline_shot_index: 0,
+      claim_id: "CLM_001",
+      duration_seconds: 7,
+      decision: "replace_contextual_footage",
+      projected_medium: "contextual_footage",
+      asset_request_id: "REQ_FTG_DIRECT",
+      rationale: "Use a different physically direct process shot for this narration.",
+      replacement_assets: [{
+        asset_path: "assets/footage/new.mp4",
+        trim_in_sec: 0,
+        trim_out_sec: 8,
+      }],
+    }],
+  };
+
+  const [result] = materializeVisualRebalancePlan({
+    shots,
+    plan,
+    assetRequests: [{ asset_request_id: "REQ_FTG_DIRECT", status: "ready" }],
+  });
+  assert.equal(result.asset, "assets/footage/new.mp4");
+  assert.equal(result.reuse_reason, undefined);
 });
 
 test("replacing a native-kind evidence shot's primary evidence drops its stale items/steps/left/right body", () => {

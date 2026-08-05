@@ -352,6 +352,16 @@ Candidate Validation):
   existing byte-bound approval for those bytes and that claim. No approval was
   broadened and no validated bundle or video render was produced by the failed
   run.
+- Candidate Validation run `31009178282` confirmed that the CLM_009 extension
+  contract now passes and exposed the next independent gate: five legitimate
+  second footage uses reached the duplicate-footage audit without their
+  already-authored callback reasons. The footage-contract and rebalance
+  materializers now preserve authored `reuse_reason` values, emit a
+  deterministic callback reason only for a second target explicitly declared
+  by a footage contract, discard a stale reason when an asset is replaced, and
+  leave unexplained transformation-time repetitions to fail closed. Project
+  002 records the five claim-specific callback reasons;
+  the failed run again produced diagnostics only and started no render.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 

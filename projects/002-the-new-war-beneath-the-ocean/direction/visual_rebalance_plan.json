@@ -495,7 +495,8 @@
         {
           "asset_path": "assets/footage/scene_012_official_reuse.mp4",
           "trim_in_sec": 8,
-          "trim_out_sec": 17.5
+          "trim_out_sec": 17.5,
+          "reuse_reason": "The clip first introduces long-term-track physical context and returns at a separate, non-overlapping trim inside CLM_012 to interrupt an overlong evidence run."
         }
       ],
       "rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, a 15.93s uninterrupted evidence run over the 15s cap (confirmed via CI diagnostic, run 30934080098). Reuses scene_012_official_reuse.mp4 -- already used once for this exact claim at slice 0 ('A real dark seabed or benthic survey view introduces persistent physical disturbance'), and independently verified via the real footage-use-budget diagnostic (run 30954122832) to carry only that one real use, so a second use here stays within the 2-use cap. Its own provenance note ('Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim') satisfies REQ_FTG_DEEPSEA_TRACK_ROV's required_content as directly as scene_051 does; added to that request's resolved_asset_paths accordingly. Trim window (8s-15.97s) is a distinct segment from slice 0's own trim (which cannot exceed the project's 8s max_shot_seconds), so no overlap."
@@ -663,7 +664,8 @@
         {
           "asset_path": "assets/footage/scene_052_direct.mp4",
           "trim_in_sec": 0,
-          "trim_out_sec": 7
+          "trim_out_sec": 7,
+          "reuse_reason": "The official coring clip first accompanies measured track effects, then returns after primary evidence to keep the measurement process visible while CLM_014 distinguishes local damage from broader plume effects."
         }
       ],
       "rationale": "Remove the redundant slogan card and show actual sampling/monitoring context tied to plume measurement."

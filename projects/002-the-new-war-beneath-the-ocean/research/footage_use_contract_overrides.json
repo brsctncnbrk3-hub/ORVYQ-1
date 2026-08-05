@@ -81,7 +81,8 @@
       "motion": "drift_right",
       "role": "context",
       "semantic_link": "physical",
-      "semantic_rationale": "Official NOAA deep-ocean wall footage directly establishes darkness, cold and crushing-pressure conditions while JAMSTEC primary evidence retains the named Japanese operation."
+      "semantic_rationale": "Official NOAA deep-ocean wall footage directly establishes darkness, cold and crushing-pressure conditions while JAMSTEC primary evidence retains the named Japanese operation.",
+      "reuse_reason": "The opening hook establishes this deep-ocean wall as a shared physical premise; one body use returns under CLM_001 to ground darkness, cold and pressure without claiming the footage depicts Japan's operation."
     },
     {
       "scene_id": "scene_019",
@@ -214,7 +215,8 @@
       "motion": "hold",
       "role": "context",
       "semantic_link": "physical",
-      "semantic_rationale": "Official water-column footage directly grounds the midwater food-web mechanism while the cited paper carries the experiment and effect."
+      "semantic_rationale": "Official water-column footage directly grounds the midwater food-web mechanism while the cited paper carries the experiment and effect.",
+      "reuse_reason": "Official water-column footage first introduces the discharge mechanism and returns at a separate CLM_015 narration target to connect that mechanism to the cited nutritional-quality finding."
     },
     {
       "scene_id": "scene_054",

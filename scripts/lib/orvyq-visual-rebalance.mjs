@@ -378,6 +378,8 @@ function applyFootageReplacement(shot, action, requests) {
   updated.semantic_link = "physical";
   updated.contextual_footage = true;
   updated.generic_stock = false;
+  if (replacement.reuse_reason) updated.reuse_reason = replacement.reuse_reason;
+  else delete updated.reuse_reason;
   delete updated.graphic;
   delete updated.evidence;
   delete updated.emphasis_card;

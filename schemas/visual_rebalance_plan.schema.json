@@ -44,7 +44,8 @@
                 "evidence_asset_id": { "type": "string", "pattern": "^EVID_[A-Z0-9_]+$" },
                 "source_region": { "type": "string", "minLength": 3 },
                 "trim_in_sec": { "type": "number", "minimum": 0 },
-                "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 }
+                "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 },
+                "reuse_reason": { "type": "string", "minLength": 24 }
               },
               "additionalProperties": false
             }
