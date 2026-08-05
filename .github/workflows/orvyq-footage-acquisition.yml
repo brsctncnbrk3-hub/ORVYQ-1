@@ -75,26 +75,36 @@ jobs:
             if [ -n "$CHANGED_INPUT" ]; then
               PROJECT_ID="$(jq -r '.project_id' "$CHANGED_INPUT")"
             else
-              mapfile -t CANDIDATES < <(
-                find projects -path '*/research/footage_acquisition_plan.json' -type f -print0 |
-                  while IFS= read -r -d '' plan; do
-                    root="${plan%/research/footage_acquisition_plan.json}"
-                    runtime="$root/assets/footage_acquisition.runtime.json"
-                    reviews="$root/research/visual_asset_reviews.json"
-                    planned="$(jq '.assets | length' "$plan")"
-                    actual="$(test -f "$runtime" && jq '.records | length' "$runtime" || echo 0)"
-                    rejected="$(test -f "$reviews" && jq '.summary.rejected_from_metadata // 0' "$reviews" || echo 0)"
-                    pending="$(test -f "$reviews" && jq '.summary.pending_frame_review // 0' "$reviews" || echo 0)"
-                    if [ "$actual" -ne "$planned" ] || [ "$rejected" -gt 0 ] || [ "$pending" -gt 0 ]; then
-                      jq -r '.project_id' "$plan"
-                    fi
+              mapfile -t ACTIVE_PROJECTS < <(
+                find projects -path '*/config/candidate_validation_request.json' -type f -print0 |
+                  while IFS= read -r -d '' request; do
+                    jq -r 'select(.status == "requested") | .project_id' "$request"
                   done | sort -u
               )
-              test "${#CANDIDATES[@]}" -eq 1 || {
-                echo "::error::Could not resolve exactly one project needing footage work; found ${#CANDIDATES[@]}."
-                exit 1
-              }
-              PROJECT_ID="${CANDIDATES[0]}"
+              if [ "${#ACTIVE_PROJECTS[@]}" -eq 1 ]; then
+                PROJECT_ID="${ACTIVE_PROJECTS[0]}"
+              else
+                mapfile -t CANDIDATES < <(
+                  find projects -path '*/research/footage_acquisition_plan.json' -type f -print0 |
+                    while IFS= read -r -d '' plan; do
+                      root="${plan%/research/footage_acquisition_plan.json}"
+                      runtime="$root/assets/footage_acquisition.runtime.json"
+                      reviews="$root/research/visual_asset_reviews.json"
+                      planned="$(jq '.assets | length' "$plan")"
+                      actual="$(test -f "$runtime" && jq '.records | length' "$runtime" || echo 0)"
+                      rejected="$(test -f "$reviews" && jq '.summary.rejected_from_metadata // 0' "$reviews" || echo 0)"
+                      pending="$(test -f "$reviews" && jq '.summary.pending_frame_review // 0' "$reviews" || echo 0)"
+                      if [ "$actual" -ne "$planned" ] || [ "$rejected" -gt 0 ] || [ "$pending" -gt 0 ]; then
+                        jq -r '.project_id' "$plan"
+                      fi
+                    done | sort -u
+                )
+                test "${#CANDIDATES[@]}" -eq 1 || {
+                  echo "::error::Could not resolve one active requested project or exactly one project needing footage work."
+                  exit 1
+                }
+                PROJECT_ID="${CANDIDATES[0]}"
+              fi
             fi
           fi
           test -f "projects/$PROJECT_ID/research/footage_acquisition_plan.json"
@@ -112,6 +122,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify canonical narration exists
+        run: test -s "projects/$PROJECT_ID/assets/audio/final_voice.mp3"
+
+      - name: Set up Python for canonical narration alignment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install media and speech tooling for canonical alignment
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          python -m pip install --disable-pip-version-check faster-whisper==1.2.0 requests==2.32.5
+
+      - name: Run full-duration narration QA for canonical alignment
+        run: |
+          python scripts/orvyq_speech_qa.py --project-id "$PROJECT_ID" \
+            --media "projects/$PROJECT_ID/assets/audio/final_voice.mp3" \
+            --output-name full_narration_speech_qa.json \
+            --model tiny.en
+
+      - name: Build canonical narration alignment before pause resolution
+        run: node scripts/orvyq_narration_alignment.mjs --project-id="$PROJECT_ID"
+
       - name: Make byte-bound human approval authoritative for reuse
         shell: bash
         run: |
@@ -128,8 +163,17 @@ jobs:
               raise SystemExit("Could not find the reusable semantic guard")
           PY
 
+      - name: Resolve the canonical editorial pause plan before shot generation
+        run: node scripts/orvyq_resolve_pauses.mjs --project-id="$PROJECT_ID"
+
+      - name: Rebuild the canonical shot baseline before footage reconciliation
+        run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID"
+
       - name: Apply claim-bound footage use contracts
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
+
+      - name: Generate any missing contact sheets for the reconciled footage set
+        run: node scripts/orvyq_generate_footage_contact_sheets.mjs --project-id="$PROJECT_ID"
 
       - name: Build current claim-bound review queue
         run: node scripts/orvyq_prepare_footage_review_queue.mjs --project-id="$PROJECT_ID"
@@ -179,10 +223,7 @@ jobs:
 
       - name: Install media probe
         if: env.NEEDS_ACQUISITION == 'true'
-        run: |
-          set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg
+        run: ffprobe -version
 
       - name: Reacquire rejected licensed contextual footage
         if: env.NEEDS_ACQUISITION == 'true'

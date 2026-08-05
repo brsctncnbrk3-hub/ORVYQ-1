@@ -39,12 +39,16 @@ async function generateContactSheet(media, output, duration) {
   ], { maxBuffer: 20 * 1024 * 1024 });
 }
 
-function approvedByExactBytes(reviews, providerAssetId, assetHash) {
-  return (reviews.approved_assets || []).some((item) =>
+export function exactByteApproval(reviews, providerAssetId, assetHash) {
+  return (reviews.approved_assets || []).find((item) =>
     String(item.provider_asset_id) === String(providerAssetId) &&
     String(item.asset_sha256).toLowerCase() === String(assetHash).toLowerCase() &&
     /^[a-f0-9]{64}$/i.test(String(item.contact_sheet_sha256 || "")),
-  );
+  ) || null;
+}
+
+export function canReuseApprovedContactSheet(reviews, providerAssetId, assetHash, contactSheetExists) {
+  return Boolean(contactSheetExists && exactByteApproval(reviews, providerAssetId, assetHash));
 }
 
 export async function generateFootageContactSheets(projectId) {
@@ -67,13 +71,20 @@ export async function generateFootageContactSheets(projectId) {
     if (assetHash !== provenance.sha256 && assetHash !== provenance.actual_sha256) {
       throw new Error(`${record.scene_id}: asset bytes do not match provenance`);
     }
-    if (approvedByExactBytes(reviews, provenance.provider_asset_id, assetHash)) continue;
-
-    const duration = await probeDuration(media);
     const contactSheetRelative = `qa/footage-contact-sheets/${record.scene_id}.jpg`;
     const contactSheet = path.join(dir, contactSheetRelative);
+    const approval = exactByteApproval(reviews, provenance.provider_asset_id, assetHash);
+    if (canReuseApprovedContactSheet(
+      reviews,
+      provenance.provider_asset_id,
+      assetHash,
+      await exists(contactSheet),
+    )) continue;
+
+    const duration = await probeDuration(media);
     await generateContactSheet(media, contactSheet, duration);
     const contactSheetHash = await sha256(contactSheet);
+    if (String(approval?.contact_sheet_sha256 || "").toLowerCase() === contactSheetHash.toLowerCase()) continue;
     const item = planByScene.get(record.scene_id) || {};
 
     entries.push({

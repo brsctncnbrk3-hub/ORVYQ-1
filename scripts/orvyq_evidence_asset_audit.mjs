@@ -87,7 +87,15 @@ export async function runEvidenceAssetAudit(projectId = PROJECT_ID) {
     }
     if (!declared.source_url || !produced.source_url || declared.source_url !== produced.source_url) failures.push(`${assetId} source URL mismatch`);
     if (!produced.sha256 || produced.sha256.length !== 64) failures.push(`${assetId} has no valid SHA-256`);
-    if (!Number.isFinite(produced.bytes) || produced.bytes < Number(declared.output_min_bytes || 30000)) failures.push(`${assetId} is below its rendered-output byte threshold`);
+    // declared.local_min_bytes is the manifest's real field name -- the one
+    // scripts/orvyq_fetch_primary_evidence.mjs itself enforces at fetch
+    // time (asset.local_min_bytes || 30000). "output_min_bytes" appears
+    // nowhere in research/primary_evidence_manifest.json, so every asset
+    // silently fell back to the hardcoded 30000-byte floor here regardless
+    // of its own declared threshold (e.g. EVID_JAMSTEC_SEAFLOOR_HOLE
+    // declares local_min_bytes: 25000 and fetches successfully under that
+    // real threshold, then failed this stricter, unintended one).
+    if (!Number.isFinite(produced.bytes) || produced.bytes < Number(declared.local_min_bytes || 30000)) failures.push(`${assetId} is below its rendered-output byte threshold`);
     const absolute = path.join(dir, localPath);
     if (!(await pathExists(absolute))) failures.push(`${assetId} physical file is missing: ${localPath}`);
     else {

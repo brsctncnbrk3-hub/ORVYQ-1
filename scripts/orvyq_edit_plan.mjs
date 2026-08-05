@@ -139,6 +139,7 @@ async function buildFullPlan(dir, projectId, blueprint) {
 
     const common = {
       shot_id: `shot_${String(index + 1).padStart(3, "0")}`,
+      ...(spec.shot_key ? { shot_key: spec.shot_key } : {}),
       scene_id: spec.scene_id,
       section_id: spec.section_id,
       start_frame: startFrame,
@@ -167,7 +168,13 @@ async function buildFullPlan(dir, projectId, blueprint) {
       // Full mode has its own real editorial pauses now (8, vs proof's 4)
       // and needs the same emphasis-card overlay buildProofPlan already
       // carries through for them.
-      emphasis_card: spec.emphasis_card || null
+      emphasis_card: spec.emphasis_card || null,
+      ...(spec.claim_bound_extension === true
+        ? {
+            claim_bound_extension: true,
+            claim_bound_extension_basis: spec.claim_bound_extension_basis,
+          }
+        : {})
     };
 
     if (spec.asset_type === "graphic") {

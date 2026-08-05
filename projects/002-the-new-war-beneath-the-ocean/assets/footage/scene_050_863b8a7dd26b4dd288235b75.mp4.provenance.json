@@ -58,5 +58,5 @@
   "reviewed_contact_sheet_sha256": "c2b37844943989267124367c70e0c81f2b7130bce9880aa863a254326d1d953a",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
-  "visual_qa_reason": "The reviewed frames show a real formal regulatory hearing and therefore carry the narration's institutional decision context without impersonating NOAA, the International Seabed Authority or a named proceeding. Moving the clip from the later question about liability to the earlier sentence about unresolved industrial-scale rules preserves the same claim, semantic role and factual-burden boundary while keeping the asset at two total uses."
+  "visual_qa_reason": "Re-verified against the live queue: a real regulatory committee hearing breaks up CLM_007's dense US-route document sequence and grounds CLM_019's regulatory-delay sentence; NOAA and executive-order captures retain the factual burden."
 }

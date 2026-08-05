@@ -40,6 +40,17 @@ function validateAssignment(item, label) {
     throw new Error(`${label}.trim_in_ratio must be in [0, 1)`);
   canonicalVisualRole(item.role || "context");
   if (!String(item.semantic_rationale || "").trim()) throw new Error(`${label}.semantic_rationale is required`);
+  if (item.reuse_reason !== undefined && String(item.reuse_reason || "").trim().length < 24)
+    throw new Error(`${label}.reuse_reason must explicitly explain the repeated use`);
+}
+
+export function resolveContractReuseReason(contract, useCount) {
+  const explicit = String(contract?.reuse_reason || "").trim();
+  if (explicit) return explicit;
+  if (Number(useCount) > 1) {
+    return `A deliberate claim-bound reuse of ${contract.scene_id} at a separate narration target; the explicit footage contract keeps the asset within the two-use ceiling.`;
+  }
+  return null;
 }
 
 function validateRetirement(item, label) {
@@ -257,6 +268,7 @@ export async function applyFootageUseContracts(projectId) {
     if (narrationAnchor.length < 8) throw new Error(`${key}: contracted target has no usable narration anchor`);
     const count = (sceneUseCounts.get(contract.scene_id) || 0) + 1;
     sceneUseCounts.set(contract.scene_id, count);
+    const reuseReason = resolveContractReuseReason(contract, count);
     editorial.footage_assignments[contract.claim_id] ||= {};
     editorial.footage_assignments[contract.claim_id][String(contract.slice_index)] = {
       asset: record.path,
@@ -266,11 +278,9 @@ export async function applyFootageUseContracts(projectId) {
       semantic_anchor: narrationAnchor,
       semantic_rationale: contract.semantic_rationale,
       semantic_link: contract.semantic_link || "physical",
-      ...(count > 1
-        ? { reuse_reason: `A deliberate claim-bound reuse of ${contract.scene_id} at a distinct narration target and trim window.` }
-        : {}),
+      ...(reuseReason ? { reuse_reason: reuseReason } : {}),
     };
-    assignmentByTarget.set(key, { ...contract, record, narrationAnchor });
+    assignmentByTarget.set(key, { ...contract, record, narrationAnchor, reuseReason });
   }
 
   const activeRecords = (runtime.records || []).filter((record) => !prunedScenes.has(record.scene_id));
@@ -320,6 +330,8 @@ export async function applyFootageUseContracts(projectId) {
       shot.semantic_rationale = assignment.semantic_rationale;
       shot.semantic_link = assignment.semantic_link || "physical";
       shot.generic_stock = provenance.provider === "pexels";
+      if (assignment.reuseReason) shot.reuse_reason = assignment.reuseReason;
+      else delete shot.reuse_reason;
       delete shot.evidence;
       delete shot.graphic;
       trimCursor = trimOut;

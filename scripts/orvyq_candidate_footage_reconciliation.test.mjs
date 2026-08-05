@@ -20,3 +20,15 @@ test("Candidate Validation reconciles claim-bound footage after regenerating sho
     /node scripts\/orvyq_apply_footage_use_contracts\.mjs --project-id="\$PROJECT_ID"/,
   );
 });
+
+test("Candidate Validation freezes and uploads a validated bundle only after pre-render QA passes", () => {
+  const qaIndex = workflow.indexOf("Run full pre-render QA chain");
+  const qaStopIndex = workflow.indexOf("Stop when the pre-render QA chain failed");
+  const freezeIndex = workflow.indexOf("Compute frozen candidate manifest after all QA passed");
+  const validatedUploadIndex = workflow.indexOf("Upload immutable validated candidate bundle");
+
+  assert.ok(qaIndex >= 0, "pre-render QA step is missing");
+  assert.ok(qaStopIndex > qaIndex, "the QA result must be enforced after the QA chain runs");
+  assert.ok(freezeIndex > qaStopIndex, "candidate identity must not be frozen before QA succeeds");
+  assert.ok(validatedUploadIndex > freezeIndex, "validated artifact upload must use the post-QA frozen candidate");
+});

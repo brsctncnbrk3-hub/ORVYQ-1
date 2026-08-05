@@ -89,6 +89,57 @@ test("an explicit adjacent narration extension may reuse approved bytes only ins
   assert.equal(result.pass, true, result.failures.join("; "));
 });
 
+test("narration_anchor punctuation/case drift from re-run ASR does not reject an otherwise-identical approved use", () => {
+  const asset = "assets/footage/context.mp4";
+  const result = auditFootageSemanticReviews({
+    footageShots: [{
+      asset,
+      claim_id: "CLM_002",
+      narration_anchor: "The difficult part is separating them, refining them, and turning them into magnets.",
+    }],
+    provenanceByPath: new Map([[asset, { provider_asset_id: "789", sha256: "d".repeat(64) }]]),
+    reviews: {
+      approved_assets: [{
+        provider_asset_id: "789",
+        asset_sha256: "d".repeat(64),
+        contact_sheet_sha256: "e".repeat(64),
+        approved_uses: [{
+          claim_id: "CLM_002",
+          narration_anchor: "the difficult part is separating them, refining them and turning them into magnets",
+          semantic_rationale: "This mineral-supply image directly supports the narrated refining-bottleneck claim.",
+        }],
+      }],
+    },
+  });
+  assert.equal(result.pass, true, result.failures.join("; "));
+});
+
+test("narration_anchor comparison still rejects a genuinely different narration window", () => {
+  const asset = "assets/footage/context.mp4";
+  const result = auditFootageSemanticReviews({
+    footageShots: [{
+      asset,
+      claim_id: "CLM_002",
+      narration_anchor: "A completely different sentence about a different topic entirely.",
+    }],
+    provenanceByPath: new Map([[asset, { provider_asset_id: "789", sha256: "d".repeat(64) }]]),
+    reviews: {
+      approved_assets: [{
+        provider_asset_id: "789",
+        asset_sha256: "d".repeat(64),
+        contact_sheet_sha256: "e".repeat(64),
+        approved_uses: [{
+          claim_id: "CLM_002",
+          narration_anchor: "the difficult part is separating them, refining them and turning them into magnets",
+          semantic_rationale: "This mineral-supply image directly supports the narrated refining-bottleneck claim.",
+        }],
+      }],
+    },
+  });
+  assert.equal(result.pass, false);
+  assert.match(result.failures.join("; "), /no exact approved use/);
+});
+
 test("claim-bound extension cannot cross into a different claim", () => {
   const asset = "assets/footage/context.mp4";
   const result = auditFootageSemanticReviews({

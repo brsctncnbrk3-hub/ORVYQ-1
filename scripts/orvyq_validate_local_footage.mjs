@@ -10,6 +10,7 @@ import {
   writeJsonAtomic,
   pathExists,
 } from "./lib/fs-utils.mjs";
+import { assignStableShotKeys } from "./lib/orvyq-visual-rebalance.mjs";
 
 export { validateLocalFootage };
 
@@ -24,6 +25,26 @@ function sceneIdFromAsset(assetPath) {
 
 function deleteFields(target, fields) {
   for (const field of fields) delete target[field];
+}
+
+export function resolveSemanticCorrectionTarget(shots, correction, requireStableKey = false) {
+  const stableKey = String(correction?.shot_key || "").trim();
+  if (requireStableKey && !stableKey) {
+    throw new Error(`Semantic correction ${correction?.shot_index ?? "unknown"} requires shot_key`);
+  }
+  if (stableKey) {
+    const matches = shots
+      .map((shot, index) => ({ shot, index }))
+      .filter((entry) => entry.shot.shot_key === stableKey);
+    if (matches.length !== 1) {
+      throw new Error(`Semantic correction shot_key ${stableKey} resolved ${matches.length} targets`);
+    }
+    return matches[0];
+  }
+  const index = correction?.shot_index;
+  const shot = shots[index];
+  if (!shot) throw new Error(`Semantic correction targets missing shot ${index}`);
+  return { shot, index };
 }
 
 export async function reconcileActiveLocalFootage(projectId) {
@@ -113,7 +134,7 @@ export async function reconcileSemanticShotAssignments(projectId) {
     readJson(runtimeFile),
     readJson(reviewsFile),
   ]);
-  const shots = blueprint.full_production?.shots || [];
+  const shots = assignStableShotKeys(blueprint.full_production?.shots || []);
   const recordByScene = new Map((runtime.records || []).map((record) => [record.scene_id, record]));
   const recordByPath = new Map((runtime.records || []).map((record) => [record.path, record]));
   const approvalByProvider = new Map(
@@ -136,10 +157,13 @@ export async function reconcileSemanticShotAssignments(projectId) {
     const corrections = await readJson(correctionsFile);
     if (corrections.project_id !== projectId) throw new Error("semantic shot correction project_id mismatch");
     for (const correction of corrections.corrections || []) {
-      const shot = shots[correction.shot_index];
-      if (!shot) throw new Error(`Semantic correction targets missing shot ${correction.shot_index}`);
+      const { shot, index: resolvedIndex } = resolveSemanticCorrectionTarget(
+        shots,
+        correction,
+        corrections.schema_version === "1.1",
+      );
       if (shot.claim_id !== correction.expected_claim_id) {
-        throw new Error(`Semantic correction claim drift at shot ${correction.shot_index}`);
+        throw new Error(`Semantic correction claim drift at ${correction.shot_key || `shot ${resolvedIndex}`}`);
       }
       const currentSceneId = sceneIdFromAsset(shot.asset);
       if (correction.expected_asset_scene_id && currentSceneId !== correction.expected_asset_scene_id) {
@@ -147,7 +171,7 @@ export async function reconcileSemanticShotAssignments(projectId) {
         const replacementScene = correction.replacement_type === "contextual_footage" &&
           currentSceneId === correction.source_scene_id;
         if (!alreadyApplied && !replacementScene) {
-          throw new Error(`Semantic correction asset drift at shot ${correction.shot_index}`);
+          throw new Error(`Semantic correction asset drift at ${correction.shot_key || `shot ${resolvedIndex}`}`);
         }
       }
 
@@ -178,7 +202,7 @@ export async function reconcileSemanticShotAssignments(projectId) {
         const replacement = recordByScene.get(correction.source_scene_id);
         if (!replacement) throw new Error(`Semantic correction source ${correction.source_scene_id} is not active`);
         if (Number(correction.trim_out_sec) - Number(correction.trim_in_sec) + 0.001 < Number(shot.duration)) {
-          throw new Error(`Semantic correction trim is shorter than shot ${correction.shot_index}`);
+          throw new Error(`Semantic correction trim is shorter than ${correction.shot_key || `shot ${resolvedIndex}`}`);
         }
         shot.asset_type = "footage";
         shot.asset = replacement.path;

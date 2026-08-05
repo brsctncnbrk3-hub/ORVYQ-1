@@ -43,5 +43,5 @@
   "reused_at": "2026-07-31T09:01:24.950Z",
   "reviewed_asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
   "reviewed_contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
-  "visual_qa_reason": "The identical approved NOAA expedition footage provides a real survey and field-assessment setting that clearly differs from a commercial mine. It is not identified as Chikyu, a Japanese trial vessel, or proof of commercial feasibility."
+  "visual_qa_reason": "Re-verified against the live queue: official expedition field-assessment operations ground CLM_001's sentence that the technical test did not itself prove commercial mining, without identifying the vessel as Chikyu or a mining ship."
 }

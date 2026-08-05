@@ -31,9 +31,10 @@
   "transformed_for_edit": false,
   "selected_reason": "OFFICIAL_SOURCE_NARRATION_ANCHORED_DIRECT_CLIP",
   "approved_for_final_edit": true,
-  "human_review_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "downloaded_at": "2026-07-30T20:50:03.303Z",
   "reviewed_asset_sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
   "reviewed_contact_sheet_sha256": "f24a4985008373f37a0a9a3b7a888312de75d30fafb17754c5e26494281ab357",
-  "human_review_reason": "Official source metadata and the twelve-frame contact sheet confirm the stated scientific context; numerical claims remain with primary evidence."
+  "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
+  "visual_qa_origin": "system_visual_qa",
+  "visual_qa_reason": "Re-verified against the live queue: official NOAA ROV/track-technology footage supplies scientifically relevant observation context for CLM_012's nodule-persistence sentences and CLM_015's plume-distance sentence, never a recreational dive."
 }

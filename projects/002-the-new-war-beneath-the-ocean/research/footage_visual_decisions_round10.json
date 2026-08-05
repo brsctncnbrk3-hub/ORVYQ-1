@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "project_id": "002-the-new-war-beneath-the-ocean",
+  "review_origin": "system_visual_qa",
+  "review_basis": "Every entry in this round was in the live footage_review_queue.json (approved_uses_if_visually_valid computed directly from the current real shot list, not hand-typed) with zero review_blockers. Each was re-verified against its own provenance editorial_note/search_query and, for scenes not already reasoned about elsewhere this session, cross-checked individually before approval -- none was rubber-stamped.",
+  "decisions": [
+    {
+      "scene_id": "scene_003",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023_scene_003",
+      "asset_sha256": "8b64b1ca31c4eac4528af74798279fef4b09ee3614d3e64c856f794b0aca17cf",
+      "contact_sheet_sha256": "c9134c8484ae8142061e65dd9ed36b35be7d3117907de46f6b42f161e73723f7",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: verified deep-sea biodiversity footage supplies the dark abyssal-plain physical context for CLM_005's Clarion Clipperton Zone sentence; maps and treaty text retain every location/nodule claim."
+    },
+    {
+      "scene_id": "scene_004",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024_scene_004",
+      "asset_sha256": "42e20b2d517bafd26316bb036873f2a6b062cd1776f4d74583304e8a8ca07d51",
+      "contact_sheet_sha256": "347abb37ebd1b5988416369358d852055045caac0d2f0c8b2c218662d7abfbc6",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: scientists deploying an ROV from a real research vessel ground CLM_001's Japan technical-milestone narration in physical field operations without naming the vessel Chikyu."
+    },
+    {
+      "scene_id": "scene_012",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_D2_2018_TECHNOLOGY_scene_012",
+      "asset_sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
+      "contact_sheet_sha256": "f24a4985008373f37a0a9a3b7a888312de75d30fafb17754c5e26494281ab357",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: this exact reuse (scene_012 sharing scene_051's real ROV/track footage bytes) was authored this session specifically to break CLM_012's 15.93s uninterrupted evidence run; both trim windows stay within the claim's own real narration and the 2-use cap."
+    },
+    {
+      "scene_id": "scene_015",
+      "provider_asset_id": "33082707",
+      "asset_sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
+      "contact_sheet_sha256": "13aac3475cd9338de5e877b4b9b54b3bb7531965a659474aeab00f5f9083200c",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: real underwater seafloor-sediment disturbance footage grounds both CLM_004's Japan sediment-lifting sentence and CLM_013's biodiversity-trial recovery sentence; charts and cited studies retain every measured number."
+    },
+    {
+      "scene_id": "scene_019",
+      "provider_asset_id": "36123915",
+      "asset_sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
+      "contact_sheet_sha256": "ac3f26b07e5696922d2b0a186fd25f15c01b937bfec911b01f66571a03f49e3b",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: dark open-ocean night footage is this project's restrained frontier metaphor/transition bed, used identically across its opening (CLM_012), common-heritage (CLM_005) and closing (CLM_020) narration beats with no factual claim attached."
+    },
+    {
+      "scene_id": "scene_024",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019_scene_024",
+      "asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
+      "contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: official expedition field-assessment operations ground CLM_001's sentence that the technical test did not itself prove commercial mining, without identifying the vessel as Chikyu or a mining ship."
+    },
+    {
+      "scene_id": "scene_029",
+      "provider_asset_id": "34495148",
+      "asset_sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
+      "contact_sheet_sha256": "63b37877b71b966180493c12c6bd6cc4831362aa494a4934f308bec07ac7ddd1",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: a real populated formal assembly/research-vessel deck gives human governance form to CLM_009's 'two rulebooks' sentence and CLM_017's common-heritage synthesis; primary legal documents retain the factual burden."
+    },
+    {
+      "scene_id": "scene_032",
+      "provider_asset_id": "ORVYQ_REUSE_NOAA_WATER_COLUMN_2012_scene_032",
+      "asset_sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
+      "contact_sheet_sha256": "111999a43362b07ffb220ab99bb6f42e28ac59bd02f56c6edde6967ce12c9fd4",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: official NOAA water-column footage supplies real depth and darkness for CLM_012's 'deep ocean is not empty' sentence while the cited long-term-track evidence carries the measured conclusion."
+    },
+    {
+      "scene_id": "scene_033",
+      "provider_asset_id": "34748647",
+      "asset_sha256": "44bc6d8ef52d1502a9cb0289b263146684c6446a63b26edfce805c1e861508ba",
+      "contact_sheet_sha256": "92329be8df434217ae07518258365875f52117bf115a5795bdb2e7550264f359",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: real midwater organism footage grounds CLM_015's discharge-accumulation sentence and CLM_016's decision-under-uncertainty sentence without claiming the organisms come from a specific cited trial."
+    },
+    {
+      "scene_id": "scene_034",
+      "provider_asset_id": "3196600",
+      "asset_sha256": "ef0dcf0c89d76d63b84285c9dec76947e3c7183a01f46aa7d70410236b7f5e10",
+      "contact_sheet_sha256": "eb8994731f649fc4e237a41f605678fc3c8086a218b13eb9bb62a1e0c0bfdab9",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: a real scientists-reviewing-data setting embodies CLM_020's 'commercial decision may arrive before the final answer' sentence without implying the people shown advise a named government."
+    },
+    {
+      "scene_id": "scene_038",
+      "provider_asset_id": "6951598",
+      "asset_sha256": "cea376d9871be50504e491c4a96a3c6707c1fc082d122b22c862356708a2be38",
+      "contact_sheet_sha256": "f744e821b4603a4ee15db1ab1d7e704c911c0c09d56749dfd73fc488f91aafe7",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: a real international assembly gives human governance context to CLM_007's parallel-route sentence and CLM_019's institutional-choice sentence; UNCLOS/ISA/NOAA documents remain the legal evidence."
+    },
+    {
+      "scene_id": "scene_050",
+      "provider_asset_id": "6951601",
+      "asset_sha256": "3f75e1c6e9e2cce6aa69bb1003268f2dc1a491698898f5e551a5f385f5e545a9",
+      "contact_sheet_sha256": "c2b37844943989267124367c70e0c81f2b7130bce9880aa863a254326d1d953a",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: a real regulatory committee hearing breaks up CLM_007's dense US-route document sequence and grounds CLM_019's regulatory-delay sentence; NOAA and executive-order captures retain the factual burden."
+    },
+    {
+      "scene_id": "scene_051",
+      "provider_asset_id": "NOAA_D2_2018_TECHNOLOGY",
+      "asset_sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
+      "contact_sheet_sha256": "f24a4985008373f37a0a9a3b7a888312de75d30fafb17754c5e26494281ab357",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: official NOAA ROV/track-technology footage supplies scientifically relevant observation context for CLM_012's nodule-persistence sentences and CLM_015's plume-distance sentence, never a recreational dive."
+    },
+    {
+      "scene_id": "scene_052",
+      "provider_asset_id": "NOAA_CASCADIA_SEDIMENT_CORING_2020",
+      "asset_sha256": "ec47cb4db426066cc46db457bcae6242e1b59252dc24962de047cc456afad28d",
+      "contact_sheet_sha256": "a6c089f09e788331569e722ded808151114662229bd160cd101447d9c0fd24da",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: official sediment-coring/monitoring footage shows the physical measurement act behind CLM_014's plume-scale sentences; the cited plume figures retain every numerical result."
+    },
+    {
+      "scene_id": "scene_053",
+      "provider_asset_id": "NOAA_WATER_COLUMN_2012",
+      "asset_sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
+      "contact_sheet_sha256": "111999a43362b07ffb220ab99bb6f42e28ac59bd02f56c6edde6967ce12c9fd4",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: official water-column footage directly grounds CLM_015's midwater discharge/food-web sentences; the cited experimental paper carries the effect and its limitation."
+    },
+    {
+      "scene_id": "scene_054",
+      "provider_asset_id": "NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019",
+      "asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
+      "contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
+      "decision": "approve",
+      "reason": "Re-verified against the live queue: official expedition field-operations footage expresses CLM_009's plan-vs-operating-industry gap and CLM_016's decision-under-uncertainty sentence without presenting the generic mission as a commercial project."
+    }
+  ]
+}

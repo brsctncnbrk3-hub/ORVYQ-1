@@ -1,9 +1,10 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "002-the-new-war-beneath-the-ocean",
   "corrections": [
     {
       "shot_index": 32,
+      "shot_key": "body:clm-004-japan-industrial-timeline:slice-6:sec-02-chokepoint:occ-1",
       "expected_claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
       "expected_asset_scene_id": "scene_017",
       "replacement_type": "primary_evidence",
@@ -25,6 +26,7 @@
     },
     {
       "shot_index": 110,
+      "shot_key": "body:clm-016-decision-under-uncertainty:slice-0:sec-06-machine-leaves-behind:occ-1",
       "expected_claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
       "expected_asset_scene_id": "scene_035",
       "replacement_type": "contextual_footage",

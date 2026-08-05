@@ -13,3 +13,10 @@ Every agent, workflow and code change must read and follow that file first. If o
 There is no active short-proof stage.
 
 Project `002-the-new-war-beneath-the-ocean` is the live acceptance test. The system is not production-ready until that complete documentary passes review, correction and final encode, and the reusable workflow is proven on a fresh isolated project.
+
+Current gate: a render-free Candidate Validation is requested for the stable
+`shot_key` rebalance correction, explicit same-claim extension contract and
+second-use callback-reason propagation surfaced by the preceding fail-closed
+runs. A validated candidate bundle may be created only after the full
+pre-render QA chain passes; 720p review and 1080p final encoding still require
+separate explicit user approvals.

@@ -1,12 +1,20 @@
 {
   "schema_version": "1.0",
   "project_id": "002-the-new-war-beneath-the-ocean",
-  "status": "needs_music_selection",
-  "artist": null,
-  "license_name": null,
-  "license_url": null,
-  "attribution_template": null,
-  "tracks": [],
+  "status": "resolved_from_canonical_registry",
+  "artist": "Scott Buckley",
+  "license_name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_template": "'Undertow' by Scott Buckley — released under CC-BY 4.0. www.scottbuckley.com.au",
+  "tracks": [
+    {
+      "track_id": "sb_undertow",
+      "title": "Undertow",
+      "asset_path": "music_library/tracks/sb_undertow.mp3",
+      "source_page_url": "https://www.scottbuckley.com.au/library/undertow/",
+      "status": "approved_for_full"
+    }
+  ],
   "creative_direction": {
     "opening": "sub-bass pressure, distant mechanical pulse, sparse sonar-like texture",
     "middle": "restrained geopolitical tension with slow percussive escalation",

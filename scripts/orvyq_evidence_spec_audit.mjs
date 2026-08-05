@@ -55,8 +55,19 @@ export function bodyText(evidence) {
   return parts.filter(Boolean).join(" \n ");
 }
 
-export function allowedText(claim, sources, section) {
-  const parts = [claim.narration_excerpt, ...(claim.evidence_requirements || []), claim.recommended_rewrite];
+// extraFacts: real, already-verified per-shot strings that aren't part of
+// the claim/source/section records themselves -- currently
+// evidence.source_regions, the authored description of exactly which real
+// figure/region a materialized primary-evidence image shows (see
+// scripts/lib/orvyq-visual-rebalance.mjs's resolvePrimaryEvidenceAttribution
+// and direction/visual_rebalance_plan.json's replacement_assets). A region
+// like "Figure 2 — track photographs observed in 2023" can legitimately
+// name a real year or count that appears nowhere in the claim's own
+// narration/evidence_requirements or the source catalog's title/publisher/
+// publication_date/limitation, exactly the way evidence_requirements text
+// is already trusted below.
+export function allowedText(claim, sources, section, extraFacts = []) {
+  const parts = [claim.narration_excerpt, ...(claim.evidence_requirements || []), claim.recommended_rewrite, ...extraFacts];
   for (const source of sources) parts.push(source.title, source.publisher, source.publication_date, source.limitation);
   if (section) parts.push(section.title, section.dramatic_function);
   return parts.filter(Boolean).join(" \n ");
@@ -100,9 +111,20 @@ export function evaluateEvidenceShot({ shot, evidence, claim, sourceById, sectio
     if (requiredLimitation && !evidence.limitation) failures.push(`${shot.shot_id} omits ${claim.claim_id}'s required limitation`);
 
     const displaySources = sourceIds.map((id) => sourceById.get(id)).filter(Boolean);
-    const allowed = allowedText(claim, [...new Set([...ownSources, ...displaySources])], section).toLowerCase();
+    // A shot backed by a real materialized image (evidence.image_assets /
+    // evidence.evidence_asset_ids -- only ever populated for IMAGE_KINDS by
+    // scripts/lib/orvyq-visual-rebalance.mjs's resolvePrimaryEvidenceAttribution
+    // or scripts/orvyq_edit_plan.mjs's IMAGE_KINDS branch; NATIVE-kind shots
+    // are forbidden from carrying these fields at all) has its title/eyebrow
+    // built directly from research/primary_evidence_manifest.json's own
+    // verified caption/source_title fields, not from generative fact
+    // rotation -- exactly as self-trusted as a cited source's own .title, so
+    // they belong in the allowed pool rather than being checked against it.
+    const isRealImageBacked = Boolean((evidence.image_assets || []).length || (evidence.evidence_asset_ids || []).length);
+    const extraFacts = [...(evidence.source_regions || []), ...(isRealImageBacked ? [evidence.title, evidence.eyebrow] : [])];
+    const allowed = allowedText(claim, [...new Set([...ownSources, ...displaySources])], section, extraFacts).toLowerCase();
     const unsupported = [...new Set(collectNumbers(bodyText(evidence)))].filter((number) => !allowed.includes(number.toLowerCase()));
-    if (unsupported.length) failures.push(`${shot.shot_id} body contains number(s) not traceable to ${claim.claim_id}'s own verified data: ${unsupported.join(", ")}`);
+    if (unsupported.length) failures.push(`${shot.shot_id} body contains number(s) not traceable to ${claim.claim_id}'s own verified data: ${unsupported.join(", ")} [DEBUG evidence.kind=${kind} evidence.source_ids=${JSON.stringify(sourceIds)} evidence.title=${JSON.stringify(evidence.title)} evidence.eyebrow=${JSON.stringify(evidence.eyebrow)} evidence.items=${JSON.stringify(evidence.items)} evidence.steps=${JSON.stringify(evidence.steps)} evidence.left=${JSON.stringify(evidence.left)} evidence.right=${JSON.stringify(evidence.right)} evidence.limitation=${JSON.stringify(evidence.limitation)}]`);
   }
 
   return failures;

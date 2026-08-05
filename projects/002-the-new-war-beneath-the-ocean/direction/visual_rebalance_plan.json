@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "002-the-new-war-beneath-the-ocean",
   "status": "materialized",
   "purpose": "Exclusive-medium rebalance of every baseline graphic/card moment. No replacement may be materialized until its request passes provenance and semantic review.",
@@ -17,20 +17,21 @@
     "full_screen_text_card_fraction": 0.05734387047031612
   },
   "projected": {
-    "duration_frames": 31128,
-    "duration_seconds": 1037.6,
-    "contextual_footage_seconds": 633.5333333333333,
-    "contextual_footage_fraction": 0.6105756874839373,
-    "primary_evidence_seconds": 271.76666666666665,
-    "primary_evidence_fraction": 0.2619185299408892,
-    "graphic_card_seconds": 132.3,
-    "graphic_card_fraction": 0.12750578257517348,
+    "duration_frames": 31037,
+    "duration_seconds": 1034.5666666666666,
+    "contextual_footage_seconds": 632.7,
+    "contextual_footage_fraction": 0.6115603956567968,
+    "primary_evidence_seconds": 262.8,
+    "primary_evidence_fraction": 0.25401939620453007,
+    "graphic_card_seconds": 139.06666666666666,
+    "graphic_card_fraction": 0.1344202081386732,
     "full_screen_text_card_seconds": 25,
-    "full_screen_text_card_fraction": 0.024094063222821895,
+    "full_screen_text_card_fraction": 0.024164706640461386,
     "maximum_consecutive_graphic_card_shots": 1
   },
   "actions": [
     {
+      "shot_key": "body:clm-001-japan-technical-milestone:unsliced:sec-01-mud-to-daylight:occ-1",
       "baseline_shot_index": 6,
       "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
       "duration_seconds": 2,
@@ -41,6 +42,7 @@
       "rationale": "Keep one compact opening section sting; remove the presentation-style box treatment."
     },
     {
+      "shot_key": "body:clm-001-japan-technical-milestone:slice-4:pause-it-was-looking-for-a-way-out:occ-1",
       "baseline_shot_index": 11,
       "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
       "duration_seconds": 4,
@@ -51,6 +53,7 @@
       "rationale": "Retain the authored pause as a restrained overlay on the underlying research context."
     },
     {
+      "shot_key": "body:clm-002-china-rare-earth-chokepoint:unsliced:sec-02-chokepoint:occ-1",
       "baseline_shot_index": 15,
       "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
       "duration_seconds": 2.5,
@@ -61,6 +64,7 @@
       "rationale": "Use a brief source bridge before the verified IEA capture; no document-lookalike card."
     },
     {
+      "shot_key": "body:clm-002-china-rare-earth-chokepoint:slice-1:sec-02-chokepoint:occ-1",
       "baseline_shot_index": 17,
       "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
       "duration_seconds": 6.266666666666667,
@@ -77,6 +81,7 @@
       "rationale": "The concentration claim needs the official IEA chart and highlighted data, not a recreated concept map."
     },
     {
+      "shot_key": "body:clm-002-china-rare-earth-chokepoint:slice-3:sec-02-chokepoint:occ-1",
       "baseline_shot_index": 19,
       "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
       "duration_seconds": 7.966666666666667,
@@ -93,6 +98,7 @@
       "rationale": "Continue through a different, substantively distinct region of the official chart; crop reuse does not count as new evidence."
     },
     {
+      "shot_key": "body:clm-002-china-rare-earth-chokepoint:slice-5:sec-02-chokepoint:occ-1",
       "baseline_shot_index": 21,
       "claim_id": "CLM_002_CHINA_RARE_EARTH_CHOKEPOINT",
       "duration_seconds": 7.966666666666667,
@@ -103,6 +109,7 @@
       "rationale": "Retain one concise comparison only because the multi-stage chokepoint is faster to understand as a direct comparison."
     },
     {
+      "shot_key": "body:clm-003-export-controls-materialized-risk:slice-1:sec-02-chokepoint:occ-1",
       "baseline_shot_index": 23,
       "claim_id": "CLM_003_EXPORT_CONTROLS_MATERIALIZED_RISK",
       "duration_seconds": 7.966666666666667,
@@ -119,6 +126,7 @@
       "rationale": "Show the official chronology and highlighted policy dates instead of a generic source card."
     },
     {
+      "shot_key": "body:clm-004-japan-industrial-timeline:slice-2:pause-owning-a-deposit-is-not-the-same-as-controlling-a-supply-chain:occ-1",
       "baseline_shot_index": 28,
       "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
       "duration_seconds": 2,
@@ -129,6 +137,7 @@
       "rationale": "Keep the pause line as a minimal overlay on industrial footage."
     },
     {
+      "shot_key": "body:clm-004-japan-industrial-timeline:slice-3:sec-02-chokepoint:occ-1",
       "baseline_shot_index": 29,
       "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
       "duration_seconds": 7.7,
@@ -145,6 +154,7 @@
       "rationale": "Replace the recap card with the dated JAMSTEC schedule/milestone material and highlight planned versus completed stages."
     },
     {
+      "shot_key": "body:clm-005-common-heritage-principle:unsliced:sec-03-black-map:occ-1",
       "baseline_shot_index": 35,
       "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
       "duration_seconds": 2.5,
@@ -155,6 +165,7 @@
       "rationale": "Use a short bridge into the treaty text, avoiding a static section-card run."
     },
     {
+      "shot_key": "body:clm-005-common-heritage-principle:slice-1:sec-03-black-map:occ-1",
       "baseline_shot_index": 37,
       "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
       "duration_seconds": 6.933333333333334,
@@ -171,6 +182,7 @@
       "rationale": "Show the official treaty page with Article 136 highlighted."
     },
     {
+      "shot_key": "body:clm-005-common-heritage-principle:slice-3:sec-03-black-map:occ-1",
       "baseline_shot_index": 39,
       "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
       "duration_seconds": 7.366666666666666,
@@ -187,6 +199,7 @@
       "rationale": "Move to the exact Article 137 ownership language; this is a distinct cited region, not cosmetic recropping."
     },
     {
+      "shot_key": "body:clm-005-common-heritage-principle:slice-5:sec-03-black-map:occ-1",
       "baseline_shot_index": 41,
       "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
       "duration_seconds": 7.833333333333333,
@@ -203,6 +216,7 @@
       "rationale": "Use the official Area map/treaty context with institution, date, and provenance visible."
     },
     {
+      "shot_key": "body:clm-006-mining-code-unfinished:unsliced:sec-04-two-rulebooks:occ-1",
       "baseline_shot_index": 43,
       "claim_id": "CLM_006_MINING_CODE_UNFINISHED",
       "duration_seconds": 2.5,
@@ -213,6 +227,7 @@
       "rationale": "A compact source bridge prevents the legal evidence sequence from becoming a document slideshow."
     },
     {
+      "shot_key": "body:clm-007-us-parallel-route:slice-1:sec-04-two-rulebooks:occ-1",
       "baseline_shot_index": 48,
       "claim_id": "CLM_007_US_PARALLEL_ROUTE",
       "duration_seconds": 7.433333333333334,
@@ -229,9 +244,10 @@
       "rationale": "Use the signed Executive Order page and date as direct evidence."
     },
     {
+      "shot_key": "body:clm-007-us-parallel-route:slice-3:sec-04-two-rulebooks:occ-1",
       "baseline_shot_index": 50,
       "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-      "duration_seconds": 6,
+      "duration_seconds": 7.6,
       "decision": "replace_primary_evidence",
       "projected_medium": "primary_evidence",
       "asset_request_id": "REQ_EVD_US_EO_NOAA",
@@ -245,9 +261,27 @@
       "rationale": "Show the official NOAA regulatory route/status page rather than a comparison template."
     },
     {
+      "shot_key": "body:clm-007-us-parallel-route:slice-4:sec-04-two-rulebooks:occ-1",
+      "baseline_shot_index": 51,
+      "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+      "duration_seconds": 7.266666666666667,
+      "decision": "replace_primary_evidence",
+      "projected_medium": "primary_evidence",
+      "asset_request_id": "REQ_EVD_US_EO_NOAA",
+      "replacement_assets": [
+        {
+          "asset_path": "assets/evidence/us_eo_14285_page1.png",
+          "evidence_asset_id": "EVID_US_EO14285_OFFICIAL_PAGE",
+          "source_region": "Federal Register page 17735 — policy and date"
+        }
+      ],
+      "rationale": "This default slice had no rebalance decision and was defaulting to a second comparison graphic card, pushing SEC_04_TWO_RULEBOOKS over the section graphics/cards ceiling. This claim is about the parallel EO/NOAA track together, and narration at this point is still on that same track, so returning to the Executive Order page (already shown once at shot 48, and shown here a second time -- the NOAA page already reaches its own two-claim usage ceiling via shot 58's CLM_009 use) keeps a real source on screen instead of adding an unnecessary third graphic card ahead of shot 53's deliberate two-route comparison."
+    },
+    {
+      "shot_key": "body:clm-007-us-parallel-route:slice-6:sec-04-two-rulebooks:occ-1",
       "baseline_shot_index": 53,
       "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-      "duration_seconds": 7.8,
+      "duration_seconds": 7.533333333333333,
       "decision": "redesign",
       "projected_medium": "graphic_card",
       "projected_full_screen_text_card": false,
@@ -255,6 +289,7 @@
       "rationale": "Keep one direct two-route comparison because the legal relationship is otherwise hard to hold in working memory."
     },
     {
+      "shot_key": "body:clm-008-no-us-commercial-permit:slice-1:sec-04-two-rulebooks:occ-1",
       "baseline_shot_index": 55,
       "claim_id": "CLM_008_NO_US_COMMERCIAL_PERMIT",
       "duration_seconds": 7.333333333333333,
@@ -265,6 +300,7 @@
       "rationale": "Present NOAA's current N/A commercial-permit status as a clearly sourced status graphic; do not misclassify an HTML-derived summary as a captured primary document."
     },
     {
+      "shot_key": "body:clm-008-no-us-commercial-permit:slice-3:sec-04-two-rulebooks:occ-1",
       "baseline_shot_index": 57,
       "claim_id": "CLM_008_NO_US_COMMERCIAL_PERMIT",
       "duration_seconds": 7.266666666666667,
@@ -275,22 +311,17 @@
       "rationale": "Distinguish listed exploration applications from issued commercial recovery permits in a second restrained sourced status view."
     },
     {
+      "shot_key": "body:clm-009-industry-counterargument:unsliced:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 58,
       "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
       "duration_seconds": 2.5,
-      "decision": "replace_primary_evidence",
-      "projected_medium": "primary_evidence",
-      "asset_request_id": "REQ_EVD_US_EO_NOAA",
-      "replacement_assets": [
-        {
-          "asset_path": "assets/evidence/noaa_final_rule_page1.png",
-          "evidence_asset_id": "EVID_NOAA_2026_FINAL_RULE_OFFICIAL_PAGE",
-          "source_region": "Page 1 title — applications for exploration licences and commercial recovery permits"
-        }
-      ],
-      "rationale": "Use the official rule title to make the application-versus-permit distinction visible; do not imply that the rule itself proves the current count of issued permits."
+      "decision": "remove",
+      "projected_medium": "contextual_footage",
+      "replacement_strategy": "extend_adjacent_footage",
+      "rationale": "Continue the following approved industry-context footage through this 2.5-second transition; the slot is too short for a mobile-legible official document, and the surrounding claims retain the verified NOAA evidence."
     },
     {
+      "shot_key": "body:clm-009-industry-counterargument:slice-1:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 60,
       "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
       "duration_seconds": 7.433333333333334,
@@ -307,6 +338,7 @@
       "rationale": "Use the attributed lifecycle page as an industry claim, visibly labeled as such."
     },
     {
+      "shot_key": "body:clm-009-industry-counterargument:slice-3:pause-the-world-now-has-one-ocean-two-rule-books-and-no-commercial-precedent:occ-1",
       "baseline_shot_index": 63,
       "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
       "duration_seconds": 5,
@@ -317,6 +349,7 @@
       "rationale": "Retain the authored pause as an overlay, not a new full-screen card."
     },
     {
+      "shot_key": "body:clm-009-industry-counterargument:slice-4:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 64,
       "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
       "duration_seconds": 7.466666666666667,
@@ -333,6 +366,7 @@
       "rationale": "Highlight the exact seafloor-versus-land comparison within the source, preserving its interested-party attribution."
     },
     {
+      "shot_key": "body:clm-009-industry-counterargument:slice-6:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 66,
       "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
       "duration_seconds": 7.4,
@@ -349,6 +383,7 @@
       "rationale": "Use the reviewed terrestrial quarry exactly as narration pivots from mineral demand to the physical costs of land-based extraction."
     },
     {
+      "shot_key": "body:clm-009-industry-counterargument:slice-8:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 68,
       "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
       "duration_seconds": 7.666666666666667,
@@ -365,6 +400,7 @@
       "rationale": "Replace the redundant company lifecycle card with a clearly labelled official photograph of real deep-sea mining equipment; do not imply that the JAMSTEC machine is TMC hardware."
     },
     {
+      "shot_key": "body:clm-010-scarcity-is-mineral-specific:slice-1:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 70,
       "claim_id": "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
       "duration_seconds": 7.9,
@@ -381,6 +417,7 @@
       "rationale": "Use the official chemistry/mineral-demand table for the mineral-specific claim."
     },
     {
+      "shot_key": "body:clm-010-scarcity-is-mineral-specific:slice-2:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 71,
       "claim_id": "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
       "duration_seconds": 7.9,
@@ -391,6 +428,7 @@
       "rationale": "Keep one critical memory card: a short, legible mineral-chemistry contrast."
     },
     {
+      "shot_key": "body:clm-010-scarcity-is-mineral-specific:slice-3:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 72,
       "claim_id": "CLM_010_SCARCITY_IS_MINERAL_SPECIFIC",
       "duration_seconds": 7.9,
@@ -407,6 +445,7 @@
       "rationale": "Return to the official table and a different substantive row for verification."
     },
     {
+      "shot_key": "body:clm-011-refining-bottleneck:slice-1:sec-05-argument-for-mining:occ-1",
       "baseline_shot_index": 74,
       "claim_id": "CLM_011_REFINING_BOTTLENECK",
       "duration_seconds": 7.833333333333333,
@@ -417,6 +456,7 @@
       "rationale": "Retain one technical mechanism graphic for extraction-to-refining dependencies that footage cannot display precisely."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:unsliced:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 76,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 2.5,
@@ -427,6 +467,7 @@
       "rationale": "Use a minimal bridge into the scientific evidence sequence."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:slice-1:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 78,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 7.966666666666667,
@@ -443,22 +484,25 @@
       "rationale": "Use the paper's real track image/figure with study identity and year."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:slice-2:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 79,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 7.966666666666667,
-      "decision": "replace_primary_evidence",
-      "projected_medium": "primary_evidence",
-      "asset_request_id": "REQ_EVD_NATURE_44_YEAR_TRACK",
+      "decision": "replace_contextual_footage",
+      "projected_medium": "contextual_footage",
+      "asset_request_id": "REQ_FTG_DEEPSEA_TRACK_ROV",
       "replacement_assets": [
         {
-          "asset_path": "assets/evidence/nature_44_year_track_figure2.png",
-          "evidence_asset_id": "EVID_NATURE_44_YEAR_TRACK_PHOTOS_FIGURE",
-          "source_region": "Figure 2 — track photographs observed in 2023"
+          "asset_path": "assets/footage/scene_012_official_reuse.mp4",
+          "trim_in_sec": 8,
+          "trim_out_sec": 17.5,
+          "reuse_reason": "The clip first introduces long-term-track physical context and returns at a separate, non-overlapping trim inside CLM_012 to interrupt an overlong evidence run."
         }
       ],
-      "rationale": "The '44 years' claim belongs on the real figure annotation, not a text recap card."
+      "rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, a 15.93s uninterrupted evidence run over the 15s cap (confirmed via CI diagnostic, run 30934080098). Reuses scene_012_official_reuse.mp4 -- already used once for this exact claim at slice 0 ('A real dark seabed or benthic survey view introduces persistent physical disturbance'), and independently verified via the real footage-use-budget diagnostic (run 30954122832) to carry only that one real use, so a second use here stays within the 2-use cap. Its own provenance note ('Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim') satisfies REQ_FTG_DEEPSEA_TRACK_ROV's required_content as directly as scene_051 does; added to that request's resolved_asset_paths accordingly. Trim window (8s-15.97s) is a distinct segment from slice 0's own trim (which cannot exceed the project's 8s max_shot_seconds), so no overlap."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:slice-3:pause-it-is-insurance:occ-1",
       "baseline_shot_index": 81,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 2,
@@ -469,6 +513,7 @@
       "rationale": "Keep the short pause line over evidence-related footage."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:slice-4:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 82,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 7.933333333333334,
@@ -485,6 +530,7 @@
       "rationale": "Highlight the exact persistent-disturbance region."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:slice-6:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 84,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 8,
@@ -501,6 +547,7 @@
       "rationale": "Break the document sequence with scientifically relevant ROV/track observation footage, never a recreational dive."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:slice-7:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 85,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 8,
@@ -511,6 +558,7 @@
       "rationale": "Keep the necessary historical-versus-modern equipment caveat as a single premium comparison."
     },
     {
+      "shot_key": "body:clm-012-long-term-track-persistence:slice-8:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 86,
       "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
       "duration_seconds": 8,
@@ -527,6 +575,7 @@
       "rationale": "Return to a distinct methods/limitation region in the paper, not a recrop of the same image."
     },
     {
+      "shot_key": "body:clm-013-industrial-trial-biodiversity:slice-1:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 88,
       "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
       "duration_seconds": 7.2,
@@ -543,6 +592,7 @@
       "rationale": "Use the real industrial-trial figure and highlighted sample region."
     },
     {
+      "shot_key": "body:clm-013-industrial-trial-biodiversity:slice-2:pause-recovery-was-not-complete:occ-1",
       "baseline_shot_index": 90,
       "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
       "duration_seconds": 4,
@@ -553,6 +603,7 @@
       "rationale": "Retain the pause conclusion over related research footage."
     },
     {
+      "shot_key": "body:clm-013-industrial-trial-biodiversity:slice-3:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 91,
       "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
       "duration_seconds": 6.033333333333333,
@@ -574,6 +625,7 @@
       "rationale": "Highlight density and richness values on the actual figure."
     },
     {
+      "shot_key": "body:clm-013-industrial-trial-biodiversity:slice-4:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 92,
       "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
       "duration_seconds": 7.8,
@@ -584,6 +636,7 @@
       "rationale": "Keep one concise recovery caveat that distinguishes measurement from verdict."
     },
     {
+      "shot_key": "body:clm-014-plume-scale-is-complex:slice-1:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 95,
       "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
       "duration_seconds": 7.466666666666667,
@@ -600,6 +653,7 @@
       "rationale": "Use the paper's real plume map/measurement plot."
     },
     {
+      "shot_key": "body:clm-014-plume-scale-is-complex:slice-2:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 96,
       "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
       "duration_seconds": 7,
@@ -610,12 +664,14 @@
         {
           "asset_path": "assets/footage/scene_052_direct.mp4",
           "trim_in_sec": 0,
-          "trim_out_sec": 7
+          "trim_out_sec": 7,
+          "reuse_reason": "The official coring clip first accompanies measured track effects, then returns after primary evidence to keep the measurement process visible while CLM_014 distinguishes local damage from broader plume effects."
         }
       ],
       "rationale": "Remove the redundant slogan card and show actual sampling/monitoring context tied to plume measurement."
     },
     {
+      "shot_key": "body:clm-014-plume-scale-is-complex:slice-3:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 97,
       "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
       "duration_seconds": 7.366666666666666,
@@ -632,6 +688,7 @@
       "rationale": "Highlight the transport-distance data point described by narration."
     },
     {
+      "shot_key": "body:clm-014-plume-scale-is-complex:slice-4:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 98,
       "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
       "duration_seconds": 7.1,
@@ -642,6 +699,7 @@
       "rationale": "Keep one decline-curve explainer because the shape, uncertainty, and non-verdict caveat must be understood together."
     },
     {
+      "shot_key": "body:clm-014-plume-scale-is-complex:slice-5:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 99,
       "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
       "duration_seconds": 7.4,
@@ -658,6 +716,7 @@
       "rationale": "Return to the paper's confidence/limitation region as a separate content identity."
     },
     {
+      "shot_key": "body:clm-015-midwater-discharge-risk:slice-1:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 101,
       "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
       "duration_seconds": 7.9,
@@ -674,6 +733,7 @@
       "rationale": "Use the real experimental/food-web figure for discharge-particle effects."
     },
     {
+      "shot_key": "body:clm-015-midwater-discharge-risk:slice-2:pause-the-unresolved-issue-is-accumulation:occ-1",
       "baseline_shot_index": 103,
       "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
       "duration_seconds": 2,
@@ -684,6 +744,7 @@
       "rationale": "Keep the accumulation pause over scientifically related footage."
     },
     {
+      "shot_key": "body:clm-015-midwater-discharge-risk:slice-3:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 104,
       "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
       "duration_seconds": 7.566666666666666,
@@ -700,6 +761,7 @@
       "rationale": "Highlight the nutritionally poor particle result in the actual source figure."
     },
     {
+      "shot_key": "body:clm-015-midwater-discharge-risk:slice-6:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 107,
       "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
       "duration_seconds": 7.833333333333333,
@@ -710,12 +772,13 @@
         {
           "asset_path": "assets/footage/scene_053_direct.mp4",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.833333333333333
+          "trim_out_sec": 9.5
         }
       ],
       "rationale": "Remove the biodiversity-number card because those values belong to CLM_013, not this midwater claim."
     },
     {
+      "shot_key": "body:clm-015-midwater-discharge-risk:slice-7:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 108,
       "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
       "duration_seconds": 7.866666666666666,
@@ -726,22 +789,18 @@
       "rationale": "Keep one measured caveat separating plausible risk from demonstrated field-scale outcome."
     },
     {
+      "shot_key": "body:clm-016-decision-under-uncertainty:slice-3:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 113,
       "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
       "duration_seconds": 7.033333333333333,
-      "decision": "replace_contextual_footage",
-      "projected_medium": "contextual_footage",
-      "asset_request_id": "REQ_FTG_UNCERTAINTY_DECISION",
-      "replacement_assets": [
-        {
-          "asset_path": "assets/footage/scene_054_direct.mp4",
-          "trim_in_sec": 0,
-          "trim_out_sec": 8
-        }
-      ],
-      "rationale": "Replace the generic JAMSTEC comparison with a directly related scientific decision/field-assessment moment."
+      "decision": "keep",
+      "projected_medium": "graphic_card",
+      "projected_full_screen_text_card": false,
+      "template_id": "orvyq_comparison",
+      "rationale": "Keep one source-backed uncertainty comparison because the other CLM_016 beats are contextual footage and the claim must retain a directly attributable evidence visual."
     },
     {
+      "shot_key": "body:clm-017-unused-option-synthesis:slice-7:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 121,
       "claim_id": "CLM_017_UNUSED_OPTION_SYNTHESIS",
       "duration_seconds": 8,
@@ -752,6 +811,7 @@
       "rationale": "Retain one concise optionality timeline because the temporal logic cannot be shown literally in one clip."
     },
     {
+      "shot_key": "body:clm-018-capability-is-not-obligation:slice-1:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 123,
       "claim_id": "CLM_018_CAPABILITY_IS_NOT_OBLIGATION",
       "duration_seconds": 7.533333333333333,
@@ -773,6 +833,7 @@
       "rationale": "Use the official milestone material to distinguish demonstrated capability from obligation."
     },
     {
+      "shot_key": "body:clm-018-capability-is-not-obligation:slice-7:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 129,
       "claim_id": "CLM_018_CAPABILITY_IS_NOT_OBLIGATION",
       "duration_seconds": 7.9,
@@ -789,6 +850,7 @@
       "rationale": "Use the official supply-chain evidence for the distributed-risk conclusion."
     },
     {
+      "shot_key": "body:clm-019-distributed-risk-synthesis:slice-5:sec-06-machine-leaves-behind:occ-1",
       "baseline_shot_index": 136,
       "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
       "duration_seconds": 7.933333333333334,
@@ -799,6 +861,7 @@
       "rationale": "Keep one systemic relationship graphic; limit it to the three essential dependencies."
     },
     {
+      "shot_key": "body:clm-020-precedent-synthesis:unsliced:sec-07-precedent:occ-1",
       "baseline_shot_index": 138,
       "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
       "duration_seconds": 2.5,
@@ -809,6 +872,7 @@
       "rationale": "Use a brief final-section bridge, then return to real expedition context."
     },
     {
+      "shot_key": "body:clm-020-precedent-synthesis:slice-1:sec-07-precedent:occ-1",
       "baseline_shot_index": 140,
       "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
       "duration_seconds": 7.833333333333333,
@@ -825,6 +889,7 @@
       "rationale": "Use the verified JAMSTEC photograph of Chikyu rather than an unidentified ship; the adjacent official 2027 diagram carries the future-trial claim."
     },
     {
+      "shot_key": "body:clm-020-precedent-synthesis:slice-8:pause-agreed-not-to-destroy:occ-1",
       "baseline_shot_index": 148,
       "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
       "duration_seconds": 6,
@@ -835,6 +900,7 @@
       "rationale": "Keep the final narrated phrase as a restrained overlay on the closing footage."
     },
     {
+      "shot_key": "terminal:clm-020-precedent-synthesis:end-card:occ-1",
       "baseline_shot_index": 149,
       "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
       "duration_seconds": 4,

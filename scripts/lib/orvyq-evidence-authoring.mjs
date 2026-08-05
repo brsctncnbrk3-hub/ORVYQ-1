@@ -24,10 +24,14 @@
 // back to the full (non-rotated) fact pool rather than inventing content.
 
 const MAX_EYEBROW = 60;
-// The mobile-legibility audit warns above 76 characters. Author inside the
-// same bound so the renderer never receives a title that QA already knows is
-// too dense for a phone-sized review.
-const MAX_TITLE = 76;
+// scripts/orvyq_mobile_legibility_audit.mjs warns above 76 characters, but
+// scripts/lib/orvyq-visual-balance.mjs's auditGraphicCardDesign() -- a hard
+// failure, not a warning -- rejects a source-derived graphic_card evidence
+// title above 72. This function builds every evidence kind's title the same
+// way, so it must respect the stricter of the two bounds; 76 let a real
+// evidence_chain/concept_map title (e.g. CLM_015's shot_108) pass generation
+// only to fail the design gate downstream.
+const MAX_TITLE = 72;
 
 function truncateWords(text, max) {
   const clean = String(text || "").replace(/\s+/g, " ").trim();
@@ -216,9 +220,14 @@ export function buildEvidenceContent({ claim, kind, role, displaySources, ownSou
     }
     body.items = items.slice(0, 4);
   } else if (kind === "concept_map" || kind === "evidence_chain") {
+    // scripts/lib/orvyq-visual-balance.mjs's auditGraphicCardDesign() rejects
+    // a source-derived card with more than four steps/items ("more than four
+    // concepts") -- a hard failure. Capping generation at 4, not 5, keeps a
+    // rich recap claim (whose rotated fact pool can easily supply a 5th real
+    // fact) from generating content the design gate always rejects.
     const steps = [];
     for (const fact of rotated) {
-      if (steps.length >= 5) break;
+      if (steps.length >= 4) break;
       const step = factStep(fact);
       if (step && !steps.includes(step)) steps.push(step);
     }
@@ -229,7 +238,7 @@ export function buildEvidenceContent({ claim, kind, role, displaySources, ownSou
         if (step && !steps.includes(step)) steps.push(step);
       }
     }
-    body.steps = steps.slice(0, 5);
+    body.steps = steps.slice(0, 4);
   } else if (kind === "comparison" || kind === "boundary") {
     // The left/meaning side is always real, displayable content -- the
     // claim's own narration excerpt (or a displayable "rewrite" fact, if

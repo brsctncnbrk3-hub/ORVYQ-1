@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "002-the-new-war-beneath-the-ocean",
   "status": "requested",
-  "request_revision": 32,
-  "reason": "Verify the exact final head after enforcing the system-wide claim-evidence floor and updating the generic reconciliation regression fixture. Rebalancing must preserve at least one source-backed visual for every claim that originally had evidence, while still allowing genuinely redundant evidence beats to become contextual footage. No project-specific substitution, QA bypass or video render is permitted.",
+  "request_revision": 43,
+  "reason": "Verify the complete stable-shot-identity correction, including the semantic-shot correction index drift exposed by footage run 31014446465: hook removal must not move the CLM_016 correction to a different shot; semantic corrections, rebalance actions and audits must resolve the same fail-closed shot_key targets. The canonical footage preparation chain must remain ready with zero rejected, pending or blocked items, all six transformation-time second footage uses must retain explicit callback reasons, and the full pre-render QA chain must pass before candidate freezing. No video render is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-07-31T21:42:00Z"
+  "requested_at": "2026-08-05T14:23:15Z"
 }

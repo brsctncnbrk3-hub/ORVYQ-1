@@ -7,6 +7,7 @@
   "required": ["shot_id", "scene_id", "start_frame", "end_frame", "asset_type", "transition_in", "transition_out", "claim_id", "visual_role", "editorial_purpose", "narration_anchor", "semantic_rationale", "semantic_link"],
   "properties": {
     "shot_id": { "type": "string", "pattern": "^shot_[0-9]{3,}$" },
+    "shot_key": { "type": "string", "pattern": "^(hook|body|terminal):[a-z0-9:-]+:occ-[1-9][0-9]*$" },
     "scene_id": { "type": "string" },
     "start_frame": { "type": "integer", "minimum": 0 },
     "end_frame": { "type": "integer", "minimum": 1 },
@@ -56,7 +57,9 @@
     "contextual_footage": { "type": "boolean" },
     "provenance_mode": { "type": "string" },
     "motif": { "type": "string" },
-    "reuse_reason": { "type": "string" }
+    "reuse_reason": { "type": "string" },
+    "claim_bound_extension": { "type": "boolean" },
+    "claim_bound_extension_basis": { "type": "string", "minLength": 24 }
   },
   "allOf": [
     {
@@ -70,6 +73,13 @@
     {
       "if": { "properties": { "asset_type": { "const": "evidence" } } },
       "then": { "required": ["evidence"] }
+    },
+    {
+      "if": {
+        "required": ["claim_bound_extension"],
+        "properties": { "claim_bound_extension": { "const": true } }
+      },
+      "then": { "required": ["claim_bound_extension_basis"] }
     }
   ],
   "additionalProperties": false

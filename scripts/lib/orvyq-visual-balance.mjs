@@ -311,8 +311,15 @@ export function auditSectionVisualBalance(shots, rules = {}) {
     const values = summarizeExclusiveVisualMedia(sectionShots);
     sections.push({ section_id: sectionId, ...values });
     if (values.graphic_card_fraction > thresholds.section_graphic_card_fraction_max) {
+      const graphicShots = sectionShots
+        .filter((shot) => classifyVisualMedium(shot) === "graphic_card")
+        .map((shot) => ({
+          shot_id: shot.shot_id,
+          claim_id: shot.claim_id,
+          frames: durationFramesOf(shot),
+        }));
       failures.push(
-        `section ${sectionId} is ${(values.graphic_card_fraction * 100).toFixed(1)}% graphics/cards; maximum ${(thresholds.section_graphic_card_fraction_max * 100).toFixed(0)}%`,
+        `section ${sectionId} is ${(values.graphic_card_fraction * 100).toFixed(1)}% graphics/cards; maximum ${(thresholds.section_graphic_card_fraction_max * 100).toFixed(0)}% [DEBUG duration_frames=${values.duration_frames} graphic_card_frames=${values.graphic_card_frames} shots=${JSON.stringify(graphicShots)}]`,
       );
     }
     if (

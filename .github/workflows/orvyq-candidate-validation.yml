@@ -229,30 +229,63 @@ jobs:
           npm ci --no-audit --no-fund
           npx tsc --noEmit
 
-      - name: Compute frozen candidate manifest
+      - name: Print real footage use counts (diagnostic)
+        if: always()
         run: |
-          node scripts/orvyq_frozen_candidate.mjs --project-id="$PROJECT_ID"
-          cat "projects/$PROJECT_ID/qa/frozen_candidate.json"
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises';
+            const raw = await readFile('projects/$PROJECT_ID/config/editorial_asset_plan.json', 'utf8');
+            const editorial = JSON.parse(raw);
+            const budget = editorial.last_footage_use_contract_application?.footage_use_budget;
+            console.log(JSON.stringify({ real_footage_use_counts: budget?.final_use_counts ?? null, removed_optional_hook_uses: budget?.removed_optional_hook_uses ?? null }, null, 2));
+          "
 
-      - name: Upload immutable validated candidate bundle
-        uses: actions/upload-artifact@v4
-        with:
-          name: orvyq-validated-candidate-${{ env.PROJECT_ID }}-${{ github.run_id }}
-          retention-days: 90
-          include-hidden-files: true
-          path: |
-            validation-source-sha.txt
-            projects/${{ env.PROJECT_ID }}/qa/frozen_candidate.json
-            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
-            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
-            projects/${{ env.PROJECT_ID }}/config/production_profile.json
-            projects/${{ env.PROJECT_ID }}/direction/edit_plan.json
-            projects/${{ env.PROJECT_ID }}/remotion/captions.json
-            projects/${{ env.PROJECT_ID }}/assets/**
-            projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/**
-            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/node_modules
-            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/out
-            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/.remotion
+      - name: Print real footage semantic-review queue (diagnostic)
+        if: always()
+        run: |
+          node scripts/orvyq_prepare_footage_review_queue.mjs --project-id="$PROJECT_ID" > footage-review-queue.log 2>&1 || true
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises';
+            const raw = await readFile('projects/$PROJECT_ID/qa/footage_review_queue.json', 'utf8');
+            const queue = JSON.parse(raw);
+            const compact = (queue.entries || []).map((entry) => ({
+              scene_id: entry.scene_id,
+              asset_path: entry.asset_path,
+              provider_asset_id: entry.provider_asset_id,
+              asset_sha256: entry.asset_sha256,
+              contact_sheet_sha256: entry.contact_sheet_sha256,
+              review_blockers: entry.review_blockers,
+              approved_uses_if_visually_valid: entry.approved_uses_if_visually_valid,
+            }));
+            console.log(JSON.stringify({ pending_review_count: queue.pending_review_count, entries_with_exact_uses: queue.entries_with_exact_uses, entries: compact }, null, 2));
+          " || cat footage-review-queue.log
+
+      - name: Print real full-production shot list (diagnostic)
+        if: always()
+        run: |
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises';
+            const raw = await readFile('projects/$PROJECT_ID/direction/editorial_blueprint.json', 'utf8');
+            const blueprint = JSON.parse(raw);
+            const shots = blueprint.full_production?.shots || [];
+            const compact = shots.map((shot, index) => {
+              const frames = Number.isFinite(shot.start_frame) && Number.isFinite(shot.end_frame)
+                ? shot.end_frame - shot.start_frame
+                : Math.round(Number(shot.duration) * 30);
+              return {
+                index,
+                shot_id: shot.shot_id,
+                shot_key: shot.shot_key || null,
+                claim_id: shot.claim_id,
+                section_id: shot.section_id,
+                asset_type: shot.asset_type,
+                kind: shot.evidence?.kind || shot.graphic?.type || null,
+                frames,
+                asset_request_id: shot.asset_request_id || null,
+              };
+            });
+            console.log(JSON.stringify({ shot_count: compact.length, shots: compact }, null, 2));
+          "
 
       - name: Run full pre-render QA chain
         run: |
@@ -295,6 +328,31 @@ jobs:
       - name: Stop when the pre-render QA chain failed
         run: test "$(cat qa-chain.status)" = "0"
 
+      - name: Compute frozen candidate manifest after all QA passed
+        run: |
+          node scripts/orvyq_frozen_candidate.mjs --project-id="$PROJECT_ID"
+          cat "projects/$PROJECT_ID/qa/frozen_candidate.json"
+
+      - name: Upload immutable validated candidate bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-validated-candidate-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 90
+          include-hidden-files: true
+          path: |
+            validation-source-sha.txt
+            projects/${{ env.PROJECT_ID }}/qa/frozen_candidate.json
+            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
+            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
+            projects/${{ env.PROJECT_ID }}/config/production_profile.json
+            projects/${{ env.PROJECT_ID }}/direction/edit_plan.json
+            projects/${{ env.PROJECT_ID }}/remotion/captions.json
+            projects/${{ env.PROJECT_ID }}/assets/**
+            projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/**
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/node_modules
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/out
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/.remotion
+
       - name: Report Candidate Validation on the active pull request
         if: always()
         shell: bash
@@ -313,4 +371,6 @@ jobs:
           if [ -n "$PR_NUMBER" ]; then
             gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -f body="$BODY" ||
               echo "::warning::Could not post Candidate Validation result to PR #$PR_NUMBER."
+          else
+            echo "::warning::Candidate Validation ran on branch $GITHUB_REF_NAME without an active pull request; governance history is incomplete."
           fi

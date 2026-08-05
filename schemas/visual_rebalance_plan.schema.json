@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["schema_version", "project_id", "status", "baseline", "projected", "actions"],
   "properties": {
-    "schema_version": { "const": "1.0" },
+    "schema_version": { "const": "1.1" },
     "project_id": { "type": "string", "pattern": "^[0-9]{3}-[a-z0-9]+(?:-[a-z0-9]+)*$" },
     "status": { "enum": ["blocked_pending_assets", "materialized"] },
     "purpose": { "type": "string", "minLength": 24 },
@@ -21,8 +21,9 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["baseline_shot_index", "claim_id", "duration_seconds", "decision", "projected_medium", "rationale"],
+        "required": ["shot_key", "baseline_shot_index", "claim_id", "duration_seconds", "decision", "projected_medium", "rationale"],
         "properties": {
+          "shot_key": { "type": "string", "pattern": "^(hook|body|terminal):[a-z0-9:-]+:occ-[1-9][0-9]*$" },
           "baseline_shot_index": { "type": "integer", "minimum": 0 },
           "claim_id": { "type": "string", "pattern": "^CLM_[A-Z0-9_]+$" },
           "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
@@ -43,7 +44,8 @@
                 "evidence_asset_id": { "type": "string", "pattern": "^EVID_[A-Z0-9_]+$" },
                 "source_region": { "type": "string", "minLength": 3 },
                 "trim_in_sec": { "type": "number", "minimum": 0 },
-                "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 }
+                "trim_out_sec": { "type": "number", "exclusiveMinimum": 0 },
+                "reuse_reason": { "type": "string", "minLength": 24 }
               },
               "additionalProperties": false
             }

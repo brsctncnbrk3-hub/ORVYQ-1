@@ -25,6 +25,73 @@ function unique(values) {
   return [...new Set(values.filter((value) => typeof value === "string" && value.trim()).map((value) => value.trim()))];
 }
 
+function stableToken(value, fallback = "unknown") {
+  const token = String(value ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 72);
+  return token || fallback;
+}
+
+function stableShotBaseKey(shot) {
+  const claim = stableToken(shot?.claim_id, "unclaimed");
+  const section = stableToken(shot?.section_id, "unsectioned");
+  const sourceSlice = Number.isInteger(shot?.source_slice_index)
+    ? `slice-${shot.source_slice_index}`
+    : "unsliced";
+
+  if (shot?.hook_footage === true) {
+    const asset = path.basename(String(shot.asset || shot.video_asset || "hook"), path.extname(String(shot.asset || shot.video_asset || "")));
+    return `hook:${claim}:${stableToken(asset, "footage")}`;
+  }
+  if (
+    shot?.graphic?.type === "end_card" ||
+    shot?.narration_anchor === "The final narrated conclusion and its immediate closing hold."
+  ) {
+    return `terminal:${claim}:end-card`;
+  }
+  if (shot?.emphasis_card) {
+    return `body:${claim}:${sourceSlice}:pause-${stableToken(shot.emphasis_card.title, "editorial")}`;
+  }
+  return `body:${claim}:${sourceSlice}:${section}`;
+}
+
+// Stable shot identity is derived only from authored semantic structure --
+// never from array position or the current asset type. Footage contracts may
+// replace the medium and the source-budget pass may remove an optional hook,
+// but claim/slice/pause identity remains unchanged. The occurrence suffix is
+// scoped to the semantic base key, so inserting or removing an unrelated shot
+// cannot renumber later targets.
+export function assignStableShotKeys(shots = []) {
+  const output = clone(shots);
+  const occurrences = new Map();
+  const seen = new Set();
+  for (const shot of output) {
+    const base = stableShotBaseKey(shot);
+    const occurrence = (occurrences.get(base) || 0) + 1;
+    occurrences.set(base, occurrence);
+    const expected = `${base}:occ-${occurrence}`;
+    if (shot.shot_key && shot.shot_key !== expected) {
+      throw new Error(`shot_key drift: expected ${expected}, found ${shot.shot_key}`);
+    }
+    shot.shot_key = expected;
+    if (seen.has(expected)) throw new Error(`duplicate shot_key ${expected}`);
+    seen.add(expected);
+  }
+  return output;
+}
+
+function actionIdentity(action) {
+  if (typeof action?.shot_key === "string" && action.shot_key.trim()) return `key:${action.shot_key.trim()}`;
+  return `legacy-index:${action?.baseline_shot_index}`;
+}
+
+function stableKeysRequired(plan) {
+  return plan?.schema_version === "1.1" || Boolean(plan?.project_id);
+}
+
 function sourceIdsForShot(shot) {
   return unique([...(shot.evidence?.source_ids || []), ...(shot.editorial_overlay?.source_ids || [])]);
 }
@@ -133,43 +200,51 @@ export function resolveVisualRebalancePlan(plan, providedOverrides = null) {
   const overrides = loadActionOverrides(resolved, providedOverrides);
   if (!overrides.length) return resolved;
 
-  const actions = new Map((resolved.actions || []).map((action) => [action.baseline_shot_index, action]));
+  const actions = new Map((resolved.actions || []).map((action) => [actionIdentity(action), action]));
   const seen = new Set();
   for (const entry of overrides) {
     const index = entry?.baseline_shot_index;
     if (!Number.isInteger(index) || index < 0) {
       throw new Error(`visual-rebalance override has invalid baseline_shot_index ${index}`);
     }
-    if (seen.has(index)) throw new Error(`duplicate visual-rebalance override for shot ${index}`);
-    seen.add(index);
-    const existing = actions.get(index);
-    if (!existing) throw new Error(`visual-rebalance override targets missing action at shot ${index}`);
+    if (stableKeysRequired(resolved) && (typeof entry?.shot_key !== "string" || !entry.shot_key.trim())) {
+      throw new Error(`visual-rebalance override at authored index ${index} requires shot_key`);
+    }
+    const identity = actionIdentity(entry);
+    if (seen.has(identity)) throw new Error(`duplicate visual-rebalance override for ${identity}`);
+    seen.add(identity);
+    const existing = actions.get(identity);
+    if (!existing) throw new Error(`visual-rebalance override targets missing action ${identity}`);
     if (entry.expected_decision && entry.expected_decision !== existing.decision) {
       throw new Error(
-        `visual-rebalance override for shot ${index} expected ${entry.expected_decision}, found ${existing.decision}`,
+        `visual-rebalance override for ${identity} expected ${entry.expected_decision}, found ${existing.decision}`,
       );
     }
     if (!entry.action || typeof entry.action !== "object") {
-      throw new Error(`visual-rebalance override for shot ${index} requires action`);
+      throw new Error(`visual-rebalance override for ${identity} requires action`);
     }
     if (entry.action.claim_id && entry.action.claim_id !== existing.claim_id) {
-      throw new Error(`visual-rebalance override for shot ${index} cannot change claim_id`);
+      throw new Error(`visual-rebalance override for ${identity} cannot change claim_id`);
+    }
+    if (entry.action.shot_key && entry.action.shot_key !== existing.shot_key) {
+      throw new Error(`visual-rebalance override for ${identity} cannot change shot_key`);
     }
     const replacement = {
       ...existing,
       ...entry.action,
-      baseline_shot_index: index,
+      shot_key: existing.shot_key,
+      baseline_shot_index: existing.baseline_shot_index,
       claim_id: existing.claim_id,
       duration_seconds: existing.duration_seconds,
     };
     if (!DECISIONS.has(replacement.decision)) {
-      throw new Error(`visual-rebalance override for shot ${index} has invalid decision ${replacement.decision}`);
+      throw new Error(`visual-rebalance override for ${identity} has invalid decision ${replacement.decision}`);
     }
     if (!MEDIA.has(replacement.projected_medium)) {
-      throw new Error(`visual-rebalance override for shot ${index} has invalid projected_medium ${replacement.projected_medium}`);
+      throw new Error(`visual-rebalance override for ${identity} has invalid projected_medium ${replacement.projected_medium}`);
     }
     if (replacement.decision === "remove" && replacement.replacement_strategy !== "extend_adjacent_footage") {
-      throw new Error(`visual-rebalance override for shot ${index} removal must extend adjacent footage`);
+      throw new Error(`visual-rebalance override for ${identity} removal must extend adjacent footage`);
     }
     if (replacement.decision !== "replace_primary_evidence") {
       delete replacement.replacement_assets;
@@ -179,9 +254,9 @@ export function resolveVisualRebalancePlan(plan, providedOverrides = null) {
       delete replacement.template_id;
       delete replacement.projected_full_screen_text_card;
     }
-    actions.set(index, replacement);
+    actions.set(identity, replacement);
   }
-  resolved.actions = (resolved.actions || []).map((action) => actions.get(action.baseline_shot_index));
+  resolved.actions = (resolved.actions || []).map((action) => actions.get(actionIdentity(action)));
   return resolved;
 }
 
@@ -232,7 +307,21 @@ function applyPrimaryEvidenceReplacement(shot, action, requests, evidenceAssets)
   }
   const attribution = resolvePrimaryEvidenceAttribution(replacements, evidenceAssets, action);
   const updated = clone(shot);
-  const existingEvidence = updated.evidence || {};
+  // A shot arriving here may already be a NATIVE-kind evidence card
+  // (source_article/comparison/concept_map/evidence_chain/boundary, built by
+  // buildEvidenceContent against a wide recap source union -- see
+  // scripts/lib/orvyq-evidence-authoring.mjs) whose body carries
+  // items/steps/left/right/left_detail/right_detail text baked from that
+  // wider source set. Once converted to an IMAGE_KINDS "official_figure" /
+  // "image_sequence" card, none of those fields render (the card shows the
+  // attached image, not text items/steps) and source_ids narrows to just
+  // this replacement's real image sources -- so carrying that stale body
+  // text through the spread below would leave numbers (dates, counts) on
+  // the shot that its own new source_ids can no longer support. Drop them
+  // explicitly; only the display-preference fields below (font_px,
+  // eyebrow/title fallback, template_id, necessity, limitation) are safe to
+  // carry over kind changes.
+  const { items: _staleItems, steps: _staleSteps, left: _staleLeft, left_detail: _staleLeftDetail, right: _staleRight, right_detail: _staleRightDetail, ...existingEvidence } = updated.evidence || {};
   updated.asset_type = "evidence";
   updated.visual_role = "evidence";
   updated.editorial_purpose = action.rationale;
@@ -289,6 +378,8 @@ function applyFootageReplacement(shot, action, requests) {
   updated.semantic_link = "physical";
   updated.contextual_footage = true;
   updated.generic_stock = false;
+  if (replacement.reuse_reason) updated.reuse_reason = replacement.reuse_reason;
+  else delete updated.reuse_reason;
   delete updated.graphic;
   delete updated.evidence;
   delete updated.emphasis_card;
@@ -321,22 +412,52 @@ function applyRedesign(shot, action) {
 
 function extendAdjacentFootage(shots, index, action) {
   const previous = shots[index - 1];
-  if (!previous || previous.asset_type !== "footage" || !previous.asset) {
-    throw new Error(`shot ${action.baseline_shot_index} cannot extend a non-footage predecessor`);
-  }
   const updated = clone(shots[index]);
+  let adjacent = previous;
+
+  if (previous?.asset_type === "footage" && previous.asset && previous.claim_id === updated.claim_id) {
+    updated.trim_in_sec = Number(previous.trim_out_sec);
+    updated.trim_out_sec = Number(previous.trim_out_sec) + Number(updated.duration);
+  } else {
+    const next = shots[index + 1];
+    if (!next || next.asset_type !== "footage" || !next.asset || next.claim_id !== updated.claim_id) {
+      throw new Error(`shot ${action.baseline_shot_index} cannot extend adjacent same-claim footage`);
+    }
+    adjacent = next;
+    const nextTrimIn = Number(next.trim_in_sec);
+    const nextDuration = Number(next.duration);
+    if (!Number.isFinite(nextTrimIn) || !Number.isFinite(nextDuration)) {
+      throw new Error(`shot ${action.baseline_shot_index} has invalid successor footage trim bounds`);
+    }
+    const extensionStart = Math.max(0, nextTrimIn - Number(updated.duration));
+    const extensionEnd = extensionStart + Number(updated.duration);
+    updated.trim_in_sec = extensionStart;
+    updated.trim_out_sec = extensionEnd;
+    shots[index + 1] = {
+      ...clone(next),
+      trim_in_sec: extensionEnd,
+      trim_out_sec: extensionEnd + nextDuration,
+    };
+  }
+
   updated.asset_type = "footage";
-  updated.asset = previous.asset;
-  updated.trim_in_sec = Number(previous.trim_out_sec);
-  updated.trim_out_sec = Number(previous.trim_out_sec) + Number(updated.duration);
-  updated.visual_role = previous.visual_role || "context";
+  updated.asset = adjacent.asset;
+  updated.visual_role = adjacent.visual_role || "context";
   updated.editorial_purpose = action.rationale;
   updated.semantic_rationale = action.rationale;
-  updated.semantic_link = previous.semantic_link || "conceptual";
-  updated.motion = previous.motion || updated.motion || "hold";
+  updated.semantic_link = adjacent.semantic_link || "conceptual";
+  updated.motion = adjacent.motion || updated.motion || "hold";
   updated.contextual_footage = true;
-  updated.generic_stock = Boolean(previous.generic_stock);
-  if (previous.reuse_reason) updated.reuse_reason = previous.reuse_reason;
+  updated.generic_stock = Boolean(adjacent.generic_stock);
+  // This transformation happens after the initial footage-contract
+  // reconciliation, so it must preserve the same fail-closed semantic
+  // contract explicitly. The semantic audit still requires the exact bytes
+  // to have an existing approval for this same claim; these fields cannot
+  // authorize an unreviewed asset or cross a claim boundary.
+  updated.claim_bound_extension = true;
+  updated.claim_bound_extension_basis =
+    "The adjacent footage bytes are already approved for this same claim; the rebalance action extends them only through the contiguous narration slice.";
+  if (adjacent.reuse_reason) updated.reuse_reason = adjacent.reuse_reason;
   else delete updated.reuse_reason;
   delete updated.graphic;
   delete updated.evidence;
@@ -346,6 +467,53 @@ function extendAdjacentFootage(shots, index, action) {
   return updated;
 }
 
+// Materialization and audit deliberately share this resolver. A production
+// plan (schema 1.1/project-bound) may only address shots by shot_key; the
+// authored numeric index is retained for diagnostics and migration history,
+// never used to choose the target. Minimal legacy unit fixtures without a
+// project/schema may still use their local array index.
+export function resolveVisualRebalanceTargets({ shots, plan, actionOverrides = null }) {
+  const effectivePlan = resolveVisualRebalancePlan(plan, actionOverrides);
+  const keyedShots = assignStableShotKeys(shots || []);
+  const shotIndexByKey = new Map(keyedShots.map((shot, index) => [shot.shot_key, index]));
+  const actionsByIndex = new Map();
+  const actionIndexByKey = new Map();
+  const failures = [];
+  const requireStable = stableKeysRequired(effectivePlan);
+
+  for (const action of effectivePlan?.actions || []) {
+    let index = null;
+    if (typeof action.shot_key === "string" && action.shot_key.trim()) {
+      index = shotIndexByKey.get(action.shot_key.trim());
+      if (!Number.isInteger(index)) {
+        failures.push(`unresolved visual-rebalance shot_key ${action.shot_key}`);
+        continue;
+      }
+    } else if (requireStable) {
+      failures.push(`action at authored index ${action.baseline_shot_index} requires shot_key`);
+      continue;
+    } else if (Number.isInteger(action.baseline_shot_index) && action.baseline_shot_index >= 0) {
+      index = action.baseline_shot_index;
+    } else {
+      failures.push(`invalid baseline_shot_index ${action.baseline_shot_index}`);
+      continue;
+    }
+
+    if (!keyedShots[index]) {
+      failures.push(`action targets missing shot at authored index ${action.baseline_shot_index}`);
+      continue;
+    }
+    if (actionsByIndex.has(index)) {
+      failures.push(`multiple visual-rebalance actions resolve to shot_key ${keyedShots[index].shot_key}`);
+      continue;
+    }
+    actionsByIndex.set(index, action);
+    actionIndexByKey.set(action.shot_key || `legacy-index:${action.baseline_shot_index}`, index);
+  }
+
+  return { effectivePlan, shots: keyedShots, actionsByIndex, actionIndexByKey, failures };
+}
+
 export function materializeVisualRebalancePlan({
   shots,
   plan,
@@ -353,15 +521,16 @@ export function materializeVisualRebalancePlan({
   primaryEvidenceAssets = null,
   actionOverrides = null,
 }) {
-  const effectivePlan = resolveVisualRebalancePlan(plan, actionOverrides);
-  if (!effectivePlan || effectivePlan.status !== "materialized") return clone(shots || []);
+  const resolvedTargets = resolveVisualRebalanceTargets({ shots, plan, actionOverrides });
+  const { effectivePlan, actionsByIndex: actions } = resolvedTargets;
+  if (resolvedTargets.failures.length) throw new Error(resolvedTargets.failures.join("; "));
+  if (!effectivePlan || effectivePlan.status !== "materialized") return resolvedTargets.shots;
   const requests = new Map(assetRequests.map((request) => [request.asset_request_id, request]));
-  const actions = new Map((effectivePlan.actions || []).map((action) => [action.baseline_shot_index, action]));
   const needsPrimaryEvidence = [...actions.values()].some((action) => action.decision === "replace_primary_evidence");
   const evidenceAssets = needsPrimaryEvidence
     ? loadPrimaryEvidenceAssets(effectivePlan, primaryEvidenceAssets)
     : [];
-  const output = clone(shots || []);
+  const output = resolvedTargets.shots;
   const protectedEvidenceIndices = protectedClaimEvidenceIndices(output, actions);
 
   for (let index = 0; index < output.length; index += 1) {
@@ -399,25 +568,33 @@ export function auditVisualRebalancePlan({
   assetRequests = [],
   actionOverrides = null,
 }, rules = {}) {
-  const effectivePlan = resolveVisualRebalancePlan(plan, actionOverrides);
-  const failures = [];
+  let resolvedTargets;
+  try {
+    resolvedTargets = resolveVisualRebalanceTargets({ shots, plan, actionOverrides });
+  } catch (error) {
+    resolvedTargets = {
+      effectivePlan: plan,
+      shots: clone(shots || []),
+      actionsByIndex: new Map(),
+      actionIndexByKey: new Map(),
+      failures: [error instanceof Error ? error.message : String(error)],
+    };
+  }
+  const { effectivePlan, actionsByIndex: actions } = resolvedTargets;
+  const auditedShots = resolvedTargets.shots;
+  const failures = [...resolvedTargets.failures];
   const blockers = [];
   const thresholds = resolveVisualBalanceThresholds(rules);
   const requests = new Map(assetRequests.map((request) => [request.asset_request_id, request]));
-  const actions = new Map();
 
   for (const action of effectivePlan?.actions || []) {
     if (!Number.isInteger(action.baseline_shot_index) || action.baseline_shot_index < 0) {
       failures.push(`invalid baseline_shot_index ${action.baseline_shot_index}`);
-      continue;
     }
-    if (actions.has(action.baseline_shot_index)) {
-      failures.push(`duplicate action for baseline shot ${action.baseline_shot_index}`);
-      continue;
-    }
+    if (stableKeysRequired(effectivePlan) && (typeof action.shot_key !== "string" || !action.shot_key.trim()))
+      failures.push(`action at authored index ${action.baseline_shot_index} requires shot_key`);
     if (!DECISIONS.has(action.decision)) failures.push(`shot ${action.baseline_shot_index} has invalid decision ${action.decision}`);
     if (!MEDIA.has(action.projected_medium)) failures.push(`shot ${action.baseline_shot_index} has invalid projected_medium ${action.projected_medium}`);
-    actions.set(action.baseline_shot_index, action);
   }
 
   const frames = {
@@ -431,7 +608,7 @@ export function auditVisualRebalancePlan({
   let currentCardRun = 0;
   let maximumCardRun = 0;
 
-  shots.forEach((shot, index) => {
+  auditedShots.forEach((shot, index) => {
     const baselineMedium = classifyVisualMedium(shot);
     const action = actions.get(index);
     if (baselineMedium === "graphic_card" && !action) {
@@ -502,11 +679,7 @@ export function auditVisualRebalancePlan({
     }
   });
 
-  for (const index of actions.keys()) {
-    if (!shots[index]) failures.push(`action targets missing baseline shot ${index}`);
-  }
-
-  const durationFrames = shots.reduce((sum, shot) => sum + shotFrames(shot), 0);
+  const durationFrames = auditedShots.reduce((sum, shot) => sum + shotFrames(shot), 0);
   const fraction = (value) => value / Math.max(1, durationFrames);
   const fractions = {
     contextual_footage: fraction(frames.contextual_footage),
@@ -559,6 +732,7 @@ export function auditVisualRebalancePlan({
     projected_fractions: fractions,
     maximum_consecutive_graphic_card_shots: maximumCardRun,
     graphic_template_uses: Object.fromEntries(templates),
+    resolved_action_targets: Object.fromEntries(resolvedTargets.actionIndexByKey),
     section_graphic_card_fractions: Object.fromEntries(
       [...sections].map(([section, value]) => [section, value.cards / Math.max(1, value.total)]),
     ),

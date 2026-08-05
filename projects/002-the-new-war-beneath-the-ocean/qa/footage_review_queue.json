@@ -1,29 +1,17 @@
 {
   "schema_version": "1.0",
   "project_id": "002-the-new-war-beneath-the-ocean",
-  "generated_at": "2026-07-31T14:58:18.942Z",
-  "pending_review_count": 10,
-  "entries_with_exact_uses": 10,
+  "generated_at": "2026-08-05T00:33:57.000Z",
+  "pending_review_count": 16,
+  "entries_with_exact_uses": 16,
   "entries": [
     {
       "scene_id": "scene_003",
       "asset_path": "assets/footage/scene_003_official_reuse.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "ORVYQ_REUSE_NOAA_SEASCAPE_ALASKA_DIVE07_BIODIVERSITY_2023_scene_003",
-      "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/okeanos-seascape-alaska-ex2304-features-summary/",
-      "creator": "NOAA Ocean Exploration, Seascape Alaska",
       "asset_sha256": "8b64b1ca31c4eac4528af74798279fef4b09ee3614d3e64c856f794b0aca17cf",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_003.jpg",
       "contact_sheet_sha256": "c9134c8484ae8142061e65dd9ed36b35be7d3117907de46f6b42f161e73723f7",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.189,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Verified deep-sea biodiversity footage supplies dark deep-ocean physical context only; maps and evidence retain all location and nodule claims.",
-      "status": "pending_visual_review",
-      "contact_sheet_pointer_sha256": "994e8501222d714d0fc258746b477ba590404e3944144404fd754465b2c1ac8e",
-      "contact_sheet_is_lfs_pointer": true,
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
@@ -40,27 +28,15 @@
           "trim_out_sec": 16.488666666666667
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_004",
       "asset_path": "assets/footage/scene_004_official_reuse.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "ORVYQ_REUSE_NOAA_WALTON_SMITH_ROV_DEPLOYMENT_2024_scene_004",
-      "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/24pr-usvi-biotech-features-perfect-dive/",
-      "creator": "Exploration of Deepwater Habitats off Puerto Rico and the U.S. Virgin Islands for Biotechnology Potential",
       "asset_sha256": "42e20b2d517bafd26316bb036873f2a6b062cd1776f4d74583304e8a8ca07d51",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_004.jpg",
       "contact_sheet_sha256": "347abb37ebd1b5988416369358d852055045caac0d2f0c8b2c218662d7abfbc6",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.051367,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Verified scientists deploying an ROV from a research vessel provide real marine field-operation scale without claiming the depicted vessel is Chikyu.",
-      "status": "pending_visual_review",
-      "contact_sheet_pointer_sha256": "90b78ee13e01f01523ade4ca184dd331562caa85214041c51f5973e9c322a4c5",
-      "contact_sheet_is_lfs_pointer": true,
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
@@ -84,27 +60,15 @@
           "trim_out_sec": 16.056
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_012",
       "asset_path": "assets/footage/scene_012_official_reuse.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "ORVYQ_REUSE_NOAA_D2_2018_TECHNOLOGY_scene_012",
-      "source_page_url": "https://oceanexplorer.noaa.gov/technology/subs-deep-discoverer/",
-      "creator": "NOAA Ocean Exploration",
       "asset_sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_012.jpg",
       "contact_sheet_sha256": "f24a4985008373f37a0a9a3b7a888312de75d30fafb17754c5e26494281ab357",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.155,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim.",
-      "status": "pending_visual_review",
-      "contact_sheet_pointer_sha256": "d0f2e79a6649af8aa6c54d632119dbbc6383ca7212f9020e5066ec547e6728fd",
-      "contact_sheet_is_lfs_pointer": true,
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
@@ -112,29 +76,109 @@
           "semantic_rationale": "A real dark seabed or benthic survey view introduces persistent physical disturbance; tropical island imagery is forbidden for this claim.",
           "trim_in_sec": 0,
           "trim_out_sec": 7.967
+        },
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "value. A country may be willing to pay more for a difficult source if it reduces dependence during a crisis. That",
+          "semantic_rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, a 15.93s uninterrupted evidence run over the 15s cap (confirmed via CI diagnostic, run 30934080098). Reuses scene_012_official_reuse.mp4 -- already used once for this exact claim at slice 0 ('A real dark seabed or benthic survey view introduces persistent physical disturbance'), and independently verified via the real footage-use-budget diagnostic (run 30954122832) to carry only that one real use, so a second use here stays within the 2-use cap. Its own provenance note ('Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim') satisfies REQ_FTG_DEEPSEA_TRACK_ROV's required_content as directly as scene_051 does; added to that request's resolved_asset_paths accordingly. Trim window (8s-15.97s) is a distinct segment from slice 0's own trim (which cannot exceed the project's 8s max_shot_seconds), so no overlap.",
+          "trim_in_sec": 8,
+          "trim_out_sec": 15.966667
+        },
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "That is not ordinary mining economics. It is insurance and insurance is often purchased because of what might happen,",
+          "semantic_rationale": "Shot 78 and this shot were two consecutive real-figure evidence beats with nothing between them, a 15.93s uninterrupted evidence run over the 15s cap (confirmed via CI diagnostic, run 30934080098). Reuses scene_012_official_reuse.mp4 -- already used once for this exact claim at slice 0 ('A real dark seabed or benthic survey view introduces persistent physical disturbance'), and independently verified via the real footage-use-budget diagnostic (run 30954122832) to carry only that one real use, so a second use here stays within the 2-use cap. Its own provenance note ('Official NOAA ROV operations provide direct scientific observation context for deep-seabed tracks; cited evidence retains the measured persistence claim') satisfies REQ_FTG_DEEPSEA_TRACK_ROV's required_content as directly as scene_051 does; added to that request's resolved_asset_paths accordingly. Trim window (8s-15.97s) is a distinct segment from slice 0's own trim (which cannot exceed the project's 8s max_shot_seconds), so no overlap.",
+          "trim_in_sec": 8,
+          "trim_out_sec": 17.5
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
+    },
+    {
+      "scene_id": "scene_015",
+      "asset_path": "assets/footage/scene_015_2ad51facff3ebcec750c7486.mp4",
+      "provider_asset_id": "33082707",
+      "asset_sha256": "98bb625d8c50829237c5bd0a2de7cac626435006357923477e832d77a6427f33",
+      "contact_sheet_sha256": "13aac3475cd9338de5e877b4b9b54b3bb7531965a659474aeab00f5f9083200c",
+      "review_blockers": [],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_004_JAPAN_INDUSTRIAL_TIMELINE",
+          "narration_anchor": "contains rare earth elements in fine sediment beneath the seabed. Japan is developing a closed loop lifting system intended to",
+          "semantic_rationale": "A verified dark seabed-sediment view carries the physical location and fine material form named in the sentence while primary evidence establishes the specific Japanese deposit.",
+          "trim_in_sec": 1.44,
+          "trim_out_sec": 9.407
+        },
+        {
+          "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+          "narration_anchor": "Recovery was not zero. Recovery was not complete. And a small experimental",
+          "semantic_rationale": "A verified underwater seafloor-sediment view grounds the physical disturbance context while the cited Nature evidence carries the measured biodiversity result.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 6.9
+        },
+        {
+          "claim_id": "CLM_013_INDUSTRIAL_TRIAL_BIODIVERSITY",
+          "narration_anchor": "Recovery was not complete.",
+          "semantic_rationale": "Retain the pause conclusion over related research footage.",
+          "trim_in_sec": 6.9,
+          "trim_out_sec": 10.9
+        }
+      ],
+      "reviewed_frame_count": 12
+    },
+    {
+      "scene_id": "scene_019",
+      "asset_path": "assets/footage/scene_019_81d3921b615afae6bf8f9325.mp4",
+      "provider_asset_id": "36123915",
+      "asset_sha256": "f503777bfea6b85c50628e26d998688b434ce9380c19a0f78e0cdeabbbc970e3",
+      "contact_sheet_sha256": "ac3f26b07e5696922d2b0a186fd25f15c01b937bfec911b01f66571a03f49e3b",
+      "review_blockers": [],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "Opening visual premise before the first narrated sentence.",
+          "semantic_rationale": "Return to the open ocean as a restrained frontier metaphor before dissolving into verified expedition evidence.",
+          "trim_in_sec": 0.5,
+          "trim_out_sec": 3.5
+        },
+        {
+          "claim_id": "CLM_005_COMMON_HERITAGE_PRINCIPLE",
+          "narration_anchor": "microscopic layer. They contain manganese, nickel, copper and cobalt. Unlike Japan's rare earth mud, these nodules often lie",
+          "semantic_rationale": "A restrained night-ocean view carries the scale and remoteness of the shared frontier without replacing treaty text or asserting a named location.",
+          "trim_in_sec": 0.28,
+          "trim_out_sec": 7.98
+        },
+        {
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "surface to the seabed. It is the distance between what humanity has learned how to extract and what it has agreed not to destroy.",
+          "semantic_rationale": "A distinct night-ocean trim closes on the distance between technical capability and agreed limits without impersonating a named site or adding a factual claim.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 6.193309
+        },
+        {
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "agreed not to destroy.",
+          "semantic_rationale": "Keep the final narrated phrase as a restrained overlay on the closing footage.",
+          "trim_in_sec": 6.193309,
+          "trim_out_sec": 10.877323
+        },
+        {
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "The final narrated conclusion and its immediate closing hold.",
+          "semantic_rationale": "Remove the separate end card to avoid consecutive cards; let the final image and overlay breathe through the existing four seconds.",
+          "trim_in_sec": 10.877323,
+          "trim_out_sec": 14
+        }
+      ],
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_024",
       "asset_path": "assets/footage/scene_024_official_reuse.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "ORVYQ_REUSE_NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019_scene_024",
-      "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/19deepsearch-logs-apr19/",
-      "creator": "Ivan Hurzeler and DEEP SEARCH 2019 – BOEM, USGS, NOAA, ROV Jason, Woods Hole Oceanographic Institution",
       "asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_024.jpg",
       "contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.065,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Official expedition field-assessment operations provide real survey and decision context without identifying the vessel as Chikyu or a commercial mining ship.",
-      "status": "pending_visual_review",
-      "contact_sheet_pointer_sha256": "72f442f25c7187e528285982cf7b27fa791ac3342640cc77e29b6ac157302e57",
-      "contact_sheet_is_lfs_pointer": true,
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_001_JAPAN_TECHNICAL_MILESTONE",
@@ -144,27 +188,15 @@
           "trim_out_sec": 9.345
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_029",
       "asset_path": "assets/footage/scene_029_bec7ca5e63295de8aa016832.mp4",
-      "provider": "pexels",
       "provider_asset_id": "34495148",
-      "source_page_url": "https://www.pexels.com/video/school-assembly-with-engaged-audience-and-presenters-34495148/",
-      "creator": "JMT 35",
       "asset_sha256": "db15a5e18c7c269c1ab137600e3e389a59d611262515b3fcc647aa9674e49f5b",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_029.jpg",
       "contact_sheet_sha256": "63b37877b71b966180493c12c6bd6cc4831362aa494a4934f308bec07ac7ddd1",
-      "contact_sheet_pointer_sha256": "85930b193f671690e336780a469bab2f849d1296ed4b1accd26bbf50472f5a24",
-      "contact_sheet_is_lfs_pointer": true,
-      "reviewed_frame_count": 12,
-      "duration_seconds": 16,
-      "editorial_role": "human_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "A working research-vessel deck supports the announced return to field operations while avoiding any claim that generic footage depicts Chikyu or the 2027 trial itself.",
-      "status": "pending_visual_review",
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
@@ -188,92 +220,122 @@
           "trim_out_sec": 9.28
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_032",
       "asset_path": "assets/footage/scene_032_official_reuse.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "ORVYQ_REUSE_NOAA_WATER_COLUMN_2012_scene_032",
-      "source_page_url": "https://oceanexplorer.noaa.gov/ocean-fact/water-column/",
-      "creator": "NOAA Ocean Exploration, Deep-Sea Symphony: Exploring the Musicians Seamounts",
       "asset_sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_032.jpg",
       "contact_sheet_sha256": "111999a43362b07ffb220ab99bb6f42e28ac59bd02f56c6edde6967ce12c9fd4",
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.155,
-      "editorial_role": "context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Official NOAA water-column footage supplies real ocean depth and darkness for the closing physical metaphor; it introduces no new location or quantitative claim.",
-      "status": "pending_visual_review",
-      "contact_sheet_pointer_sha256": "23854c6d83853ab09ecf057b79bc2eb95bb1f4d947faef8fd8a287d3a66c2113",
-      "contact_sheet_is_lfs_pointer": true,
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
           "narration_anchor": "The deep ocean is not empty. It is dark, slow and poorly understood. Many organisms live on inside or",
-          "semantic_rationale": "A restrained descent through real dark water or over the deep seabed carries physical depth and persistence; science-fiction city imagery is forbidden.",
+          "semantic_rationale": "Official NOAA water-column footage supplies real depth and darkness for the persistence beat while the cited long-term track evidence carries every measured conclusion.",
           "trim_in_sec": 0,
           "trim_out_sec": 8
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "surface to the seabed. It is the distance between what humanity has learned how to extract and what it has agreed not to destroy.",
-          "semantic_rationale": "A long dark-ocean descent closes on the distance between technical capability and agreed limits without introducing a new factual claim.",
-          "trim_in_sec": 4.222,
-          "trim_out_sec": 12.155
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "agreed not to destroy.",
-          "semantic_rationale": "Keep the final narrated phrase as a restrained overlay on the closing footage.",
-          "trim_in_sec": 12.155,
-          "trim_out_sec": 18.155
-        },
-        {
-          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
-          "narration_anchor": "The final narrated conclusion and its immediate closing hold.",
-          "semantic_rationale": "Remove the separate end card to avoid consecutive cards; let the final image and overlay breathe through the existing four seconds.",
-          "trim_in_sec": 18.155,
-          "trim_out_sec": 22.155
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
+    },
+    {
+      "scene_id": "scene_033",
+      "asset_path": "assets/footage/scene_033_a33d4a9b21c98dfb52eedd48.mp4",
+      "provider_asset_id": "34748647",
+      "asset_sha256": "44bc6d8ef52d1502a9cb0289b263146684c6446a63b26edfce805c1e861508ba",
+      "contact_sheet_sha256": "92329be8df434217ae07518258365875f52117bf115a5795bdb2e7550264f359",
+      "review_blockers": [],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+          "narration_anchor": "will poison an entire ocean. The unresolved issue is accumulation. One test lasts days.",
+          "semantic_rationale": "Real midwater life grounds the food-web mechanism without claiming that the jellyfish came from a cited trial.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 7.6
+        },
+        {
+          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+          "narration_anchor": "The unresolved issue is accumulation.",
+          "semantic_rationale": "Keep the accumulation pause over scientifically related footage.",
+          "trim_in_sec": 7.6,
+          "trim_out_sec": 9.6
+        },
+        {
+          "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
+          "narration_anchor": "consume. That identifies a plausible mechanism of harm. It does not prove that a commercial operation would collapse an ecosystem.",
+          "semantic_rationale": "Verified midwater organisms keep the qualified ecological mechanism visible while the cited study figures carry the measured scientific claim.",
+          "trim_in_sec": 5.213,
+          "trim_out_sec": 13.013
+        }
+      ],
+      "reviewed_frame_count": 12
+    },
+    {
+      "scene_id": "scene_034",
+      "asset_path": "assets/footage/scene_034_dbd1819c871818356753f93e.mp4",
+      "provider_asset_id": "3196600",
+      "asset_sha256": "ef0dcf0c89d76d63b84285c9dec76947e3c7183a01f46aa7d70410236b7f5e10",
+      "contact_sheet_sha256": "eb8994731f649fc4e237a41f605678fc3c8086a218b13eb9bb62a1e0c0bfdab9",
+      "review_blockers": [],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "where the commercial decision may arrive before the final answer. The race is real, but it is not only a race for minerals.",
+          "semantic_rationale": "Scientists discussing evidence embody unresolved knowledge before a commercial decision without implying that they advise a named government.",
+          "trim_in_sec": 1.795,
+          "trim_out_sec": 8.829
+        },
+        {
+          "claim_id": "CLM_020_PRECEDENT_SYNTHESIS",
+          "narration_anchor": "nodules are still there. The law is still unfinished. The deepest part of this story is not the distance from the surface to",
+          "semantic_rationale": "A distinct scientific-review trim gives the closing sentence a human decision context: future generations inherit both the precedent and the consequences, while the narration and cited sources retain every legal and environmental claim.",
+          "trim_in_sec": 5.984,
+          "trim_out_sec": 13.917
+        }
+      ],
+      "reviewed_frame_count": 12
+    },
+    {
+      "scene_id": "scene_038",
+      "asset_path": "assets/footage/scene_038_9d962f32cfd2deda34a8ddf6.mp4",
+      "provider_asset_id": "6951598",
+      "asset_sha256": "cea376d9871be50504e491c4a96a3c6707c1fc082d122b22c862356708a2be38",
+      "contact_sheet_sha256": "f744e821b4603a4ee15db1ab1d7e704c911c0c09d56749dfd73fc488f91aafe7",
+      "review_blockers": [],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_007_US_PARALLEL_ROUTE",
+          "narration_anchor": "says belongs to humanity as a whole. And who has the authority to say no? While those negotiations continue,",
+          "semantic_rationale": "A real formal meeting provides human governance context for competing legal routes while primary documents retain the factual burden.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 7.333
+        },
+        {
+          "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
+          "narration_anchor": "lost after industrial activity begins. The decision is not between progress and preservation. It",
+          "semantic_rationale": "A distinct meeting trim represents unfinished international rules and institutional choice without naming the generic participants.",
+          "trim_in_sec": 6.5,
+          "trim_out_sec": 12.567
+        }
+      ],
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_050",
       "asset_path": "assets/footage/scene_050_863b8a7dd26b4dd288235b75.mp4",
-      "provider": "pexels",
       "provider_asset_id": "6951601",
-      "source_page_url": "https://www.pexels.com/video/man-speaking-in-conference-room-6951601/",
-      "creator": "Werner Pfennig",
       "asset_sha256": "3f75e1c6e9e2cce6aa69bb1003268f2dc1a491698898f5e551a5f385f5e545a9",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_050.jpg",
       "contact_sheet_sha256": "c2b37844943989267124367c70e0c81f2b7130bce9880aa863a254326d1d953a",
-      "contact_sheet_pointer_sha256": "5e1813fe9663cc316e4cb590d937cebae4570d157280f02805515e5acb4ee566",
-      "contact_sheet_is_lfs_pointer": true,
-      "reviewed_frame_count": 12,
-      "duration_seconds": 13.52,
-      "editorial_role": "human_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "A regulatory hearing breaks up the dense document sequence in the United States route while NOAA and executive-order captures retain the factual burden.",
-      "status": "pending_visual_review",
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-          "narration_anchor": "fails. This is not a minor delay in paperwork. These rules are supposed to answer questions humanity has never answered at industrial",
+          "narration_anchor": "fails. This is not a minor delay in paperwork. These rules are supposed to answer questions humanity has never answered",
           "semantic_rationale": "A real regulatory hearing interrupts the dense legal-evidence sequence while the narration explains why unresolved rules matter at industrial scale; official documents retain every legal and factual claim.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.5
-        },
-        {
-          "claim_id": "CLM_007_US_PARALLEL_ROUTE",
-          "narration_anchor": "centuries. Who pays if a company collapses after disturbing thousands of square kilometers? How a benefit shared from a place international law",
-          "semantic_rationale": "A regulatory hearing breaks up the dense document sequence in the United States route while NOAA and executive-order captures retain the factual burden.",
-          "trim_in_sec": 0,
-          "trim_out_sec": 7.633
+          "trim_out_sec": 6.967
         },
         {
           "claim_id": "CLM_019_DISTRIBUTED_RISK_SYNTHESIS",
@@ -283,27 +345,47 @@
           "trim_out_sec": 12.263
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
+    },
+    {
+      "scene_id": "scene_051",
+      "asset_path": "assets/footage/scene_051_direct.mp4",
+      "provider_asset_id": "NOAA_D2_2018_TECHNOLOGY",
+      "asset_sha256": "e150e3f07369e617aac5ca192d6717f2c88f5ec3298520b4f8e254e3cc10f933",
+      "contact_sheet_sha256": "f24a4985008373f37a0a9a3b7a888312de75d30fafb17754c5e26494281ab357",
+      "review_blockers": [],
+      "approved_uses_if_visually_valid": [
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "inside or around the sediment. Some attached to nodules that took millions of years to form. Remove the nodules and the hard",
+          "semantic_rationale": "Break the document sequence with scientifically relevant ROV/track observation footage, never a recreational dive.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 8
+        },
+        {
+          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+          "narration_anchor": "travel kilometers. The highest concentrations often remain close to the seabed and decline with distance, height, and",
+          "semantic_rationale": "Official NOAA ROV research footage supplies real deep-ocean scientific-observation context while the cited experiment and primary evidence retain the specific midwater food-web mechanism and its limitations.",
+          "trim_in_sec": 9.078,
+          "trim_out_sec": 16.411
+        },
+        {
+          "claim_id": "CLM_012_LONG_TERM_TRACK_PERSISTENCE",
+          "narration_anchor": "hard surface they provide does not return on a human time scale. A study published in 2025 revisited tracks",
+          "semantic_rationale": "Break the document sequence with scientifically relevant ROV/track observation footage, never a recreational dive.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 8
+        }
+      ],
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_052",
       "asset_path": "assets/footage/scene_052_direct.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "NOAA_CASCADIA_SEDIMENT_CORING_2020",
-      "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/20cascadia-seeps-logs-sept29/",
-      "creator": "Oregon State University, NOAA OER, NOAA OCNMS, Ocean Exploration Trust, NA-121",
       "asset_sha256": "ec47cb4db426066cc46db457bcae6242e1b59252dc24962de047cc456afad28d",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_052.jpg",
       "contact_sheet_sha256": "a6c089f09e788331569e722ded808151114662229bd160cd101447d9c0fd24da",
-      "contact_sheet_pointer_sha256": "f929f0ba38ee030cbee3dae6a947a53a5f2d9f5b5ff32c0d5756f6efa761a533",
-      "contact_sheet_is_lfs_pointer": true,
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.151467,
-      "editorial_role": "scientific_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Official expedition footage of sediment coring provides the visible physical measurement link for the plume-sampling sentence without being used as the numerical plume evidence.",
-      "status": "pending_visual_review",
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
@@ -318,36 +400,31 @@
           "semantic_rationale": "Remove the redundant slogan card and show actual sampling/monitoring context tied to plume measurement.",
           "trim_in_sec": 0,
           "trim_out_sec": 7
+        },
+        {
+          "claim_id": "CLM_014_PLUME_SCALE_IS_COMPLEX",
+          "narration_anchor": "machine physically crossed the seabed. Plume effects were subtler, but not absent. And two months cannot tell us",
+          "semantic_rationale": "Remove the redundant slogan card and show actual sampling/monitoring context tied to plume measurement.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 7
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_053",
       "asset_path": "assets/footage/scene_053_direct.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "NOAA_WATER_COLUMN_2012",
-      "source_page_url": "https://oceanexplorer.noaa.gov/ocean-fact/water-column/",
-      "creator": "NOAA Ocean Exploration, Deep-Sea Symphony: Exploring the Musicians Seamounts",
       "asset_sha256": "6f529f94ac20d4b65828af8ac17f8479ccb000f4d0dc1f58f886f8dbd7cb2fe2",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_053.jpg",
       "contact_sheet_sha256": "111999a43362b07ffb220ab99bb6f42e28ac59bd02f56c6edde6967ce12c9fd4",
-      "contact_sheet_pointer_sha256": "23854c6d83853ab09ecf057b79bc2eb95bb1f4d947faef8fd8a287d3a66c2113",
-      "contact_sheet_is_lfs_pointer": true,
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.155,
-      "editorial_role": "scientific_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Official NOAA water-column footage directly grounds the midwater food-web mechanism and marine-snow context while the cited paper supplies the experiment and result.",
-      "status": "pending_visual_review",
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
           "narration_anchor": "uncertainty. Material brought to the surface must be separated from seawater and sediment. If waste particles are discharged back",
           "semantic_rationale": "Remove the biodiversity-number card because those values belong to CLM_013, not this midwater claim.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.833333333333333
+          "trim_out_sec": 7.833333
         },
         {
           "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
@@ -355,29 +432,24 @@
           "semantic_rationale": "Official water-column footage directly grounds the midwater food-web mechanism while the cited paper carries the experiment and effect.",
           "trim_in_sec": 0.908,
           "trim_out_sec": 8.608
+        },
+        {
+          "claim_id": "CLM_015_MIDWATER_DISCHARGE_RISK",
+          "narration_anchor": "discharged back into the ocean, they may enter food webs built around the slow fall of natural organic matter. Research suggests",
+          "semantic_rationale": "Remove the biodiversity-number card because those values belong to CLM_013, not this midwater claim.",
+          "trim_in_sec": 0,
+          "trim_out_sec": 9.5
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
     },
     {
       "scene_id": "scene_054",
       "asset_path": "assets/footage/scene_054_direct.mp4",
-      "provider": "noaa_ocean_exploration",
       "provider_asset_id": "NOAA_DEEP_SEARCH_LEG1_HIGHLIGHTS_2019",
-      "source_page_url": "https://oceanexplorer.noaa.gov/expedition-feature/19deepsearch-logs-apr19/",
-      "creator": "Ivan Hurzeler and DEEP SEARCH 2019 – BOEM, USGS, NOAA, ROV Jason, Woods Hole Oceanographic Institution",
       "asset_sha256": "c4c5f1ca82696e5310327d31a562503053a0ead6b5675b4ac3dd7fd3a2f403ab",
-      "contact_sheet_path": "qa/footage-contact-sheets/scene_054.jpg",
       "contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
-      "contact_sheet_pointer_sha256": "72f442f25c7187e528285982cf7b27fa791ac3342640cc77e29b6ac157302e57",
-      "contact_sheet_is_lfs_pointer": true,
-      "reviewed_frame_count": 12,
-      "duration_seconds": 18.065,
-      "editorial_role": "scientific_context",
-      "narration_anchor": null,
-      "claim_id": null,
-      "semantic_rationale": "Official expedition operations footage provides a real field-assessment setting for decision under uncertainty, with mission objectives, weather, sampling and dive choices physically connected.",
-      "status": "pending_visual_review",
+      "review_blockers": [],
       "approved_uses_if_visually_valid": [
         {
           "claim_id": "CLM_009_INDUSTRY_COUNTERARGUMENT",
@@ -388,20 +460,13 @@
         },
         {
           "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
-          "narration_anchor": "consume. That identifies a plausible mechanism of harm. It does not prove that a commercial operation would collapse an ecosystem.",
-          "semantic_rationale": "Verified NOAA expedition assessment footage supports scientific judgment under uncertainty; the cited study remains responsible for the mechanism and limitation claim.",
-          "trim_in_sec": 8,
-          "trim_out_sec": 15.8
-        },
-        {
-          "claim_id": "CLM_016_DECISION_UNDER_UNCERTAINTY",
-          "narration_anchor": "consequence. It is that science does not. The strongest case for moving ahead is not that the damage will be harmless. It",
+          "narration_anchor": "harmless. It is that the alternatives also carry damage and that mineral dependence can become a national security risk.",
           "semantic_rationale": "Replace the generic JAMSTEC comparison with a directly related scientific decision/field-assessment moment.",
           "trim_in_sec": 0,
-          "trim_out_sec": 7.033333333333333
+          "trim_out_sec": 8
         }
       ],
-      "review_blockers": []
+      "reviewed_frame_count": 12
     }
   ]
 }

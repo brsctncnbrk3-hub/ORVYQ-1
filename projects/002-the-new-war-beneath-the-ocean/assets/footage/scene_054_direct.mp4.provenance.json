@@ -36,5 +36,5 @@
   "reviewed_contact_sheet_sha256": "7466e0e0598ead35a7af90cede2419a27fc372ac683c688fd6fa86e3e386fe07",
   "visual_qa_status": "APPROVED_CLAIM_SPECIFIC_CONTACT_SHEET_REVIEW",
   "visual_qa_origin": "system_visual_qa",
-  "visual_qa_reason": "The reviewed official expedition frames show real field operations, sampling and operational judgment. They physically support the narrated distinction between a plan and an operating system while remaining explicitly non-commercial and non-JAMSTEC; primary evidence retains all named-project and industrial-status claims."
+  "visual_qa_reason": "Re-verified against the live queue: official expedition field-operations footage expresses CLM_009's plan-vs-operating-industry gap and CLM_016's decision-under-uncertainty sentence without presenting the generic mission as a commercial project."
 }

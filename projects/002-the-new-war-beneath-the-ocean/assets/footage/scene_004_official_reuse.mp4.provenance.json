@@ -43,5 +43,5 @@
   "reused_at": "2026-07-31T09:01:24.934Z",
   "reviewed_asset_sha256": "42e20b2d517bafd26316bb036873f2a6b062cd1776f4d74583304e8a8ca07d51",
   "reviewed_contact_sheet_sha256": "347abb37ebd1b5988416369358d852055045caac0d2f0c8b2c218662d7abfbc6",
-  "visual_qa_reason": "The identical approved NOAA clip visibly shows scientists deploying an ROV from a research vessel and therefore supports real marine field-operation scale. It must not identify the vessel as Chikyu or depict the exact Japanese pumping system; official evidence carries those claims."
+  "visual_qa_reason": "Re-verified against the live queue: scientists deploying an ROV from a real research vessel ground CLM_001's Japan technical-milestone narration in physical field operations without naming the vessel Chikyu."
 }
