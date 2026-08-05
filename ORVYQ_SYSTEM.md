@@ -343,6 +343,15 @@ Candidate Validation):
   published. The bridge now extends the following same-claim approved footage
   as one continuous source run; official evidence remains in longer readable
   shots and no mobile-legibility threshold is weakened.
+- Candidate Validation run `31007786095` then passed mobile legibility and the
+  visual-balance audit, but failed safely at footage semantic review because
+  the post-reconciliation rebalance transform had not carried the explicit
+  claim-bound-extension marker onto the new narration slice. The transform now
+  records that marker and basis itself, requires the adjacent footage to stay
+  inside the same claim, and still depends on the semantic audit finding an
+  existing byte-bound approval for those bytes and that claim. No approval was
+  broadened and no validated bundle or video render was produced by the failed
+  run.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 

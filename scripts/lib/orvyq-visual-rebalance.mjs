@@ -413,7 +413,7 @@ function extendAdjacentFootage(shots, index, action) {
   const updated = clone(shots[index]);
   let adjacent = previous;
 
-  if (previous?.asset_type === "footage" && previous.asset) {
+  if (previous?.asset_type === "footage" && previous.asset && previous.claim_id === updated.claim_id) {
     updated.trim_in_sec = Number(previous.trim_out_sec);
     updated.trim_out_sec = Number(previous.trim_out_sec) + Number(updated.duration);
   } else {
@@ -447,6 +447,14 @@ function extendAdjacentFootage(shots, index, action) {
   updated.motion = adjacent.motion || updated.motion || "hold";
   updated.contextual_footage = true;
   updated.generic_stock = Boolean(adjacent.generic_stock);
+  // This transformation happens after the initial footage-contract
+  // reconciliation, so it must preserve the same fail-closed semantic
+  // contract explicitly. The semantic audit still requires the exact bytes
+  // to have an existing approval for this same claim; these fields cannot
+  // authorize an unreviewed asset or cross a claim boundary.
+  updated.claim_bound_extension = true;
+  updated.claim_bound_extension_basis =
+    "The adjacent footage bytes are already approved for this same claim; the rebalance action extends them only through the contiguous narration slice.";
   if (adjacent.reuse_reason) updated.reuse_reason = adjacent.reuse_reason;
   else delete updated.reuse_reason;
   delete updated.graphic;

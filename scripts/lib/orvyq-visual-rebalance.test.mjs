@@ -315,6 +315,8 @@ test("validated action override converts a redundant evidence beat into contiguo
   assert.equal(result[1].motion, "push");
   assert.equal(result[1].generic_stock, false);
   assert.equal(result[1].evidence, undefined);
+  assert.equal(result[1].claim_bound_extension, true);
+  assert.match(result[1].claim_bound_extension_basis, /same claim/);
 });
 
 test("a removable bridge can extend following same-claim footage when its predecessor is not footage", () => {
@@ -355,6 +357,43 @@ test("a removable bridge can extend following same-claim footage when its predec
   assert.equal(result[1].trim_in_sec, 2.5);
   assert.equal(result[1].trim_out_sec, 9.5);
   assert.equal(result[0].motion, "pull");
+  assert.equal(result[0].claim_bound_extension, true);
+  assert.match(result[0].claim_bound_extension_basis, /same claim/);
+});
+
+test("an adjacent-footage extension cannot inherit a predecessor from another claim", () => {
+  const shots = [
+    shot(4, "footage", "SEC_01", {
+      claim_id: "CLM_OTHER",
+      asset: "assets/footage/other-claim.mp4",
+      trim_in_sec: 0,
+      trim_out_sec: 4,
+      visual_role: "context",
+      contextual_footage: true,
+      semantic_link: "physical",
+    }),
+    shot(2.5, "graphic", "SEC_01", {
+      claim_id: "CLM_001",
+      graphic: { type: "section_title", title: "Section" },
+    }),
+  ];
+  const plan = {
+    status: "materialized",
+    actions: [{
+      baseline_shot_index: 1,
+      claim_id: "CLM_001",
+      duration_seconds: 2.5,
+      decision: "remove",
+      projected_medium: "contextual_footage",
+      replacement_strategy: "extend_adjacent_footage",
+      rationale: "Do not cross the claim boundary while extending adjacent footage.",
+    }],
+  };
+
+  assert.throws(
+    () => materializeVisualRebalancePlan({ shots, plan }),
+    /cannot extend adjacent same-claim footage/,
+  );
 });
 
 test("visual-rebalance override rejects stale expected decisions", () => {

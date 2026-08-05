@@ -57,7 +57,9 @@
     "contextual_footage": { "type": "boolean" },
     "provenance_mode": { "type": "string" },
     "motif": { "type": "string" },
-    "reuse_reason": { "type": "string" }
+    "reuse_reason": { "type": "string" },
+    "claim_bound_extension": { "type": "boolean" },
+    "claim_bound_extension_basis": { "type": "string", "minLength": 24 }
   },
   "allOf": [
     {
@@ -71,6 +73,13 @@
     {
       "if": { "properties": { "asset_type": { "const": "evidence" } } },
       "then": { "required": ["evidence"] }
+    },
+    {
+      "if": {
+        "required": ["claim_bound_extension"],
+        "properties": { "claim_bound_extension": { "const": true } }
+      },
+      "then": { "required": ["claim_bound_extension_basis"] }
     }
   ],
   "additionalProperties": false
