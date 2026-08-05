@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "project_id": "002-the-new-war-beneath-the-ocean",
   "status": "requested",
-  "request_revision": 33,
-  "reason": "Verify the exact stable-shot-identity correction: all rebalance actions and overrides must resolve by deterministic shot_key before and after optional hook removal, unresolved or duplicate targets must fail closed, the complete pre-render QA chain must pass before candidate freezing, and no video render is permitted.",
+  "request_revision": 34,
+  "reason": "Verify the exact stable-shot-identity correction and the fail-closed mobile-legibility repair from Candidate Validation run 31006212191: the 2.5-second CLM_009 bridge must extend following same-claim approved footage instead of showing an unreadable official document, all rebalance targets must resolve by shot_key, the complete pre-render QA chain must pass before candidate freezing, and no video render is permitted.",
   "requested_by": "orvyq_system",
-  "requested_at": "2026-08-05T12:33:59Z"
+  "requested_at": "2026-08-05T12:54:06Z"
 }

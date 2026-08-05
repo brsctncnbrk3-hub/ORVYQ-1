@@ -410,22 +410,44 @@ function applyRedesign(shot, action) {
 
 function extendAdjacentFootage(shots, index, action) {
   const previous = shots[index - 1];
-  if (!previous || previous.asset_type !== "footage" || !previous.asset) {
-    throw new Error(`shot ${action.baseline_shot_index} cannot extend a non-footage predecessor`);
-  }
   const updated = clone(shots[index]);
+  let adjacent = previous;
+
+  if (previous?.asset_type === "footage" && previous.asset) {
+    updated.trim_in_sec = Number(previous.trim_out_sec);
+    updated.trim_out_sec = Number(previous.trim_out_sec) + Number(updated.duration);
+  } else {
+    const next = shots[index + 1];
+    if (!next || next.asset_type !== "footage" || !next.asset || next.claim_id !== updated.claim_id) {
+      throw new Error(`shot ${action.baseline_shot_index} cannot extend adjacent same-claim footage`);
+    }
+    adjacent = next;
+    const nextTrimIn = Number(next.trim_in_sec);
+    const nextDuration = Number(next.duration);
+    if (!Number.isFinite(nextTrimIn) || !Number.isFinite(nextDuration)) {
+      throw new Error(`shot ${action.baseline_shot_index} has invalid successor footage trim bounds`);
+    }
+    const extensionStart = Math.max(0, nextTrimIn - Number(updated.duration));
+    const extensionEnd = extensionStart + Number(updated.duration);
+    updated.trim_in_sec = extensionStart;
+    updated.trim_out_sec = extensionEnd;
+    shots[index + 1] = {
+      ...clone(next),
+      trim_in_sec: extensionEnd,
+      trim_out_sec: extensionEnd + nextDuration,
+    };
+  }
+
   updated.asset_type = "footage";
-  updated.asset = previous.asset;
-  updated.trim_in_sec = Number(previous.trim_out_sec);
-  updated.trim_out_sec = Number(previous.trim_out_sec) + Number(updated.duration);
-  updated.visual_role = previous.visual_role || "context";
+  updated.asset = adjacent.asset;
+  updated.visual_role = adjacent.visual_role || "context";
   updated.editorial_purpose = action.rationale;
   updated.semantic_rationale = action.rationale;
-  updated.semantic_link = previous.semantic_link || "conceptual";
-  updated.motion = previous.motion || updated.motion || "hold";
+  updated.semantic_link = adjacent.semantic_link || "conceptual";
+  updated.motion = adjacent.motion || updated.motion || "hold";
   updated.contextual_footage = true;
-  updated.generic_stock = Boolean(previous.generic_stock);
-  if (previous.reuse_reason) updated.reuse_reason = previous.reuse_reason;
+  updated.generic_stock = Boolean(adjacent.generic_stock);
+  if (adjacent.reuse_reason) updated.reuse_reason = adjacent.reuse_reason;
   else delete updated.reuse_reason;
   delete updated.graphic;
   delete updated.evidence;

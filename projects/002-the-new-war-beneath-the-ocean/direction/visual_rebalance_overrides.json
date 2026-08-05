@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "project_id": "002-the-new-war-beneath-the-ocean",
-  "reason": "Apply project-authored editorial corrections without weakening shared gates: keep verified source assets at the global two-use limit, match physical narration with approved footage, bind replacements to canonical manifest paths, and replace the redundant CLM_018 JAMSTEC diagrams with an unused official test-result capture.",
+  "reason": "Apply project-authored editorial corrections without weakening shared gates: keep verified source assets at the global two-use limit, match physical narration with approved footage, and replace the redundant CLM_018 JAMSTEC diagrams with an unused official test-result capture.",
   "action_overrides": [
     {
       "shot_key": "body:clm-005-common-heritage-principle:slice-3:sec-03-black-map:occ-1",
@@ -12,24 +12,6 @@
         "projected_medium": "contextual_footage",
         "replacement_strategy": "extend_adjacent_footage",
         "rationale": "Continue the approved abyssal-seabed footage through the nodule-formation sentence; retain the UNCLOS page only for the two legal propositions it directly proves."
-      }
-    },
-    {
-      "shot_key": "body:clm-009-industry-counterargument:unsliced:sec-05-argument-for-mining:occ-1",
-      "baseline_shot_index": 58,
-      "expected_decision": "replace_primary_evidence",
-      "action": {
-        "decision": "replace_primary_evidence",
-        "projected_medium": "primary_evidence",
-        "asset_request_id": "REQ_EVD_US_EO_NOAA",
-        "replacement_assets": [
-          {
-            "asset_path": "assets/evidence/noaa_dshmra_final_rule_page1.png",
-            "evidence_asset_id": "EVID_NOAA_2026_FINAL_RULE_OFFICIAL_PAGE",
-            "source_region": "Federal Register page 2642 title — exploration-license and commercial-recovery-permit applications"
-          }
-        ],
-        "rationale": "Use the canonical NOAA/Federal Register page path recorded in the primary-evidence manifest; the rule title distinguishes applications from issued commercial recovery permits without asserting a permit count."
       }
     },
     {

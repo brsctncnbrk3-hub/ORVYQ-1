@@ -337,6 +337,12 @@ Candidate Validation):
   title target.
 - Moved frozen-candidate creation and the validated artifact upload after the
   pre-render QA success gate. Failed runs retain diagnostics only.
+- Candidate Validation run `31006212191` confirmed that this ordering fails
+  safely: every preparation stage passed, but mobile QA rejected a 2.5-second
+  official document at the CLM_009 section bridge, so no validated bundle was
+  published. The bridge now extends the following same-claim approved footage
+  as one continuous source run; official evidence remains in longer readable
+  shots and no mobile-legibility threshold is weakened.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 

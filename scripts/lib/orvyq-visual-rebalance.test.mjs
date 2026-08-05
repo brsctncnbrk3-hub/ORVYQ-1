@@ -317,6 +317,46 @@ test("validated action override converts a redundant evidence beat into contiguo
   assert.equal(result[1].evidence, undefined);
 });
 
+test("a removable bridge can extend following same-claim footage when its predecessor is not footage", () => {
+  const shots = [
+    shot(2.5, "graphic", "SEC_01", {
+      claim_id: "CLM_001",
+      graphic: { type: "section_title", title: "Section" },
+    }),
+    shot(7, "footage", "SEC_01", {
+      claim_id: "CLM_001",
+      asset: "assets/footage/industry.mp4",
+      trim_in_sec: 1.25,
+      trim_out_sec: 8.25,
+      visual_role: "context",
+      motion: "pull",
+      contextual_footage: true,
+      generic_stock: false,
+      semantic_link: "physical",
+    }),
+  ];
+  const plan = {
+    status: "materialized",
+    actions: [{
+      baseline_shot_index: 0,
+      claim_id: "CLM_001",
+      duration_seconds: 2.5,
+      decision: "remove",
+      projected_medium: "contextual_footage",
+      replacement_strategy: "extend_adjacent_footage",
+      rationale: "Continue the following approved footage through the short bridge.",
+    }],
+  };
+
+  const result = materializeVisualRebalancePlan({ shots, plan });
+  assert.equal(result[0].asset, "assets/footage/industry.mp4");
+  assert.equal(result[0].trim_in_sec, 0);
+  assert.equal(result[0].trim_out_sec, 2.5);
+  assert.equal(result[1].trim_in_sec, 2.5);
+  assert.equal(result[1].trim_out_sec, 9.5);
+  assert.equal(result[0].motion, "pull");
+});
+
 test("visual-rebalance override rejects stale expected decisions", () => {
   const plan = {
     actions: [{
@@ -555,4 +595,25 @@ test("Project 002 first redesign remains bound to the section title when the fif
   assert.equal(after.failures.length, 0, after.failures.join("; "));
   assert.equal(after.actionIndexByKey.get(firstAction.shot_key), 5);
   assert.equal(after.shots[5].graphic.type, "section_title");
+});
+
+test("Project 002 extends adjacent footage instead of materializing a 2.5s CLM_009 official document", () => {
+  const plan = JSON.parse(readFileSync(new URL(
+    "../../projects/002-the-new-war-beneath-the-ocean/direction/visual_rebalance_plan.json",
+    import.meta.url,
+  ), "utf8"));
+  const overrides = JSON.parse(readFileSync(new URL(
+    "../../projects/002-the-new-war-beneath-the-ocean/direction/visual_rebalance_overrides.json",
+    import.meta.url,
+  ), "utf8"));
+  const effective = resolveVisualRebalancePlan(plan, overrides);
+  const action = effective.actions.find((entry) =>
+    entry.shot_key === "body:clm-009-industry-counterargument:unsliced:sec-05-argument-for-mining:occ-1"
+  );
+
+  assert.equal(action.duration_seconds, 2.5);
+  assert.equal(action.decision, "remove");
+  assert.equal(action.projected_medium, "contextual_footage");
+  assert.equal(action.replacement_strategy, "extend_adjacent_footage");
+  assert.equal(action.replacement_assets, undefined);
 });
