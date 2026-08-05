@@ -75,26 +75,36 @@ jobs:
             if [ -n "$CHANGED_INPUT" ]; then
               PROJECT_ID="$(jq -r '.project_id' "$CHANGED_INPUT")"
             else
-              mapfile -t CANDIDATES < <(
-                find projects -path '*/research/footage_acquisition_plan.json' -type f -print0 |
-                  while IFS= read -r -d '' plan; do
-                    root="${plan%/research/footage_acquisition_plan.json}"
-                    runtime="$root/assets/footage_acquisition.runtime.json"
-                    reviews="$root/research/visual_asset_reviews.json"
-                    planned="$(jq '.assets | length' "$plan")"
-                    actual="$(test -f "$runtime" && jq '.records | length' "$runtime" || echo 0)"
-                    rejected="$(test -f "$reviews" && jq '.summary.rejected_from_metadata // 0' "$reviews" || echo 0)"
-                    pending="$(test -f "$reviews" && jq '.summary.pending_frame_review // 0' "$reviews" || echo 0)"
-                    if [ "$actual" -ne "$planned" ] || [ "$rejected" -gt 0 ] || [ "$pending" -gt 0 ]; then
-                      jq -r '.project_id' "$plan"
-                    fi
+              mapfile -t ACTIVE_PROJECTS < <(
+                find projects -path '*/config/candidate_validation_request.json' -type f -print0 |
+                  while IFS= read -r -d '' request; do
+                    jq -r 'select(.status == "requested") | .project_id' "$request"
                   done | sort -u
               )
-              test "${#CANDIDATES[@]}" -eq 1 || {
-                echo "::error::Could not resolve exactly one project needing footage work; found ${#CANDIDATES[@]}."
-                exit 1
-              }
-              PROJECT_ID="${CANDIDATES[0]}"
+              if [ "${#ACTIVE_PROJECTS[@]}" -eq 1 ]; then
+                PROJECT_ID="${ACTIVE_PROJECTS[0]}"
+              else
+                mapfile -t CANDIDATES < <(
+                  find projects -path '*/research/footage_acquisition_plan.json' -type f -print0 |
+                    while IFS= read -r -d '' plan; do
+                      root="${plan%/research/footage_acquisition_plan.json}"
+                      runtime="$root/assets/footage_acquisition.runtime.json"
+                      reviews="$root/research/visual_asset_reviews.json"
+                      planned="$(jq '.assets | length' "$plan")"
+                      actual="$(test -f "$runtime" && jq '.records | length' "$runtime" || echo 0)"
+                      rejected="$(test -f "$reviews" && jq '.summary.rejected_from_metadata // 0' "$reviews" || echo 0)"
+                      pending="$(test -f "$reviews" && jq '.summary.pending_frame_review // 0' "$reviews" || echo 0)"
+                      if [ "$actual" -ne "$planned" ] || [ "$rejected" -gt 0 ] || [ "$pending" -gt 0 ]; then
+                        jq -r '.project_id' "$plan"
+                      fi
+                    done | sort -u
+                )
+                test "${#CANDIDATES[@]}" -eq 1 || {
+                  echo "::error::Could not resolve one active requested project or exactly one project needing footage work."
+                  exit 1
+                }
+                PROJECT_ID="${CANDIDATES[0]}"
+              fi
             fi
           fi
           test -f "projects/$PROJECT_ID/research/footage_acquisition_plan.json"

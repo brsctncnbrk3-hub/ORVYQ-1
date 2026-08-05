@@ -36,3 +36,14 @@ test("footage preparation resolves pauses and rebuilds the canonical shot baseli
   assert.match(workflow, /node scripts\/orvyq_resolve_pauses\.mjs --project-id="\$PROJECT_ID"/);
   assert.match(workflow, /node scripts\/orvyq_full_production_plan\.mjs --project-id="\$PROJECT_ID"/);
 });
+
+test("shared footage workflow changes target the sole active candidate instead of becoming unresolved", async () => {
+  const workflow = await readFile(
+    path.join(REPO_ROOT, ".github", "workflows", "orvyq-footage-acquisition.yml"),
+    "utf8",
+  );
+
+  assert.match(workflow, /config\/candidate_validation_request\.json/);
+  assert.match(workflow, /select\(\.status == "requested"\) \| \.project_id/);
+  assert.match(workflow, /if \[ "\$\{#ACTIVE_PROJECTS\[@\]\}" -eq 1 \]/);
+});

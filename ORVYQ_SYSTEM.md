@@ -380,6 +380,12 @@ Candidate Validation):
   order used by Candidate Validation—resolve pauses, rebuild the baseline, then
   apply claim-bound footage contracts—and a workflow regression test locks that
   dependency order. The failed run stopped before acquisition or any render.
+- A workflow-only follow-up (`31012911345`) then failed before checkout logic
+  could select a project: no footage data file had changed, so the old resolver
+  ignored the sole active Candidate request. Shared footage-workflow changes now
+  select exactly one `status: requested` Candidate project first, falling back
+  to the existing exactly-one-needs-footage scan only when no unique active
+  request exists. Ambiguous multi-project state still fails closed.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 
