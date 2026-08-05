@@ -409,6 +409,14 @@ Candidate Validation):
   when the approved asset's sheet is present; otherwise it regenerates the
   sheet before queue construction. A changed regenerated sheet cannot inherit
   the old approval hash and remains pending for fail-closed review.
+- Run `31014446465` reached a fully ready footage state (`rejected=0`,
+  `pending=0`, `blocked_requests=0`, materialized plan and ready blueprint) and
+  exposed one remaining positional consumer: `semantic_shot_corrections.json`
+  still targeted CLM_016 by `shot_index: 110`. Removing the optional fifth hook
+  moved that semantic shot to 109, so the audit inspected the following shot.
+  Semantic corrections now resolve mandatory schema-1.1 `shot_key` values with
+  the shared stable-key assigner; legacy indices remain diagnostic only. Tests
+  cover hook removal, missing-target failure and forbidden index fallback.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 
