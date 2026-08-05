@@ -374,6 +374,12 @@ Candidate Validation):
   beat returns later under CLM_015 at a non-overlapping trim. That sixth
   explicit reason is now recorded and covered by the same project regression;
   the failed run produced diagnostics only and started no render.
+- Footage preparation run `31012701672` proved that rebuilding the baseline is
+  the correct structural repair but also exposed its required generated input:
+  `resolved_pause_plan.json`. The generic workflow now mirrors the canonical
+  order used by Candidate Validation—resolve pauses, rebuild the baseline, then
+  apply claim-bound footage contracts—and a workflow regression test locks that
+  dependency order. The failed run stopped before acquisition or any render.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 

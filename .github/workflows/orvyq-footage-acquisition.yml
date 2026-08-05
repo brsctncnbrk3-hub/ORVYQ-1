@@ -128,6 +128,9 @@ jobs:
               raise SystemExit("Could not find the reusable semantic guard")
           PY
 
+      - name: Resolve the canonical editorial pause plan before shot generation
+        run: node scripts/orvyq_resolve_pauses.mjs --project-id="$PROJECT_ID"
+
       - name: Rebuild the canonical shot baseline before footage reconciliation
         run: node scripts/orvyq_full_production_plan.mjs --project-id="$PROJECT_ID"
 
