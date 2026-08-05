@@ -330,6 +330,80 @@ Current status (last verified 2026-07-30, render-free visual-system revision):
 
 ## 15. Change log
 
+### 2026-08-05 — Real CI progress on `claude/sistem-review-hazirlik-poonlc`: trim-margin jitter, SEC_04 graphics ceiling, footage-review narration staleness
+
+Work on a task branch (not yet merged to `main`) drove Candidate Validation
+further into the real pipeline than any previously-recorded run for
+Project 002, surfacing three genuine reusable-system defects in
+sequence — each root-caused from real CI output, never guessed past.
+
+**1. Footage-replacement trim windows had zero jitter margin (reusable-system defect).**
+`orvyq_full_production_plan.mjs` failed with `shot 107 footage replacement
+is shorter than the shot` on a claim untouched by any project-data edit
+that run. Root cause: real shot duration comes from live ASR word
+alignment (`orvyq_narration_alignment.mjs`, faster-whisper against the
+fixed `final_voice.mp3`) re-run fresh every CI invocation — the exact
+same audio can yield timestamps a few milliseconds different between
+runs. A `replacement_assets.trim_out_sec` authored to the exact
+byte-for-byte duration measured once left `applyFootageReplacement`'s
+`+0.001s` tolerance with no real margin. Fixed by giving affected trim
+windows several seconds of real headroom (safe: both source clips are
+~18s and only ~8s was in use); `applyFootageReplacement` always clips
+actual playback to `trim_in + real shot duration` regardless, so this
+changes no rendered content.
+
+**2. `SEC_04_TWO_RULEBOOKS` exceeded the 25% section graphics/cards ceiling (project-data defect, one genuinely overlooked slice).**
+Debug output added to `auditSectionVisualBalance`'s failure message
+(shot-level breakdown) showed 3 of the section's 4 graphic-card shots
+were deliberate, individually-rationale'd editorial decisions already
+recorded in `visual_rebalance_plan.json` (e.g. CLM_008's two "N/A permit
+status" cards explicitly avoid misrepresenting an HTML summary as a
+captured document). The 4th (`CLM_007_US_PARALLEL_ROUTE`'s shot_051, ~7.3s)
+had no rebalance action at all and silently defaulted to
+`kindFor('two_track_policy_matrix') === "comparison"`. Fixed by routing
+it to the claim's own real cited Executive-Order-14285 document image
+(already in use once at shot 48, within the >2-use repeated-motif
+ceiling) instead of forcing a stock-footage semantic mismatch or
+touching any of the three justified graphics.
+
+**3. Footage-review approvals were authored against a narration snapshot the live pipeline never reproduces (reusable-system defect + open project-data gap).**
+With both blockers above fixed, Candidate Validation reached
+`orvyq_footage_semantic_review_audit.mjs` for the first time ever
+recorded for this project and found 38 footage shots with "no exact
+approved use". Root cause has two parts:
+- `direction/editorial_blueprint.json`'s checked-in `full_production.shots`
+  has not changed since the original migration commit (`a9e9025`) —
+  `orvyq-candidate-validation.yml` never commits or pushes anything, so
+  every CI run regenerates shots fresh in the runner and discards them.
+  `research/visual_asset_reviews.json`'s `approved_uses.narration_anchor`
+  values were evidently authored against that same stale/offline
+  snapshot (this sandbox's own ASR is network-blocked, matching the
+  "cannot fully reproduce locally" note already on record elsewhere in
+  this document), not a live run — so they were never guaranteed to
+  match what real CI actually produces.
+- Comparing all 38 real failures against their approval records: 13 are
+  pure ASR transcription noise (a stray comma, sentence-initial
+  capitalization) — the same non-determinism class as defect 1, just
+  breaking a string-equality check instead of a duration tolerance.
+  Fixed in `orvyq-footage-semantic-review.mjs` via a canonicalized
+  (lowercased, punctuation-stripped, whitespace-collapsed) comparison;
+  a genuinely different sentence still fails (regression-tested). The
+  remaining ~20 are genuinely different narration windows and need
+  fresh, real semantic-fit review against the live queue, not a
+  matching-logic change — **not yet resolved**. A CI diagnostic step was
+  added that runs `orvyq_prepare_footage_review_queue.mjs` (which
+  computes each entry's real `approved_uses_if_visually_valid` directly
+  from the live current shot list) and prints the real queue, so the
+  next pass authors fresh approvals against live data instead of
+  transcribing CI log text by hand.
+
+All three fixes are in shared `scripts/**` (or, for #2, the one project
+data file the gap was actually in) and pass `npm run validate:canonical`
++ the full unit suite (339 tests) before each push, per section 12.
+Section 13's "Candidate Validation passes on the complete film" line
+remains unchecked — this entry records real forward progress, not a
+finished gate.
+
 ### 2026-07-30 — Exclusive-medium and semantic fail-closed contract
 
 - Replaced overlapping visual fractions with one exclusive classifier and
