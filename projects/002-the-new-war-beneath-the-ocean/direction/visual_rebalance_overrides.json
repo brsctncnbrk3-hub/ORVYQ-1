@@ -4,7 +4,7 @@
   "reason": "Apply project-authored editorial corrections without weakening shared gates: keep verified source assets at the global two-use limit, match physical narration with approved footage, bind replacements to canonical manifest paths, and replace the redundant CLM_018 JAMSTEC diagrams with an unused official test-result capture.",
   "action_overrides": [
     {
-      "baseline_shot_index": 39,
+      "baseline_shot_index": 38,
       "expected_decision": "replace_primary_evidence",
       "action": {
         "decision": "remove",
@@ -14,7 +14,7 @@
       }
     },
     {
-      "baseline_shot_index": 58,
+      "baseline_shot_index": 57,
       "expected_decision": "replace_primary_evidence",
       "action": {
         "decision": "replace_primary_evidence",
@@ -31,7 +31,7 @@
       }
     },
     {
-      "baseline_shot_index": 123,
+      "baseline_shot_index": 122,
       "expected_decision": "replace_primary_evidence",
       "action": {
         "decision": "replace_primary_evidence",
