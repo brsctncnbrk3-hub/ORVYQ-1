@@ -402,6 +402,13 @@ Candidate Validation):
   and still fails closed for an unknown or reordered hook. Regression tests
   cover the four-shot budgeted case, mismatch rejection, and the genuine
   pre-hook replacement path.
+- Run `31013942898` passed through contract reconciliation and then found a
+  missing `scene_017` contact-sheet file while constructing the byte-bound
+  review queue. The generator previously skipped every exact-byte-approved
+  asset without checking whether its sheet still existed. It now skips only
+  when the approved asset's sheet is present; otherwise it regenerates the
+  sheet before queue construction. A changed regenerated sheet cannot inherit
+  the old approval hash and remains pending for fail-closed review.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 

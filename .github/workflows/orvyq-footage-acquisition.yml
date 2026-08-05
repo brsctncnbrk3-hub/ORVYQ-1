@@ -172,6 +172,9 @@ jobs:
       - name: Apply claim-bound footage use contracts
         run: node scripts/orvyq_apply_footage_use_contracts.mjs --project-id="$PROJECT_ID"
 
+      - name: Generate any missing contact sheets for the reconciled footage set
+        run: node scripts/orvyq_generate_footage_contact_sheets.mjs --project-id="$PROJECT_ID"
+
       - name: Build current claim-bound review queue
         run: node scripts/orvyq_prepare_footage_review_queue.mjs --project-id="$PROJECT_ID"
 
