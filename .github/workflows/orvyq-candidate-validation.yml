@@ -265,6 +265,26 @@ jobs:
             console.log(JSON.stringify({ real_footage_use_counts: budget?.final_use_counts ?? null, removed_optional_hook_uses: budget?.removed_optional_hook_uses ?? null }, null, 2));
           "
 
+      - name: Print real footage semantic-review queue (diagnostic)
+        if: always()
+        run: |
+          node scripts/orvyq_prepare_footage_review_queue.mjs --project-id="$PROJECT_ID" > footage-review-queue.log 2>&1 || true
+          node --input-type=module -e "
+            import { readFile } from 'node:fs/promises';
+            const raw = await readFile('projects/$PROJECT_ID/qa/footage_review_queue.json', 'utf8');
+            const queue = JSON.parse(raw);
+            const compact = (queue.entries || []).map((entry) => ({
+              scene_id: entry.scene_id,
+              asset_path: entry.asset_path,
+              provider_asset_id: entry.provider_asset_id,
+              asset_sha256: entry.asset_sha256,
+              contact_sheet_sha256: entry.contact_sheet_sha256,
+              review_blockers: entry.review_blockers,
+              approved_uses_if_visually_valid: entry.approved_uses_if_visually_valid,
+            }));
+            console.log(JSON.stringify({ pending_review_count: queue.pending_review_count, entries_with_exact_uses: queue.entries_with_exact_uses, entries: compact }, null, 2));
+          " || cat footage-review-queue.log
+
       - name: Run full pre-render QA chain
         run: |
           set +e

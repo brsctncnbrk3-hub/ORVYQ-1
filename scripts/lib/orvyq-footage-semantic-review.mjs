@@ -3,6 +3,27 @@ function normalizedShots(footageAssets, footageShots) {
   return (footageAssets || []).map((asset) => ({ asset }));
 }
 
+// Real narration_anchor text comes from live ASR word alignment
+// (scripts/orvyq_narration_alignment.mjs, faster-whisper against the fixed
+// final_voice.mp3), re-run fresh on every CI invocation -- the exact same
+// audio can transcribe with a stray Oxford comma or a differently-cased
+// sentence-initial word from one run to the next (confirmed against real CI
+// output: "refining them and" vs "refining them, and", "Authority was" vs
+// "authority was"). Comparing byte-for-byte would reject a shot whose real
+// spoken content is identical to what was reviewed, for reasons that have
+// nothing to do with whether the footage still fits. Stripping punctuation
+// and case still requires every real word to match in the same order, so a
+// genuinely different narration window (a different sentence entirely)
+// still fails this comparison -- only transcription-noise-level punctuation
+// and capitalization drift is tolerated.
+function canonicalNarrationText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9']+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
 export function auditFootageSemanticReviews({ footageAssets, footageShots, provenanceByPath, reviews }) {
   const shots = normalizedShots(footageAssets, footageShots);
   const assetPaths = [...new Set(shots.map((shot) => shot.asset))];
@@ -50,7 +71,7 @@ export function auditFootageSemanticReviews({ footageAssets, footageShots, prove
       for (const shot of uses) {
         const approvedUse = (approval.approved_uses || []).find((use) =>
           use.claim_id === shot.claim_id &&
-          use.narration_anchor === shot.narration_anchor
+          canonicalNarrationText(use.narration_anchor) === canonicalNarrationText(shot.narration_anchor)
         );
         const sameClaimUse = (approval.approved_uses || []).find((use) =>
           use.claim_id === shot.claim_id && String(use.semantic_rationale || "").length >= 24
