@@ -175,6 +175,19 @@ It must verify at minimum:
 
 A failed candidate is repaired internally. It is not presented to the user as review-ready.
 
+Every generated full-production shot receives a deterministic `shot_key`
+derived from its claim, source slice and authored semantic slot. Project
+rebalance plans and overrides target this key. `baseline_shot_index` is kept
+only as diagnostic authoring history; it must never select a shot. Removing an
+optional hook, inserting an unrelated beat or changing a shot's media type must
+not move an editorial decision to a different semantic shot. Missing,
+duplicated or ambiguous keys fail closed.
+
+The immutable candidate identity and the artifact named
+`orvyq-validated-candidate-*` are created only after the complete pre-render QA
+chain succeeds. Failed runs may upload the smaller diagnostic validation
+artifact, but must never publish a bundle labelled as validated.
+
 ## 8. Full-Length Review
 
 The review is the complete film, not a sample.
@@ -277,58 +290,55 @@ Project: `002-the-new-war-beneath-the-ocean`
 
 Branch: `main`
 
-Current status (last verified 2026-07-30, render-free visual-system revision):
+Current status (last verified 2026-08-05, before the next renders-free
+Candidate Validation):
 
-- Research dossier, 15 sourced factual claims, narration (~2,216 words),
-  ElevenLabs handoff and `final_voice.mp3` are complete.
-- Canonical narration alignment contains 390 captions and the last full-film
-  speech comparison measured 95.23% similarity.
-- Candidate Validation run `30490654916` passed all 247 tests then present,
-  built 147 shots and uploaded an immutable validated candidate.
-- Full-Length Review run `30491571952` successfully rendered the complete
-  1280×720, 31,127-frame, 17:17.59 film. Its final media-QA step failed
-  because `orvyq_media_qa.mjs` contained Project 001's literal opening
-  sentence. Recovery run `30446043722` proves the same rendered media passes
-  when the opening is derived from the selected project's script.
-- The media-QA opening is now project-derived and covered by cross-project
-  regression tests. The existing review artifact is the render-free
-  regression evidence; no replacement render is required for this defect.
-- The exact mutually exclusive baseline is 57.08% contextual footage, 5.72%
-  real primary evidence and 37.20% graphics/cards; full-screen text cards are
-  5.73%. The prior overlapping category report is retired.
-- The complete 50-clip provenance pool was re-audited fail-closed. Source-page
-  metadata is sufficient to reject 37 false or generic matches; the remaining
-  13 are pending byte-bound contact-sheet review and none is currently
-  approved for a new candidate.
-- Project 002's long closing claim was split into six narration-anchored
-  synthesis claims so the last 5m46s is no longer one 47-shot claim. The
-  corrected 150-shot, 31,128-frame plan uses 89 footage shots and 52 evidence
-  shots. Every used footage source stays at or below two non-contiguous uses.
-- Project 002 now has an explicit decision for all 60 baseline card/graphic
-  moments. Its materialized target is 61.84% footage, 25.86% primary evidence,
-  12.30% graphics/cards and 2.41% full-screen text, with no adjacent card
-  shots. Nineteen real-evidence/footage requests block materialization.
-- Presentation-motif identity is based on the reader-facing image/content,
-  not citation title alone. Distinct JAMSTEC captures and distinct IEA
-  comparisons therefore remain independently auditable without being falsely
-  collapsed into one repeated motif; exact duplicates still share one key and
-  are rejected beyond two uses.
-- Commit `5430b0e` contains the corrected asset plan and shared regression
-  gate. A new immutable Candidate Validation artifact for this commit is still
-  required before another review can be dispatched.
-- PR `#4` joined the previously divergent histories without rewriting either
-  one and merged the complete working system into `main` as `59e608d`. The
-  default branch now contains the real pipeline rather than the placeholder
-  README-only tree.
-- A blank `003-isolation-probe` scaffold was generated twice in clean
-  temporary roots. Both runs produced the same 19 generic files after
-  normalising the creation timestamp, with no Project 001 or Project 002
-  identifiers or assets.
-- `full_production.status` is `blocked_pending_visual_assets`. Full-Length
-  Review and Final Encode remain forbidden until the requested assets are
-  acquired, provenance-verified, semantically approved and materialized.
+- Research, narration, `final_voice.mp3`, approved footage/evidence, canonical
+  music selection, captions, audio mix and Remotion build inputs are present.
+- Run `30965351643` reached the final visual audit. Its real final distribution
+  was 60.91% contextual footage, 25.64% primary evidence and 13.44%
+  graphics/cards; full-screen text was 2.42%, the maximum card run was one,
+  and the opening hook passed at 11 seconds with four footage shots.
+- That run failed because the rebalance audit still selected decisions by
+  array index after the footage budget correctly removed one optional hook.
+  The content mix itself was inside every acceptance threshold.
+- Run `30966740735` failed earlier after all 61 authored indices were manually
+  shifted by one: the first redesign landed on a primary-evidence shot instead
+  of the section title. This confirms that a single numeric index cannot be
+  correct both before and after the hook-budget transformation.
+- The active correction replaces positional targeting with deterministic
+  `shot_key` identities shared by materialization and audit, restores the
+  original authored indices as diagnostics, and regression-tests hook removal,
+  unrelated insertion, missing/duplicate targets and the real Project 002
+  first redesign.
+- `project.json` now records `candidate_validation_requested`; the production
+  profile is ready and the music acquisition record points to approved
+  canonical registry track `sb_undertow` under CC BY 4.0.
+- Candidate freezing and validated-bundle upload now occur only after the full
+  pre-render QA chain succeeds. No video render is started by this work.
+- `main` remains behind the active Project 002 work until the canonical draft
+  PR is opened and accepted. A successful Candidate Validation on that exact
+  PR SHA is still required before a new 720p Full-Length Review may be
+  requested.
 
 ## 15. Change log
+
+### 2026-08-05 — Stable shot identity and post-QA candidate freezing
+
+- Replaced production rebalance targeting by `baseline_shot_index` with a
+  deterministic `shot_key` derived from claim, source slice and semantic slot.
+- Kept authored indices only as diagnostics and made unresolved, duplicate or
+  ambiguous keys fail closed.
+- Made materializer and final audit use the same target resolver and preserved
+  keys through footage-contract reconciliation, media replacement and optional
+  hook removal.
+- Added regressions for hook removal, unrelated insertion, shared resolver
+  parity, fail-closed missing/duplicate keys and the real Project 002 section
+  title target.
+- Moved frozen-candidate creation and the validated artifact upload after the
+  pre-render QA success gate. Failed runs retain diagnostics only.
+- Updated Project 002 production and music metadata to describe the real
+  Candidate Validation request. No render was started.
 
 ### 2026-08-05 — Real CI progress on `claude/sistem-review-hazirlik-poonlc`: trim-margin jitter, SEC_04 graphics ceiling, footage-review narration staleness
 

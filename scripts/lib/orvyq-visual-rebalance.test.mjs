@@ -1,9 +1,12 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
+  assignStableShotKeys,
   auditVisualRebalancePlan,
   materializeVisualRebalancePlan,
   resolveVisualRebalancePlan,
+  resolveVisualRebalanceTargets,
 } from "./orvyq-visual-rebalance.mjs";
 
 function shot(duration, asset_type, section_id, extra = {}) {
@@ -368,4 +371,188 @@ test("materialization redesigns source-derived graphic-card evidence", () => {
   assert.equal(result[0].evidence.kind, "concept_map");
   assert.equal(result[0].evidence.template_id, "orvyq_single_comparison");
   assert.equal(result[0].evidence.design_system, "orvyq_cinematic_v1");
+});
+
+test("stable shot_key keeps a redesign on the same semantic shot after an optional hook is removed", () => {
+  const keyed = assignStableShotKeys([
+    shot(3, "footage", "SEC_01", {
+      claim_id: "CLM_HOOK",
+      source_slice_index: null,
+      hook_footage: true,
+      asset: "assets/footage/optional-hook.mp4",
+    }),
+    shot(65, "footage", "SEC_01", { claim_id: "CLM_001", source_slice_index: 0 }),
+    shot(22, "evidence", "SEC_01", {
+      claim_id: "CLM_001",
+      source_slice_index: 1,
+      evidence: {
+        kind: "official_figure",
+        image_assets: ["official.png"],
+        evidence_asset_ids: ["EVID_OFFICIAL"],
+      },
+    }),
+    shot(13, "graphic", "SEC_01", {
+      claim_id: "CLM_001",
+      source_slice_index: null,
+      graphic: { type: "section_title", title: "Section One" },
+    }),
+  ]);
+  const targetKey = keyed[3].shot_key;
+  const plan = {
+    schema_version: "1.1",
+    project_id: "999-stable-key-fixture",
+    status: "materialized",
+    actions: [{
+      shot_key: targetKey,
+      baseline_shot_index: 3,
+      claim_id: "CLM_001",
+      duration_seconds: 13,
+      decision: "redesign",
+      projected_medium: "graphic_card",
+      template_id: "orvyq_section_sting",
+      rationale: "Keep the semantic section transition attached to its stable authored identity.",
+    }],
+  };
+
+  const withoutHook = keyed.filter((shotSpec) => shotSpec.hook_footage !== true);
+  const materialized = materializeVisualRebalancePlan({ shots: withoutHook, plan });
+  assert.equal(materialized[2].shot_key, targetKey);
+  assert.equal(materialized[2].graphic.template_id, "orvyq_section_sting");
+  assert.equal(materialized[1].asset_type, "evidence");
+});
+
+test("inserting an unrelated shot cannot shift a stable rebalance target", () => {
+  const keyed = assignStableShotKeys([
+    shot(65, "footage", "SEC_01", { claim_id: "CLM_001", source_slice_index: 0 }),
+    shot(22, "evidence", "SEC_01", {
+      claim_id: "CLM_001",
+      source_slice_index: 1,
+      evidence: {
+        kind: "official_figure",
+        image_assets: ["official.png"],
+        evidence_asset_ids: ["EVID_OFFICIAL"],
+      },
+    }),
+    shot(13, "graphic", "SEC_01", {
+      claim_id: "CLM_001",
+      source_slice_index: null,
+      graphic: { type: "section_title", title: "Section One" },
+    }),
+  ]);
+  const targetKey = keyed[2].shot_key;
+  const inserted = assignStableShotKeys([
+    shot(4, "footage", "SEC_00", { claim_id: "CLM_OTHER", source_slice_index: 0 }),
+    ...keyed,
+  ]);
+  const plan = {
+    schema_version: "1.1",
+    project_id: "999-stable-key-fixture",
+    status: "materialized",
+    actions: [{
+      shot_key: targetKey,
+      baseline_shot_index: 2,
+      claim_id: "CLM_001",
+      duration_seconds: 13,
+      decision: "redesign",
+      projected_medium: "graphic_card",
+      template_id: "orvyq_section_sting",
+      rationale: "Keep the semantic section transition attached to its stable authored identity.",
+    }],
+  };
+  const targets = resolveVisualRebalanceTargets({ shots: inserted, plan });
+  assert.equal(targets.failures.length, 0);
+  assert.equal(targets.actionIndexByKey.get(targetKey), 3);
+});
+
+test("production plans fail closed for a missing or duplicate stable target", () => {
+  const keyed = assignStableShotKeys([
+    shot(8, "graphic", "SEC_01", {
+      claim_id: "CLM_001",
+      source_slice_index: 0,
+      graphic: { type: "claim_recap_card", title: "Claim" },
+    }),
+  ]);
+  const plan = {
+    schema_version: "1.1",
+    project_id: "999-stable-key-fixture",
+    status: "materialized",
+    actions: [{
+      shot_key: "body:clm-missing:slice-0:sec-01:occ-1",
+      baseline_shot_index: 0,
+      claim_id: "CLM_001",
+      duration_seconds: 8,
+      decision: "redesign",
+      projected_medium: "graphic_card",
+      template_id: "orvyq_single_comparison",
+      rationale: "A missing semantic target must stop materialization instead of falling back to position.",
+    }],
+  };
+  assert.throws(() => materializeVisualRebalancePlan({ shots: keyed, plan }), /unresolved visual-rebalance shot_key/);
+
+  const duplicate = [keyed[0], { ...keyed[0] }];
+  assert.throws(() => materializeVisualRebalancePlan({ shots: duplicate, plan }), /shot_key drift|duplicate shot_key/);
+});
+
+test("materializer and audit resolve the same stable shot_key", () => {
+  const keyed = assignStableShotKeys([
+    shot(65, "footage", "SEC_01", { claim_id: "CLM_001", source_slice_index: 0 }),
+    shot(22, "evidence", "SEC_01", {
+      claim_id: "CLM_001",
+      source_slice_index: 1,
+      evidence: {
+        kind: "official_figure",
+        image_assets: ["official.png"],
+        evidence_asset_ids: ["EVID_OFFICIAL"],
+      },
+    }),
+    shot(13, "graphic", "SEC_01", {
+      claim_id: "CLM_001",
+      source_slice_index: null,
+      graphic: { type: "section_title", title: "Section One" },
+    }),
+  ]);
+  const targetKey = keyed[2].shot_key;
+  const plan = {
+    schema_version: "1.1",
+    project_id: "999-stable-key-fixture",
+    status: "materialized",
+    actions: [{
+      shot_key: targetKey,
+      baseline_shot_index: 2,
+      claim_id: "CLM_001",
+      duration_seconds: 13,
+      decision: "redesign",
+      projected_medium: "graphic_card",
+      projected_full_screen_text_card: false,
+      template_id: "orvyq_section_sting",
+      rationale: "Keep the semantic section transition attached to its stable authored identity.",
+    }],
+  };
+  const materialized = materializeVisualRebalancePlan({ shots: keyed, plan });
+  const audit = auditVisualRebalancePlan({ shots: materialized, plan });
+  assert.equal(audit.pass, true, audit.failures.join("; "));
+  assert.equal(audit.resolved_action_targets[targetKey], 2);
+  assert.equal(materialized[2].shot_key, targetKey);
+});
+
+test("Project 002 first redesign remains bound to the section title when the fifth hook is removed", () => {
+  const blueprint = JSON.parse(readFileSync(new URL(
+    "../../projects/002-the-new-war-beneath-the-ocean/direction/editorial_blueprint.json",
+    import.meta.url,
+  ), "utf8"));
+  const plan = JSON.parse(readFileSync(new URL(
+    "../../projects/002-the-new-war-beneath-the-ocean/direction/visual_rebalance_plan.json",
+    import.meta.url,
+  ), "utf8"));
+  const baseline = assignStableShotKeys(blueprint.full_production.shots);
+  const firstAction = plan.actions[0];
+  const before = resolveVisualRebalanceTargets({ shots: baseline, plan, actionOverrides: [] });
+  assert.equal(before.actionIndexByKey.get(firstAction.shot_key), 6);
+  assert.equal(before.shots[6].graphic.type, "section_title");
+
+  const afterHookBudget = baseline.filter((_, index) => index !== 4);
+  const after = resolveVisualRebalanceTargets({ shots: afterHookBudget, plan, actionOverrides: [] });
+  assert.equal(after.failures.length, 0, after.failures.join("; "));
+  assert.equal(after.actionIndexByKey.get(firstAction.shot_key), 5);
+  assert.equal(after.shots[5].graphic.type, "section_title");
 });

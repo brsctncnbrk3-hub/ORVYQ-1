@@ -229,31 +229,6 @@ jobs:
           npm ci --no-audit --no-fund
           npx tsc --noEmit
 
-      - name: Compute frozen candidate manifest
-        run: |
-          node scripts/orvyq_frozen_candidate.mjs --project-id="$PROJECT_ID"
-          cat "projects/$PROJECT_ID/qa/frozen_candidate.json"
-
-      - name: Upload immutable validated candidate bundle
-        uses: actions/upload-artifact@v4
-        with:
-          name: orvyq-validated-candidate-${{ env.PROJECT_ID }}-${{ github.run_id }}
-          retention-days: 90
-          include-hidden-files: true
-          path: |
-            validation-source-sha.txt
-            projects/${{ env.PROJECT_ID }}/qa/frozen_candidate.json
-            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
-            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
-            projects/${{ env.PROJECT_ID }}/config/production_profile.json
-            projects/${{ env.PROJECT_ID }}/direction/edit_plan.json
-            projects/${{ env.PROJECT_ID }}/remotion/captions.json
-            projects/${{ env.PROJECT_ID }}/assets/**
-            projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/**
-            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/node_modules
-            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/out
-            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/.remotion
-
       - name: Print real footage use counts (diagnostic)
         if: always()
         run: |
@@ -300,6 +275,7 @@ jobs:
               return {
                 index,
                 shot_id: shot.shot_id,
+                shot_key: shot.shot_key || null,
                 claim_id: shot.claim_id,
                 section_id: shot.section_id,
                 asset_type: shot.asset_type,
@@ -352,6 +328,31 @@ jobs:
       - name: Stop when the pre-render QA chain failed
         run: test "$(cat qa-chain.status)" = "0"
 
+      - name: Compute frozen candidate manifest after all QA passed
+        run: |
+          node scripts/orvyq_frozen_candidate.mjs --project-id="$PROJECT_ID"
+          cat "projects/$PROJECT_ID/qa/frozen_candidate.json"
+
+      - name: Upload immutable validated candidate bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: orvyq-validated-candidate-${{ env.PROJECT_ID }}-${{ github.run_id }}
+          retention-days: 90
+          include-hidden-files: true
+          path: |
+            validation-source-sha.txt
+            projects/${{ env.PROJECT_ID }}/qa/frozen_candidate.json
+            projects/${{ env.PROJECT_ID }}/qa/full_narration_speech_qa.json
+            projects/${{ env.PROJECT_ID }}/voice/narration_alignment.json
+            projects/${{ env.PROJECT_ID }}/config/production_profile.json
+            projects/${{ env.PROJECT_ID }}/direction/edit_plan.json
+            projects/${{ env.PROJECT_ID }}/remotion/captions.json
+            projects/${{ env.PROJECT_ID }}/assets/**
+            projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/**
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/node_modules
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/out
+            !projects/${{ env.PROJECT_ID }}/remotion/render_ready_project/.remotion
+
       - name: Report Candidate Validation on the active pull request
         if: always()
         shell: bash
@@ -370,4 +371,6 @@ jobs:
           if [ -n "$PR_NUMBER" ]; then
             gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -f body="$BODY" ||
               echo "::warning::Could not post Candidate Validation result to PR #$PR_NUMBER."
+          else
+            echo "::warning::Candidate Validation ran on branch $GITHUB_REF_NAME without an active pull request; governance history is incomplete."
           fi

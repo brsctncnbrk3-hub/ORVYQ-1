@@ -139,6 +139,7 @@ async function buildFullPlan(dir, projectId, blueprint) {
 
     const common = {
       shot_id: `shot_${String(index + 1).padStart(3, "0")}`,
+      ...(spec.shot_key ? { shot_key: spec.shot_key } : {}),
       scene_id: spec.scene_id,
       section_id: spec.section_id,
       start_frame: startFrame,
