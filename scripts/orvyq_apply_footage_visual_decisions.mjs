@@ -240,10 +240,39 @@ async function applyLocalOfficialReuse(dir, projectId, runtime, result) {
   return applied;
 }
 
-function materializeOpeningHook(shots, motionHook) {
+function matchesAuthoredHookShot(shot, authored) {
+  return Boolean(
+    shot?.hook_footage === true &&
+    shot.asset_type === "footage" &&
+    shot.asset === authored.video_asset &&
+    shot.claim_id === authored.claim_id &&
+    Math.abs(Number(shot.duration || 0) - Number(authored.duration || 0)) <= 0.001
+  );
+}
+
+export function materializeOpeningHook(shots, motionHook) {
   const replaceCount = Number(motionHook.replace_opening_shot_count || motionHook.shots?.length || 0);
   if (!replaceCount || !Array.isArray(motionHook.shots) || motionHook.shots.length !== replaceCount) {
     throw new Error("motion_hook replace_opening_shot_count does not match its shots");
+  }
+  const existingHookShots = [];
+  for (const shot of shots) {
+    if (shot?.hook_footage !== true) break;
+    existingHookShots.push(shot);
+  }
+  if (existingHookShots.length) {
+    let authoredIndex = 0;
+    for (const existing of existingHookShots) {
+      while (
+        authoredIndex < motionHook.shots.length &&
+        !matchesAuthoredHookShot(existing, motionHook.shots[authoredIndex])
+      ) authoredIndex += 1;
+      if (authoredIndex >= motionHook.shots.length) {
+        throw new Error("existing opening hook does not match an ordered subset of direction/motion_hook.json");
+      }
+      authoredIndex += 1;
+    }
+    return shots;
   }
   const replaced = shots.slice(0, replaceCount);
   const oldDuration = replaced.reduce((sum, shot) => sum + Number(shot.duration || 0), 0);

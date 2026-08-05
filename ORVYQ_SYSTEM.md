@@ -393,6 +393,15 @@ Candidate Validation):
   used by Candidate Validation, and only then resolves pauses and regenerates
   the shot baseline. This removes any dependency on stale generated files while
   keeping the workflow render-free.
+- Run `31013449730` then passed that entire prerequisite chain and exposed an
+  idempotency defect in the following byte-bound decision step: after the
+  footage budget retained four ordered hook shots, the legacy hook materializer
+  counted the first evidence shot as a fifth replacement target and reported
+  `blueprint=18.866..., hook=14`. Opening-hook materialization now preserves an
+  already-integrated ordered subset, validates it against `motion_hook.json`,
+  and still fails closed for an unknown or reordered hook. Regression tests
+  cover the four-shot budgeted case, mismatch rejection, and the genuine
+  pre-hook replacement path.
 - Updated Project 002 production and music metadata to describe the real
   Candidate Validation request. No render was started.
 
